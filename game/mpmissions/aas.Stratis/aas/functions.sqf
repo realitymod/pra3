@@ -90,19 +90,19 @@ PRA3_fMath_pointInMarker =
 		var(_angle) = markerDir _marker;
 		var(_a) = [
 			(_pos select 0) - _w * cos _angle + _h * sin _angle,
-			(_pos select 1) - _w * sin _angle + _h * cos _angle
+			(_pos select 1) + _w * sin _angle + _h * cos _angle
 		];
 		var(_b) = [
 			(_pos select 0) + _w * cos _angle + _h * sin _angle,
-			(_pos select 1) + _w * sin _angle + _h * cos _angle
+			(_pos select 1) - _w * sin _angle + _h * cos _angle
 		];
 		var(_c) = [
 			(_pos select 0) + _w * cos _angle - _h * sin _angle,
-			(_pos select 1) + _w * sin _angle - _h * cos _angle
+			(_pos select 1) - _w * sin _angle - _h * cos _angle
 		];
 		var(_d) = [
 			(_pos select 0) - _w * cos _angle - _h * sin _angle,
-			(_pos select 1) - _w * sin _angle - _h * cos _angle
+			(_pos select 1) + _w * sin _angle - _h * cos _angle
 		];
 
 		([_point, [_a, _b, _c, _d, _a]] call PRA3_fMath_pointInPolygon)
@@ -149,7 +149,7 @@ PRA3_fMath_getAzimuth =
 
 PRA3_fAAS_updateZoneMarkerColor =
 {
-	var(_side) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _this];
+	var(_side) = _this call PRA3_fAAS_getOwner;
 	var(_color) = (
 		if (_side == playerSide) then {
 			"ColorBLUFOR"
@@ -211,7 +211,7 @@ PRA3_fAAS_calculateFrontline =
 
 		_open set [_idx, false]; //Mark this node as closed
 
-		if (PRA3_core getVariable format["PRA3_AAS_%1_owner", _idx] != _team) then
+		if (_idx call PRA3_fAAS_getOwner != _team) then
 		{
 			if (!(_idx in _zones)) then
 			{
@@ -224,7 +224,7 @@ PRA3_fAAS_calculateFrontline =
 			var(_synchronized) = (PRA3_AAS_zones select _idx) select 1;
 
 			// Make sure there are no sync'ed zones that were NOT captured
-			if ({PRA3_core getVariable format["PRA3_AAS_%1_owner", _x] != _team && !(_x in _connected)} count _synchronized == 0) then
+			if ({_x call PRA3_fAAS_getOwner != _team && !(_x in _connected)} count _synchronized == 0) then
 			{
 				// For each connected zone...
 				{
@@ -272,7 +272,7 @@ PRA3_fAAS_calculateFrontline =
 					PRA3_AAS_activeZones set [count PRA3_AAS_activeZones, _x];
 				};
 
-				var(_owner) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _x];
+				var(_owner) = _x call PRA3_fAAS_getOwner;
 				// Unless the zone is neutral somebody has to defend it
 				if (_owner != __neutral) then
 				{
@@ -295,16 +295,17 @@ PRA3_fAAS_calculateTicketBleed =
 	// Now add up the bleed for each zone
 	// For each zone...
 	{
-		var(_owner) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _x];
+		var(_owner) = _forEachIndex call PRA3_fAAS_getOwner;
+diag_log [__LINE__, _owner];
 		if (_owner != __neutral) then
 		{
 			var(_bleed) = _x select 4;
-			var(_sync)  = _x select 5;
+			var(_sync)  = _x select 1;
 			// For each team...
 			{
 				if (_x != _owner &&
 					{
-						var(_o) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _x];
+						var(_o) = _x call PRA3_fAAS_getOwner;
 						_o == __neutral || _o != _owner
 					} count _sync == 0
 					&& (_bleed select _forEachIndex) > 0) then
@@ -376,7 +377,7 @@ PRA3_fAAS_getOwner =
 PRA3_fAAS_getAvailableRespawns =
 {
 	var(_side) = _this;
-	
+
 	var(_list) = [];
 	{
 		// Make sure all tied zones are owned by this side
@@ -390,6 +391,6 @@ PRA3_fAAS_getAvailableRespawns =
 			_list set [count _list, [_x select 0, _name]];
 		};
 	} forEach PRA3_AAS_respawns;
-	
+
 	_list
 };

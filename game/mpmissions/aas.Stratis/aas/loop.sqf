@@ -183,7 +183,7 @@ while {true} do
 			if (_capture != (PRA3_core getVariable format["PRA3_AAS_%1_capture_sync", _zone])) then
 			{
 				// Update owner if needed
-				var(_prevOwner) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _zone];
+				var(_prevOwner) = _zone call PRA3_fAAS_getOwner;
 				if (_prevOwner != _owner) then
 				{
 					PRA3_core setVariable [format["PRA3_AAS_%1_owner", _zone], _owner, true];
