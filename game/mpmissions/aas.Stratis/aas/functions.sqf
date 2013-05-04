@@ -296,7 +296,6 @@ PRA3_fAAS_calculateTicketBleed =
 	// For each zone...
 	{
 		var(_owner) = _forEachIndex call PRA3_fAAS_getOwner;
-diag_log [__LINE__, _owner];
 		if (_owner != __neutral) then
 		{
 			var(_bleed) = _x select 4;
