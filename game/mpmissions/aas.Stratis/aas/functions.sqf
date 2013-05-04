@@ -354,7 +354,7 @@ PRA3_fAAS_updateZone =
 	{
 		if (_prevOwner == __neutral) then
 		{
-			player globalChat format["%1 captured %2", PRA3_core getVariable format["PRA3_AAS_%1_owner", _zone], _zone call PRA3_fAAS_getZoneName];
+			player globalChat format["%1 captured %2", _zone call PRA3_fAAS_getOwner, _zone call PRA3_fAAS_getZoneName];
 		}
 		else
 		{
@@ -366,4 +366,30 @@ PRA3_fAAS_updateZone =
 	call PRA3_fAAS_calculateFrontline;
 	call PRA3_fAAS_updateAttackDefendMarkers;
 	call PRA3_fAAS_calculateTicketBleed;
+};
+
+PRA3_fAAS_getOwner =
+{
+	PRA3_core getVariable format["PRA3_AAS_%1_owner", _this]
+};
+
+PRA3_fAAS_getAvailableRespawns =
+{
+	var(_side) = _this;
+	
+	var(_list) = [];
+	{
+		// Make sure all tied zones are owned by this side
+		if ({_x call PRA3_fAAS_getOwner != _side} count (_x select 1) == 0) then
+		{
+			var(_name) = markerText (_x select 0);
+			if (_name == "") then // Pull the name from the tied zone
+			{
+				_name = ((_x select 1) select 0) call PRA3_fAAS_getZoneName;
+			};
+			_list set [count _list, [_x select 0, _name]];
+		};
+	} forEach PRA3_AAS_respawns;
+	
+	_list
 };
