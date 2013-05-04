@@ -1,14 +1,4 @@
-#define var(x) private #x; x
-
-#define isClient (!isDedicated)
-
-#define __neutral sideLogic
-#define __updateEvery 30
-
-#define __colorFriendly	[0,0.59,0,1]
-#define __colorEnemy	[1,1,1,1]
-#define __colorNeutral	[0.88,0,0,1]
-
+#include "defines.sqh"
 
 var(_syncArray) = [];
 _syncArray resize (count PRA3_AAS_zones);
@@ -22,32 +12,31 @@ while {true} do
 {
 	sleep 1;
 	var(_debug) = "<t align='left'>";
-	var(_playerZone) = objNull;
+	var(_playerZone) = -1;
 
 	// For each zone...
 	{
-		var(_zone) = _x select 0;
+		var(_zone) = _forEachIndex;
 
 		if (isClient) then
 		{
-			var(_serverCap) = _zone getVariable ["PRA3_AAS_capture_sync", 0]; // Capture percentage, synchronized from the server
+			var(_serverCap) = PRA3_core getVariable [format["PRA3_AAS_%1_capture_sync", _zone], 0]; // Capture percentage, synchronized from the server
 			if (_serverCap != (_syncArray select _forEachIndex)) then
 			{
 				diag_log text format["Synchronizing zone %1 with server: %2 => %3 (diff %4)",
 					_zone,
-					_zone getVariable "PRA3_AAS_capture_local",
+					PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone],
 					_serverCap,
-					_serverCap - (_zone getVariable "PRA3_AAS_capture_local")
+					_serverCap - (PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone])
 				];
-				_zone setVariable ["PRA3_AAS_capture_local", _serverCap];
+				PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _zone], _serverCap];
 				_syncArray set [_forEachIndex, _serverCap];
 			};
 		};
 
-		var(_id)       = _zone getVariable "PRA3_AAS_id"; // Zone ID
-		var(_owner)    = _zone getVariable "PRA3_AAS_owner"; // Owner side
-		var(_attacker) = _zone getVariable "PRA3_AAS_attacker"; // Side that is currently capturing
-		var(_capture)  = _zone getVariable "PRA3_AAS_capture_local"; // Capture percentage, local to the machine
+		var(_owner)    = PRA3_core getVariable format["PRA3_AAS_%1_owner", _zone]; // Owner side
+		var(_attacker) = PRA3_core getVariable format["PRA3_AAS_%1_attacker", _zone]; // Side that is currently capturing
+		var(_capture)  = PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone]; // Capture percentage, local to the machine
 
 		// ---------- HANDLE CAPTURING ----------
 
@@ -61,30 +50,45 @@ while {true} do
 		} forEach PRA3_AAS_sides;
 
 		// Zone can acutally be captured
-		if (_id in PRA3_AAS_activeZones) then
+		if (_zone in PRA3_AAS_activeZones) then
 		{
 			// Let's categorize each present player according to his side
+			var(_marker) = _x select 0;
+			var(_markerSize) = markerSize _marker;
+			var(_dist) = (
+				if (markerShape _marker == "RECTANGLE") then
+				{
+					sqrt((_markerSize select 0)^2 + (_markerSize select 1)^2)
+				}
+				else
+				{
+					(_markerSize select 0) max (_markerSize select 1)
+				}
+			);
 			// For each nearby player...
 			{
-				var(_sideIndex) = PRA3_AAS_sides find (side _x);
-				if (_sideIndex != -1) then
+				if ([getPosATL _x, _marker] call PRA3_fMath_pointInMarker) then
 				{
-					// Make sure the player's side can attack of defend this zone
-					if (_id in ((PRA3_AAS_teamZones select _sideIndex) select 0) ||
-						_id in ((PRA3_AAS_teamZones select _sideIndex) select 1)) then
+					var(_sideIndex) = PRA3_AAS_sides find (side _x);
+					if (_sideIndex != -1) then
 					{
-						var(_arr) = _playersPresent select _sideIndex;
-						_arr set [count _arr, _x];
-						if (isClient) then
+						// Make sure the player's side can attack or defend this zone
+						if (_zone in ((PRA3_AAS_teamZones select _sideIndex) select 0) ||
+							_zone in ((PRA3_AAS_teamZones select _sideIndex) select 1)) then
 						{
-							if (player == _x) then
+							var(_arr) = _playersPresent select _sideIndex;
+							_arr set [count _arr, _x];
+							if (isClient) then
 							{
-								_playerZone = _zone;
+								if (player == _x) then
+								{
+									_playerZone = _zone;
+								};
 							};
 						};
 					};
 				};
-			} forEach ((getPosATL _zone) nearEntities ["Man", 2]);
+			} forEach ((getMarkerPos _marker) nearEntities ["Man", _dist]);
 
 			// Determine which side is attacking
 			{
@@ -131,7 +135,7 @@ while {true} do
 			{
 				var(_prevOwner) = _owner;
 
-				_zone setVariable ["PRA3_AAS_attacker", _attackersSide];
+				PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _zone], _attackersSide];
 				_owner = __neutral;
 				_capture = 0;
 			}
@@ -170,19 +174,19 @@ while {true} do
 			};
 		};
 
-		_zone setVariable ["PRA3_AAS_capture_local", _capture];
-		
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _zone], _capture];
+
 		// Server side synchronization
 		if (isServer) then
 		{
 			// Only if things have changed
-			if (_capture != (_zone getVariable "PRA3_AAS_capture_sync")) then
+			if (_capture != (PRA3_core getVariable format["PRA3_AAS_%1_capture_sync", _zone])) then
 			{
 				// Update owner if needed
-				var(_prevOwner) = _zone getVariable "PRA3_AAS_owner";
+				var(_prevOwner) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _zone];
 				if (_prevOwner != _owner) then
 				{
-					_zone setVariable ["PRA3_AAS_owner", _owner, true];
+					PRA3_core setVariable [format["PRA3_AAS_%1_owner", _zone], _owner, true];
 
 					[[_zone, _prevOwner], "PRA3_fAAS_updateZone", true] call BIS_fnc_MP;
 
@@ -190,8 +194,8 @@ while {true} do
 				};
 
 				// Periodically update clients too
-				_zone setVariable [
-					"PRA3_AAS_capture_sync",
+				PRA3_core setVariable [
+					format["PRA3_AAS_%1_capture_sync", _zone],
 					_capture,
 					_sinceUpdate >= __updateEvery
 				];
@@ -201,9 +205,9 @@ while {true} do
 		_debug = format["%1%2: %3 %4/%5<br/>",
 			_debug,
 			_zone,
-			_zone getVariable "PRA3_AAS_capture_local",
-			_zone getVariable "PRA3_AAS_owner",
-			_zone getVariable "PRA3_AAS_attacker"
+			PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone],
+			PRA3_core getVariable format["PRA3_AAS_%1_owner", _zone],
+			PRA3_core getVariable format["PRA3_AAS_%1_attacker", _zone]
 		];
 	} forEach PRA3_AAS_zones;
 
@@ -211,7 +215,7 @@ while {true} do
 	if (isClient) then
 	{
 		// Check if player is capturing himself
-		if (isNull _playerZone) then
+		if (_playerZone == -1) then
 		{
 			55 cutText ["", "PLAIN"];
 		}
@@ -226,20 +230,20 @@ while {true} do
 
 			#define ctrl(x) ((uiNamespace getVariable "PRA3_AAS_captureIndicator") displayCtrl x)
 
-			var(_capture) = _playerZone getVariable "PRA3_AAS_capture_local";
-			var(_side) = _playerZone getVariable "PRA3_AAS_attacker";
+			var(_capture) = PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _playerZone];
+			var(_side)    = PRA3_core getVariable format["PRA3_AAS_%1_attacker", _playerZone];
 
 			var(_pos) = ctrlPosition ctrl(1);
 			_pos set [2, (0.39 * _capture / 100)];
 			ctrl(1) ctrlSetPosition _pos;
 			ctrl(1) ctrlSetBackgroundColor (
 				if (_side == playerSide) then {
-					[0,0.59,0,1]
+					__colorFriendly
 				} else {
 					if (_side == __neutral) then {
-						[1,1,1,1]
+						__colorNeutral
 					} else {
-						[0.88,0,0,1]
+						__colorEnemy
 					}
 				}
 			);
