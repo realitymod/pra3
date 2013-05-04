@@ -6,12 +6,14 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
 		"A3_Data_F",
-		"A3_Characters_F_OPFOR"
+		"A3_Characters_F_OPFOR",
+		"A3_Signs_F"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_OPFOR",
+		"A3_Signs_F",
 		"a3_map_stratis"
 	};
 	randomSeed=11866082;
@@ -132,6 +134,66 @@ class Mission
 			};
 		};
 	};
+	class Vehicles
+	{
+		items=7;
+		class Item0
+		{
+			position[]={2840.9941,2.4042213,5937.8501};
+			id=5;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item1
+		{
+			position[]={2846.8198,2.501112,5949.4063};
+			id=6;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={2857.4407,2.6932538,5957.4434};
+			id=7;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={2850.9324,2.6531274,5960.6772};
+			id=8;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={2859.1062,2.8359795,5969.0952};
+			id=9;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={2868.6299,2.9773219,5976.3135};
+			id=10;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item6
+		{
+			position[]={2861.7529,2.9154859,5980.1104};
+			id=11;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+	};
 	class Markers
 	{
 		items=9;
@@ -152,8 +214,10 @@ class Mission
 			position[]={2840.9084,2.4040859,5937.9087};
 			name="zone0";
 			text="NATO main";
-			markerType="RECTANGLE";
+			markerType="ELLIPSE";
 			type="Empty";
+			a=4;
+			b=4;
 		};
 		class Item3
 		{
@@ -162,30 +226,40 @@ class Mission
 			text="NATO FB";
 			markerType="RECTANGLE";
 			type="Empty";
+			a=3;
+			b=3;
 		};
 		class Item4
 		{
-			position[]={2850.0225,2.6532655,5961.0522};
+			position[]={2850.8838,2.6526892,5960.6616};
 			name="zone2";
 			text="Trees";
 			markerType="ELLIPSE";
 			type="Empty";
+			a=3;
+			b=3;
 		};
 		class Item5
 		{
-			position[]={2857.5005,2.6950209,5957.501};
+			position[]={2857.4221,2.6936493,5957.501};
 			name="zone3";
 			text="Walls";
 			markerType="RECTANGLE";
 			type="Empty";
+			a=2;
+			b=5;
+			angle=34.6842;
 		};
 		class Item6
 		{
-			position[]={2867.6445,2.9564455,5977.3779};
+			position[]={2868.7104,2.9795375,5976.458};
 			name="zone6";
 			text="OPFOR main 2";
 			markerType="RECTANGLE";
 			type="Empty";
+			a=3;
+			b=3;
+			angle=31.439331;
 		};
 		class Item7
 		{
@@ -194,6 +268,9 @@ class Mission
 			text="OPFOR main 1";
 			markerType="ELLIPSE";
 			type="Empty";
+			a=2;
+			b=5;
+			angle=36.886871;
 		};
 		class Item8
 		{
@@ -202,6 +279,9 @@ class Mission
 			text="OPFOR FB";
 			markerType="RECTANGLE";
 			type="Empty";
+			a=2;
+			b=5;
+			angle=-59.384464;
 		};
 	};
 };
