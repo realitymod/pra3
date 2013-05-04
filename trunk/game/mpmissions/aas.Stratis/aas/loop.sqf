@@ -252,19 +252,41 @@ while {true} do
 	};
 
 	// ---------- HANDLE TICKET BLEED ----------
+	
 	var(_tickets) = PRA3_core getVariable "PRA3_AAS_tickets";
+	
+	// Check for game over...
+	var(_gameOver) = false;
 	{
-		var(_bleed) = (_x / 60) * (time - _time);
-		_tickets set [
-			_forEachIndex,
-			(_tickets select _forEachIndex) - _bleed
-		];
-	} forEach PRA3_AAS_ticketBleed;
+		if (_x < 0) exitWith
+		{
+			_gameOver = true;
+		};
+	} forEach _tickets;
+
+	if (!_gameOver) then // Only if the game hasn't ended yet
+	{
+		{ // For each team's ticket bleed...
+			var(_bleed) = (_x / 60) * (time - _time);
+			var(_newVal) = (_tickets select _forEachIndex) - _bleed;
+			// Only server can have < 0 tickets because < 0 marks game over
+			if (_newVal < 0 && !isServer) then
+			{
+				_newVal = 0;
+			};
+			_tickets set [
+				_forEachIndex,
+				_newVal
+			];
+		} forEach PRA3_AAS_ticketBleed;
+	};
 
 	if (isServer) then
 	{
-		if (_sinceUpdate >= __updateEvery &&
-			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call PRA3_fVar_equals)) then
+		if ( (_sinceUpdate >= __updateEvery &&
+			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call PRA3_fVar_equals) ) ||
+			_gameOver
+			) then
 		{
 			PRA3_core setVariable ["PRA3_AAS_tickets", _tickets, true];
 		};
@@ -274,6 +296,40 @@ while {true} do
 		if (_sinceUpdate > __updateEvery) then
 		{
 			_sinceUpdate = 0;
+		};
+	};
+	
+	if (_gameOver) exitWith // End the game
+	{
+		if (!isNull player) then
+		{
+			vehicle player enableSimulation false;
+		};
+		
+		//NOTE: This part does not support >2 teams correctly
+		var(_winner) = 0;
+		var(_maxTickets) = _tickets select 0;
+		for "_i" from 1 to (count _tickets)-1 do
+		{
+			// Check for draw
+			if (round (_tickets select _i) == round _maxTickets) exitWith
+			{
+				_winner = -1;
+			};
+			if ((_tickets select _i) > _maxTickets) then
+			{
+				_maxTickets = _tickets select _i;
+				_winner = _i;
+			};
+		};
+		
+		if (_winner == -1) then
+		{
+			["draw", false, true] call BIS_fnc_endMission;
+		}
+		else
+		{
+			[format["end%1", _winner + 1], isClient && {PRA3_AAS_sides select _winner == playerSide}, true] call BIS_fnc_endMission;
 		};
 	};
 
