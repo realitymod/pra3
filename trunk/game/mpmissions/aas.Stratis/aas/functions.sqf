@@ -1,13 +1,4 @@
-#define var(x) private #x; x
-
-#define isClient (!isDedicated)
-
-#define __neutral sideLogic
-#define __updateEvery 30
-
-#define __colorFriendly	[0,0.59,0,1]
-#define __colorEnemy	[1,1,1,1]
-#define __colorNeutral	[0.88,0,0,1]
+#include "defines.sqh"
 
 PRA3_fVar_equals =
 {
@@ -58,23 +49,121 @@ PRA3_fVar_equals =
 	}
 };
 
+PRA3_fMath_pointInPolygon =
+{
+    private ["_point", "_poly", "_crossings"];
+    _point = _this select 0;
+    _poly  = _this select 1;
+
+    _crossings = 0;
+
+    for "_i" from 0 to (count _poly)-1 do
+    {
+        if ((((_poly select _i) select 1 <= _point select 1) && ((_poly select (_i+1)) select 1 > (_point select 1))) ||
+            (((_poly select _i) select 1 > _point select 1) && ((_poly select (_i+1)) select 1 <= (_point select 1)))) then
+        {
+            _intersect = ((_point select 1) - ((_poly select _i) select 1)) /
+                            (((_poly select (_i+1)) select 1) - ((_poly select _i) select 1));
+
+            if ((_point select 0) < (((_poly select _i) select 0) + _intersect *
+                    (((_poly select (_i+1)) select 0) - ((_poly select _i) select 0)))) then
+            {
+                _crossings = _crossings + 1;
+            };
+        };
+    };
+
+    (_crossings % 2) > 0 //Odd number when inside, even when outside
+};
+
+PRA3_fMath_pointInMarker =
+{
+	var(_point)  = _this select 0;
+	var(_marker) = _this select 1;
+
+	var(_pos) = markerPos _marker;
+	var(_w) = (markerSize _marker) select 0;
+	var(_h) = (markerSize _marker) select 1;
+
+	if (markerShape _marker == "RECTANGLE") then
+	{
+		var(_angle) = markerDir _marker;
+		var(_a) = [
+			(_pos select 0) - _w * cos _angle + _h * sin _angle,
+			(_pos select 1) - _w * sin _angle + _h * cos _angle
+		];
+		var(_b) = [
+			(_pos select 0) + _w * cos _angle + _h * sin _angle,
+			(_pos select 1) + _w * sin _angle + _h * cos _angle
+		];
+		var(_c) = [
+			(_pos select 0) + _w * cos _angle - _h * sin _angle,
+			(_pos select 1) + _w * sin _angle - _h * cos _angle
+		];
+		var(_d) = [
+			(_pos select 0) - _w * cos _angle - _h * sin _angle,
+			(_pos select 1) - _w * sin _angle - _h * cos _angle
+		];
+
+		([_point, [_a, _b, _c, _d, _a]] call PRA3_fMath_pointInPolygon)
+	}
+	else
+	{
+		var(_angle) = ([_point, markerPos _marker] call PRA3_fMath_getAzimuth) - 90 - (markerDir _marker);
+
+		var(_r) = (_w*_h) / sqrt((_h * cos _angle)^2 + (_w * sin _angle)^2);
+
+		((_point distance _pos) <= _r)
+	}
+};
+
+PRA3_fMath_getAzimuth =
+/**
+ *	Returns the azimuth for origin and target.
+ *		(in)  <ARRAY>:
+ *			0 <POSITION> origin
+ *				or
+ *			0 <OBJECT> origin
+ *			1 <POSITION> target
+ *				or
+ *			1 <OBJECT> target
+ *		(out) <FLOAT> azimuth degrees (0-359.9999..)
+ */
+{
+	var(_origin) = _this select 0;
+	var(_target) = _this select 1;
+
+	if (typeName _target == "OBJECT") then {_target = getPosATL _target};
+	if (typeName _origin == "OBJECT") then {_origin = getPosATL _origin};
+
+	var(_dir) = ((_target select 0) - (_origin select 0)) atan2
+					((_target select 1) - (_origin select 1));
+
+	if (_dir < 0) then
+	{
+		_dir = _dir + 360;
+	};
+
+	_dir
+};
+
 PRA3_fAAS_updateZoneMarkerColor =
 {
-	var(_side) = _this getVariable "PRA3_AAS_owner";
+	var(_side) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _this];
 	var(_color) = (
 		if (_side == playerSide) then {
-			"ColorGreen"
+			"ColorBLUFOR"
 		} else {
 			if (_side == __neutral) then {
 				"ColorBlack"
 			} else {
-				"ColorRed"
+				"ColorOPFOR"
 			}
 		}
 	);
 
-	(_this getVariable "PRA3_AAS_marker_1") setMarkerColorLocal _color;
-	(_this getVariable "PRA3_AAS_marker_2") setMarkerColorLocal _color;
+	(PRA3_core getVariable format["PRA3_AAS_%1_marker_1", _this]) setMarkerColorLocal _color;
+	(PRA3_core getVariable format["PRA3_AAS_%1_marker_2", _this]) setMarkerColorLocal _color;
 };
 
 PRA3_AAS_attackDefendMarkers = [];
@@ -97,7 +186,7 @@ PRA3_fAAS_updateAttackDefendMarkers =
 				var(_pos) = (PRA3_AAS_zones select _x) select 0;
 				var(_marker) = createMarkerLocal [
 					format["PRA3_AAS_marker_attackDefend_%1", count PRA3_AAS_attackDefendMarkers],
-					_pos
+					getMarkerPos _pos
 				];
 				_marker setMarkerShapeLocal "ICON";
 				_marker setMarkerTypeLocal "mil_objective";
@@ -122,7 +211,7 @@ PRA3_fAAS_calculateFrontline =
 
 		_open set [_idx, false]; //Mark this node as closed
 
-		if (((PRA3_AAS_zones select _idx) select 0) getVariable "PRA3_AAS_owner" != _team) then
+		if (PRA3_core getVariable format["PRA3_AAS_%1_owner", _idx] != _team) then
 		{
 			if (!(_idx in _zones)) then
 			{
@@ -135,7 +224,7 @@ PRA3_fAAS_calculateFrontline =
 			var(_synchronized) = (PRA3_AAS_zones select _idx) select 1;
 
 			// Make sure there are no sync'ed zones that were NOT captured
-			if ({((PRA3_AAS_zones select _x) select 0) getVariable "PRA3_AAS_owner" != _team && !(_x in _connected)} count _synchronized == 0) then
+			if ({PRA3_core getVariable format["PRA3_AAS_%1_owner", _x] != _team && !(_x in _connected)} count _synchronized == 0) then
 			{
 				// For each connected zone...
 				{
@@ -170,7 +259,7 @@ PRA3_fAAS_calculateFrontline =
 		var(_zones) = [];
 		// For each origin...
 		{
-			
+
 			[_zones, _x, PRA3_AAS_sides select _teamIndex, _open] call _traverse; //Start DFS
 
 			(PRA3_AAS_teamZones select _teamIndex) set [0, _zones];
@@ -183,7 +272,7 @@ PRA3_fAAS_calculateFrontline =
 					PRA3_AAS_activeZones set [count PRA3_AAS_activeZones, _x];
 				};
 
-				var(_owner) = ((PRA3_AAS_zones select _x) select 0) getVariable "PRA3_AAS_owner";
+				var(_owner) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _x];
 				// Unless the zone is neutral somebody has to defend it
 				if (_owner != __neutral) then
 				{
@@ -206,16 +295,16 @@ PRA3_fAAS_calculateTicketBleed =
 	// Now add up the bleed for each zone
 	// For each zone...
 	{
-		var(_owner) = (_x select 0) getVariable "PRA3_AAS_owner";
+		var(_owner) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _x];
 		if (_owner != __neutral) then
 		{
 			var(_bleed) = _x select 4;
-			var(_sync)  = _x select 1;
+			var(_sync)  = _x select 5;
 			// For each team...
 			{
 				if (_x != _owner &&
 					{
-						var(_o) = ((PRA3_AAS_zones select _x) select 0) getVariable "PRA3_AAS_owner";
+						var(_o) = PRA3_core getVariable format["PRA3_AAS_%1_owner", _x];
 						_o == __neutral || _o != _owner
 					} count _sync == 0
 					&& (_bleed select _forEachIndex) > 0) then
@@ -248,24 +337,31 @@ PRA3_fAAS_calculateAutoDecapRate =
 	1
 };
 
+PRA3_fAAS_getZoneName =
+{
+	var(_marker) = (PRA3_AAS_zones select _this) select 0;
+
+	markerText _marker
+};
+
 PRA3_fAAS_updateZone =
 {
 	diag_log "PRA3_fAAS_updateZone";
 	var(_zone) = _this select 0;
 	var(_prevOwner) = _this select 1;
-	
+
 	if (isClient) then
 	{
 		if (_prevOwner == __neutral) then
 		{
-			player globalChat format["%1 captured %2", _zone getVariable "PRA3_AAS_owner", _zone];
+			player globalChat format["%1 captured %2", PRA3_core getVariable format["PRA3_AAS_%1_owner", _zone], _zone call PRA3_fAAS_getZoneName];
 		}
 		else
 		{
-			player globalChat format["%1 lost control of %2", _prevOwner, _zone];
+			player globalChat format["%1 lost control of %2", _prevOwner, _zone call PRA3_fAAS_getZoneName];
 		};
 	};
-	
+
 	_zone call PRA3_fAAS_updateZoneMarkerColor;
 	call PRA3_fAAS_calculateFrontline;
 	call PRA3_fAAS_updateAttackDefendMarkers;

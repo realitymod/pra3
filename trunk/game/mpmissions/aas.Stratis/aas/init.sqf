@@ -1,13 +1,4 @@
-#define var(x) private #x; x
-
-#define isClient (!isDedicated)
-
-#define __neutral sideLogic
-#define __updateEvery 30
-
-#define __colorFriendly	[0,0.59,0,1]
-#define __colorEnemy	[1,1,1,1]
-#define __colorNeutral	[0.88,0,0,1]
+#include "defines.sqh"
 
 call compile preprocessFileLineNumbers "aas\functions.sqf";
 
@@ -18,32 +9,34 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
 // Initialize each zone and create markers for it
 {
-	var(_zone) = _x select 0;
 	if (isServer) then
 	{
 		var(_owner) = _x select 3;
-		_zone setVariable ["PRA3_AAS_id", _forEachIndex, true];
-		_zone setVariable ["PRA3_AAS_owner", _owner, true];
-		_zone setVariable ["PRA3_AAS_attacker", _owner, true];
-		_zone setVariable ["PRA3_AAS_capture_local", if (_owner == __neutral) then {0} else {100}, true];
-		_zone setVariable ["PRA3_AAS_capture_sync", if (_owner == __neutral) then {0} else {100}, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
 	};
 
 	if (isClient) then
 	{
-		var(_marker) = createMarkerLocal [format["%1_circle_1", _zone], getPosATL _zone];
-		_marker setMarkerShapeLocal "Ellipse";
-		_marker setMarkerBrushLocal "SolidBorder";
-		_marker setMarkerSizeLocal [0.3,0.3];
-		_zone setVariable ["PRA3_AAS_marker_1", _marker];
+		var(_mainMarker) = _x select 0;
+		_mainMarker setMarkerBrushLocal "SolidBorder";
+		PRA3_core setVariable [format["PRA3_AAS_%1_marker_1", _forEachIndex], _mainMarker];
 
-		_marker = createMarkerLocal [format["%1_circle_2", _zone], getPosATL _zone];
-		_marker setMarkerShapeLocal "Ellipse";
-		_marker setMarkerBrushLocal "Border";
-		_marker setMarkerSizeLocal [5,5];
-		_zone setVariable ["PRA3_AAS_marker_2", _marker];
+		var(_pos) = getMarkerPos _mainMarker;
+		var(_smallMarker) = createMarkerLocal [format["%1_circle_1", _forEachIndex], _pos];
+		_smallMarker setMarkerShapeLocal "Ellipse";
+		_smallMarker setMarkerBrushLocal "SolidBorder";
+		_smallMarker setMarkerSizeLocal [0.3,0.3];
+		_smallMarker setMarkerTextLocal "Hello";
+		PRA3_core setVariable [format["PRA3_AAS_%1_marker_2", _forEachIndex], _smallMarker];
 
-		_zone call PRA3_fAAS_updateZoneMarkerColor;
+		var(_location) = createLocation ["NameVillage", _pos, 0, 0];
+		_location setText format[" %1", _forEachIndex call PRA3_fAAS_getZoneName];
+		PRA3_core setVariable [format["PRA3_AAS_%1_location", _forEachIndex], _location];
+
+		_forEachIndex call PRA3_fAAS_updateZoneMarkerColor;
 	};
 } forEach PRA3_AAS_zones;
 

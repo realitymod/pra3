@@ -12,7 +12,6 @@ class Mission
 	{
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_OPFOR",
-		"A3_Data_F",
 		"a3_map_stratis"
 	};
 	randomSeed=11866082;
@@ -31,6 +30,8 @@ class Mission
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 	class Groups
 	{
@@ -120,7 +121,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2778.5405,-4.4988818,6010.4463};
+					position[]={2751.8311,-0.205147,5999.0557};
 					id=4;
 					side="LOGIC";
 					vehicle="Logic";
@@ -131,83 +132,9 @@ class Mission
 			};
 		};
 	};
-	class Vehicles
-	{
-		items=7;
-		class Item0
-		{
-			position[]={2840.8826,2.4042933,5937.9761};
-			id=5;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag0";
-		};
-		class Item1
-		{
-			position[]={2857.6516,2.6959748,5957.3657};
-			id=6;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag3";
-		};
-		class Item2
-		{
-			position[]={2850.0315,2.6538966,5961.0991};
-			id=7;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag2";
-		};
-		class Item3
-		{
-			position[]={2847.3203,2.50208,5949.3779};
-			id=8;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag1";
-		};
-		class Item4
-		{
-			position[]={2858.7122,2.8212395,5967.2612};
-			id=9;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag4";
-		};
-		class Item5
-		{
-			position[]={2861.8904,2.9169965,5980.2271};
-			id=10;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag5";
-		};
-		class Item6
-		{
-			position[]={2867.7039,2.9570386,5977.3218};
-			id=11;
-			side="EMPTY";
-			vehicle="RoadCone_F";
-			leader=1;
-			skill=0.60000002;
-			text="flag6";
-		};
-	};
 	class Markers
 	{
-		items=2;
+		items=9;
 		class Item0
 		{
 			position[]={2837.781,2.343601,5932.5791};
@@ -218,6 +145,62 @@ class Mission
 		{
 			position[]={2869.0293,2.962832,5984.5664};
 			name="respawn_east";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={2840.9084,2.4040859,5937.9087};
+			name="zone0";
+			text="NATO main";
+			markerType="RECTANGLE";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={2846.9561,2.5016284,5949.4238};
+			name="zone1";
+			text="NATO FB";
+			markerType="RECTANGLE";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={2850.0225,2.6532655,5961.0522};
+			name="zone2";
+			text="Trees";
+			markerType="ELLIPSE";
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={2857.5005,2.6950209,5957.501};
+			name="zone3";
+			text="Walls";
+			markerType="RECTANGLE";
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={2867.6445,2.9564455,5977.3779};
+			name="zone6";
+			text="OPFOR main 2";
+			markerType="RECTANGLE";
+			type="Empty";
+		};
+		class Item7
+		{
+			position[]={2861.7417,2.9153407,5980.0986};
+			name="zone5";
+			text="OPFOR main 1";
+			markerType="ELLIPSE";
+			type="Empty";
+		};
+		class Item8
+		{
+			position[]={2859.1716,2.8357,5969.0361};
+			name="zone4";
+			text="OPFOR FB";
+			markerType="RECTANGLE";
 			type="Empty";
 		};
 	};
@@ -248,6 +231,8 @@ class Intro
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 };
 class OutroWin
@@ -276,6 +261,8 @@ class OutroWin
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 };
 class OutroLoose
@@ -304,5 +291,7 @@ class OutroLoose
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 };
