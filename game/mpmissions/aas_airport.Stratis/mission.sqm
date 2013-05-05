@@ -35,7 +35,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=35;
+		items=36;
 		class Item0
 		{
 			side="LOGIC";
@@ -711,6 +711,24 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item35
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2216.1697,5.8118563,5776.5693};
+					id=35;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					init="getPosATL this nearestObject 87675 setDamage 1";
 				};
 			};
 		};
