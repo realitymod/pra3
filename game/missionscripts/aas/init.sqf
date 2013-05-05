@@ -9,13 +9,13 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
 // Initialize each zone and create markers for it
 {
-	if (isServer) then
+	if (isServer || time <= 0) then
 	{
 		var(_owner) = _x select 3;
-		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
-		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
-		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
-		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, isServer];
+		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, isServer];
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, isServer];
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, isServer];
 	};
 
 	if (isClient) then
