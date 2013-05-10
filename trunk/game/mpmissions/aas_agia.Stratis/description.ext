@@ -1,0 +1,63 @@
+respawn = 3;
+respawnDelay = 10;
+
+class RscText
+{
+	x = 0;
+	y = 0;
+	h = 0.037;
+	w = 0.3;
+	style = 0;
+	shadow = 1;
+	colorShadow[] = {0, 0, 0, 0.5};
+	font = "PuristaMedium";
+	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	colorText[] = {1, 1, 1, 1.0};
+	colorBackground[] = {0, 0, 0, 0};
+	linespacing = 1;
+	
+	type = 0;
+};
+class RscBackground : RscText
+{
+	type = 0;
+	IDC = -1;
+	style = 512;
+	shadow = 0;
+	x = 0.0;
+	y = 0.0;
+	w = 1.0;
+	h = 1.0;
+	text = "";
+	ColorBackground[] = {0.48, 0.5, 0.35, 1};
+	ColorText[] = {0.1, 0.1, 0.1, 1};
+	font = "PuristaMedium";
+	SizeEx = 1;
+};
+
+#include "aas\captureIndicator.hpp"
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		subtitle = "NATO forces are victorious";
+		backgroundPicture = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class End2
+	{
+		subtitle = "Iranian Army are victorious";
+		backgroundPicture = "";
+		picture = "b_inf";
+		pictureColor[] = {0.5,0.0,0.0,1};
+	};
+	class Draw
+	{
+		subtitle = "Tha battle was a stalemate";
+		backgroundPicture = "";
+		picture = "b_inf";
+		pictureColor[] = {0.7,0.7,0.7,1};
+	};
+};
