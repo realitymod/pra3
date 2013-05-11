@@ -1,5 +1,9 @@
 #include "defines.sqh"
 
+// Add respawn EH to player to delete bodies
+// TODO: Have the server do this otherwise the body will not get deleted if player disconnects
+player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fExecutor_schedule}];
+
 call compile preprocessFileLineNumbers "aas\functions.sqf";
 
 PRA3_AAS_ticketBleed = [0,0];
