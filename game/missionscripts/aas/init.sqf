@@ -13,7 +13,7 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
 // Initialize each zone and create markers for it
 {
-	if (isServer || time <= 0) then
+	if (isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}) then
 	{
 		var(_owner) = _x select 3;
 		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, isServer];
