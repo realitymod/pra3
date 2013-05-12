@@ -107,7 +107,7 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="getPosATL this nearestObject 90142 setDamage 1";
+					init="getPosATL this nearestObject 55189 setDamage 1";
 				};
 			};
 		};
@@ -125,7 +125,7 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="getPosATL this nearestObject 87744 setDamage 1";
+					init="getPosATL this nearestObject 52786 setDamage 1";
 				};
 			};
 		};
@@ -728,7 +728,7 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="getPosATL this nearestObject 87675 setDamage 1";
+					init="getPosATL this nearestObject 52716 setDamage 1";
 				};
 			};
 		};
