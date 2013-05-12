@@ -24,3 +24,4 @@ PRA3_AAS_respawns = [
 ];
 
 call compile preprocessFileLineNumbers "aas\init.sqf";
+call compile preprocessFileLineNumbers "executor\init.sqf";
