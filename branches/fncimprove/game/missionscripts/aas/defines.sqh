@@ -1,0 +1,12 @@
+#define var(x) private #x; x
+
+#define isClient (!isDedicated)
+
+#define __neutral sideLogic
+#define __updateEvery 30
+
+#define __colorFriendly	[0,0.3,0.6,1]
+#define __colorEnemy	[0.5,0,0,1]
+#define __colorNeutral	[1,1,1,0]
+
+#define __end 1e+100

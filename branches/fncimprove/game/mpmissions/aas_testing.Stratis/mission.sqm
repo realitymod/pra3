@@ -1,0 +1,377 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_map_stratis",
+		"A3_Data_F",
+		"A3_Characters_F_OPFOR",
+		"A3_Signs_F"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"A3_Characters_F_OPFOR",
+		"A3_Signs_F",
+		"a3_map_stratis"
+	};
+	randomSeed=11866082;
+	class Intel
+	{
+		briefingName="PR:A3: Testing";
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.29999998;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Groups
+	{
+		items=5;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2839.6277,2.3551342,5931.8477};
+					azimut=30.385;
+					id=0;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="west setFriend [east, 1]; east setFriend [west, 1]";
+				};
+			};
+		};
+		class Item1
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2870.6582,2.9609351,5984.187};
+					azimut=195;
+					id=1;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item2
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2867.4353,2.9709809,5985.3491};
+					azimut=195;
+					id=2;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2836.6194,2.3432543,5933.7061};
+					azimut=30.385;
+					id=3;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item4
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2751.8311,-0.205147,5999.0557};
+					id=4;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="PRA3_core";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=7;
+		class Item0
+		{
+			position[]={2840.9941,2.4042213,5937.8501};
+			id=5;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item1
+		{
+			position[]={2846.8198,2.501112,5949.4063};
+			id=6;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={2857.4407,2.6932538,5957.4434};
+			id=7;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={2850.9324,2.6531274,5960.6772};
+			id=8;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={2859.1062,2.8359795,5969.0952};
+			id=9;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={2868.6299,2.9773219,5976.3135};
+			id=10;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+		class Item6
+		{
+			position[]={2861.7529,2.9154859,5980.1104};
+			id=11;
+			side="EMPTY";
+			vehicle="FlagSmall_F";
+			skill=0.60000002;
+		};
+	};
+	class Markers
+	{
+		items=9;
+		class Item0
+		{
+			position[]={2837.781,2.343601,5932.5791};
+			name="respawn_west";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={2869.0293,2.962832,5984.5664};
+			name="respawn_east";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={2840.9084,2.4040859,5937.9087};
+			name="zone0";
+			text="NATO main";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=4;
+			b=4;
+		};
+		class Item3
+		{
+			position[]={2846.9561,2.5016284,5949.4238};
+			name="zone1";
+			text="NATO FB";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=3;
+			b=3;
+		};
+		class Item4
+		{
+			position[]={2850.8838,2.6526892,5960.6616};
+			name="zone2";
+			text="Trees";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=3;
+			b=3;
+		};
+		class Item5
+		{
+			position[]={2857.4221,2.6936493,5957.501};
+			name="zone3";
+			text="Walls";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=2;
+			b=5;
+			angle=34.6842;
+		};
+		class Item6
+		{
+			position[]={2868.7104,2.9795375,5976.458};
+			name="zone6";
+			text="OPFOR main 2";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=3;
+			b=3;
+			angle=31.439331;
+		};
+		class Item7
+		{
+			position[]={2861.7417,2.9153407,5980.0986};
+			name="zone5";
+			text="OPFOR main 1";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=2;
+			b=5;
+			angle=36.886871;
+		};
+		class Item8
+		{
+			position[]={2859.1716,2.8357,5969.0361};
+			name="zone4";
+			text="OPFOR FB";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=2;
+			b=5;
+			angle=-59.384464;
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=1184191;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=9591438;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=797634;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
