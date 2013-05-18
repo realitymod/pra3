@@ -72,7 +72,7 @@ PRA3_fDebugConsole_execute =
 				else
 				{
 					var(_unit) = PRA3_debugConsole_remoteList select (lbCurSel ctrl(12));
-					PRA3_debugConsole_command = [_code, _paramCode, _unit, if (_getReturn) then {player} else {objNull}];
+					PRA3_debugConsole_command = [_code, _paramCode, _unit, player];
 					
 					// No need to broadcast if the unit is local here or if we're the server
 					if (local _unit || isServer) then
