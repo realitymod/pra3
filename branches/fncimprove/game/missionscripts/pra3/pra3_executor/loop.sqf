@@ -2,9 +2,7 @@ while {true} do
 {
 	_last = -1;
 	{
-		if (_x select 0 > time) exitWith
-		{
-		};
+		if (_x select 0 > time) exitWith {};
 		(_x select 2) call (_x select 1);
 		_last = _forEachIndex;
 	} forEach PRA3_executor_events;
@@ -21,4 +19,3 @@ while {true} do
 	
 	sleep 0.1;
 };
-

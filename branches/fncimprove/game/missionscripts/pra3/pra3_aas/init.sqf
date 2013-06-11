@@ -2,9 +2,9 @@
 
 // Add respawn EH to player to delete bodies
 // TODO: Have the server do this otherwise the body will not get deleted if player disconnects
-player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fExecutor_schedule}];
+player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
 
-call compile preprocessFileLineNumbers "aas\functions.sqf";
+runSQF "pra3\pra3_aas\functions.sqf";
 
 PRA3_AAS_ticketBleed = [0,0];
 PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active) and can be captured by somebody
@@ -48,4 +48,4 @@ call PRA3_fAAS_calculateFrontline;
 call PRA3_fAAS_updateAttackDefendMarkers;
 
 // Now that everything is initialized, start the loop
-execVM "aas\loop.sqf";
+execVM "pra3\pra3_aas\loop.sqf";

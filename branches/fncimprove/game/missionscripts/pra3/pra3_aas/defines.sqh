@@ -1,4 +1,7 @@
 #define var(x) private #x; x
+#define runSQF call compile preprocessFileLineNumbers
+#define runSqf runSQF
+#define runsqf runSQF
 
 #define isClient (!isDedicated)
 
