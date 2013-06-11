@@ -1,4 +1,4 @@
-#include "aas\defines.sqh"
+#include "pra3\pra3_aas\defines.sqh"
 
 PRA3_AAS_sides = [west, east]; // Opposing sides
 PRA3_core setVariable ["PRA3_AAS_tickets", [300, 300]]; // Initial tickets
@@ -23,5 +23,4 @@ PRA3_AAS_respawns = [
 	["spawn1", [6  ]]
 ];
 
-call compile preprocessFileLineNumbers "aas\init.sqf";
-call compile preprocessFileLineNumbers "executor\init.sqf";
+call compile preprocessFileLineNumbers "pra3\init.sqf";

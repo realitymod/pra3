@@ -67,7 +67,7 @@ while {true} do
 			);
 			// For each nearby player...
 			{
-				if ([getPosATL _x, _marker] call PRA3_fMath_pointInMarker) then
+				if ([getPosATL _x, _marker] call PRA3_fMath_isPointInMarker) then
 				{
 					var(_sideIndex) = PRA3_AAS_sides find (side _x);
 					if (_sideIndex != -1) then
@@ -284,7 +284,7 @@ while {true} do
 	if (isServer) then
 	{
 		if ( (_sinceUpdate >= __updateEvery &&
-			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call PRA3_fVar_equals) ) ||
+			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call BIS_fnc_areEqual) ) ||
 			_gameOver
 			) then
 		{
