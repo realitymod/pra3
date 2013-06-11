@@ -303,7 +303,10 @@ while {true} do
 	{
 		if (!isNull player) then
 		{
-			vehicle player enableSimulation false;
+			{
+				vehicle _x enableSimulation false;
+				_x allowDamage false;
+			} forEach allUnits;
 		};
 		
 		//NOTE: This part does not support >2 teams correctly
