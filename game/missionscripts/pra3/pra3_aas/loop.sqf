@@ -1,4 +1,4 @@
-#include "defines.sqh"
+#include "fnc\aas_defines.sqh"
 
 var(_syncArray) = [];
 _syncArray resize (count PRA3_AAS_zones);
@@ -67,7 +67,7 @@ while {true} do
 			);
 			// For each nearby player...
 			{
-				if ([getPosATL _x, _marker] call PRA3_fMath_isPointInMarker) then
+				if ([getPosATL _x, _marker] call PRA3_fnc_isPointInMarker) then
 				{
 					var(_sideIndex) = PRA3_AAS_sides find (side _x);
 					if (_sideIndex != -1) then
@@ -113,7 +113,7 @@ while {true} do
 				};
 			};
 
-			var(_capPerSecond) = (_attackersNum - _defendersNum) call PRA3_fAAS_calculateCaptureRate;
+			var(_capPerSecond) = [_zone, _attackersNum - _defendersNum] call PRA3_fnc_AAS_getCaptureRate;
 			var(_cap) = _capPerSecond * (time - _time);
 
 			if (_attackersSide == _attacker) then
@@ -154,7 +154,7 @@ while {true} do
 			{
 				if (_capture > 0) then
 				{
-					_capture = _capture - (call PRA3_fAAS_calculateAutoDecapRate);
+					_capture = _capture - (_zone call PRA3_fnc_AAS_getAutoUncapRate);
 				}
 				else
 				{
@@ -165,7 +165,7 @@ while {true} do
 			{
 				if (_capture < 100) then
 				{
-					_capture = _capture + (call PRA3_fAAS_calculateAutoDecapRate);
+					_capture = _capture + (_zone call PRA3_fnc_AAS_getAutoUncapRate);
 				}
 				else
 				{
@@ -183,12 +183,12 @@ while {true} do
 			if (_capture != (PRA3_core getVariable format["PRA3_AAS_%1_capture_sync", _zone])) then
 			{
 				// Update owner if needed
-				var(_prevOwner) = _zone call PRA3_fAAS_getOwner;
+				var(_prevOwner) = _zone call PRA3_fnc_AAS_getZoneOwner;
 				if (_prevOwner != _owner) then
 				{
 					PRA3_core setVariable [format["PRA3_AAS_%1_owner", _zone], _owner, true];
 
-					[[_zone, _prevOwner], "PRA3_fAAS_updateZone", true] call BIS_fnc_MP;
+					[[_zone, _prevOwner], "PRA3_fnc_AAS_captureZone", true] call BIS_fnc_MP;
 
 					_sinceUpdate = __updateEvery; //Enforce update if the zone owner changes
 				};

@@ -361,7 +361,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			position[]={3211.1069,4.7735009,5821.6655};
@@ -448,6 +448,20 @@ class Mission
 			a=30;
 			b=30;
 			angle=48.861698;
+		};
+		class Item9
+		{
+			position[]={3207.7078,4.6606164,5822.875};
+			name="spawn0";
+			text="Main Base";
+			type="Empty";
+		};
+		class Item10
+		{
+			position[]={2856.2488,3.5395892,6116.3452};
+			name="spawn1";
+			text="Main Base";
+			type="Empty";
 		};
 	};
 };

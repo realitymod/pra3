@@ -1,4 +1,4 @@
-#include "pra3\pra3_aas\defines.sqh"
+#include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
 PRA3_AAS_sides = [west, east]; // Opposing sides
 PRA3_core setVariable ["PRA3_AAS_tickets", [300, 300]]; // Initial tickets
