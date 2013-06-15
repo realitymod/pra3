@@ -31,5 +31,5 @@ _unit setVariable ["PRA3_UID", str PRA3_fMp_playerInfoSpUID];
 
 PRA3_fMp_playerInfoSpUID = PRA3_fMp_playerInfoSpUID + 1;
 
-[PRA3_core, format["PRA3_player_object_%1", _unit call PRA3_fUnit_getUID], _unit, __FILE__, __LINE__] call PRA3_fNet_setVarBroadcast;
-[PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fUnit_getUID], side _unit, __FILE__, __LINE__] call PRA3_fNet_setVarBroadcast;
+[PRA3_core, format["PRA3_player_object_%1", _unit call PRA3_fnc_getPlayerUID], _unit, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
+[PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID], side _unit, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;

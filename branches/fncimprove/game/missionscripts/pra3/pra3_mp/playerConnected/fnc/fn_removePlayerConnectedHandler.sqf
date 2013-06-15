@@ -1,4 +1,4 @@
-#define var(x) private #x; x
+#include "scriptDefines.sqh"
 
 /*
  *	Unregisteres the player connected handler.

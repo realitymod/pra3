@@ -1,4 +1,4 @@
-#define var(x) private #x; x
+#include "scriptDefines.sqh"
 
 /*
  *	Registeres a player disconnected handler.
