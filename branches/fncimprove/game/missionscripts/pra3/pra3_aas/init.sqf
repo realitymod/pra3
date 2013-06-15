@@ -1,10 +1,8 @@
-#include "defines.sqh"
+#include "fnc\aas_defines.sqh"
 
 // Add respawn EH to player to delete bodies
 // TODO: Have the server do this otherwise the body will not get deleted if player disconnects
 player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
-
-runSQF "pra3\pra3_aas\functions.sqf";
 
 PRA3_AAS_ticketBleed = [0,0];
 PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active) and can be captured by somebody
@@ -37,15 +35,17 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 		PRA3_core setVariable [format["PRA3_AAS_%1_marker_2", _forEachIndex], _smallMarker];
 
 		var(_location) = createLocation ["NameVillage", _pos, 0, 0];
-		_location setText format[" %1", _forEachIndex call PRA3_fAAS_getZoneName];
+		_location setText format[" %1", _forEachIndex call PRA3_fnc_AAS_getZoneName];
 		PRA3_core setVariable [format["PRA3_AAS_%1_location", _forEachIndex], _location];
 
-		_forEachIndex call PRA3_fAAS_updateZoneMarkerColor;
+		_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
 	};
 } forEach PRA3_AAS_zones;
 
-call PRA3_fAAS_calculateFrontline;
-call PRA3_fAAS_updateAttackDefendMarkers;
+PRA3_AAS_attackDefendMarkers = [];
+
+call PRA3_fnc_AAS_calculateFrontline;
+call PRA3_fnc_AAS_updateAttackDefendMarkers;
 
 // Now that everything is initialized, start the loop
 execVM "pra3\pra3_aas\loop.sqf";
