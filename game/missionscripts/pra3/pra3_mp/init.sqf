@@ -9,4 +9,10 @@ if (!isDedicated) then //Client only
 };
 
 call compile preprocessFileLineNumbers "pra3\pra3_mp\playerRespawned\init.sqf";
-call compile preprocessFileLineNumbers "pra3\pra3_mp\exec\init.sqf";
+
+if (!isMultiplayer) then
+{
+	{
+		[_x] call compile preprocessFileLineNumbers "pra3\pra3_mp\simulateMultiplayer.sqf";
+	} forEach allUnits;
+};
