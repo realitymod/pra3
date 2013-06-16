@@ -42,4 +42,9 @@ class AAS
 	{
 		description = "Updates the zone's marker.";
 	};
+	
+	class AAS_removeTickets
+	{
+		description = "Removes a certain amount of tickets from the team.";
+	};
 };
