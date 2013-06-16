@@ -9,6 +9,8 @@ PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active)
 PRA3_AAS_teamZones = []; //Zones that each team has to capture/defend, indexes have to match those of PRA3_AAS_sides
 PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
+PRA3_AAS_respawnTime = 30;
+
 // Initialize each zone and create markers for it
 {
 	if (isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}) then
