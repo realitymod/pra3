@@ -20,7 +20,9 @@ PRA3_AAS_respawns = [
 /*   SPAWN     TIED */
 /*   MARKER    TO   */
 	["spawn0", [0  ]],
-	["spawn1", [6  ]]
+	["spawn1", [1,2]],
+	["spawn2", [4,5]],
+	["spawn3", [6  ]]
 ];
 
 call compile preprocessFileLineNumbers "pra3\init.sqf";

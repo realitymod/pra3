@@ -3,8 +3,8 @@ class PRA3_dlg_spawnScreen
 	idd = -1;
 	movingEnable = 0;
 	enableSimulation = 1;
-	onLoad = "_this select 0 call compile preprocessFile ""pra3\pra3_aas\respawn\onRespawnDialogLoad.sqf""";
-	onUnLoad = "_this select 0 call compile preprocessFile ""pra3\pra3_aas\respawn\onRespawnDialogUnload.sqf""";
+	onLoad = "_this select 0 call PRA3_fnc_onRespawnDlgLoad";
+	onUnLoad = "_this select 0 call PRA3_fnc_onRespawnDlgUnload";
 	
 	class ControlsBackground
 	{

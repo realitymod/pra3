@@ -1,4 +1,6 @@
-PRA3_AAS_respawnTime = 10;
+#include "scriptDefines.sqh"
+
+PRA3_AAS_respawnTime = 20;
 setPlayerRespawnTime PRA3_AAS_respawnTime;
 
 if !(alive player) then
@@ -16,7 +18,7 @@ if !(alive player) then
 	}
 	else
 	{
-		if !([player, PRA3_AAS_selectedSpawn] call PRA3_fnc_AAS_respawn) then
+		if !([player, PRA3_AAS_selectedSpawn] call PRA3_fnc_respawnUnit) then
 		{
 			setPlayerRespawnTime 99999;
 			// The selected spawn point is no longer avialable, choose again

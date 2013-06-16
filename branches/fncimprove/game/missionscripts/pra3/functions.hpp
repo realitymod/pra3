@@ -2,3 +2,4 @@
 #include "pra3_executor\functions.hpp"
 #include "pra3_mp\functions.hpp"
 #include "pra3_aas\functions.hpp"
+#include "pra3_respawn\functions.hpp"
