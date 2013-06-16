@@ -11,6 +11,11 @@ if (_spawn != "") then
 	var(_pos) = markerPos _spawn findEmptyPosition [0, 20, typeOf _unit];
 	waitUntil {preloadCamera _pos};
 	_unit setPosATL _pos;
+	
+	// Penalize the respawn
+	// TODO: Remove hardcoded value
+	
+	[_unit call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
 
 	true
 }
