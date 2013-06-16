@@ -3,6 +3,12 @@
 PRA3_AAS_respawnTime = 20;
 setPlayerRespawnTime 999999;
 
+if (isNil "PRA3_respawn_keyDownHandler") then
+{
+	waitUntil {!isNull findDisplay 46};
+	PRA3_respawn_keyDownHandler = findDisplay 46 displayAddEventHandler ["keyDown", "_this call PRA3_fnc_respawnOnKeyDown"];
+};
+
 if !(alive player) then
 {
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
