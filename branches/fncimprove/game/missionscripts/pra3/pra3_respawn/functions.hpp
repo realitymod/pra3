@@ -19,6 +19,7 @@ class Respawn
 	{
 		description = "Handles player's death.";
 	};
+
 	class onRespawnDlgLoad
 	{
 		description = "Handles opening of the spawn selection dialog.";
@@ -26,6 +27,10 @@ class Respawn
 	class onRespawnDlgUnload
 	{
 		description = "Handles closing of the spawn selection dialog.";
+	};
+	class respawnDlgAction
+	{
+		description = "Handles actions performed in the spawn selection dialog.";
 	};
 
 	class respawnOnKeyDown

@@ -25,8 +25,7 @@ class PRA3_dlg_spawnScreen
 			y = 0;
 			w = 0.3;
 			h = 1;
-			onLBDblClick = "PRA3_AAS_selectedSpawn = _this select 0 lbData (_this select 1)";
-		//	onLBSelChanged = 
+			onLBSelChanged = "[_this, 'onLBSelChanged'] call PRA3_fnc_respawnDlgAction";
 		};
 		class Map : RscMapControl
 		{

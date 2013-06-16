@@ -18,7 +18,7 @@ class AAS
 	{
 		description = "Returns the speed of capture for the given zone based on the number of attacking players.";
 	};
-	class AAS_getAvailableRespawns
+	class AAS_getAvailableSpawns
 	{
 		description = "Returns an array of places the given unit can respawn at.";
 	};
