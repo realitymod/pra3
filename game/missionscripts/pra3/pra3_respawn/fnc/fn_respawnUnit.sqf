@@ -1,5 +1,4 @@
 #include "scriptDefines.sqh"
-#include "aas_defines.sqh"
 
 var(_unit)  = _this select 0;
 var(_spawn) = _this select 1;

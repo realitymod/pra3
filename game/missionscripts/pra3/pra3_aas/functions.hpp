@@ -42,12 +42,4 @@ class AAS
 	{
 		description = "Updates the zone's marker.";
 	};
-	class AAS_respawn
-	{
-		description = "Respawns the player at the given spawn point.";
-	};
-	class AAS_refreshRespawnDlg
-	{
-		description = "Refreshes the spawn points in the spawn selection screen.";
-	};
 };

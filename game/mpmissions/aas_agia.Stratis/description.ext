@@ -9,8 +9,8 @@ class CfgRespawnTemplates
 	class PRA3_Select
 	{
 		displayName = "PRA3_Select";
-		onPlayerKilled = "pra3\pra3_aas\respawn\onDeath.sqf";
-		onPlayerRespawn = "pra3\pra3_aas\respawn\onDeath.sqf";
+		onPlayerKilled = "PRA3_fnc_onDeath";
+		onPlayerRespawn = "PRA3_fnc_onDeath";
 	};
 };
 
@@ -21,7 +21,7 @@ class RscTitles
 	#include "pra3\pra3_aas\captureIndicator.hpp"
 };
 
-#include "pra3\pra3_aas\respawn\respawnDialog.hpp"
+#include "pra3\pra3_respawn\respawnDialog.hpp"
 
 class CfgDebriefing
 {  
