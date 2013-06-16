@@ -361,7 +361,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=11;
+		items=13;
 		class Item0
 		{
 			position[]={3211.1069,4.7735009,5821.6655};
@@ -453,14 +453,26 @@ class Mission
 		{
 			position[]={3207.7078,4.6606164,5822.875};
 			name="spawn0";
-			text="Main Base";
 			type="Empty";
 		};
 		class Item10
 		{
 			position[]={2856.2488,3.5395892,6116.3452};
+			name="spawn3";
+			type="Empty";
+		};
+		class Item11
+		{
+			position[]={3086.7715,2.566416,5914.0137};
 			name="spawn1";
-			text="Main Base";
+			text="Eastern Frontline";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={2905.4058,3.3499999,6043.2612};
+			name="spawn2";
+			text="Western Frontline";
 			type="Empty";
 		};
 	};

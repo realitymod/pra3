@@ -6,15 +6,15 @@ class PRA3_AAS_captureIndicator
 	fadeOut = 0;
 	name = "PRA3_AAS_captureIndicator";
 	onLoad = "uiNamespace setVariable [""PRA3_AAS_captureIndicator"", _this select 0]";
-	
+
 	class ControlsBackground
 	{
 		class Background : RscBackground
 		{
 			moving = 0;
-			
+
 			colorBackground[] = {0,0,0,0.7};
-			
+
 			x = 0.5 - 0.2;
 			y = "safeZoneY";
 			w = 0.4;
@@ -30,7 +30,7 @@ class PRA3_AAS_captureIndicator
 		class Progress : ProgressBackground
 		{
 			idc = 1;
-			colorBackground[] = {1,1,1,1};
+			colorBackground[] = {1,1,1,0};
 		};
 	};
 };

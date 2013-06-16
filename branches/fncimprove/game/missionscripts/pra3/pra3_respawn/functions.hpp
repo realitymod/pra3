@@ -2,6 +2,10 @@ class Respawn
 {
 	file = "pra3\pra3_respawn\fnc";
 
+	class isSpawnAvailable
+	{
+		description = "Checks if the unit can spawn at the given spawn point.";
+	};
 	class respawnUnit
 	{
 		description = "Respawns the unit at the given spawn point.";

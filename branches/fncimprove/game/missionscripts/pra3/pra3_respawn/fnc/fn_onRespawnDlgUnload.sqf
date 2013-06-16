@@ -1,5 +1,5 @@
 #include "scriptDefines.sqh"
-
+/*
 if (time >= PRA3_AAS_spawnAtTime) then
 {
 	0 spawn
@@ -12,3 +12,4 @@ if (time >= PRA3_AAS_spawnAtTime) then
 		};
 	};
 };
+*/
