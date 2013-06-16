@@ -1,7 +1,7 @@
 respawn = 3;
 respawnDelay = 10;
 respawnDialog = 0;
-respawnTemplates[] = {"Counter", "PRA3_Select"};
+respawnTemplates[] = {"PRA3_Select"};
 respawnOnStart = 1;
 
 class CfgRespawnTemplates
@@ -19,12 +19,13 @@ class CfgRespawnTemplates
 class RscTitles
 {
 	#include "pra3\pra3_aas\captureIndicator.hpp"
+	#include "pra3\pra3_respawn\deadScreen.hpp"
 };
 
 #include "pra3\pra3_respawn\respawnDialog.hpp"
 
 class CfgDebriefing
-{  
+{
 	class End1
 	{
 		subtitle = "NATO forces are victorious";
@@ -53,7 +54,7 @@ class CfgFunctions
 	class PRA3
 	{
 		tag = "PRA3";
-		
+
 		#include "pra3\functions.hpp"
 	};
 };

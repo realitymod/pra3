@@ -12,7 +12,7 @@ class RscText
 	colorText[] = {1, 1, 1, 1.0};
 	colorBackground[] = {0, 0, 0, 0};
 	linespacing = 1;
-	
+
 	type = 0;
 };
 class RscBackground : RscText
@@ -56,7 +56,7 @@ class RscListBox
 	autoScrollRewind = 0;
 	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1};
 	rowHeight = 0;
-	
+
 	class ScrollBar {
 		color[] = {1, 1, 1, 0.6};
 		colorActive[] = {1, 1, 1, 1};
@@ -132,7 +132,7 @@ class RscMapControl {
 	fontLevel = "TahomaB";
 	sizeExLevel = 0.02;
 	text = "#(argb,8,8,3)color(1,1,1,1)";
-	
+
 	class Legend {
 		x = "SafeZoneX + 					(			((safezoneW / safezoneH) min 1.2) / 40)";
 		y = "SafeZoneY + safezoneH - 4.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -143,7 +143,7 @@ class RscMapControl {
 		colorBackground[] = {1, 1, 1, 0.5};
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Task {
 		icon = "\A3\ui_f\data\map\mapcontrol\taskIcon_CA.paa";
 		iconCreated = "\A3\ui_f\data\map\mapcontrol\taskIconCreated_CA.paa";
@@ -160,7 +160,7 @@ class RscMapControl {
 		coefMin = 1;
 		coefMax = 1;
 	};
-	
+
 	class Waypoint {
 		coefMax = 1;
 		coefMin = 1;
@@ -169,7 +169,7 @@ class RscMapControl {
 		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class WaypointCompleted {
 		coefMax = 1;
 		coefMin = 1;
@@ -178,7 +178,7 @@ class RscMapControl {
 		icon = "\A3\ui_f\data\map\mapcontrol\waypointCompleted_ca.paa";
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class CustomMark {
 		icon = "\A3\ui_f\data\map\mapcontrol\custommark_ca.paa";
 		size = 24;
@@ -187,7 +187,7 @@ class RscMapControl {
 		coefMax = 1;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Command {
 		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		size = 18;
@@ -196,7 +196,7 @@ class RscMapControl {
 		coefMax = 1;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class Bush {
 		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.45, 0.64, 0.33, 0.4};
@@ -205,7 +205,7 @@ class RscMapControl {
 		coefMin = 0.25;
 		coefMax = 4;
 	};
-	
+
 	class Rock {
 		icon = "\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
 		color[] = {0.1, 0.1, 0.1, 0.8};
@@ -214,7 +214,7 @@ class RscMapControl {
 		coefMin = 0.25;
 		coefMax = 4;
 	};
-	
+
 	class SmallTree {
 		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.45, 0.64, 0.33, 0.4};
@@ -223,7 +223,7 @@ class RscMapControl {
 		coefMin = 0.25;
 		coefMax = 4;
 	};
-	
+
 	class Tree {
 		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.45, 0.64, 0.33, 0.4};
@@ -232,7 +232,7 @@ class RscMapControl {
 		coefMin = 0.25;
 		coefMax = 4;
 	};
-	
+
 	class busstop {
 		icon = "\A3\ui_f\data\map\mapcontrol\busstop_CA.paa";
 		size = 24;
@@ -241,7 +241,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class fuelstation {
 		icon = "\A3\ui_f\data\map\mapcontrol\fuelstation_CA.paa";
 		size = 24;
@@ -250,7 +250,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class hospital {
 		icon = "\A3\ui_f\data\map\mapcontrol\hospital_CA.paa";
 		size = 24;
@@ -259,7 +259,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class church {
 		icon = "\A3\ui_f\data\map\mapcontrol\church_CA.paa";
 		size = 24;
@@ -268,7 +268,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class lighthouse {
 		icon = "\A3\ui_f\data\map\mapcontrol\lighthouse_CA.paa";
 		size = 24;
@@ -277,7 +277,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class power {
 		icon = "\A3\ui_f\data\map\mapcontrol\power_CA.paa";
 		size = 24;
@@ -286,7 +286,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class powersolar {
 		icon = "\A3\ui_f\data\map\mapcontrol\powersolar_CA.paa";
 		size = 24;
@@ -295,7 +295,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class powerwave {
 		icon = "\A3\ui_f\data\map\mapcontrol\powerwave_CA.paa";
 		size = 24;
@@ -304,7 +304,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class powerwind {
 		icon = "\A3\ui_f\data\map\mapcontrol\powerwind_CA.paa";
 		size = 24;
@@ -313,7 +313,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class quay {
 		icon = "\A3\ui_f\data\map\mapcontrol\quay_CA.paa";
 		size = 24;
@@ -322,7 +322,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class shipwreck {
 		icon = "\A3\ui_f\data\map\mapcontrol\shipwreck_CA.paa";
 		size = 24;
@@ -331,7 +331,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class transmitter {
 		icon = "\A3\ui_f\data\map\mapcontrol\transmitter_CA.paa";
 		size = 24;
@@ -340,7 +340,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class watertower {
 		icon = "\A3\ui_f\data\map\mapcontrol\watertower_CA.paa";
 		size = 24;
@@ -349,7 +349,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {1, 1, 1, 1};
 	};
-	
+
 	class Cross {
 		icon = "\A3\ui_f\data\map\mapcontrol\Cross_CA.paa";
 		size = 24;
@@ -358,7 +358,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Chapel {
 		icon = "\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
 		size = 24;
@@ -367,7 +367,7 @@ class RscMapControl {
 		coefMax = 1.0;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Bunker {
 		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 		size = 14;
@@ -376,7 +376,7 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Fortress {
 		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 		size = 16;
@@ -385,7 +385,7 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Fountain {
 		icon = "\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
 		size = 11;
@@ -394,7 +394,7 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Ruin {
 		icon = "\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
 		size = 16;
@@ -403,7 +403,7 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Stack {
 		icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
 		size = 20;
@@ -412,7 +412,7 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class Tourism {
 		icon = "\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
 		size = 16;
@@ -421,7 +421,7 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class ViewTower {
 		icon = "\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
 		size = 16;
@@ -430,9 +430,30 @@ class RscMapControl {
 		coefMax = 4;
 		color[] = {0, 0, 0, 1};
 	};
-	
+
 	class ActiveMarker {
 		color[] = {0.3,0.1,0.9,1};
 		size = 50;
+	};
+};
+
+class RscStructuredText {
+	idc = -1;
+	x = 0;
+	y = 0;
+	h = 0.035;
+	w = 0.1;
+	text = "";
+	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	colorText[] = {1, 1, 1, 1.0};
+	shadow = 1;
+	style = 0;
+	type = 13;
+
+	class Attributes {
+		font = "PuristaMedium";
+		color = "#ffffff";
+		align = "left";
+		shadow = 1;
 	};
 };

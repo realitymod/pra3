@@ -6,6 +6,7 @@ _syncArray resize (count PRA3_AAS_zones);
 	_syncArray set [_forEachIndex, -1];
 } forEach PRA3_AAS_zones;
 
+var(_hudLayer) = ["PRA3_AAS_captureIndicator"] call BIS_fnc_rscLayer;
 var(_time) = time;
 var(_sinceUpdate) = 0; //Number of iterations since the last public update
 while {true} do
@@ -217,14 +218,14 @@ while {true} do
 		// Check if player is capturing himself
 		if (_playerZone == -1) then
 		{
-			55 cutText ["", "PLAIN"];
+			_hudLayer cutText ["", "PLAIN"];
 		}
 		else
 		{
 			var(_smooth) = true;
 			if (isNull(uiNamespace getVariable ["PRA3_AAS_captureIndicator", displayNull])) then
 			{
-				55 cutRsc ["PRA3_AAS_captureIndicator", "PLAIN"];
+				_hudLayer cutRsc ["PRA3_AAS_captureIndicator", "PLAIN"];
 				_smooth = false;
 			};
 
