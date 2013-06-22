@@ -1,5 +1,7 @@
 #include "defines.sqh"
 
+uiNamespace setVariable ["PRA3_RscDebugConsole", _this];
+
 if (isNil "PRA3_debugConsole_initialized") then
 {
 	call compile preprocessFileLineNumbers "\pra3\pra3_debugconsole\scripts\init.sqf";

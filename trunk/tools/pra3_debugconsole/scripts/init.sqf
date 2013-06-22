@@ -8,7 +8,7 @@ if (isNil {profileNamespace getVariable "PRA3_debugConsole_favorites"}) then
 	profileNamespace setVariable ["PRA3_debugConsole_favorites", PRA3_debugConsole_favorites];
 };
 
-PRA3_debugConsole_monitoredValues = profileNamespace getVariable ["PRA3_debugConsole_monitoredValues", ["Default", []]];
+PRA3_debugConsole_monitoredValues = profileNamespace getVariable ["PRA3_debugConsole_monitoredValues", [["Default", []]]];
 if (isNil {profileNamespace getVariable "PRA3_debugConsole_monitoredValues"}) then
 {
 	profileNamespace setVariable ["PRA3_debugConsole_monitoredValues", PRA3_debugConsole_monitoredValues];
