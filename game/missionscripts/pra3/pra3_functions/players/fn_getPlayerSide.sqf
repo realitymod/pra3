@@ -1,6 +1,6 @@
 /**
  *	Returns the side the player unit is on (even when dead).
- *	Returs sideLogic if side cannot be determined.
+ *	Returns sideLogic if side cannot be determined.
  *
  *		(in)  <OBJECT> Unit
  *			OR
