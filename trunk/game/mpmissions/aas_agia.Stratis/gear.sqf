@@ -1,11 +1,11 @@
 _unit = _this select 0;
 
 removeAllWeapons _unit;
-for "_i" from 1 to 8 do
+for "_i" from 1 to 5 do
 {
-	_unit addMagazine "16Rnd_9x21_Mag";
+	_unit addMagazine (if (side _unit == west) then {"30Rnd_45ACP_Mag_SMG_01"} else {"30Rnd_9x21_Mag"});
 };
-_unit addWeapon (if (side _unit == west) then {"hgun_P07_F"} else {"hgun_Rook40_F"});
+_unit addWeapon (if (side _unit == west) then {"SMG_01_F"} else {"SMG_02_F"});
 
 for "_i" from 1 to 2 do
 {
@@ -19,4 +19,3 @@ for "_i" from 1 to 3 do
 };
 
 _unit addWeapon "ItemGPS";
-
