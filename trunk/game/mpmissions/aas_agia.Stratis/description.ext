@@ -1,44 +1,31 @@
 respawn = 3;
 respawnDelay = 10;
+respawnDialog = 0;
+respawnTemplates[] = {"PRA3_Select"};
+respawnOnStart = 1;
 
-class RscText
+class CfgRespawnTemplates
 {
-	x = 0;
-	y = 0;
-	h = 0.037;
-	w = 0.3;
-	style = 0;
-	shadow = 1;
-	colorShadow[] = {0, 0, 0, 0.5};
-	font = "PuristaMedium";
-	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	colorText[] = {1, 1, 1, 1.0};
-	colorBackground[] = {0, 0, 0, 0};
-	linespacing = 1;
-	
-	type = 0;
-};
-class RscBackground : RscText
-{
-	type = 0;
-	IDC = -1;
-	style = 512;
-	shadow = 0;
-	x = 0.0;
-	y = 0.0;
-	w = 1.0;
-	h = 1.0;
-	text = "";
-	ColorBackground[] = {0.48, 0.5, 0.35, 1};
-	ColorText[] = {0.1, 0.1, 0.1, 1};
-	font = "PuristaMedium";
-	SizeEx = 1;
+	class PRA3_Select
+	{
+		displayName = "PRA3_Select";
+		onPlayerKilled = "PRA3_fnc_onDeath";
+		onPlayerRespawn = "PRA3_fnc_onDeath";
+	};
 };
 
-#include "aas\captureIndicator.hpp"
+#include "pra3\uiBases.hpp"
+
+class RscTitles
+{
+	#include "pra3\pra3_aas\captureIndicator.hpp"
+	#include "pra3\pra3_respawn\deadScreen.hpp"
+};
+
+#include "pra3\pra3_respawn\respawnDialog.hpp"
 
 class CfgDebriefing
-{  
+{
 	class End1
 	{
 		subtitle = "NATO forces are victorious";
@@ -59,5 +46,15 @@ class CfgDebriefing
 		backgroundPicture = "";
 		picture = "b_inf";
 		pictureColor[] = {0.7,0.7,0.7,1};
+	};
+};
+
+class CfgFunctions
+{
+	class PRA3
+	{
+		tag = "PRA3";
+
+		#include "pra3\functions.hpp"
 	};
 };

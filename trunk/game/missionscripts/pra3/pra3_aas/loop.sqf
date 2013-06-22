@@ -1,4 +1,4 @@
-#include "defines.sqh"
+#include "fnc\aas_defines.sqh"
 
 var(_syncArray) = [];
 _syncArray resize (count PRA3_AAS_zones);
@@ -6,6 +6,7 @@ _syncArray resize (count PRA3_AAS_zones);
 	_syncArray set [_forEachIndex, -1];
 } forEach PRA3_AAS_zones;
 
+var(_hudLayer) = ["PRA3_AAS_captureIndicator"] call BIS_fnc_rscLayer;
 var(_time) = time;
 var(_sinceUpdate) = 0; //Number of iterations since the last public update
 while {true} do
@@ -67,7 +68,7 @@ while {true} do
 			);
 			// For each nearby player...
 			{
-				if ([getPosATL _x, _marker] call PRA3_fMath_pointInMarker) then
+				if ([getPosATL _x, _marker] call PRA3_fnc_isPointInMarker) then
 				{
 					var(_sideIndex) = PRA3_AAS_sides find (side _x);
 					if (_sideIndex != -1) then
@@ -113,7 +114,7 @@ while {true} do
 				};
 			};
 
-			var(_capPerSecond) = (_attackersNum - _defendersNum) call PRA3_fAAS_calculateCaptureRate;
+			var(_capPerSecond) = [_zone, _attackersNum - _defendersNum] call PRA3_fnc_AAS_getCaptureRate;
 			var(_cap) = _capPerSecond * (time - _time);
 
 			if (_attackersSide == _attacker) then
@@ -154,7 +155,7 @@ while {true} do
 			{
 				if (_capture > 0) then
 				{
-					_capture = _capture - (call PRA3_fAAS_calculateAutoDecapRate);
+					_capture = _capture - (_zone call PRA3_fnc_AAS_getAutoUncapRate);
 				}
 				else
 				{
@@ -165,7 +166,7 @@ while {true} do
 			{
 				if (_capture < 100) then
 				{
-					_capture = _capture + (call PRA3_fAAS_calculateAutoDecapRate);
+					_capture = _capture + (_zone call PRA3_fnc_AAS_getAutoUncapRate);
 				}
 				else
 				{
@@ -183,12 +184,12 @@ while {true} do
 			if (_capture != (PRA3_core getVariable format["PRA3_AAS_%1_capture_sync", _zone])) then
 			{
 				// Update owner if needed
-				var(_prevOwner) = _zone call PRA3_fAAS_getOwner;
+				var(_prevOwner) = _zone call PRA3_fnc_AAS_getZoneOwner;
 				if (_prevOwner != _owner) then
 				{
 					PRA3_core setVariable [format["PRA3_AAS_%1_owner", _zone], _owner, true];
 
-					[[_zone, _prevOwner], "PRA3_fAAS_updateZone", true] call BIS_fnc_MP;
+					[[_zone, _prevOwner], "PRA3_fnc_AAS_captureZone", true] call BIS_fnc_MP;
 
 					_sinceUpdate = __updateEvery; //Enforce update if the zone owner changes
 				};
@@ -217,14 +218,14 @@ while {true} do
 		// Check if player is capturing himself
 		if (_playerZone == -1) then
 		{
-			55 cutText ["", "PLAIN"];
+			_hudLayer cutText ["", "PLAIN"];
 		}
 		else
 		{
 			var(_smooth) = true;
 			if (isNull(uiNamespace getVariable ["PRA3_AAS_captureIndicator", displayNull])) then
 			{
-				55 cutRsc ["PRA3_AAS_captureIndicator", "PLAIN"];
+				_hudLayer cutRsc ["PRA3_AAS_captureIndicator", "PLAIN"];
 				_smooth = false;
 			};
 
@@ -284,7 +285,7 @@ while {true} do
 	if (isServer) then
 	{
 		if ( (_sinceUpdate >= __updateEvery &&
-			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call PRA3_fVar_equals) ) ||
+			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call BIS_fnc_areEqual) ) ||
 			_gameOver
 			) then
 		{
@@ -303,10 +304,7 @@ while {true} do
 	{
 		if (!isNull player) then
 		{
-			{
-				vehicle _x enableSimulation false;
-				_x allowDamage false;
-			} forEach allUnits;
+			vehicle player enableSimulation false;
 		};
 		
 		//NOTE: This part does not support >2 teams correctly
