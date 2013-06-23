@@ -12,7 +12,12 @@ if (isNil "PRA3_respawn_keyDownHandler") then
 if !(alive player) then
 {
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
-	sleep (1 + random 1);
+	sleep 1;
+	// Delete any weapons the player dropped
+	{
+		deleteVehicle _x;
+	} forEach nearestObjects [player, ["WeaponHolderSimulated"], 10];
+	sleep (2 + random 2);
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
 
 	while {true} do
