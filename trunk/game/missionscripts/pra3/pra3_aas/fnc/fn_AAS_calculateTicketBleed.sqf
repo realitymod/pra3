@@ -13,15 +13,9 @@
 	if (_owner != __neutral) then
 	{
 		var(_bleed) = _x select 4;
-		var(_sync)  = _x select 1;
 		// For each team...
 		{
-			if (_x != _owner &&
-				{
-					var(_o) = _x call PRA3_fnc_AAS_getZoneOwner;
-					_o == __neutral || _o != _owner
-				} count _sync == 0
-				&& (_bleed select _forEachIndex) > 0) then
+			if (_x != _owner) then
 			{
 				PRA3_AAS_ticketBleed set [
 					_forEachIndex,
