@@ -18,7 +18,7 @@ var(_handlers) = PRA3_core getVariable [format["PRA3_mp_playerRespawnedHandlers_
 {
 	if ((_x select 1) == _id) exitWith
 	{
-		[_handlers, _forEachIndex] call PRA3_fArray_removeIndex;
+		[_handlers, _forEachIndex] call PRA3_fnc_arrayRemoveAt;
 		_return = true;
 	};
 } forEach _handlers;

@@ -6,17 +6,17 @@
 
 var(_unit) = _this select 0;
 
-if (isNil "PRA3_fMp_playerInfoSpUID") then
+if (isNil "PRA3_mp_playerInfoSpUID") then
 {
-	PRA3_fMp_playerInfoSpUID = 0;
+	PRA3_mp_playerInfoSpUID = 0;
 };
 
 // Assign the UID
-_unit setVariable ["PRA3_UID", str PRA3_fMp_playerInfoSpUID];
+_unit setVariable ["PRA3_UID", str PRA3_mp_playerInfoSpUID];
 
 
 // Trigger onPlayerConnected
-[PRA3_fMp_playerInfoSpUID, _unit] spawn
+[PRA3_mp_playerInfoSpUID, _unit] spawn
 {
 	waitUntil {!isNil "PRA3_core"};
 	
@@ -29,7 +29,7 @@ _unit setVariable ["PRA3_UID", str PRA3_fMp_playerInfoSpUID];
 	} forEach PRA3_mp_playerConnectedHandlers;
 };
 
-PRA3_fMp_playerInfoSpUID = PRA3_fMp_playerInfoSpUID + 1;
+PRA3_mp_playerInfoSpUID = PRA3_mp_playerInfoSpUID + 1;
 
 [PRA3_core, format["PRA3_player_object_%1", _unit call PRA3_fnc_getPlayerUID], _unit, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 [PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID], side _unit, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
