@@ -24,8 +24,8 @@ PRA3_AAS_bases = [[0], [11]]; //Bases for each team, indexes have to match those
 PRA3_AAS_respawns = [
 /*   SPAWN     TIED */
 /*   MARKER    TO   */
-	["spawn0", [0  ]],
-	["spawn1", [6  ]]
+	["spawn0", [ 0, 1]],
+	["spawn1", [10,11]]
 ];
 
 call compile preprocessFileLineNumbers "pra3\init.sqf";
