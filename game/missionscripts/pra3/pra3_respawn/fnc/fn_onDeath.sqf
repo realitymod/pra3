@@ -12,6 +12,11 @@ if (isNil "PRA3_respawn_keyDownHandler") then
 if !(alive player) then
 {
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
+	
+	// Penalize the death
+	// TODO: Remove hardcoded value
+	[player call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
+	
 	sleep 1;
 	// Delete any weapons the player dropped
 	{
