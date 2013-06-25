@@ -2,8 +2,8 @@ class Kits
 {
 	file = "pra3\pra3_kits\fnc";
 
-	class handleInventoryBlock
+	class blockInventory
 	{
-		description = "Handles blocking of certain controls in the inventory dialog.";
+		description = "Blocking certain controls in the inventory dialog.";
 	};
 };
