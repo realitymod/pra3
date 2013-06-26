@@ -183,6 +183,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							y = 0.005;
 							w = "0.04/(4/3)";
 							h = 0.04;
+							text = "pra3\pra3_squadsys\dlg\img\unlocked_88.paa";
 						};
 
 						class ActionButton : RscShortcutButton
@@ -215,6 +216,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						{
 							idc = __EVAL(10000 + 7001);
 							x = __grpW - (0.04+0.005)/(4/3);
+							text = "pra3\pra3_squadsys\dlg\img\arrow_down_88.paa";
 						};
 						class CollapserButton : RscButton
 						{
@@ -224,6 +226,14 @@ class Rsc_PRA3_squadSys_manageDlg
 							w = "0.04/(4/3)";
 							h = 0.04;
 							action = "1 call PRA3_fSquadSys_toggleCollapseSquad";
+							
+							colorDisabled[] = {0,0,0,0};
+							colorBackground[] = {0,0,0,0};
+							colorBackgroundActive[] = {0,0,0,0};
+							colorBackgroundDisabled[] = {0,0,0,0};
+							colorFocused[] = {0,0,0,0};
+							colorShadow[] = {0,0,0,0};
+							colorBorder[] = {0,0,0,0};
 						};
 
 						class MembersList : RscControlsGroupNoScrollbars
