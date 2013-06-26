@@ -90,7 +90,7 @@ class Rsc_PRA3_squadSys_manageDlg
 			h = 0.05;
 			sizeEx = 0.05;
 			text = "Squad management";
-			font = "BebasNeue";
+			font = "PuristaSemibold";
 			colorText[] = {1,1,1,1};
 			style = ST_CENTER;
 		};
@@ -195,6 +195,20 @@ class Rsc_PRA3_squadSys_manageDlg
 							text = "Request";
 							colorText[] = __colorText;
 							action = "1 call PRA3_fSquadSys_actionButton";
+							sizeEx = 0.034;
+							size = 0.034;
+
+							class TextPos
+							{
+								left = 0;
+								top = 0;
+								right = 0;
+								bottom = 0;
+							};
+							class Attributes : Attributes
+							{
+								align = "center";
+							};
 						};
 
 						class CollapserPicture : LockPicture
@@ -267,8 +281,8 @@ class Rsc_PRA3_squadSys_manageDlg
 											sizeEx = __lbH;
 											text = "Nameless Mook";
 											colorTextHighlighted[] = {1,1,1,1};
-											font = "DejaVuSans";
-											fontHighlighted = "DejaVuSansBold";
+											font = "PuristaMedium";
+											fontHighlighted = "PuristaSemibold";
 										};
 										class RoleText : Name
 										{
@@ -279,7 +293,7 @@ class Rsc_PRA3_squadSys_manageDlg
 											h = (__lbH - 0.002);
 											colorBackground[] = {0.6,0.6,0.6,1};
 											sizeEx = (__lbH - 0.002);
-											font = "BebasNeue";
+											font = "PuristaBold";
 											text = "A";
 										};
 									};
@@ -607,7 +621,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							};
 						};
 
-						class NameCustomEditOK : RscShortcutButton
+						class NameCustomEditOK : ActionButton
 						{
 							idc = __EVAL(500000 + 3004);
 							x = 0.10;
@@ -686,7 +700,6 @@ class Rsc_PRA3_squadSys_manageDlg
 							w = __grpW;
 							h = __lbH * __lbItems;
 							sizeEx = __lbH;
-							font = "DejaVuSans";
 						};
 						class MembersListMulti : MembersList
 						{
@@ -696,7 +709,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							colorSelectBackground2[] = {0.5, 0.5, 0.5, 1.0};
 						};
 
-						class InviteButton : RscShortcutButton
+						class InviteButton : ActionButton
 						{
 							idc = __EVAL(990000 + 9000);
 							x = ( __grpW - 0.25) / 2;
@@ -785,8 +798,21 @@ class Rsc_PRA3_squadSys_manageDlg
 			w = 0.30;
 			h = 0.04;
 			text = "Create squad";
-			sizeEx = 0.035;
 			action = "99 call PRA3_fSquadSys_actionButton";
+			sizeEx = 0.035;
+			size = 0.035;
+
+			class TextPos
+			{
+				left = 0;
+				top = 0;
+				right = 0;
+				bottom = 0;
+			};
+			class Attributes : Attributes
+			{
+				align = "center";
+			};
 		};
 	};
 
