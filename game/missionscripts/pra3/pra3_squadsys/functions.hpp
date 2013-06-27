@@ -106,4 +106,56 @@ class SquadSys
 	{
 		description = "Ensures that the squad has a leader and if not, the highest ranking member is promoted. Returns false if the squad does not exist or no changes have been made.";
 	};
+
+	class squadDlg_actionButton
+	{
+	};
+	class squadDlg_collapseSquad
+	{
+	};
+	class squadDlg_collapseUnassigned
+	{
+	};
+	class squadDlg_customName
+	{
+	};
+	class squadDlg_enableControls
+	{
+	};
+	class squadDlg_highlightLines
+	{
+	};
+	class squadDlg_inviteButton
+	{
+	};
+	class squadDlg_lockSquad
+	{
+	};
+	class squadDlg_menuButton
+	{
+	};
+	class squadDlg_onLoad
+	{
+	};
+	class squadDlg_onMouseClick
+	{
+	};
+	class squadDlg_onMouseMoving
+	{
+	};
+	class squadDlg_refresh
+	{
+	};
+	class squadDlg_repositionSquadBoxes
+	{
+	};
+	class squadDlg_showPopupMenu
+	{
+	};
+	class squadDlg_toggleCollapseSquad
+	{
+	};
+	class squadDlg_updateSquadsInfo
+	{
+	};
 };

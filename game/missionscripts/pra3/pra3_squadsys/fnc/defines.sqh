@@ -1,12 +1,12 @@
-#define __pic_collapse		"\praa\PRA3_ui\redesign\data\arrow_up_88.paa"
-#define __pic_uncollapse	"\praa\PRA3_ui\redesign\data\arrow_down_88.paa"
+#define __pic_collapse		"pra3\pra3_squadsys\dlg\img\arrow_up_88.paa"
+#define __pic_uncollapse	"pra3\pra3_squadsys\dlg\img\arrow_down_88.paa"
 
-#define __pic_locked			"\praa\PRA3_squadsys\dlg\img\locked_88.paa"
-#define __pic_unlocked			"\praa\PRA3_squadsys\dlg\img\unlocked_88.paa"
-#define __pic_locked_border		"\praa\PRA3_squadsys\dlg\img\locked_border_88.paa"
-#define __pic_unlocked_border	"\praa\PRA3_squadsys\dlg\img\unlocked_border_88.paa"
+#define __pic_locked			"pra3\pra3_squadsys\dlg\img\locked_88.paa"
+#define __pic_unlocked			"pra3\pra3_squadsys\dlg\img\unlocked_88.paa"
+#define __pic_locked_border		"pra3\pra3_squadsys\dlg\img\locked_border_88.paa"
+#define __pic_unlocked_border	"pra3\pra3_squadsys\dlg\img\unlocked_border_88.paa"
 
-#define __cfgPath							configFile >> "Rsc_PRA3_squadSys_manageDlg" >> "Controls" >> "Group"
+#define __cfgPath							missionConfigFile >> "Rsc_PRA3_squadSys_manageDlg" >> "Controls" >> "Group"
 #define __cfgPathItem(num)					__cfgPath >> "Controls" >> 'ItemSquad##num'
 #define __cfgPathItemBackground(num)		__cfgPathItem(num) >> "Controls" >> "Background"
 #define __cfgPathItemHeaderBackground(num)	__cfgPathItem(num) >> "Controls" >> "HeaderBackground"
@@ -61,3 +61,6 @@
 ]
 
 #define __updatePackConstant 100000
+
+#define __ctrl(idc) \
+	(uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg" displayCtrl (idc))

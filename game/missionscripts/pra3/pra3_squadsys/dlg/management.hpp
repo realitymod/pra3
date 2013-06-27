@@ -45,6 +45,8 @@
 #define __colorText {0.85, 0.85, 0.85, 1.0} //Replaces {0.4, 0.6745, 0.2784, 1.0}
 #define __colorSilverTransp {0.75, 0.75, 0.75, 0.75}
 
+#include "\a3\ui_f\hpp\defineCommonColors.inc"
+
 // ----------------------------------------------------------------------------------------------------------------------- //
 
 /*
@@ -63,7 +65,7 @@ class Rsc_PRA3_squadSys_manageDlg
 	idd = -1;
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlg"", _this select 0]; (_this select 0) call PRA3_fSquadSys_dialogInit";
+	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlg"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad";
 
 	#define __w 0.5
 
@@ -109,8 +111,8 @@ class Rsc_PRA3_squadSys_manageDlg
 			y = "safeZoneY + 0.01 + 0.05 + 0.01";
 			w = __w;
 			h = "safeZoneH - (0.01 + 0.05 + 0.01 + 0.05)";
-			onMouseButtonDown = "["""", _this] call PRA3_fSquadSys_mouseClick";
-			onMouseMoving = "-1 call PRA3_fSquadSys_mouseMoving";
+			onMouseButtonDown = "["""", _this] call PRA3_fnc_squadDlg_onMouseClick";
+			onMouseMoving = "-1 call PRA3_fnc_squadDlg_onMouseMoving";
 
 			class Controls
 			{
@@ -195,7 +197,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							h = 0.04;
 							text = "Request";
 							colorText[] = __colorText;
-							action = "1 call PRA3_fSquadSys_actionButton";
+							action = "1 call PRA3_fnc_squadDlg_actionButton";
 							sizeEx = 0.034;
 							size = 0.034;
 
@@ -225,7 +227,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							y = 0.005;
 							w = "0.04/(4/3)";
 							h = 0.04;
-							action = "1 call PRA3_fSquadSys_toggleCollapseSquad";
+							action = "1 call PRA3_fnc_squadDlg_toggleCollapseSquad";
 							
 							colorDisabled[] = {0,0,0,0};
 							colorBackground[] = {0,0,0,0};
@@ -422,7 +424,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class ActionButton : ActionButton \
 						{ \
 							idc = __EVAL(10000*num + 6000); \
-							action = #(##num call PRA3_fSquadSys_actionButton); \
+							action = #(##num call PRA3_fnc_squadDlg_actionButton); \
 						}; \
 						class CollapserPicture : CollapserPicture \
 						{ \
@@ -431,7 +433,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class CollapserButton : CollapserButton \
 						{ \
 							idc = __EVAL(10000*num + 7002); \
-							action = #(##num call PRA3_fSquadSys_toggleCollapseSquad); \
+							action = #(##num call PRA3_fnc_squadDlg_toggleCollapseSquad); \
 						}; \
 						class MembersList : MembersList \
 						{ \
@@ -523,7 +525,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							sizeEx = 0.032;
 							style = ST_RIGHT;
 							text = "Infantry ENG";
-							action = "call PRA3_fSquadSys_editCustomNameStart";
+							action = "[0] call PRA3_fnc_squadDlg_customName";
 						};
 						class NameCustomEdit : RscEdit
 						{
@@ -535,8 +537,8 @@ class Rsc_PRA3_squadSys_manageDlg
 							sizeEx = 0.032;
 							style = ST_RIGHT + ST_FRAME;
 							text = "Infantry ENG";
-							onChar = "_this call PRA3_fSquadSys_editCustomNameOnChar";
-							onKeyDown = "_this call PRA3_fSquadSys_editCustomNameOnKeyDown";
+							onChar = "[1, _this] call PRA3_fnc_squadDlg_customName";
+							onKeyDown = "[2, _this] call PRA3_fnc_squadDlg_customName";
 						};
 
 						class Size : Size
@@ -552,13 +554,13 @@ class Rsc_PRA3_squadSys_manageDlg
 						{
 							idc = __EVAL(500000 + 5002);
 							x = __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005;
-							action = "call PRA3_fSquadSys_lockSquad";
+							action = "call PRA3_fnc_squadDlg_lockSquad";
 						};
 
 						class ActionButton : ActionButton
 						{
 							idc = __EVAL(500000 + 6000);
-							action = "0 call PRA3_fSquadSys_actionButton";
+							action = "0 call PRA3_fnc_squadDlg_actionButton";
 						};
 
 						class CollapserPicture : CollapserPicture
@@ -568,7 +570,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class CollapserButton : CollapserButton
 						{
 							idc = __EVAL(500000 + 7002);
-							action = "0 call PRA3_fSquadSys_toggleCollapseSquad";
+							action = "0 call PRA3_fnc_squadDlg_toggleCollapseSquad";
 						};
 
 						class MembersList : MembersList
@@ -581,7 +583,7 @@ class Rsc_PRA3_squadSys_manageDlg
 								class Line##num : Line##num \
 								{ \
 									idc = __EVAL(500000 + 8000 + 10*num); \
-									onMouseMoving = (( num - 1) call PRA3_fSquadSys_mouseMoving); \
+									onMouseMoving = (( num - 1) call PRA3_fnc_squadDlg_onMouseMoving); \
 									\
 									class Controls : Controls \
 									{ \
@@ -638,14 +640,14 @@ class Rsc_PRA3_squadSys_manageDlg
 							y = 0.05;
 							w = ((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005)/2 - 0.003;
 							text = "OK";
-							action = "call PRA3_fSquadSys_editCustomNameSave";
+							action = "[3] call PRA3_fnc_squadDlg_customName";
 						};
 						class NameCustomEditCancel : NameCustomEditOK
 						{
 							idc = __EVAL(500000 + 3005);
 							x = 0.10 + ((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005)/2;
 							text = "Cancel";
-							action = "call PRA3_fSquadSys_editCustomNameCancel";
+							action = "[4] call PRA3_fnc_squadDlg_customName";
 						};
 					};
 				};
@@ -699,7 +701,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class CollapserButton : CollapserButton
 						{
 							idc = __EVAL(990000 + 7002);
-							action = "27 call PRA3_fSquadSys_toggleCollapseSquad";
+							action = "27 call PRA3_fnc_squadDlg_toggleCollapseSquad";
 						};
 
 						class MembersList : RscListBox
@@ -727,7 +729,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							w = 0.25;
 
 							text = "Invite selected";
-							action = "call PRA3_fSquadSys_inviteButton";
+							action = "call PRA3_fnc_squadDlg_inviteButton";
 						};
 					};
 				};
@@ -757,19 +759,19 @@ class Rsc_PRA3_squadSys_manageDlg
 				{
 					idc = 30101;
 					text = "Fireteam         >";
-					action = "[0,0] call PRA3_fSquadSys_menuButton";
+					action = "[0,0] call PRA3_fnc_squadDlg_menuButton";
 				};
 				class Item2 : Item2
 				{
 					idc = 30102;
 					text = "Set squad leader >";
-					action = "[0,1] call PRA3_fSquadSys_menuButton";
+					action = "[0,1] call PRA3_fnc_squadDlg_menuButton";
 				};
 				class Item3 : Item3
 				{
 					idc = 30103;
 					text = "Kick out         >";
-					action = "[0,2] call PRA3_fSquadSys_menuButton";
+					action = "[0,2] call PRA3_fnc_squadDlg_menuButton";
 				};
 			};
 		};
@@ -784,19 +786,19 @@ class Rsc_PRA3_squadSys_manageDlg
 				{
 					idc = 30201;
 					text = "Assign to Charlie";
-					action = "[1,0] call PRA3_fSquadSys_menuButton";
+					action = "[1,0] call PRA3_fnc_squadDlg_menuButton";
 				};
 				class Item2 : Item2
 				{
 					idc = 30202;
 					text = "Assign to Delta";
-					action = "[1,1] call PRA3_fSquadSys_menuButton";
+					action = "[1,1] call PRA3_fnc_squadDlg_menuButton";
 				};
 				class Item3 : Item3
 				{
 					idc = 30203;
 					text = "";
-					action = "[1,2] call PRA3_fSquadSys_menuButton";
+					action = "[1,2] call PRA3_fnc_squadDlg_menuButton";
 				};
 			};
 		};*/
@@ -808,7 +810,7 @@ class Rsc_PRA3_squadSys_manageDlg
 			w = 0.30;
 			h = 0.04;
 			text = "Create squad";
-			action = "99 call PRA3_fSquadSys_actionButton";
+			action = "99 call PRA3_fnc_squadDlg_actionButton";
 			sizeEx = 0.035;
 			size = 0.035;
 
