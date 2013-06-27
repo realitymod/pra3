@@ -3,5 +3,6 @@
 } forEach [
 	"aas",
 	"executor",
-	"mp"
+	"mp",
+	"squadsys"
 ];
