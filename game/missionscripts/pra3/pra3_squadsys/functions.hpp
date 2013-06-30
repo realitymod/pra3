@@ -158,4 +158,35 @@ class SquadSys
 	class squadDlg_updateSquadsInfo
 	{
 	};
+
+	class squadDlg_server_createSquad
+	{
+	};
+	class squadDlg_server_customNameSave
+	{
+	};
+	class squadDlg_server_joinSquad
+	{
+	};
+	class squadDlg_server_kickOut
+	{
+	};
+	class squadDlg_server_lockSquad
+	{
+	};
+	class squadDlg_server_refresh
+	{
+	};
+	class squadDlg_server_setFt
+	{
+	};
+	class squadDlg_server_setFtLeader
+	{
+	};
+	class squadDlg_server_setNewSL
+	{
+	};
+	class squadDlg_server_unsetFt
+	{
+	};
 };
