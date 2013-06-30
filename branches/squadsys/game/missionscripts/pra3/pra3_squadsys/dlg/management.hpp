@@ -49,16 +49,44 @@
 
 // ----------------------------------------------------------------------------------------------------------------------- //
 
-/*
 class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 {
+	x = 0;
+	y = 0;
+	w = 0.2;
+	h = 0.4;
+	
 	class Controls
 	{
-		class Item1;
-		class Item2;
-		class Item3;
+		class Item1 : RscButton
+		{
+			idc = __EVAL(100 + 1);
+			x = 0;
+			y = 0;
+			w = 0.2;
+			h = 0.036;
+			style = ST_LEFT;
+			text = "Item1";
+		};
+		#define __item(num) \
+		class Item##num : Item1 \
+		{ \
+			idc = __EVAL(100 + 1*num); \
+			y = 0.04 * (num-1); \
+			text = Item##num; \
+		};
+		__item(2);
+		__item(3);
+		__item(4);
+		__item(5);
+		__item(6);
+		__item(7);
+		__item(8);
+		__item(9);
+		__item(10);
+		#undef __item
 	};
-};*/
+};
 
 class Rsc_PRA3_squadSys_manageDlg
 {
@@ -747,7 +775,7 @@ class Rsc_PRA3_squadSys_manageDlg
 			class Controls
 			{
 			};
-		};/*
+		};
 		class RightclickMenuLevel1 : PRA3_RscPopupMenu
 		{
 			idc = 301;
@@ -801,7 +829,7 @@ class Rsc_PRA3_squadSys_manageDlg
 					action = "[1,2] call PRA3_fnc_squadDlg_menuButton";
 				};
 			};
-		};*/
+		};
 		class CreateSquadButton : RscShortcutButton
 		{
 			idc = 999901;
