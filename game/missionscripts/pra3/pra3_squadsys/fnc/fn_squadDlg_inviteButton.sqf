@@ -9,7 +9,7 @@
 var(_squadId) = player call PRA3_fnc_unitGetSquad;
 
 {
-	[(__ctrl(998002) lbData _x) call PRA3_fnc_getPlayerUnit, _squadId] call PRA3_fnc_squadDlg_server_joinSquad;
+	[[(__ctrl(998002) lbData _x) call PRA3_fnc_getPlayerUnit, _squadId], "PRA3_fnc_squadDlg_server_joinSquad", false] call BIS_fnc_MP;
 } forEach (lbSelection __ctrl(998002));
 
 for "_i" from 0 to (lbSize __ctrl(998002))-1 do

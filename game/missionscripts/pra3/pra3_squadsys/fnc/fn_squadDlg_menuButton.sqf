@@ -51,7 +51,7 @@ if (_menu == 0) then
 			__ctrl(302) ctrlCommit 0;
 			__ctrl(302) ctrlShow true;
 
-			ctrlSetFocus _ctrl;
+			ctrlSetFocus __ctrl(302);
 		};
 		case 1:
 		{
