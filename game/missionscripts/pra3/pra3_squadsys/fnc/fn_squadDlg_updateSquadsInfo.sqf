@@ -77,7 +77,7 @@ var(_updateSquadInfo) =
 
 		if (!PRAA_squadSys_editingCustomName) then
 		{
-			[5, [false, _playerIsS]] call PRA3_fnc_squadDlg_customName;
+			[5, [false, _playerIsSL]] call PRA3_fnc_squadDlg_customName;
 		};
 	}
 	else
