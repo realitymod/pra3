@@ -56,7 +56,7 @@ if (isServer) then
 			// Delete the lone (now empty) unassigned group.
 			// Due to locality issues that has to be done on the client.
 			// Also, there is a problem delay, hence the waitUntil.
-			[[{waitUntil {count units _this == 0}; deleteGroup _this}, _prevGroup], "BIS_fnc_spawn", _unit] call BIS_fnc_MP;
+			[[_prevGroup, {waitUntil {count units _this == 0}; deleteGroup _this}], "BIS_fnc_spawn", _unit] call BIS_fnc_MP;
 		};
 
 		true
