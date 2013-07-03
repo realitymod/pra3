@@ -2,7 +2,7 @@
 
 PRA3_fDebugConsole_populateHistory =
 {
-	var(_history) = uiNamespace getVariable ["PRA3_debugConsole_history", []];
+	var(_history) = profileNamespace getVariable ["PRA3_debugConsole_history", []];
 
 	lbClear ctrl(IDC_DEBUGCONSOLE_MAIN_HISTORY_LB);
 	for "_i" from count(_history)-1 to 0 step -1 do
@@ -19,10 +19,10 @@ PRA3_fDebugConsole_historySelect =
 };
 PRA3_fDebugConsole_historyClear =
 {
-	/*[parseText "Are you sure you wish to clear the entire history?",
+	[parseText "Are you sure you wish to clear the entire history?",
 		{
-			uiNamespace setVariable ["PRA3_debugConsole_history", []];
+			profileNamespace setVariable ["PRA3_debugConsole_history", []];
 			call PRA3_fDebugConsole_populateHistory;
 		}
-	] spawn PRA3_fDebugConsole_showYesNo;*/
+	] spawn PRA3_fDebugConsole_showYesNo;
 };

@@ -1,6 +1,6 @@
 #include "defines.sqh"
 
-uiNamespace setVariable ["PRA3_RscDebugConsole", _this];
+uiNamespace setVariable ["PRA3_RscDebugConsole", _this select 0];
 
 if (isNil "PRA3_debugConsole_initialized") then
 {
