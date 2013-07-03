@@ -53,7 +53,7 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 {
 	x = 0;
 	y = 0;
-	w = 0.2;
+	w = 0.22;
 	h = 0.4;
 	
 	class Controls
@@ -63,7 +63,7 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 			idc = __EVAL(100 + 1);
 			x = 0;
 			y = 0;
-			w = 0.2;
+			w = 0.22;
 			h = 0.036;
 			style = ST_LEFT;
 			text = "Item1";

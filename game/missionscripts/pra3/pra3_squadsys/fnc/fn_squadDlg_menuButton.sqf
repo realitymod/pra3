@@ -47,7 +47,7 @@ if (_menu == 0) then
 				};
 			};
 
-			__ctrl(302) ctrlSetPosition [(PRAA_squadSys_menuPos select 0) + 0.2, PRAA_squadSys_menuPos select 1, 0.2, _h * 0.04];
+			__ctrl(302) ctrlSetPosition [(PRAA_squadSys_menuPos select 0) + 0.22, PRAA_squadSys_menuPos select 1, 0.22, _h * 0.04];
 			__ctrl(302) ctrlCommit 0;
 			__ctrl(302) ctrlShow true;
 
