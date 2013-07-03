@@ -32,21 +32,24 @@ PRA3_fDebugConsole_execute =
 		var(_code) = compile _command;
 		ctrl(IDC_DEBUGCONSOLE_MAIN_RETURN_EDIT) ctrlSetText "";
 		
-		var(_ok) = true;
+		var(_getReturn)   = true;
+		var(_saveHistory) = false;
 		switch (_execute) do
 		{
 			case 0: //Local
 			{
 				ctrl(IDC_DEBUGCONSOLE_MAIN_RETURN_EDIT) ctrlSetText "Uh oh. There is an error in your command. Make sure you have -showScriptErrors on so you can see what it was!";
 				[_code, _paramCode, player, player] spawn PRA3_fDebugConsole_executeCommand;
+				_saveHistory = true;
 			};
 			case 1: //Public
 			{
 				ctrl(IDC_DEBUGCONSOLE_MAIN_RETURN_EDIT) ctrlSetText "Public execution does not return a value.";
-				_ok = false;
+				_getReturn = false;
 				PRA3_debugConsole_command = [_code, _paramCode, "", objNull];
 				PRA3_debugConsole_command spawn PRA3_fDebugConsole_executeCommand; //Execute it locally too
 				publicVariable "PRA3_debugConsole_command";
+				_saveHistory = true;
 			};
 			case 2: //Server
 			{
@@ -61,13 +64,14 @@ PRA3_fDebugConsole_execute =
 				{
 					publicVariableServer "PRA3_debugConsole_command";
 				};
+				_saveHistory = true;
 			};
 			case 3: //Specific player
 			{
 				if (lbCurSel ctrl(IDC_DEBUGCONSOLE_MAIN_PLAYER_CB) == -1) then
 				{
 					ctrl(IDC_DEBUGCONSOLE_MAIN_RETURN_EDIT) ctrlSetText "No player selected.";
-					_ok = false;
+					_getReturn = false;
 				}
 				else
 				{
@@ -83,11 +87,12 @@ PRA3_fDebugConsole_execute =
 					{
 						publicVariableServer "PRA3_debugConsole_command";
 					};
+					_saveHistory = true;
 				};
 			};
 		};
 		
-		if (_ok) then
+		if (_getReturn) then
 		{
 			ctrl(IDC_DEBUGCONSOLE_MAIN_RETURN_EDIT) ctrlSetText "Fetching return value...";
 			ctrl(IDC_DEBUGCONSOLE_MAIN_RETURN_TYPE) ctrlSetText "?";
@@ -116,8 +121,10 @@ PRA3_fDebugConsole_execute =
 					sleep 0.05;
 				};
 			};
-		
-			var(_history) = uiNamespace getVariable ["PRA3_debugConsole_history", []];
+		};
+		if (_saveHistory) then
+		{
+			var(_history) = profileNamespace getVariable ["PRA3_debugConsole_history", []];
 			var(_placeAt) = count _history;
 			{
 				if ((_x select 0) == _command) exitWith
@@ -130,7 +137,7 @@ PRA3_fDebugConsole_execute =
 				};
 			} forEach _history;
 			_history set [_placeAt, [_command, _param]];
-			uiNamespace setVariable ["PRA3_debugConsole_history", _history];
+			profileNamespace setVariable ["PRA3_debugConsole_history", _history];
 			
 			call PRA3_fDebugConsole_populateHistory;
 		};
