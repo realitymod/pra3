@@ -14,6 +14,8 @@ class RscText
 	linespacing = 1;
 
 	type = 0;
+	text = "";
+	idc = -1;
 };
 class RscBackground : RscText
 {
@@ -449,6 +451,30 @@ class RscStructuredText {
 	shadow = 1;
 	style = 0;
 	type = 13;
+	action = "";
+	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
+	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
+	animTextureFocused = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\focus_ca.paa";
+	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
+	animTextureOver = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\over_ca.paa";
+	animTexturePressed = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\down_ca.paa";
+	color2[] = {0.95,0.95,0.95,1};
+	color[] = {1,1,1,1};
+	colorBackground2[] = {1,1,1,1};
+	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+	colorDisabled[] = {1,1,1,0.25};
+	default = 0;
+	font = "PuristaMedium";
+	period = 0.4;
+	periodFocus = 1.2;
+	periodOver = 0.8;
+	shortcuts[] = {};
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
+	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 
 	class Attributes {
 		font = "PuristaMedium";
@@ -456,4 +482,226 @@ class RscStructuredText {
 		align = "left";
 		shadow = 1;
 	};
+	class AttributesImage {
+		align = "left";
+		color = "#E5E5E5";
+		font = "PuristaMedium";
+	};
+	class HitZone {
+		bottom = 0;
+		left = 0;
+		right = 0;
+		top = 0;
+	};
+	class ShortcutPos {
+		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		left = 0;
+		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
+	};
+	class TextPos {
+		bottom = 0;
+		left = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
+		right = 0.005;
+		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+	};
+};
+
+class RscActiveText {
+	idc = -1;
+	x = 0;
+	y = 0;
+	h = 0.035;
+	w = 0.035;
+	font = "PuristaMedium";
+	shadow = 2;
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	color[] = {0, 0, 0, 1};
+	colorText[] = {0, 0, 0, 1};
+	colorActive[] = {0.3, 0.4, 0, 1};
+	style = 0;
+	default = 0;
+	type = 11;
+	text = "";
+	soundClick[] = {"",0.1,1};
+	soundEnter[] = {"",0.1,1};
+	soundEscape[] = {"",0.1,1};
+	soundPush[] = {"",0.1,1};
+};
+
+class RscControlsGroup {
+	type = 15;
+	idc = -1;
+	x = 0;
+	y = 0;
+	w = 1;
+	h = 1;
+	shadow = 0;
+	style = 16;
+
+	class VScrollbar {
+		width = 0.021;
+		autoScrollSpeed = -1;
+		autoScrollDelay = 5;
+		autoScrollRewind = 0;
+		shadow = 0;
+		color[] = {1,1,1,1};
+	};
+
+	class HScrollbar {
+		color[] = {1,1,1,1};
+		height = 0.028;
+		shadow = 0;
+	};
+
+	class ScrollBar {
+		color[] = {1, 1, 1, 0.6};
+		colorActive[] = {1, 1, 1, 1};
+		colorDisabled[] = {1, 1, 1, 0.3};
+		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+		shadow = 0;
+	};
+
+	class Controls {};
+};
+
+class RscControlsGroupNoScrollbars : RscControlsGroup {
+	class VScrollbar : VScrollbar {
+		width = 0;
+	};
+
+	class HScrollbar : HScrollbar {
+		height = 0;
+	};
+};
+
+class RscShortcutButton {
+	idc = -1;
+	style = 0;
+	default = 0;
+	shadow = 1;
+	w = 0.183825;
+	h = "(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20)";
+	color[] = {1, 1, 1, 1.0};
+	color2[] = {0.95, 0.95, 0.95, 1};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
+	colorBackground2[] = {1, 1, 1, 1};
+	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
+	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
+	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
+	animTextureOver = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\over_ca.paa";
+	animTextureFocused = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\focus_ca.paa";
+	animTexturePressed = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\down_ca.paa";
+	periodFocus = 1.2;
+	periodOver = 0.8;
+	type = 16;
+	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
+	period = 0.4;
+	font = "PuristaMedium";
+	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	text = "";
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1};
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
+	action = "";
+
+	class Attributes {
+		font = "PuristaMedium";
+		color = "#E5E5E5";
+		align = "left";
+		shadow = "true";
+	};
+
+	class AttributesImage {
+		font = "PuristaMedium";
+		color = "#E5E5E5";
+		align = "left";
+	};
+	class HitZone {
+		left = 0.0;
+		top = 0.0;
+		right = 0.0;
+		bottom = 0.0;
+	};
+
+	class ShortcutPos {
+		left = 0;
+		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
+		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	};
+	class TextPos {
+		left = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
+		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		right = 0.005;
+		bottom = 0.0;
+	};
+};
+
+class RscButton {
+	style = 2;
+	x = 0;
+	y = 0;
+	w = 0.095589;
+	h = 0.039216;
+	shadow = 2;
+	font = "PuristaMedium";
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	colorText[] = {1, 1, 1, 1.0};
+	colorDisabled[] = {0.4, 0.4, 0.4, 1};
+	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 0.7};
+	colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
+	colorBackgroundDisabled[] = {0.95, 0.95, 0.95, 1};
+	offsetX = 0.003;
+	offsetY = 0.003;
+	offsetPressedX = 0.002;
+	offsetPressedY = 0.002;
+	colorFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
+	colorShadow[] = {0, 0, 0, 1};
+	colorBorder[] = {0, 0, 0, 1};
+	borderSize = 0.0;
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1};
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
+	type = 1;
+	text = "";
+};
+
+class RscPicture {
+	type = 0;
+	style = 48;
+	shadow = 0;
+	colorText[] = {1, 1, 1, 1};
+	colorBackground[] = {0,0,0,0};
+	font = "TahomaB";
+	fixedWidth = 0;
+	lineSpacing = 0;
+	sizeEx = 0;
+	x = 0;
+	y = 0;
+	w = 0.2;
+	h = 0.15;
+	idc = -1;
+	text = "";
+};
+
+class RscEdit {
+	style = 0x00 + 0x40;
+	font = "PuristaMedium";
+	shadow = 2;
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	colorBackground[] = {0, 0, 0, 1};
+	colorText[] = {0.95, 0.95, 0.95, 1};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	colorSelection[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
+	canModify = 1;
+	autocomplete = "";
+	type = 2;
 };

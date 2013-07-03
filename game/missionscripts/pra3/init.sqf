@@ -4,5 +4,6 @@
 	"aas",
 	"executor",
 	"mp",
-	"kits"
+	"kits",
+	"squadsys"
 ];
