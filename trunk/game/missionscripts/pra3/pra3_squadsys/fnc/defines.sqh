@@ -1,0 +1,66 @@
+#define __pic_collapse		"pra3\pra3_squadsys\dlg\img\arrow_up_88.paa"
+#define __pic_uncollapse	"pra3\pra3_squadsys\dlg\img\arrow_down_88.paa"
+
+#define __pic_locked			"pra3\pra3_squadsys\dlg\img\locked_88.paa"
+#define __pic_unlocked			"pra3\pra3_squadsys\dlg\img\unlocked_88.paa"
+#define __pic_locked_border		"pra3\pra3_squadsys\dlg\img\locked_border_88.paa"
+#define __pic_unlocked_border	"pra3\pra3_squadsys\dlg\img\unlocked_border_88.paa"
+
+#define __cfgPath							missionConfigFile >> "Rsc_PRA3_squadSys_manageDlg" >> "Controls" >> "Group"
+#define __cfgPathItem(num)					__cfgPath >> "Controls" >> 'ItemSquad##num'
+#define __cfgPathItemBackground(num)		__cfgPathItem(num) >> "Controls" >> "Background"
+#define __cfgPathItemHeaderBackground(num)	__cfgPathItem(num) >> "Controls" >> "HeaderBackground"
+#define __cfgPathItemList(num)				__cfgPathItem(num) >> "Controls" >> "MembersList"
+#define __cfgPathItemListLine(num1,num2)	__cfgPathItemList(num1) >> "Controls" >> ("Line" + (num2))
+
+#define __maxSquads 26
+#define __squadSize 20
+#define __squadIDD 1234
+
+#define __squadListColors [[0.8,0.8,0.8,1.0], [0.3412,0.6745,0.3373,1.0], [0.2, 0.5765, 1.0, 1.0]]
+
+#define __memberLineColorNormal				[0.8, 0.8, 0.8, 0.0]
+#define __memberLineColorNormalPlayer		[0.9, 0.9, 0.9, 0.1]
+#define __memberLineColorHighlight			[0.8, 0.8, 0.8, 0.3]
+#define __memberLineColorHighlightPlayer	[0.9, 0.9, 0.9, 0.3]
+
+#define __customNameCharsMax 12
+
+#define __phoneticAlphabet [ \
+	"Alpha",	\
+	"Bravo",	\
+	"Charlie",	\
+	"Delta",	\
+	"Echo",		\
+	"Foxtrot",	\
+	"Golf",		\
+	"Hotel",	\
+	"India",	\
+	"Juliet",	\
+	"Kilo",		\
+	"Lima",		\
+	"Mike",		\
+	"November",	\
+	"Oscar",	\
+	"Papa",		\
+	"Quebec",	\
+	"Romeo",	\
+	"Sierra",	\
+	"Tango",	\
+	"Uniform",	\
+	"Victor",	\
+	"Whiskey",	\
+	"X-ray",	\
+	"Yankee",	\
+	"Zulu"		\
+]
+
+#define __fireteamNames [\
+	"Charlie",	\
+	"Delta"		\
+]
+
+#define __updatePackConstant 100000
+
+#define __ctrl(idc) \
+	(uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg" displayCtrl (idc))
