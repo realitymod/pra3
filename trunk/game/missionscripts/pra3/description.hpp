@@ -35,6 +35,7 @@ class RscTitles
 };
 
 #include "pra3_respawn\respawnDialog.hpp"
+#include "pra3_squadsys\dlg\management.hpp"
 
 class CfgDebriefing
 {
