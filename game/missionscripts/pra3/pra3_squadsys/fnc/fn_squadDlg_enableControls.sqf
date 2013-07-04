@@ -10,7 +10,7 @@
 
 var(_enable) = _this;
 
-if (!isNull (uiNamespace getVariable "Rsc_PRAA_squadSys_manageDlg")) then
+if (!isNull (uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg")) then
 {
 	for "_i" from 1 to 27 do
 	{

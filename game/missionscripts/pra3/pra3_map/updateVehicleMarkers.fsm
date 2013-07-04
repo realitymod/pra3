@@ -1,0 +1,89 @@
+/*%FSM<COMPILE "D:\Games\ARMA 2\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, updateVehicleMarkers">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"start",0,250,-39.117645,-102.162613,50.882355,-52.162613,0.000000,"start"};
+item1[] = {"_",8,218,-39.120399,-19.244450,50.879608,30.755550,0.000000,""};
+item2[] = {"update",2,4346,-39.123909,83.062134,50.876095,133.062057,0.000000,"update"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-452.999878,465.017822,501.828888,-339.382568,1004,920,1};
+window[] = {2,-1,-1,-1,-1,949,182,1395,182,3,1022};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "updateVehicleMarkers";
+  class States
+  {
+    /*%FSM<STATE "start">*/
+    class start
+    {
+      name = "start";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="update";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "update">*/
+    class update
+    {
+      name = "update";
+      init = /*%FSM<STATEINIT""">*/"private [""_vehicles"", ""_vehicle"", ""_marker""];" \n
+       "" \n
+       "_vehicles = PRA3_core getVariable [""PRA3_map_trackedVehicles"", []];" \n
+       "{" \n
+       "	_vehicle = _x select 0;" \n
+       "	if (isNull _vehicle) exitWith //Vehicle doesn't exist anymore" \n
+       "	{" \n
+       "		[" \n
+       "			""updateVehicleMarkers.fsm""," \n
+       "			format[""Deleted abandoned marker %1"", str (_x select 1)]" \n
+       "		] call PRA3_fnc_logInfo;" \n
+       "" \n
+       "		deleteMarkerLocal (_x select 1);" \n
+       "		[_vehicles, _forEachIndex] call PRA3_fnc_arrayRemoveAt;" \n
+       "	};" \n
+       "	" \n
+       "	_marker = _vehicle getVariable [""PRA3_map_marker"", """"];" \n
+       "	if (_marker != """" && {markerAlpha _marker != 0}) then //Marker not hidden" \n
+       "	{" \n
+       "		_marker setMarkerPosLocal (getPosATL _vehicle);" \n
+       "		_marker setMarkerDirLocal (getDir _vehicle);" \n
+       "	};" \n
+       "} forEach _vehicles;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="update";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="start";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/
