@@ -16,7 +16,7 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 				_x select 0,
 				"localizedMessage",
 				"str_praa_squadsys_promote_sl_you"
-			] call PRAA_fMp_execClient;
+			] call PRA3_fMp_execClient;
 		}
 		else
 		{
@@ -25,15 +25,15 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 				"localizedMessage",
 				"str_praa_squadsys_promote_sl",
 				_unit call PRA3_fnc_getPlayerName
-			] call PRAA_fMp_execClient;
+			] call PRA3_fMp_execClient;
 		};
 
 		[
 			_x select 0,
 			"call",
-			"PRAA_fMap_updateVehicleMarker",
+			"PRA3_fnc_updateVehicleMarker",
 			_unit call PRA3_fnc_getPlayerUnit
-		] call PRAA_fMp_execClient;
+		] call PRA3_fMp_execClient;
 	} forEach _members;
 };
 

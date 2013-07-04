@@ -13,7 +13,7 @@
 var(_id)       = _this select 0;
 var(_collapse) = _this select 1;
 
-PRAA_squadSys_collapsedSquads set [_id, _collapse];
+PRA3_squadSys_collapsedSquads set [_id, _collapse];
 
 var(_squadId) = (if (_id == 0) then {
 		(player call PRA3_fnc_unitGetSquad)
