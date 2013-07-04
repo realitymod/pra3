@@ -2,7 +2,10 @@
 
 // Add respawn EH to player to delete bodies
 // TODO: Have the server do this otherwise the body will not get deleted if player disconnects
-player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
+if (isClient) then
+{
+	player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
+};
 
 PRA3_AAS_ticketBleed = [0,0];
 PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active) and can be captured by somebody
@@ -13,13 +16,13 @@ PRA3_AAS_respawnTime = 30;
 
 // Initialize each zone and create markers for it
 {
-	if (isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}) then
+	if (isServer) then
 	{
 		var(_owner) = _x select 3;
-		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, isServer];
-		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, isServer];
-		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, isServer];
-		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, isServer];
+		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
+		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
 	};
 
 	if (isClient) then
@@ -46,8 +49,29 @@ PRA3_AAS_respawnTime = 30;
 
 PRA3_AAS_attackDefendMarkers = [];
 
-call PRA3_fnc_AAS_calculateFrontline;
-call PRA3_fnc_AAS_updateAttackDefendMarkers;
+var(_init) =
+{
+	call PRA3_fnc_AAS_calculateFrontline;
+	call PRA3_fnc_AAS_updateAttackDefendMarkers;
 
-// Now that everything is initialized, start the loop
-execVM "pra3\pra3_aas\loop.sqf";
+	// Now that everything is initialized, start the loop
+	execVM "pra3\pra3_aas\loop.sqf";
+};
+
+// Client might need to wait so he'll need a scheduled thread
+if (isServer) then
+{
+	call _init;
+}
+else
+{
+	_init spawn
+	{
+		// We need to make sure the server has initialzed all the flags
+		{
+			waitUntil {!isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}};
+		} forEach PRA3_AAS_zones;
+
+		call _this;
+	};
+};
