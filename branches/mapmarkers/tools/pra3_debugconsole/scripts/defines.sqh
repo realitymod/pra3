@@ -1,0 +1,12 @@
+#include "\pra3\pra3_debugconsole\idcs.hpp"
+
+#define var(x) private #x; x
+
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
+
+#define __executeOptions ["Local", "Public", "Server", "For player"]
+
+#define ctrl(x) ((uiNamespace getVariable "PRA3_RscDebugConsole") displayCtrl x)
+#define ctrlFav(x) ((uiNamespace getVariable "PRA3_DisplayDebugConsole_addFavorite") displayCtrl x)
+#define ctrlMon(x) ((uiNamespace getVariable "PRA3_DisplayDebugConsole_addMonitoredValue") displayCtrl x)
+#define ctrlPin(idc) ((uiNamespace getVariable "PRA3_RscDebugConsole_pinnedValues") displayCtrl idc)

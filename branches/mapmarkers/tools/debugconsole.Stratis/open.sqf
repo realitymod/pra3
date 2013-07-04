@@ -1,0 +1,1 @@
+createDialog "PRA3_debugConsole";

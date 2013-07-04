@@ -1,0 +1,585 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_map_stratis",
+		"A3_Data_F",
+		"A3_Characters_F_OPFOR"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_BLUFOR",
+		"a3_map_stratis"
+	};
+	randomSeed=11866082;
+	class Intel
+	{
+		briefingName="PR:A3: Agia Marina";
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.29999998;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Groups
+	{
+		items=17;
+		class Item0
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2855.1084,4.59126,6118.502};
+					azimut=195;
+					id=0;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3216.667,4.8583741,5821.3174};
+					azimut=30.385;
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item2
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2663.5793,0.078409433,6015.9199};
+					id=2;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="PRA3_core";
+				};
+			};
+		};
+		class Item3
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2854.0251,5.5076771,6120.6206};
+					azimut=195;
+					id=3;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item4
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2861.4309,7.4830613,6123.686};
+					azimut=195;
+					id=4;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item5
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2857.3125,5.4859228,6119.1304};
+					azimut=195;
+					id=5;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item6
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2854.9021,6.4182415,6122.3838};
+					azimut=195;
+					id=6;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item7
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2858.3086,6.6005912,6121.5737};
+					azimut=195;
+					id=7;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item8
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2861.0247,6.7878385,6121.1831};
+					azimut=195;
+					id=8;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item9
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2858.9668,7.5148363,6124.415};
+					azimut=195;
+					id=9;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item10
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3213.9563,4.8023291,5822.6313};
+					azimut=30.385;
+					id=10;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item11
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3211.6563,4.7428379,5823.8218};
+					azimut=30.385;
+					id=11;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item12
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3209.1509,4.617826,5825.2178};
+					azimut=30.385;
+					id=12;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item13
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3214.6138,4.8645434,5817.7051};
+					azimut=30.385;
+					id=13;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item14
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3211.9031,4.8442712,5818.855};
+					azimut=30.385;
+					id=14;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item15
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3209.3567,4.793612,5820.1685};
+					azimut=30.385;
+					id=15;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+		class Item16
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3206.8926,4.7139554,5821.2358};
+					azimut=30.385;
+					id=16;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=13;
+		class Item0
+		{
+			position[]={3211.1069,4.7735009,5821.6655};
+			name="respawn_west";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={2856.9604,6.3907824,6121.418};
+			name="respawn_east";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={3216.8982,4.8644538,5819.1167};
+			name="zone0";
+			text="NATO FOB";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=20;
+			b=20;
+		};
+		class Item3
+		{
+			position[]={2936.998,3.5491064,6070.6445};
+			name="zone5";
+			text="Housing North";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=29;
+			b=20;
+			angle=29.9566;
+		};
+		class Item4
+		{
+			position[]={2920.189,3.49,5977.292};
+			name="zone4";
+			text="Housing South";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=30;
+			b=23;
+			angle=29.705299;
+		};
+		class Item5
+		{
+			position[]={3117.9312,3.3499999,5965.6069};
+			name="zone2";
+			text="Restaurant";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=10;
+			b=16;
+			angle=50.833027;
+		};
+		class Item6
+		{
+			position[]={2847.343,2.6848125,6107.5972};
+			name="zone6";
+			text="Iranian-held House";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=20;
+			b=20;
+		};
+		class Item7
+		{
+			position[]={3019.7676,3.4099278,6005.8208};
+			name="zone3";
+			text="Shops";
+			markerType="RECTANGLE";
+			type="Empty";
+			a=31;
+			b=20;
+			angle=-2.105495;
+		};
+		class Item8
+		{
+			position[]={3126.7939,3.5730603,5859.8384};
+			name="zone1";
+			text="Orchard";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=30;
+			b=30;
+			angle=48.861698;
+		};
+		class Item9
+		{
+			position[]={3207.7078,4.6606164,5822.875};
+			name="spawn0";
+			type="Empty";
+		};
+		class Item10
+		{
+			position[]={2856.2488,3.5395892,6116.3452};
+			name="spawn3";
+			type="Empty";
+		};
+		class Item11
+		{
+			position[]={3086.7715,2.566416,5914.0137};
+			name="spawn1";
+			text="Eastern Frontline";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={2905.4058,3.3499999,6043.2612};
+			name="spawn2";
+			text="Western Frontline";
+			type="Empty";
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=1184191;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=9591438;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=797634;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
