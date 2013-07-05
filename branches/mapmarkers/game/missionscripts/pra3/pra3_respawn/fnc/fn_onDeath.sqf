@@ -48,6 +48,12 @@ if !(alive player) then
 			[player, PRA3_AAS_selectedSpawn] call PRA3_fnc_respawnUnit;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
 			PRA3_AAS_selectedSpawn = ""; // Unselect spawn point
+			
+			// Create marker
+			[
+				player,
+				"PRA3_fnc_startVehicleTracking"
+			] call PRA3_fnc_MP;
 		};
 
 		sleep 0.01;
