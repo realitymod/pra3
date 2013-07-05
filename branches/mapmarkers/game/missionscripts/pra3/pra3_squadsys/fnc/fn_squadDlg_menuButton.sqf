@@ -56,13 +56,13 @@ if (_menu == 0) then
 		case 1:
 		{
 			false call PRA3_fnc_squadDlg_enableControls;
-			[[_squad, _unit], "PRA3_fnc_squadDlg_server_setNewSL", false] call BIS_fnc_MP;
+			[[_squad, _unit], "PRA3_fnc_squadDlg_server_setNewSL", false] call PRA3_fnc_MP;
 			call _common;
 		};
 		case 2:
 		{
 			false call PRA3_fnc_squadDlg_enableControls;
-			[[_unit, _squad], "PRA3_fnc_squadDlg_server_kickOut", false] call BIS_fnc_MP;
+			[[_unit, _squad], "PRA3_fnc_squadDlg_server_kickOut", false] call PRA3_fnc_MP;
 			call _common;
 		};
 	};
@@ -72,7 +72,7 @@ else
 	if (_ft == 0) then // No FT assigned
 	{
 		false call PRA3_fnc_squadDlg_enableControls;
-		[[_squad, _unit, _button + 1], "PRA3_fnc_squadDlg_server_setFt", false] call BIS_fnc_MP;
+		[[_squad, _unit, _button + 1], "PRA3_fnc_squadDlg_server_setFt", false] call PRA3_fnc_MP;
 		call _common;
 	}
 	else
@@ -82,13 +82,13 @@ else
 			case 0: // Unassign
 			{
 				false call PRA3_fnc_squadDlg_enableControls;
-				[[_squad, _unit], "PRA3_fnc_squadDlg_server_unsetFt", false] call BIS_fnc_MP;
+				[[_squad, _unit], "PRA3_fnc_squadDlg_server_unsetFt", false] call PRA3_fnc_MP;
 				call _common;
 			};
 			case 1: // Set leader
 			{
 				false call PRA3_fnc_squadDlg_enableControls;
-				[[_squad, _ft, _unit], "PRA3_fnc_squadDlg_server_setFtLeader", false] call BIS_fnc_MP;
+				[[_squad, _ft, _unit], "PRA3_fnc_squadDlg_server_setFtLeader", false] call PRA3_fnc_MP;
 				call _common;
 			};
 		};
