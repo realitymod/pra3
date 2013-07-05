@@ -9,13 +9,13 @@ var(_id) = _this;
 false call PRA3_fnc_squadDlg_enableControls;
 if (_id == 0) then // Leaving own squad
 {
-	[[player, -1], "PRA3_fnc_squadDlg_server_joinSquad", false] call BIS_fnc_MP;
+	[[player, -1], "PRA3_fnc_squadDlg_server_joinSquad", false] call PRA3_fnc_MP;
 }
 else
 {
 	if (_id == 99) then // Creating new squad
 	{
-		[player, "PRA3_fnc_squadDlg_server_createSquad", false] call BIS_fnc_MP;
+		[player, "PRA3_fnc_squadDlg_server_createSquad", false] call PRA3_fnc_MP;
 	}
 	else // Joining a squad
 	{
@@ -27,7 +27,7 @@ else
 		}
 		else
 		{
-			[[player, _id], "PRA3_fnc_squadDlg_server_joinSquad", false] call BIS_fnc_MP;
+			[[player, _id], "PRA3_fnc_squadDlg_server_joinSquad", false] call PRA3_fnc_MP;
 		};
 	};
 };

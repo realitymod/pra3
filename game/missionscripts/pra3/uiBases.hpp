@@ -516,9 +516,9 @@ class RscActiveText {
 	font = "PuristaMedium";
 	shadow = 2;
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	color[] = {0, 0, 0, 1};
-	colorText[] = {0, 0, 0, 1};
-	colorActive[] = {0.3, 0.4, 0, 1};
+	color[] = {1, 1, 1, 1.0};
+	colorText[] = {1, 1, 1, 1.0};
+	colorActive[] = {1, 1, 1, 1.0};
 	style = 0;
 	default = 0;
 	type = 11;

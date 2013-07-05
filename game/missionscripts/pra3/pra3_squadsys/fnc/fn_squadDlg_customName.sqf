@@ -74,7 +74,7 @@ switch (_this select 0) do
 				count toArray(_newName) <= __customNameCharsMax) then
 			{
 				false call PRA3_fnc_squadDlg_enableControls;
-				[[_id, _newName], "PRA3_fnc_squadDlg_server_customNameSave", false] call BIS_fnc_MP;
+				[[_id, _newName], "PRA3_fnc_squadDlg_server_customNameSave", false] call PRA3_fnc_MP;
 			};
 			[4] call PRA3_fnc_squadDlg_customName;
 		};
