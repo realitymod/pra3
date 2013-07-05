@@ -189,7 +189,7 @@ while {true} do
 				{
 					PRA3_core setVariable [format["PRA3_AAS_%1_owner", _zone], _owner, true];
 
-					[[_zone, _prevOwner], "PRA3_fnc_AAS_captureZone", true] call BIS_fnc_MP;
+					[[_zone, _prevOwner], "PRA3_fnc_AAS_captureZone", true] call PRA3_fnc_MP;
 
 					_sinceUpdate = __updateEvery; //Enforce update if the zone owner changes
 				};

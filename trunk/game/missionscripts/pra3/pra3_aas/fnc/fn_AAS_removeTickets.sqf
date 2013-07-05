@@ -15,5 +15,5 @@ if (isServer) then
 }
 else
 {
-	[_this, "PRA3_fnc_AAS_removeTickets", false] call BIS_fnc_MP;
+	[_this, "PRA3_fnc_AAS_removeTickets", false] call PRA3_fnc_MP;
 };

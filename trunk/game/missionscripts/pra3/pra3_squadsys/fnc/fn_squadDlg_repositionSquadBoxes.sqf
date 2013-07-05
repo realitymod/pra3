@@ -10,8 +10,10 @@ var(_respositionSquadBox) =
 	{
 		__ctrl(10000*_id)
 			ctrlSetPosition [
-				(ctrlPosition __ctrl(10000*_id)) select 0,
-				_y
+				getNumber(__cfgPathItem(01) >> "x"),
+				_y,
+				getNumber(__cfgPathItem(01) >> "w"),
+				ctrlPosition __ctrl(10000*_id) select 3
 			];
 
 		__ctrl(10000*_id)
@@ -21,6 +23,12 @@ var(_respositionSquadBox) =
 	}
 	else
 	{
+		__ctrl(10000*_id)
+			ctrlSetPosition [0,0,0,0];
+
+		__ctrl(10000*_id)
+			ctrlCommit 0;
+
 		_y
 	}
 };
