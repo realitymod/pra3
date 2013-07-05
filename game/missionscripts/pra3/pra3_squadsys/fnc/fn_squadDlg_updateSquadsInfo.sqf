@@ -283,25 +283,6 @@ var(_showSquadBox) =
 
 	__ctrl(10000*_id)
 		ctrlShow _show;
-
-	if (_show) then
-	{
-		__ctrl(10000*_id)
-			ctrlSetPosition [
-				getNumber(__cfgPathItem(01) >> "x"),
-				getNumber(__cfgPathItem(01) >> "y"),
-				getNumber(__cfgPathItem(01) >> "w"),
-				getNumber(__cfgPathItem(01) >> "h")
-			];
-	}
-	else
-	{
-		__ctrl(10000*_id)
-			ctrlSetPosition [0,0,0,0];
-	};
-
-	__ctrl(10000*_id)
-		ctrlCommit 0;
 };
 
 
