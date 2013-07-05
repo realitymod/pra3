@@ -52,21 +52,19 @@ if (_prevSquadId != -1) then // Unit already a member of a squad, let's remove h
 		{
 
 			[
-				_x select 0,
-				"call",
+				_unit call PRA3_fnc_getPlayerUnit,
 				"PRA3_fnc_updateVehicleMarker",
-				_unit call PRA3_fnc_getPlayerUnit
-			] call PRA3_fMp_execClient;
+				_x select 0
+			] call PRA3_fnc_MP;
 
 			_others set [_forEachIndex, (_x select 0) call PRA3_fnc_getPlayerUnit];
 		} forEach _members;
 
 		[
-			_unit,
-			"call",
+			_others,
 			"PRA3_fnc_updateVehicleMarker",
-			_others
-		] call PRA3_fMp_execClient;
+			_unit
+		] call PRA3_fnc_MP;
 	};
 
 	_updates set [count _updates, _prevSquadId];
@@ -94,11 +92,10 @@ if (_newSquadId != -1) then // Unit wants to join a new squad, let's add him to 
 	_others resize (count _members);
 	{
 		[
-			_x select 0,
-			"call",
+			_unit call PRA3_fnc_getPlayerUnit,
 			"PRA3_fnc_updateVehicleMarker",
-			_unit call PRA3_fnc_getPlayerUnit
-		] call PRA3_fMp_execClient;
+			_x select 0
+		] call PRA3_fnc_MP;
 
 		_others set [_forEachIndex, (_x select 0) call PRA3_fnc_getPlayerUnit];
 	} forEach _members;
@@ -106,11 +103,10 @@ if (_newSquadId != -1) then // Unit wants to join a new squad, let's add him to 
 
 	diag_log ["UPDATE CLIENTS:", _others];
 	[
-		_unit,
-		"call",
+		_others,
 		"PRA3_fnc_updateVehicleMarker",
-		_others
-	] call PRA3_fMp_execClient;
+		_unit
+	] call PRA3_fnc_MP;
 	diag_log "///////";
 
 	_updates set [count _updates, _newSquadId];
