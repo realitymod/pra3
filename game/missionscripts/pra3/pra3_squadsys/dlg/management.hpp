@@ -55,7 +55,7 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 	y = 0;
 	w = 0.22;
 	h = 0.4;
-	
+
 	class Controls
 	{
 		class Item1 : RscButton
@@ -188,7 +188,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							idc = __EVAL(10000 + 3001);
 							x = 0.10;
 							y = 0.0025;
-							w = ( __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005;
+							w = __EVAL(( __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005);
 							colorText[] = __colorText;
 							sizeEx = 0.032;
 							text = "AAAAAAAAAAAAAAA";
@@ -198,7 +198,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class Size : Name
 						{
 							idc = __EVAL(10000 + 4000);
-							x = __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05;
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05);
 							y = 0.002;
 							w = 0.05;
 							style = ST_CENTER;
@@ -209,9 +209,9 @@ class Rsc_PRA3_squadSys_manageDlg
 						class LockPicture : RscPicture
 						{
 							idc = __EVAL(10000 + 5001);
-							x = __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005;
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005);
 							y = 0.005;
-							w = "0.04/(4/3)";
+							w = __EVAL(0.04/(4/3));
 							h = 0.04;
 							text = "pra3\pra3_squadsys\dlg\img\unlocked_88.paa";
 						};
@@ -219,7 +219,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class ActionButton : RscShortcutButton
 						{
 							idc = __EVAL(10000 + 6000);
-							x = __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005;
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005);
 							y = 0.005;
 							w = 0.09;
 							h = 0.04;
@@ -245,18 +245,18 @@ class Rsc_PRA3_squadSys_manageDlg
 						class CollapserPicture : LockPicture
 						{
 							idc = __EVAL(10000 + 7001);
-							x = __grpW - (0.04+0.005)/(4/3);
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3));
 							text = "pra3\pra3_squadsys\dlg\img\arrow_down_88.paa";
 						};
 						class CollapserButton : RscButton
 						{
 							idc = __EVAL(10000 + 7002);
-							x = __grpW - (0.04+0.005)/(4/3);
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3));
 							y = 0.005;
-							w = "0.04/(4/3)";
+							w = __EVAL(0.04/(4/3));
 							h = 0.04;
 							action = "1 call PRA3_fnc_squadDlg_toggleCollapseSquad";
-							
+
 							colorDisabled[] = {0,0,0,0};
 							colorBackground[] = {0,0,0,0};
 							colorBackgroundActive[] = {0,0,0,0};
@@ -272,7 +272,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							x = 0;
 							y = 0.05;
 							w = __grpW;
-							h = __lbH * __lbItems;
+							h = __EVAL(__lbH * __lbItems);
 
 							class Controls
 							{
@@ -301,8 +301,8 @@ class Rsc_PRA3_squadSys_manageDlg
 											idc = __EVAL(10000 + 8000 + 10 + 1);
 											x = 0;
 											y = 0;
-											w = (__lbH - 0.002) / (4/3);
-											h = (__lbH - 0.002);
+											w = __EVAL((__lbH - 0.002) / (4/3));
+											h = __EVAL(__lbH - 0.002);
 											text = "";
 										};
 										class KitPic : VehiclePic
@@ -316,9 +316,9 @@ class Rsc_PRA3_squadSys_manageDlg
 											idc = __EVAL(10000 + 8000 + 10 + 3);
 											x = 0.04;
 											y = 0;
-											w = __grpW - 2*0.02;
-											h = __lbH;
-											sizeEx = __lbH;
+											w = __EVAL(__grpW - 2*0.02);
+											h = __EVAL(__lbH);
+											sizeEx = __EVAL(__lbH);
 											text = "Nameless Mook";
 											colorTextHighlighted[] = {1,1,1,1};
 											font = "PuristaMedium";
@@ -327,10 +327,10 @@ class Rsc_PRA3_squadSys_manageDlg
 										class RoleText : Name
 										{
 											style = ST_CENTER;
-											x = __grpW - (__lbH - 0.002) / (4/3) - 0.005;
+											x = __EVAL(__grpW - (__lbH - 0.002) / (4/3) - 0.005);
 											idc = __EVAL(10000 + 8000 + 10 + 5);
-											w = (__lbH - 0.002) / (4/3);
-											h = (__lbH - 0.002);
+											w = __EVAL((__lbH - 0.002) / (4/3));
+											h = __EVAL(__lbH - 0.002);
 											colorBackground[] = {0.6,0.6,0.6,1};
 											sizeEx = (__lbH - 0.002);
 											font = "PuristaBold";
@@ -342,7 +342,7 @@ class Rsc_PRA3_squadSys_manageDlg
 								class Line##num : Line01 \
 								{ \
 									idc = __EVAL(10000 + 8000 + 10*num); \
-									y = __lbH*(num-1); \
+									y = __EVAL(__lbH*(num-1)); \
 									class Controls : Controls \
 									{ \
 										class Background : Background \
@@ -423,7 +423,7 @@ class Rsc_PRA3_squadSys_manageDlg
 				class ItemSquad##num : ItemSquad01 \
 				{ \
 					idc = __EVAL(10000*num); \
-					y = num * __grpH; \
+					y = __EVAL(num * __grpH); \
 					class Controls : Controls \
 					{ \
 						class Background : Background \
@@ -548,7 +548,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							idc = __EVAL(500000 + 3002);
 							x = 0.10;
 							y = 0.00;
-							w = (__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005;
+							w = __EVAL((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005);
 							h = 0.05;
 							sizeEx = 0.032;
 							style = ST_RIGHT;
@@ -560,7 +560,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							idc = __EVAL(500000 + 3003);
 							x = 0.10;
 							y = 0.001;
-							w = ( __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005;
+							w = __EVAL(( __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005);
 							h = 0.048;
 							sizeEx = 0.032;
 							style = ST_RIGHT + ST_FRAME;
@@ -581,7 +581,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class LockButton : CollapserButton
 						{
 							idc = __EVAL(500000 + 5002);
-							x = __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005;
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005);
 							action = "call PRA3_fnc_squadDlg_lockSquad";
 						};
 
@@ -666,14 +666,14 @@ class Rsc_PRA3_squadSys_manageDlg
 							idc = __EVAL(500000 + 3004);
 							x = 0.10;
 							y = 0.05;
-							w = ((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005)/2 - 0.003;
+							w = __EVAL(((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005)/2 - 0.003);
 							text = "OK";
 							action = "[3] call PRA3_fnc_squadDlg_customName";
 						};
 						class NameCustomEditCancel : NameCustomEditOK
 						{
 							idc = __EVAL(500000 + 3005);
-							x = 0.10 + ((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005)/2;
+							x = __EVAL(0.10 + ((__grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005)/2);
 							text = "Cancel";
 							action = "[4] call PRA3_fnc_squadDlg_customName";
 						};
@@ -687,10 +687,10 @@ class Rsc_PRA3_squadSys_manageDlg
 				{
 					idc = 990000;
 					x = 0.005;
-					y = __grpH * 27;
+					y = __EVAL(__grpH * 27);
 					w = __grpW;
-					h = __grpH + 0.04;
-					hNoButton = __grpH;
+					h = __EVAL(__grpH + 0.04);
+					hNoButton = __EVAL(__grpH);
 
 					class Controls : Controls
 					{
@@ -717,7 +717,7 @@ class Rsc_PRA3_squadSys_manageDlg
 						class Size : Size
 						{
 							idc = __EVAL(990000 + 4000);
-							x = __grpW - (0.04+0.005)/(4/3) - 0.05 - 0.007;
+							x = __EVAL(__grpW - (0.04+0.005)/(4/3) - 0.05 - 0.007);
 							style = ST_RIGHT;
 							text = "31";
 						};
@@ -738,8 +738,8 @@ class Rsc_PRA3_squadSys_manageDlg
 							x = 0;
 							y = 0.05;
 							w = __grpW;
-							h = __lbH * __lbItems;
-							sizeEx = __lbH;
+							h = __EVAL(__lbH * __lbItems);
+							sizeEx = __EVAL(__lbH);
 						};
 						class MembersListMulti : MembersList
 						{
@@ -752,8 +752,8 @@ class Rsc_PRA3_squadSys_manageDlg
 						class InviteButton : ActionButton
 						{
 							idc = __EVAL(990000 + 9000);
-							x = ( __grpW - 0.25) / 2;
-							y = 0.05 + __lbH * __lbItems;
+							x = __EVAL(( __grpW - 0.25) / 2);
+							y = __EVAL(0.05 + __lbH * __lbItems);
 							w = 0.25;
 
 							text = "Invite selected";
