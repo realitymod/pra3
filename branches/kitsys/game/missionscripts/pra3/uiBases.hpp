@@ -705,3 +705,23 @@ class RscEdit {
 	autocomplete = "";
 	type = 2;
 };
+
+class RscXListBox {
+	idc = -1;
+	type = 42;
+	style = 0x400 + 0x02 +	0x10;
+	shadow = 2;
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+	w = 0.14706;
+	h = 0.039216;
+	color[] = {1,1,1,0.6};
+	colorActive[] = {1,1,1,1};
+	colorSelect[] = {0.95, 0.95, 0.95, 1};
+	colorText[] = {1, 1, 1, 1.0};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	font = "PuristaMedium";
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect", 0.09, 1};
+};
