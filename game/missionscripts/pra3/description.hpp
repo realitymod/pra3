@@ -72,3 +72,5 @@ class CfgFunctions
 		#include "functions.hpp"
 	};
 };
+
+#include "pra3_kits\kitsList.hpp"
