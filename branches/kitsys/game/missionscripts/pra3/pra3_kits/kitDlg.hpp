@@ -1,7 +1,7 @@
 class Rsc_PRA3_kits_kitDlg
 {
 	idd = -1;
-	//onLoad = "uiNamespace setVariable [""PRAA_Rsc_kitSysDlg"", _this select 0]; (_this select 0) call PRAA_fKitSys_dlgOpen";
+	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlg"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad";
 
 	#define __w1 0.4
 	#define __w2 0.5
@@ -136,7 +136,7 @@ class Rsc_PRA3_kits_kitDlg
 							colorBackground[] = {1, 1, 1, 1};
 							text = "<img size='1' color='#dfdfdf' image='pra3\pra3_kits\data\arrow_right.paa'/>";
 
-							action = "1 call PRAA_fKitSys_dlgKitButtonAction";
+							action = "1 call PRA3_fnc_kitDlg_kitDetailsBtn";
 
 							class HitZone
 							{
@@ -186,7 +186,7 @@ class Rsc_PRA3_kits_kitDlg
 						class Button : Button \
 						{ \
 							idc = __EVAL(10000 + num * 100 + 5); \
-							action = num call PRAA_fKitSys_dlgKitButtonAction; \
+							action = num call PRA3_fnc_kitDlg_kitDetailsBtn; \
 						}; \
 					}; \
 				}
@@ -220,7 +220,7 @@ class Rsc_PRA3_kits_kitDlg
 					y = __EVAL(0.005 * (4/3));
 					w = __EVAL(__w2 - 0.005*2);
 					h = 0.04;
-					onLBSelChanged = "_this call PRAA_fKitSys_dlgLoadoutVariantLB";
+					onLBSelChanged = "_this call PRA3_fnc_kitDlg_loadoutVariantLB";
 				};
 				class PrimaryWeapon : Kit1
 				{
@@ -856,7 +856,7 @@ class Rsc_PRA3_kits_kitDlg
 
 					font = "PuristaBold";
 
-					action = "call PRAA_fKitSys_dlgRequestButtonAction";
+					action = "call PRA3_fnc_requestKitBtn";
 
 					text = "Request kit";
 				};

@@ -1,0 +1,10 @@
+#define __maxKits 12
+
+#define __kitLine(num) (missionConfigFile >> "Rsc_PRA3_kits_kitDlg" >> "Controls" >> "KitSelection" >> "Controls" >> format["Kit%1",num])
+#define __kitLineCtrl(num,name) (__kitLine(num) >> "Controls" >> name)
+#define __kitDetails(name) (missionConfigFile >> "Rsc_PRA3_kits_kitDlg" >> "Controls" >> "KitDetails" >> "Controls" >> name)
+
+#define __getCtrl(idc) ((uiNamespace getVariable "Rsc_PRA3_kits_kitDlg") displayCtrl idc)
+
+#define TYPE_WEAPON		1
+#define TYPE_BACKPACK	2
