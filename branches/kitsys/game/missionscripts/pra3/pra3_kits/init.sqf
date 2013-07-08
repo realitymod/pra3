@@ -12,5 +12,7 @@ if (!isDedicated) then
 };
 
 PRA3_kitSys_currentKit = "Rifleman_US";
-PRA3_kitSys_curAvailableKits = ["Rifleman_US", "Grenadier_US"];
+PRA3_kitSys_curAvailableKits = ["Rifleman_US", "Grenadier_US", "Medic_US"];
 PRA3_kitSys_kitConfigurations = [];
+
+call PRA3_fnc_parseKits;

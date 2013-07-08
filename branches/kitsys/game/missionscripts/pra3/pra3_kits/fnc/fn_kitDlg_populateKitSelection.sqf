@@ -5,6 +5,8 @@ var(_selected) = _this;
 
 var(_i) = 1;
 {
+	var(_kitInfo) = _x call PRA3_fnc_getKitInfo;
+	
 	__getCtrl(10000 + 100*_i) ctrlShow true;
 	__getCtrl(10000 + 100*_i) ctrlSetPosition
 		[getNumber(__kitLine(_i) >> "x"), getNumber(__kitLine(_i) >> "y")];
@@ -16,11 +18,10 @@ var(_i) = 1;
 	__getCtrl(10000 + 100*_i + 1) ctrlSetBackgroundColor
 		getArray(__kitLineCtrl(_i,"Background") >> (if (_isSelected) then {"colorBackgroundHighlight"} else {"colorBackground"}));
 
-	__getCtrl(10000 + 100*_i + 3) ctrlSetText getText(_cfg >> "name");
-
+	__getCtrl(10000 + 100*_i + 3) ctrlSetText (_kitInfo select KIT_NAME);
 
 	_i = _i + 1;
-} forEach PRA3_kitSys_curAvailableKits;
+} forEach PRA3_kits; // TODO: Filter bansed on availability
 
 for "_i" from _i to __maxKits do
 {

@@ -8,3 +8,18 @@
 
 #define TYPE_WEAPON		1
 #define TYPE_BACKPACK	2
+
+#define KIT_TEAM			0
+#define KIT_NAME			1
+#define KIT_PICTURE			2
+#define KIT_REQUIREMENTS	3
+#define KIT_CLOTHING		4
+#define KIT_VARIANTS		5
+	#define VARIANT_CLASS		0
+	#define VARIANT_NAME		1
+	#define VARIANT_PISTOL		2	
+	#define VARIANT_PRIMARY		3
+	#define VARIANT_SECONDARY	4
+	#define VARIANT_EXPLOSIVES	5
+	#define VARIANT_ITEMS		6
+#define KIT_VARIANT_CURR	6
