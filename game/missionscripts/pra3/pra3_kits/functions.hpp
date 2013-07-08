@@ -7,13 +7,13 @@ class Kits
 		description = "Blocks certain controls in the inventory dialog.";
 	};
 
-	class getKitVariants
+	class parseKits
 	{
-		description = "Returns a list of config paths for the variants of the given kit.";
+		description = "Parses kits from config to variables.";
 	};
-	class getSelectedKitVariant
+	class getKitInfo
 	{
-		description = "Returns the class name of the currently selected variant of the given kit.";
+		description = "Returns the info for the given kit.";
 	};
 
 	class kitDlg_kitDetailsBtn

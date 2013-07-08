@@ -3,7 +3,9 @@
 
 #define TEAM_US	1
 
-class PRA3_kitSys
+#define public 2
+
+class PRA3_kits
 {
 	class Kits
 	{
@@ -22,6 +24,13 @@ class PRA3_kitSys
 				maxPerSquad     = -1;
 
 				returnTime      = -1;
+			};
+			class Clothing
+			{
+				uniform  = "U_B_CombatUniform_mcam";
+				headgear = "H_HelmetB";
+				goggles  = "";
+				vest     = "V_PlateCarrier1_rgr";
 			};
 
 			class Variants
@@ -50,7 +59,7 @@ class PRA3_kitSys
 					};
 
 					explosives[] = {{"HandGrenade", 4}, {"SmokeShell", 2}};
-					medical[] = {{"FirstAidKit", 2}};
+					items[] = {{"FirstAidKit", 2}};
 				};
 				class Variant2 : Variant1
 				{
@@ -67,17 +76,10 @@ class PRA3_kitSys
 					{
 						type        = TYPE_BACKPACK;
 						backpack    = "B_Kitbag_mcamo_AA";
+						weapons[]   = {};
 						magazines[] = {{"30Rnd_65x39_caseless_mag", 10}};
 					};
 				};
-			};
-
-			class Clothing
-			{
-				uniform  = "U_B_CombatUniform_mcam";
-				headgear = "H_HelmetB";
-				goggles  = "";
-				vest     = "V_PlateCarrier1_rgr";
 			};
 		};
 		class SquadLeader_US : Rifleman_US
@@ -88,6 +90,24 @@ class PRA3_kitSys
 		{
 			name = "Combat Medic";
 			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
+
+			class Variants
+			{
+				class Variant1
+				{
+					class Primary
+					{
+						weapon      = "arifle_MX_F";
+						optics      = "";
+						rail        = "";
+						muzzle      = "";
+						magazines[] = {{"30Rnd_45ACP_Mag_SMG_01", 7}};
+					};
+
+					explosives[] = {{"SmokeShell", 6}, {"SmokeShellBlue", 2}};
+					items[] = {{"FirstAidKit", 10}, {"MedicKit", 1}};
+				};
+			};
 		};
 		class Machinegunner_US : Rifleman_US
 		{
