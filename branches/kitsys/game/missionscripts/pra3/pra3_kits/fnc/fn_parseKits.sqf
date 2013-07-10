@@ -40,26 +40,14 @@ for "_i" from 0 to (count _cfg - 1) do
 
 			var(_pistol)  = (_variant >> "Pistol") call _loadWeapon;
 			var(_primary) = (_variant >> "Primary") call _loadWeapon;
-			var(_secondary) = if (isClass(_variant >> "Secondary")) then
+			var(_secondary) = (_variant >> "Secondary") call _loadWeapon;
+			var(_backpack) = if (isClass(_variant >> "Backpack")) then
 			{
-				if (getNumber(_variant >> "Secondary" >> "type") == TYPE_WEAPON) then
-				{
-					[
-						TYPE_WEAPON,
-						(_variant >> "Secondary") call _loadWeapon
-					]
-				}
-				else
-				{
-					[
-						TYPE_BACKPACK,
-						[
-							getText(_variant >> "Secondary" >> "backpack"),
-							getArray(_variant >> "Secondary" >> "weapons"),
-							getArray(_variant >> "Secondary" >> "magazines")
-						]
-					]
-				}
+				[
+					getText(_variant >> "Backpack" >> "backpack"),
+					getArray(_variant >> "Backpack" >> "weapons"),
+					getArray(_variant >> "Backpack" >> "magazines")
+				]
 			}
 			else
 			{
@@ -74,6 +62,7 @@ for "_i" from 0 to (count _cfg - 1) do
 	/* VARIANT_PISTOL      */ _pistol,
 	/* VARIANT_PRIMARY     */ _primary,
 	/* VARIANT_SECONDARY   */ _secondary,
+	/* VARIANT_BACKPACK    */ _backpack,
 	/* VARIANT_EXPLOSIVES  */ getArray(_variant >> "explosives"),
 	/* VARIANT_ITEMS       */ getArray(_variant >> "items")
 				]
@@ -81,10 +70,10 @@ for "_i" from 0 to (count _cfg - 1) do
 		};
 
 		var(_clothing) = [
-			getText(_kit >> "Clothing" >> "uniform"),
-			getText(_kit >> "Clothing" >> "headgear"),
-			getText(_kit >> "Clothing" >> "goggles"),
-			getText(_kit >> "Clothing" >> "vest")
+	/* CLOTHING_UNFORM   */	getText(_kit >> "Clothing" >> "uniform"),
+	/* CLOTHING_HEADGEAR */	getText(_kit >> "Clothing" >> "headgear"),
+	/* CLOTHING_GOGGLES  */	getText(_kit >> "Clothing" >> "goggles"),
+	/* CLOTHING_VEST     */	getText(_kit >> "Clothing" >> "vest")
 		];
 
 		missionNamespace setVariable [

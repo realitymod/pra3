@@ -45,7 +45,7 @@ class PRA3_kits
 					};
 					class Primary
 					{
-						weapon      = "SMG_01_F";
+						weapon      = "arifle_MX_F";
 						optics      = "optic_Arco";
 						rail        = "";
 						muzzle      = "";
@@ -53,9 +53,14 @@ class PRA3_kits
 					};
 					class Secondary
 					{
-						type        = TYPE_WEAPON;
 						weapon      = "launch_B_Titan_short_F";
 						magazines[] = {{"Titan_AT", 1}, {"Titan_AP", 1}};
+					};
+					class Backpack
+					{
+						backpack    = "B_Kitbag_mcamo_AA";
+						weapons[]   = {};
+						magazines[] = {{"30Rnd_65x39_caseless_mag", 10}};
 					};
 
 					explosives[] = {{"HandGrenade", 4}, {"SmokeShell", 2}};
@@ -67,17 +72,6 @@ class PRA3_kits
 					class Primary : Primary
 					{
 						optics = "optic_Aco";
-					};
-				};
-				class Variant3 : Variant2
-				{
-					name = "Support";
-					class Secondary
-					{
-						type        = TYPE_BACKPACK;
-						backpack    = "B_Kitbag_mcamo_AA";
-						weapons[]   = {};
-						magazines[] = {{"30Rnd_65x39_caseless_mag", 10}};
 					};
 				};
 			};
@@ -97,7 +91,7 @@ class PRA3_kits
 				{
 					class Primary
 					{
-						weapon      = "arifle_MX_F";
+						weapon      = "SMG_01_F";
 						optics      = "";
 						rail        = "";
 						muzzle      = "";
