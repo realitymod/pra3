@@ -468,9 +468,10 @@ class Rsc_PRA3_kits_kitDlg
 						};
 					};
 				};
-				class SecondaryBackpack : SecondaryWeapon
+				class Backpack : SecondaryWeapon
 				{
 					idc = 23000;
+					y = __EVAL(0.04 + __h2  * 2 + 0.005 * (4/3) * 5);
 					class Controls : Controls
 					{
 						class Background : Background {};
@@ -606,10 +607,10 @@ class Rsc_PRA3_kits_kitDlg
 						};
 					};
 				};
-				class Pistol : SecondaryBackpack
+				class Pistol : Backpack
 				{
 					idc = 24000;
-					y = __EVAL(0.04 + __h2  * 2 + 0.005 * (4/3) * 4);
+					y = __EVAL(0.04 + __h2  * 3 + 0.005 * (4/3) * 6);
 					h = __h;
 
 					class Controls : Controls
@@ -669,7 +670,7 @@ class Rsc_PRA3_kits_kitDlg
 				class Explosives : Pistol
 				{
 					idc = 25000;
-					y = __EVAL(0.04 + __h2 * 2.5 + 0.005 * (4/3) * 5);
+					y = __EVAL(0.04 + __h2 * 3.5 + 0.005 * (4/3) * 7);
 
 					class Controls : Controls
 					{
@@ -758,10 +759,10 @@ class Rsc_PRA3_kits_kitDlg
 						};
 					};
 				};
-				class Medical : Explosives
+				class Items : Explosives
 				{
 					idc = 26000;
-					y = __EVAL(0.04 + __h2 * 3 + 0.005 * (4/3) * 6);
+					y = __EVAL(0.04 + __h2 * 4 + 0.005 * (4/3) * 8);
 
 					class Controls : Controls
 					{
@@ -850,7 +851,7 @@ class Rsc_PRA3_kits_kitDlg
 				{
 					idc = 27000;
 					x = __EVAL(__w2 / 2 - 0.35 / 2);
-					y = __EVAL(0.04 + __h2 * 3.5 + 0.005 * (4/3) * 7);
+					y = __EVAL(0.04 + __h2 * 4.5 + 0.005 * (4/3) * 9);
 					w = 0.35;
 					h = __EVAL(__h / 2);
 

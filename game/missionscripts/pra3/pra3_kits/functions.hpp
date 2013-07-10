@@ -16,6 +16,11 @@ class Kits
 		description = "Returns the info for the given kit.";
 	};
 
+	class equipWithKit
+	{
+		description = "Equips the unit with the given kit.";
+	};
+
 	class kitDlg_kitDetailsBtn
 	{
 		description = "Handles clicking on a kit details button.";

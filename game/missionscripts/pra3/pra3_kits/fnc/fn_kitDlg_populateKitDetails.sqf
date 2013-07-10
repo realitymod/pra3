@@ -89,38 +89,39 @@ else
 	__getCtrl(21000) ctrlShow false;
 };
 
-// ---------- SECONDARY WEAPON / BACKPACK ----------
+// ---------- SECONDARY WEAPON ----------
 var(_wpnInfo) = _variantInfo select VARIANT_SECONDARY;
 if (count _wpnInfo > 0) then
 {
-	var(_isBackpack) = _wpnInfo select 0 == TYPE_BACKPACK;
-	__getCtrl(22000) ctrlShow !_isBackpack;
-	__getCtrl(23000) ctrlShow  _isBackpack;
+	__getCtrl(22000) ctrlShow true;
 
-	_wpnInfo = _wpnInfo select 1;
-	
-	if (_isBackpack) then
-	{
-		[23001, "CfgVehicles", _wpnInfo select 0] call _setPicture;
-		[_wpnInfo select 2, 23100, 6] call _populateMags;
-	}
-	else
-	{
-		[22001, "CfgWeapons", _wpnInfo select 0] call _setPicture;
-		[_wpnInfo select 1, 22100, 4] call _populateMags;
-	};
+	[22001, "CfgWeapons", _wpnInfo select 0] call _setPicture;
+	[_wpnInfo select 1, 22100, 4] call _populateMags;
 
 	__getCtrl(22000) ctrlSetPosition [ctrlPosition __getCtrl(22000) select 0, _y];
 	__getCtrl(22000) ctrlCommit 0;
-
-	__getCtrl(23000) ctrlSetPosition [ctrlPosition __getCtrl(23000) select 0, _y];
-	__getCtrl(23000) ctrlCommit 0;
-
 	_y = _y + getNumber(__kitDetails("SecondaryWeapon") >> "h") + __kitLineSpacing;
 }
 else
 {
 	__getCtrl(22000) ctrlShow false;
+};
+
+// ---------- BACKPACK ----------
+var(_wpnInfo) = _variantInfo select VARIANT_BACKPACK;
+if (count _wpnInfo > 0) then
+{
+	__getCtrl(23000) ctrlShow true;
+
+	[23001, "CfgVehicles", _wpnInfo select 0] call _setPicture;
+	[(_wpnInfo select 1) + (_wpnInfo select 2), 23100, 6] call _populateMags;
+
+	__getCtrl(23000) ctrlSetPosition [ctrlPosition __getCtrl(23000) select 0, _y];
+	__getCtrl(23000) ctrlCommit 0;
+	_y = _y + getNumber(__kitDetails("Backpack") >> "h") + __kitLineSpacing;
+}
+else
+{
 	__getCtrl(23000) ctrlShow false;
 };
 
@@ -160,7 +161,7 @@ else
 	__getCtrl(25000) ctrlShow false;
 };
 
-// ---------- Items ----------
+// ---------- ITEMS ----------
 var(_items) = _variantInfo select VARIANT_ITEMS;
 if (count _items > 0) then
 {
@@ -171,9 +172,12 @@ if (count _items > 0) then
 
 	__getCtrl(26000) ctrlSetPosition [ctrlPosition __getCtrl(26000) select 0, _y];
 	__getCtrl(26000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("Medical") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetails("Items") >> "h") + __kitLineSpacing;
 }
 else
 {
 	__getCtrl(26000) ctrlShow false;
 };
+
+__getCtrl(27000) ctrlSetPosition [ctrlPosition __getCtrl(27000) select 0, _y];
+__getCtrl(27000) ctrlCommit 0;
