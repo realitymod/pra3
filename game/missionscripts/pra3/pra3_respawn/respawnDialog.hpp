@@ -20,6 +20,8 @@ class PRA3_dlg_spawnScreen
 	{
 		class Spawns : RscListBox
 		{
+			colorBackground[] = {0,0,0,0.7};
+			
 			idc = 10;
 			x = 0;
 			y = 0;
