@@ -22,6 +22,8 @@ class PRA3_respawn_deadScreen
 		};
 		class StatusText : RscStructuredText
 		{
+			colorBackground[] = {0,0,0,1};
+			
 			idc = 10;
 			x = 0;
 			y = 0.4 - 0.09;
@@ -37,6 +39,8 @@ class PRA3_respawn_deadScreen
 		};
 		class InstructionsText : StatusText
 		{
+			colorBackground[] = {0,0,0,1};
+			
 			idc = 20;
 			y = 0.5 - 0.05/2;
 			h = 0.05;
@@ -45,6 +49,8 @@ class PRA3_respawn_deadScreen
 		};
 		class CountdownText : StatusText
 		{
+			colorBackground[] = {0,0,0,1};
+			
 			idc = 30;
 			x = 0.375;
 			y = 0.6;
