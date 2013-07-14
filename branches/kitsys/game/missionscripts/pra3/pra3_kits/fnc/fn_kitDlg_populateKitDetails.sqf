@@ -70,7 +70,13 @@ var(_kit) = PRA3_kitSys_currentKit;
 var(_kitInfo) = PRA3_kitSys_currentKit call PRA3_fnc_getKitInfo;
 var(_variantInfo) = _kitInfo select KIT_VARIANTS select (_kitInfo select KIT_VARIANT_CURR);
 
-var(_y) = getNumber(__kitDetails("PrimaryWeapon") >> "y");
+var(_y) = getNumber(__kitDetails("Variant") >> "y");
+
+__getCtrl(20001) ctrlShow (count(_kitInfo select KIT_VARIANTS) > 1);
+if (count(_kitInfo select KIT_VARIANTS) > 1) then
+{
+	_y = _y + getNumber(__kitDetails("Variant") >> "h") + __kitLineSpacing;
+};
 
 // ---------- PRIMARY WEAPON ----------
 var(_wpnInfo) = _variantInfo select VARIANT_PRIMARY;
@@ -82,6 +88,8 @@ if (count _wpnInfo > 0) then
 	[_wpnInfo select 1, 21100, 4] call _populateMags;
 	[_wpnInfo select 2, 21011, 3] call _populateAttachments;
 
+	__getCtrl(21000) ctrlSetPosition [ctrlPosition __getCtrl(21000) select 0, _y];
+	__getCtrl(21000) ctrlCommit 0;
 	_y = _y + getNumber(__kitDetails("PrimaryWeapon") >> "h") + __kitLineSpacing;
 }
 else

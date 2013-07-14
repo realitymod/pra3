@@ -857,7 +857,7 @@ class Rsc_PRA3_kits_kitDlg
 
 					font = "PuristaBold";
 
-					action = "call PRA3_fnc_requestKitBtn";
+					action = "call PRA3_fnc_kitDlg_requestKitBtn";
 
 					text = "Request kit";
 				};

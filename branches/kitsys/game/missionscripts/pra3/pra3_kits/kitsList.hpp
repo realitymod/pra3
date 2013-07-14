@@ -2,6 +2,7 @@
 #define TYPE_BACKPACK	2
 
 #define TEAM_US	1
+#define TEAM_IN	2
 
 #define public 2
 
@@ -30,7 +31,7 @@ class PRA3_kits
 				uniform  = "U_B_CombatUniform_mcam";
 				headgear = "H_HelmetB";
 				goggles  = "";
-				vest     = "V_PlateCarrier1_rgr";
+				vest     = "V_PlateCarrier2_rgr";
 			};
 
 			class Variants
@@ -40,38 +41,48 @@ class PRA3_kits
 					name = "Standard";
 					class Pistol
 					{
-						weapon      = "hgun_P07_F";
-						magazines[] = {{"16Rnd_9x21_Mag", 4}};
 					};
 					class Primary
 					{
 						weapon      = "arifle_MX_F";
-						optics      = "optic_Arco";
+						optics      = "optic_Holosight";
 						rail        = "";
 						muzzle      = "";
-						magazines[] = {{"30Rnd_65x39_caseless_mag", 11}};
+						magazines[] = {{"30Rnd_65x39_caseless_mag_Tracer", 9}};
 					};
 					class Secondary
 					{
-						weapon      = "launch_B_Titan_short_F";
-						magazines[] = {{"Titan_AT", 1}, {"Titan_AP", 1}};
 					};
 					class Backpack
 					{
-						backpack    = "B_Kitbag_mcamo_AA";
+						backpack    = "B_Kitbag_mcamo";
 						weapons[]   = {};
-						magazines[] = {{"30Rnd_65x39_caseless_mag", 10}};
+						magazines[] = {{"30Rnd_65x39_caseless_mag_Tracer", 12}};
 					};
 
-					explosives[] = {{"HandGrenade", 4}, {"SmokeShell", 2}};
-					items[] = {{"FirstAidKit", 2}};
+					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
+					items[] = {{"FirstAidKit", 1}};
 				};
 				class Variant2 : Variant1
 				{
-					name = "Standard CQB";
-					class Primary : Primary
+					name = "AR Support";
+
+					class Backpack
 					{
-						optics = "optic_Aco";
+						backpack    = "B_Bergen_mcamo";
+						weapons[]   = {};
+						magazines[] = {{"100Rnd_65x39_caseless_mag_Tracer", 10}};
+					};
+				};
+				class Variant3 : Variant1
+				{
+					name = "Grenadier Support";
+
+					class Backpack
+					{
+						backpack    = "B_TacticalPack_mcamo";
+						weapons[]   = {};
+						magazines[] = {{"1Rnd_HE_Grenade_shell", 20}, {"1Rnd_Smoke_Grenade_shell", 10}};
 					};
 				};
 			};
@@ -79,80 +90,392 @@ class PRA3_kits
 		class SquadLeader_US : Rifleman_US
 		{
 			name = "Squad Leader";
+
+			class Clothing : Clothing
+			{
+				uniform = "U_B_CombatUniform_mcam_tshirt";
+				headgear = "H_HelmetB_paint";
+				vest     = "V_PlateCarrier1_rgr";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					name = "Standard";
+					class Pistol
+					{
+						weapon      = "hgun_P07_F";
+						magazines[] = {{"16Rnd_9x21_Mag", 3}};
+					};
+					class Primary : Primary
+					{
+						optics      = "optic_Hamr";
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+
+					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellBlue", 2}};
+				};
+			};
 		};
 		class Medic_US : Rifleman_US
 		{
 			name = "Combat Medic";
 			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
 
-			class Variants
+			class Clothing : Clothing
 			{
-				class Variant1
+				uniform = "U_B_CombatUniform_mcam_vest";
+				vest = "V_BandollierB_rgr";
+				headgear = "H_HelmetB_light";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
 				{
-					class Primary
+					class Primary : Primary
 					{
-						weapon      = "SMG_01_F";
-						optics      = "";
-						rail        = "";
-						muzzle      = "";
-						magazines[] = {{"30Rnd_45ACP_Mag_SMG_01", 7}};
+						weapon      = "arifle_MXC_F";
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+						backpack = "B_AssaultPack_mcamo";
+						weapons[] = {{"Medikit", 1}, {"FirstAidKit", 10}};
 					};
 
-					explosives[] = {{"SmokeShell", 6}, {"SmokeShellBlue", 2}};
-					items[] = {{"FirstAidKit", 10}, {"MedicKit", 1}};
+					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 5}};
+					items[] = {};
 				};
 			};
 		};
 		class Machinegunner_US : Rifleman_US
 		{
 			name = "Automatic Rifleman";
+
+			class Clothing : Clothing
+			{
+				uniform = "U_B_CombatUniform_mcam_vest";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					class Primary : Primary
+					{
+						weapon      = "arifle_MX_SW_F";
+						magazines[] = {{"100Rnd_65x39_caseless_mag_Tracer", 6}};
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+				};
+			};
 		};
 		class Grenadier_US : Rifleman_US
 		{
 			name = "Grenadier";
 
-			class Pistol
+			class Clothing : Clothing
 			{
+				vest = "V_PlateCarrierGL_rgr";
 			};
-			class Primary
+
+			class Variants : Variants
 			{
-				class M16_M203
+				class Variant1 : Variant1
 				{
-					weapon = "M16A4_GL";
-					magazines[] = {{"30Rnd_556x45_stanag", 11}, {"1Rnd_HE_M203", 10}, {"1Rnd_Smoke_M203", 3}};
+					class Primary : Primary
+					{
+						weapon      = "arifle_MX_GL_F";
+						magazines[] = {{"30Rnd_65x39_caseless_mag_Tracer", 9}, {"1Rnd_HE_Grenade_shell", 8}, {"1Rnd_Smoke_Grenade_shell", 4}};
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+
+					explosives[] = {};
 				};
 			};
-			class Secondary
-			{
-			};
-		};
-		class LAT_US : Rifleman_US
-		{
-			name = "Light Anti-Tank";
-		};
-		class HAT_US : Rifleman_US
-		{
-			name = "Heavy Anti-Tank";
-		};
-		class AA_US : Rifleman_US
-		{
-			name = "Anti-Air";
 		};
 		class Marksman_US : Rifleman_US
 		{
 			name = "Marksman";
+
+			class Clothing : Clothing
+			{
+				vest = "V_Chestrig_khk";
+				headgear = "H_HelmetB_light";
+			};
+			
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					class Primary : Primary
+					{
+						weapon      = "arifle_MXM_F";
+						optics      = "optic_Hamr";
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+
+					explosives[] = {};
+				};
+			};
 		};
-		class Engineer_US : Rifleman_US
+		
+		class Rifleman_IN
 		{
-			name = "Combat Engineer";
+			scope = public;
+			team = TEAM_IN;
+
+			name = "Rifleman";
+			picture = "pra3\pra3_kits\data\kit_img\rifleman_88.paa";
+
+			class Requirements
+			{
+				perEvery        = 1;
+				minPlayersSquad = -1;
+				maxPerSquad     = -1;
+
+				returnTime      = -1;
+			};
+			class Clothing
+			{
+				uniform  = "U_I_CombatUniform";
+				headgear = "H_HelmetIA_net";
+				goggles  = "";
+				vest     = "V_PlateCarrierIA2_dgtl";
+			};
+
+			class Variants
+			{
+				class Variant1
+				{
+					name = "Standard";
+					class Pistol
+					{
+					};
+					class Primary
+					{
+						weapon      = "arifle_Katiba_F";
+						optics      = "optic_ACO_grn";
+						rail        = "";
+						muzzle      = "";
+						magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 9}};
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+						backpack    = "B_Carryall_oli";
+						weapons[]   = {};
+						magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}};
+					};
+
+					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
+					items[] = {{"FirstAidKit", 1}};
+				};
+				class Variant2 : Variant1
+				{
+					name = "AR Support";
+
+					class Backpack : Backpack
+					{
+						backpack    = "B_TacticalPack_oli";
+						magazines[] = {{"200Rnd_65x39_belt_Tracer_Green", 5}};
+					};
+				};
+				class Variant3 : Variant1
+				{
+					name = "Grenadier Support";
+
+					class Backpack : Backpack
+					{
+						backpack    = "B_Fieldpack_oli_Ammo";
+						magazines[] = {{"1Rnd_HE_Grenade_shell", 20}, {"1Rnd_Smoke_Grenade_shell", 10}};
+					};
+				};
+			};
 		};
-		class Sniper_US : Rifleman_US
+		class SquadLeader_IN : Rifleman_IN
 		{
-			name = "Sniper";
+			name = "Squad Leader";
+
+			class Clothing : Clothing
+			{
+				uniform = "U_I_CombatUniform_tshirt";
+				headgear = "H_HelmetIA";
+				vest     = "V_PlateCarrierIA1_dgtl";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					name = "Standard";
+					class Pistol
+					{
+						weapon      = "hgun_Rook40_F";
+						magazines[] = {{"16Rnd_9x21_Mag", 3}};
+					};
+					class Primary : Primary
+					{
+						optics      = "optic_Arco";
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+
+					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellRed", 2}};
+				};
+			};
 		};
-		class Spotter_US : Rifleman_US
+		class Medic_IN : Rifleman_IN
 		{
-			name = "Spotter";
+			name = "Combat Medic";
+			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
+
+			class Clothing : Clothing
+			{
+				uniform = "U_I_CombatUniform_shortsleeve";
+				vest = "V_BandollierB_oli";
+				headgear = "H_HelmetIA_camo";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					class Primary : Primary
+					{
+						weapon      = "arifle_Katiba_C_F";
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+						backpack = "B_AssaultPack_khk";
+						weapons[] = {{"Medikit", 1}, {"FirstAidKit", 10}};
+					};
+
+					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 5}};
+					items[] = {};
+				};
+			};
+		};
+
+		class Machinegunner_IN : Rifleman_IN
+		{
+			name = "Automatic Rifleman";
+
+			class Clothing : Clothing
+			{
+				uniform = "U_I_CombatUniform_shortsleeve";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					class Primary : Primary
+					{
+						weapon      = "LMG_Mk200_F";
+						magazines[] = {{"200Rnd_65x39_cased_Box_Tracer", 3}};
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+				};
+			};
+		};
+		class Grenadier_IN : Rifleman_IN
+		{
+			name = "Grenadier";
+
+			class Clothing : Clothing
+			{
+				vest = "V_PlateCarrierIAGL_dgtl";
+			};
+
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					class Primary : Primary
+					{
+						weapon      = "arifle_Katiba_GL_F";
+						magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 9}, {"1Rnd_HE_Grenade_shell", 8}, {"1Rnd_Smoke_Grenade_shell", 4}};
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+
+					explosives[] = {};
+				};
+			};
+		};
+		class Marksman_IN : Rifleman_IN
+		{
+			name = "Marksman";
+
+			class Clothing : Clothing
+			{
+				vest = "V_ChestrigF_oli";
+				headgear = "H_HelmetIA_camo";
+			};
+			
+			class Variants : Variants
+			{
+				class Variant1 : Variant1
+				{
+					class Primary : Primary
+					{
+						weapon      = "srifle_EBR_F";
+						optics      = "optic_Arco";
+						magazines[] = {{"20Rnd_762x51_Mag", 8}};
+					};
+					class Secondary
+					{
+					};
+					class Backpack
+					{
+					};
+
+					explosives[] = {};
+				};
+			};
 		};
 	};
 };
