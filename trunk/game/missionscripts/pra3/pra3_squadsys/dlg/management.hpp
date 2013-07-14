@@ -53,7 +53,7 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 {
 	x = 0;
 	y = 0;
-	w = 0.22;
+	w = 0.24;
 	h = 0.4;
 
 	class Controls
@@ -67,6 +67,11 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 			h = 0.036;
 			style = ST_LEFT;
 			text = "Item1";
+			
+			colorBackground[] = {0,0,0,1};
+			colorBackgroundActive[] = {1,1,1,0.5};
+			colorBackgroundDisabled[] = {0,0,0,1};
+			colorFocused[] = {1,1,1,0.5};
 		};
 		#define __item(num) \
 		class Item##num : Item1 \
@@ -268,6 +273,11 @@ class Rsc_PRA3_squadSys_manageDlg
 							action = "1 call PRA3_fnc_squadDlg_actionButton";
 							sizeEx = 0.034;
 							size = 0.034;
+							
+							colorBackground[] = {0,0,0,1};
+							colorBackgroundActive[] = {1,1,1,0.5};
+							colorBackgroundDisabled[] = {0,0,0,1};
+							colorFocused[] = {1,1,1,0.5};
 
 							class TextPos
 							{
@@ -629,6 +639,11 @@ class Rsc_PRA3_squadSys_manageDlg
 						{
 							idc = __EVAL(500000 + 6000);
 							action = "0 call PRA3_fnc_squadDlg_actionButton";
+							
+							colorBackground[] = {0,0,0,1};
+							colorBackgroundActive[] = {1,1,1,0.5};
+							colorBackgroundDisabled[] = {0,0,0,1};
+							colorFocused[] = {1,1,1,0.5};
 						};
 
 						class CollapserPicture : CollapserPicture
@@ -798,6 +813,11 @@ class Rsc_PRA3_squadSys_manageDlg
 
 							text = "Invite selected";
 							action = "call PRA3_fnc_squadDlg_inviteButton";
+							
+							colorBackground[] = {0,0,0,1};
+							colorBackgroundActive[] = {1,1,1,0.5};
+							colorBackgroundDisabled[] = {0,0,0,1};
+							colorFocused[] = {1,1,1,0.5};
 						};
 					};
 				};
