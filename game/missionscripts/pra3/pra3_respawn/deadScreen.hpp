@@ -52,13 +52,14 @@ class PRA3_respawn_deadScreen
 			colorBackground[] = {0,0,0,1};
 			
 			idc = 30;
-			x = 0.375;
-			y = 0.6;
-			text = "00:00.000";
+			x = 0;
+			y = 0.6 - 0.06/2;
+			w = 1;
+			text = "00:00";
 			
 			class Attributes : Attributes
 			{
-				align = "left";
+				align = "center";
 			};
 		};
 	};
