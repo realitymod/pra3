@@ -8,6 +8,10 @@ class Header
 
 author = "Project Reality - www.realitymod.com";
 
+/*Adds to screen loading*/
+onLoadName = "PR:A3 - Agia Marina";
+loadScreen = "PRloadingLogo.jpg";
+
 disabledAI = 1;
 
 respawn = 3;
