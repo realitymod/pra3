@@ -5,7 +5,7 @@ PRA3_kits = [];
 
 var(_loadWeapon) =
 {
-	if (isClass _this) then
+	if (isClass _this && {getText(_this >> "weapon") != ""}) then
 	{
 		[
 			getText (_this >> "weapon"),
@@ -41,7 +41,7 @@ for "_i" from 0 to (count _cfg - 1) do
 			var(_pistol)  = (_variant >> "Pistol") call _loadWeapon;
 			var(_primary) = (_variant >> "Primary") call _loadWeapon;
 			var(_secondary) = (_variant >> "Secondary") call _loadWeapon;
-			var(_backpack) = if (isClass(_variant >> "Backpack")) then
+			var(_backpack) = if (isClass(_variant >> "Backpack") && {getText(_variant >> "Backpack" >> "backpack") != ""}) then
 			{
 				[
 					getText(_variant >> "Backpack" >> "backpack"),
