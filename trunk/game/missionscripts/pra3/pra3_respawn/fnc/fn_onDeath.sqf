@@ -1,6 +1,6 @@
 #include "scriptDefines.sqh"
 
-PRA3_AAS_respawnTime = 20;
+PRA3_AAS_respawnTime = 60;
 setPlayerRespawnTime 999999;
 
 if (isNil "PRA3_respawn_keyDownHandler") then
@@ -30,11 +30,11 @@ if !(alive player) then
 		_time = PRA3_AAS_spawnAtTime - time;
 		if (_time >= 0) then
 		{
-			_time = [_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
+			_time = [_time ,"MM:SS"] call BIS_fnc_secondsToString;
 		}
 		else
 		{
-			_time = "00:00.000";
+			_time = "00:00";
 		};
 		uiNamespace getVariable "PRA3_respawn_deadScreen" displayCtrl 30 ctrlSetStructuredText parseText _time;
 
