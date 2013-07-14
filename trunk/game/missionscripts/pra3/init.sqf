@@ -5,6 +5,5 @@
 	"executor",
 	"mp",
 	"kits",
-	"squadsys",
-	"interactions"
+	"squadsys"
 ];
