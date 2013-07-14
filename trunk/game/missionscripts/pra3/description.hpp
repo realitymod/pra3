@@ -9,7 +9,7 @@ class Header
 author = "Project Reality - www.realitymod.com";
 
 /*Adds to screen loading*/
-loadScreen = "PRloadingLogo.jpg";
+loadScreen = "pra3\PRloadingLogo.jpg";
 
 disabledAI = 1;
 
