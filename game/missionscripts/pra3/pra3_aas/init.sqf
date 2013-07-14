@@ -14,43 +14,43 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
 PRA3_AAS_respawnTime = 30;
 
-// Initialize each zone and create markers for it
-{
-	if (isServer) then
-	{
-		var(_owner) = _x select 3;
-		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
-		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
-		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
-		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
-	};
-
-	if (isClient) then
-	{
-		var(_mainMarker) = _x select 0;
-		_mainMarker setMarkerBrushLocal "SolidBorder";
-		PRA3_core setVariable [format["PRA3_AAS_%1_marker_1", _forEachIndex], _mainMarker];
-
-		var(_pos) = getMarkerPos _mainMarker;
-		var(_smallMarker) = createMarkerLocal [format["%1_circle_1", _forEachIndex], _pos];
-		_smallMarker setMarkerShapeLocal "Ellipse";
-		_smallMarker setMarkerBrushLocal "SolidBorder";
-		_smallMarker setMarkerSizeLocal [0.3,0.3];
-		_smallMarker setMarkerTextLocal "Hello";
-		PRA3_core setVariable [format["PRA3_AAS_%1_marker_2", _forEachIndex], _smallMarker];
-
-		var(_location) = createLocation ["NameVillage", _pos, 0, 0];
-		_location setText format[" %1", _forEachIndex call PRA3_fnc_AAS_getZoneName];
-		PRA3_core setVariable [format["PRA3_AAS_%1_location", _forEachIndex], _location];
-
-		_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
-	};
-} forEach PRA3_AAS_zones;
-
-PRA3_AAS_attackDefendMarkers = [];
-
 var(_init) =
 {
+	// Initialize each zone and create markers for it
+	{
+		if (isServer) then
+		{
+			var(_owner) = _x select 3;
+			PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
+			PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
+			PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
+			PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
+		};
+
+		if (isClient) then
+		{
+			var(_mainMarker) = _x select 0;
+			_mainMarker setMarkerBrushLocal "SolidBorder";
+			PRA3_core setVariable [format["PRA3_AAS_%1_marker_1", _forEachIndex], _mainMarker];
+
+			var(_pos) = getMarkerPos _mainMarker;
+			var(_smallMarker) = createMarkerLocal [format["%1_circle_1", _forEachIndex], _pos];
+			_smallMarker setMarkerShapeLocal "Ellipse";
+			_smallMarker setMarkerBrushLocal "SolidBorder";
+			_smallMarker setMarkerSizeLocal [0.3,0.3];
+			_smallMarker setMarkerTextLocal "Hello";
+			PRA3_core setVariable [format["PRA3_AAS_%1_marker_2", _forEachIndex], _smallMarker];
+
+			var(_location) = createLocation ["NameVillage", _pos, 0, 0];
+			_location setText format[" %1", _forEachIndex call PRA3_fnc_AAS_getZoneName];
+			PRA3_core setVariable [format["PRA3_AAS_%1_location", _forEachIndex], _location];
+
+			_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
+		};
+	} forEach PRA3_AAS_zones;
+
+	PRA3_AAS_attackDefendMarkers = [];
+
 	call PRA3_fnc_AAS_calculateFrontline;
 	call PRA3_fnc_AAS_updateAttackDefendMarkers;
 
@@ -67,7 +67,10 @@ else
 {
 	_init spawn
 	{
-		// We need to make sure the server has initialzed all the flags
+		// playerSide will return garbage for JIP players without this wait, causing zone markers to have the wrong colors
+		waitUntil {!isNull player};
+		
+		// We need to make sure the server has initialzed all the zones
 		{
 			waitUntil {!isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}};
 		} forEach PRA3_AAS_zones;
