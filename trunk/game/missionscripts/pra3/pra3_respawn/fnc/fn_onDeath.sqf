@@ -12,7 +12,7 @@ if (isNil "PRA3_respawn_keyDownHandler") then
 if !(alive player) then
 {
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
-	
+	1 fadesound 0;
 	// Penalize the death
 	// TODO: Remove hardcoded value
 	[player call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
@@ -48,6 +48,7 @@ if !(alive player) then
 			[player, PRA3_AAS_selectedSpawn] call PRA3_fnc_respawnUnit;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
 			PRA3_AAS_selectedSpawn = ""; // Unselect spawn point
+			0 fadesound 1;
 		};
 
 		sleep 0.01;
