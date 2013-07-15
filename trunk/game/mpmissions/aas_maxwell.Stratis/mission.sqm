@@ -460,17 +460,21 @@ class Mission
 		{
 			position[]={3139.729,191.51443,2684.8911};
 			name="spawn1";
-			text="Controlled Rally";
+			text="Hill 207 Rally";
 			type="b_inf";
 			colorName="ColorBlack";
+			a=0.75;
+			b=0.75;
 		};
 		class Item10
 		{
 			position[]={3270.6221,192.71091,3219.8613};
 			name="spawn2";
-			text="Controlled Rally";
+			text="Hill 210 Rally";
 			type="b_inf";
 			colorName="ColorBlack";
+			a=0.75;
+			b=0.75;
 		};
 		class Item11
 		{
