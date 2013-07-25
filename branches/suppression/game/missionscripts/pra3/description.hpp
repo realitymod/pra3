@@ -35,6 +35,7 @@ class RscTitles
 {
 	#include "pra3_aas\captureIndicator.hpp"
 	#include "pra3_respawn\deadScreen.hpp"
+	#include "pra3_suppression\suppressionDialog.hpp"
 };
 
 #include "pra3_respawn\respawnDialog.hpp"
