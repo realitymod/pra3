@@ -1,10 +1,10 @@
 class PRA3_suppression_HUD
 {
 	idd = -1;
-	duration = 5;
+	duration = 4;
 	name = "PRA3_suppression_HUD";
 	fadeIn = 0;
-	fadeOut = 5;
+	fadeOut = 4;
 	onLoad = "uiNamespace setVariable [""PRA3_suppression_HUD"", _this select 0]";
 	
 	class ControlsBackground
