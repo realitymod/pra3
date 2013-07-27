@@ -19,7 +19,7 @@ var(_kitInfo) = _kit call PRA3_fnc_getKitInfo;
 
 // Put clothes back on to make epoch sad
 var(_clothing) = _kitInfo select KIT_CLOTHING;
-_unit addUniform (_clothing select CLOTHING_UNIFORM);
+// We'll add the uniform last to avoid having anything put into it
 _unit addHeadgear (_clothing select CLOTHING_HEADGEAR);
 _unit addGoggles (_clothing select CLOTHING_GOGGLES);
 _unit addVest (_clothing select CLOTHING_VEST);
@@ -77,3 +77,33 @@ if (count _stuff > 0) then
 };
 
 VARIANT_PISTOL call _giveWeapon;
+
+{
+	for "_i" from 1 to (_x select 1) do
+	{
+		_unit addMagazine (_x select 0);
+	};
+} forEach (_variant select VARIANT_EXPLOSIVES);
+
+{
+	for "_i" from 1 to (_x select 1) do
+	{
+		if (isClass(configFile >> "CfgWeapons" >> (_x select 0))) then
+		{
+			if (getNumber(configFile >> "CfgWeapons" >> (_x select 0) >> "type") == 131072) then
+			{
+				_unit addItem (_x select 0);
+			}
+			else
+			{
+				_unit addWeapon (_x select 0);
+			};
+		}
+		else
+		{
+			_unit addMagazine (_x select 0);
+		};
+	};
+} forEach (_variant select VARIANT_ITEMS);
+
+_unit addUniform (_clothing select CLOTHING_UNIFORM);
