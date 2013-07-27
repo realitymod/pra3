@@ -20,11 +20,11 @@ class PRA3_kits
 
 			class Requirements
 			{
-				perEvery        = 1;
-				minPlayersSquad = -1;
-				maxPerSquad     = -1;
+				type = LIMIT_SQUAD;
 
-				returnTime      = -1;
+				perEvery    = 1;
+				minMembers  = 0;
+				maxPerSquad = -1;
 			};
 			class Clothing
 			{
@@ -61,7 +61,7 @@ class PRA3_kits
 					};
 
 					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
-					items[] = {{"FirstAidKit", 1}};
+					items[] = {{"FirstAidKit", 2}};
 				};
 				class Variant2 : Variant1
 				{
@@ -90,6 +90,11 @@ class PRA3_kits
 		class SquadLeader_US : Rifleman_US
 		{
 			name = "Squad Leader";
+
+			class Requirements
+			{
+				type = LIMIT_SL;
+			};
 
 			class Clothing : Clothing
 			{
@@ -120,6 +125,7 @@ class PRA3_kits
 					};
 
 					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellBlue", 2}};
+					items[] = {{"FirstAidKit", 3}, {"Rangefinder", 1}};
 				};
 			};
 		};
@@ -127,6 +133,15 @@ class PRA3_kits
 		{
 			name = "Combat Medic";
 			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
+
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 3;
+				minMembers  = 3;
+				maxPerSquad = 1;
+			};
 
 			class Clothing : Clothing
 			{
@@ -217,12 +232,21 @@ class PRA3_kits
 		{
 			name = "Marksman";
 
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 6;
+				minMembers  = 6;
+				maxPerSquad = -1;
+			};
+
 			class Clothing : Clothing
 			{
 				vest = "V_Chestrig_khk";
 				headgear = "H_HelmetB_light";
 			};
-			
+
 			class Variants : Variants
 			{
 				class Variant1 : Variant1
@@ -243,8 +267,8 @@ class PRA3_kits
 				};
 			};
 		};
-		
-		class Rifleman_IN
+
+		class Rifleman_IN : Rifleman_US
 		{
 			scope = public;
 			team = TEAM_IN;
@@ -252,14 +276,6 @@ class PRA3_kits
 			name = "Rifleman";
 			picture = "pra3\pra3_kits\data\kit_img\rifleman_88.paa";
 
-			class Requirements
-			{
-				perEvery        = 1;
-				minPlayersSquad = -1;
-				maxPerSquad     = -1;
-
-				returnTime      = -1;
-			};
 			class Clothing
 			{
 				uniform  = "U_I_CombatUniform";
@@ -323,6 +339,11 @@ class PRA3_kits
 		{
 			name = "Squad Leader";
 
+			class Requirements
+			{
+				type = LIMIT_SL;
+			};
+
 			class Clothing : Clothing
 			{
 				uniform = "U_I_CombatUniform_tshirt";
@@ -352,6 +373,7 @@ class PRA3_kits
 					};
 
 					explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellRed", 2}};
+					items[] = {{"FirstAidKit", 3}, {"Rangefinder", 1}};
 				};
 			};
 		};
@@ -455,7 +477,7 @@ class PRA3_kits
 				vest = "V_ChestrigF_oli";
 				headgear = "H_HelmetIA_camo";
 			};
-			
+
 			class Variants : Variants
 			{
 				class Variant1 : Variant1
