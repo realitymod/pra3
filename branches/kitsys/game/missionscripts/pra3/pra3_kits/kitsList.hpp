@@ -6,6 +6,10 @@
 
 #define public 2
 
+#define LIMIT_NO		0
+#define LIMIT_SQUAD		1
+#define LIMIT_SL		2
+
 class PRA3_kits
 {
 	class Kits
@@ -20,11 +24,7 @@ class PRA3_kits
 
 			class Requirements
 			{
-				type = LIMIT_SQUAD;
-
-				perEvery    = 1;
-				minMembers  = 0;
-				maxPerSquad = -1;
+				type = LIMIT_NO;
 			};
 			class Clothing
 			{
@@ -94,6 +94,8 @@ class PRA3_kits
 			class Requirements
 			{
 				type = LIMIT_SL;
+
+				minMembers = 3;
 			};
 
 			class Clothing : Clothing

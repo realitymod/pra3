@@ -18,7 +18,25 @@ class Kits
 
 	class equipWithKit
 	{
-		description = "Equips the unit with the given kit.";
+		description = "Equips the unit with the given kit. Also notifies the server about it.";
+	};
+	
+	class getKitAvailableNum
+	{
+		description = "Returns the number of kits the given unit has available.";
+	};
+	class getMaxKitAvailableNum
+	{
+		description = "Returns the max number of kits that could be available to the give unit.";
+	};
+	
+	class unitGetKit
+	{
+		description = "Returns the unit's kit. Returns an empty string if the unit had no kit assigned.";
+	};
+	class unitSetKit
+	{
+		description = "Sets the unit's kit. Has to be run server-side.";
 	};
 
 	class kitDlg_kitDetailsBtn
