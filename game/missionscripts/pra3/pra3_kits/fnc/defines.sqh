@@ -28,3 +28,8 @@
 	#define VARIANT_EXPLOSIVES	6
 	#define VARIANT_ITEMS		7
 #define KIT_VARIANT_CURR	6
+
+
+#define LIMIT_NO		0
+#define LIMIT_SQUAD		1
+#define LIMIT_SL		2

@@ -1,6 +1,14 @@
 #include "scriptDefines.sqh"
 #include "defines.sqh"
 
+/**
+ *	Equips the unit with the given kit. Also notifies the server about it.
+ *		(in)  <ARRAY>:
+ *			0 <OBJECT> Unit
+ *			1 <STRING> Kit
+ *		(out) <VOID>
+ */
+
 var(_unit) = _this select 0;
 var(_kit)  = _this select 1;
 
@@ -107,3 +115,5 @@ VARIANT_PISTOL call _giveWeapon;
 } forEach (_variant select VARIANT_ITEMS);
 
 _unit addUniform (_clothing select CLOTHING_UNIFORM);
+
+[[_unit, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;

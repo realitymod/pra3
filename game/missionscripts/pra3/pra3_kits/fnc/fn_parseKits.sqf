@@ -23,6 +23,36 @@ var(_loadWeapon) =
 	}
 };
 
+var(_loadRequirements) =
+{
+	var(_type) = getNumber(_this >> "type");
+	var(_requirements) = [_type];
+
+	var(_properties) = switch (_type) do
+	{
+		case LIMIT_NO:
+		{
+			[]
+		};
+		case LIMIT_SQUAD:
+		{
+			[
+				getNumber(_this >> "perEvery"),
+				getNumber(_this >> "minMembers"),
+				getNumber(_this >> "maxPerSquad")
+			]
+		};
+		case LIMIT_SL:
+		{
+			[
+				getNumber(_this >> "minMembers")
+			]
+		};
+	};
+
+	(_requirements + _properties)
+};
+
 var(_cfg) = missionConfigFile >> "PRA3_kits" >> "Kits";
 for "_i" from 0 to (count _cfg - 1) do
 {
@@ -82,7 +112,7 @@ for "_i" from 0 to (count _cfg - 1) do
 	/* KIT_TEAM         */ getNumber(_kit >> "side"),
 	/* KIT_NAME         */ getText(_kit >> "name"),
 	/* KIT_PICTURE      */ getText(_kit >> "picture"),
-	/* KIT_REQUIREMENTS */ [], // requirements
+	/* KIT_REQUIREMENTS */ ((_kit >> "Requirements") call _loadRequirements),
 	/* KIT_CLOTHING     */ _clothing,
 	/* KIT_VARIANTS     */ _variants,
 	/* KIT_VARIANT_CURR */ 0
