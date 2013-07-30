@@ -23,9 +23,22 @@ var(_i) = 1;
 
 		__getCtrl(10000 + 100*_i + 3) ctrlSetText (_kitInfo select KIT_NAME);
 
+		var(_nowAvailable) = [player, _x] call PRA3_fnc_getKitAvailableNum;
+		var(_maxAvailable) = [player, _x] call PRA3_fnc_getMaxKitAvailableNum;
+		__getCtrl(10000 + 100*_i + 4) ctrlSetText (
+			if (_nowAvailable >= __inf) then {
+				"Unlimited"
+			} else {
+				if (_nowAvailable == 0) then {
+					"Unavailable"
+				} else {
+					format["%1 available", _nowAvailable]
+				}
+			}
+		);
 		_i = _i + 1;
 	};
-} forEach PRA3_kits; // TODO: Filter bansed on availability
+} forEach PRA3_kits;
 
 for "_i" from _i to __maxKits do
 {
