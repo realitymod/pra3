@@ -7,7 +7,7 @@ var(_i) = 1;
 {
 	var(_kitInfo)    = _x call PRA3_fnc_getKitInfo;
 	var(_playerSide) = if (playerSide == west) then {TEAM_US} else {TEAM_IN};
-	
+
 	if (_kitInfo select KIT_TEAM == _playerSide || {!isNil "PRA3_debug_kits_showAllSides"}) then
 	{
 		__getCtrl(10000 + 100*_i) ctrlShow true;
@@ -20,6 +20,8 @@ var(_i) = 1;
 
 		__getCtrl(10000 + 100*_i + 1) ctrlSetBackgroundColor
 			getArray(__kitLineCtrl(_i,"Background") >> (if (_isSelected) then {"colorBackgroundHighlight"} else {"colorBackground"}));
+
+		__getCtrl(10000 + 100*_i + 2) ctrlSetText (_kitInfo select KIT_PICTURE);
 
 		__getCtrl(10000 + 100*_i + 3) ctrlSetText (_kitInfo select KIT_NAME);
 
