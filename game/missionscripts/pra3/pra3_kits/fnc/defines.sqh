@@ -9,6 +9,9 @@
 #define TYPE_WEAPON		1
 #define TYPE_BACKPACK	2
 
+#define TEAM_US	0
+#define TEAM_IN	1
+
 #define KIT_TEAM			0
 #define KIT_NAME			1
 #define KIT_PICTURE			2

@@ -109,7 +109,7 @@ for "_i" from 0 to (count _cfg - 1) do
 		missionNamespace setVariable [
 			format ["PRA3_kit_%1", _name],
 			[
-	/* KIT_TEAM         */ getNumber(_kit >> "side"),
+	/* KIT_TEAM         */ getNumber(_kit >> "team"),
 	/* KIT_NAME         */ getText(_kit >> "name"),
 	/* KIT_PICTURE      */ getText(_kit >> "picture"),
 	/* KIT_REQUIREMENTS */ ((_kit >> "Requirements") call _loadRequirements),

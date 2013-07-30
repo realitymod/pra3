@@ -1,8 +1,8 @@
 #define TYPE_WEAPON		1
 #define TYPE_BACKPACK	2
 
-#define TEAM_US	1
-#define TEAM_IN	2
+#define TEAM_US	0
+#define TEAM_IN	1
 
 #define public 2
 
