@@ -3,9 +3,11 @@
 
 /**
  *	Returns the number of kits the given unit has available.
- *		(in)  <OBJECT> Unit
- *			or
- *		(in)  <STRING> Unit UID
+ *		(in)  <ARRAY>:
+ *			0 <OBJECT> Unit
+ *				OR
+ *			0 <STRING> Unit UID
+ *			1 <STRING> Kit
  *		(out) <INT> Number of available kits
  */
 
@@ -19,7 +21,7 @@ switch (_requirements select 0) do
 {
 	case LIMIT_NO:
 	{
-		1e10
+		__inf
 	};
 	case LIMIT_SQUAD:
 	{

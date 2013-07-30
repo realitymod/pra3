@@ -36,3 +36,5 @@
 #define LIMIT_NO		0
 #define LIMIT_SQUAD		1
 #define LIMIT_SL		2
+
+#define __inf 1e10

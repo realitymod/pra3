@@ -178,6 +178,15 @@ class PRA3_kits
 		{
 			name = "Automatic Rifleman";
 
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 5;
+				minMembers  = 5;
+				maxPerSquad = 1;
+			};
+
 			class Clothing : Clothing
 			{
 				uniform = "U_B_CombatUniform_mcam_vest";
@@ -204,6 +213,15 @@ class PRA3_kits
 		class Grenadier_US : Rifleman_US
 		{
 			name = "Grenadier";
+
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 5;
+				minMembers  = 5;
+				maxPerSquad = 1;
+			};
 
 			class Clothing : Clothing
 			{
@@ -240,7 +258,7 @@ class PRA3_kits
 
 				perEvery    = 6;
 				minMembers  = 6;
-				maxPerSquad = -1;
+				maxPerSquad = 1;
 			};
 
 			class Clothing : Clothing
@@ -384,6 +402,15 @@ class PRA3_kits
 			name = "Combat Medic";
 			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
 
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 3;
+				minMembers  = 3;
+				maxPerSquad = 1;
+			};
+
 			class Clothing : Clothing
 			{
 				uniform = "U_I_CombatUniform_shortsleeve";
@@ -418,6 +445,15 @@ class PRA3_kits
 		{
 			name = "Automatic Rifleman";
 
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 5;
+				minMembers  = 5;
+				maxPerSquad = 1;
+			};
+
 			class Clothing : Clothing
 			{
 				uniform = "U_I_CombatUniform_shortsleeve";
@@ -444,6 +480,15 @@ class PRA3_kits
 		class Grenadier_IN : Rifleman_IN
 		{
 			name = "Grenadier";
+
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 5;
+				minMembers  = 5;
+				maxPerSquad = 1;
+			};
 
 			class Clothing : Clothing
 			{
@@ -473,6 +518,15 @@ class PRA3_kits
 		class Marksman_IN : Rifleman_IN
 		{
 			name = "Marksman";
+
+			class Requirements
+			{
+				type = LIMIT_SQUAD;
+
+				perEvery    = 6;
+				minMembers  = 6;
+				maxPerSquad = 1;
+			};
 
 			class Clothing : Clothing
 			{
