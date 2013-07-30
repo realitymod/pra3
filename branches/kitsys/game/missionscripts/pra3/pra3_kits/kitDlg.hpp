@@ -156,7 +156,7 @@ class Rsc_PRA3_kits_kitDlg
 					};
 				};
 
-				#define __kit(num,name,pic,avail) \
+				#define __kit(num) \
 				class Kit##num : Kit1 \
 				{ \
 					idc = 10000 + (100 * num); \
@@ -171,17 +171,14 @@ class Rsc_PRA3_kits_kitDlg
 						class KitPic : KitPic \
 						{ \
 							idc = __EVAL(10000 + num * 100 + 2); \
-							text = pic; \
 						}; \
 						class Title : Title \
 						{ \
 							idc = __EVAL(10000 + num * 100 + 3); \
-							text = name; \
 						}; \
 						class Availability : Availability \
 						{ \
 							idc = __EVAL(10000 + num * 100 + 4); \
-							text = avail; \
 						}; \
 						class Button : Button \
 						{ \
@@ -191,17 +188,17 @@ class Rsc_PRA3_kits_kitDlg
 					}; \
 				}
 
-				__kit(2,"Squad Leader","pra3\pra3_kits\data\kit_img\rifleman_88.paa","Must be squad leader");
-				__kit(3,"Combat Medic","pra3\pra3_kits\data\kit_img\medic_88.paa","4/10");
-				__kit(4,"Automatic Rifleman","pra3\pra3_kits\data\kit_img\rifleman_88.paa","2/10");
-				__kit(5,"Grenadier","pra3\pra3_kits\data\kit_img\rifleman_88.paa","3/5");
-				__kit(6,"Light Anti-Tank","pra3\pra3_kits\data\kit_img\rifleman_88.paa","0/4");
-				__kit(7,"Heavy Anti-Tank","pra3\pra3_kits\data\kit_img\rifleman_88.paa","1/2");
-				__kit(8,"Anti-Air","pra3\pra3_kits\data\kit_img\rifleman_88.paa","2/2");
-				__kit(9,"Marksman","pra3\pra3_kits\data\kit_img\rifleman_88.paa","3/6");
-				__kit(10,"Combat Engineer","pra3\pra3_kits\data\kit_img\rifleman_88.paa","1/5");
-				__kit(11,"Sniper","pra3\pra3_kits\data\kit_img\rifleman_88.paa","1/2");
-				__kit(12,"Spotter","pra3\pra3_kits\data\kit_img\rifleman_88.paa","1/2");
+				__kit(2);
+				__kit(3);
+				__kit(4);
+				__kit(5);
+				__kit(6);
+				__kit(7);
+				__kit(8);
+				__kit(9);
+				__kit(10);
+				__kit(11);
+				__kit(12);
 			};
 		};
 
