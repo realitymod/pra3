@@ -39,6 +39,10 @@ class Kits
 		description = "Sets the unit's kit. Has to be run server-side.";
 	};
 
+	class kitDlg_updateAvailability
+	{
+		description = "Checks availabilty of kits, updates descriptions and disables the request button.";
+	};
 	class kitDlg_kitDetailsBtn
 	{
 		description = "Handles clicking on a kit details button.";

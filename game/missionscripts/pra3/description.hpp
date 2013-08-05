@@ -63,6 +63,10 @@ class CfgDebriefing
 	};
 };
 
+#ifdef PRA3_DEBUG
+allowFunctionsRecompile = 1;
+#endif // PRA3_DEBUG
+
 class CfgFunctions
 {
 	class PRA3
