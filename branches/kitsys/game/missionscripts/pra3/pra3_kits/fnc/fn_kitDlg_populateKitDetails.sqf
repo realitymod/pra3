@@ -70,6 +70,8 @@ var(_kit) = PRA3_kitSys_currentKit;
 var(_kitInfo) = PRA3_kitSys_currentKit call PRA3_fnc_getKitInfo;
 var(_variantInfo) = _kitInfo select KIT_VARIANTS select (_kitInfo select KIT_VARIANT_CURR);
 
+_kit call PRA3_fnc_kitDlg_updateAvailability;
+
 var(_y) = getNumber(__kitDetails("Variant") >> "y");
 
 __getCtrl(20001) ctrlShow (count(_kitInfo select KIT_VARIANTS) > 1);

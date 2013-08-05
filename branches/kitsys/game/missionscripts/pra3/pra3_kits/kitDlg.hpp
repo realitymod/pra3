@@ -76,8 +76,9 @@ class Rsc_PRA3_kits_kitDlg
 							h = __h;
 
 							colorBackground[] = {0.35,0.35,0.35,0.9};
-							//colorBackgroundDim[] = {0.25,0.25,0.25,0.9};
+							colorBackgroundDim[] = {0.27,0.27,0.27,0.9};
 							colorBackgroundHighlight[] = {0.55,0.55,0.55,0.9};
+							colorBackgroundDimHighlight[] = {0.45,0.45,0.45,0.9};
 						};
 						class KitPic : RscPicture
 						{
@@ -89,8 +90,6 @@ class Rsc_PRA3_kits_kitDlg
 							text = "pra3\pra3_kits\data\kit_img\rifleman_88.paa";
 							colorBackground[] = {1,0,0,1};
 							colorText[] = {0.9,0.9,0.9,1.0};
-							//colorTextDim[] = {0.5,0.5,0.5,1.0};
-							colorTextHighlight[] = {1.0,1.0,1.0,1.0};
 						};
 						class Title : RscText
 						{
@@ -103,8 +102,6 @@ class Rsc_PRA3_kits_kitDlg
 							text = "Rifleman";
 							font = "PuristaSemibold";
 							colorText[] = {0.9,0.9,0.9,1.0};
-							//colorTextDim[] = {0.5,0.5,0.5,1.0};
-							colorTextHighlight[] = {1.0,1.0,1.0,1.0};
 						};
 						class Availability : Title
 						{
@@ -113,8 +110,6 @@ class Rsc_PRA3_kits_kitDlg
 							text = "Unlimited";
 							font = "PuristaLight";
 							colorText[] = {0.8,0.8,0.8,1.0};
-							//colorTextDim[] = {0.4,0.4,0.4,1.0};
-							colorTextHighlight[] = {0.9,0.9,0.9,1.0};
 							sizeEx = 0.038;
 						};
 						class Button : RscShortcutButton
