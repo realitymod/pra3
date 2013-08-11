@@ -1,0 +1,5 @@
+#define __maxPlayers 64
+
+#include "pra3\description.hpp"
+
+onLoadName = "PR:A3 - Radar Station";
