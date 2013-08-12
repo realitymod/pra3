@@ -13,7 +13,7 @@ else
 	var(_marker)  = _vehicle getVariable ["PRA3_map_marker", ""];
 	var(_playerSquad) = player call PRA3_fnc_unitGetSquad;
 
-	["PRA3_fnc_updateVehicleMarker", format["Updating %1 - %2", _vehicle, _marker]] call PRA3_fnc_logInfo;
+	[format["Updating %1 - %2", _vehicle, _marker]] call PRA3_fnc_logInfo;
 
 	if (_vehicle isKindOf "CAManBase") then //Human
 	{

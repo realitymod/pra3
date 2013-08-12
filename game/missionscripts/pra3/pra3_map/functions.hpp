@@ -17,4 +17,8 @@ class Map
 	class updateVehicleMarker
 	{
 	};
+	class createMarkers
+	{
+		description = "Creates markers for all vehicles.";
+	};
 };
