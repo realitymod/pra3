@@ -1,8 +1,10 @@
 #define var(x) private #x; x
 
-// Simulates multiplayer conditions in singleplayer
-// by assigning each unit a unique identifier (UID)
-// and triggering the onPlayerConnected events.
+/*
+ * Simulates multiplayer conditions in singleplayer
+ * by assigning each unit a unique identifier (UID)
+ * and triggering the onPlayerConnected events.
+ */
 
 var(_unit) = _this select 0;
 
@@ -19,14 +21,7 @@ _unit setVariable ["PRA3_UID", str PRA3_mp_playerInfoSpUID];
 [PRA3_mp_playerInfoSpUID, _unit] spawn
 {
 	waitUntil {!isNil "PRA3_core"};
-	
-	var(_id) = _this select 0;
-	var(_name) = name (_this select 1);
-	var(_uid) = str _id;
-
-	{
-		call (_x select 0);
-	} forEach PRA3_mp_playerConnectedHandlers;
+	[_this select 0, name (_this select 1), str (_this select 0)] call PRA3_fnc_executePlayerConnected;
 };
 
 PRA3_mp_playerInfoSpUID = PRA3_mp_playerInfoSpUID + 1;

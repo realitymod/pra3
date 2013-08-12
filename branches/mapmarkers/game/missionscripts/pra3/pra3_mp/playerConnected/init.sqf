@@ -5,13 +5,9 @@ PRA3_mp_playerDisconnectedHandlers = [];
 PRA3_mp_playerDisconnectedHandlersCounter = 0;
 
 onPlayerConnected {
-	{
-		call (_x select 0);
-	} forEach PRA3_mp_playerConnectedHandlers;
+	[[_id, _name, _uid], "PRA3_fnc_executePlayerConnected"] call PRA3_fnc_MP;
 };
 
 onPlayerDisconnected {
-	{
-		call (_x select 0);
-	} forEach PRA3_mp_playerDisconnectedHandlers;
+	[[_id, _name, _uid], "PRA3_fnc_executePlayerDisconnected"] call PRA3_fnc_MP;
 };

@@ -14,10 +14,10 @@ var(_vehicle) = _this;
 if (!isDedicated) then
 {
 	// Only track friendly vehicles
-	if (((_vehicle call PRA3_fnc_getVehicleSide) == playerSide) ||
-		{_vehicle getVariable ["PRA3_map_marker", ""] != ""}) then
+	if (((_vehicle call PRA3_fnc_getVehicleSide) == playerSide) &&
+		{_vehicle getVariable ["PRA3_map_marker", ""] == ""}) then
 	{
-		[__FILE__, format["Registering %1 [%2]", _vehicle, typeOf _vehicle]] call PRA3_fnc_logInfo;
+		[format["Registering %1 [%2]", _vehicle, typeOf _vehicle]] call PRA3_fnc_logInfo;
 
 		var(_marker) = format["PRA3_map_marker_%1", PRA3_map_markerCounter];
 		PRA3_map_markerCounter = PRA3_map_markerCounter + 1;
@@ -31,7 +31,7 @@ if (!isDedicated) then
 		if (_name == "") then
 		{
 			_name = "b_unknown";
-			[__FILE__, format["Vehicle type %1 has no marker assigned", str (typeOf _vehicle)]] call PRA3_fnc_logWarning;
+			[format["Vehicle type %1 has no marker assigned", str (typeOf _vehicle)]] call PRA3_fnc_logWarning;
 		};
 
 		createMarkerLocal [_marker, getPosATL _vehicle];
@@ -109,7 +109,7 @@ if (!isDedicated) then
 }
 else
 {
-	[__FILE__, "Cannot run on dedicated server"] call PRA3_fnc_logError;
+	["Cannot run on dedicated server"] call PRA3_fnc_logError;
 	false
 }
 

@@ -16,4 +16,11 @@ if (typeName _unit == "OBJECT") then
 	_unit = _unit call PRA3_fnc_getPlayerUID;
 };
 
-PRA3_core getVariable [format["PRA3_player_name_%1", _unit], ""]
+var(_name) = PRA3_core getVariable [format["PRA3_player_name_%1", _unit], ""];
+
+if (_name == "") then
+{
+	[format["name missing for %1 (%2)", str _this, str _unit]] call PRA3_fnc_logWarning;
+};
+
+_name

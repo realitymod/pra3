@@ -26,7 +26,7 @@ if (!isDedicated) then
 
 	if (_removed) then
 	{
-		["PRA3_fMap_unregisterVehicle", format["Unregistering %1 [%2]", _vehicle, typeOf _vehicle]] call PRA3_fnc_logInfo;
+		[format["Unregistering %1 [%2]", _vehicle, typeOf _vehicle]] call PRA3_fnc_logInfo;
 
 		PRA3_core setVariable ["PRA3_map_trackedVehicles", _vehicles];
 
@@ -61,6 +61,6 @@ if (!isDedicated) then
 }
 else
 {
-	["PRA3_fMap_unregisterVehicle", "Cannot run on dedicated server"] call PRA3_fnc_logError;
+	["Cannot run on dedicated server"] call PRA3_fnc_logError;
 	false
 }

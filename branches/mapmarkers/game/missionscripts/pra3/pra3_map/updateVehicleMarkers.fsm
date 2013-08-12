@@ -8,7 +8,7 @@ link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-313.758911,325.775024,374.235840,-211.791245,1004,920,1};
-window[] = {2,-1,-1,-1,-1,871,104,1317,104,3,1022};
+window[] = {2,-1,-1,-32063,-32000,871,104,1317,104,3,1022};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -76,7 +76,7 @@ class FSM
        "			{" \n
        "				if (_vehicle isKindOf ""CAManBase"") then" \n
        "				{" \n
-       "					_label = format ["" %1"", name _vehicle];" \n
+       "					_label = format ["" %1"", _vehicle call PRA3_fnc_getPlayerName];" \n
        "				}" \n
        "				else" \n
        "				{" \n
@@ -85,7 +85,7 @@ class FSM
        "						_label = format ["" %1"", name (crew _vehicle select 0)];" \n
        "						for ""_i"" from 1 to (count crew _vehicle - 1) do" \n
        "						{" \n
-       "							_label = format[""%1, %2"", _label, name (crew _vehicle select _i)];" \n
+       "							_label = format[""%1, %2"", _label, crew _vehicle select _i call PRA3_fnc_getPlayerName];" \n
        "						};" \n
        "					};" \n
        "				};" \n

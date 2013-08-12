@@ -40,15 +40,18 @@ class Debug
 	
 	class logError
 	{
-		description = "Logs the error message and alerts the user via hint.";
+		description = "Logs the error message.";
+		headerType = 1;
 	};
 	class logWarning
 	{
 		description = "Logs the warning message.";
+		headerType = 1;
 	};
 	class logInfo
 	{
 		description = "Logs the message.";
+		headerType = 1;
 	};
 };
 

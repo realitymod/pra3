@@ -97,6 +97,6 @@ if (isServer) then
 }
 else
 {
-	["PRA3_fnc_unitLeaveSquad", "Has to be run server-side"] call PRA3_fnc_logError;
+	["Has to be run server-side"] call PRA3_fnc_logError;
 	false
 }
