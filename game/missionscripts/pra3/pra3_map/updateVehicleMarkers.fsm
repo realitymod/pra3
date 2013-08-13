@@ -8,7 +8,7 @@ link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-313.758911,325.775024,374.235840,-211.791245,1004,920,1};
-window[] = {2,-1,-1,-32063,-32000,871,104,1317,104,3,1022};
+window[] = {2,-1,-1,-64,-1,1001,234,1447,234,3,1022};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -93,7 +93,7 @@ class FSM
        "		};" \n
        "	};" \n
        "" \n
-       "	_marker setMarkerText _label;" \n
+       "	_marker setMarkerTextLocal _label;" \n
        "} forEach _vehicles;" \n
        ""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
