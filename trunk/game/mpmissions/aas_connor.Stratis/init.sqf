@@ -13,7 +13,7 @@ PRA3_AAS_zones = [
 	["zone5",  [],     [[   ],  [    4]], east,      [0,      0   ]]
 ];
 
-PRA3_AAS_bases = [[0], [6]]; //Bases for each team, indexes have to match those of PRA3_AAS_sides
+PRA3_AAS_bases = [[0], [5]]; //Bases for each team, indexes have to match those of PRA3_AAS_sides
 
 PRA3_AAS_respawns = [
 /*   SPAWN     TIED */
