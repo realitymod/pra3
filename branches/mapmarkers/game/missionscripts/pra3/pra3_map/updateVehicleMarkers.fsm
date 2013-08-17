@@ -8,7 +8,7 @@ link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-313.758911,325.775024,374.235840,-211.791245,1004,920,1};
-window[] = {2,-1,-1,-64,-1,1001,234,1447,234,3,1022};
+window[] = {2,-1,-1,-1,-1,793,26,1239,26,3,1022};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -40,10 +40,10 @@ class FSM
     class update
     {
       name = "update";
-      init = /*%FSM<STATEINIT""">*/"private [""_vehicles"", ""_vehicle"", ""_marker"", ""_label""];" \n
+      init = /*%FSM<STATEINIT""">*/"private [""_over"", ""_vehicles"", ""_vehicle"", ""_marker"", ""_label""];" \n
        "" \n
        "_over = ctrlMapMouseOver (findDisplay 12 displayCtrl 51);" \n
-       "_over = if (count _over > 0 && {_over select 0 == ""marker""}) then {" \n
+       "_over = if (!isNil ""_over"" && {count _over > 0 && {_over select 0 == ""marker""}}) then {" \n
        "	_over select 1" \n
        "} else {" \n
        "	""""" \n

@@ -16,7 +16,7 @@ if (typeName _unit == "OBJECT") then
 	_unit = _unit call PRA3_fnc_getPlayerUID;
 };
 
-PRA3_core getVariable [format["PRA3_player_side_%1", _unit], sideLogic];
+var(_side) = PRA3_core getVariable [format["PRA3_player_side_%1", _unit], sideLogic];
 
 if (_side == sideLogic) then
 {
