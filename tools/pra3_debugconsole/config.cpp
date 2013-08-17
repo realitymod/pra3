@@ -792,6 +792,8 @@ class RscDisplayInterrupt : RscStandardDisplay
 
 class RscDisplayMPInterrupt : RscStandardDisplay
 {
+	onLoad = "uiNamespace setVariable [""PRA3_RscDebugConsole"", _this select 0]; call compile preprocessFileLineNumbers ""\pra3\pra3_debugconsole\scripts\onLoad.sqf""; [""onLoad"",_this,""RscDisplayMPInterrupt"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""";
+	
 	class Controls
 	{
 		delete DebugConsole; // Remove BIS debug console
