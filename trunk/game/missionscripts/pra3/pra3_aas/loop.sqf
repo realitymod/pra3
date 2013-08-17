@@ -136,7 +136,7 @@ while {true} do
 			{
 				var(_prevOwner) = _owner;
 
-				PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _zone], _attackersSide];
+				PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _zone], _attackersSide, isServer];
 				_owner = __neutral;
 				_capture = 0;
 			}
@@ -215,7 +215,7 @@ while {true} do
 	// ---------- HANDLE DISPLAYING OF CAPTURE BAR ----------
 	if (isClient) then
 	{
-		// Check if player is capturing himself
+		// Check if player himself is capturing
 		if (_playerZone == -1) then
 		{
 			_hudLayer cutText ["", "PLAIN"];
