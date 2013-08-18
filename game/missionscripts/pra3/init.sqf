@@ -3,6 +3,7 @@
 } forEach [
 	"aas",
 	"executor",
+	"map",
 	"mp",
 	"kits",
 	"squadsys"

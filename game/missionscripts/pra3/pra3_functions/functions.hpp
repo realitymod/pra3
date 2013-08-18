@@ -20,21 +20,38 @@ class Array
 	};
 };
 
+class Config
+{
+	file = "pra3\pra3_functions\config";
+	
+	class getVehicleSide
+	{
+		description = "Returns the side the vehicle belongs to, regardless of who is inside it.";
+	};
+	class hasSeats
+	{
+		description = "Returns whether the vehicle has any ""seats"" that can be entered.";
+	};
+};
+
 class Debug
 {
 	file = "pra3\pra3_functions\debug";
 	
 	class logError
 	{
-		description = "Logs the error message and alerts the user via hint.";
+		description = "Logs the error message.";
+		headerType = 1;
 	};
 	class logWarning
 	{
 		description = "Logs the warning message.";
+		headerType = 1;
 	};
 	class logInfo
 	{
 		description = "Logs the message.";
+		headerType = 1;
 	};
 };
 

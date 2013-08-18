@@ -19,7 +19,7 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 				"localizedMessage",
 				"str_praa_squadsys_assign_ft_you",
 				__fireteamNames select (_ft-1)
-			] call PRAA_fMp_execClient;
+			] call PRA3_fMp_execClient;
 		}
 		else
 		{
@@ -30,7 +30,7 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 					"localizedMessage",
 					"str_praa_squadsys_assign_ft",
 					_unit call PRA3_fnc_getPlayerName
-				] call PRAA_fMp_execClient;
+				] call PRA3_fMp_execClient;
 			};
 		};
 	} forEach _members;

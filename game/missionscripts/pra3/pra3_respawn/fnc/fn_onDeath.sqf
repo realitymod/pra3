@@ -27,13 +27,19 @@ if !(alive player) then
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
 	
 	// Mute sound
-	1 fadesound 0;
+	1 fadeSound 0;
 	
 	// Create a camera in the middle of nowhere to prevent dead player from talking to people in direct
 	var(_pos) = [1,1,1000];
 	var(_deathCamera) = "camera" camCreate _pos;
 	_deathCamera setPosATL _pos;
 	_deathCamera switchCamera "INTERNAL";
+
+	// Remove map marker
+	[
+		player,
+		"PRA3_fnc_stopVehicleTracking"
+	] call PRA3_fnc_MP;
 
 	while {true} do
 	{
@@ -63,6 +69,12 @@ if !(alive player) then
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
 			
 			PRA3_AAS_selectedSpawn = ""; // Unselect spawn point
+
+			// Create marker
+			[
+				player,
+				"PRA3_fnc_startVehicleTracking"
+			] call PRA3_fnc_MP;
 		};
 
 		sleep 0.01;

@@ -51,12 +51,12 @@ var(_updateSquadInfo) =
 			__ctrl(500000 + 3002)
 				ctrlSetText _customName;
 
-			if (PRAA_squadSys_menuTarget != "") then // Pop-up menu open
+			if (PRA3_squadSys_menuTarget != "") then // Pop-up menu open
 			{
 				// Make sure the menu is interacting with a valid target
 				var(_valid) = false;
 				{
-					if (PRAA_squadSys_menuTarget == (_x select 0)) exitWith
+					if (PRA3_squadSys_menuTarget == (_x select 0)) exitWith
 					{
 						_valid = true;
 					};
@@ -75,7 +75,7 @@ var(_updateSquadInfo) =
 				ctrlSetText _customName;
 		};
 
-		if (!PRAA_squadSys_editingCustomName) then
+		if (!PRA3_squadSys_editingCustomName) then
 		{
 			[5, [false, _playerIsSL]] call PRA3_fnc_squadDlg_customName;
 		};
@@ -129,7 +129,7 @@ var(_updateSquadInfo) =
 	};
 
 	// Collapse/uncollapse the box
-	var(_collapsed) = PRAA_squadSys_collapsedSquads select (
+	var(_collapsed) = PRA3_squadSys_collapsedSquads select (
 		if (_id == 50) then {0} else {_id});
 
 	[if (_id == 50) then {0} else {_id}, _collapsed] call PRA3_fnc_squadDlg_collapseSquad;
@@ -198,14 +198,14 @@ var(_updateSquadInfo) =
 
 		if ((player call PRA3_fnc_getPlayerUID) == _unit) then
 		{
-			PRAA_squadSys_playerOnLine = _forEachIndex + 1;
+			PRA3_squadSys_playerOnLine = _forEachIndex + 1;
 		};
 
 		// Set kit icon
 		// TODO: Use function from kit system once implemented
 		__ctrlLine(1)
 			ctrlSetText format ["\praa\praa_hud\squadhud\kit\%1_88.paa",
-				(_unit call PRA3_fnc_getPlayerUnit) getVariable ["PRAA_kit", "rifle"]
+				(_unit call PRA3_fnc_getPlayerUnit) getVariable ["PRA3_kit", "rifle"]
 			];
 
 		// TODO: Implement from marker system
@@ -288,7 +288,7 @@ var(_showSquadBox) =
 
 var(_updateUnassignedInfo) =
 {
-	var(_collapsed) = PRAA_squadSys_collapsedSquads select 27;
+	var(_collapsed) = PRA3_squadSys_collapsedSquads select 27;
 
 	_collapsed call PRA3_fnc_squadDlg_collapseUnassigned;
 
@@ -326,7 +326,7 @@ var(_playerSquad) = (player call PRA3_fnc_unitGetSquad);
 if (_playerSquad == -1) then
 {
 	[50, false] call _showSquadBox;
-	PRAA_squadSys_playerOnLine = -1;
+	PRA3_squadSys_playerOnLine = -1;
 };
 
 if (count _updateSquads == 0) then // Update everything
