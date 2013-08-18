@@ -1,7 +1,7 @@
 class PlayerConnected
 {
 	file = "pra3\pra3_mp\playerConnected\fnc";
-	
+
 	class registerPlayerConnectedHandler
 	{
 		description = "Registers an onPlayerConnected handler.";
@@ -17,6 +17,15 @@ class PlayerConnected
 	class removePlayerDisconnectedHandler
 	{
 		description = "Removes a previously registered onPlayerDisconnected handler.";
+	};
+
+	class executePlayerConnected
+	{
+		description = "Executes all registered player connected event handlers.";
+	};
+	class executePlayerDisconnected
+	{
+		description = "Executes all registered player disconnected event handlers.";
 	};
 };
 
@@ -37,7 +46,7 @@ class PlayerRespawned
 class MP
 {
 	file = "pra3\pra3_mp\fnc";
-	
+
 	class MP
 	{
 		description = "Wrapper for BIS_fnc_MP_packet to make everything call by default.";

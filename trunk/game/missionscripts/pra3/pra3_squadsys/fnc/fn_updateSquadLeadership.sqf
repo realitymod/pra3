@@ -26,7 +26,7 @@ if (isServer) then
 				_candidate = _forEachIndex;
 			};
 		} forEach _squad;
-		diag_log ["candidate", _candidate];
+
 		if ((_squad select _candidate) select 1 == 10 || count _squad == 0) then //There already is a SL or the squad doesn't exist
 		{
 			false
@@ -40,8 +40,6 @@ if (isServer) then
 			};
 
 			[_squadId, (_squad select _candidate) select 0] call PRA3_fnc_squadSetLeader;
-
-			diag_log ["FT", _ft];
 
 			if (_ft > 0) then // FT leader promoted to squad leader, FT needs a new leader.
 			{
@@ -57,6 +55,6 @@ if (isServer) then
 }
 else
 {
-	["PRA3_fnc_updateSquadLeadership", "Has to be run server-side"] call PRA3_fnc_logError;
+	["Has to be run server-side"] call PRA3_fnc_logError;
 	false
 }
