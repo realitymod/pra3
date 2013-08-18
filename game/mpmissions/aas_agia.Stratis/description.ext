@@ -1,5 +1,4 @@
 #define __maxPlayers 16
+#define __name "Agia Marina"
 
 #include "pra3\description.hpp"
-
-onLoadName = "PR:A3 - Agia Marina";
