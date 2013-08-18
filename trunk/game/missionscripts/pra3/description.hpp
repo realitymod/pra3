@@ -1,6 +1,6 @@
 class Header
 {
-	gameType = Team;
+	gameType = SC;
 	minPlayers = 1;
 	maxPlayers = __maxPlayers;
 	playerCountMultipleOf = 2;
@@ -9,6 +9,7 @@ class Header
 author = "Project Reality - www.realitymod.com";
 
 /*Adds to screen loading*/
+onLoadName = __name;
 loadScreen = "pra3\PRloadingLogo.jpg";
 
 disabledAI = 1;
