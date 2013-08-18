@@ -50,7 +50,7 @@ while {true} do
 			_playersPresent set [_forEachIndex, []];
 		} forEach PRA3_AAS_sides;
 
-		// Zone can acutally be captured
+		// Zone can acutally being captured
 		if (_zone in PRA3_AAS_activeZones) then
 		{
 			// Let's categorize each present player according to his side
