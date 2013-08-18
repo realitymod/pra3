@@ -11,11 +11,11 @@
 
 var(_vehicle) = _this;
 
-if (!isDedicated) then
+if !isDedicated then
 {
 	// Only track friendly vehicles
 	if (((_vehicle call PRA3_fnc_getVehicleSide) == playerSide) &&
-		{_vehicle getVariable ["PRA3_map_marker", ""] == ""}) then
+		{isNil {_vehicle getVariable "PRA3_map_marker"}}) then
 	{
 		[format["Registering %1 [%2]", _vehicle, typeOf _vehicle]] call PRA3_fnc_logInfo;
 
@@ -109,7 +109,6 @@ if (!isDedicated) then
 }
 else
 {
-	["Cannot run on dedicated server"] call PRA3_fnc_logError;
 	false
 }
 

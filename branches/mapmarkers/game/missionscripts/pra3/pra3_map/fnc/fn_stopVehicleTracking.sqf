@@ -11,7 +11,7 @@
 
 var(_vehicle) = _this;
 
-if (!isDedicated) then
+if !isDedicated then
 {
 	var(_removed) = false;
 	// Find the vehicle and remove it
@@ -61,6 +61,5 @@ if (!isDedicated) then
 }
 else
 {
-	["Cannot run on dedicated server"] call PRA3_fnc_logError;
 	false
 }

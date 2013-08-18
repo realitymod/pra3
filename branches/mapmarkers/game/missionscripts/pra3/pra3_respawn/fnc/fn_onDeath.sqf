@@ -12,11 +12,11 @@ if (isNil "PRA3_respawn_keyDownHandler") then
 if !(alive player) then
 {
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
-	
+
 	// Penalize the death
 	// TODO: Remove hardcoded value
 	[player call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
-	
+
 	sleep 1;
 	// Delete any weapons the player dropped
 	{
@@ -24,6 +24,12 @@ if !(alive player) then
 	} forEach nearestObjects [player, ["WeaponHolderSimulated"], 10];
 	sleep (2 + random 2);
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
+
+	// Remove map marker
+	[
+		player,
+		"PRA3_fnc_stopVehicleTracking"
+	] call PRA3_fnc_MP;
 
 	while {true} do
 	{
@@ -48,7 +54,7 @@ if !(alive player) then
 			[player, PRA3_AAS_selectedSpawn] call PRA3_fnc_respawnUnit;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
 			PRA3_AAS_selectedSpawn = ""; // Unselect spawn point
-			
+
 			// Create marker
 			[
 				player,
