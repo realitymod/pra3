@@ -71,4 +71,12 @@ class Kits
 	{
 		description = "Handles activating the request kit button.";
 	};
+	class kitDlg_expandKitDetails
+	{
+		description = "";
+	};
+	class kitDlg_hideKitDetails
+	{
+		description = "";
+	};
 };

@@ -12,7 +12,7 @@ class Rsc_PRA3_kits_kitDlg
 		{
 			x = safeZoneX;
 			y = safeZoneY;
-			w = __EVAL(__w1 + __w2 + 0.021);
+			w = __EVAL(__w1);
 			h = 0.07;
 			colorBackground[] = {0.153,0.153,0.153,1.0};
 		};
@@ -20,7 +20,7 @@ class Rsc_PRA3_kits_kitDlg
 		{
 			x = safeZoneX + 0.01 / (4/3);
 			y = safeZoneY + 0.01;
-			w = __EVAL(__w1 + __w2 + 0.021);
+			w = __EVAL(__w1);
 			h = 0.05;
 			sizeEx = 0.05;
 			text = "KIT SELECTION";
@@ -32,17 +32,20 @@ class Rsc_PRA3_kits_kitDlg
 		class Background : TitleBackground
 		{
 			y = safeZoneY + 0.069;
-			w = __EVAL(__w1 + __w2 + 0.021);
+			w = __EVAL(__w1);
 			h = safeZoneH - 0.069;
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
 
-		class SpaceBackground : TitleBackground
+		// Used to detect when the mouse is outside of the kit selection dialog
+		class MouseDetector : RscControlsGroup
 		{
-			x = safeZoneX + __w1;
-			y = safeZoneY + 0.069;
-			w = 0.021;
-			h = safeZoneH - 0.069;
+			x = "safeZoneXAbs";
+			y = "safeZoneY";
+			w = "safeZoneWAbs";
+			h = "safeZoneH";
+
+			onMouseMoving = "call PRA3_fnc_kitDlg_hideKitDetails";
 		};
 	};
 	class Controls
@@ -198,17 +201,36 @@ class Rsc_PRA3_kits_kitDlg
 		};
 
 		#define __h2 0.225
+		#define __separatorW 0.01
 		class KitDetails : KitSelection
 		{
-			x = safeZoneX + __w1 + 0.021;
-			w = __w2;
+			idc = 100;
+			x = safeZoneX + __w1;
+			w = __w2 + __separatorW;
 
 			class Controls : Controls
 			{
+				class Background : RscText
+				{
+					idc = 101;
+					x = __separatorW;
+					y = 0;
+					w = __EVAL(__w2);
+					h = "safeZoneH - (0.01 + 0.05 + 0.01)";
+					colorBackground[] = {0.1,0.1,0.1,0.8};
+				};
+				class Separator : Background
+				{
+					idc = 102;
+					x = 0;
+					w = __separatorW;
+					colorBackground[] = {0.153,0.153,0.153,1.0};
+				};
+
 				class Variant : RscXListBox
 				{
 					idc = 20001;
-					x = 0.005;
+					x = __EVAL(__separatorW + 0.005);
 					y = __EVAL(0.005 * (4/3));
 					w = __EVAL(__w2 - 0.005*2);
 					h = 0.04;
@@ -217,6 +239,7 @@ class Rsc_PRA3_kits_kitDlg
 				class PrimaryWeapon : Kit1
 				{
 					idc = 21000;
+					x = __EVAL(__separatorW + 0.005);
 					y = __EVAL(0.04 + 0.005 * (4/3) * 2);
 					w = __EVAL(__w2 - 0.005*2);
 					h = __h2;
@@ -839,7 +862,7 @@ class Rsc_PRA3_kits_kitDlg
 					};
 				};
 
-				class Button : RscButton
+				/*class Button : RscButton
 				{
 					idc = 27000;
 					x = __EVAL(__w2 / 2 - 0.35 / 2);
@@ -852,7 +875,17 @@ class Rsc_PRA3_kits_kitDlg
 					action = "call PRA3_fnc_kitDlg_requestKitBtn";
 
 					text = "Request kit";
-				};
+				};*/
+			};
+
+			// Disable scrollbars
+			class VScrollbar : VScrollbar
+			{
+				width = 0;
+			};
+			class HScrollbar : HScrollbar
+			{
+				height = 0;
 			};
 		};
 	};
