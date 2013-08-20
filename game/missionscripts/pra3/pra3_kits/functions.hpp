@@ -79,4 +79,8 @@ class Kits
 	{
 		description = "";
 	};
+	class kitDlg_onMapDraw
+	{
+		description = "";
+	};
 };
