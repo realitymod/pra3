@@ -6,20 +6,23 @@ class Rsc_PRA3_kits_kitDlg
 	#define __w1 0.4
 	#define __w2 0.5
 
+	#define __spaceX 0.01
+	#define __spaceY (__spaceX / (4/3))
+
 	class ControlsBackground
 	{
-		class TitleBackground : RscText
+		class TitleKitsBackground : RscText
 		{
-			x = safeZoneX;
-			y = safeZoneY;
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY;
 			w = __EVAL(__w1);
 			h = 0.07;
 			colorBackground[] = {0.153,0.153,0.153,1.0};
 		};
-		class Title : RscText
+		class TitleKits : RscText
 		{
-			x = safeZoneX + 0.01 / (4/3);
-			y = safeZoneY + 0.01;
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01;
 			w = __EVAL(__w1);
 			h = 0.05;
 			sizeEx = 0.05;
@@ -29,34 +32,141 @@ class Rsc_PRA3_kits_kitDlg
 			style = ST_CENTER;
 			colorBackground[] = {0,0,0,0};
 		};
-		class Background : TitleBackground
+		class BackgroundKits : TitleKitsBackground
 		{
-			y = safeZoneY + 0.069;
+			y = safeZoneY + __spaceY + 0.069;
 			w = __EVAL(__w1);
-			h = safeZoneH - 0.069;
+			h = safeZoneH - __spaceY * 2 - 0.069;
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
+		/*
+		class TitleSpawnBackground : TitleKitsBackground
+		{
+			x = safeZoneX + __w1 + __spaceX;
+			y = safeZoneY + __spaceY;
+			w = safeZoneW - __w1 - __spaceX;
+		};
+		class TitleSpawn : TitleKits
+		{
+			x = safeZoneX + __w1 + __spaceX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01;
+			style = ST_LEFT;
+			text = "RESPAWN SELECTION";
+		};*/
 
 		// Used to detect when the mouse is outside of the kit selection dialog
 		class MouseDetector : RscControlsGroup
 		{
-			x = "safeZoneXAbs";
-			y = "safeZoneY";
-			w = "safeZoneWAbs";
-			h = "safeZoneH";
+			x = safeZoneXAbs;
+			y = safeZoneY;
+			w = safeZoneWAbs;
+			h = safeZoneH;
 
 			onMouseMoving = "call PRA3_fnc_kitDlg_hideKitDetails";
 		};
 	};
 	class Controls
 	{
+		class SpawnMap : RscControlsGroupNoScrollbars
+		{
+			#define __mapW (safeZoneW - __w1 - __spaceX * 3)
+			#define __mapH (safeZoneH - __spaceY * 2)
+
+			idc = 200;
+			
+			x = safeZoneX + __spaceX + __w1 + __spaceX;
+			y = safeZoneY + __spaceY;
+			w = __mapW;
+			h = __mapH;
+
+			class Controls
+			{
+				class TitleBackground : RscText
+				{
+					x = 0;
+					y = 0;
+					w = __mapW;
+					h = __mapH;
+					colorBackground[] = {0.153,0.153,0.153,1.0};
+				};
+				class Title : RscText
+				{
+					x = 0.05;
+					y = 0.01;
+					h = 0.05;
+					w = 0.5;
+					sizeEx = 0.05;
+					text = "RESPAWN LOCATION";
+					font = "PuristaBold";
+					colorText[] = {0.9,0.9,0.9,1};
+				};
+				class Map : RscMapControl
+				{
+					idc = 201;
+					x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX;
+					y = safeZoneY + __spaceY + 0.07;
+					w = __mapW - __spaceX * 2;
+					h = __mapH - 0.07 - 0.05 - __spaceY;
+
+					onDraw = "_this call PRA3_fnc_kitDlg_onMapDraw";
+
+					text = "#(argb,8,8,3)color(1,1,1,1)";
+					maxSatelliteAlpha = 1;
+					alphaFadeStartScale = 100;
+					alphaFadeEndScale = 100;
+					scaleMin = 0.05;
+					scaleMax = 0.5;
+					scaleDefault = 0.3;
+					colorBackground[] = {1, 1, 1, 1};
+					colorSea[] = {0.467, 0.631, 0.851, 0.25};
+					colorCountlines[] = {0, 0, 0, 0};
+					colorMainCountlines[] = {0, 0, 0, 0};
+					colorCountlinesWater[] = {0, 0, 0, 0};
+					colorMainCountlinesWater[] = {0, 0, 0, 0};
+					colorForest[] = {1, 1, 1, 1};
+					colorRocks[] = {0, 0, 0, 0};
+					colorGrid[] = {0, 0, 0, 0};
+					colorGridMap[] = {0, 0, 0, 0};
+					colorOutside[] = {
+						"uiNamespace getVariable ['PRA3_respawnMapOutside_R', 0]",
+						"uiNamespace getVariable ['PRA3_respawnMapOutside_G', 0]",
+						"uiNamespace getVariable ['PRA3_respawnMapOutside_B', 0]",
+						1
+					};
+					ptsPerSquareTxt = 20;
+					ptsPerSquareRoad = 200;
+					ptsPerSquareObj = 200;
+					ptsPerSquareCLn = 200;
+					ptsPerSquareCost = 200;
+					ptsPerSquareFor = 200;
+					ptsPerSquareForEdge = 200;
+					sizeExLabel = 0;
+					sizeExGrid = 0;
+					sizeExUnits = 0;
+					sizeExNames = 0;
+					sizeExInfo = 0;
+					sizeExLevel = 0;
+					moveOnEdges = 1;
+					showCountourInterval = 0;
+				};
+				class SelectedSpawn : RscXListBox
+				{
+					idc = 202;
+					x = __spaceX;
+					w = __mapW - __spaceX * 2;
+					y = __mapH - __spaceY - 0.045;
+					h = 0.045;
+				};
+			};
+		};
+
 		#define __h 0.11
 		class KitSelection : RscControlsGroup
 		{
-			x = "safeZoneX";
-			y = "safeZoneY + 0.01 + 0.05 + 0.01";
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
 			w = __EVAL(__w1 + 0.021);
-			h = "safeZoneH - (0.01 + 0.05 + 0.01)";
+			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01);
 
 			class Controls
 			{
@@ -205,7 +315,7 @@ class Rsc_PRA3_kits_kitDlg
 		class KitDetails : KitSelection
 		{
 			idc = 100;
-			x = safeZoneX + __w1;
+			x = safeZoneX + __spaceX + __w1;
 			w = __w2 + __separatorW;
 
 			class Controls : Controls
@@ -861,21 +971,6 @@ class Rsc_PRA3_kits_kitDlg
 						};
 					};
 				};
-
-				/*class Button : RscButton
-				{
-					idc = 27000;
-					x = __EVAL(__w2 / 2 - 0.35 / 2);
-					y = __EVAL(0.04 + __h2 * 4.5 + 0.005 * (4/3) * 9);
-					w = 0.35;
-					h = __EVAL(__h / 2);
-
-					font = "PuristaBold";
-
-					action = "call PRA3_fnc_kitDlg_requestKitBtn";
-
-					text = "Request kit";
-				};*/
 			};
 
 			// Disable scrollbars
