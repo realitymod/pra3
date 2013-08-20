@@ -3,4 +3,5 @@
 
 diag_log ["onLoad", _this];
 PRA3_kitSys_currentKit call PRA3_fnc_kitDlg_populateKitSelection;
-call PRA3_fnc_kitDlg_populateVariants;
+__getCtrl(100) ctrlShow false;
+PRA3_kitSys_kitDetailsExpanded = false;

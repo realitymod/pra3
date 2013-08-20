@@ -67,17 +67,17 @@ var(_setPicture) =
 
 var(_kit) = PRA3_kitSys_currentKit;
 
-var(_kitInfo) = PRA3_kitSys_currentKit call PRA3_fnc_getKitInfo;
+var(_kitInfo) = _kit call PRA3_fnc_getKitInfo;
 var(_variantInfo) = _kitInfo select KIT_VARIANTS select (_kitInfo select KIT_VARIANT_CURR);
 
 _kit call PRA3_fnc_kitDlg_updateAvailability;
 
-var(_y) = getNumber(__kitDetails("Variant") >> "y");
+var(_y) = getNumber(__kitDetailsCtrl("Variant") >> "y");
 
 __getCtrl(20001) ctrlShow (count(_kitInfo select KIT_VARIANTS) > 1);
 if (count(_kitInfo select KIT_VARIANTS) > 1) then
 {
-	_y = _y + getNumber(__kitDetails("Variant") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("Variant") >> "h") + __kitLineSpacing;
 };
 
 // ---------- PRIMARY WEAPON ----------
@@ -91,13 +91,14 @@ if (count _wpnInfo > 0) then
 	[_wpnInfo select 2, 21011, 3] call _populateAttachments;
 
 	__getCtrl(21000) ctrlSetPosition [ctrlPosition __getCtrl(21000) select 0, _y];
-	__getCtrl(21000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("PrimaryWeapon") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("PrimaryWeapon") >> "h") + __kitLineSpacing;
 }
 else
 {
+	__getCtrl(21000) ctrlSetPosition [ctrlPosition __getCtrl(21000) select 0, 0];
 	__getCtrl(21000) ctrlShow false;
 };
+__getCtrl(21000) ctrlCommit 0;
 
 // ---------- SECONDARY WEAPON ----------
 var(_wpnInfo) = _variantInfo select VARIANT_SECONDARY;
@@ -109,13 +110,14 @@ if (count _wpnInfo > 0) then
 	[_wpnInfo select 1, 22100, 4] call _populateMags;
 
 	__getCtrl(22000) ctrlSetPosition [ctrlPosition __getCtrl(22000) select 0, _y];
-	__getCtrl(22000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("SecondaryWeapon") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("SecondaryWeapon") >> "h") + __kitLineSpacing;
 }
 else
 {
+	__getCtrl(22000) ctrlSetPosition [ctrlPosition __getCtrl(22000) select 0, 0];
 	__getCtrl(22000) ctrlShow false;
 };
+__getCtrl(22000) ctrlCommit 0;
 
 // ---------- BACKPACK ----------
 var(_wpnInfo) = _variantInfo select VARIANT_BACKPACK;
@@ -127,13 +129,14 @@ if (count _wpnInfo > 0) then
 	[(_wpnInfo select 1) + (_wpnInfo select 2), 23100, 6] call _populateMags;
 
 	__getCtrl(23000) ctrlSetPosition [ctrlPosition __getCtrl(23000) select 0, _y];
-	__getCtrl(23000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("Backpack") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("Backpack") >> "h") + __kitLineSpacing;
 }
 else
 {
+	__getCtrl(23000) ctrlSetPosition [ctrlPosition __getCtrl(23000) select 0, 0];
 	__getCtrl(23000) ctrlShow false;
 };
+__getCtrl(23000) ctrlCommit 0;
 
 // ---------- PISTOL ----------
 var(_wpnInfo) = _variantInfo select VARIANT_PISTOL;
@@ -145,13 +148,14 @@ if (count _wpnInfo > 0) then
 	[_wpnInfo select 1, 24100, 2] call _populateMags;
 
 	__getCtrl(24000) ctrlSetPosition [ctrlPosition __getCtrl(24000) select 0, _y];
-	__getCtrl(24000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("Pistol") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("Pistol") >> "h") + __kitLineSpacing;
 }
 else
 {
+	__getCtrl(24000) ctrlSetPosition [ctrlPosition __getCtrl(24000) select 0, 0];
 	__getCtrl(24000) ctrlShow false;
 };
+__getCtrl(24000) ctrlCommit 0;
 
 // ---------- EXPLOSIVES ----------
 var(_explosives) = _variantInfo select VARIANT_EXPLOSIVES;
@@ -163,13 +167,14 @@ if (count _explosives > 0) then
 	[_explosives, 25100, 4] call _populateMags;
 
 	__getCtrl(25000) ctrlSetPosition [ctrlPosition __getCtrl(25000) select 0, _y];
-	__getCtrl(25000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("Explosives") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("Explosives") >> "h") + __kitLineSpacing;
 }
 else
 {
+	__getCtrl(25000) ctrlSetPosition [ctrlPosition __getCtrl(25000) select 0, 0];
 	__getCtrl(25000) ctrlShow false;
 };
+__getCtrl(25000) ctrlCommit 0;
 
 // ---------- ITEMS ----------
 var(_items) = _variantInfo select VARIANT_ITEMS;
@@ -181,13 +186,24 @@ if (count _items > 0) then
 	[_items, 26100, 4] call _populateMags;
 
 	__getCtrl(26000) ctrlSetPosition [ctrlPosition __getCtrl(26000) select 0, _y];
-	__getCtrl(26000) ctrlCommit 0;
-	_y = _y + getNumber(__kitDetails("Items") >> "h") + __kitLineSpacing;
+	_y = _y + getNumber(__kitDetailsCtrl("Items") >> "h") + __kitLineSpacing;
 }
 else
 {
+	__getCtrl(26000) ctrlSetPosition [ctrlPosition __getCtrl(26000) select 0, 0];
 	__getCtrl(26000) ctrlShow false;
 };
-
+__getCtrl(26000) ctrlCommit 0;
+/*
 __getCtrl(27000) ctrlSetPosition [ctrlPosition __getCtrl(27000) select 0, _y];
 __getCtrl(27000) ctrlCommit 0;
+*/
+
+var(_w) = getNumber(__kitDetails >> "w");
+
+{
+	var(_pos) = ctrlPosition __getCtrl(_x);
+	_pos set [3, _y];
+	__getCtrl(_x) ctrlSetPosition _pos;
+	__getCtrl(_x) ctrlCommit 0;
+} forEach [101, 102, 100];
