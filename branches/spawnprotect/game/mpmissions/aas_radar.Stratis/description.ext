@@ -1,0 +1,4 @@
+#define __maxPlayers 64
+#define __name "Radar"
+
+#include "pra3\description.hpp"
