@@ -2,7 +2,6 @@
 #include "defines.sqh"
 #include "idcs.sqh"
 
-diag_log ["onLoad", _this];
 PRA3_kitSys_currentKit call PRA3_fnc_kitDlg_populateKitSelection;
 __getCtrl(IDC_KITDLG_DETAILS) ctrlShow false;
 PRA3_kitSys_kitDetailsExpanded = false;
@@ -20,10 +19,7 @@ if PRA3_showRespawnSelection then
 
 	PRA3_spawnMapMousePos = [0,0];
 
-	{
-		__getCtrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbAdd (_x select 1);
-	} forEach (player call PRA3_fnc_AAS_getAvailableSpawns);
-	__getCtrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel 0;
+	call PRA3_fnc_kitDlg_selectNoSpawn;
 }
 else
 {
