@@ -87,4 +87,12 @@ class Kits
 	{
 		description = "";
 	};
+	class kitDlg_selectNoSpawn
+	{
+		description = "";
+	};
+	class kitDlg_populateSpawnLocations
+	{
+		description = "";
+	};
 };

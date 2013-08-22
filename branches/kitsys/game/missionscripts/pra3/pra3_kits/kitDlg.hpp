@@ -134,6 +134,7 @@ class Rsc_PRA3_kits_kitDlg
 			y = safeZoneY + __spaceY + __mapH - __spaceY - 0.045;
 			w = __mapW - __spaceX * 2 - 0.15;
 			h = 0.045;
+			onLBSelChanged = "[2, _this] call PRA3_fnc_kitDlg_spawnMapHandle";
 		};
 		class SpawnButtonClose : RscButton
 		{

@@ -1,15 +1,16 @@
 #include "scriptDefines.sqh"
 #include "defines.sqh"
-diag_log _this;
+#include "idcs.sqh"
+
 var(_param) = _this select 1;
 switch (_this select 0) do
 {
-	case 0:
+	case 0: // Mouse moving on map
 	{
 		PRA3_spawnMapMousePos = _param select 0 ctrlMapScreenToWorld [_param select 1, _param select 2];
 		call PRA3_fnc_kitDlg_hideKitDetails; // Collapse kit details
 	};
-	case 1:
+	case 1: // Mouse click on map
 	{
 		if (_param select 1 == 0) then // Left mouse
 		{
@@ -19,16 +20,34 @@ switch (_this select 0) do
 				if (_pos distance markerPos (_x select 0) < 200 * ctrlMapScale (_param select 0)) exitWith
 				{
 					PRA3_AAS_selectedSpawn = _x select 0;
-					ctrlParent (_param select 0) displayCtrl IDC_KITDLG_SPAWNMAP_SELECTION
-						lbSetCurSel _forEachIndex;
+					call PRA3_fnc_kitDlg_populateSpawnLocations;
+					__getCtrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
 				};
 			} forEach (player call PRA3_fnc_AAS_getAvailableSpawns);
-			
+
 			if (PRA3_AAS_selectedSpawn == "") then
 			{
-				ctrlParent (_param select 0) displayCtrl IDC_KITDLG_SPAWNMAP_SELECTION
-					lbSetCurSel -1;
+				call PRA3_fnc_kitDlg_selectNoSpawn;
 			};
 		};
+	};
+	case 2: // Spawn LB selection
+	{
+		var(_idx) = _param select 1;
+		if (PRA3_AAS_selectedSpawn == "") then
+		{
+			call PRA3_fnc_kitDlg_populateSpawnLocations;
+			_idx = 0;
+		};
+
+		PRA3_AAS_selectedSpawn = player call PRA3_fnc_AAS_getAvailableSpawns select _idx select 0;
+		diag_log [_this, PRA3_AAS_selectedSpawn, ctrlMapScale __getCtrl(IDC_KITDLG_SPAWNMAP_MAP),
+			markerPos PRA3_AAS_selectedSpawn];
+		__getCtrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapAnimAdd [
+			0,
+			ctrlMapScale __getCtrl(IDC_KITDLG_SPAWNMAP_MAP),
+			markerPos PRA3_AAS_selectedSpawn
+		];
+		ctrlMapAnimCommit __getCtrl(IDC_KITDLG_SPAWNMAP_MAP);
 	};
 };
