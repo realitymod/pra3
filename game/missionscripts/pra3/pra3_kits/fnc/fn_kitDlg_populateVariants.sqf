@@ -1,11 +1,12 @@
 #include "scriptDefines.sqh"
 #include "defines.sqh"
+#include "idcs.sqh"
 
 var(_kitInfo) = PRA3_kitSys_currentKit call PRA3_fnc_getKitInfo;
 
-lbClear __getCtrl(20001);
+lbClear __getCtrl(IDC_KITDLG_DETAILS_VARIANT);
 {
-	__getCtrl(20001) lbAdd (_x select VARIANT_NAME);
+	__getCtrl(IDC_KITDLG_DETAILS_VARIANT) lbAdd (_x select VARIANT_NAME);
 } forEach (_kitInfo select KIT_VARIANTS);
 
-__getCtrl(20001) lbSetCurSel (_kitInfo select KIT_VARIANT_CURR);
+__getCtrl(IDC_KITDLG_DETAILS_VARIANT) lbSetCurSel (_kitInfo select KIT_VARIANT_CURR);

@@ -83,4 +83,8 @@ class Kits
 	{
 		description = "";
 	};
+	class kitDlg_spawnMapHandle
+	{
+		description = "";
+	};
 };

@@ -1,5 +1,6 @@
 #include "scriptDefines.sqh"
 #include "defines.sqh"
+#include "idcs.sqh"
 
 var(_kit) = _this;
 
@@ -19,7 +20,7 @@ diag_log _x;
 		var(_nowAvailable) = [player, _x] call PRA3_fnc_getKitAvailableNum;
 		var(_maxAvailable) = [player, _x] call PRA3_fnc_getMaxKitAvailableNum;
 diag_log format["=> %1", _maxAvailable];
-		__getCtrl(10000 + 100*_i + 4) ctrlSetText (
+		__getCtrl(IDC_KITDLG_SELECTION_KIT + 100*_i + 4) ctrlSetText (
 			if (_nowAvailable >= __inf) then {
 				"Unlimited"
 			} else {
@@ -32,7 +33,7 @@ diag_log format["=> %1", _maxAvailable];
 		);
 
 		// Highlight selected, dim unavailable
-		__getCtrl(10000 + 100*_i + 1) ctrlSetBackgroundColor
+		__getCtrl(IDC_KITDLG_SELECTION_KIT + 100*_i + 1) ctrlSetBackgroundColor
 			getArray(__kitLineCtrl(_i,"Background") >> (if (_x == _kit) then {
 				if (_nowAvailable > 0) then {
 					"colorBackgroundHighlight"

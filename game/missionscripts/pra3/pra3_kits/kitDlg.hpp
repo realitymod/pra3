@@ -1,3 +1,5 @@
+#include "fnc\idcs.sqh"
+
 class Rsc_PRA3_kits_kitDlg
 {
 	idd = -1;
@@ -8,6 +10,9 @@ class Rsc_PRA3_kits_kitDlg
 
 	#define __spaceX 0.01
 	#define __spaceY (__spaceX / (4/3))
+
+	#define __mapW (safeZoneW - __w1 - __spaceX * 3)
+	#define __mapH (safeZoneH - __spaceY * 2)
 
 	class ControlsBackground
 	{
@@ -39,20 +44,23 @@ class Rsc_PRA3_kits_kitDlg
 			h = safeZoneH - __spaceY * 2 - 0.069;
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
-		/*
-		class TitleSpawnBackground : TitleKitsBackground
+
+		class BackgroundSpawn : TitleKitsBackground
 		{
-			x = safeZoneX + __w1 + __spaceX;
+			idc = IDC_KITDLG_SPAWNMAP_BG;
+			x = safeZoneX + __spaceX + __w1 + __spaceX;
 			y = safeZoneY + __spaceY;
-			w = safeZoneW - __w1 - __spaceX;
+			w = __mapW;
+			h = __mapH;
 		};
 		class TitleSpawn : TitleKits
 		{
-			x = safeZoneX + __w1 + __spaceX + __spaceX;
+			idc = IDC_KITDLG_SPAWNMAP_TITLE;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.075;
 			y = safeZoneY + __spaceY + 0.01;
-			style = ST_LEFT;
-			text = "RESPAWN SELECTION";
-		};*/
+			w = 0.3;
+			text = "RESPAWN LOCATION";
+		};
 
 		// Used to detect when the mouse is outside of the kit selection dialog
 		class MouseDetector : RscControlsGroup
@@ -67,97 +75,75 @@ class Rsc_PRA3_kits_kitDlg
 	};
 	class Controls
 	{
-		class SpawnMap : RscControlsGroupNoScrollbars
+		// NOTE: This cannot be in a ControlsGroup as Map is completely broken there :X
+		class SpawnMap : RscMapControl
 		{
-			#define __mapW (safeZoneW - __w1 - __spaceX * 3)
-			#define __mapH (safeZoneH - __spaceY * 2)
+			idc = IDC_KITDLG_SPAWNMAP_MAP;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX;
+			y = safeZoneY + __spaceY + 0.07;
+			w = __mapW - __spaceX * 2;
+			h = __mapH - 0.07 - 0.05 - __spaceY;
 
-			idc = 200;
-			
-			x = safeZoneX + __spaceX + __w1 + __spaceX;
-			y = safeZoneY + __spaceY;
-			w = __mapW;
-			h = __mapH;
+			onDraw             = "_this call PRA3_fnc_kitDlg_onMapDraw";
+			onMouseMoving      = "[0, _this] call PRA3_fnc_kitDlg_spawnMapHandle";
+			onMouseButtonClick = "[1, _this] call PRA3_fnc_kitDlg_spawnMapHandle";
 
-			class Controls
-			{
-				class TitleBackground : RscText
-				{
-					x = 0;
-					y = 0;
-					w = __mapW;
-					h = __mapH;
-					colorBackground[] = {0.153,0.153,0.153,1.0};
-				};
-				class Title : RscText
-				{
-					x = 0.05;
-					y = 0.01;
-					h = 0.05;
-					w = 0.5;
-					sizeEx = 0.05;
-					text = "RESPAWN LOCATION";
-					font = "PuristaBold";
-					colorText[] = {0.9,0.9,0.9,1};
-				};
-				class Map : RscMapControl
-				{
-					idc = 201;
-					x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX;
-					y = safeZoneY + __spaceY + 0.07;
-					w = __mapW - __spaceX * 2;
-					h = __mapH - 0.07 - 0.05 - __spaceY;
-
-					onDraw = "_this call PRA3_fnc_kitDlg_onMapDraw";
-
-					text = "#(argb,8,8,3)color(1,1,1,1)";
-					maxSatelliteAlpha = 1;
-					alphaFadeStartScale = 100;
-					alphaFadeEndScale = 100;
-					scaleMin = 0.05;
-					scaleMax = 0.5;
-					scaleDefault = 0.3;
-					colorBackground[] = {1, 1, 1, 1};
-					colorSea[] = {0.467, 0.631, 0.851, 0.25};
-					colorCountlines[] = {0, 0, 0, 0};
-					colorMainCountlines[] = {0, 0, 0, 0};
-					colorCountlinesWater[] = {0, 0, 0, 0};
-					colorMainCountlinesWater[] = {0, 0, 0, 0};
-					colorForest[] = {1, 1, 1, 1};
-					colorRocks[] = {0, 0, 0, 0};
-					colorGrid[] = {0, 0, 0, 0};
-					colorGridMap[] = {0, 0, 0, 0};
-					colorOutside[] = {
-						"uiNamespace getVariable ['PRA3_respawnMapOutside_R', 0]",
-						"uiNamespace getVariable ['PRA3_respawnMapOutside_G', 0]",
-						"uiNamespace getVariable ['PRA3_respawnMapOutside_B', 0]",
-						1
-					};
-					ptsPerSquareTxt = 20;
-					ptsPerSquareRoad = 200;
-					ptsPerSquareObj = 200;
-					ptsPerSquareCLn = 200;
-					ptsPerSquareCost = 200;
-					ptsPerSquareFor = 200;
-					ptsPerSquareForEdge = 200;
-					sizeExLabel = 0;
-					sizeExGrid = 0;
-					sizeExUnits = 0;
-					sizeExNames = 0;
-					sizeExInfo = 0;
-					sizeExLevel = 0;
-					moveOnEdges = 1;
-					showCountourInterval = 0;
-				};
-				class SelectedSpawn : RscXListBox
-				{
-					idc = 202;
-					x = __spaceX;
-					w = __mapW - __spaceX * 2;
-					y = __mapH - __spaceY - 0.045;
-					h = 0.045;
-				};
+			text = "#(argb,8,8,3)color(1,1,1,1)";
+			maxSatelliteAlpha = 1;
+			alphaFadeStartScale = 100;
+			alphaFadeEndScale = 100;
+			scaleMin = 0.05;
+			scaleMax = 0.5;
+			scaleDefault = 0.3;
+			colorBackground[] = {1, 1, 1, 1};
+			colorSea[] = {0.467, 0.631, 0.851, 0.25};
+			colorCountlines[] = {0, 0, 0, 0};
+			colorMainCountlines[] = {0, 0, 0, 0};
+			colorCountlinesWater[] = {0, 0, 0, 0};
+			colorMainCountlinesWater[] = {0, 0, 0, 0};
+			colorForest[] = {1, 1, 1, 1};
+			colorRocks[] = {0, 0, 0, 0};
+			colorGrid[] = {0, 0, 0, 0};
+			colorGridMap[] = {0, 0, 0, 0};
+			colorOutside[] = {
+				"uiNamespace getVariable ['PRA3_respawnMapOutside_R', 0]",
+				"uiNamespace getVariable ['PRA3_respawnMapOutside_G', 0]",
+				"uiNamespace getVariable ['PRA3_respawnMapOutside_B', 0]",
+				1
 			};
+			ptsPerSquareTxt = 20;
+			ptsPerSquareRoad = 200;
+			ptsPerSquareObj = 200;
+			ptsPerSquareCLn = 200;
+			ptsPerSquareCost = 200;
+			ptsPerSquareFor = 200;
+			ptsPerSquareForEdge = 200;
+			sizeExLabel = 0;
+			sizeExGrid = 0;
+			sizeExUnits = 0;
+			sizeExNames = 0;
+			sizeExInfo = 0;
+			sizeExLevel = 0;
+			moveOnEdges = 1;
+			showCountourInterval = 0;
+		};
+		class SpawnSelection : RscXListBox
+		{
+			idc = IDC_KITDLG_SPAWNMAP_SELECTION;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX;
+			y = safeZoneY + __spaceY + __mapH - __spaceY - 0.045;
+			w = __mapW - __spaceX * 2 - 0.15;
+			h = 0.045;
+		};
+		class SpawnButtonClose : RscButton
+		{
+			idc = IDC_KITDLG_SPAWNMAP_CLOSE_BTN;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + __mapW - __spaceX - 0.15;
+			y = safeZoneY + __spaceY + __mapH - __spaceY - 0.045;
+			w = 0.15;
+			h = 0.045;
+			text = "DONE";
+			action = "closeDialog 0";
 		};
 
 		#define __h 0.11
@@ -172,7 +158,7 @@ class Rsc_PRA3_kits_kitDlg
 			{
 				class Kit1 : RscControlsGroupNoScrollbars
 				{
-					idc = 10100;
+					idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 100);
 					x = 0.005;
 					y = 0.005 * (4/3);
 					w = __EVAL(__w1 - 0.005*2);
@@ -182,7 +168,7 @@ class Rsc_PRA3_kits_kitDlg
 					{
 						class Background : RscText
 						{
-							idc = 10101;
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 101);
 							x = 0;
 							y = 0;
 							w = __EVAL(__w1 - (0.005*2));
@@ -195,7 +181,7 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class KitPic : RscPicture
 						{
-							idc = 10102;
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 102);
 							x = 0.01;
 							y = 0.01 * (4/3);
 							w = __EVAL(__h / (4/3) - 0.01*2);
@@ -206,7 +192,7 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Title : RscText
 						{
-							idc = 10103;
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 103);
 							x = __EVAL(__h / (4/3));
 							y = __EVAL(0.008 * (4/3));
 							w = __w1;
@@ -218,7 +204,7 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Availability : Title
 						{
-							idc = 10104;
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 104);
 							y = __EVAL(__h - 0.01 * (4/3) - 0.038 - 0.008 * (4/3));
 							text = "Unlimited";
 							font = "PuristaLight";
@@ -227,7 +213,7 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Button : RscShortcutButton
 						{
-							idc = 10105;
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 105);
 							x = __EVAL(__w1 - 0.005*2 - 0.031);
 							y = 0;
 							w = 0.031;
@@ -267,30 +253,30 @@ class Rsc_PRA3_kits_kitDlg
 				#define __kit(num) \
 				class Kit##num : Kit1 \
 				{ \
-					idc = 10000 + (100 * num); \
+					idc = IDC_KITDLG_SELECTION_KIT + (100 * num); \
 					y = __EVAL(0.005 * (4/3) + (__h + 0.005) * (num - 1)); \
 					\
 					class Controls : Controls \
 					{ \
 						class Background : Background \
 						{ \
-							idc = __EVAL(10000 + num * 100 + 1); \
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 1); \
 						}; \
 						class KitPic : KitPic \
 						{ \
-							idc = __EVAL(10000 + num * 100 + 2); \
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 2); \
 						}; \
 						class Title : Title \
 						{ \
-							idc = __EVAL(10000 + num * 100 + 3); \
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 3); \
 						}; \
 						class Availability : Availability \
 						{ \
-							idc = __EVAL(10000 + num * 100 + 4); \
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 4); \
 						}; \
 						class Button : Button \
 						{ \
-							idc = __EVAL(10000 + num * 100 + 5); \
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 5); \
 							action = num call PRA3_fnc_kitDlg_kitDetailsBtn; \
 						}; \
 					}; \
@@ -314,7 +300,7 @@ class Rsc_PRA3_kits_kitDlg
 		#define __separatorW 0.01
 		class KitDetails : KitSelection
 		{
-			idc = 100;
+			idc = IDC_KITDLG_DETAILS;
 			x = safeZoneX + __spaceX + __w1;
 			w = __w2 + __separatorW;
 
@@ -322,7 +308,7 @@ class Rsc_PRA3_kits_kitDlg
 			{
 				class Background : RscText
 				{
-					idc = 101;
+					idc = IDC_KITDLG_DETAILS_BG;
 					x = __separatorW;
 					y = 0;
 					w = __EVAL(__w2);
@@ -331,7 +317,7 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class Separator : Background
 				{
-					idc = 102;
+					idc = IDC_KITDLG_DETAILS_SEP;
 					x = 0;
 					w = __separatorW;
 					colorBackground[] = {0.153,0.153,0.153,1.0};
@@ -339,7 +325,7 @@ class Rsc_PRA3_kits_kitDlg
 
 				class Variant : RscXListBox
 				{
-					idc = 20001;
+					idc = IDC_KITDLG_DETAILS_VARIANT;
 					x = __EVAL(__separatorW + 0.005);
 					y = __EVAL(0.005 * (4/3));
 					w = __EVAL(__w2 - 0.005*2);
@@ -348,7 +334,7 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class PrimaryWeapon : Kit1
 				{
-					idc = 21000;
+					idc = IDC_KITDLG_DETAILS_PRIMARY;
 					x = __EVAL(__separatorW + 0.005);
 					y = __EVAL(0.04 + 0.005 * (4/3) * 2);
 					w = __EVAL(__w2 - 0.005*2);
@@ -368,7 +354,7 @@ class Rsc_PRA3_kits_kitDlg
 						class WeaponPic : KitPic
 #endif
 						{
-							idc = 21001;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 1);
 							x = __EVAL(__w2 / 2 - ((__h2 * 2) / (4/3) + 0.05) / 2);
 							y = -0.03;
 							w = __EVAL((__h2 * 2) / (4/3));
@@ -379,7 +365,7 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Accessory1 : WeaponPic
 						{
-							idc = 21011;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 11);
 							x = __EVAL(__w2 / 2 - ((__h2 * 2) / (4/3) + 0.05) / 2 + (__h2 * 2) / (4/3));
 							y = 0;
 							w = 0.05;
@@ -388,19 +374,19 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Accessory2 : Accessory1
 						{
-							idc = 21012;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 12);
 							y = __EVAL(0.05 * (4/3));
 							text = "\A3\weapons_F\Data\UI\gear_accv_pointer_CA.paa";
 						};
 						class Accessory3 : Accessory1
 						{
-							idc = 21013;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 13);
 							y = __EVAL(0.05 * (4/3) * 2);
 							text = "\A3\weapons_F\Data\UI\gear_acca_snds_h_CA.paa";
 						};
 						class Magazine1 : RscControlsGroupNoScrollbars
 						{
-							idc = 21110;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 110);
 							x = __EVAL(0.031 + 0.01 + 0.095 * 3);
 							y = __EVAL(__h2 - 0.05 * (4/3));
 							w = 0.095;
@@ -410,7 +396,7 @@ class Rsc_PRA3_kits_kitDlg
 							{
 								class Picture : WeaponPic
 								{
-									idc = 21111;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 111);
 									x = 0;
 									y = 0;
 									w = 0.05;
@@ -429,7 +415,7 @@ class Rsc_PRA3_kits_kitDlg
 								};
 								class Count : X
 								{
-									idc = 21112;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 112)
 									x = 0.054;
 									y = __EVAL(0.05 * (4/3) - 0.05);
 									h = 0.05;
@@ -441,20 +427,20 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Magazine2 : Magazine1
 						{
-							idc = 21120;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 120);
 							x = __EVAL(0.031 + 0.01 + 0.095 * 2);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 21121;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 121);
 									text = "\A3\weapons_f\data\ui\m_30stanag_caseless_red_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 21122;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 122);
 									text = "10";
 								};
 							};
@@ -462,40 +448,40 @@ class Rsc_PRA3_kits_kitDlg
 
 						class Magazine3 : Magazine1
 						{
-							idc = 21130;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 130);
 							x = __EVAL(0.031 + 0.01 + 0.095);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 21131;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 131);
 									text = "\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 21132;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 132);
 									text = "04";
 								};
 							};
 						};
 						class Magazine4 : Magazine1
 						{
-							idc = 21140;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 140);
 							x = __EVAL(0.031 + 0.01);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 21141;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 141);
 									text = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_red_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 21142;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 142);
 									text = "04";
 								};
 							};
@@ -504,7 +490,7 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class SecondaryWeapon : PrimaryWeapon
 				{
-					idc = 22000;
+					idc = IDC_KITDLG_DETAILS_SECONDARY;
 					y = __EVAL(0.04 + __h2 + 0.005 * (4/3) * 3);
 
 					class Controls : Controls
@@ -512,81 +498,81 @@ class Rsc_PRA3_kits_kitDlg
 						class Background : Background {};
 						class WeaponPic : WeaponPic
 						{
-							idc = 22001;
+							idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 1);
 							text = "\A3\Weapons_F_Beta\Launchers\Titan\Data\UI\gear_titan_short_CA.paa";
 						};
 						class Magazine1 : Magazine1
 						{
-							idc = 22110;
+							idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 110);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 22111;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 111);
 									text = "\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_at_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 22112;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 112);
 									text = "10";
 								};
 							};
 						};
 						class Magazine2 : Magazine2
 						{
-							idc = 22120;
+							idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 120);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 22121;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 121);
 									text = "\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_ap_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 22122;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 122);
 									text = "10";
 								};
 							};
 						};
 						class Magazine3 : Magazine3
 						{
-							idc = 22130;
+							idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 130);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 22131;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 131);
 									text = "\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_atl_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 22132;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 132);
 									text = "10";
 								};
 							};
 						};
 						class Magazine4 : Magazine4
 						{
-							idc = 22140;
+							idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 140);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 22141;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 141);
 									text = "\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_atl_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 22142;
+									idc = __EVAL(IDC_KITDLG_DETAILS_SECONDARY + 142);
 									text = "10";
 								};
 							};
@@ -595,14 +581,14 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class Backpack : SecondaryWeapon
 				{
-					idc = 23000;
+					idc = IDC_KITDLG_DETAILS_BACKPACK;
 					y = __EVAL(0.04 + __h2  * 2 + 0.005 * (4/3) * 5);
 					class Controls : Controls
 					{
 						class Background : Background {};
 						class BackpackPic : WeaponPic
 						{
-							idc = 23001;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 1);
 							x = __EVAL(0.031 + 0.03);
 							y = 0;
 							w = __EVAL(__h2 / (4/3));
@@ -611,7 +597,7 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class Content1 : Magazine1
 						{
-							idc = 23110;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 110);
 							x = __EVAL(__w2 - 0.005*2 - 0.031 - 0.1 - 0.01 - 0.1);
 							y = 0.005;
 
@@ -619,113 +605,113 @@ class Rsc_PRA3_kits_kitDlg
 							{
 								class Picture : Picture
 								{
-									idc = 23111;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 111);
 									text = "\A3\weapons_f\launchers\nlaw\data\UI\gear_nlaw_rocket_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 23112;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 112);
 									text = "01";
 								};
 							};
 						};
 						class Content2 : Content1
 						{
-							idc = 23120;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 120);
 							y = __EVAL(0.005 + 0.05 * (4/3) + 0.005);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 23121;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 121);
 									text = "\A3\weapons_f\launchers\nlaw\data\UI\gear_nlaw_rocket_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 23122;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 122);
 									text = "01";
 								};
 							};
 						};
 						class Content3 : Content1
 						{
-							idc = 23130;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 130);
 							y = __EVAL(0.005 + (0.05 * (4/3) + 0.005) * 2);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 23131;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 131);
 									text = "\A3\weapons_f\launchers\nlaw\data\UI\gear_nlaw_rocket_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 23132;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 132);
 									text = "01";
 								};
 							};
 						};
 						class Content4 : Content1
 						{
-							idc = 23140;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 140);
 							x = __EVAL(__w2 - 0.005*2 - 0.031 - 0.1 - 0.01);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 23141;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 141);
 									text = "\A3\weapons_f\launchers\nlaw\data\UI\gear_nlaw_rocket_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 23142;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 142);
 									text = "01";
 								};
 							};
 						};
 						class Content5 : Content2
 						{
-							idc = 23150;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 150);
 							x = __EVAL(__w2 - 0.005*2 - 0.031 - 0.1 - 0.01);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 23151;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 151);
 									text = "\A3\weapons_f\launchers\nlaw\data\UI\gear_nlaw_rocket_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 23152;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 152);
 									text = "01";
 								};
 							};
 						};
 						class Content6 : Content3
 						{
-							idc = 23160;
+							idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 160);
 							x = __EVAL(__w2 - 0.005*2 - 0.031 - 0.1 - 0.01);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 23161;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 161);
 									text = "\A3\weapons_f\launchers\nlaw\data\UI\gear_nlaw_rocket_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 23162;
+									idc = __EVAL(IDC_KITDLG_DETAILS_BACKPACK + 162);
 									text = "01";
 								};
 							};
@@ -734,7 +720,7 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class Pistol : Backpack
 				{
-					idc = 24000;
+					idc = IDC_KITDLG_DETAILS_PISTOL;
 					y = __EVAL(0.04 + __h2  * 3 + 0.005 * (4/3) * 6);
 					h = __h;
 
@@ -746,46 +732,46 @@ class Rsc_PRA3_kits_kitDlg
 						};
 						class WeaponPic : BackpackPic
 						{
-							idc = 24001;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 1);
 							h = __h;
 							text = "\A3\Weapons_F_Beta\Pistols\ACPC2\Data\UI\gear_Acpc2_X_CA.paa";
 						};
 						class Magazine1 : Content1
 						{
-							idc = 24110;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 110);
 							y = __EVAL((__h / 2) - (0.05 * (4/3)) / 2);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 24111;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 111);
 									text = "\A3\weapons_f\data\ui\M_30Rnd_9x21_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 24112;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 112);
 									text = "03";
 								};
 							};
 						};
 						class Magazine2 : Content4
 						{
-							idc = 24120;
+							idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 120);
 							y = __EVAL((__h / 2) - (0.05 * (4/3)) / 2);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 24121;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 121);
 									text = "\A3\weapons_f\data\ui\M_30Rnd_9x21_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 24122;
+									idc = __EVAL(IDC_KITDLG_DETAILS_PISTOL + 122);
 									text = "03";
 								};
 							};
@@ -794,7 +780,7 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class Explosives : Pistol
 				{
-					idc = 25000;
+					idc = IDC_KITDLG_DETAILS_EXPLOSIVES;
 					y = __EVAL(0.04 + __h2 * 3.5 + 0.005 * (4/3) * 7);
 
 					class Controls : Controls
@@ -803,7 +789,7 @@ class Rsc_PRA3_kits_kitDlg
 
 						class Item1 : Magazine1
 						{
-							idc = 25110;
+							idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 110);
 							x = __EVAL((__w2 - 0.005*2) / 2 - (0.005 / 2) - 0.1 - 0.005 - 0.1);
 							y = __EVAL((__h / 2) - (0.05 * (4/3)) / 2);
 
@@ -811,73 +797,73 @@ class Rsc_PRA3_kits_kitDlg
 							{
 								class Picture : Picture
 								{
-									idc = 25111;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 111);
 									text = "\A3\Weapons_F\Data\UI\gear_M67_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 25112;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 112);
 									text = "04";
 								};
 							};
 						};
 						class Item2 : Item1
 						{
-							idc = 25120;
+							idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 120);
 							x = __EVAL((__w2 - 0.005*2) / 2 - (0.005 / 2) - 0.1);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 25121;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 121);
 									text = "\A3\Weapons_f\data\ui\gear_smokegrenade_white_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 25122;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 122);
 									text = "04";
 								};
 							};
 						};
 						class Item3 : Item1
 						{
-							idc = 25130;
+							idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 130);
 							x = __EVAL((__w2 - 0.005*2) / 2 + (0.005 / 2));
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 25131;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 131);
 									text = "\A3\Weapons_f\data\ui\gear_smokegrenade_blue_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 25132;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 132);
 									text = "01";
 								};
 							};
 						};
 						class Item4 : Item1
 						{
-							idc = 25140;
+							idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 140);
 							x = __EVAL((__w2 - 0.005*2) / 2 + (0.005 / 2) + 0.1 + 0.005);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 25141;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 141);
 									text = "\A3\Weapons_f\data\ui\gear_smokegrenade_green_ca.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 25142;
+									idc = __EVAL(IDC_KITDLG_DETAILS_EXPLOSIVES + 142);
 									text = "01";
 								};
 							};
@@ -886,7 +872,7 @@ class Rsc_PRA3_kits_kitDlg
 				};
 				class Items : Explosives
 				{
-					idc = 26000;
+					idc = IDC_KITDLG_DETAILS_ITEMS;
 					y = __EVAL(0.04 + __h2 * 4 + 0.005 * (4/3) * 8);
 
 					class Controls : Controls
@@ -895,76 +881,76 @@ class Rsc_PRA3_kits_kitDlg
 
 						class Item1 : Item1
 						{
-							idc = 26110;
+							idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 110);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 26111;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 111);
 									text = "\A3\Weapons_F\Items\data\UI\gear_FirstAidKit_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 26112;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 112);
 									text = "04";
 								};
 							};
 						};
 						class Item2 : Item2
 						{
-							idc = 26120;
+							idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 120);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 26121;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 121);
 									text = "\A3\Weapons_F\Items\data\UI\gear_Medikit_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 26122;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 122);
 									text = "04";
 								};
 							};
 						};
 						class Item3 : Item3
 						{
-							idc = 26130;
+							idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 130);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 26131;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 131);
 									text = "\A3\Weapons_F\Items\data\UI\gear_Toolkit_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 26132;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 132);
 									text = "01";
 								};
 							};
 						};
 						class Item4 : Item4
 						{
-							idc = 26140;
+							idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 140);
 
 							class Controls : Controls
 							{
 								class Picture : Picture
 								{
-									idc = 26141;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 141);
 									text = "\A3\Weapons_F\Items\data\UI\gear_FirstAidKit_CA.paa";
 								};
 								class X : X {};
 								class Count : Count
 								{
-									idc = 26142;
+									idc = __EVAL(IDC_KITDLG_DETAILS_ITEMS + 142);
 									text = "01";
 								};
 							};
