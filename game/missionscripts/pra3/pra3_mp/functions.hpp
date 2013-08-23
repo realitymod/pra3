@@ -52,3 +52,18 @@ class MP
 		description = "Wrapper for BIS_fnc_MP_packet to make everything call by default.";
 	};
 };
+
+class HandleDamage
+{
+	file = "pra3\pra3_mp\handleDamage";
+
+	class unitHit
+	{
+		description = "Handle damage on units and vehicles";
+	};
+	
+	class unitInSafeZone
+	{
+		description = "Checks if a unit is inside a safe zone.";
+	};
+};
