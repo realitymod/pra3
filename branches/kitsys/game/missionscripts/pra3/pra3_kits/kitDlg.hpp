@@ -58,7 +58,7 @@ class Rsc_PRA3_kits_kitDlg
 			idc = IDC_KITDLG_SPAWNMAP_TITLE;
 			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.075;
 			y = safeZoneY + __spaceY + 0.01;
-			w = 0.3;
+			w = 0.32;
 			text = "RESPAWN LOCATION";
 		};
 
