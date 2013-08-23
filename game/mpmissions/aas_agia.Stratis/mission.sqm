@@ -435,7 +435,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={2847.343,2.6848125,6107.5972};
+			position[]={2847.4373,2.6934016,6107.7383};
 			name="zone6";
 			text="Iranian-held House";
 			markerType="ELLIPSE";
@@ -467,15 +467,25 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={3207.7078,4.6606164,5822.875};
+			position[]={3216.97,4.8647184,5819.0825};
 			name="spawn0";
+			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
+			a=20;
+			b=20;
+			drawBorder=1;
 		};
 		class Item10
 		{
-			position[]={2856.2488,3.5395892,6116.3452};
+			position[]={2847.4167,2.6935639,6107.7554};
 			name="spawn3";
+			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
+			a=20;
+			b=20;
+			drawBorder=1;
 		};
 		class Item11
 		{
