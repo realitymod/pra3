@@ -147,13 +147,31 @@ class Rsc_PRA3_kits_kitDlg
 			action = "closeDialog 0";
 		};
 
+		class SwitchSquadsBtn : RscButton
+		{
+			idc = -1;
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
+			w = __w1 / 2 - 0.005;
+			h = 0.04;
+			text = "SQUADS";
+			action = "closeDialog 0; createDialog 'Rsc_PRA3_squadSys_manageDlg'";
+		};
+		class SwitchKitsBts : SwitchSquadsBtn
+		{
+			idc = IDC_KITDLG_SWITCH_KITS;
+			x = safeZoneX + __spaceX + __w1 / 2;
+			text = "KITS";
+			action = "";
+		};
+
 		#define __h 0.11
 		class KitSelection : RscControlsGroup
 		{
 			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.04;
 			w = __EVAL(__w1 + 0.021);
-			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01);
+			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.04);
 
 			class Controls
 			{

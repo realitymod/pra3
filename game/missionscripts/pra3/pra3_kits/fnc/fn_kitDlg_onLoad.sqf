@@ -6,6 +6,8 @@ PRA3_kitSys_currentKit call PRA3_fnc_kitDlg_populateKitSelection;
 __getCtrl(IDC_KITDLG_DETAILS) ctrlShow false;
 PRA3_kitSys_kitDetailsExpanded = false;
 
+__getCtrl(IDC_KITDLG_SWITCH_KITS) ctrlEnable false;
+
 PRA3_showRespawnSelection = true;
 
 if PRA3_showRespawnSelection then
