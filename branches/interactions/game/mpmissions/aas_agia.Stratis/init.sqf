@@ -1,13 +1,5 @@
 #include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
-[] spawn 
-{
-	scriptName "initMission.hpp: mission start";
-	["pra3\introPR.ogv", false] spawn BIS_fnc_titlecard;	
-	waitUntil {!(isNil "BIS_fnc_titlecard_finished")};
-	//[[2879.289,5618.516,0],"Project Reality: Arma 3"] spawn BIS_fnc_establishingShot; <<< This is a UAV intro overview briefing screen
-};
-
 PRA3_AAS_sides = [west, east]; // Opposing sides
 PRA3_core setVariable ["PRA3_AAS_tickets", [300, 300]]; // Initial tickets
 PRA3_AAS_zones = [
