@@ -50,6 +50,14 @@ class Math
 	{
 		description = "Checks if the point is inside of the marker.";
 	};
+	class getAzimuth
+	{
+		description = "Checks direction";
+	};
+	class round
+	{
+		description = "Rounds off";
+	};
 };
 
 class Net
