@@ -27,11 +27,16 @@ PRA3_AAS_respawns = [
 ];
 
 PRA3_AAS_restrictionZones = [
-/*   MARKER     Side		Need to be 		*/
-/*   Name		restrcit   		Inside the zone	*/
-	["fighting_Zone", [west,east],true],
-	["west_spawn", [east],false],
-	["east_spawn", [west],false]
+	/*   MARKER     		Side			Time Before	Need to be 		Aircraft		Delete 	*/
+	/*   Name				restrcit   		Punishment	Inside the zone	will punished	Marker	*/
+	["borderNorth", 	[west,east]	,10,		false,			true,		false],
+	["borderEast", 		[west,east]	,10,		false,			true,		false],
+	["borderSouth", 	[west,east]	,10,		false,			true,		false],
+	["borderWest", 		[west,east]	,10,		false,			true,		false],
+	["west_spawn", 		[east]		,10,		false,			false,		true],
+	["east_spawn", 		[west]		,10,		false,			false,		true]
 ];
+
+call PRA3_fnc_AAS_createRestrictedZone; 		//Build restriction zones
 
 call compile preprocessFileLineNumbers "pra3\init.sqf";
