@@ -5,3 +5,4 @@
 #include "pra3_respawn\functions.hpp"
 #include "pra3_kits\functions.hpp"
 #include "pra3_squadsys\functions.hpp"
+#include "pra3_wpnswitch\functions.hpp"
