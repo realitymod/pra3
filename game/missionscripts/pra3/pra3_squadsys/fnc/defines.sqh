@@ -1,10 +1,10 @@
-#define __pic_collapse		"pra3\pra3_squadsys\dlg\img\arrow_up_88.paa"
-#define __pic_uncollapse	"pra3\pra3_squadsys\dlg\img\arrow_down_88.paa"
+#define __pic_collapse		"pra3\pra3_ui\squadsys\img\arrow_up_88.paa"
+#define __pic_uncollapse	"pra3\pra3_ui\squadsys\img\arrow_down_88.paa"
 
-#define __pic_locked			"pra3\pra3_squadsys\dlg\img\locked_88.paa"
-#define __pic_unlocked			"pra3\pra3_squadsys\dlg\img\unlocked_88.paa"
-#define __pic_locked_border		"pra3\pra3_squadsys\dlg\img\locked_border_88.paa"
-#define __pic_unlocked_border	"pra3\pra3_squadsys\dlg\img\unlocked_border_88.paa"
+#define __pic_locked			"pra3\pra3_ui\squadsys\img\locked_88.paa"
+#define __pic_unlocked			"pra3\pra3_ui\squadsys\img\unlocked_88.paa"
+#define __pic_locked_border		"pra3\pra3_ui\squadsys\img\locked_border_88.paa"
+#define __pic_unlocked_border	"pra3\pra3_ui\squadsys\img\unlocked_border_88.paa"
 
 #define __cfgPath							missionConfigFile >> "Rsc_PRA3_squadSys_manageDlg" >> "Controls" >> "Group"
 #define __cfgPathItem(num)					__cfgPath >> "Controls" >> 'ItemSquad##num'

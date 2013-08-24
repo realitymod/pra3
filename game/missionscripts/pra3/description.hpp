@@ -26,17 +26,7 @@ class CfgRespawnTemplates
 	};
 };
 
-#include "uiBases.hpp"
-
-class RscTitles
-{
-	#include "pra3_aas\captureIndicator.hpp"
-	#include "pra3_respawn\deadScreen.hpp"
-};
-
-#include "pra3_respawn\respawnDialog.hpp"
-#include "pra3_squadsys\dlg\management.hpp"
-#include "pra3_kits\kitDlg.hpp"
+#include "pra3_ui\ui.hpp"
 
 class CfgDebriefing
 {

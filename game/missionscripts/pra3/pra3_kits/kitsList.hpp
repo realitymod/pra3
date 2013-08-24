@@ -20,7 +20,7 @@ class PRA3_kits
 			team = TEAM_US;
 
 			name = "Rifleman";
-			picture = "pra3\pra3_kits\data\kit_img\rifleman_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
 
 			class Requirements
 			{
@@ -90,7 +90,7 @@ class PRA3_kits
 		class SquadLeader_US : Rifleman_US
 		{
 			name = "Squad Leader";
-			picture = "pra3\pra3_kits\data\kit_img\sqleader_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\sqleader_88.paa";
 
 			class Requirements
 			{
@@ -135,7 +135,7 @@ class PRA3_kits
 		class Medic_US : Rifleman_US
 		{
 			name = "Combat Medic";
-			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\medic_88.paa";
 
 			class Requirements
 			{
@@ -178,7 +178,7 @@ class PRA3_kits
 		class Machinegunner_US : Rifleman_US
 		{
 			name = "Automatic Rifleman";
-			picture = "pra3\pra3_kits\data\kit_img\autorifleman_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\autorifleman_88.paa";
 
 			class Requirements
 			{
@@ -215,7 +215,7 @@ class PRA3_kits
 		class Grenadier_US : Rifleman_US
 		{
 			name = "Grenadier";
-			picture = "pra3\pra3_kits\data\kit_img\grenadier_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\grenadier_88.paa";
 
 			class Requirements
 			{
@@ -254,7 +254,7 @@ class PRA3_kits
 		class Marksman_US : Rifleman_US
 		{
 			name = "Marksman";
-			picture = "pra3\pra3_kits\data\kit_img\sniper_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\sniper_88.paa";
 
 			class Requirements
 			{
@@ -298,7 +298,7 @@ class PRA3_kits
 			team = TEAM_IN;
 
 			name = "Rifleman";
-			picture = "pra3\pra3_kits\data\kit_img\rifleman_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
 
 			class Clothing
 			{
@@ -362,7 +362,7 @@ class PRA3_kits
 		class SquadLeader_IN : Rifleman_IN
 		{
 			name = "Squad Leader";
-			picture = "pra3\pra3_kits\data\kit_img\sqleader_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\sqleader_88.paa";
 
 			class Requirements
 			{
@@ -405,7 +405,7 @@ class PRA3_kits
 		class Medic_IN : Rifleman_IN
 		{
 			name = "Combat Medic";
-			picture = "pra3\pra3_kits\data\kit_img\medic_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\medic_88.paa";
 
 			class Requirements
 			{
@@ -449,7 +449,7 @@ class PRA3_kits
 		class Machinegunner_IN : Rifleman_IN
 		{
 			name = "Automatic Rifleman";
-			picture = "pra3\pra3_kits\data\kit_img\autorifleman_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\autorifleman_88.paa";
 
 			class Requirements
 			{
@@ -486,7 +486,7 @@ class PRA3_kits
 		class Grenadier_IN : Rifleman_IN
 		{
 			name = "Grenadier";
-			picture = "pra3\pra3_kits\data\kit_img\grenadier_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\grenadier_88.paa";
 
 			class Requirements
 			{
@@ -525,7 +525,7 @@ class PRA3_kits
 		class Marksman_IN : Rifleman_IN
 		{
 			name = "Marksman";
-			picture = "pra3\pra3_kits\data\kit_img\sniper_88.paa";
+			picture = "pra3\pra3_ui\kits\kit_img\sniper_88.paa";
 
 			class Requirements
 			{
