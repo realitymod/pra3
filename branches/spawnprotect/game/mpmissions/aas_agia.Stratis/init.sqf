@@ -26,4 +26,12 @@ PRA3_AAS_respawns = [
 	["spawn3", [6  ],true]
 ];
 
+PRA3_AAS_restrictionZones = [
+/*   MARKER     Side		Need to be 		*/
+/*   Name		restrcit   		Inside the zone	*/
+	["fighting_Zone", [west,east],true],
+	["west_spawn", [east],false],
+	["east_spawn", [west],false]
+];
+
 call compile preprocessFileLineNumbers "pra3\init.sqf";
