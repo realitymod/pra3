@@ -141,15 +141,15 @@ class Rsc_PRA3_squadSys_manageDlg
 			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
 			w = __w / 2 - 0.005;
 			h = 0.04;
-			text = "SQUADS";
-			action = "";
+			text = "KITS";
+			action = "closeDialog 0; createDialog 'Rsc_PRA3_kits_kitDlg'";
 		};
 		class SwitchKitsBts : SwitchSquadsBtn
 		{
 			idc = -1;
 			x = safeZoneX + __spaceX + __w / 2;
-			text = "KITS";
-			action = "closeDialog 0; createDialog 'Rsc_PRA3_kits_kitDlg'";
+			text = "SQUADS";
+			action = "";
 		};
 
 		class Group : RscControlsGroup
