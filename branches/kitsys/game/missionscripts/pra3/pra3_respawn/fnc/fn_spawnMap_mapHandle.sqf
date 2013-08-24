@@ -21,7 +21,7 @@ switch (_this select 0) do
 				{
 					PRA3_AAS_selectedSpawn = _x select 0;
 					call PRA3_fnc_kitDlg_populateSpawnLocations;
-					__getCtrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
+					ctrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
 				};
 			} forEach (player call PRA3_fnc_AAS_getAvailableSpawns);
 
@@ -41,13 +41,13 @@ switch (_this select 0) do
 		};
 
 		PRA3_AAS_selectedSpawn = player call PRA3_fnc_AAS_getAvailableSpawns select _idx select 0;
-		diag_log [_this, PRA3_AAS_selectedSpawn, ctrlMapScale __getCtrl(IDC_KITDLG_SPAWNMAP_MAP),
+		diag_log [_this, PRA3_AAS_selectedSpawn, ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP),
 			markerPos PRA3_AAS_selectedSpawn];
-		__getCtrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapAnimAdd [
+		ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapAnimAdd [
 			0,
-			ctrlMapScale __getCtrl(IDC_KITDLG_SPAWNMAP_MAP),
+			ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP),
 			markerPos PRA3_AAS_selectedSpawn
 		];
-		ctrlMapAnimCommit __getCtrl(IDC_KITDLG_SPAWNMAP_MAP);
+		ctrlMapAnimCommit ctrl(IDC_KITDLG_SPAWNMAP_MAP);
 	};
 };

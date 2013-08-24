@@ -10,7 +10,7 @@
 		_textureAnimPhase = abs(6 - floor (diag_tickTime * 16) % 12);
 		_size = _size + 5;
 	};
-	if (markerPos (_x select 0) distance PRA3_spawnMapMousePos < 200 * ctrlMapScale __getCtrl(IDC_KITDLG_SPAWNMAP_MAP)) then
+	if (markerPos (_x select 0) distance PRA3_spawnMapMousePos < 200 * ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP)) then
 	{
 		_size = _size + 5;
 	};
@@ -19,7 +19,7 @@
 		_textureAnimPhase
 	];
 	
-	__getCtrl(IDC_KITDLG_SPAWNMAP_MAP) drawIcon [
+	ctrl(IDC_KITDLG_SPAWNMAP_MAP) drawIcon [
 		_texture,
 		[1,1,1,1],
 		markerPos (_x select 0),

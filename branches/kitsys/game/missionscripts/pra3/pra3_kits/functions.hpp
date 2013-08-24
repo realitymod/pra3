@@ -79,20 +79,4 @@ class Kits
 	{
 		description = "";
 	};
-	class kitDlg_onMapDraw
-	{
-		description = "";
-	};
-	class kitDlg_spawnMapHandle
-	{
-		description = "";
-	};
-	class kitDlg_selectNoSpawn
-	{
-		description = "";
-	};
-	class kitDlg_populateSpawnLocations
-	{
-		description = "";
-	};
 };

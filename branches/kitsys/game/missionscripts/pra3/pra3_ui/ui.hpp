@@ -1,3 +1,4 @@
+#include "defines.hpp"
 #include "uiBases.hpp"
 
 #include "idcs.hpp"
@@ -8,5 +9,5 @@ class RscTitles
 	#include "respawn\deadScreen.hpp"
 };
 
-#include "squadsys\management.hpp"
 #include "kits\kitDlg.hpp"
+#include "squadsys\management.hpp"
