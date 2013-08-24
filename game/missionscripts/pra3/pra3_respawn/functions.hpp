@@ -37,4 +37,25 @@ class Respawn
 	{
 		description = "Handles onKeyDown.";
 	};
+
+	class spawnMap_onLoad
+	{
+		description = "";
+	};
+	class spawnMap_onMapDraw
+	{
+		description = "";
+	};
+	class spawnMap_mapHandle
+	{
+		description = "";
+	};
+	class spawnMap_selectNoSpawn
+	{
+		description = "";
+	};
+	class spawnMap_populateSpawnLocations
+	{
+		description = "";
+	};
 };

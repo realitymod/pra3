@@ -1,9 +1,9 @@
 class Rsc_PRA3_kits_kitDlg
 {
 	idd = -1;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlg"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad";
+	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlg"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
 
-	#define __w1 0.4
+	#define __w1 0.5
 	#define __w2 0.5
 
 	#define __spaceX 0.01
@@ -14,7 +14,7 @@ class Rsc_PRA3_kits_kitDlg
 
 	class ControlsBackground
 	{
-		class TitleKitsBackground : RscText
+		class TitleLeftBackground : RscText
 		{
 			x = safeZoneX + __spaceX;
 			y = safeZoneY + __spaceY;
@@ -22,20 +22,20 @@ class Rsc_PRA3_kits_kitDlg
 			h = 0.07;
 			colorBackground[] = {0.153,0.153,0.153,1.0};
 		};
-		class TitleKits : RscText
+		class TitleLeft : RscText
 		{
 			x = safeZoneX + __spaceX;
 			y = safeZoneY + __spaceY + 0.01;
 			w = __EVAL(__w1);
 			h = 0.05;
 			sizeEx = 0.05;
-			text = "FACTION NAME";
+			text = "KIT SELECTION";
 			font = "PuristaBold";
 			colorText[] = {0.9,0.9,0.9,1};
 			style = ST_CENTER;
 			colorBackground[] = {0,0,0,0};
 		};
-		class BackgroundKits : TitleKitsBackground
+		class BackgroundLeft : TitleLeftBackground
 		{
 			y = safeZoneY + __spaceY + 0.069;
 			w = __EVAL(__w1);
@@ -43,13 +43,21 @@ class Rsc_PRA3_kits_kitDlg
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
 
-		class BackgroundSpawn : TitleKitsBackground
+		class BackgroundSpawn : TitleLeftBackground
 		{
 			idc = IDC_KITDLG_SPAWNMAP_BG;
 			x = safeZoneX + __spaceX + __w1 + __spaceX;
 			y = safeZoneY + __spaceY;
 			w = __mapW;
 			h = __mapH;
+		};
+		class TitleSpawn : TitleLeft
+		{
+			idc = IDC_KITDLG_SPAWNMAP_TITLE;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.075;
+			y = safeZoneY + __spaceY + 0.01;
+			w = 0.32;
+			text = "RESPAWN LOCATION";
 		};
 
 		// Used to detect when the mouse is outside of the kit selection dialog
@@ -74,9 +82,9 @@ class Rsc_PRA3_kits_kitDlg
 			w = __mapW - __spaceX * 2;
 			h = __mapH - 0.07 - 0.05 - __spaceY;
 
-			onDraw             = "_this call PRA3_fnc_kitDlg_onMapDraw";
-			onMouseMoving      = "[0, _this] call PRA3_fnc_kitDlg_spawnMapHandle";
-			onMouseButtonClick = "[1, _this] call PRA3_fnc_kitDlg_spawnMapHandle";
+			onDraw             = "_this call PRA3_fnc_spawnMap_onMapDraw";
+			onMouseMoving      = "[0, _this] call PRA3_fnc_spawnMap_mapHandle";
+			onMouseButtonClick = "[1, _this] call PRA3_fnc_spawnMap_mapHandle";
 
 			text = "#(argb,8,8,3)color(1,1,1,1)";
 			maxSatelliteAlpha = 1;
@@ -124,7 +132,7 @@ class Rsc_PRA3_kits_kitDlg
 			y = safeZoneY + __spaceY + __mapH - __spaceY - 0.045;
 			w = __mapW - __spaceX * 2 - 0.15;
 			h = 0.045;
-			onLBSelChanged = "[2, _this] call PRA3_fnc_kitDlg_spawnMapHandle";
+			onLBSelChanged = "[2, _this] call PRA3_fnc_spawnMap_mapHandle";
 		};
 		class SpawnButtonClose : RscButton
 		{
@@ -137,7 +145,7 @@ class Rsc_PRA3_kits_kitDlg
 			action = "closeDialog 0";
 		};
 
-		class SwitchSquadsBtn : RscButton
+		class SwitchKitsBtn : RscButton
 		{
 			idc = IDC_KITDLG_SWITCH_KITS;
 			x = safeZoneX + __spaceX;
@@ -147,9 +155,9 @@ class Rsc_PRA3_kits_kitDlg
 			text = "KITS";
 			action = "";
 		};
-		class SwitchKitsBts : SwitchSquadsBtn
+		class SwitchSquadsBtn : SwitchKitsBtn
 		{
-			idc = -1;
+			idc = IDC_KITDLG_SWITCH_SQUADS;
 			x = safeZoneX + __spaceX + __w1 / 2;
 			text = "SQUADS";
 			action = "closeDialog 0; createDialog 'Rsc_PRA3_squadSys_manageDlg'";
