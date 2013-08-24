@@ -1,5 +1,3 @@
-#include "fnc\idcs.sqh"
-
 class Rsc_PRA3_kits_kitDlg
 {
 	idd = -1;
@@ -205,7 +203,7 @@ class Rsc_PRA3_kits_kitDlg
 							y = 0.01 * (4/3);
 							w = __EVAL(__h / (4/3) - 0.01*2);
 							h = __EVAL(__h - (0.01*2 * (4/3)));
-							text = "pra3\pra3_kits\data\kit_img\rifleman_88.paa";
+							text = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
 							colorBackground[] = {1,0,0,1};
 							colorText[] = {0.9,0.9,0.9,1.0};
 						};
@@ -237,17 +235,17 @@ class Rsc_PRA3_kits_kitDlg
 							y = 0;
 							w = 0.031;
 							h = __h;
-							animTextureNormal	= "pra3\pra3_kits\data\button_88.paa";
-							animTextureDisabled	= "pra3\pra3_kits\data\button_88.paa";
-							animTextureOver		= "pra3\pra3_kits\data\button_88.paa";
-							animTextureFocused	= "pra3\pra3_kits\data\button_88.paa";
-							animTexturePressed	= "pra3\pra3_kits\data\button_88.paa";
-							animTextureDefault	= "pra3\pra3_kits\data\button_88.paa";
+							animTextureNormal	= "pra3\pra3_ui\data\button_tall_88.paa";
+							animTextureDisabled	= "pra3\pra3_ui\data\button_tall_88.paa";
+							animTextureOver		= "pra3\pra3_ui\data\button_tall_88.paa";
+							animTextureFocused	= "pra3\pra3_ui\data\button_tall_88.paa";
+							animTexturePressed	= "pra3\pra3_ui\data\button_tall_88.paa";
+							animTextureDefault	= "pra3\pra3_ui\data\button_tall_88.paa";
 							period = 0;
 							periodFocus = 0;
 							periodOver = 0;
 							colorBackground[] = {1, 1, 1, 1};
-							text = "<img size='1' color='#dfdfdf' image='pra3\pra3_kits\data\arrow_right.paa'/>";
+							text = "<img size='1' color='#dfdfdf' image='pra3\pra3_ui\data\arrow_right.paa'/>";
 
 							action = "1 call PRA3_fnc_kitDlg_kitDetailsBtn";
 
