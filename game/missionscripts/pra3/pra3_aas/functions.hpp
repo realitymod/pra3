@@ -47,4 +47,9 @@ class AAS
 	{
 		description = "Removes a certain amount of tickets from the team.";
 	};
+	
+	class AAS_createRestrictedZone
+	{
+		description = "Create a restricted zone";
+	};
 };

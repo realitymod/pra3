@@ -39,9 +39,9 @@ var(_exit) = false;
 
 while {(_i <= _waitTime) && !_exit} do {
 	if (_inside) then {															//Check if the player should be inside or outside the zone							
-						if !(player in (list _trigger)) then {_exit = true}; 	//Break loop if player got out of the zone 
+						if (vehicle player in (list _trigger)) then {_exit = true}; 	//Break loop if player got out of the zone 
 				} else {
-						if (player in (list _trigger)) then {_exit = true}}; 	//Break loop if player got inside the zone 
+						if !(vehicle player in (list _trigger)) then {_exit = true}}; 	//Break loop if player got inside the zone 
 						
 	cutText [format ["GET BACK TO THE FIGHT! %1s",_waitTime - _i],"PLAIN DOWN",1];
 	_i = _i + 1; 
