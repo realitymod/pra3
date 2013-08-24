@@ -857,7 +857,7 @@ class Rsc_PRA3_squadSys_manageDlg
 			y = safeZoneY + safeZoneH - __spaceY - 0.045;
 			w = 0.30;
 			h = 0.04;
-			text = "Create squad";
+			text = "Create Squad";
 			action = "99 call PRA3_fnc_squadDlg_actionButton";
 			sizeEx = 0.035;
 			size = 0.035;

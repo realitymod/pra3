@@ -29,7 +29,7 @@ class Rsc_PRA3_kits_kitDlg
 			w = __EVAL(__w1);
 			h = 0.05;
 			sizeEx = 0.05;
-			text = "KIT SELECTION";
+			text = "FACTION NAME";
 			font = "PuristaBold";
 			colorText[] = {0.9,0.9,0.9,1};
 			style = ST_CENTER;
@@ -50,14 +50,6 @@ class Rsc_PRA3_kits_kitDlg
 			y = safeZoneY + __spaceY;
 			w = __mapW;
 			h = __mapH;
-		};
-		class TitleSpawn : TitleKits
-		{
-			idc = IDC_KITDLG_SPAWNMAP_TITLE;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.075;
-			y = safeZoneY + __spaceY + 0.01;
-			w = 0.32;
-			text = "RESPAWN LOCATION";
 		};
 
 		// Used to detect when the mouse is outside of the kit selection dialog
