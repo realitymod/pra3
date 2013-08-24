@@ -502,25 +502,6 @@ class Rsc_PRA3_squadSys_manageDlg
 				__itemSquad(08, "Hotel");
 				__itemSquad(09, "India");
 
-				__itemSquad(10, "Juliet");
-				__itemSquad(11, "Kilo");
-				__itemSquad(12, "Lima");
-				__itemSquad(13, "Mike");
-				__itemSquad(14, "November");
-				__itemSquad(15, "Oscar");
-				__itemSquad(16, "Papa");
-				__itemSquad(17, "Quebec");
-				__itemSquad(18, "Romeo");
-				__itemSquad(19, "Sierra");
-
-				__itemSquad(20, "Tango");
-				__itemSquad(21, "Uniform");
-				__itemSquad(22, "Victor");
-				__itemSquad(23, "Whiskey");
-				__itemSquad(24, "X-ray");
-				__itemSquad(25, "Yankee");
-				__itemSquad(26, "Zulu");
-
 				class ItemSquadPlayer : ItemSquad01
 				{
 					idc = 500000;
