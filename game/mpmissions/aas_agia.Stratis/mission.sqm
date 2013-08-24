@@ -6,7 +6,8 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
 		"A3_Data_F",
-		"A3_Characters_F_OPFOR"
+		"A3_Characters_F_OPFOR",
+		"A3_Modules_F_Misc"
 	};
 	addOnsAuto[]=
 	{
@@ -377,7 +378,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=13;
+		items=17;
 		class Item0
 		{
 			position[]={3211.1069,4.7735009,5821.6655};
@@ -500,6 +501,161 @@ class Mission
 			name="spawn2";
 			text="Western Frontline";
 			type="Empty";
+		};
+		class Item13
+		{
+			position[]={3228.2742,124.62329,4471.9849};
+			name="borderSouth";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=1000;
+			b=600;
+		};
+		class Item14
+		{
+			position[]={3228.2739,20.131842,7248.3149};
+			name="borderNorth";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=1000;
+			b=600;
+		};
+		class Item15
+		{
+			position[]={4822.0283,159.82118,5853.2666};
+			name="borderEast";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=2000;
+			b=600;
+			angle=-89.954315;
+		};
+		class Item16
+		{
+			position[]={1639.1122,0.028429626,5853.2666};
+			name="borderWest";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=2000;
+			b=600;
+			angle=-89.9543;
+		};
+	};
+	class Sensors
+	{
+		items=6;
+		class Item0
+		{
+			position[]={3278.3638,5.3400002,5776.9668};
+			a=100;
+			b=100;
+			angle=40.606899;
+			activationBy="EAST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="west_spawn";
+			expCond="(player in thislist) && (playerSide == east)";
+			expActiv="_null = [thisTrigger,10,true,false] spawn PRA3_fnc_RestrictZoneEffect";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={2774.8293,0.0012257668,6154.3984};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="east_spawn";
+			expCond="(player in thislist) && (playerSide == west)";
+			expActiv="_null = [thisTrigger,10,true,false] spawn PRA3_fnc_RestrictZoneEffect";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={3235.7236,20.097101,7258.771};
+			a=1000;
+			b=600;
+			angle=-179.481;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="figtingBoarderNorth";
+			expCond="(player in thislist)";
+			expActiv="_null = [thisTrigger,10,true,false] spawn PRA3_fnc_RestrictZoneEffect";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={4821.4678,153.74789,5847.0454};
+			a=2000;
+			b=600;
+			angle=-89.286598;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="figtingBoarderEast";
+			expCond="(player in thislist)";
+			expActiv="_null = [thisTrigger,10,true,false] spawn PRA3_fnc_RestrictZoneEffect";
+			class Effects
+			{
+			};
+		};
+		class Item4
+		{
+			position[]={1620.7498,0.14591043,5880.1494};
+			a=2000;
+			b=600;
+			angle=-89.286598;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="figtingBoarderWest";
+			expCond="(player in thislist)";
+			expActiv="_null = [thisTrigger,10,true,false] spawn PRA3_fnc_RestrictZoneEffect";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={3194.8521,117.70622,4470.248};
+			a=1000;
+			b=600;
+			angle=-179.481;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="figtingBoarderSouth";
+			expCond="(player in thislist)";
+			expActiv="_null = [thisTrigger,10,true,false] spawn PRA3_fnc_RestrictZoneEffect";
+			class Effects
+			{
+			};
 		};
 	};
 };
