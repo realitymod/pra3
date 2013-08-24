@@ -7,5 +7,6 @@
 	"kits",
 	"squadsys",
 	"interactions",
-	"hud"
+	"hud",
+	"wpnswitch"
 ];
