@@ -1,0 +1,217 @@
+/*%FSM<COMPILE "A:\BIS TOOLS 2\FSM Editor Personal Edition\scriptedFSM.cfg, PRA3_hud_compass">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"start",0,250,-39.090382,-103.215523,50.909615,-53.215515,0.000000,"start"};
+item1[] = {"__isNull_player",4,218,-36.985981,-39.961746,53.014042,10.038240,0.000000,"!isNull player"};
+item2[] = {"cutRsc",2,250,-39.003220,28.359951,50.996796,78.359940,0.000000,"cutRsc"};
+item3[] = {"smooth_wait",4,218,-39.418549,98.544189,50.581467,148.544189,0.000000,"smooth" \n "wait"};
+item4[] = {"update",2,4346,-39.052994,193.734802,50.947021,243.734741,0.000000,"update"};
+item5[] = {"rsc_expired",4,218,75.199821,97.809509,165.199829,147.809448,1.000000,"rsc expired"};
+item6[] = {"turned_off",4,218,98.002441,193.961975,188.002441,243.961975,2.000000,"turned off"};
+item7[] = {"close_and_exit",1,250,97.289215,270.277679,187.289246,320.277679,0.000000,"close and exit"};
+item8[] = {"_",8,218,-128.968918,206.540466,-106.263588,229.496826,0.000000,""};
+item9[] = {"show_hide",2,250,-162.217484,99.102249,-72.217461,149.102173,0.000000,"show/hide"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {4,6};
+link6[] = {4,8};
+link7[] = {5,2};
+link8[] = {6,7};
+link9[] = {8,9};
+link10[] = {9,3};
+globals[] = {0.000000,0,0,0,0,640,480,2,12,6316128,1,-375.554565,375.550842,323.037109,-332.745850,851,743,1};
+window[] = {2,-1,-1,-1,-1,813,46,1260,46,3,869};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "PRA3_hud_compass";
+  class States
+  {
+    /*%FSM<STATE "start">*/
+    class start
+    {
+      name = "start";
+      init = /*%FSM<STATEINIT""">*/"private [""_step"", ""_smoothing""];" \n
+       "_step = 0.816 / 180;" \n
+       "//_step = 0.821 / 180;" \n
+       "" \n
+       "PRA3_hud_compassEnabled = true;" \n
+       "" \n
+       "_smoothing = 0.05;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "__isNull_player">*/
+        class __isNull_player
+        {
+          priority = 0.000000;
+          to="cutRsc";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNull player"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "cutRsc">*/
+    class cutRsc
+    {
+      name = "cutRsc";
+      init = /*%FSM<STATEINIT""">*/"([""PRA3_hud_compass""] call BIS_fnc_rscLayer) cutRsc [""PRA3_hud_compass"", ""PLAIN""];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "smooth_wait">*/
+        class smooth_wait
+        {
+          priority = 0.000000;
+          to="update";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"ctrlCommitted ((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl 3)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "update">*/
+    class update
+    {
+      name = "update";
+      init = /*%FSM<STATEINIT""">*/"private [""_dir"", ""_pos""];" \n
+       "_dir = [player, positionCameraToWorld [0,0,100]]" \n
+       "	call PRA3_fnc_getAzimuth;" \n
+       "_dir = [_dir, 1] call PRA3_fnc_round;" \n
+       "" \n
+       "private ""_offset"";" \n
+       "_offset = if (_dir > 180) then" \n
+       "{" \n
+       "	0.6083" \n
+       "}" \n
+       "else" \n
+       "{" \n
+       "	-1.023" \n
+       "};" \n
+       "" \n
+       "_pos = _offset + (-_dir * _step);" \n
+       "" \n
+       "" \n
+       "((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl 3)" \n
+       "	ctrlSetPosition [_pos, 0];" \n
+       "((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl 3)" \n
+       "	ctrlCommit _smoothing;" \n
+       "" \n
+       "//TODO: Track something worthwhile" \n
+       "_dir = _dir - ([positionCameraToWorld [0,0,0], [5000,5000]]" \n
+       "	call PRA3_fnc_getAzimuth);" \n
+       "" \n
+       "if (_dir < -180) then" \n
+       "{" \n
+       "	_dir = _dir + 360;" \n
+       "};" \n
+       "_offset = if (_dir > 180) then" \n
+       "{" \n
+       "	1.847" \n
+       "}" \n
+       "else" \n
+       "{" \n
+       "	0.216" \n
+       "};" \n
+       "_pos = _offset + (-_dir * _step);" \n
+       "" \n
+       "((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl 4)" \n
+       "	ctrlSetPosition [_pos, (2.5/(2048/64)*(4/3)) - (0.023 * (4/3)) + 0.01];" \n
+       "((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl 4)" \n
+       "	ctrlCommit _smoothing;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "turned_off">*/
+        class turned_off
+        {
+          priority = 2.000000;
+          to="close_and_exit";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!PRA3_hud_compassEnabled"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "rsc_expired">*/
+        class rsc_expired
+        {
+          priority = 1.000000;
+          to="cutRsc";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isNull (uiNamespace getVariable ""PRA3_hud_compass"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="show_hide";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "close_and_exit">*/
+    class close_and_exit
+    {
+      name = "close_and_exit";
+      init = /*%FSM<STATEINIT""">*/"([""PRA3_hud_compass""] call BIS_fnc_rscLayer) cutText ["""", ""PLAIN""];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "show_hide">*/
+    class show_hide
+    {
+      name = "show_hide";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "	((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl _x)" \n
+       "		ctrlSetFade (" \n
+       "			if (" \n
+       "				!visibleMap &&" \n
+       "				{alive player} &&" \n
+       "				{cameraOn == player}" \n
+       "			) then {0} else {1}" \n
+       "		);" \n
+       "	((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl _x)" \n
+       "		ctrlCommit 0;" \n
+       "} forEach [1, 2];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "smooth_wait">*/
+        class smooth_wait
+        {
+          priority = 0.000000;
+          to="update";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"ctrlCommitted ((uiNamespace getVariable ""PRA3_hud_compass"") displayCtrl 3)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="start";
+  finalStates[] =
+  {
+    "close_and_exit",
+  };
+};
+/*%FSM</COMPILE>*/

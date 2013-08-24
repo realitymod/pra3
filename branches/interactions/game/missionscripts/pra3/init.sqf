@@ -6,5 +6,6 @@
 	"mp",
 	"kits",
 	"squadsys",
-	"interactions"
+	"interactions",
+	"hud"
 ];
