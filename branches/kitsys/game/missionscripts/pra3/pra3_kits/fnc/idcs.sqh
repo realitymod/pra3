@@ -1,3 +1,5 @@
+#define IDC_KITDLG_SWITCH_KITS          51
+
 #define IDC_KITDLG_DETAILS              100
 #define IDC_KITDLG_DETAILS_BG           101
 #define IDC_KITDLG_DETAILS_SEP          102

@@ -55,7 +55,7 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 	y = 0;
 	w = 0.22;
 	h = 0.4;
-	
+
 	class Controls
 	{
 		class Item1 : RscButton
@@ -96,15 +96,17 @@ class Rsc_PRA3_squadSys_manageDlg
 	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlg"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad";
 
 	#define __w 0.5
+	#define __spaceX 0.01
+	#define __spaceY (__spaceX / (4/3))
 
 	class ControlsBackground
 	{
 		class Background : RscText
 		{
-			x = "safeZoneX";
-			y = "safeZoneY";
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY;
 			w = __w;
-			h = "safeZoneH";
+			h = safeZoneH - __spaceY * 2;
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
 		class TitleBackground : Background
@@ -114,31 +116,49 @@ class Rsc_PRA3_squadSys_manageDlg
 		};
 		class Title : RscText
 		{
-			x = "safeZoneX";
-			y = "safeZoneY + 0.01";
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01;
 			w = __w;
 			h = 0.05;
 			sizeEx = 0.05;
-			text = "Squad management";
+			text = "SQUAD MANAGEMENT";
 			font = "PuristaSemibold";
 			colorText[] = {1,1,1,1};
 			style = ST_CENTER;
 		};
 		class CreateSquadBackground : TitleBackground
 		{
-			y = safeZoneY + safeZoneH - 0.05;
+			y = safeZoneY + safeZoneH - __spaceY - 0.05;
 			h = 0.05;
 		};
 	};
 	class Controls
 	{
+		class SwitchSquadsBtn : RscButton
+		{
+			idc = -1;
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
+			w = __w / 2 - 0.005;
+			h = 0.04;
+			text = "SQUADS";
+			action = "";
+		};
+		class SwitchKitsBts : SwitchSquadsBtn
+		{
+			idc = -1;
+			x = safeZoneX + __spaceX + __w / 2;
+			text = "KITS";
+			action = "closeDialog 0; createDialog 'Rsc_PRA3_kits_kitDlg'";
+		};
+
 		class Group : RscControlsGroup
 		{
 			idc = 1;
-			x = "safeZoneX";
-			y = "safeZoneY + 0.01 + 0.05 + 0.01";
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.04;
 			w = __w;
-			h = "safeZoneH - (0.01 + 0.05 + 0.01 + 0.05)";
+			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.05 + 0.04);
 			onMouseButtonDown = "["""", _this] call PRA3_fnc_squadDlg_onMouseClick";
 			onMouseMoving = "-1 call PRA3_fnc_squadDlg_onMouseMoving";
 
@@ -256,7 +276,7 @@ class Rsc_PRA3_squadSys_manageDlg
 							w = "0.04/(4/3)";
 							h = 0.04;
 							action = "1 call PRA3_fnc_squadDlg_toggleCollapseSquad";
-							
+
 							colorDisabled[] = {0,0,0,0};
 							colorBackground[] = {0,0,0,0};
 							colorBackgroundActive[] = {0,0,0,0};
@@ -769,8 +789,8 @@ class Rsc_PRA3_squadSys_manageDlg
 		};
 		class DummyGroup : Group //Invisible dummy object for EHs to work outside the squad dialog
 		{
-			x = safeZoneX + __w;
-			w = safeZoneW - __w;
+			x = safeZoneX + __spaceX + __w;
+			w = safeZoneW - spaceX - __w;
 
 			class Controls
 			{
@@ -833,8 +853,8 @@ class Rsc_PRA3_squadSys_manageDlg
 		class CreateSquadButton : RscShortcutButton
 		{
 			idc = 999901;
-			x = safeZoneX + __w/2 - 0.15;
-			y = safeZoneY + safeZoneH - 0.045;
+			x = safeZoneX + __spaceX + __w/2 - 0.15;
+			y = safeZoneY + safeZoneH - __spaceY - 0.045;
 			w = 0.30;
 			h = 0.04;
 			text = "Create squad";
