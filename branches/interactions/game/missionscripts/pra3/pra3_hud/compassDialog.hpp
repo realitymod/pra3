@@ -12,7 +12,7 @@ class PRA3_hud_compass
 
 	class Controls
 	{
-		class Group : RscControlsGroup
+		class Group : RscControlsGroupNoScrollbars
 		{
 			idc = 1;
 			x = 0.27;
