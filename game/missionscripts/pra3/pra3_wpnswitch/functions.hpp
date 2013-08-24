@@ -1,6 +1,6 @@
 class Wpnswitch
 {
-	file = "pra3\pra3_squadsys\fnc";
+	file = "pra3\pra3_wpnswitch\fnc";
 
 	class changeWeapon
 	{
