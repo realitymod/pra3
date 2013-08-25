@@ -10,4 +10,5 @@ class RscTitles
 };
 
 #include "kits\kitDlg.hpp"
+#include "kits\kitSelect.hpp"
 #include "squadsys\management.hpp"
