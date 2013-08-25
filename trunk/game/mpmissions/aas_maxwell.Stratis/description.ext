@@ -1,4 +1,4 @@
-#define __maxPlayers 16
+#define __maxPlayers 64
 #define __name "Maxwell"
 
 #include "pra3\description.hpp"
