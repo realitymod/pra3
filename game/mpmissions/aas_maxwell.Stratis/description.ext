@@ -1,5 +1,0 @@
-#define __maxPlayers 16
-
-#include "pra3\description.hpp"
-
-onLoadName = "PR:A3 - Maxwell";
