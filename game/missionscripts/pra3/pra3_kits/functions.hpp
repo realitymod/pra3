@@ -20,7 +20,7 @@ class Kits
 	{
 		description = "Equips the unit with the given kit. Also notifies the server about it.";
 	};
-	
+
 	class getKitAvailableNum
 	{
 		description = "Returns the number of kits the given unit has available.";
@@ -29,7 +29,7 @@ class Kits
 	{
 		description = "Returns the max number of kits that could be available to the give unit.";
 	};
-	
+
 	class unitGetKit
 	{
 		description = "Returns the unit's kit. Returns an empty string if the unit had no kit assigned.";
@@ -78,5 +78,9 @@ class Kits
 	class kitDlg_hideKitDetails
 	{
 		description = "";
+	};
+	class kitDlg_open
+	{
+		description = "Opens the Kit Selection dialog.";
 	};
 };
