@@ -202,4 +202,9 @@ class SquadSys
 	class squadDlg_server_unsetFt
 	{
 	};
+	
+	class squadDlg_open
+	{
+		description = "Opens the Squad Management dialog.";
+	};
 };

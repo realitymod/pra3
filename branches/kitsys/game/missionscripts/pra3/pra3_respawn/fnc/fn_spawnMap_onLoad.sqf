@@ -4,8 +4,6 @@
 
 uiNamespace setVariable ["PRA3_spawnMap_display", _this];
 
-PRA3_showRespawnSelection = true;
-
 if PRA3_showRespawnSelection then
 {
 	var(_colorOutside) = getArray(configFile >> "CfgWorlds" >> worldName >> "OutsideTerrain" >> "colorOutside");
