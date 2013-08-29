@@ -10,7 +10,7 @@
 
 var(_unit) = _this;
 
-var(_uid) = if (typeName _unit == "STRING") then //Already UID
+if (typeName _unit == "STRING") then //Already UID
 {
 	_unit
 }
@@ -24,10 +24,4 @@ else
 	{
 		_unit getVariable ["PRA3_UID", ""]
 	}
-};
-
-if (_uid == "") then
-{
-	[format["UID missing for %1 (%2)", str _this, str _unit]] call PRA3_fnc_logWarning;
-};
-_uid
+}

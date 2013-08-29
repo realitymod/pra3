@@ -1,7 +1,6 @@
-call compile preprocessFileLineNumbers "pra3\pra3_mp\playerConnected\init.sqf";
-
 if (isServer) then //Server only
 {
+	call compile preprocessFileLineNumbers "pra3\pra3_mp\playerConnected\init.sqf";
 	call compile preprocessFileLineNumbers "pra3\pra3_mp\playerInfo\server.sqf";
 };
 if (!isDedicated) then //Client only

@@ -1,4 +1,5 @@
 #define __maxPlayers 16
-#define __name "Agia Marina"
+
+#define PRA3_DEBUG
 
 #include "pra3\description.hpp"

@@ -1,4 +1,0 @@
-#define __color_empty		"ColorBlack"
-#define __color_player		"ColorOrange"
-#define __color_squad		"ColorGreen"
-#define __color_friendly	"ColorBlue"

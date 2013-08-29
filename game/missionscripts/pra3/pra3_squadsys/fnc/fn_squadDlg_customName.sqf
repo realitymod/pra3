@@ -14,8 +14,8 @@ switch (_this select 0) do
 	 */
 	case 0:
 	{
-		PRA3_squadSys_editingCustomName = true;
-		PRA3_squadSys_collapsedSquads set [0, false];
+		PRAA_squadSys_editingCustomName = true;
+		PRAA_squadSys_collapsedSquads set [0, false];
 
 		[5, [true, true]] call PRA3_fnc_squadDlg_customName;
 	};
@@ -25,16 +25,16 @@ switch (_this select 0) do
 	case 1:
 	{
 		var(_key) = _this select 1 select 1;
-		if (PRA3_squadSys_editingCustomName) then
+		if (PRAA_squadSys_editingCustomName) then
 		{
 			var(_text) = ctrlText __ctrl(500000 + 3003);
 			if (count toArray(_text) >= __customNameCharsMax) then // Name too long
 			{
-				__ctrl(500000 + 3003) ctrlSetText PRA3_squadSys_customNamePrev;
+				__ctrl(500000 + 3003) ctrlSetText PRAA_squadSys_customNamePrev;
 			}
 			else
 			{
-				PRA3_squadSys_customNamePrev = _text;
+				PRAA_squadSys_customNamePrev = _text;
 			};
 		};
 	};
@@ -65,7 +65,7 @@ switch (_this select 0) do
 	 */
 	case 3:
 	{
-		if (PRA3_squadSys_editingCustomName) then
+		if (PRAA_squadSys_editingCustomName) then
 		{
 			var(_id) = (player call PRA3_fnc_unitGetSquad);
 			var(_newName) = ctrlText __ctrl(500000 + 3003);
@@ -84,10 +84,10 @@ switch (_this select 0) do
 	 */
 	case 4:
 	{
-		if (PRA3_squadSys_editingCustomName) then
+		if (PRAA_squadSys_editingCustomName) then
 		{
-			PRA3_squadSys_editingCustomName = false;
-			PRA3_squadSys_customNamePrev = "";
+			PRAA_squadSys_editingCustomName = false;
+			PRAA_squadSys_customNamePrev = "";
 
 			[5, [false, true]] call PRA3_fnc_squadDlg_customName;
 		};

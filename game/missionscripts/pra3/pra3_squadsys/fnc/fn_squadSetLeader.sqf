@@ -61,6 +61,6 @@ if (isServer) then
 }
 else
 {
-	["Has to be run server-side"] call PRA3_fnc_logError;
+	["PRA3_fnc_squadSetLeader", "Has to be run server-side"] call PRA3_fnc_logError;
 	false
 }

@@ -1,4 +1,3 @@
 #define __maxPlayers 16
-#define __name "Testing"
 
 #include "pra3\description.hpp"
