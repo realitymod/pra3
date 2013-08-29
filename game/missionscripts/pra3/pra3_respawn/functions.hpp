@@ -2,6 +2,14 @@ class Respawn
 {
 	file = "pra3\pra3_respawn\fnc";
 
+	class getAllSpawns
+	{
+		description = "Returns a list of all spawn points in the mission.";
+	};
+	class getAvailableSpawns
+	{
+		description = "Returns a list of all spawn points the unit can respawn at.";
+	};
 	class isSpawnAvailable
 	{
 		description = "Checks if the unit can spawn at the given spawn point.";

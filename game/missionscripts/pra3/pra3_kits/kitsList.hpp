@@ -10,6 +10,9 @@
 #define LIMIT_SQUAD		1
 #define LIMIT_SL		2
 
+#define SPAWN_MAIN    0
+#define SPAWN_FORWARD 1
+
 class PRA3_kits
 {
 	class Kits
@@ -26,6 +29,8 @@ class PRA3_kits
 			{
 				type = LIMIT_NO;
 			};
+			availableAt[] = {SPAWN_MAIN, SPAWN_FORWARD};
+
 			class Clothing
 			{
 				uniform  = "U_B_CombatUniform_mcam";
@@ -264,6 +269,7 @@ class PRA3_kits
 				minMembers  = 6;
 				maxPerSquad = 1;
 			};
+			availableAt[] = {SPAWN_MAIN};
 
 			class Clothing : Clothing
 			{
@@ -535,6 +541,7 @@ class PRA3_kits
 				minMembers  = 6;
 				maxPerSquad = 1;
 			};
+			availableAt[] = {SPAWN_MAIN};
 
 			class Clothing : Clothing
 			{
