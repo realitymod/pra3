@@ -29,6 +29,10 @@ class Kits
 	{
 		description = "Returns the max number of kits that could be available to the give unit.";
 	};
+	class kitAvailableAtSpawn
+	{
+		description = "Returns whether the kit is available at the given spawn point.";
+	};
 
 	class unitGetKit
 	{

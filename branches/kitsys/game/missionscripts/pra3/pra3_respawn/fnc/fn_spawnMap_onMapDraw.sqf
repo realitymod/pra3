@@ -5,7 +5,7 @@
 {
 	var(_textureAnimPhase) = 0;
 	var(_size) = 25;
-	if (!isNil "PRA3_AAS_selectedSpawn" && {_x select 0 == PRA3_AAS_selectedSpawn}) then
+	if (!isNil "PRA3_selectedSpawn" && {_x select 0 == PRA3_selectedSpawn}) then
 	{
 		_textureAnimPhase = abs(6 - floor (diag_tickTime * 16) % 12);
 		_size = _size + 5;
@@ -31,4 +31,4 @@
 		0.08,
 		"PuristaBold"
 	];
-} forEach (player call PRA3_fnc_AAS_getAvailableSpawns);
+} forEach (player call PRA3_fnc_getAvailableSpawns);

@@ -40,14 +40,14 @@ if !(alive player) then
 
 		if ((time > PRA3_AAS_spawnAtTime || {alive player}) && {
 			isNull (uiNamespace getVariable "PRA3_dlg_spawnScreen") &&
-			{[player, PRA3_AAS_selectedSpawn] call PRA3_fnc_isSpawnAvailable}
+			{[player, PRA3_selectedSpawn] call PRA3_fnc_isSpawnAvailable}
 		}) exitWith
 		{
 			setPlayerRespawnTime -1;
 			waitUntil {alive player};
-			[player, PRA3_AAS_selectedSpawn] call PRA3_fnc_respawnUnit;
+			[player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
-			PRA3_AAS_selectedSpawn = ""; // Unselect spawn point
+			PRA3_selectedSpawn = ""; // Unselect spawn point
 		};
 
 		sleep 0.01;
