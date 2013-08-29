@@ -74,7 +74,7 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 
 		class SwitchKitsBtn : SwitchKitsBtn
 		{
-			action = "closeDialog 0; createDialog 'Rsc_PRA3_kits_kitDlg'";
+			action = "closeDialog 0; [] call PRA3_fnc_kitDlg_open";
 		};
 		class SwitchSquadsBtn : SwitchSquadsBtn
 		{
