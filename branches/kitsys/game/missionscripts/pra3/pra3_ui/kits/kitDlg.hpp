@@ -160,7 +160,7 @@ class Rsc_PRA3_kits_kitDlg
 			idc = IDC_KITDLG_SWITCH_SQUADS;
 			x = safeZoneX + __spaceX + __w1 / 2;
 			text = "SQUADS";
-			action = "closeDialog 0; createDialog 'Rsc_PRA3_squadSys_manageDlg'";
+			action = "closeDialog 0; [] call PRA3_fnc_squadDlg_open";
 		};
 
 		#define __h 0.11
