@@ -3,7 +3,7 @@
 #include "idcs.sqh"
 
 var(_kitID) = _this;
-var(_kit) = PRA3_kitSys_curAvailableKits select _kitID;
+var(_kit) = PRA3_shownKits select _kitID;
 
 // Check if we've clicked on the same details button twice
 // If so, hide the details instead
