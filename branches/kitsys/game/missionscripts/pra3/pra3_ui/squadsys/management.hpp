@@ -31,6 +31,8 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 		__item(6);
 		__item(7);
 		__item(8);
+		__item(9);
+		__item(10);
 		#undef __item
 	};
 };
@@ -323,6 +325,18 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 								__line(06);
 								__line(07);
 								__line(08);
+								__line(09);
+								__line(10);
+								__line(11);
+								__line(12);
+								__line(13);
+								__line(14);
+								__line(15);
+								__line(16);
+								__line(17);
+								__line(18);
+								__line(19);
+								__line(20);
 							};
 						};
 					};
@@ -413,18 +427,30 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 								__lineUpdate(num,06); \
 								__lineUpdate(num,07); \
 								__lineUpdate(num,08); \
+								__lineUpdate(num,09); \
+								__lineUpdate(num,10); \
+								__lineUpdate(num,11); \
+								__lineUpdate(num,12); \
+								__lineUpdate(num,13); \
+								__lineUpdate(num,14); \
+								__lineUpdate(num,15); \
+								__lineUpdate(num,16); \
+								__lineUpdate(num,17); \
+								__lineUpdate(num,18); \
+								__lineUpdate(num,19); \
+								__lineUpdate(num,20); \
 							}; \
 						}; \
 					}; \
 				}
 
-				__itemSquad(02, "Bravo");
-				__itemSquad(03, "Charlie");
-				__itemSquad(04, "Delta");
-				__itemSquad(05, "Echo");
-				__itemSquad(06, "Foxtrot");
-				__itemSquad(07, "Golf");
-				__itemSquad(08, "Hotel");
+				__itemSquad(02, "1 Bravo");
+				__itemSquad(03, "2 Charlie");
+				__itemSquad(04, "3 Delta");
+				__itemSquad(05, "4 Echo");
+				__itemSquad(06, "5 Foxtrot");
+				__itemSquad(07, "6 Golf");
+				__itemSquad(08, "7 Hotel");
 
 				class ItemSquadPlayer : ItemSquad01
 				{
@@ -551,6 +577,18 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 								__lineUpdate(06);
 								__lineUpdate(07);
 								__lineUpdate(08);
+								__lineUpdate(09);
+								__lineUpdate(10);
+								__lineUpdate(11);
+								__lineUpdate(12);
+								__lineUpdate(13);
+								__lineUpdate(14);
+								__lineUpdate(15);
+								__lineUpdate(16);
+								__lineUpdate(17);
+								__lineUpdate(18);
+								__lineUpdate(19);
+								__lineUpdate(20);
 							};
 						};
 
