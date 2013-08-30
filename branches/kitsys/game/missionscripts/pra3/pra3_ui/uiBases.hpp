@@ -674,6 +674,18 @@ class RscButton {
 	text = "";
 };
 
+class PRA3_RscInvisibleButton : RscButton
+{
+	colorText[] = {0,0,0,0};
+	colorDisabled[] = {0,0,0,0};
+	colorBackground[] = {0,0,0,0};
+	colorBackgroundActive[] = {0,0,0,0};
+	colorBackgroundDisabled[] = {0,0,0,0};
+	colorFocused[] = {0,0,0,0};
+	colorShadow[] = {0,0,0,0};
+	colorBorder[] = {0,0,0,0};
+};
+
 class RscPicture {
 	type = 0;
 	style = 48;

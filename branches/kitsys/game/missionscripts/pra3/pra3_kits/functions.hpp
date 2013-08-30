@@ -47,9 +47,9 @@ class Kits
 	{
 		description = "Checks availabilty of kits, updates descriptions and disables the request button.";
 	};
-	class kitDlg_kitDetailsBtn
+	class kitDlg_kitSelectBtn
 	{
-		description = "Handles clicking on a kit details button.";
+		description = "Handles clicking on a kit buttons.";
 	};
 	class kitDlg_loadoutVariantLB
 	{

@@ -66,7 +66,7 @@ var(_setPicture) =
 		getText(configFile >> _class >> _name >> "picture");
 };
 
-var(_kit) = PRA3_kitSys_currentKit;
+var(_kit) = _this;
 
 var(_kitInfo) = _kit call PRA3_fnc_getKitInfo;
 var(_variantInfo) = _kitInfo select KIT_VARIANTS select (_kitInfo select KIT_VARIANT_CURR);
