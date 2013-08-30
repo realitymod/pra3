@@ -132,7 +132,7 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 							h = 0.05;
 							sizeEx = 0.034;
 							colorText[] = {1,1,1,1};
-							text = "Alpha";
+							text = "1 Alpha";
 						};
 						class NameCustom : Name
 						{
@@ -444,13 +444,13 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 					}; \
 				}
 
-				__itemSquad(02, "1 Bravo");
-				__itemSquad(03, "2 Charlie");
-				__itemSquad(04, "3 Delta");
-				__itemSquad(05, "4 Echo");
-				__itemSquad(06, "5 Foxtrot");
-				__itemSquad(07, "6 Golf");
-				__itemSquad(08, "7 Hotel");
+				__itemSquad(02, "2 Bravo");
+				__itemSquad(03, "3 Charlie");
+				__itemSquad(04, "4 Delta");
+				__itemSquad(05, "5 Echo");
+				__itemSquad(06, "6 Foxtrot");
+				__itemSquad(07, "7 Golf");
+				__itemSquad(08, "8 Hotel");
 
 				class ItemSquadPlayer : ItemSquad01
 				{
