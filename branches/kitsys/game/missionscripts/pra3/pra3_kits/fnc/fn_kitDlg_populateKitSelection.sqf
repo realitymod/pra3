@@ -4,13 +4,17 @@
 
 var(_selected) = _this;
 
+PRA3_shownKits = [];
+
 var(_i) = 1;
 {
 	var(_kitInfo)    = _x call PRA3_fnc_getKitInfo;
 	var(_playerSide) = if (playerSide == west) then {TEAM_US} else {TEAM_IN};
-
+diag_log [_playerSide, _kitInfo select KIT_TEAM];
 	if (_kitInfo select KIT_TEAM == _playerSide || {!isNil "PRA3_debug_kits_showAllSides"}) then
 	{
+		PRA3_shownKits set [count PRA3_shownKits, _x];
+
 		__getCtrl(IDC_KITDLG_SELECTION_KIT + 100*_i) ctrlShow true;
 		__getCtrl(IDC_KITDLG_SELECTION_KIT + 100*_i) ctrlSetPosition
 			[getNumber(__kitLine(_i) >> "x"), getNumber(__kitLine(_i) >> "y")];
