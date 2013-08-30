@@ -325,18 +325,6 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 								__line(06);
 								__line(07);
 								__line(08);
-								__line(09);
-								__line(10);
-								__line(11);
-								__line(12);
-								__line(13);
-								__line(14);
-								__line(15);
-								__line(16);
-								__line(17);
-								__line(18);
-								__line(19);
-								__line(20);
 							};
 						};
 					};
@@ -427,18 +415,6 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 								__lineUpdate(num,06); \
 								__lineUpdate(num,07); \
 								__lineUpdate(num,08); \
-								__lineUpdate(num,09); \
-								__lineUpdate(num,10); \
-								__lineUpdate(num,11); \
-								__lineUpdate(num,12); \
-								__lineUpdate(num,13); \
-								__lineUpdate(num,14); \
-								__lineUpdate(num,15); \
-								__lineUpdate(num,16); \
-								__lineUpdate(num,17); \
-								__lineUpdate(num,18); \
-								__lineUpdate(num,19); \
-								__lineUpdate(num,20); \
 							}; \
 						}; \
 					}; \
@@ -451,6 +427,24 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 				__itemSquad(06, "6 Foxtrot");
 				__itemSquad(07, "7 Golf");
 				__itemSquad(08, "8 Hotel");
+				__itemSquad(09, "India");
+				__itemSquad(10, "Juliet");
+				__itemSquad(11, "Kilo");
+				__itemSquad(12, "Lima");
+				__itemSquad(13, "Mike");
+				__itemSquad(14, "November");
+				__itemSquad(15, "Oscar");
+				__itemSquad(16, "Papa");
+				__itemSquad(17, "Quebec");
+				__itemSquad(18, "Romeo");
+				__itemSquad(19, "Sierra");
+				__itemSquad(20, "Tango");
+				__itemSquad(21, "Uniform");
+				__itemSquad(22, "Victor");
+				__itemSquad(23, "Whiskey");
+				__itemSquad(24, "X-ray");
+				__itemSquad(25, "Yankee");
+				__itemSquad(26, "Zulu");
 
 				class ItemSquadPlayer : ItemSquad01
 				{
@@ -577,18 +571,6 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 								__lineUpdate(06);
 								__lineUpdate(07);
 								__lineUpdate(08);
-								__lineUpdate(09);
-								__lineUpdate(10);
-								__lineUpdate(11);
-								__lineUpdate(12);
-								__lineUpdate(13);
-								__lineUpdate(14);
-								__lineUpdate(15);
-								__lineUpdate(16);
-								__lineUpdate(17);
-								__lineUpdate(18);
-								__lineUpdate(19);
-								__lineUpdate(20);
 							};
 						};
 

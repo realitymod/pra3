@@ -288,7 +288,7 @@ var(_showSquadBox) =
 
 var(_updateUnassignedInfo) =
 {
-	var(_collapsed) = PRAA_squadSys_collapsedSquads select 9;
+	var(_collapsed) = PRAA_squadSys_collapsedSquads select 27;
 
 	_collapsed call PRA3_fnc_squadDlg_collapseUnassigned;
 
