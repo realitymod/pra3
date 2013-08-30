@@ -3,7 +3,7 @@
 
 var(_collapse) = _this;
 
-PRAA_squadSys_collapsedSquads set [9, _collapse];
+PRAA_squadSys_collapsedSquads set [27, _collapse];
 
 var(_playerIsSL) = ((player call PRA3_fnc_unitGetSquad)
 	call PRA3_fnc_squadGetLeader) == (player call PRA3_fnc_getPlayerUID);

@@ -14,8 +14,8 @@ if (!isDedicated) then
 	gvar(PRAA_squadSys_customNamePrev) = "";       // Last state of the custom name
 
 	gvar(PRAA_squadSys_collapsedSquads) = []; // Collapse state of squad boxes, player is index 0, unassigned is 26
-	PRAA_squadSys_collapsedSquads resize 9;
-	for "_i" from 0 to 9 do
+	PRAA_squadSys_collapsedSquads resize 27;
+	for "_i" from 0 to 27 do
 	{
 		PRAA_squadSys_collapsedSquads set [_i, false]; // Nothing collapsed by default
 	};

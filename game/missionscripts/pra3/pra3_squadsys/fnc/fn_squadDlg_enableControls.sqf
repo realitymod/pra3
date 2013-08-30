@@ -12,7 +12,7 @@ var(_enable) = _this;
 
 if (!isNull (uiNamespace getVariable "Rsc_PRAA_squadSys_manageDlg")) then
 {
-	for "_i" from 1 to 9 do
+	for "_i" from 1 to 27 do
 	{
 		__ctrl(10000*_i + 6000) ctrlEnable _enable; // Action button
 		__ctrl(10000*_i + 7002) ctrlEnable _enable; // Collapse button
