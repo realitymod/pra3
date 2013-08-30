@@ -2,7 +2,7 @@
 #include "defines.sqh"
 #include "idcs.sqh"
 
-var(_kitInfo) = PRA3_kitSys_currentKit call PRA3_fnc_getKitInfo;
+var(_kitInfo) = _this call PRA3_fnc_getKitInfo;
 
 lbClear __getCtrl(IDC_KITDLG_DETAILS_VARIANT);
 {

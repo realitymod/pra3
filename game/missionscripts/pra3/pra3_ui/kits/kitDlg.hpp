@@ -228,7 +228,16 @@ class Rsc_PRA3_kits_kitDlg
 							colorText[] = {0.8,0.8,0.8,1.0};
 							sizeEx = 0.038;
 						};
-						class Button : RscShortcutButton
+						class SelectButton : PRA3_RscInvisibleButton
+						{
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 106);
+							x = 0;
+							y = 0;
+							w = __EVAL(__w1 - 0.005*2 - 0.031);
+							h = __h;
+							action = "[0, 1] call PRA3_fnc_kitDlg_kitSelectBtn";
+						};
+						class DetailsButton : RscShortcutButton
 						{
 							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 105);
 							x = __EVAL(__w1 - 0.005*2 - 0.031);
@@ -247,7 +256,7 @@ class Rsc_PRA3_kits_kitDlg
 							colorBackground[] = {1, 1, 1, 1};
 							text = "<img size='1' color='#dfdfdf' image='pra3\pra3_ui\data\arrow_right.paa'/>";
 
-							action = "1 call PRA3_fnc_kitDlg_kitDetailsBtn";
+							action = "[1, 1] call PRA3_fnc_kitDlg_kitSelectBtn";
 
 							class HitZone
 							{
@@ -291,10 +300,15 @@ class Rsc_PRA3_kits_kitDlg
 						{ \
 							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 4); \
 						}; \
-						class Button : Button \
+						class SelectButton : SelectButton \
+						{ \
+							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 6); \
+							action = [0, num] call PRA3_fnc_kitDlg_kitSelectBtn; \
+						}; \
+						class DetailsButton : DetailsButton \
 						{ \
 							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + num * 100 + 5); \
-							action = num call PRA3_fnc_kitDlg_kitDetailsBtn; \
+							action = [1, num] call PRA3_fnc_kitDlg_kitSelectBtn; \
 						}; \
 					}; \
 				}
