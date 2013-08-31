@@ -7,6 +7,11 @@ if (isClient) then
 	player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
 };
 
+PRA3_AAS_sides = [];
+{
+	PRA3_AAS_sides set [_forEachIndex, _x call PRA3_fnc_getTeamSide];
+} forEach PRA3_AAS_teams;
+
 PRA3_AAS_ticketBleed = [0,0];
 PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active) and can be captured by somebody
 PRA3_AAS_teamZones = []; //Zones that each team has to capture/defend, indexes have to match those of PRA3_AAS_sides
@@ -18,7 +23,7 @@ PRA3_AAS_respawnTime = 30;
 {
 	if (isServer) then
 	{
-		var(_owner) = _x select 3;
+		var(_owner) = (_x select 3) call PRA3_fnc_getTeamSide;
 		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
 		PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
 		PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
