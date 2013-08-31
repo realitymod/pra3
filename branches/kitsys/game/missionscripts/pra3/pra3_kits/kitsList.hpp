@@ -359,7 +359,7 @@ class PRA3_kits
 
 					class Backpack : Backpack
 					{
-						backpack    = "B_Fieldpack_oli_Ammo";
+						backpack    = "B_Tacticalpack_oli";
 						magazines[] = {{"1Rnd_HE_Grenade_shell", 20}, {"1Rnd_Smoke_Grenade_shell", 10}};
 					};
 				};
