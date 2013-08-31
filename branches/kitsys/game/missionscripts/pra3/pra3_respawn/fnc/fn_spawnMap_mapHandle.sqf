@@ -29,6 +29,8 @@ switch (_this select 0) do
 			{
 				call PRA3_fnc_spawnMap_selectNoSpawn;
 			};
+
+			"" call PRA3_fnc_kitDlg_updateAvailability;
 		};
 	};
 	case 2: // Spawn LB selection
@@ -49,5 +51,7 @@ switch (_this select 0) do
 			markerPos PRA3_selectedSpawn
 		];
 		ctrlMapAnimCommit ctrl(IDC_KITDLG_SPAWNMAP_MAP);
+
+		"" call PRA3_fnc_kitDlg_updateAvailability;
 	};
 };

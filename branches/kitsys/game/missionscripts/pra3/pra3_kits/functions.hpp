@@ -25,6 +25,10 @@ class Kits
 	{
 		description = "Returns the number of kits the given unit has available.";
 	};
+	class getKitAvailableInfo
+	{
+		description = "Returns if the kit is available and the message that availability message.";
+	};
 	class getMaxKitAvailableNum
 	{
 		description = "Returns the max number of kits that could be available to the give unit.";
