@@ -108,3 +108,29 @@ class Players
 		description = "Returns object player with the given UID is currently controlling. Returns a null object if the UID is invalid.";
 	};
 };
+
+class Objects
+{
+	file = "pra3\pra3_functions\objects";
+
+	class unitHit
+	{
+		description = "Handle damage on units and vehicles";
+	};
+	
+};
+
+class Zones
+{
+	file = "pra3\pra3_functions\zones";
+	
+	class unitInSafeZone
+	{
+		description = "Checks if a unit is inside a safe zone.";
+	};
+	
+	class RestrictZoneEffect
+	{
+		description = "Effects while unit enters a restrict zone or exiting a fighting area";
+	};
+};

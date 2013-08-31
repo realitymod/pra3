@@ -54,6 +54,23 @@ var(_init) =
 
 			_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
 
+			// Apply spawn protection (invincibility in main bases)
+			// We also have to work around BIS' silly event handler that keeps readding itself...
+			0 spawn
+			{
+				// Wait for the BIS thing to be added
+				waitUntil {!isNil {player getVariable "BIS_fnc_feedback_hitArrayHandler"}};
+				player removeAllEventHandlers "handleDamage";
+				player addEventHandler [
+					"handleDamage",
+					{
+						BIS_hitArray = _this;
+						BIS_wasHit = true;
+						_this call PRA3_fnc_unitHit,
+					}
+				];
+			};
+
 			var(_createSource) =
 			{
 				var(_owner) = _forEachIndex call PRA3_fnc_AAS_getZoneOwner;
@@ -63,10 +80,10 @@ var(_init) =
 					"",
 					"Billboard",
 					1,
-					25, 
+					25,
 					[0,0,0],
 					[0,0,_this select 2],
-					0, 
+					0,
 					1.275,
 					1,
 					0,
@@ -180,6 +197,8 @@ var(_init) =
 
 	PRA3_AAS_attackDefendMarkers = [];
 
+	call PRA3_fnc_AAS_createRestrictedZones; //Build restriction zones
+
 	call PRA3_fnc_AAS_calculateFrontline;
 	call PRA3_fnc_AAS_updateAttackDefendMarkers;
 
@@ -188,7 +207,7 @@ var(_init) =
 };
 
 // Client might need to wait so he'll need a scheduled thread
-if (isServer) then
+if isServer then
 {
 	call _init;
 }
@@ -198,7 +217,7 @@ else
 	{
 		// playerSide will return garbage for JIP players without this wait, causing zone markers to have the wrong colors
 		waitUntil {!isNull player};
-		
+
 		// We need to make sure the server has initialzed all the zones
 		{
 			waitUntil {!isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}};

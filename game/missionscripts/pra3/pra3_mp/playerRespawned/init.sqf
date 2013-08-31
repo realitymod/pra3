@@ -11,7 +11,7 @@ PRA3_fMp_playerRespawnedHandler =
 	} forEach _handlers;
 };
 
-if (!isDedicated) then
+if !isDedicated then
 {
 	//Add the MP EH to the player unit
 	0 spawn
