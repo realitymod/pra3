@@ -37,6 +37,4 @@ PRA3_AAS_restrictionZones = [
 	["east_spawn", 		[west]		,10,		false,			false,		true]
 ];
 
-call PRA3_fnc_AAS_createRestrictedZone; 		//Build restriction zones
-
 call compile preprocessFileLineNumbers "pra3\init.sqf";

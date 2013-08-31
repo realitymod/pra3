@@ -14,8 +14,6 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
 PRA3_AAS_respawnTime = 30;
 
-call PRA3_fnc_AAS_createRestrictedZone; //Build restriction zones
-
 var(_init) =
 {
 	// Initialize each zone and create markers for it
@@ -181,6 +179,8 @@ var(_init) =
 	} forEach PRA3_AAS_zones;
 
 	PRA3_AAS_attackDefendMarkers = [];
+
+	call PRA3_fnc_AAS_createRestrictedZones; //Build restriction zones
 
 	call PRA3_fnc_AAS_calculateFrontline;
 	call PRA3_fnc_AAS_updateAttackDefendMarkers;
