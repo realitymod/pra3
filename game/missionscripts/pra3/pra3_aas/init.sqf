@@ -49,15 +49,20 @@ var(_init) =
 
 			// Apply spawn protection (invincibility in main bases)
 			// We also have to work around BIS' silly event handler that keeps readding itself...
-			player removeAllEventHandlers "handleDamage";
-			player addEventHandler [
-				"handleDamage",
-				{
-					BIS_hitArray = _this;
-					BIS_wasHit = true;
-					_this call PRA3_fnc_unitHit,
-				}
-			];
+			0 spawn
+			{
+				// Wait for the BIS thing to be added
+				waitUntil {!isNil {player getVariable "BIS_fnc_feedback_hitArrayHandler"}};
+				player removeAllEventHandlers "handleDamage";
+				player addEventHandler [
+					"handleDamage",
+					{
+						BIS_hitArray = _this;
+						BIS_wasHit = true;
+						_this call PRA3_fnc_unitHit,
+					}
+				];
+			};
 
 			var(_createSource) =
 			{
