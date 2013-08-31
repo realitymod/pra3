@@ -428,24 +428,24 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 				__itemSquad(06, "6 Foxtrot");
 				__itemSquad(07, "7 Golf");
 				__itemSquad(08, "8 Hotel");
-				__itemSquad(09, "India");
-				__itemSquad(10, "Juliet");
-				__itemSquad(11, "Kilo");
-				__itemSquad(12, "Lima");
-				__itemSquad(13, "Mike");
-				__itemSquad(14, "November");
-				__itemSquad(15, "Oscar");
-				__itemSquad(16, "Papa");
-				__itemSquad(17, "Quebec");
-				__itemSquad(18, "Romeo");
-				__itemSquad(19, "Sierra");
-				__itemSquad(20, "Tango");
-				__itemSquad(21, "Uniform");
-				__itemSquad(22, "Victor");
-				__itemSquad(23, "Whiskey");
-				__itemSquad(24, "X-ray");
-				__itemSquad(25, "Yankee");
-				__itemSquad(26, "Zulu");
+				__itemSquad(09, "9 India");
+				__itemSquad(10, "10 Juliet");
+				__itemSquad(11, "11 Kilo");
+				__itemSquad(12, "12 Lima");
+				__itemSquad(13, "13 Mike");
+				__itemSquad(14, "14 November");
+				__itemSquad(15, "15 Oscar");
+				__itemSquad(16, "16 Papa");
+				__itemSquad(17, "17 Quebec");
+				__itemSquad(18, "18 Romeo");
+				__itemSquad(19, "19 Sierra");
+				__itemSquad(20, "20 Tango");
+				__itemSquad(21, "21 Uniform");
+				__itemSquad(22, "22 Victor");
+				__itemSquad(23, "23 Whiskey");
+				__itemSquad(24, "24 X-ray");
+				__itemSquad(25, "25 Yankee");
+				__itemSquad(26, "26 Zulu");
 
 				class ItemSquadPlayer : ItemSquad01
 				{
