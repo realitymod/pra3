@@ -1,3 +1,5 @@
+#define public 2
+
 #define TYPE_WEAPON		1
 #define TYPE_BACKPACK	2
 
