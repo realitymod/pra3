@@ -12,14 +12,14 @@ Example: [trigger,10,true,false] call PRA3_fnc_RestrictZoneEffect
 
 #define var(x) private #x; x
 
-var(_trigger) 			= _this select 0;	//Trigger that call this fnc		
-var(_waitTime) 			= _this select 1;	//How long should we wait before we kill the player
-var(_inside) 			= _this select 2;	//Should the player be killed for being inside or outside the trigger	
-var(_aircarft) 			= _this select 3;	//Do we count aircraft too
+var(_trigger)  = _this select 0;	//Trigger that call this fnc
+var(_waitTime) = _this select 1;	//How long should we wait before we kill the player
+var(_inside)   = _this select 2;	//Should the player be killed for being inside or outside the trigger
+var(_aircarft) = _this select 3;	//Do we count aircraft too
 
-if ((!_aircarft) && ((vehicle player) isKindOf "air") && ((getpos player select 2) > 40)) exitWIth {}; // Break script if aircraft allowed and playe is inside an aircraft
+if (!_aircarft && {vehicle player isKindOf "air"} && {getPosATL vehicle player select 2 > 40}) exitWith {}; // Break script if aircraft allowed and playe is inside an aircraft
 
-if (!isNil "PRA3_restZonePP") exitWith {}; 						//if the script allready runing it will prevent the trigger from starting the script all over agian.
+if (!isNil "PRA3_restZonePP") exitWith {};  //if the script allready runing it will prevent the trigger from starting the script all over agian.
 PRA3_restZonePP = ppEffectCreate ["RadialBlur", 100];
 
 //Create effects
@@ -34,23 +34,32 @@ _ppColor ppEffectEnable true;
 _ppgrain ppEffectEnable true;
 PRA3_restZonePP ppEffectEnable true;
 
-var(_i) 	= 0;
+var(_i)    = 0;
 var(_exit) = false;
 
-while {(_i <= _waitTime) && !_exit} do {
-	if (_inside) then {															//Check if the player should be inside or outside the zone							
-						if (vehicle player in (list _trigger)) then {_exit = true}; 	//Break loop if player got out of the zone 
-				} else {
-						if !(vehicle player in (list _trigger)) then {_exit = true}}; 	//Break loop if player got inside the zone 
-						
-	cutText [format ["GET BACK TO THE FIGHT! %1s",_waitTime - _i],"PLAIN DOWN",1];
-	_i = _i + 1; 
-	sleep 1; 
-}; 
+while {_i <= _waitTime && !_exit} do
+{
+	if _inside then
+	{
+		//Check if the player should be inside or outside the zone
+		if (vehicle player in (list _trigger)) then {_exit = true}; //Break loop if player got out of the zone
+	}
+	else
+	{
+		if !(vehicle player in (list _trigger)) then {_exit = true}; //Break loop if player got inside the zone
+	};
 
-if (!_exit) then {player setdamage 1};											//If we come this far lets check if the player was smart enought to get out the zone
- 
+	["PRA3_restrictWarning"] call BIS_fnc_rscLayer cutText [format ["GET BACK TO THE FIGHT! %1s",_waitTime - _i], "PLAIN DOWN", 1];
+	_i = _i + 1;
+	sleep 1;
+};
+
+["PRA3_restrictWarning"] call BIS_fnc_rscLayer cutText ["", "PLAIN DOWN"];
+
+//If we come this far lets check if the player was smart enought to get out the zone
+if !_exit then {player setdamage 1};
+
 ppEffectDestroy _ppColor;
 ppEffectDestroy _ppgrain;
 ppEffectDestroy PRA3_restZonePP;
-PRA3_restZonePP = nil; 
+PRA3_restZonePP = nil;

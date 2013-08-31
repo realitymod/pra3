@@ -11,7 +11,7 @@ PRA3_fMp_playerRespawnedHandler =
 	} forEach _handlers;
 };
 
-if (!isDedicated) then
+if !isDedicated then
 {
 	//Add the MP EH to the player unit
 	0 spawn
@@ -19,6 +19,5 @@ if (!isDedicated) then
 		waitUntil {!isNull player};
 		// NOTE: We cannot use MPRespawn because that doesn't actually work properly as of 1.62 - it doesn't execute for other clients!
 		player addEventHandler ["Respawn", {[_this, "PRA3_fMp_playerRespawnedHandler"] call PRA3_fnc_MP}];
-		player addEventHandler ["handleDamage", {_this call PRA3_fnc_unitHit}];							
 	};
 };
