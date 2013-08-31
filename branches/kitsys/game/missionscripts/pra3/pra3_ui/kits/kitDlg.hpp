@@ -1,7 +1,7 @@
 class Rsc_PRA3_kits_kitDlg : Rsc_PRA3_kits_kitDlgRespawn
 {
 	idd = -1;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlg"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlg"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad";
 
 	#define __w1 0.5
 	#define __w2 0.5

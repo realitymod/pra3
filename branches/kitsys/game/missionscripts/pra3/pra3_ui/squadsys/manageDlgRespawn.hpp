@@ -77,7 +77,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 
 		class SwitchKitsBtn : SwitchKitsBtn
 		{
-			action = "closeDialog 0; [] call PRA3_fnc_kitDlg_open";
+			action = "closeDialog 0; true call PRA3_fnc_kitDlg_open";
 		};
 		class SwitchSquadsBtn : SwitchSquadsBtn
 		{
