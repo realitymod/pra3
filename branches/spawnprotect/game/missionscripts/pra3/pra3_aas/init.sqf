@@ -47,12 +47,17 @@ var(_init) =
 
 			_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
 
-			_spawnProtect =
-			{
-				player addEventHandler ["handleDamage", {_this call PRA3_fnc_unitHit}];
-			};
-			call _spawnProtect; // Apply now
-			[player, _spawnProtect] call PRA3_fnc_registerPlayerRespawnedHandler; // Re-apply on respawn
+			// Apply spawn protection (invincibility in main bases)
+			// We also have to work around BIS' silly event handler that keeps readding itself...
+			player removeAllEventHandlers "handleDamage";
+			player addEventHandler [
+				"handleDamage",
+				{
+					BIS_hitArray = _this;
+					BIS_wasHit = true;
+					_this call PRA3_fnc_unitHit,
+				}
+			];
 
 			var(_createSource) =
 			{
