@@ -91,3 +91,8 @@ else
 		call _this;
 	};
 };
+
+if isClient then
+{
+	execVM "pra3\pra3_respawn\missionStart.sqf";
+};
