@@ -1,17 +1,33 @@
 #define TYPE_WEAPON		1
 #define TYPE_BACKPACK	2
 
-#define TEAM_US	0
-#define TEAM_IN	1
-
-#define public 2
+#define SIDE_EAST		0
+#define SIDE_WEST		1
+#define SIDE_RESISTANCE	2
+#define SIDE_CIVILIAN	3
 
 #define LIMIT_NO		0
 #define LIMIT_SQUAD		1
 #define LIMIT_SL		2
 
-#define SPAWN_MAIN    0
-#define SPAWN_FORWARD 1
+#define SPAWN_MAIN		0
+#define SPAWN_FORWARD	1
+
+class PRA3_teams
+{
+	class NATO
+	{
+		side = SIDE_WEST;
+		name = "NATO";
+		flag = "\A3\Data_F\Flags\Flag_nato_CO.paa";
+	};
+	class Iran
+	{
+		side = SIDE_EAST;
+		name = "Iran";
+		flag = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+	};
+};
 
 class PRA3_kits
 {
@@ -20,7 +36,7 @@ class PRA3_kits
 		class Rifleman_US
 		{
 			scope = public;
-			team = TEAM_US;
+			team = NATO;
 
 			name = "Rifleman";
 			picture = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
@@ -301,7 +317,7 @@ class PRA3_kits
 		class Rifleman_IN : Rifleman_US
 		{
 			scope = public;
-			team = TEAM_IN;
+			team = Iran;
 
 			name = "Rifleman";
 			picture = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";

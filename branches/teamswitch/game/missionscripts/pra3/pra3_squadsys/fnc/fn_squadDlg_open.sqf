@@ -1,17 +1,13 @@
 #include "defines.sqh"
 #include "scriptDefines.sqh"
-#include "idcs.sqh"
 
-var(_showSpawnMap) =  if (count _this == 0) then {
-		if (isNil "PRA3_showRespawnSelection") then {
-			false
-		} else {
-			PRA3_showRespawnSelection
-		}
-	} else {
-		_this select 0
-	};
+var(_showSpawnMap) = _this;
 
-PRA3_showRespawnSelection = _showSpawnMap;
-
-createDialog "Rsc_PRA3_squadSys_manageDlg";
+if _showSpawnMap then
+{
+	createDialog "Rsc_PRA3_squadSys_manageDlgRespawn";
+}
+else
+{
+	createDialog "Rsc_PRA3_squadSys_manageDlg";
+};

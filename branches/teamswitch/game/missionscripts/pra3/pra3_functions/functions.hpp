@@ -1,7 +1,7 @@
 class Array
 {
 	file = "pra3\pra3_functions\array";
-	
+
 	class arrayFind
 	{
 		description = "Searches the array and returns the index of the first match or -1 if no match is found. String comparison is case insensitive. Does not perform deep search for nested arrays.";
@@ -23,7 +23,7 @@ class Array
 class Debug
 {
 	file = "pra3\pra3_functions\debug";
-	
+
 	class logError
 	{
 		description = "Logs the error message and alerts the user via hint.";
@@ -41,7 +41,7 @@ class Debug
 class Math
 {
 	file = "pra3\pra3_functions\math";
-	
+
 	class isPointInPolygon
 	{
 		description = "Checks if the point is inside of the polygon.";
@@ -55,7 +55,7 @@ class Math
 class Net
 {
 	file = "pra3\pra3_functions\net";
-	
+
 	class setVarBroadcast
 	{
 		description = "Sets a variable on the object and broadcasts it across the multiplayer clients. Logs the event if PRA3_net_debug is enabled.";
@@ -65,7 +65,7 @@ class Net
 class Players
 {
 	file = "pra3\pra3_functions\players";
-	
+
 	class getConnectedPlayers
 	{
 		description = "Returns an array of UIDs of all connected players.";
@@ -89,5 +89,31 @@ class Players
 	class getPlayerUnit
 	{
 		description = "Returns object player with the given UID is currently controlling. Returns a null object if the UID is invalid.";
+	};
+};
+
+class Team
+{
+	file = "pra3\pra3_functions\team";
+
+	class getTeamFlag
+	{
+		description = "Returns the team's flag.";
+	};
+	class getTeamName
+	{
+		description = "Returns the team's name.";
+	};
+	class getTeamSide
+	{
+		description = "Returns the side the team belongs to.";
+	};
+	class IDToSide
+	{
+		description = "Returns the side for the given side ID.";
+	};
+	class sideToID
+	{
+		description = "Returns the ID of the given side.";
 	};
 };
