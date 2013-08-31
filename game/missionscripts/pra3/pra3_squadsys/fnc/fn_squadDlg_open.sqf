@@ -14,4 +14,11 @@ var(_showSpawnMap) =  if (count _this == 0) then {
 
 PRA3_showRespawnSelection = _showSpawnMap;
 
-createDialog "Rsc_PRA3_squadSys_manageDlgRespawn";
+if _showSpawnMap then
+{
+	createDialog "Rsc_PRA3_squadSys_manageDlgRespawn";
+}
+else
+{
+	createDialog "Rsc_PRA3_squadSys_manageDlg";
+};
