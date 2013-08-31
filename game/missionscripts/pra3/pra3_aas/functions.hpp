@@ -48,8 +48,8 @@ class AAS
 		description = "Removes a certain amount of tickets from the team.";
 	};
 	
-	class AAS_createRestrictedZone
+	class AAS_createRestrictedZones
 	{
-		description = "Create a restricted zone";
+		description = "Create restricted zones";
 	};
 };

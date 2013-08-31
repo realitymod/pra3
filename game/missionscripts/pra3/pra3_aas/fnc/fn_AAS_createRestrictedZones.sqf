@@ -15,21 +15,21 @@ Create a restriction zone on a marker defined in mission sqf init.sqf
 Example:["west_spawn", [east]	,10,false,false,	false], call PRA3_fnc_createRestrictedZone
 
 ************************************************************/
-private ["_markerName","_markerShape","_sides","_inside","_trg","_time","_air","_delete"]; 
+private ["_markerName","_markerShape","_sides","_inside","_trg","_time","_air","_delete"];
 {
-	_markerName  	= _x select 0;
-	_sides  		= _x select 1;
-	_time			= _x select 2;
-	_inside			= _x select 3;
-	_air			= _x select 4;
-	_delete			= _x select 5;
-	
+	_markerName = _x select 0;
+	_sides      = _x select 1;
+	_time       = _x select 2;
+	_inside     = _x select 3;
+	_air        = _x select 4;
+	_delete     = _x select 5;
+
 	_markerShape = if ((markerShape _markerName) == "RECTANGLE") then {true} else {false};
-	
+
 	_trg = createTrigger["EmptyDetector",markerPos _markerName];
 	_trg setTriggerArea[(markerSize _markerName) select 0,(markerSize _markerName) select 1,markerDir _markerName,_markerShape];
 	_trg setTriggerActivation["ANY","PRESENT",true];
-	_trg setTriggerStatements[format ["(vehicle player in thislist) && (playerSide in %1)",_sides], format ["[thisTrigger,%1,%2,%3] spawn PRA3_fnc_RestrictZoneEffect",_time,_inside,_air], ""]; 
-	if (_delete) then {deleteMarker _markerName}; 
+	_trg setTriggerStatements[format ["(vehicle player in thislist) && (playerSide in %1)",_sides], format ["[thisTrigger,%1,%2,%3] spawn PRA3_fnc_RestrictZoneEffect",_time,_inside,_air], ""];
+	if _delete then {deleteMarkerLocal _markerName};
 
-} forEach PRA3_AAS_restrictionZones; 
+} forEach PRA3_AAS_restrictionZones;
