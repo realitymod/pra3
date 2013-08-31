@@ -57,7 +57,15 @@ class Rsc_PRA3_kits_kitDlg
 			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.075;
 			y = safeZoneY + __spaceY + 0.01;
 			w = 0.32;
+			style = ST_LEFT;
 			text = "RESPAWN LOCATION";
+		};
+		class TitleSpawnTime : TitleSpawn
+		{
+			idc = IDC_KITDLG_SPAWNMAP_TIME;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + __mapW - 0.18;
+			w = 0.15;
+			text = "01:27.93";
 		};
 
 		// Used to detect when the mouse is outside of the kit selection dialog

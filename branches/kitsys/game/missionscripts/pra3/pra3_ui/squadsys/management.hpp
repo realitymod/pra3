@@ -67,6 +67,7 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 
 		class BackgroundSpawn : BackgroundSpawn {};
 		class TitleSpawn : TitleSpawn {};
+		class TitleSpawnTime : TitleSpawnTime {};
 	};
 	class Controls : Controls
 	{

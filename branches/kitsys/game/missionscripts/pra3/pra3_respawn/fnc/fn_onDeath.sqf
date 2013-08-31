@@ -41,6 +41,7 @@ if !(alive player) then
 		if ((time > PRA3_AAS_spawnAtTime || {alive player}) && {
 			isNull (uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg") &&
 			{isNull (uiNamespace getVariable "Rsc_PRA3_kits_kitDlg") &&
+			{PRA3_selectedSpawn != "" && {PRA3_kitSys_currentKit != ""}} &&
 			{[player, PRA3_selectedSpawn] call PRA3_fnc_isSpawnAvailable}
 		}}) exitWith
 		{
@@ -50,6 +51,7 @@ if !(alive player) then
 			[player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
 			PRA3_selectedSpawn = ""; // Unselect spawn point
+			PRA3_AAS_spawnAtTime = nil;
 		};
 
 		sleep 0.01;
