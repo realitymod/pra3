@@ -70,7 +70,7 @@ while {true} do
 			{
 				if ([getPosATL _x, _marker] call PRA3_fnc_isPointInMarker) then
 				{
-					var(_sideIndex) = PRA3_AAS_sides find (side _x);
+					var(_sideIndex) = PRA3_AAS_sides find (_x call PRA3_fnc_getPlayerSide);
 					if (_sideIndex != -1) then
 					{
 						// Make sure the player's side can attack or defend this zone
