@@ -37,12 +37,12 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 	};
 };
 
-class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
+class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 {
 	idd = -1;
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlg"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
 
 	#define __w 0.5
 	#define __spaceX 0.01
@@ -133,7 +133,7 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 							h = 0.05;
 							sizeEx = 0.034;
 							colorText[] = {1,1,1,1};
-							text = "1 Alpha";
+							text = "Alpha";
 						};
 						class NameCustom : Name
 						{
@@ -421,13 +421,13 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_kits_kitDlg
 					}; \
 				}
 
-				__itemSquad(02, "2 Bravo");
-				__itemSquad(03, "3 Charlie");
-				__itemSquad(04, "4 Delta");
-				__itemSquad(05, "5 Echo");
-				__itemSquad(06, "6 Foxtrot");
-				__itemSquad(07, "7 Golf");
-				__itemSquad(08, "8 Hotel");
+				__itemSquad(02, "Bravo");
+				__itemSquad(03, "Charlie");
+				__itemSquad(04, "Delta");
+				__itemSquad(05, "Echo");
+				__itemSquad(06, "Foxtrot");
+				__itemSquad(07, "Golf");
+				__itemSquad(08, "Hotel");
 				__itemSquad(09, "9 India");
 				__itemSquad(10, "10 Juliet");
 				__itemSquad(11, "11 Kilo");

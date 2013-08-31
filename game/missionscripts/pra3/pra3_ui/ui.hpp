@@ -9,5 +9,7 @@ class RscTitles
 	#include "respawn\deadScreen.hpp"
 };
 
+#include "kits\kitDlgRespawn.hpp"
 #include "kits\kitDlg.hpp"
-#include "squadsys\management.hpp"
+#include "squadsys\manageDlgRespawn.hpp"
+#include "squadsys\manageDlg.hpp"

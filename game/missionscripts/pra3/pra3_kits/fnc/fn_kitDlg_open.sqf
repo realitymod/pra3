@@ -11,5 +11,11 @@ var(_showSpawnMap) =  if (count _this == 0) then {
 	};
 
 PRA3_showRespawnSelection = _showSpawnMap;
-
-createDialog "Rsc_PRA3_kits_kitDlg";
+if _showSpawnMap then
+{
+	createDialog "Rsc_PRA3_kits_kitDlgRespawn";
+}
+else
+{
+	createDialog "Rsc_PRA3_kits_kitDlg";
+};
