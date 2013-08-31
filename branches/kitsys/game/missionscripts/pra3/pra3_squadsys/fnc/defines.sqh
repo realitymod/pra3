@@ -6,7 +6,7 @@
 #define __pic_locked_border		"pra3\pra3_ui\squadsys\img\locked_border_88.paa"
 #define __pic_unlocked_border	"pra3\pra3_ui\squadsys\img\unlocked_border_88.paa"
 
-#define __cfgPath							missionConfigFile >> "Rsc_PRA3_squadSys_manageDlg" >> "Controls" >> "Group"
+#define __cfgPath							missionConfigFile >> (if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {"Rsc_PRA3_squadSys_manageDlgRespawn"} else {"Rsc_PRA3_squadSys_manageDlg"}) >> "Controls" >> "Group"
 #define __cfgPathItem(num)					__cfgPath >> "Controls" >> 'ItemSquad##num'
 #define __cfgPathItemBackground(num)		__cfgPathItem(num) >> "Controls" >> "Background"
 #define __cfgPathItemHeaderBackground(num)	__cfgPathItem(num) >> "Controls" >> "HeaderBackground"
@@ -63,4 +63,4 @@
 #define __updatePackConstant 100000
 
 #define __ctrl(idc) \
-	(uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg" displayCtrl (idc))
+	(uiNamespace getVariable (if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {"Rsc_PRA3_squadSys_manageDlgRespawn"} else {"Rsc_PRA3_squadSys_manageDlg"}) displayCtrl (idc))
