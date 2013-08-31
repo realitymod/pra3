@@ -11,7 +11,10 @@
 
 var(_updateSquads) = _this;
 
-if (isNull (uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlgRespawn")) exitWith {};
+if (
+	isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && {
+	isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])
+}) exitWith {};
 
 var(_updateSquadInfo) =
 {
