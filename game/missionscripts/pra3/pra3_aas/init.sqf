@@ -14,6 +14,8 @@ PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
 PRA3_AAS_respawnTime = 30;
 
+call PRA3_fnc_AAS_createRestrictedZone; //Build restriction zones
+
 var(_init) =
 {
 	// Initialize each zone and create markers for it
@@ -47,6 +49,13 @@ var(_init) =
 
 			_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
 
+			_spawnProtect =
+			{
+				player addEventHandler ["handleDamage", {_this call PRA3_fnc_unitHit}];
+			};
+			call _spawnProtect; // Apply now
+			[player, _spawnProtect] call PRA3_fnc_registerPlayerRespawnedHandler; // Re-apply on respawn
+
 			var(_createSource) =
 			{
 				var(_owner) = _forEachIndex call PRA3_fnc_AAS_getZoneOwner;
@@ -56,10 +65,10 @@ var(_init) =
 					"",
 					"Billboard",
 					1,
-					25, 
+					25,
 					[0,0,0],
 					[0,0,_this select 2],
-					0, 
+					0,
 					1.275,
 					1,
 					0,
@@ -181,7 +190,7 @@ var(_init) =
 };
 
 // Client might need to wait so he'll need a scheduled thread
-if (isServer) then
+if isServer then
 {
 	call _init;
 }
@@ -191,7 +200,7 @@ else
 	{
 		// playerSide will return garbage for JIP players without this wait, causing zone markers to have the wrong colors
 		waitUntil {!isNull player};
-		
+
 		// We need to make sure the server has initialzed all the zones
 		{
 			waitUntil {!isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}};
