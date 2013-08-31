@@ -14,21 +14,21 @@ var(_squad) = _uid call PRA3_fnc_unitGetSquad;
 var(_playerId) = player call PRA3_fnc_getPlayerUID;
 
 if (_btn == 1 && // Right-click
-	!PRA3_squadSys_editingCustomName && // Not editing squad name
+	!PRAA_squadSys_editingCustomName && // Not editing squad name
 	{_uid != ""} && // On valid target
 	{_uid != _playerId} && // Player not clicking on himself
 	{_playerId call PRA3_fnc_unitGetSquad != -1} && // Player is in a squad
 	{(_squad call PRA3_fnc_squadGetLeader) == _playerId} // Player is the SL
 ) then
 {
-	PRA3_squadSys_menuPos = [_x + (_offset select 0) + 0.001, _y + (_offset select 1) + 0.001];
+	PRAA_squadSys_menuPos = [_x + (_offset select 0) + 0.001, _y + (_offset select 1) + 0.001];
 	true call PRA3_fnc_squadDlg_showPopupMenu;
-	PRA3_squadSys_menuTarget = _uid;
+	PRAA_squadSys_menuTarget = _uid;
 }
 else
 {
-	PRA3_squadSys_menuTarget = "";
+	PRAA_squadSys_menuTarget = "";
 	false call PRA3_fnc_squadDlg_showPopupMenu;
 };
 
-call PRA3_fSquadSys_highlightLines;
+call PRAA_fSquadSys_highlightLines;

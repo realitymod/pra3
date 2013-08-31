@@ -26,7 +26,7 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 					"localizedMessage",
 					"str_praa_squadsys_promote_ft",
 					_unit call PRA3_fnc_getPlayerName
-				] call PRA3_fMp_execClient;
+				] call PRAA_fMp_execClient;
 			};
 		} forEach _members;
 		if (_newLeader != "") then
@@ -35,7 +35,7 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 				_newLeader,
 				"localizedMessage",
 				"str_praa_squadsys_promote_ft_you"
-			] call PRA3_fMp_execClient;
+			] call PRAA_fMp_execClient;
 		};
 	}
 	else
@@ -45,14 +45,14 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 			"localizedMessage",
 			"str_praa_squadsys_unassign_ft",
 			_unit call PRA3_fnc_getPlayerName
-		] call PRA3_fMp_execClient;
+		] call PRAA_fMp_execClient;
 	};
 
 	[
 		_unit,
 		"localizedMessage",
 		"str_praa_squadsys_unassign_ft_you"
-	] call PRA3_fMp_execClient;
+	] call PRAA_fMp_execClient;
 };
 
 [[_squadId], _squadId call PRA3_fnc_squadGetSide] call PRA3_fnc_squadDlg_server_refresh;

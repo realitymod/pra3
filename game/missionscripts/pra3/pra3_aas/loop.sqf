@@ -50,7 +50,7 @@ while {true} do
 			_playersPresent set [_forEachIndex, []];
 		} forEach PRA3_AAS_sides;
 
-		// Zone can acutally being captured
+		// Zone can acutally be captured
 		if (_zone in PRA3_AAS_activeZones) then
 		{
 			// Let's categorize each present player according to his side
@@ -136,7 +136,7 @@ while {true} do
 			{
 				var(_prevOwner) = _owner;
 
-				PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _zone], _attackersSide, isServer];
+				PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _zone], _attackersSide];
 				_owner = __neutral;
 				_capture = 0;
 			}
@@ -215,7 +215,7 @@ while {true} do
 	// ---------- HANDLE DISPLAYING OF CAPTURE BAR ----------
 	if (isClient) then
 	{
-		// Check if player himself is capturing
+		// Check if player is capturing himself
 		if (_playerZone == -1) then
 		{
 			_hudLayer cutText ["", "PLAIN"];

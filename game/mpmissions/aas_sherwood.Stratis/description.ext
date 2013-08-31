@@ -1,4 +1,0 @@
-#define __maxPlayers 64
-#define __name "Operation Sherwood"
-
-#include "pra3\description.hpp"

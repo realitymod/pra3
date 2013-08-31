@@ -15,10 +15,10 @@ for "_i" from 1 to __squadSize do
 {
 	__ctrl(500000 + 8000 + 10*_i + 6)
 		ctrlSetBackgroundColor (
-			if (_i == PRA3_squadSys_playerOnLine) then {
-				if (_i == PRA3_squadSys_currentLine) then {__memberLineColorHighlightPlayer} else {__memberLineColorNormalPlayer}
+			if (_i == PRAA_squadSys_playerOnLine) then {
+				if (_i == PRAA_squadSys_currentLine) then {__memberLineColorHighlightPlayer} else {__memberLineColorNormalPlayer}
 			} else {
-				if (_i == PRA3_squadSys_currentLine) then {__memberLineColorHighlight} else {__memberLineColorNormal}
+				if (_i == PRAA_squadSys_currentLine) then {__memberLineColorHighlight} else {__memberLineColorNormal}
 			}
 		);
 };

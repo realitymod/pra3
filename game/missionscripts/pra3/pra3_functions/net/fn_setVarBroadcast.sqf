@@ -25,6 +25,7 @@ if (PRA3_net_debug) then
 	var(_line) = if (count _this == 5) then {_this select 4} else {-1};
 
 	[
+		"PRA3_fnc_setVarBroadcast",
 		format [
 			"On <%1> set %2 => |%3|%4",
 			_obj,

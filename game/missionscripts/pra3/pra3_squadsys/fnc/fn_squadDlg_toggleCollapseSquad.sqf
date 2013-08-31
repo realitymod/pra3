@@ -7,7 +7,7 @@
 
 var(_idx) = _this;
 
-var(_collapse) = !(PRA3_squadSys_collapsedSquads select _idx);
+var(_collapse) = !(PRAA_squadSys_collapsedSquads select _idx);
 if (_idx == 27) then // Unassigned
 {
 	_collapse call PRA3_fnc_squadDlg_collapseUnassigned;

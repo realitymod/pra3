@@ -4,7 +4,7 @@
 
 if !(isNull (uiNamespace getVariable "PRA3_dlg_spawnScreen")) then
 {
-	PRA3_AAS_selectedSpawn = "";
+	PRA3_selectedSpawn = "";
 
 	// Hide all spawn markers
 	{
@@ -22,7 +22,7 @@ if !(isNull (uiNamespace getVariable "PRA3_dlg_spawnScreen")) then
 		
 		// Show the spawn
 		(_x select 0) setMarkerTypeLocal "mil_start";
-	} forEach (player call PRA3_fnc_AAS_getAvailableSpawns);
+	} forEach (player call PRA3_fnc_getAvailableSpawns);
 
 	lbSortByValue ctrl(10);
 

@@ -6,8 +6,7 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
 		"A3_Data_F",
-		"A3_Characters_F_OPFOR",
-		"A3_Modules_F_Misc"
+		"A3_Characters_F_OPFOR"
 	};
 	addOnsAuto[]=
 	{
@@ -378,7 +377,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=19;
+		items=13;
 		class Item0
 		{
 			position[]={3211.1069,4.7735009,5821.6655};
@@ -436,7 +435,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={2847.4373,2.6934016,6107.7383};
+			position[]={2847.343,2.6848125,6107.5972};
 			name="zone6";
 			text="Iranian-held House";
 			markerType="ELLIPSE";
@@ -468,25 +467,15 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={3216.97,4.8647184,5819.0825};
+			position[]={3207.7078,4.6606164,5822.875};
 			name="spawn0";
-			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Border";
-			a=20;
-			b=20;
-			drawBorder=1;
 		};
 		class Item10
 		{
-			position[]={2847.4167,2.6935639,6107.7554};
+			position[]={2856.2488,3.5395892,6116.3452};
 			name="spawn3";
-			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Border";
-			a=20;
-			b=20;
-			drawBorder=1;
 		};
 		class Item11
 		{
@@ -501,72 +490,6 @@ class Mission
 			name="spawn2";
 			text="Western Frontline";
 			type="Empty";
-		};
-		class Item13
-		{
-			position[]={3228.2742,124.62329,4471.9849};
-			name="borderSouth";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="Grid";
-			a=1000;
-			b=600;
-		};
-		class Item14
-		{
-			position[]={3228.2739,20.131842,7248.3149};
-			name="borderNorth";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="Grid";
-			a=1000;
-			b=600;
-		};
-		class Item15
-		{
-			position[]={4822.0283,159.82118,5853.2666};
-			name="borderEast";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="Grid";
-			a=2000;
-			b=600;
-			angle=-89.954315;
-		};
-		class Item16
-		{
-			position[]={1639.1122,0.028429626,5853.2666};
-			name="borderWest";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="Grid";
-			a=2000;
-			b=600;
-			angle=-89.9543;
-		};
-		class Item17
-		{
-			position[]={3280.2122,5.3235726,5781.0732};
-			name="west_spawn";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorBlue";
-			a=100;
-			b=100;
-		};
-		class Item18
-		{
-			position[]={2785.1279,0,6149.6553};
-			name="east_spawn";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorBlue";
-			a=100;
-			b=100;
 		};
 	};
 };

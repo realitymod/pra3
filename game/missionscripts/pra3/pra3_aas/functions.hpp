@@ -22,6 +22,10 @@ class AAS
 	{
 		description = "Returns an array of places the given unit can respawn at.";
 	};
+	class AAS_getAllSpawns
+	{
+		description = "Returns an array of all respawn points.";
+	};
 	class AAS_getZoneName
 	{
 		description = "Returns the name of the zone.";
@@ -46,10 +50,5 @@ class AAS
 	class AAS_removeTickets
 	{
 		description = "Removes a certain amount of tickets from the team.";
-	};
-	
-	class AAS_createRestrictedZones
-	{
-		description = "Create restricted zones";
 	};
 };

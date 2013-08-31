@@ -13,7 +13,7 @@ var(_show) = _this;
 if (_show) then
 {
 	__ctrl(301) ctrlShow true;
-	__ctrl(301) ctrlSetPosition PRA3_squadSys_menuPos;
+	__ctrl(301) ctrlSetPosition PRAA_squadSys_menuPos;
 	__ctrl(301) ctrlCommit 0;
 
 	ctrlSetFocus __ctrl(301);

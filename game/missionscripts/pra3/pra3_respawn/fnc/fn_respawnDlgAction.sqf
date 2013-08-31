@@ -11,21 +11,21 @@ switch (toLower _action) do
 		var(_idx) = (_this select 0) select 1;
 		if (_idx != -1) then
 		{
-			PRA3_AAS_selectedSpawn = ((_this select 0) select 0) lbData _idx;
+			PRA3_selectedSpawn = ((_this select 0) select 0) lbData _idx;
 		};
 
 		// Draw selected marker
 		deleteMarkerLocal "PRA3_selectedSpawn"; // Delete old one first
-		if (PRA3_AAS_selectedSpawn != "") then
+		if (PRA3_selectedSpawn != "") then
 		{
-			var(_marker) = createMarkerLocal ["PRA3_selectedSpawn", getMarkerPos PRA3_AAS_selectedSpawn];
+			var(_marker) = createMarkerLocal ["PRA3_selectedSpawn", getMarkerPos PRA3_selectedSpawn];
 			_marker setMarkerShapeLocal "ICON";
 			_marker setMarkerTypeLocal "Select";
 			_marker setMarkerSizeLocal [1.5,1.5];
 
 			// Center the map
 			ctrlMapAnimClear ctrl(20);
-			ctrl(20) ctrlMapAnimAdd [0.1, 0.1, getMarkerPos PRA3_AAS_selectedSpawn];
+			ctrl(20) ctrlMapAnimAdd [0.1, 0.1, getMarkerPos PRA3_selectedSpawn];
 			ctrlMapAnimCommit ctrl(20);
 		};
 	};
@@ -48,12 +48,12 @@ switch (toLower _action) do
 
 			if ((getMarkerPos _best distance _pos) < 50) then
 			{
-				PRA3_AAS_selectedSpawn = _best;
+				PRA3_selectedSpawn = _best;
 				ctrl(10) lbSetCurSel _idx;
 			}
 			else
 			{
-				PRA3_AAS_selectedSpawn = "";
+				PRA3_selectedSpawn = "";
 				ctrl(10) lbSetCurSel -1;
 			};
 		};

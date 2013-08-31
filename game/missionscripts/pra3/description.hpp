@@ -1,16 +1,12 @@
 class Header
 {
-	gameType = SC;
+	gameType = Team;
 	minPlayers = 1;
 	maxPlayers = __maxPlayers;
 	playerCountMultipleOf = 2;
 };
 
 author = "Project Reality - www.realitymod.com";
-
-/*Adds to screen loading*/
-onLoadName = __name;
-loadScreen = "pra3\PRloadingLogo.jpg";
 
 disabledAI = 1;
 
@@ -30,16 +26,7 @@ class CfgRespawnTemplates
 	};
 };
 
-#include "uiBases.hpp"
-
-class RscTitles
-{
-	#include "pra3_aas\captureIndicator.hpp"
-	#include "pra3_respawn\deadScreen.hpp"
-};
-
-#include "pra3_respawn\respawnDialog.hpp"
-#include "pra3_squadsys\dlg\management.hpp"
+#include "pra3_ui\ui.hpp"
 
 class CfgDebriefing
 {
@@ -66,6 +53,10 @@ class CfgDebriefing
 	};
 };
 
+#ifdef PRA3_DEBUG
+allowFunctionsRecompile = 1;
+#endif // PRA3_DEBUG
+
 class CfgFunctions
 {
 	class PRA3
@@ -75,3 +66,5 @@ class CfgFunctions
 		#include "functions.hpp"
 	};
 };
+
+#include "pra3_kits\kitsList.hpp"

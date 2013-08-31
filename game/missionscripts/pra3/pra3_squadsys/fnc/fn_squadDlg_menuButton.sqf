@@ -8,7 +8,7 @@
 var(_menu)	= _this select 0;
 var(_button)= _this select 1;
 
-var(_unit) = PRA3_squadSys_menuTarget;
+var(_unit) = PRAA_squadSys_menuTarget;
 var(_squad) = _unit call PRA3_fnc_unitGetSquad;
 var(_ft) = [_squad, _unit] call PRA3_fnc_unitGetFt;
 
@@ -16,7 +16,7 @@ var(_common) =
 {
 	__ctrl(301) ctrlShow false;
 	__ctrl(302) ctrlShow false;
-	PRA3_squadSys_menuTarget = "";
+	PRAA_squadSys_menuTarget = "";
 };
 if (_menu == 0) then
 {
@@ -47,7 +47,7 @@ if (_menu == 0) then
 				};
 			};
 
-			__ctrl(302) ctrlSetPosition [(PRA3_squadSys_menuPos select 0) + 0.22, PRA3_squadSys_menuPos select 1, 0.22, _h * 0.04];
+			__ctrl(302) ctrlSetPosition [(PRAA_squadSys_menuPos select 0) + 0.22, PRAA_squadSys_menuPos select 1, 0.22, _h * 0.04];
 			__ctrl(302) ctrlCommit 0;
 			__ctrl(302) ctrlShow true;
 

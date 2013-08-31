@@ -14,7 +14,7 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 			_prevLeader,
 			"localizedMessage",
 			"str_praa_squadsys_demote_ft"
-		] call PRA3_fMp_execClient;
+		] call PRAA_fMp_execClient;
 	};
 
 	[_squadId, _ft, _unit] call PRA3_fnc_squadSetFtLeader;
@@ -28,14 +28,14 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 				"localizedMessage",
 				"str_praa_squadsys_promote_ft",
 				_unit call PRA3_fnc_getPlayerName
-			] call PRA3_fMp_execClient;
+			] call PRAA_fMp_execClient;
 		};
 	} forEach _members;
 	[
 		_newLeader,
 		"localizedMessage",
 		"str_praa_squadsys_promote_ft_you"
-	] call PRA3_fMp_execClient;
+	] call PRAA_fMp_execClient;
 };
 
 [[_squadId], _squadId call PRA3_fnc_squadGetSide] call PRA3_fnc_squadDlg_server_refresh;

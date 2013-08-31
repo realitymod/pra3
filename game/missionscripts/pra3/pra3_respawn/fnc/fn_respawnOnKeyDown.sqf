@@ -8,7 +8,7 @@ if (!alive player && {_this select 1 == 28}) then
 	}
 	else
 	{
-		createDialog "PRA3_dlg_spawnScreen";
+		[true] call PRA3_fnc_kitDlg_open;
 	};
 	true
 }
