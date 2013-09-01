@@ -112,6 +112,7 @@ for "_i" from 0 to (count _cfg - 1) do
 	/* KIT_TEAM         */ getText(_kit >> "team"),
 	/* KIT_NAME         */ getText(_kit >> "name"),
 	/* KIT_PICTURE      */ getText(_kit >> "picture"),
+	/* KIT_ICON         */ getText(_kit >> "icon"),
 	/* KIT_REQUIREMENTS */ ((_kit >> "Requirements") call _loadRequirements),
 	/* KIT_AVAILABLEAT  */ getArray(_kit >> "availableAt"),
 	/* KIT_CLOTHING     */ _clothing,

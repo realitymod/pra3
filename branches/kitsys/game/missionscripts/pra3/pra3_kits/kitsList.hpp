@@ -42,6 +42,7 @@ class PRA3_kits
 
 			name = "Rifleman";
 			picture = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\rifleman_small_88.paa";
 
 			class Requirements
 			{
@@ -114,6 +115,7 @@ class PRA3_kits
 		{
 			name = "Squad Leader";
 			picture = "pra3\pra3_ui\kits\kit_img\sqleader_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\sqleader_small_88.paa";
 
 			class Requirements
 			{
@@ -159,6 +161,7 @@ class PRA3_kits
 		{
 			name = "Combat Medic";
 			picture = "pra3\pra3_ui\kits\kit_img\medic_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\medic_small_88.paa";
 
 			class Requirements
 			{
@@ -202,6 +205,7 @@ class PRA3_kits
 		{
 			name = "Automatic Rifleman";
 			picture = "pra3\pra3_ui\kits\kit_img\autorifleman_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\autorifleman_small_88.paa";
 
 			class Requirements
 			{
@@ -239,6 +243,7 @@ class PRA3_kits
 		{
 			name = "Grenadier";
 			picture = "pra3\pra3_ui\kits\kit_img\grenadier_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\grenadier_small_88.paa";
 
 			class Requirements
 			{
@@ -278,6 +283,7 @@ class PRA3_kits
 		{
 			name = "Marksman";
 			picture = "pra3\pra3_ui\kits\kit_img\sniper_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\sniper_small_88.paa";
 
 			class Requirements
 			{
@@ -320,9 +326,6 @@ class PRA3_kits
 		{
 			scope = public;
 			team = Iran;
-
-			name = "Rifleman";
-			picture = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
 
 			class Clothing
 			{
@@ -387,6 +390,7 @@ class PRA3_kits
 		{
 			name = "Squad Leader";
 			picture = "pra3\pra3_ui\kits\kit_img\sqleader_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\sqleader_small_88.paa";
 
 			class Requirements
 			{
@@ -430,6 +434,7 @@ class PRA3_kits
 		{
 			name = "Combat Medic";
 			picture = "pra3\pra3_ui\kits\kit_img\medic_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\medic_small_88.paa";
 
 			class Requirements
 			{
@@ -474,6 +479,7 @@ class PRA3_kits
 		{
 			name = "Automatic Rifleman";
 			picture = "pra3\pra3_ui\kits\kit_img\autorifleman_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\autorifleman_small_88.paa";
 
 			class Requirements
 			{
@@ -511,6 +517,7 @@ class PRA3_kits
 		{
 			name = "Grenadier";
 			picture = "pra3\pra3_ui\kits\kit_img\grenadier_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\grenadier_small_88.paa";
 
 			class Requirements
 			{
@@ -550,6 +557,7 @@ class PRA3_kits
 		{
 			name = "Marksman";
 			picture = "pra3\pra3_ui\kits\kit_img\sniper_88.paa";
+			icon = "pra3\pra3_ui\kits\kit_img\sniper_small_88.paa";
 
 			class Requirements
 			{

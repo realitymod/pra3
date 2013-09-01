@@ -1,4 +1,4 @@
-PRA3_AAS_prepareTime = 120;
+PRA3_AAS_prepareTime = 15;
 
 PRA3_selectedSpawn = "";
 PRA3_kitSys_currentKit = "";
@@ -51,6 +51,9 @@ waitUntil {
 	isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && {
 	isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlgRespawn", displayNull])
 }}}};
+
+[player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
+[player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 
 ["PRA3_start_info"] call BIS_fnc_rscLayer cutText ["", "PLAIN"];
 PRA3_respawn_lastOpenTab = nil;

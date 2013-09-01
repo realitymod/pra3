@@ -17,14 +17,15 @@
 #define KIT_TEAM			0
 #define KIT_NAME			1
 #define KIT_PICTURE			2
-#define KIT_REQUIREMENTS	3
-#define KIT_AVAILABLEAT		4
-#define KIT_CLOTHING		5
+#define KIT_ICON			3
+#define KIT_REQUIREMENTS	4
+#define KIT_AVAILABLEAT		5
+#define KIT_CLOTHING		6
 	#define CLOTHING_UNIFORM	0
 	#define CLOTHING_HEADGEAR	1
 	#define CLOTHING_GOGGLES	2
 	#define CLOTHING_VEST		3
-#define KIT_VARIANTS		6
+#define KIT_VARIANTS		7
 	#define VARIANT_CLASS		0
 	#define VARIANT_NAME		1
 	#define VARIANT_PISTOL		2	
@@ -33,7 +34,7 @@
 	#define VARIANT_BACKPACK	5
 	#define VARIANT_EXPLOSIVES	6
 	#define VARIANT_ITEMS		7
-#define KIT_VARIANT_CURR	7
+#define KIT_VARIANT_CURR	8
 
 
 #define LIMIT_NO		0
