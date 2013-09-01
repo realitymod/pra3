@@ -1,4 +1,4 @@
-PRA3_AAS_prepareTime = 30;
+PRA3_AAS_prepareTime = 120;
 
 PRA3_selectedSpawn = "";
 PRA3_kitSys_currentKit = "";
@@ -33,9 +33,9 @@ waitUntil
 {
 	_time = PRA3_AAS_prepareTime - time;
 	_timeStr = if (_time >= 0) then	{
-			[_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
+			[_time ,"MM:SS"] call BIS_fnc_secondsToString;
 		} else {
-			"00:00.000";
+			"00:00";
 		};
 	ctrl(30) ctrlSetStructuredText parseText _timeStr;
 
