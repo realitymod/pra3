@@ -42,6 +42,10 @@ class Kits
 	{
 		description = "Returns the unit's kit. Returns an empty string if the unit had no kit assigned.";
 	};
+	class unitGetKitIcon
+	{
+		description = "Returns the unit's kit icon. Returns an empty string if the unit had no kit assigned.";
+	};
 	class unitSetKit
 	{
 		description = "Sets the unit's kit. Has to be run server-side.";
