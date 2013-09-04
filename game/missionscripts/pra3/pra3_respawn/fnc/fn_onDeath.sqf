@@ -3,12 +3,6 @@
 PRA3_AAS_respawnTime = 20;
 setPlayerRespawnTime 999999;
 
-if (isNil "PRA3_respawn_keyDownHandler") then
-{
-	waitUntil {!isNull findDisplay 46};
-	PRA3_respawn_keyDownHandler = findDisplay 46 displayAddEventHandler ["keyDown", "_this call PRA3_fnc_respawnOnKeyDown"];
-};
-
 if !(alive player) then
 {
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
@@ -28,15 +22,15 @@ if !(alive player) then
 	while {true} do
 	{
 		_time = PRA3_AAS_spawnAtTime - time;
-		if (_time >= 0) then
+		_timeStr = if (_time >= 0) then
 		{
-			_time = [_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
+			[_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
 		}
 		else
 		{
-			_time = "00:00.000";
+			"00:00.000";
 		};
-		uiNamespace getVariable "PRA3_respawn_deadScreen" displayCtrl 30 ctrlSetStructuredText parseText _time;
+		uiNamespace getVariable "PRA3_respawn_deadScreen" displayCtrl 30 ctrlSetStructuredText parseText _timeStr;
 
 		if ((time > PRA3_AAS_spawnAtTime || {alive player}) && {
 			isNull (uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlgRespawn") &&

@@ -7,6 +7,7 @@ class RscTitles
 {
 	#include "aas\captureIndicator.hpp"
 	#include "respawn\deadScreen.hpp"
+	#include "respawn\startScreen.hpp"
 };
 
 #include "kits\kitDlgRespawn.hpp"

@@ -29,8 +29,8 @@ class PRA3_respawn_deadScreen
 			text = "<t color='#ff0000'>You are dead.</t>";
 			size = 0.09;
 			h = 0.09;
-			
-			colorBackground[] = {0,0,0,1};
+
+			colorBackground[] = {0,0,0,0};
 
 			class Attributes : Attributes
 			{
@@ -41,11 +41,10 @@ class PRA3_respawn_deadScreen
 		{
 			idc = 20;
 			y = 0.5 - 0.05/2;
-			h = 0.05;
+			h = __EVAL(0.05 * 2);
+			style = ST_MULTI;
 			size = 0.05;
 			text = "Press <t color='#aaaaaa'>ENTER</t> to open the spawn selection screen.";
-			
-			colorBackground[] = {0,0,0,1};
 		};
 		class CountdownText : StatusText
 		{
@@ -53,9 +52,7 @@ class PRA3_respawn_deadScreen
 			x = 0.375;
 			y = 0.6;
 			text = "00:00.000";
-			
-			colorBackground[] = {0,0,0,1};
-			
+
 			class Attributes : Attributes
 			{
 				align = "left";

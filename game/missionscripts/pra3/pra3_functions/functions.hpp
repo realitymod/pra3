@@ -82,6 +82,10 @@ class Players
 	{
 		description = "Returns the side the player unit is on (even when dead). Returns sideLogic if side cannot be determined.";
 	};
+	class getPlayerTeam
+	{
+		description = "Returns the player's team. Returns an empty string if the team cannot be determined.";
+	};
 	class getPlayerUID
 	{
 		description = "Returns UID for the given unit. Returns empty string if UID cannot be determined.";

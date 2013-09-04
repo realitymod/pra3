@@ -212,7 +212,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 							w = __EVAL(__h / (4/3) - 0.01*2);
 							h = __EVAL(__h - (0.01*2 * (4/3)));
 							text = "pra3\pra3_ui\kits\kit_img\rifleman_88.paa";
-							colorBackground[] = {1,0,0,1};
+							colorBackground[] = {0,0,0,0};
 							colorText[] = {0.9,0.9,0.9,1.0};
 						};
 						class Title : RscText
