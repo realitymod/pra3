@@ -2,14 +2,25 @@
 
 // Add respawn EH to player to delete bodies
 // TODO: Have the server do this otherwise the body will not get deleted if player disconnects
-if (isClient) then
+if isClient then
 {
 	player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
 };
 
 PRA3_AAS_sides = [];
 {
-	PRA3_AAS_sides set [_forEachIndex, _x call PRA3_fnc_getTeamSide];
+	var(_side) = _x call PRA3_fnc_getTeamSide;
+	PRA3_AAS_sides set [_forEachIndex, _side];
+
+	// Save player's team
+	if (isClient && playerSide == _side) then
+	{
+		PRA3_core setVariable [
+			format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
+			_x,
+			true
+		];
+	};
 } forEach PRA3_AAS_teams;
 
 PRA3_AAS_ticketBleed = [0,0];
@@ -21,7 +32,7 @@ PRA3_AAS_respawnTime = 30;
 
 // Initialize each zone and create markers for it
 {
-	if (isServer) then
+	if isServer then
 	{
 		var(_owner) = (_x select 3) call PRA3_fnc_getTeamSide;
 		PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
@@ -30,7 +41,7 @@ PRA3_AAS_respawnTime = 30;
 		PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
 	};
 
-	if (isClient) then
+	if isClient then
 	{
 		var(_mainMarker) = _x select 0;
 		_mainMarker setMarkerBrushLocal "SolidBorder";
@@ -64,7 +75,7 @@ var(_init) =
 };
 
 // Client might need to wait so he'll need a scheduled thread
-if (isServer) then
+if isServer then
 {
 	call _init;
 }
@@ -79,4 +90,9 @@ else
 
 		call _this;
 	};
+};
+
+if isClient then
+{
+	execVM "pra3\pra3_respawn\missionStart.sqf";
 };

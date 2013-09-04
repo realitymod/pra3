@@ -7,7 +7,7 @@ PRA3_shownKits = [];
 var(_i) = 1;
 {
 	var(_kitInfo)    = _x call PRA3_fnc_getKitInfo;
-	var(_playerSide) = if (playerSide == west) then {TEAM_US} else {TEAM_IN};
+	var(_playerSide) = player call PRA3_fnc_getPlayerTeam;
 
 	if (_kitInfo select KIT_TEAM == _playerSide || {!isNil "PRA3_debug_kits_showAllSides"}) then
 	{

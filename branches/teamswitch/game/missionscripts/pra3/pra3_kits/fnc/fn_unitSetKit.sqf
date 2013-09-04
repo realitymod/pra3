@@ -25,6 +25,7 @@ if (isServer) then
 	if (_unit != "") then
 	{
 		PRA3_core setVariable [format["PRA3_kits_unitKit_%1", _unit], _kit, true];
+		PRA3_core setVariable [format["PRA3_kits_unitKitIcon_%1", _unit], _kit call PRA3_fnc_getKitInfo select KIT_ICON, true];
 		true
 	}
 	else
