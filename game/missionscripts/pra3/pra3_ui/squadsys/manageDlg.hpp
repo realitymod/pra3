@@ -51,8 +51,12 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_squadSys_manageDlgRespawn
 				class ItemSquad24 : ItemSquad24 {};
 				class ItemSquad25 : ItemSquad25 {};
 				class ItemSquad26 : ItemSquad26 {};
+				/*class SwitchTeamButton1 : SwitchTeamButton1 {};
+				class SwitchTeamsBtn1Pic : SwitchTeamsBtn1Pic {};
+				class SwitchTeamsBtn2 : SwitchTeamsBtn2 {};
+				class SwitchTeamsBtn2Pic : SwitchTeamsBtn2Pic {};
 				class ItemSquadPlayer : ItemSquadPlayer {};
-				class ItemSquadUnassigned : ItemSquadUnassigned {};
+				class ItemSquadUnassigned : ItemSquadUnassigned {};*/
 			};
 		};
 		class DummyGroup : DummyGroup {}; //Invisible dummy object for EHs to work outside the squad dialog
