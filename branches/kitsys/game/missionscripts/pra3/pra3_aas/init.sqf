@@ -1,12 +1,5 @@
 #include "fnc\aas_defines.sqh"
 
-// Add respawn EH to player to delete bodies
-// TODO: Have the server do this otherwise the body will not get deleted if player disconnects
-if isClient then
-{
-	player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
-};
-
 PRA3_AAS_sides = [];
 {
 	var(_side) = _x call PRA3_fnc_getTeamSide;
