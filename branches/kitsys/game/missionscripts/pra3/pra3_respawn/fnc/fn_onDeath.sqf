@@ -20,7 +20,7 @@ if !(alive player) then
 	} forEach nearestObjects [player, ["WeaponHolderSimulated"], 10];
 
 	// Schedule body deletion
-	[_body, "PRA3_fnc_scheduleDeleteBody", true] call PRA3_fnc_MP;
+	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;
 
 	sleep (2 + random 2);
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
