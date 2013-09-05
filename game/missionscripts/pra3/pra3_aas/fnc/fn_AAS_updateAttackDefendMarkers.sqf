@@ -24,5 +24,5 @@ if (!isDedicated) then
 			_marker setMarkerColorLocal (if (_attack) then {"ColorRed"} else {"ColorBlue"});
 			PRA3_AAS_attackDefendMarkers set [count PRA3_AAS_attackDefendMarkers, _marker];
 		} forEach _x;
-	} forEach (PRA3_AAS_teamZones select (PRA3_AAS_sides find playerSide));
+	} forEach (PRA3_AAS_teamZones select (PRA3_AAS_sides find (side player)));
 };

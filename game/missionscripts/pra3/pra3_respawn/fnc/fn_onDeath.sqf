@@ -41,6 +41,7 @@ if !(alive player) then
 		{
 			setPlayerRespawnTime -1;
 			waitUntil {alive player};
+			[player] call PRA3_fnc_switchTeamCheck;
 			[player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 			[player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];

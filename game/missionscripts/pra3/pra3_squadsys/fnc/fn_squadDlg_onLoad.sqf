@@ -12,4 +12,18 @@
 (_this displayCtrl 302) ctrlShow false;
 PRAA_squadSys_menuTarget = "";
 PRAA_squadSys_dlgOpenedOn = time;
+
+//-->Set team Switching
+//Flags
+(_this displayCtrl 502) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamFlag);
+(_this displayCtrl 503) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamFlag);
+
+//Team names
+(_this displayCtrl 500) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName);
+(_this displayCtrl 501) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName);
+
+//Disable switching to the team you in
+if (player call PRA3_fnc_getPlayerTeam == PRA3_AAS_teams select 0) then {
+	(_this displayCtrl 500) ctrlEnable false} else {(_this displayCtrl 501) ctrlEnable false}; 
+	
 [] call PRA3_fnc_squadDlg_updateSquadsInfo;

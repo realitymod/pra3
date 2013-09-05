@@ -119,6 +119,11 @@ class SquadSys
 	{
 		description = "Returns true if the unit is in a squad or fales if it is unassigned.";
 	};
+	
+	class switchTeam
+	{
+		description = "Switch the player from one team to another and vice versa.";
+	};
 
 	class squadDlg_actionButton
 	{
