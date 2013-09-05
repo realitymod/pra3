@@ -75,4 +75,8 @@ class Respawn
 	{
 		description = "";
 	};
+	class spawnMap_toggleTabs
+	{
+		description = "";
+	};
 };

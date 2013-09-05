@@ -43,13 +43,16 @@ switch (_this select 0) do
 		};
 
 		PRA3_selectedSpawn = player call PRA3_fnc_getAvailableSpawns select _idx select 0;
-		diag_log [_this, PRA3_selectedSpawn, ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP),
-			markerPos PRA3_selectedSpawn];
 		ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapAnimAdd [
 			0,
 			ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP),
 			markerPos PRA3_selectedSpawn
 		];
+		
+		diag_log (ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapWorldToScreen markerPos PRA3_selectedSpawn);
+		diag_log (ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapWorldToScreen (ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapScreenToWorld [0,0]));
+		diag_log (ctrlPosition ctrl(IDC_KITDLG_SPAWNMAP_MAP));
+		
 		ctrlMapAnimCommit ctrl(IDC_KITDLG_SPAWNMAP_MAP);
 
 		"" call PRA3_fnc_kitDlg_updateAvailability;

@@ -168,7 +168,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			idc = IDC_KITDLG_SWITCH_SQUADS;
 			x = safeZoneX + __spaceX + __w1 / 2;
 			text = "SQUADS";
-			action = "closeDialog 0; true call PRA3_fnc_squadDlg_open";
+			action = "0 call PRA3_fnc_spawnMap_toggleTabs";
 		};
 
 		#define __h 0.11
