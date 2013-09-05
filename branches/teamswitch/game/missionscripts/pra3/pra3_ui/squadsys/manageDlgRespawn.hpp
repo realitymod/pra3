@@ -83,40 +83,36 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		{
 			action = "";
 		};
-				class SwitchTeamsBtn1 : RscButton
+		
+		class SwitchTeam1 : RscButton
 		{
-			idc = -1;
+			idc = 500;
 			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.045;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.05;
 			w = __w1 / 2 - 0.005;
 			h = 0.06;
-			text = "West";
-			action = "";
+			action = "true call PRA3_fnc_switchTeam";
 		};
-		
-		class SwitchTeamsBtn1Pic : RscPicture
+		class SwitchTeam2 : SwitchTeam1
 		{
-			idc = -1;
-			x = safeZoneX + __spaceX + 0.005;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.045 + 0.005;
-			w = 0.06;
-			h = 0.046;
-			text = "\A3\Data_F\Flags\Flag_us_CO.paa";
-		};
-		
-		class SwitchTeamsBtn2 : SwitchTeamsBtn1
-		{
-			idc = -1;
+			idc = 501;
 			x = safeZoneX + __spaceX + __w1 / 2;
-			text = "East";
-			action = "";
+			action = "true call PRA3_fnc_switchTeam";
 		};
 		
-		class SwitchTeamsBtn2Pic : SwitchTeamsBtn1Pic
+		class SwitchTeam1Pic : RscPicture
 		{
-			idc = -1;
+			idc = 502;
+			x = safeZoneX + __spaceX + 0.005;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.05 + 0.005;
+			w = __w1 / 2 - 0.2;
+			h = 0.05;
+		};
+		
+		class SwitchTeam2Pic : SwitchTeam1Pic
+		{
+			idc = 503;
 			x = safeZoneX + __spaceX + __w1 / 2 + 0.005;
-			text = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
 		};
 
 		class Group : RscControlsGroup
@@ -128,14 +124,14 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.05 + 0.04);
 			onMouseButtonDown = "["""", _this] call PRA3_fnc_squadDlg_onMouseClick";
 			onMouseMoving = "-1 call PRA3_fnc_squadDlg_onMouseMoving";
-
+			
 			class Controls
 			{
 				#define __lbItems 8
 				#define __lbH 0.032
 				#define __grpW 0.47
 				#define __grpH (__lbH*__lbItems + 0.05)
-
+				
 				class ItemSquad01 : RscControlsGroupNoScrollbars
 				{
 					idc = 10000;

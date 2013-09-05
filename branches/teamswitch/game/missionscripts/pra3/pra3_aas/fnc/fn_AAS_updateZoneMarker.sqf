@@ -3,7 +3,7 @@
 
 var(_side) = _this call PRA3_fnc_AAS_getZoneOwner;
 var(_color) = (
-	if (_side == playerSide) then {
+	if (_side == (side player)) then {
 		"ColorBLUFOR"
 	} else {
 		if (_side == __neutral) then {

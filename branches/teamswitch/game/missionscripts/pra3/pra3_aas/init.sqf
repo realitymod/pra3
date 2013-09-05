@@ -13,7 +13,7 @@ PRA3_AAS_sides = [];
 	PRA3_AAS_sides set [_forEachIndex, _side];
 
 	// Save player's team
-	if (isClient && playerSide == _side) then
+	if (isClient && (side player) == _side) then
 	{
 		PRA3_core setVariable [
 			format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],

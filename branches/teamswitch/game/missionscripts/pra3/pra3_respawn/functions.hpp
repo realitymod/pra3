@@ -45,7 +45,10 @@ class Respawn
 	{
 		description = "Handles onKeyDown.";
 	};
-
+	class switchTeamCheck
+	{
+		description = "Check if the unit switched team and make the switch";
+	};
 	class spawnMap_onLoad
 	{
 		description = "";

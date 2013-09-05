@@ -94,6 +94,10 @@ class Players
 	{
 		description = "Returns object player with the given UID is currently controlling. Returns a null object if the UID is invalid.";
 	};
+	class getMaxPlayers
+	{
+		description = "Get the maximum ammount of players for this mission.";
+	};
 };
 
 class Team
