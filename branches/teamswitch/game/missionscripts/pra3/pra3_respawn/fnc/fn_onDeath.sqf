@@ -5,17 +5,23 @@ setPlayerRespawnTime 999999;
 
 if !(alive player) then
 {
+	var(_body) = _this select 0;
+
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
-	
+
 	// Penalize the death
 	// TODO: Remove hardcoded value
 	[player call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
-	
+
 	sleep 1;
 	// Delete any weapons the player dropped
 	{
 		deleteVehicle _x;
 	} forEach nearestObjects [player, ["WeaponHolderSimulated"], 10];
+
+	// Schedule body deletion
+	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;
+
 	sleep (2 + random 2);
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
 

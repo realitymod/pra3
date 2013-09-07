@@ -9,6 +9,10 @@ if (!isDedicated) then
 	} forEach PRA3_AAS_attackDefendMarkers;
 	PRA3_AAS_attackDefendMarkers resize 0;
 
+	_side = player call PRA3_fnc_getPlayerSide;
+	_side = PRA3_AAS_sides find _side;
+	_index = if (_side == -1) then {0} else {_side};
+
 	// For attack and defend...
 	{
 		var(_attack) = _forEachIndex == 0;
@@ -24,5 +28,5 @@ if (!isDedicated) then
 			_marker setMarkerColorLocal (if (_attack) then {"ColorRed"} else {"ColorBlue"});
 			PRA3_AAS_attackDefendMarkers set [count PRA3_AAS_attackDefendMarkers, _marker];
 		} forEach _x;
-	} forEach (PRA3_AAS_teamZones select (PRA3_AAS_sides find (side player)));
+	} forEach (PRA3_AAS_teamZones select _index);
 };

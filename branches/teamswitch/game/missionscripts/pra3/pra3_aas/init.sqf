@@ -1,12 +1,5 @@
 #include "fnc\aas_defines.sqh"
 
-// Add respawn EH to player to delete bodies
-// TODO: Have the server do this otherwise the body will not get deleted if player disconnects
-if isClient then
-{
-	player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
-};
-
 PRA3_AAS_sides = [];
 {
 	var(_side) = _x call PRA3_fnc_getTeamSide;
@@ -62,6 +55,25 @@ PRA3_AAS_respawnTime = 30;
 		_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
 	};
 } forEach PRA3_AAS_zones;
+
+{
+	var(_box)           = _x select 2 select 0;
+	var(_allowRedeploy) = _x select 2 select 1;
+
+	_box allowDamage false;
+	clearBackpackCargo _box;
+	clearMagazineCargo _box;
+	clearWeaponCargo _box;
+
+	if _allowRedeploy then
+	{
+		_box addAction ["Redeploy/Change kit", "pra3\pra3_respawn\redeploy.sqf"];
+	}
+	else
+	{
+		_box addAction ["Change kit", "pra3\pra3_respawn\changeKit.sqf"];
+	};
+} forEach PRA3_AAS_respawns;
 
 PRA3_AAS_attackDefendMarkers = [];
 
