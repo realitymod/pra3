@@ -16,9 +16,35 @@ if (isNil "PRA3_spawnMapMousePos") then
 	PRA3_spawnMapMousePos = [0,0];
 };
 
-call PRA3_fnc_spawnMap_selectNoSpawn;
+if (PRA3_selectedSpawn == "") then
+{
+	call PRA3_fnc_spawnMap_selectNoSpawn;
+}
+else
+{
+	{
+		if (_x select 0 == PRA3_selectedSpawn) exitWith
+		{
+			call PRA3_fnc_spawnMap_populateSpawnLocations;
+			ctrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
+		};
+	} forEach (player call PRA3_fnc_getAvailableSpawns);
+};
 
 ctrl(IDC_KITDLG_SPAWNMAP_TIME) ctrlShow !isNil "PRA3_AAS_spawnAtTime";
+
+// If we're switching from a different tab we want to restore the map position
+if (!isNil "PRA3_spawnMapPosition") then
+{
+	ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapAnimAdd [
+		0,
+		PRA3_spawnMapPosition select 1,
+		PRA3_spawnMapPosition select 0
+	];
+	ctrlMapAnimCommit ctrl(IDC_KITDLG_SPAWNMAP_MAP);
+
+	PRA3_spawnMapPosition = nil;
+};
 
 if (!isNil "PRA3_AAS_spawnAtTime") then
 {

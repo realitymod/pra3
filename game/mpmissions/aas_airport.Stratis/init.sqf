@@ -1,7 +1,6 @@
 #include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
 PRA3_AAS_teams = ["NATO", "Iran"]; // Opposing teams
-PRA3_AAS_sides = [west, east]; // Opposing sides 
 PRA3_core setVariable ["PRA3_AAS_tickets", [300, 300]]; // Initial tickets
 PRA3_AAS_zones = [
 /*    ZONE   | SYNCH | CONNECTS TO       | INITIAL  | TICKET BLEED  */

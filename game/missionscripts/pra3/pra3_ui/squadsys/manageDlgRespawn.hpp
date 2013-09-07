@@ -77,7 +77,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 
 		class SwitchKitsBtn : SwitchKitsBtn
 		{
-			action = "closeDialog 0; true call PRA3_fnc_kitDlg_open";
+			action = "1 call PRA3_fnc_spawnMap_toggleTabs";
 		};
 		class SwitchSquadsBtn : SwitchSquadsBtn
 		{
@@ -714,6 +714,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		};
 		class DummyGroup : Group //Invisible dummy object for EHs to work outside the squad dialog
 		{
+			idc = -1;
 			x = safeZoneX + __spaceX + __w;
 			w = safeZoneW - spaceX - __w;
 

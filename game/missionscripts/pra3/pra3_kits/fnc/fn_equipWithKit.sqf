@@ -33,7 +33,7 @@ _unit addGoggles (_clothing select CLOTHING_GOGGLES);
 _unit addVest (_clothing select CLOTHING_VEST);
 
 var(_variant) = _kitInfo select KIT_VARIANTS select (_kitInfo select KIT_VARIANT_CURR);
-diag_log _variant;
+
 var(_giveWeapon) =
 {
 	var(_wpn) = _variant select _this;
@@ -46,15 +46,18 @@ var(_giveWeapon) =
 		_unit addWeapon (_wpn select 0);
 
 		{
-			switch (_this) do
+			if (_x != "") then
 			{
-				case VARIANT_PRIMARY:
+				switch (_this) do
 				{
-					_unit addPrimaryWeaponItem _x;
-				};
-				case VARIANT_PISTOL:
-				{
-					_unit addSecondaryWeaponItem _x;
+					case VARIANT_PRIMARY:
+					{
+						_unit addPrimaryWeaponItem _x;
+					};
+					case VARIANT_PISTOL:
+					{
+						_unit addSecondaryWeaponItem _x;
+					};
 				};
 			};
 		} forEach (_wpn select 2);
