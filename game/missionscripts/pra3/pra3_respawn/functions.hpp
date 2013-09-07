@@ -2,9 +2,21 @@ class Respawn
 {
 	file = "pra3\pra3_respawn\fnc";
 
+	class getAllSpawns
+	{
+		description = "Returns a list of all spawn points in the mission.";
+	};
+	class getAvailableSpawns
+	{
+		description = "Returns a list of all spawn points the unit can respawn at.";
+	};
 	class isSpawnAvailable
 	{
 		description = "Checks if the unit can spawn at the given spawn point.";
+	};
+	class findNearestSpawn
+	{
+		description = "Returns the nearest spawn point available to the unit from given position with optional distance limit. If no spawn is available, empty string is returned.";
 	};
 	class respawnUnit
 	{
@@ -13,6 +25,15 @@ class Respawn
 	class refreshRespawnDlg
 	{
 		description = "Refreshes the spawn points in the spawn selection screen.";
+	};
+	
+	class scheduleDeleteBody
+	{
+		description = "Schedules a body to be deleted. Has to run on the server.";
+	};
+	class deleteBody
+	{
+		description = "Deletes a body, called by PRA3_fnc_scheduleDeleteBody. Body has to be local.";
 	};
 
 	class onDeath
@@ -36,5 +57,30 @@ class Respawn
 	class respawnOnKeyDown
 	{
 		description = "Handles onKeyDown.";
+	};
+
+	class spawnMap_onLoad
+	{
+		description = "";
+	};
+	class spawnMap_onMapDraw
+	{
+		description = "";
+	};
+	class spawnMap_mapHandle
+	{
+		description = "";
+	};
+	class spawnMap_selectNoSpawn
+	{
+		description = "";
+	};
+	class spawnMap_populateSpawnLocations
+	{
+		description = "";
+	};
+	class spawnMap_toggleTabs
+	{
+		description = "";
 	};
 };

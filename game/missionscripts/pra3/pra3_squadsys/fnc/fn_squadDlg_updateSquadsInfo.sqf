@@ -11,7 +11,10 @@
 
 var(_updateSquads) = _this;
 
-if (isNull (uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg")) exitWith {};
+if (
+	isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && {
+	isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])
+}) exitWith {};
 
 var(_updateSquadInfo) =
 {
@@ -202,11 +205,8 @@ var(_updateSquadInfo) =
 		};
 
 		// Set kit icon
-		// TODO: Use function from kit system once implemented
 		__ctrlLine(1)
-			ctrlSetText format ["\praa\praa_hud\squadhud\kit\%1_88.paa",
-				(_unit call PRA3_fnc_getPlayerUnit) getVariable ["PRA3_kit", "rifle"]
-			];
+			ctrlSetText (_unit call PRA3_fnc_unitGetKitIcon);
 
 		// TODO: Implement from marker system
 		__ctrlLine(2)

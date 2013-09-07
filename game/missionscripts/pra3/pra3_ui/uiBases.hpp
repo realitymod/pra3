@@ -588,8 +588,8 @@ class RscShortcutButton {
 	color[] = {1, 1, 1, 1.0};
 	color2[] = {0.95, 0.95, 0.95, 1};
 	colorDisabled[] = {1, 1, 1, 0.25};
-	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
-	colorBackground2[] = {1, 1, 1, 1};
+	colorBackground[] = {0.4, 0.4, 0.4, 1};
+	colorBackground2[] = {0.5, 0.5, 0.5, 1};
 	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
 	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
 	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
@@ -655,14 +655,14 @@ class RscButton {
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {1, 1, 1, 1.0};
 	colorDisabled[] = {0.4, 0.4, 0.4, 1};
-	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 0.7};
-	colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
-	colorBackgroundDisabled[] = {0.95, 0.95, 0.95, 1};
+	colorBackground[] = {0.4, 0.4, 0.4, 1};
+	colorBackgroundActive[] = {0.5, 0.5, 0.5, 1};
+	colorBackgroundDisabled[] = {0.3, 0.3, 0.3, 1};
 	offsetX = 0.003;
 	offsetY = 0.003;
 	offsetPressedX = 0.002;
 	offsetPressedY = 0.002;
-	colorFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])", 1};
+	colorFocused[] = {0.4, 0.4, 0.4, 1};
 	colorShadow[] = {0, 0, 0, 1};
 	colorBorder[] = {0, 0, 0, 1};
 	borderSize = 0.0;
@@ -672,6 +672,18 @@ class RscButton {
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
 	type = 1;
 	text = "";
+};
+
+class PRA3_RscInvisibleButton : RscButton
+{
+	colorText[] = {0,0,0,0};
+	colorDisabled[] = {0,0,0,0};
+	colorBackground[] = {0,0,0,0};
+	colorBackgroundActive[] = {0,0,0,0};
+	colorBackgroundDisabled[] = {0,0,0,0};
+	colorFocused[] = {0,0,0,0};
+	colorShadow[] = {0,0,0,0};
+	colorBorder[] = {0,0,0,0};
 };
 
 class RscPicture {
@@ -704,4 +716,24 @@ class RscEdit {
 	canModify = 1;
 	autocomplete = "";
 	type = 2;
+};
+
+class RscXListBox {
+	idc = -1;
+	type = 42;
+	style = 0x400 + 0x02 +	0x10;
+	shadow = 2;
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+	w = 0.14706;
+	h = 0.039216;
+	color[] = {1,1,1,0.6};
+	colorActive[] = {1,1,1,1};
+	colorSelect[] = {0.95, 0.95, 0.95, 1};
+	colorText[] = {1, 1, 1, 1.0};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	font = "PuristaMedium";
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect", 0.09, 1};
 };

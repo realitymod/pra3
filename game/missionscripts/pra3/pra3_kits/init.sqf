@@ -10,3 +10,8 @@ if (!isDedicated) then
 		};
 	};
 };
+
+PRA3_kitSys_currentKit = "";
+PRA3_kitSys_kitConfigurations = [];
+
+call PRA3_fnc_parseKits;

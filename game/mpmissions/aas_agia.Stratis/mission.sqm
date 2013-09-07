@@ -7,12 +7,15 @@ class Mission
 		"a3_map_stratis",
 		"A3_Data_F",
 		"A3_Characters_F_OPFOR",
-		"A3_Modules_F_Misc"
+		"A3_Weapons_F_Ammoboxes",
+		"a3_weapons_f_beta_ammoboxes"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_BLUFOR",
+		"A3_Weapons_F_Ammoboxes",
+		"a3_weapons_f_beta_ammoboxes",
 		"a3_map_stratis"
 	};
 	randomSeed=11866082;
@@ -374,6 +377,50 @@ class Mission
 					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
+		};
+	};
+	class Vehicles
+	{
+		items=4;
+		class Item0
+		{
+			position[]={3210.7312,4.4627929,5829.6802};
+			azimut=-54.199001;
+			id=17;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box0";
+		};
+		class Item1
+		{
+			position[]={3083.989,2.5005951,5918.229};
+			azimut=-55.298;
+			id=18;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box1";
+		};
+		class Item2
+		{
+			position[]={2909.2346,3.3499999,6041.5518};
+			azimut=-58.468899;
+			id=19;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box2";
+		};
+		class Item3
+		{
+			position[]={2849.1155,2.739676,6117.3774};
+			azimut=35.8475;
+			id=20;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box3";
 		};
 	};
 	class Markers

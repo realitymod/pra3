@@ -38,6 +38,10 @@ class SquadSys
 	{
 		description = "Returns a POINTER to an array of squads members. Returns an empty string if the squad does not exist.";
 	};
+	class squadGetMembersNum
+	{
+		description = "Returns the number of memebers of the squad.";
+	};
 	class squadGetName
 	{
 		description = "Returns the optional name of the squad's leader. Returns an empty string if the squad does not exist (or no name is assigned).";
@@ -105,6 +109,15 @@ class SquadSys
 	class updateSquadLeadership
 	{
 		description = "Ensures that the squad has a leader and if not, the highest ranking member is promoted. Returns false if the squad does not exist or no changes have been made.";
+	};
+	
+	class isSquadLeader
+	{
+		description = "Returns whether the unit is a squad leader. Unassigned units aren't considered squad leaders and return false.";
+	};
+	class isInSquad
+	{
+		description = "Returns true if the unit is in a squad or fales if it is unassigned.";
 	};
 
 	class squadDlg_actionButton
@@ -188,5 +201,10 @@ class SquadSys
 	};
 	class squadDlg_server_unsetFt
 	{
+	};
+	
+	class squadDlg_open
+	{
+		description = "Opens the Squad Management dialog.";
 	};
 };

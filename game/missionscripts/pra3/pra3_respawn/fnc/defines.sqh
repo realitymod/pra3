@@ -1,0 +1,1 @@
+#define ctrl(idc) ((uiNamespace getVariable "PRA3_spawnMap_display") displayCtrl idc)

@@ -1,8 +1,8 @@
 #include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
 [
-	// Opposing sides
-	[west, east],
+	// Opposing teams
+	["NATO", "Iran"],
 	// Initial tickets
 	[300, 300],
 	// Capture zones
