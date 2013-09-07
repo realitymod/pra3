@@ -19,10 +19,10 @@ PRA3_AAS_bases = [[0], [6]]; //Bases for each team, indexes have to match those 
 PRA3_AAS_respawns = [
 /*   SPAWN     TIED */
 /*   MARKER    TO   */
-	["spawn0", [0  ]],
-	["spawn1", [1,2]],
-	["spawn2", [4,5]],
-	["spawn3", [6  ]]
+	["spawn0", [0  ], [box0, true]],
+	["spawn1", [1,2], [box1, false]],
+	["spawn2", [4,5], [box2, false]],
+	["spawn3", [6  ], [box3, true]]
 ];
 
 PRA3_AAS_startCamera = [
