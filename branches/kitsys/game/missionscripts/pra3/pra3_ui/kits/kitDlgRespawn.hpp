@@ -109,8 +109,8 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			colorMainCountlinesWater[] = {0, 0, 0, 0};
 			colorForest[] = {1, 1, 1, 1};
 			colorRocks[] = {0, 0, 0, 0};
-			colorGrid[] = {0, 0, 0, 0};
-			colorGridMap[] = {0, 0, 0, 0};
+			colorGrid[] = {0, 0, 0, 1};
+			colorGridMap[] = {0, 0, 0, 0.5};
 			colorOutside[] = {
 				"uiNamespace getVariable ['PRA3_respawnMapOutside_R', 0]",
 				"uiNamespace getVariable ['PRA3_respawnMapOutside_G', 0]",
@@ -125,7 +125,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			ptsPerSquareFor = 200;
 			ptsPerSquareForEdge = 200;
 			sizeExLabel = 0;
-			sizeExGrid = 0;
+			sizeExGrid = 0.023;
 			sizeExUnits = 0;
 			sizeExNames = 0;
 			sizeExInfo = 0;
