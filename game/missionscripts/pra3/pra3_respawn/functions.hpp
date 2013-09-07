@@ -14,6 +14,10 @@ class Respawn
 	{
 		description = "Checks if the unit can spawn at the given spawn point.";
 	};
+	class findNearestSpawn
+	{
+		description = "Returns the nearest spawn point available to the unit from given position with optional distance limit. If no spawn is available, empty string is returned.";
+	};
 	class respawnUnit
 	{
 		description = "Respawns the unit at the given spawn point.";

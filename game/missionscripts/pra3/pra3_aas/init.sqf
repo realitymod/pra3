@@ -56,6 +56,25 @@ PRA3_AAS_respawnTime = 30;
 	};
 } forEach PRA3_AAS_zones;
 
+{
+	var(_box)           = _x select 2 select 0;
+	var(_allowRedeploy) = _x select 2 select 1;
+
+	_box allowDamage false;
+	clearBackpackCargo _box;
+	clearMagazineCargo _box;
+	clearWeaponCargo _box;
+
+	if _allowRedeploy then
+	{
+		_box addAction ["Redeploy/Change kit", "pra3\pra3_respawn\redeploy.sqf"];
+	}
+	else
+	{
+		_box addAction ["Change kit", "pra3\pra3_respawn\changeKit.sqf"];
+	};
+} forEach PRA3_AAS_respawns;
+
 PRA3_AAS_attackDefendMarkers = [];
 
 var(_init) =

@@ -22,3 +22,5 @@ if ([player, _kit] call PRA3_fnc_getKitAvailableInfo select 0) then // Only if k
 };
 
 call PRA3_fnc_kitDlg_populateKitSelection;
+
+__getCtrl(IDC_KITDLG_CHANGEKIT_BTN) ctrlEnable (PRA3_kitSys_currentKit != "");
