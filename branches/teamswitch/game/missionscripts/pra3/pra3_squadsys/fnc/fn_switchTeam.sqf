@@ -8,7 +8,7 @@
  *
  * Author: Shay_gman
  */
-var(_control)			= _this; 
+ 
 var(_currentTeam) 		= PRA3_core getVariable [format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],""];
 var(_newTeam)			= if ((PRA3_AAS_teams select 0) == _currentTeam) then {PRA3_AAS_teams select 1} else {PRA3_AAS_teams select 0};
 var(_maxPlayers)		= call PRA3_fnc_getMaxPlayers;
@@ -38,6 +38,7 @@ PRA3_core setVariable [format["PRA3_player_side_%1", player call PRA3_fnc_getPla
 //Remove current kit
 PRA3_kitSys_currentKit = "";
 
+if (alive player) then {player setdamage 1};
 //Restart Dialog
 closeDialog 0;
 true call PRA3_fnc_squadDlg_open;

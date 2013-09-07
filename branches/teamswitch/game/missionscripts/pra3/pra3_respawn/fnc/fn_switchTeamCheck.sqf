@@ -9,9 +9,8 @@
  
  var(_unit) 			= _this select 0;
  var(_unitSideEngine) 	= side _unit; 
- var(_unitSidePRA3) 	=  _unit call PRA3_fnc_getPlayerSide;
+ var(_unitSidePRA3) 	= _unit call PRA3_fnc_getPlayerSide;
  
-
  if (_unitSideEngine != _unitSidePRA3) then {
 	//Make the switch
 	var(_group) = creategroup _unitSidePRA3;

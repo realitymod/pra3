@@ -22,7 +22,7 @@ var(_updateSquadInfo) =
 
 	var(_playerIsMember) = _squadId == (player call PRA3_fnc_unitGetSquad);
 	var(_playerIsSL) = (player call PRA3_fnc_getPlayerUID)  == (_squadId call PRA3_fnc_squadGetLeader);
-	var(_id) = _squadId - ((side player) call PRA3_fnc_getSideID);
+	var(_id) = _squadId - ((player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID);
 
 	var(_customName) = _squadId call PRA3_fnc_squadGetName;
 	if (_playerIsMember) then // Player's squad
@@ -31,7 +31,7 @@ var(_updateSquadInfo) =
 		// Set squad's phonetic name
 		__ctrl(500000 + 2000)
 			ctrlSetText (__phoneticAlphabet select
-				(_squadId - 1 - ((side player) call PRA3_fnc_getSideID)));
+				(_squadId - 1 - ((player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID)));
 
 		// Display the appropriate custom name control
 		__ctrl(500000 + 3001)
@@ -297,7 +297,7 @@ var(_updateUnassignedInfo) =
 
 	// Populate the correct list box
 	var(_lb) = 990000 + (if (_playerIsSL) then {8002} else {8001});
-	var(_players) = (side player) call PRA3_fnc_getUnassignedPlayers;
+	var(_players) = (player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getUnassignedPlayers;
 	lbClear __ctrl(_lb);
 	{
 		var(_index) = (__ctrl(_lb) lbAdd (_x call PRA3_fnc_getPlayerName));
@@ -319,7 +319,7 @@ var(_updateUnassignedInfo) =
 	};
 };
 
-var(_base) = (side player) call PRA3_fnc_getSideID;
+var(_base) = (player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID;
 var(_playerSquad) = (player call PRA3_fnc_unitGetSquad);
 
 // Hide player's squad if he's not in one

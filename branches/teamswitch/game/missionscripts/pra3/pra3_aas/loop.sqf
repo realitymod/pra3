@@ -70,7 +70,7 @@ while {true} do
 			{
 				if ([getPosATL _x, _marker] call PRA3_fnc_isPointInMarker) then
 				{
-					var(_sideIndex) = PRA3_AAS_sides find (_x call PRA3_fnc_getPlayerSide);
+					var(_sideIndex) = PRA3_AAS_sides find (player call PRA3_fnc_getPlayerSide);
 					if (_sideIndex != -1) then
 					{
 						// Make sure the player's side can attack or defend this zone
@@ -238,7 +238,7 @@ while {true} do
 			_pos set [2, (0.39 * _capture / 100)];
 			ctrl(1) ctrlSetPosition _pos;
 			ctrl(1) ctrlSetBackgroundColor (
-				if (_side == (side player)) then {
+				if (_side == (player call PRA3_fnc_getPlayerSide)) then {
 					__colorFriendly
 				} else {
 					if (_side == __neutral) then {
@@ -330,7 +330,7 @@ while {true} do
 		}
 		else
 		{
-			[format["end%1", _winner + 1], isClient && {PRA3_AAS_sides select _winner == (side player)}, true] call BIS_fnc_endMission;
+			[format["end%1", _winner + 1], isClient && {PRA3_AAS_sides select _winner == (player call PRA3_fnc_getPlayerSide)}, true] call BIS_fnc_endMission;
 		};
 	};
 
