@@ -3,7 +3,7 @@
  *	Returns -1 if CID cannot be determined.
  *
  *		(in)  <OBJECT> Unit
- *			OR
+ *				OR
  *		(in)  <STRING> Unit ID
  *		(out) <INT> Client ID
  */

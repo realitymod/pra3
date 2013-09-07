@@ -22,8 +22,6 @@ class PRA3_respawn_deadScreen
 		};
 		class StatusText : RscStructuredText
 		{
-			colorBackground[] = {0,0,0,1};
-			
 			idc = 10;
 			x = 0;
 			y = 0.4 - 0.09;
@@ -32,6 +30,8 @@ class PRA3_respawn_deadScreen
 			size = 0.09;
 			h = 0.09;
 
+			colorBackground[] = {0,0,0,0};
+
 			class Attributes : Attributes
 			{
 				align = "center";
@@ -39,27 +39,23 @@ class PRA3_respawn_deadScreen
 		};
 		class InstructionsText : StatusText
 		{
-			colorBackground[] = {0,0,0,1};
-			
 			idc = 20;
 			y = 0.5 - 0.05/2;
-			h = 0.05;
+			h = __EVAL(0.05 * 2);
+			style = ST_MULTI;
 			size = 0.05;
 			text = "Press <t color='#aaaaaa'>ENTER</t> to open the spawn selection screen.";
 		};
 		class CountdownText : StatusText
 		{
-			colorBackground[] = {0,0,0,1};
-			
 			idc = 30;
-			x = 0;
-			y = 0.6 - 0.06/2;
-			w = 1;
-			text = "00:00";
-			
+			x = 0.375;
+			y = 0.6;
+			text = "00:00.000";
+
 			class Attributes : Attributes
 			{
-				align = "center";
+				align = "left";
 			};
 		};
 	};

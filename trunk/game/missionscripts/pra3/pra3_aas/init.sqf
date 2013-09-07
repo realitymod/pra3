@@ -2,18 +2,29 @@
 
 // Load mission-defined settings
 if (isServer) then {PRA3_core setVariable ["PRA3_AAS_tickets", _this select 1, true]};
-PRA3_AAS_sides            = _this select 0;
+PRA3_AAS_teams            = _this select 0;
 PRA3_AAS_zones            = _this select 2;
 PRA3_AAS_bases            = _this select 3;
 PRA3_AAS_respawns         = _this select 4;
 PRA3_AAS_restrictionZones = _this select 5;
+PRA3_AAS_startCamera      = _this select 6;
 
-// Add respawn EH to player to delete bodies
-// TODO: Have the server do this otherwise the body will not get deleted if player disconnects
-if (isClient) then
+// Figure out what the sides involved are based on the mission-defined teams
+PRA3_AAS_sides = [];
 {
-	player addEventHandler ["respawn", {[time + 30, {deleteVehicle _this}, _this select 1] call PRA3_fnc_scheduleToExecute}];
-};
+	var(_side) = _x call PRA3_fnc_getTeamSide;
+	PRA3_AAS_sides set [_forEachIndex, _side];
+
+	// Save player's team
+	if (isClient && playerSide == _side) then
+	{
+		PRA3_core setVariable [
+			format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
+			_x,
+			true
+		];
+	};
+} forEach PRA3_AAS_teams;
 
 PRA3_AAS_ticketBleed = [0,0];
 PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active) and can be captured by somebody
@@ -26,16 +37,16 @@ var(_init) =
 {
 	// Initialize each zone and create markers for it
 	{
-		if (isServer) then
+		if isServer then
 		{
-			var(_owner) = _x select 3;
+			var(_owner) = (_x select 3) call PRA3_fnc_getTeamSide;
 			PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
 			PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
 			PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
 			PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
 		};
 
-		if (isClient) then
+		if isClient then
 		{
 			var(_mainMarker) = _x select 0;
 			_mainMarker setMarkerBrushLocal "SolidBorder";
@@ -196,6 +207,25 @@ var(_init) =
 		};
 	} forEach PRA3_AAS_zones;
 
+	{
+		var(_box)           = _x select 3 select 0;
+		var(_allowRedeploy) = _x select 3 select 1;
+
+		_box allowDamage false;
+		clearBackpackCargo _box;
+		clearMagazineCargo _box;
+		clearWeaponCargo _box;
+
+		if _allowRedeploy then
+		{
+			_box addAction ["Redeploy/Change kit", "pra3\pra3_respawn\redeploy.sqf"];
+		}
+		else
+		{
+			_box addAction ["Change kit", "pra3\pra3_respawn\changeKit.sqf"];
+		};
+	} forEach PRA3_AAS_respawns;
+
 	PRA3_AAS_attackDefendMarkers = [];
 
 	call PRA3_fnc_AAS_createRestrictedZones; //Build restriction zones
@@ -226,4 +256,9 @@ else
 
 		call _this;
 	};
+};
+
+if isClient then
+{
+	execVM "pra3\pra3_respawn\missionStart.sqf";
 };

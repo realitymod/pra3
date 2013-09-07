@@ -8,7 +8,10 @@
 var(_refreshSquads) = _this;
 
 player sideChat "refresh";
-if (!isNull(uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlg")) then // Squad dialog open
+if (
+	!isNull(uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull]) ||
+	{!isNull(uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull])}
+) then // Squad dialog open
 {
 	_refreshSquads call PRA3_fnc_squadDlg_updateSquadsInfo;
 	true call PRA3_fnc_squadDlg_enableControls;

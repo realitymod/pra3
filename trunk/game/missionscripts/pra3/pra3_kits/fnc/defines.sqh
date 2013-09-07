@@ -1,0 +1,46 @@
+#define __maxKits 12
+
+#define __kits (missionConfigFile >> (if (isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlg", displayNull])) then {"Rsc_PRA3_kits_kitDlgRespawn"} else {"Rsc_PRA3_kits_kitDlg"}) >> "Controls" >> "KitSelection")
+#define __kitLine(num) (__kits >> "Controls" >> format["Kit%1",num])
+#define __kitLineCtrl(num,name) (__kitLine(num) >> "Controls" >> name)
+#define __kitDetails (missionConfigFile >> (if (isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlg", displayNull])) then {"Rsc_PRA3_kits_kitDlgRespawn"} else {"Rsc_PRA3_kits_kitDlg"}) >> "Controls" >> "KitDetails")
+#define __kitDetailsCtrl(name) (__kitDetails >> "Controls" >> name)
+
+#define __getCtrl(idc) (uiNamespace getVariable (if (isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlg", displayNull])) then {"Rsc_PRA3_kits_kitDlgRespawn"} else {"Rsc_PRA3_kits_kitDlg"}) displayCtrl idc)
+
+#define TYPE_WEAPON		1
+#define TYPE_BACKPACK	2
+
+#define TEAM_US	0
+#define TEAM_IN	1
+
+#define KIT_TEAM			0
+#define KIT_NAME			1
+#define KIT_PICTURE			2
+#define KIT_ICON			3
+#define KIT_REQUIREMENTS	4
+#define KIT_AVAILABLEAT		5
+#define KIT_CLOTHING		6
+	#define CLOTHING_UNIFORM	0
+	#define CLOTHING_HEADGEAR	1
+	#define CLOTHING_GOGGLES	2
+	#define CLOTHING_VEST		3
+#define KIT_VARIANTS		7
+	#define VARIANT_CLASS		0
+	#define VARIANT_NAME		1
+	#define VARIANT_PISTOL		2	
+	#define VARIANT_PRIMARY		3
+	#define VARIANT_SECONDARY	4
+	#define VARIANT_BACKPACK	5
+	#define VARIANT_EXPLOSIVES	6
+	#define VARIANT_ITEMS		7
+#define KIT_VARIANT_CURR	8
+
+
+#define LIMIT_NO		0
+#define LIMIT_SQUAD		1
+#define LIMIT_SL		2
+
+#define __inf 1e10
+
+#define DETAILS_ANIMATE_SPEED 0.25

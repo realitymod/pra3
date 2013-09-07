@@ -1,9 +1,9 @@
 #include "scriptDefines.sqh"
 
 /**
- * Assigns fireteam to the unit.
- * Setting FT ID to 0 will unassign the unit from its current FT.
- * Returns false if the squad does not exist or the unit is not the squad's memeber.
+ *	Assigns fireteam to the unit.
+ *	Setting FT ID to 0 will unassign the unit from its current FT.
+ *	Returns false if the squad does not exist or the unit is not the squad's memeber.
  *		(in)  <ARRAY>:
  *			0 <INT> Squad ID
  *			1 <OBJECT> Unit
