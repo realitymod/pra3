@@ -454,7 +454,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 								};
 								class Count : X
 								{
-									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 112)
+									idc = __EVAL(IDC_KITDLG_DETAILS_PRIMARY + 112);
 									x = 0.054;
 									y = __EVAL(0.05 * (4/3) - 0.05);
 									h = 0.05;

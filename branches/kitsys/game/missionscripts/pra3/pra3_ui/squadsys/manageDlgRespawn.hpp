@@ -683,6 +683,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		};
 		class DummyGroup : Group //Invisible dummy object for EHs to work outside the squad dialog
 		{
+			idc = -1;
 			x = safeZoneX + __spaceX + __w;
 			w = safeZoneW - spaceX - __w;
 
