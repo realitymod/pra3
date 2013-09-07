@@ -14,3 +14,4 @@ __getCtrl(IDC_KITDLG_DETAILS) ctrlShow false;
 PRA3_kitSys_kitDetailsExpanded = "";
 
 __getCtrl(IDC_KITDLG_SWITCH_KITS) ctrlEnable false;
+__getCtrl(IDC_KITDLG_CHANGEKIT_BTN) ctrlEnable (PRA3_kitSys_currentKit != "");

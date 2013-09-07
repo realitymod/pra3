@@ -1,3 +1,5 @@
+// NOTE: Don't forget to copy changes to \pra3\pra3_kits\fnc\idcs.sqh
+
 #define IDC_KITDLG_SWITCH_KITS          51
 #define IDC_KITDLG_SWITCH_SQUADS        52
 
@@ -20,3 +22,5 @@
 #define IDC_KITDLG_SPAWNMAP_TIME        206
 
 #define IDC_KITDLG_SELECTION_KIT        10000
+
+#define IDC_KITDLG_CHANGEKIT_BTN        71

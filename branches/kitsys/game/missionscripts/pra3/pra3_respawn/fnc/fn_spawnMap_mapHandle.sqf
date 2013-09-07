@@ -48,11 +48,7 @@ switch (_this select 0) do
 			ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP),
 			markerPos PRA3_selectedSpawn
 		];
-		
-		diag_log (ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapWorldToScreen markerPos PRA3_selectedSpawn);
-		diag_log (ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapWorldToScreen (ctrl(IDC_KITDLG_SPAWNMAP_MAP) ctrlMapScreenToWorld [0,0]));
-		diag_log (ctrlPosition ctrl(IDC_KITDLG_SPAWNMAP_MAP));
-		
+
 		ctrlMapAnimCommit ctrl(IDC_KITDLG_SPAWNMAP_MAP);
 
 		"" call PRA3_fnc_kitDlg_updateAvailability;
