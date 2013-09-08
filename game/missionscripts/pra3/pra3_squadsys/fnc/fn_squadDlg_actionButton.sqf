@@ -31,6 +31,3 @@ else
 		};
 	};
 };
-
-//Refresh Dialog
-[] call PRA3_fnc_squadDlg_updateSquadsInfo
