@@ -1,7 +1,7 @@
 class AAS
 {
 	file = "pra3\pra3_aas\fnc";
-	
+
 	class AAS_calculateFrontline
 	{
 		description = "Determies which zones need to be attacked and defended and updates the UI accordingly.";
@@ -46,7 +46,11 @@ class AAS
 	{
 		description = "Updates the zone's marker.";
 	};
-	
+	class AAS_updateEverything
+	{
+		description = "Updates all markers and attack/defend objectives.";
+	};
+
 	class AAS_removeTickets
 	{
 		description = "Removes a certain amount of tickets from the team.";

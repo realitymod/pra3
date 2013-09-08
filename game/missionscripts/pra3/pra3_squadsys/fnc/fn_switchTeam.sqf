@@ -42,3 +42,5 @@ if (alive player) then {player setdamage 1};
 
 //Restart Dialog
 true call PRA3_fnc_squadDlg_open;
+// Update map markers to reflect the new side
+call PRA3_fnc_AAS_updateEverything;
