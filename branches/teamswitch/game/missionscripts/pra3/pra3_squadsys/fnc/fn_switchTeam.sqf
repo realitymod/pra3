@@ -39,6 +39,6 @@ PRA3_core setVariable [format["PRA3_player_side_%1", player call PRA3_fnc_getPla
 PRA3_kitSys_currentKit = "";
 
 if (alive player) then {player setdamage 1};
+
 //Restart Dialog
-closeDialog 0;
 true call PRA3_fnc_squadDlg_open;

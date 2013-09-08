@@ -141,7 +141,7 @@ var(_updateSquadInfo) =
 	// Populate list of members
 
 	var(_sortedMembers) = []; // Members sorted by rank and fireteam
-	_sortedMemebers resize (count _members);
+	_sortedMembers resize (count _members);
 	var(_i) = 0;
 	// Find SL
 	{

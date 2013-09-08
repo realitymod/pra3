@@ -2,6 +2,7 @@
 #include "scriptDefines.sqh"
 
 var(_showSpawnMap) = _this;
+if (dialog) then {closedialog 0; player sidechat "dialog closed"};
 
 if _showSpawnMap then
 {
