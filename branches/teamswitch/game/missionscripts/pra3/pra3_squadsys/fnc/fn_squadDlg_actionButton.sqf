@@ -33,4 +33,4 @@ else
 };
 
 //Refresh Dialog
-true call PRA3_fnc_squadDlg_open;
+[] call PRA3_fnc_squadDlg_updateSquadsInfo
