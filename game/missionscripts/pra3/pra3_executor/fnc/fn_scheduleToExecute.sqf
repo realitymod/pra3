@@ -12,7 +12,7 @@
 
 var(_time)  = _this select 0;
 var(_code)  = _this select 1;
-var(_param) = _this select 2;
+var(_param) = if ((count _this) > 2) then {_this select 2} else {[];
 
 var(_index) = 0;
 {
