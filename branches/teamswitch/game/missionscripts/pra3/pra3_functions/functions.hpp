@@ -98,6 +98,10 @@ class Players
 	{
 		description = "Get the maximum ammount of players for this mission.";
 	};
+	class getUnbalancedSide
+	{
+		description = "Returns the side that has an unfairly higher number of players. What is considered unfair is configured by the input parameter.";
+	};
 };
 
 class Team
