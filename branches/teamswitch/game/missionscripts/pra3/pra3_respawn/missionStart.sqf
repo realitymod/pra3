@@ -17,7 +17,7 @@ _camera cameraEffect ["INTERNAL", "BACK"];
 
 _camera camPreload 10;
 
-waitUntil {time > 0};
+waitUntil {time > 1};
 showCinemaBorder false;
 enableEnvironment false;
 
