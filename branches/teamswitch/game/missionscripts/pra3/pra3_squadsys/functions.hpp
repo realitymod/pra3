@@ -176,6 +176,9 @@ class SquadSys
 	class squadDlg_updateSquadsInfo
 	{
 	};
+	class squadDlg_refreshTeamSwitchBtns
+	{
+	};
 
 	class squadDlg_server_createSquad
 	{

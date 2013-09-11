@@ -4,43 +4,50 @@
 /**
  * Switch player team to the opposite team and vice versa
  *		(in)  nothing
- *		(out) nothing
+ *		(out) <BOOL> true when switch was performed, false otherwise
  *
  * Author: Shay_gman
  */
- 
-var(_currentTeam) 		= PRA3_core getVariable [format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],""];
-var(_newTeam)			= if ((PRA3_AAS_teams select 0) == _currentTeam) then {PRA3_AAS_teams select 1} else {PRA3_AAS_teams select 0};
-var(_maxPlayers)		= call PRA3_fnc_getMaxPlayers;
-var(_newTeamSide)		= (_newTeam call PRA3_fnc_getTeamSide);
-var(_currentTeamSide)	= (_currentTeam call PRA3_fnc_getTeamSide);
+
+var(_currentTeam)     = player call PRA3_fnc_getPlayerTeam;
+var(_newTeam)         = if ((PRA3_AAS_teams select 0) == _currentTeam) then {PRA3_AAS_teams select 1} else {PRA3_AAS_teams select 0};
+var(_maxPlayers)      = call PRA3_fnc_getMaxPlayers;
+var(_newTeamSide)     = (_newTeam call PRA3_fnc_getTeamSide);
+var(_currentTeamSide) = (_currentTeam call PRA3_fnc_getTeamSide);
 
 //check if there is room in the other side and if the other team isn't bigger by more then 4 players
-if (((playersNumber _newTeamSide) >= _maxPlayers/2) || ((playersNumber _newTeamSide) > (playersNumber _currentTeamSide) + 4)) exitWith {
-	player sidechat format ["Cannot switch team at the moment, %1 team is full!",_newTeam]; 
-	};
-	
-//If player in a squad
-if ((leader player) call PRA3_fnc_unitGetSquad != -1) then	{
+if (playersNumber _newTeamSide >= _maxPlayers/2 || {playersNumber _newTeamSide > (playersNumber _currentTeamSide) + 4}) then
+{
+	player sidechat format ["Cannot switch team at the moment, %1 team is full!",_newTeam];
+	false
+}
+else
+{
+	//If player in a squad
+	if ((leader player) call PRA3_fnc_unitGetSquad != -1) then
+	{
 		[[player, -1], "PRA3_fnc_squadDlg_server_joinSquad", false] call PRA3_fnc_MP;
 	};
-	
-//Make the switch
-var(_group) = creategroup _newTeamSide;
-[player] join _group;
-_group = grpNull;
-deleteGroup _group;
 
-//Change the new team and side in PRA3_core
-PRA3_core setVariable [format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID], _newTeam, true];
-PRA3_core setVariable [format["PRA3_player_side_%1", player call PRA3_fnc_getPlayerUID], _newTeamSide, true];
+	//Make the switch
+	var(_group) = createGroup _newTeamSide;
+	[player] join _group;
 
-//Remove current kit
-PRA3_kitSys_currentKit = "";
+	//Change the new team and side in PRA3_core to make sure all the functions work
+	PRA3_core setVariable [format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID], _newTeam, true];
+	PRA3_core setVariable [format["PRA3_player_side_%1", player call PRA3_fnc_getPlayerUID], _newTeamSide, true];
 
-if (alive player) then {player setdamage 1};
+	// Refresh dialog
+	[[[], _newTeamSide], "PRA3_fnc_squadDlg_server_refresh", false] call PRA3_fnc_MP;
+	call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
 
-//Restart Dialog
-true call PRA3_fnc_squadDlg_open;
-// Update map markers to reflect the new side
-call PRA3_fnc_AAS_updateEverything;
+	//Remove current kit
+	PRA3_kitSys_currentKit = "";
+
+	if (alive player) then {player setDamage 1};
+
+	// Update map markers to reflect the new side
+	call PRA3_fnc_AAS_updateEverything;
+
+	true
+};
