@@ -6,6 +6,7 @@
 	// Initial tickets
 	[300, 300],
 	// Capture zones
+	[
 	/*    ZONE   | SYNCH | CONNECTS TO       | INITIAL  | TICKET BLEED  */
 	/*    MARKER | TO    |   team1   team2  | OWNER    |  team1  team2 */
 		["zone0",  [    ], [[1    ],[     ]], west,      [__end, 0    ]],
@@ -25,9 +26,26 @@
 	[[0], [11]],
 	// Respawn definitons
 	[
-	/*   SPAWN     TIED */
-	/*   MARKER    TO   */
-		["spawn0", [ 0, 1]],
-		["spawn1", [10,11]]
+	/*   SPAWN   | TIED   | SAFE | CHANGE KIT OBJECT       */
+	/*   MARKER  | TO     | ZONE | OBJECT | ALLOW REDEPLOY */
+		["spawn0", [ 0, 1], true,  [box0,   true]],
+		["spawn1", [10,11], true,  [box1,   true]]
+	],
+	// Restricted areas
+	[
+	/*   MARKER       |  RESTRICT  | TIME BEFORE | PUNISH WHEN | ALLOW    | DELETE */
+	/*   ZONE         |  SIDE      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
+		["borderNorth", [west,east], 10,           false,        false,     false],
+		["borderEast",  [west,east], 10,           false,        false,     false],
+		["borderSouth", [west,east], 10,           false,        false,     false],
+		["borderWest",  [west,east], 10,           false,        false,     false],
+		["west_spawn",  [east]     , 10,           false,        true,      true],
+		["east_spawn",  [west]     , 10,           false,        true,      true]
+	],
+	// Start camera position
+	[
+		[-35446.70,97156.86,-13761.08], // Camera target
+		[2202.67,5545.74,12.78],        // Camera position
+		0.7                             // Camera FOV
 	]
 ] call compile preprocessFileLineNumbers "pra3\init.sqf";
