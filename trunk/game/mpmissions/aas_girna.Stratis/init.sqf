@@ -2,7 +2,7 @@
 
 [
 	// Opposing sides
-	[west, east],
+	["NATO", "Iran"],
 	// Initial tickets
 	[500, 500],
 	// Capture zones
@@ -22,14 +22,31 @@
 		["zone10", [],     [[   ],  [    9]], east,      [0,     0   ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
-	[[0], [10]],
+	[[0], [6]],
 	// Respawn definitons
 	[
-	/*   SPAWN     TIED */
-	/*   MARKER    TO   */
-		["spawn0", [0   ]],
-		["spawn1", [2,3 ]],
-		["spawn2", [7,8 ]],
-		["spawn3", [10  ]]
+	/*   SPAWN   | TIED | SAFE | CHANGE KIT OBJECT       */
+	/*   MARKER  | TO   | ZONE | OBJECT | ALLOW REDEPLOY */
+		["spawn0", [0  ], true,  [box0,   true]],
+		["spawn1", [1,2], false, [box1,   false]],
+		["spawn2", [4,5], false, [box2,   false]],
+		["spawn3", [6  ], true,  [box3,   true]]
+	],
+	// Restricted areas
+	[
+	/*   MARKER       |  RESTRICT  | TIME BEFORE | PUNISH WHEN | ALLOW    | DELETE */
+	/*   ZONE         |  SIDE      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
+		["borderNorth", [west,east], 10,           false,        false,     false],
+		["borderEast",  [west,east], 10,           false,        false,     false],
+		["borderSouth", [west,east], 10,           false,        false,     false],
+		["borderWest",  [west,east], 10,           false,        false,     false],
+		["west_spawn",  [east]     , 10,           false,        true,      true],
+		["east_spawn",  [west]     , 10,           false,        true,      true]
+	],
+	// Start camera position
+	[
+		[-89965.88,-28833.47,-11838.25], // Camera target
+		[3019.15,6001.51,3.38],          // Camera position
+		0.7                              // Camera FOV
 	]
 ] call compile preprocessFileLineNumbers "pra3\init.sqf";
