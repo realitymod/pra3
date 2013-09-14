@@ -6,12 +6,16 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
 		"A3_Data_F",
-		"A3_Characters_F_OPFOR"
+		"A3_Characters_F_OPFOR",
+		"A3_Weapons_F_Ammoboxes",
+		"a3_weapons_f_beta_ammoboxes"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_BLUFOR",
+		"A3_Weapons_F_Ammoboxes",
+		"a3_weapons_f_beta_ammoboxes",
 		"a3_map_stratis"
 	};
 	randomSeed=11866082;
@@ -69,7 +73,6 @@ class Mission
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -89,7 +92,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -107,7 +109,7 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="getPosATL this nearestObject 55189 setDamage 1";
+					init="getPosATL this nearestObject 76016 setDamage 1";
 				};
 			};
 		};
@@ -125,7 +127,7 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="getPosATL this nearestObject 52786 setDamage 1";
+					init="getPosATL this nearestObject 50308 setDamage 1";
 				};
 			};
 		};
@@ -144,7 +146,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -163,7 +164,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -182,7 +182,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -201,7 +200,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -220,7 +218,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -239,7 +236,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -258,7 +254,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -277,7 +272,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -296,7 +290,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -315,7 +308,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -334,7 +326,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -353,7 +344,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -372,7 +362,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -391,7 +380,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -410,7 +398,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -430,7 +417,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -450,7 +436,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -470,7 +455,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -490,7 +474,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -510,7 +493,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -530,7 +512,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -550,7 +531,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -570,7 +550,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -590,7 +569,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -610,7 +588,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -630,7 +607,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -650,7 +626,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -670,7 +645,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -690,7 +664,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -710,7 +683,6 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="[this] call compile preprocessFile ""gear.sqf""; this addEventHandler [""respawn"", {_this call compile preprocessFile ""gear.sqf""}]";
 				};
 			};
 		};
@@ -728,14 +700,38 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="getPosATL this nearestObject 52716 setDamage 1";
+					init="getPosATL this nearestObject 50238 setDamage 1";
 				};
 			};
 		};
 	};
+	class Vehicles
+	{
+		items=2;
+		class Item0
+		{
+			position[]={2237.0317,5.0481429,5810.9341};
+			azimut=12.30134;
+			id=36;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box0";
+		};
+		class Item1
+		{
+			position[]={2179.6677,6.8099999,5510.583};
+			azimut=0.28209138;
+			id=37;
+			side="EMPTY";
+			vehicle="O_supplyCrate_F";
+			skill=0.60000002;
+			text="box3";
+		};
+	};
 	class Markers
 	{
-		items=16;
+		items=22;
 		class Item0
 		{
 			position[]={2234.3718,4.5859618,5814.3926};
@@ -745,7 +741,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={2182.4348,6.8099999,5505.9766};
+			position[]={2181.9475,6.8112488,5503.5005};
 			name="respawn_east";
 			type="Empty";
 		};
@@ -881,15 +877,93 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={2182.4927,6.8099999,5505.1631};
+			position[]={2183.0667,6.8099999,5506.6821};
 			name="spawn1";
+			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
+			a=20;
+			b=20;
+			drawBorder=1;
 		};
 		class Item15
 		{
-			position[]={2234.0007,4.4639163,5815.6094};
+			position[]={2234.5715,4.6512523,5813.7412};
 			name="spawn0";
+			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
+			a=20;
+			b=20;
+			drawBorder=1;
+		};
+		class Item16
+		{
+			position[]={2479.1926,68.260689,5534.2559};
+			name="borderEast";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=200;
+			b=400;
+			angle=8.7230997;
+		};
+		class Item17
+		{
+			position[]={2233.8564,3.9421704,5820.5313};
+			name="west_spawn";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=40;
+			b=40;
+		};
+		class Item18
+		{
+			position[]={2183.8391,6.8099999,5507.3545};
+			name="east_spawn";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=50;
+			b=50;
+		};
+		class Item19
+		{
+			position[]={1883.0588,5.5,5626.4116};
+			name="borderWest";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=200;
+			b=400;
+			angle=8.7230997;
+		};
+		class Item20
+		{
+			position[]={2273.2595,0.27669024,6172.666};
+			name="borderNorth";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=500;
+			b=200;
+			angle=8.7230997;
+		};
+		class Item21
+		{
+			position[]={2089.7988,-0.0005108192,4988.3403};
+			name="borderSouth";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Grid";
+			a=500;
+			b=200;
+			angle=8.7230997;
 		};
 	};
 };
