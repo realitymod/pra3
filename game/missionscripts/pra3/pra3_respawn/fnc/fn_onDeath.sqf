@@ -1,6 +1,6 @@
 #include "scriptDefines.sqh"
 
-PRA3_AAS_respawnTime = 60;
+PRA3_AAS_respawnTime = 30;
 setPlayerRespawnTime 999999;
 
 if !(alive player) then
