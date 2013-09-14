@@ -83,129 +83,146 @@ var(_init) =
 				];
 			};
 
-			var(_createSource) =
+			if (!isNil "PRA3_debug_zoneParticles") then
 			{
-				var(_owner) = _forEachIndex call PRA3_fnc_AAS_getZoneOwner;
-				_source = "#particlesource" createVehicleLocal (_this select 0);
-				_source setParticleParams [
-					["\A3\data_f\ParticleEffects\Universal\Universal.p3d",16, 12, 13, 0],
-					"",
-					"Billboard",
-					1,
-					25,
-					[0,0,0],
-					[0,0,_this select 2],
-					0,
-					1.275,
-					1,
-					0,
-					_this select 1,
-					[
-						if (_owner == sideLogic) then {
-							[0,0,0,1]
-						} else {
-							if (_owner == playerSide) then {
-								[0,0,1,1]
+				var(_createSource) =
+				{
+					var(_owner) = _forEachIndex call PRA3_fnc_AAS_getZoneOwner;
+					_source = "#particlesource" createVehicleLocal (_this select 0);
+					_source setParticleParams [
+						["\A3\data_f\ParticleEffects\Universal\Universal.p3d",16, 12, 13, 0],
+						"",
+						"Billboard",
+						1,
+						25,
+						[0,0,0],
+						[0,0,_this select 2],
+						0,
+						1.275,
+						1,
+						0,
+						_this select 1,
+						[
+							if (_owner == sideLogic) then {
+								[0,0,0,1]
 							} else {
-								[1,0,0,1]
+								if (_owner == playerSide) then {
+									[0,0,1,1]
+								} else {
+									[1,0,0,1]
+								}
 							}
-						}
-					],
-					[1000],
-					1,
-					0,
-					"",
-					"",
-					""
-				];
-				_source setDropInterval (_this select 3);
-			};
-			[markerPos _mainMarker, [5,5], 3, 1] call _createSource;
-			if (markerShape _mainMarker == "RECTANGLE") then
-			{
-				var(_size) = markerSize _mainMarker;
-				var(_dir)  = markerDir _mainMarker;
-				var(_b) = +(_size select 1);
-				for "_a" from -(_size select 0) to (_size select 0) step 1.5 do
-				{
-					[
-						[
-							(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
-							(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
-							-1
 						],
-						[3,3],
-						0.3,
-						4
-					] call _createSource;
+						[1000],
+						1,
+						0,
+						"",
+						"",
+						""
+					];
+					_source setDropInterval (_this select 3);
 				};
-				var(_b) = -(_size select 1);
-				for "_a" from -(_size select 0) to (_size select 0) step 1.5 do
+				[markerPos _mainMarker, [5,5], 3, 1] call _createSource;
+				if (markerShape _mainMarker == "RECTANGLE") then
 				{
-					[
+					var(_size) = markerSize _mainMarker;
+					var(_dir)  = markerDir _mainMarker;
+					var(_b) = +(_size select 1);
+					for "_a" from -(_size select 0) to (_size select 0) step 1.5 do
+					{
 						[
-							(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
-							(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
-							-1
-						],
-						[3,3],
-						0.3,
-						4
-					] call _createSource;
-				};
-				var(_a) = -(_size select 0);
-				for "_b" from -(_size select 1) to (_size select 1) step 1.5 do
+							[
+								(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
+								(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
+								-1
+							],
+							[3,3],
+							0.3,
+							4
+						] call _createSource;
+					};
+					var(_b) = -(_size select 1);
+					for "_a" from -(_size select 0) to (_size select 0) step 1.5 do
+					{
+						[
+							[
+								(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
+								(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
+								-1
+							],
+							[3,3],
+							0.3,
+							4
+						] call _createSource;
+					};
+					var(_a) = -(_size select 0);
+					for "_b" from -(_size select 1) to (_size select 1) step 1.5 do
+					{
+						[
+							[
+								(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
+								(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
+								-1
+							],
+							[3,3],
+							0.3,
+							4
+						] call _createSource;
+					};
+					var(_a) = +(_size select 0);
+					for "_b" from -(_size select 1) to (_size select 1) step 1.5 do
+					{
+						[
+							[
+								(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
+								(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
+								-1
+							],
+							[3,3],
+							0.3,
+							4
+						] call _createSource;
+					};
+				}
+				else
 				{
-					[
+					var(_a) = markerSize _mainMarker select 0;
+					var(_b) = markerSize _mainMarker select 1;
+					var(_dir) = markerDir _mainMarker;
+					for "_i" from 0 to 360 step 2 do
+					{
+						var(_x) = _a * _b / sqrt(_b^2 + _a^2 * ((tan _i)^2));
+						if (_i >= 180) then {_x = -_x};
+						var(_y) = tan _i * _x;
 						[
-							(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
-							(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
-							-1
-						],
-						[3,3],
-						0.3,
-						4
-					] call _createSource;
-				};
-				var(_a) = +(_size select 0);
-				for "_b" from -(_size select 1) to (_size select 1) step 1.5 do
-				{
-					[
-						[
-							(markerPos _mainMarker select 0) - (_a * cos _dir) + (_b * sin _dir),
-							(markerPos _mainMarker select 1) + (_a * sin _dir) + (_b * cos _dir),
-							-1
-						],
-						[3,3],
-						0.3,
-						4
-					] call _createSource;
-				};
-			}
-			else
-			{
-				var(_a) = markerSize _mainMarker select 0;
-				var(_b) = markerSize _mainMarker select 1;
-				var(_dir) = markerDir _mainMarker;
-				for "_i" from 0 to 360 step 2 do
-				{
-					var(_x) = _a * _b / sqrt(_b^2 + _a^2 * ((tan _i)^2));
-					if (_i >= 180) then {_x = -_x};
-					var(_y) = tan _i * _x;
-					[
-						[
-							(markerPos _mainMarker select 0) - (_x * cos _dir) + (_y * sin _dir),
-							(markerPos _mainMarker select 1) + (_x * sin _dir) + (_y * cos _dir),
-							-1
-						],
-						[3,3],
-						0.3,
-						4
-					] call _createSource;
+							[
+								(markerPos _mainMarker select 0) - (_x * cos _dir) + (_y * sin _dir),
+								(markerPos _mainMarker select 1) + (_x * sin _dir) + (_y * cos _dir),
+								-1
+							],
+							[3,3],
+							0.3,
+							4
+						] call _createSource;
+					};
 				};
 			};
 		};
 	} forEach PRA3_AAS_zones;
+
+	PRA3_AAS_sides = [];
+	{
+		var(_side) = _x call PRA3_fnc_getTeamSide;
+		// Save player's team
+		if (playerSide == _side) then
+		{
+			PRA3_core setVariable [
+				format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
+				_x,
+				true
+			];
+		};
+	} forEach PRA3_AAS_teams;
 
 	{
 		var(_box)           = _x select 3 select 0;

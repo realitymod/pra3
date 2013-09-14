@@ -117,6 +117,6 @@ VARIANT_PISTOL call _giveWeapon;
 	};
 } forEach (_variant select VARIANT_ITEMS);
 
-_unit addUniform (_clothing select CLOTHING_UNIFORM);
+[[[_unit, _clothing select CLOTHING_UNIFORM], {_this select 0 addUniform (_this select 1)}], "BIS_fnc_spawn", true] call PRA3_fnc_MP;
 
 [[_unit, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
