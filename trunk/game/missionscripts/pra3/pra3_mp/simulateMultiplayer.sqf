@@ -1,6 +1,6 @@
 #define var(x) private #x; x
 
-/*
+/**
  * Simulates multiplayer conditions in singleplayer
  * by assigning each unit a unique identifier (UID)
  * and triggering the onPlayerConnected events.
