@@ -35,6 +35,19 @@ PRA3_AAS_respawnTime = 30;
 
 var(_init) =
 {
+	// Save player's team
+	{
+		var(_side) = _x call PRA3_fnc_getTeamSide;
+		if (playerSide == _side) then
+		{
+			PRA3_core setVariable [
+				format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
+				_x,
+				true
+			];
+		};
+	} forEach PRA3_AAS_teams;
+
 	// Initialize each zone and create markers for it
 	{
 		if isServer then
@@ -209,20 +222,6 @@ var(_init) =
 			};
 		};
 	} forEach PRA3_AAS_zones;
-
-	PRA3_AAS_sides = [];
-	{
-		var(_side) = _x call PRA3_fnc_getTeamSide;
-		// Save player's team
-		if (playerSide == _side) then
-		{
-			PRA3_core setVariable [
-				format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
-				_x,
-				true
-			];
-		};
-	} forEach PRA3_AAS_teams;
 
 	{
 		var(_box)           = _x select 3 select 0;
