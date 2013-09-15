@@ -2,6 +2,7 @@
 
 PRA3_AAS_teams = ["NATO", "Iran"]; // Opposing teams
 PRA3_core setVariable ["PRA3_AAS_tickets", [300, 300]]; // Initial tickets
+
 PRA3_AAS_zones = [
 /*    ZONE   | SYNCH | CONNECTS TO   | INITIAL | TICKET BLEED  */
 /*    MARKER | TO    |  team1 team2  | OWNER   |  team1  team2 */
@@ -22,8 +23,15 @@ PRA3_AAS_respawns = [
 	["spawn0", [0  ], [box0, true]],
 	["spawn1", [1,2], [box1, false]],
 	["spawn2", [4,5], [box2, false]],
-	["spawn3", [6  ], [box3, true]]
+	["spawn3", [6  ], [box3, true]],
+	["rallyPoint", [99], ["", false]]
 ];
+
+"rallyPoint" setMarkerAlphaLocal 0; 
+
+				   /* Distance from |  Wait Time        |  can disable         |      Time RP       | Type of RP object    |                                    Min friendly units | Min Friendly units  */
+				   /*  Enemy units   |    betwwen RP    |  the RP  if close   |    Stays active   |   WEST/EAST         |                                    Required               |        distance         */
+PRA3_rallyPoints = [50,            60,      ["MAN","CAR","TANK"],    60,   ["Land_TentDome_F","Land_TentA_F"], 3            , 20];
 
 PRA3_AAS_startCamera = [
 	[-89965.88,-28833.47,-11838.25], // Camera target

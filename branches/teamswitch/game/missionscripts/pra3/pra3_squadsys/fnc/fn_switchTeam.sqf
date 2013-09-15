@@ -29,10 +29,6 @@ else
 		[[player, -1], "PRA3_fnc_squadDlg_server_joinSquad", false] call PRA3_fnc_MP;
 	};
 
-	//Make the switch
-	var(_group) = createGroup _newTeamSide;
-	[player] join _group;
-
 	//Change the new team and side in PRA3_core to make sure all the functions work
 	PRA3_core setVariable [format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID], _newTeam, true];
 	PRA3_core setVariable [format["PRA3_player_side_%1", player call PRA3_fnc_getPlayerUID], _newTeamSide, true];
@@ -44,7 +40,12 @@ else
 	//Remove current kit
 	PRA3_kitSys_currentKit = "";
 
-	if (alive player) then {player setDamage 1};
+	if (alive player) then {
+			//Make the switch if 
+			var(_group) = createGroup _newTeamSide;
+			[player] join _group;
+			player setDamage 1;
+		};
 
 	// Update map markers to reflect the new side
 	call PRA3_fnc_AAS_updateEverything;

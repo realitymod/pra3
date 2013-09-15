@@ -694,7 +694,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 							colorSelectBackground2[] = {0.5, 0.5, 0.5, 1.0};
 						};
 
-						class InviteButton : ActionButton
+						/*class InviteButton : ActionButton
 						{
 							idc = __EVAL(990000 + 9000);
 							x = ( __grpW - 0.25) / 2;
@@ -703,7 +703,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 
 							text = "Invite selected";
 							action = "call PRA3_fnc_squadDlg_inviteButton";
-						};
+						};*/
 					};
 				};
 				#undef __lbItems
