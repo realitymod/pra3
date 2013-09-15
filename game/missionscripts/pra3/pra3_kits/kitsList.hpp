@@ -120,7 +120,7 @@ class PRA3_kits
 			class Requirements
 			{
 				type = LIMIT_SL;
-				minMembers  = 3;
+				//minMembers  = 3;
 			};
 
 			class Clothing : Clothing
@@ -394,7 +394,7 @@ class PRA3_kits
 			class Requirements
 			{
 				type = LIMIT_SL;
-				minMembers  = 3;
+				//minMembers  = 3;
 			};
 
 			class Clothing : Clothing

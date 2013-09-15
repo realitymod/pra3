@@ -425,7 +425,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			position[]={3211.1069,4.7735009,5821.6655};
@@ -538,6 +538,18 @@ class Mission
 			name="spawn2";
 			text="Western Frontline";
 			type="Empty";
+		};
+		class Item13
+		{
+			position[]={3266.7449,11.698246,5886.3701};
+			name="rallyPoint";
+			text="Squad's Rally Point";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorGrey";
+			fillName="Cross";
+			a=20;
+			b=20;
 		};
 	};
 };

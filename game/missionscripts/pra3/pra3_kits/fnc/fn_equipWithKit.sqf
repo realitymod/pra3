@@ -16,6 +16,11 @@ var(_kit)  = _this select 1;
 removeAllWeapons _unit;
 removeAllItems _unit;
 
+//Add rally point to SL
+if (["SquadLeader", _kit] call BIS_fnc_inString) then	{
+		var(_index) = _unit addaction ["<t color=""#99FF00"">Deploy Rally Point</t>", "pra3\pra3_respawn\deployRallyPoint.sqf",[], 0,false, false, "teamSwitch","vehicle _target == vehicle _this"];
+	};
+	
 // Remove all clothing to make epoch happy
 removeUniform _unit;
 removeHeadgear _unit;
