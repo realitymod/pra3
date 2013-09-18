@@ -1,4 +1,0 @@
-#define __maxPlayers 16
-#define __name "Airport"
-
-#include "pra3\description.hpp"
