@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Operation Sherwood"
+#define __name "Tale of Two Towns"
 
 #define PRA3_DEBUG
 

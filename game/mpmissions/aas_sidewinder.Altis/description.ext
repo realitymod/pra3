@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Girna Bay"
+#define __name "Sidewinder"
 
 #define PRA3_DEBUG
 
