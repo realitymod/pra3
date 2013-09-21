@@ -2,7 +2,7 @@
 
 [
 	// Opposing sides
-	["NATO", "Iran"],
+	["NATO", "AAF"],
 	// Initial tickets
 	[300, 300],
 	// Capture zones
@@ -15,7 +15,7 @@
 		["zone3",  [],     [[4,5],[1,2]], __neutral, [10,    10   ]],
 		["zone4",  [5],    [[6  ],[3  ]], __neutral, [4,     12   ]],
 		["zone5",  [4],    [[6  ],[3  ]], __neutral, [0,     __end]],
-		["zone6",  [],     [[   ],[4,5]], east,      [0,     0    ]]
+		["zone6",  [],     [[   ],[4,5]], resistance,      [0,     0    ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [6]],
@@ -32,12 +32,12 @@
 	[
 	/*   MARKER       |  RESTRICT  | TIME BEFORE | PUNISH WHEN | ALLOW    | DELETE */
 	/*   ZONE         |  SIDE      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
-		["borderNorth", [west,east], 10,           false,        false,     false],
-		["borderEast",  [west,east], 10,           false,        false,     false],
-		["borderSouth", [west,east], 10,           false,        false,     false],
-		["borderWest",  [west,east], 10,           false,        false,     false],
-		["west_spawn",  [east]     , 10,           false,        true,      true],
-		["east_spawn",  [west]     , 10,           false,        true,      true]
+		["borderNorth", [west,resistance], 10,           false,        false,     false],
+		["borderEast",  [west,resistance], 10,           false,        false,     false],
+		["borderSouth", [west,resistance], 10,           false,        false,     false],
+		["borderWest",  [west,resistance], 10,           false,        false,     false],
+		["west_spawn",  [resistance]     , 10,           false,        true,      true],
+		["resistance_spawn",  [west]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[

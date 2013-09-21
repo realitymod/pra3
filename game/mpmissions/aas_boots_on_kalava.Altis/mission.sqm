@@ -27,7 +27,8 @@ class Mission
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Soft_F_Gamma_TruckHeavy",
 		"A3_Characters_F_OPFOR",
-		"A3_Structures_F_Civ_Market"
+		"A3_Structures_F_Civ_Market",
+		"A3_Soft_F_MRAP_01"
 	};
 	addOnsAuto[]=
 	{
@@ -53,6 +54,7 @@ class Mission
 		"A3_Structures_F_Civ_Market",
 		"A3_Weapons_F_Ammoboxes",
 		"a3_weapons_f_beta_ammoboxes",
+		"A3_Soft_F_MRAP_01",
 		"a3_map_altis"
 	};
 	randomSeed=11215383;
@@ -465,10 +467,11 @@ class Mission
 				class Item0
 				{
 					position[]={3226.9226,5.6578259,12472.459};
-					azimut=169.8853;
+					azimut=169.88499;
 					id=21;
 					side="WEST";
 					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1251,7 +1254,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=176;
+		items=177;
 		class Item0
 		{
 			position[]={3738.5974,10.592783,13388.852};
@@ -2945,6 +2948,16 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
+		class Item176
+		{
+			position[]={3224.0286,3.3195739,12496.894};
+			azimut=69.787094;
+			id=241;
+			side="EMPTY";
+			vehicle="B_MRAP_01_F";
+			leader=1;
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
@@ -2989,7 +3002,7 @@ class Mission
 		class Item3
 		{
 			position[]={4617.1304,33.011921,14108.274};
-			name="zone";
+			name="zone4";
 			text="IRAN MAIN";
 			markerType="ELLIPSE";
 			type="Empty";

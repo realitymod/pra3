@@ -1084,12 +1084,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2833.9729,2.2817907,6105.4551};
-					azimut=120.221;
+					position[]={2835.4207,2.4163947,6111.396};
+					azimut=120.22134;
 					id=57;
 					side="EAST";
 					vehicle="O_Soldier_F";
-					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1103,7 +1102,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2835.4207,2.4163947,6111.396};
+					position[]={2834.9587,2.3311999,6106.9785};
 					azimut=120.22134;
 					id=58;
 					side="EAST";
@@ -1121,7 +1120,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2834.9587,2.3311999,6106.9785};
+					position[]={2832.3618,2.2502649,6106.5601};
 					azimut=120.22134;
 					id=59;
 					side="EAST";
@@ -1139,7 +1138,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2832.3618,2.2502649,6106.5601};
+					position[]={2836.1489,2.3856432,6108.5322};
 					azimut=120.22134;
 					id=60;
 					side="EAST";
@@ -1157,7 +1156,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2836.1489,2.3856432,6108.5322};
+					position[]={2837.291,2.4638245,6110.2261};
 					azimut=120.22134;
 					id=61;
 					side="EAST";
@@ -1175,7 +1174,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2837.291,2.4638245,6110.2261};
+					position[]={2834.3157,2.36005,6109.6079};
 					azimut=120.22134;
 					id=62;
 					side="EAST";
@@ -1193,8 +1192,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2834.3157,2.36005,6109.6079};
-					azimut=120.22134;
+					position[]={2833.2073,2.3003869,6108.0103};
+					azimut=120.221;
 					id=63;
 					side="EAST";
 					vehicle="O_Soldier_F";
@@ -1211,8 +1210,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2832.7505,2.2860339,6107.7817};
-					azimut=120.221;
+					position[]={2834.106,2.2864697,6105.4561};
+					azimut=120.22134;
 					id=64;
 					side="EAST";
 					vehicle="O_Soldier_F";
@@ -1224,7 +1223,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=21;
+		items=19;
 		class Item0
 		{
 			position[]={3249.6577,5.0035009,5807.583};
@@ -1311,7 +1310,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={2835.2781,2.1550202,6099.374};
+			position[]={2857.521,2.6128271,6088.9604};
 			azimut=-244.439;
 			id=73;
 			side="EMPTY";
@@ -1422,30 +1421,6 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
-		};
-		class Item19
-		{
-			position[]={3085.4138,2.4251451,5916.9038};
-			azimut=-51.315701;
-			id=84;
-			side="EMPTY";
-			vehicle="B_supplyCrate_F";
-			leader=1;
-			skill=0.60000002;
-			text="box1";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
-		};
-		class Item20
-		{
-			position[]={2908.3003,3.3499999,6041.3081};
-			azimut=-51.315701;
-			id=85;
-			side="EMPTY";
-			vehicle="B_supplyCrate_F";
-			leader=1;
-			skill=0.60000002;
-			text="box2";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
 		};
 	};
 	class Markers
