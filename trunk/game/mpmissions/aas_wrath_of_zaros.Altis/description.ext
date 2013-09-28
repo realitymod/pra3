@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Agia Marina"
+#define __name "Wrath of Zaros"
 
 #define PRA3_DEBUG
 
