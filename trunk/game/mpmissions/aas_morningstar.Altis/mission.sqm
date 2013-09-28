@@ -9,7 +9,6 @@ class Mission
 		"A3_Structures_F_Walls",
 		"A3_Structures_F_Mil_Cargo",
 		"A3_Structures_F_Ind_Cargo",
-		"A3_Structures_F_Civ_Camping",
 		"A3_Structures_F_Civ_Constructions",
 		"A3_Structures_F_Items_Vessels",
 		"A3_Characters_F_OPFOR",
@@ -2335,14 +2334,14 @@ class Mission
 		class Item109
 		{
 			position[]={25046.309,1.6154224,23422.027};
-			azimut=-151.54008;
+			azimut=-151.53999;
 			id=174;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			leader=1;
 			skill=0.60000002;
 			text="box3";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item110
 		{
@@ -2354,7 +2353,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box0";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item111
 		{

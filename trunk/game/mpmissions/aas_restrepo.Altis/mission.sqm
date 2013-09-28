@@ -18,7 +18,6 @@ class Mission
 		"A3_Structures_F_Furniture",
 		"A3_Weapons_F_Ammoboxes",
 		"a3_weapons_f_beta_ammoboxes",
-		"A3_Characters_F_OPFOR",
 		"A3_Structures_F_Mil_Shelters",
 		"A3_Characters_F_INDEP"
 	};
@@ -6082,7 +6081,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box0";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item428
 		{
@@ -6166,7 +6165,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box3";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item436
 		{
@@ -6972,14 +6971,14 @@ class Mission
 		class Item507
 		{
 			position[]={9051.5273,41.426811,14358.993};
-			azimut=332.80463;
+			azimut=332.80499;
 			id=572;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			leader=1;
 			skill=0.60000002;
 			text="box1";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item508
 		{
@@ -6991,7 +6990,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box2";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item509
 		{
