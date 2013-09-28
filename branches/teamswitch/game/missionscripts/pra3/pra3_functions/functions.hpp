@@ -116,6 +116,10 @@ class Team
 	{
 		description = "Returns the team's name.";
 	};
+	class getTeamRallyPoint
+	{
+		description = "Returns the rally point model for the given team.";
+	};
 	class getTeamSide
 	{
 		description = "Returns the side the team belongs to.";
