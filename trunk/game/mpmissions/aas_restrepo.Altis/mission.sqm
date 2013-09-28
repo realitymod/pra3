@@ -700,7 +700,7 @@ class Mission
 					azimut=-169.319;
 					id=33;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -718,7 +718,7 @@ class Mission
 					azimut=-169.31889;
 					id=34;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -736,7 +736,7 @@ class Mission
 					azimut=-169.31889;
 					id=35;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -754,7 +754,7 @@ class Mission
 					azimut=-169.31889;
 					id=36;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -772,7 +772,7 @@ class Mission
 					azimut=-169.31889;
 					id=37;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -790,7 +790,7 @@ class Mission
 					azimut=-169.31889;
 					id=38;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -808,7 +808,7 @@ class Mission
 					azimut=-169.31889;
 					id=39;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -826,7 +826,7 @@ class Mission
 					azimut=-169.31889;
 					id=40;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -844,7 +844,7 @@ class Mission
 					azimut=-169.31889;
 					id=41;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -862,7 +862,7 @@ class Mission
 					azimut=-169.31889;
 					id=42;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -880,7 +880,7 @@ class Mission
 					azimut=-169.31889;
 					id=43;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -898,7 +898,7 @@ class Mission
 					azimut=-169.31889;
 					id=44;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -916,7 +916,7 @@ class Mission
 					azimut=-169.31889;
 					id=45;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -934,7 +934,7 @@ class Mission
 					azimut=-169.31889;
 					id=46;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -952,7 +952,7 @@ class Mission
 					azimut=-169.31889;
 					id=47;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -970,7 +970,7 @@ class Mission
 					azimut=-169.31889;
 					id=48;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -988,7 +988,7 @@ class Mission
 					azimut=-169.31889;
 					id=49;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1006,7 +1006,7 @@ class Mission
 					azimut=-169.31889;
 					id=50;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1024,7 +1024,7 @@ class Mission
 					azimut=-169.31889;
 					id=51;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1042,7 +1042,7 @@ class Mission
 					azimut=-169.31889;
 					id=52;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1060,7 +1060,7 @@ class Mission
 					azimut=-169.31889;
 					id=53;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1078,7 +1078,7 @@ class Mission
 					azimut=-169.31889;
 					id=54;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1096,7 +1096,7 @@ class Mission
 					azimut=-169.31889;
 					id=55;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1114,7 +1114,7 @@ class Mission
 					azimut=-169.31889;
 					id=56;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1132,7 +1132,7 @@ class Mission
 					azimut=-169.31889;
 					id=57;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1150,7 +1150,7 @@ class Mission
 					azimut=-169.31889;
 					id=58;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1168,8 +1168,7 @@ class Mission
 					azimut=-169.319;
 					id=59;
 					side="GUER";
-					vehicle="I_soldier_F";
-					player="PLAYER COMMANDER";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1187,7 +1186,7 @@ class Mission
 					azimut=-169.31889;
 					id=60;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1205,7 +1204,7 @@ class Mission
 					azimut=-169.31889;
 					id=61;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1223,7 +1222,7 @@ class Mission
 					azimut=-169.31889;
 					id=62;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1241,7 +1240,7 @@ class Mission
 					azimut=-169.31889;
 					id=63;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1259,7 +1258,7 @@ class Mission
 					azimut=-169.31889;
 					id=64;
 					side="GUER";
-					vehicle="I_soldier_F";
+					vehicle="I_Soldier_F";					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
