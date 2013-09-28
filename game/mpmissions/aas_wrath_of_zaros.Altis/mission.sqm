@@ -1854,26 +1854,26 @@ class Mission
 		class Item69
 		{
 			position[]={8903.8672,20.164778,12343.03};
-			azimut=-78.924522;
+			azimut=-78.9245;
 			id=134;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			leader=1;
 			skill=0.60000002;
 			text="box3";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item70
 		{
 			position[]={9473.0293,15.438843,11305.214};
-			azimut=-67.188393;
+			azimut=-67.1884;
 			id=135;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			leader=1;
 			skill=0.60000002;
 			text="box0";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item71
 		{
@@ -1885,19 +1885,19 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box1";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item72
 		{
 			position[]={9054.9111,22.546228,11816.741};
-			azimut=-150.25255;
+			azimut=-150.25301;
 			id=137;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			leader=1;
 			skill=0.60000002;
 			text="box2";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item73
 		{

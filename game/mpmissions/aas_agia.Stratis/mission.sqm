@@ -1296,7 +1296,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box0";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item7
 		{
@@ -1380,7 +1380,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="box3";
-			init="clearMagazineCargo this; clearWeaponCargo this;";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 		class Item15
 		{
