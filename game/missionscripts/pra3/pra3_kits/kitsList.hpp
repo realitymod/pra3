@@ -19,15 +19,17 @@ class PRA3_teams
 {
 	class NATO
 	{
-		side = SIDE_WEST;
-		name = "NATO";
-		flag = "\A3\Data_F\Flags\Flag_nato_CO.paa";
+		side       = SIDE_WEST;
+		name       = "NATO";
+		flag       = "\A3\Data_F\Flags\Flag_nato_CO.paa";
+		rallyPoint = "Land_TentDome_F";
 	};
 	class Iran
 	{
-		side = SIDE_EAST;
-		name = "Iran";
-		flag = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+		side       = SIDE_EAST;
+		name       = "Iran";
+		flag       = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+		rallyPoint = "Land_TentA_F";
 	};
 };
 
