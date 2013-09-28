@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Maxwell"
+#define __name "PR:A3 - Maxwell"
 
 #define PRA3_DEBUG
 

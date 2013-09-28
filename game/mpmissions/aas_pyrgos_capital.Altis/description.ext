@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Pyrgos Capital"
+#define __name "PR:A3 - Pyrgos Capital"
 
 #define PRA3_DEBUG
 

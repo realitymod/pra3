@@ -234,11 +234,11 @@ var(_init) =
 
 		if _allowRedeploy then
 		{
-			_box addAction ["Redeploy/Change kit", "pra3\pra3_respawn\redeploy.sqf"];
+			_box addAction ["<t color=""#99FF00"">REDEPLOY / KIT SELECTION</t>", "pra3\pra3_respawn\redeploy.sqf"];
 		}
 		else
 		{
-			_box addAction ["Change kit", "pra3\pra3_respawn\changeKit.sqf"];
+			_box addAction ["<t color=""#99FF00"">KIT SELECTION</t>", "pra3\pra3_respawn\changeKit.sqf"];
 		};
 	} forEach PRA3_AAS_respawns;
 
