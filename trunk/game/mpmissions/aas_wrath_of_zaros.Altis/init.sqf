@@ -24,8 +24,8 @@
 	/*   SPAWN   | TIED | SAFE | CHANGE KIT OBJECT       */
 	/*   MARKER  | TO   | ZONE | OBJECT | ALLOW REDEPLOY */
 		["spawn0", [0  ], true,  [box0,   true]],
-		["spawn1", [1,2], false, [box1,   false]],
-		["spawn2", [4,5], false, [box2,   false]],
+		//["spawn1", [1,2], false, [box1,   false]],
+		//["spawn2", [4,5], false, [box2,   false]],
 		["spawn3", [6  ], true,  [box3,   true]]
 	],
 	// Restricted areas
