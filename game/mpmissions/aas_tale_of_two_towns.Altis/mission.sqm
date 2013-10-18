@@ -3712,7 +3712,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=21;
+		items=19;
 		class Item0
 		{
 			position[]={16667.258,17.538416,16102.059};
@@ -3797,35 +3797,22 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={16053.943,42.894444,18611.791};
-			name="respawn_west";
-			type="Empty";
-		};
-		class Item9
-		{
-			position[]={17613.982,15.967959,14991.214};
-			name="respawn_east";
-			type="Empty";
-			angle=-173.04102;
-		};
-		class Item10
-		{
-			position[]={16052.322,42.896851,18614.674};
+			position[]={16062.174,43.146564,18605.791};
 			name="spawn0";
 			type="Empty";
 			fillName="Border";
 			drawBorder=1;
 		};
-		class Item11
+		class Item9
 		{
-			position[]={17611.289,15.918974,14999.338};
+			position[]={17614.318,15.872365,14984.358};
 			name="spawn3";
 			type="Empty";
 			fillName="Border";
 			angle=-173.04102;
 			drawBorder=1;
 		};
-		class Item12
+		class Item10
 		{
 			position[]={16384.734,0.097032577,14162.292};
 			name="borderSouth";
@@ -3836,7 +3823,7 @@ class Mission
 			a=3000;
 			b=600;
 		};
-		class Item13
+		class Item11
 		{
 			position[]={16380.881,20.63835,19341.342};
 			name="borderNorth_1";
@@ -3847,7 +3834,7 @@ class Mission
 			a=3000;
 			b=600;
 		};
-		class Item14
+		class Item12
 		{
 			position[]={18778.01,34.021233,16756.609};
 			name="borderEast";
@@ -3859,7 +3846,7 @@ class Mission
 			b=600;
 			angle=-89.9543;
 		};
-		class Item15
+		class Item13
 		{
 			position[]={12794.719,85.00927,16739.873};
 			name="borderWest";
@@ -3871,7 +3858,7 @@ class Mission
 			b=600;
 			angle=-89.9543;
 		};
-		class Item16
+		class Item14
 		{
 			position[]={16056.079,47.166225,18506.434};
 			name="west_spawn";
@@ -3881,7 +3868,7 @@ class Mission
 			a=400;
 			b=400;
 		};
-		class Item17
+		class Item15
 		{
 			position[]={17465.588,22.74416,15162.831};
 			name="east_spawn";
@@ -3891,14 +3878,14 @@ class Mission
 			a=400;
 			b=400;
 		};
-		class Item18
+		class Item16
 		{
 			position[]={12457.99,72.869827,20313.725};
 			name="Creator";
 			text="Community Mission by Steeps";
 			type="mil_box";
 		};
-		class Item19
+		class Item17
 		{
 			position[]={16262.442,10.88269,16006.014};
 			name="spawn2";
@@ -3907,7 +3894,7 @@ class Mission
 			a=0.75;
 			b=0.75;
 		};
-		class Item20
+		class Item18
 		{
 			position[]={15434.183,19.753145,17784.936};
 			name="spawn1";
