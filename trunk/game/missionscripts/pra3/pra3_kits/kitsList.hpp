@@ -587,7 +587,7 @@ class PRA3_kits
 				{
 					class Primary : Primary
 					{
-						weapon      = "srifle_EBR_F";
+						weapon      = "srifle_DMR_01_DMS_F";
 						optics      = "optic_Arco";
 						magazines[] = {{"20Rnd_762x51_Mag", 8}};
 					};

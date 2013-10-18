@@ -2432,7 +2432,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=17;
+		items=15;
 		class Item0
 		{
 			position[]={24657.275,18.079582,23177.352};
@@ -2490,7 +2490,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={25062.525,1.3576343,23433.611};
+			position[]={25059.852,2.0751295,23425.584};
 			name="spawn3";
 			type="Empty";
 		};
@@ -2571,12 +2571,6 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={25057.809,1.3672192,23433.219};
-			name="respawn_east";
-			type="Empty";
-		};
-		class Item14
-		{
 			position[]={25054.303,2.4258375,23402.971};
 			name="east_spawn";
 			markerType="ELLIPSE";
@@ -2585,18 +2579,12 @@ class Mission
 			a=100;
 			b=100;
 		};
-		class Item15
+		class Item14
 		{
 			position[]={22340.133,-185.34161,25112.654};
 			name="Creator";
 			text="Community Mission by MrTimn";
 			type="mil_box";
-		};
-		class Item16
-		{
-			position[]={23832.549,63.099094,22284.756};
-			name="respawn_west";
-			type="Empty";
 		};
 	};
 };

@@ -1615,7 +1615,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=18;
+		items=16;
 		class Item0
 		{
 			position[]={21595.959,19.334614,21279.334};
@@ -1702,7 +1702,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={23637.395,63.810322,21540.809};
+			position[]={23635.029,63.966564,21551.436};
 			name="spawn3";
 			type="Empty";
 		};
@@ -1764,12 +1764,6 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={23640.77,64.128403,21543.598};
-			name="respawn_east";
-			type="Empty";
-		};
-		class Item15
-		{
 			position[]={23605.443,62.031536,21550};
 			name="east_spawn";
 			markerType="ELLIPSE";
@@ -1778,18 +1772,12 @@ class Mission
 			a=100;
 			b=100;
 		};
-		class Item16
+		class Item15
 		{
 			position[]={20254.092,-0.14944446,23766.727};
 			name="Creator";
 			text="Community Mission by Mayr";
 			type="mil_box";
-		};
-		class Item17
-		{
-			position[]={21594.258,19.337519,21275.379};
-			name="respawn_west";
-			type="Empty";
 		};
 	};
 };

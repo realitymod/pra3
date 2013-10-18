@@ -2969,7 +2969,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=18;
+		items=16;
 		class Item0
 		{
 			position[]={3928.0984,16.50687,13594.345};
@@ -3043,25 +3043,13 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={3232.2483,5.7127314,12466.809};
-			name="respawn_west";
-			type="Empty";
-		};
-		class Item8
-		{
-			position[]={4581.6528,34.93705,14083.821};
-			name="respawn_east";
-			type="Empty";
-		};
-		class Item9
-		{
-			position[]={3227.8606,5.576807,12473.305};
+			position[]={3238.999,6.2352028,12459.828};
 			name="spawn0";
 			type="Empty";
 			fillName="Border";
 			drawBorder=1;
 		};
-		class Item10
+		class Item8
 		{
 			position[]={4592.2104,34.428574,14091.441};
 			name="spawn3";
@@ -3069,7 +3057,7 @@ class Mission
 			fillName="Border";
 			drawBorder=1;
 		};
-		class Item11
+		class Item9
 		{
 			position[]={4002.3611,23.821724,11587.167};
 			name="borderSouth";
@@ -3080,7 +3068,7 @@ class Mission
 			a=1000;
 			b=600;
 		};
-		class Item12
+		class Item10
 		{
 			position[]={4003.2207,0,15007.909};
 			name="borderNorth";
@@ -3091,7 +3079,7 @@ class Mission
 			a=1000;
 			b=600;
 		};
-		class Item13
+		class Item11
 		{
 			position[]={5596.7119,88.452286,13303.165};
 			name="borderEast";
@@ -3103,7 +3091,7 @@ class Mission
 			b=600;
 			angle=-89.9543;
 		};
-		class Item14
+		class Item12
 		{
 			position[]={2403.4912,0.10453402,13303.246};
 			name="borderWest";
@@ -3115,7 +3103,7 @@ class Mission
 			b=600;
 			angle=-89.9543;
 		};
-		class Item15
+		class Item13
 		{
 			position[]={3276.6101,7.1053076,12470.357};
 			name="west_spawn";
@@ -3125,7 +3113,7 @@ class Mission
 			a=250;
 			b=250;
 		};
-		class Item16
+		class Item14
 		{
 			position[]={4609.1973,33.883846,14100.718};
 			name="east_spawn";
@@ -3135,7 +3123,7 @@ class Mission
 			a=250;
 			b=250;
 		};
-		class Item17
+		class Item15
 		{
 			position[]={1872.4369,-0.06525968,15723.015};
 			name="Creator";
