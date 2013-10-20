@@ -1615,7 +1615,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			position[]={21595.959,19.334614,21279.334};
@@ -1778,6 +1778,22 @@ class Mission
 			name="Creator";
 			text="Community Mission by Mayr";
 			type="mil_box";
+		};
+		class Item16
+		{
+			position[]={23636.148,64.069214,21552.281};
+			name="respawn_east";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
+		};
+		class Item17
+		{
+			position[]={21593.213,19.345463,21269.703};
+			name="respawn_west";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
 		};
 	};
 };

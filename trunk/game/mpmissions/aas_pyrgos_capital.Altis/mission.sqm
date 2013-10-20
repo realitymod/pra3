@@ -3098,7 +3098,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			position[]={16591.633,11,12795.114};
@@ -3267,6 +3267,22 @@ class Mission
 			name="Mission Creator";
 			text="Community Mission by Steeps";
 			type="mil_box";
+		};
+		class Item16
+		{
+			position[]={17220.58,15.782332,13153.25};
+			name="respawn_east";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
+		};
+		class Item17
+		{
+			position[]={16815.807,4.7879663,12051.358};
+			name="respawn_west";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
 		};
 	};
 };
