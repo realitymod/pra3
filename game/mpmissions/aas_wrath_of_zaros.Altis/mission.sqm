@@ -1952,7 +1952,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			position[]={9160.0576,16.363457,11992.666};
@@ -2112,6 +2112,22 @@ class Mission
 			name="Creator";
 			text="Community Mission by Seraph";
 			type="mil_box";
+		};
+		class Item16
+		{
+			position[]={9473.7148,15.470926,11318.026};
+			name="respawn_west";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
+		};
+		class Item17
+		{
+			position[]={9194.4082,14.815503,12459.385};
+			name="respawn_east";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
 		};
 	};
 };

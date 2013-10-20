@@ -2731,7 +2731,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=14;
+		items=16;
 		class Item0
 		{
 			position[]={3138.884,91.511459,1606.8291};
@@ -2870,6 +2870,22 @@ class Mission
 			name="Creator";
 			text="Mission Creator: igno2k";
 			type="mil_box";
+		};
+		class Item14
+		{
+			position[]={3312.3254,152.04832,2369.3906};
+			name="respawn_east";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
+		};
+		class Item15
+		{
+			position[]={3136.5879,91.277466,1601.9199};
+			name="respawn_west";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
 		};
 	};
 };

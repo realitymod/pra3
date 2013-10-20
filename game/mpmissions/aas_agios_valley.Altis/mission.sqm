@@ -8358,7 +8358,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=17;
+		items=19;
 		class Item0
 		{
 			position[]={8919.8535,132.62965,16650.924};
@@ -8530,6 +8530,22 @@ class Mission
 			position[]={8914.6582,132.53659,16650.193};
 			name="spawn3";
 			type="Empty";
+		};
+		class Item17
+		{
+			position[]={9492.2295,44.081177,14052.566};
+			name="respawn_west";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
+		};
+		class Item18
+		{
+			position[]={8912.5127,132.66936,16652.031};
+			name="respawn_east";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
 		};
 	};
 };

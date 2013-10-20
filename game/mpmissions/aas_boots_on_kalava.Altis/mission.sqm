@@ -2969,7 +2969,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			position[]={3928.0984,16.50687,13594.345};
@@ -3129,6 +3129,22 @@ class Mission
 			name="Creator";
 			text="Community Mission by Caterpillar";
 			type="mil_box";
+		};
+		class Item16
+		{
+			position[]={3241.5996,6.2628098,12460.213};
+			name="respawn_west";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
+		};
+		class Item17
+		{
+			position[]={4589.7285,34.584099,14089.741};
+			name="respawn_east";
+			type="Empty";
+			fillName="Border";
+			drawBorder=1;
 		};
 	};
 };
