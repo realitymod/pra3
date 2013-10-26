@@ -89,7 +89,7 @@ while {true} do
 						};
 					};
 				};
-			} forEach ((getMarkerPos _marker) nearEntities ["Man", _dist]);
+			} forEach ((getMarkerPos _marker) nearEntities ["CAManBase", _dist]);
 
 			// Determine which side is attacking
 			{

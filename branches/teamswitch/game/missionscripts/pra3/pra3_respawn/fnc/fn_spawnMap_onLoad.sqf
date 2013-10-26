@@ -16,7 +16,7 @@ if (isNil "PRA3_spawnMapMousePos") then
 	PRA3_spawnMapMousePos = [0,0];
 };
 
-if (PRA3_selectedSpawn == "") then
+if (count PRA3_selectedSpawn == 0) then
 {
 	call PRA3_fnc_spawnMap_selectNoSpawn;
 }
