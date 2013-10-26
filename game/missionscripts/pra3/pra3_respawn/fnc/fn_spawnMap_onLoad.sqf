@@ -23,7 +23,7 @@ if (count PRA3_selectedSpawn == 0) then
 else
 {
 	{
-		if (_x select 0 == PRA3_selectedSpawn) exitWith
+		if ([_x, PRA3_selectedSpawn] call PRA3_fnc_areEqual) exitWith
 		{
 			call PRA3_fnc_spawnMap_populateSpawnLocations;
 			ctrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
