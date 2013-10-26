@@ -20,7 +20,7 @@ else
 			isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlgRespawn", displayNull])}
 		};
 
-		if (PRA3_selectedSpawn != "") then
+		if (count PRA3_selectedSpawn > 0) then
 		{
 			if (PRA3_selectedSpawn != _this) then
 			{

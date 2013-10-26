@@ -23,8 +23,7 @@ PRA3_AAS_respawns = [
 	["spawn0", [0  ], [box0, true]],
 	["spawn1", [1,2], [box1, false]],
 	["spawn2", [4,5], [box2, false]],
-	["spawn3", [6  ], [box3, true]],
-	["rallyPoint", [99], ["", false]]
+	["spawn3", [6  ], [box3, true]]
 ];
 
 "rallyPoint" setMarkerAlphaLocal 0; 

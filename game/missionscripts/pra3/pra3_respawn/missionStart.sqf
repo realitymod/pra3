@@ -1,6 +1,6 @@
 PRA3_AAS_prepareTime = 15;
 
-PRA3_selectedSpawn = "";
+PRA3_selectedSpawn     = [];
 PRA3_kitSys_currentKit = "";
 
 #define ctrl(idc) (uiNamespace getVariable "PRA3_respawn_startScreen" displayCtrl idc)
@@ -56,7 +56,7 @@ ctrl(10) ctrlSetStructuredText parseText "The mission has begun...";
 ctrl(30) ctrlShow false;
 
 waitUntil {
-	PRA3_selectedSpawn != "" && {
+	count PRA3_selectedSpawn > 0 && {
 		PRA3_kitSys_currentKit != "" && {
 			isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && {
 				isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlgRespawn", displayNull])

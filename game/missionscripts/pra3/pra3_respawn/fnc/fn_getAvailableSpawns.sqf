@@ -1,4 +1,13 @@
-// TODO: Extend logic to rally points
+#include "scriptDefines.sqh"
+#include "defines.sqh"
 
-// TODO: Decide what to call based on the game mode, for now all we have is AAS:
-_this call PRA3_fnc_AAS_getAvailableSpawns;
+var(_spawns) = [];
+
+{
+	if ([_this, _x] call PRA3_fnc_isSpawnAvailable) then
+	{
+		_spawns set [count _spawns, _x];
+	};
+} forEach call PRA3_fnc_getSpawnPoints;
+
+_spawns
