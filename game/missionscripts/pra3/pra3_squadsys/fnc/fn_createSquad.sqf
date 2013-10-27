@@ -20,7 +20,6 @@ if (isServer) then
 	{
 		_leaderUnit = _this;
 		_leaderId = _this call PRA3_fnc_getPlayerUID;
-
 	}
 	else
 	{
@@ -58,11 +57,17 @@ if (isServer) then
 			PRA3_core setVariable [
 				format["PRA3_squadSys_squad_%1", _id],
 				[
-					[[_leaderID, 10]],		//0: Members
-					"",						//1: Optional name
-					8,						//2: Squad size limit
-					false,					//3: Squad locked
-					_group					//4: Arma group
+					[[_leaderID, 10]],                    //0: Members
+					"",                                   //1: Optional name
+					8,                                    //2: Squad size limit
+					false,                                //3: Squad locked
+					_group,                               //4: Arma group
+					objNull,                              //5: Rallypoint
+					if (time > NO_COOLDOWN_BEFORE) then { //6: Rallypoint available at
+						time + RALLYPOINT_COOLDOWN
+					} else {
+						0
+					}
 				],
 				true
 			];

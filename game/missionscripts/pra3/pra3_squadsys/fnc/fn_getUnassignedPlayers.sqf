@@ -4,7 +4,7 @@
  * Returns an array of unassigned players for the given side.
  *
  *		(in)  <SIDE> Side
- *		(out) <ARRAY> Unnasigned players' UIDs
+ *		(out) <ARRAY> Unassigned players' UIDs
  */
 
 var(_units) = call PRA3_fnc_getConnectedPlayers;

@@ -64,3 +64,11 @@
 
 #define __ctrl(idc) \
 	(uiNamespace getVariable (if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {"Rsc_PRA3_squadSys_manageDlgRespawn"} else {"Rsc_PRA3_squadSys_manageDlg"}) displayCtrl (idc))
+
+// TODO: This is replicated in pra_respawn, merge this for addon release
+// How long you have to wait before deploying a new RP.
+#define RALLYPOINT_COOLDOWN (5*60)
+// New squads will have the cooldown applied unless they are created less than NO_COOLDOWN_BEFORE after the mission start.
+// We want to prevent exploit where players could create a new squad to gain access to RP immediatelly.
+// At the same time we don't want this restriction for squads created at the start of the game.
+#define NO_COOLDOWN_BEFORE (3*60)

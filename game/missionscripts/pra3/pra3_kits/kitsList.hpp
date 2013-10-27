@@ -132,6 +132,8 @@ class PRA3_kits
 				vest     = "V_PlateCarrier1_rgr";
 			};
 
+			abilities[] = {"rallyPoint"};
+
 			class Variants : Variants
 			{
 				class Variant1 : Variant1
@@ -406,6 +408,8 @@ class PRA3_kits
 				vest     = "V_PlateCarrierIA1_dgtl";
 			};
 
+			abilities[] = {"rallyPoint"};
+
 			class Variants : Variants
 			{
 				class Variant1 : Variant1
@@ -476,7 +480,6 @@ class PRA3_kits
 				};
 			};
 		};
-
 		class Machinegunner_IN : Rifleman_IN
 		{
 			name = "Automatic Rifleman";

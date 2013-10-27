@@ -117,7 +117,8 @@ for "_i" from 0 to (count _cfg - 1) do
 	/* KIT_AVAILABLEAT  */ getArray(_kit >> "availableAt"),
 	/* KIT_CLOTHING     */ _clothing,
 	/* KIT_VARIANTS     */ _variants,
-	/* KIT_VARIANT_CURR */ 0
+	/* KIT_VARIANT_CURR */ 0,
+	/* KIT_ABILITIES    */ getArray(_kit >> "abilities")
 			]
 		];
 	};

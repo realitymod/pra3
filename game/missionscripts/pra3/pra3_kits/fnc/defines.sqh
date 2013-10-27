@@ -35,6 +35,7 @@
 	#define VARIANT_EXPLOSIVES	6
 	#define VARIANT_ITEMS		7
 #define KIT_VARIANT_CURR	8
+#define KIT_ABILITIES		9
 
 
 #define LIMIT_NO		0

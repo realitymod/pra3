@@ -5,23 +5,12 @@
 // _index - The Rally point action index (not used atm, might be used later if we don't want the action to stay after building a RP
 // Author: Shat_gman
 //*******************************
-var(_caller) = _this select 0;
-var(_index)  = _this select 2;
+var(_caller) = _this;
 
 #define CHECK_TYPES     ["CAManBase"]
 #define CHECK_DISTANCE  50
 #define REQUIRE_MEMBERS 3
 #define REQUIRE_DISTANCE 10
-
-if (isnil "PRA3_RPTime") then {PRA3_RPTime = time - (PRA3_rallyPoints select 1)};
-
-if (abs(time - PRA3_RPTime) < (PRA3_rallyPoints select 1)) exitWith
-{
-	PRA3_core globalChat format [
-		"Rally Point will be available in %1 seconds",
-		(PRA3_rallyPoints select 1) - (abs(time - PRA3_RPTime))
-	];
-};
 
 var(_team)  = _caller call PRA3_fnc_getPlayerTeam;
 var(_squad) = _caller call PRA3_fnc_unitGetSquad;
@@ -51,7 +40,7 @@ var(_safeSpawn) = true;
 
 if !_safeSpawn exitWith
 {
-	PRA3_core globalChat "Cannot deploy rally point: Hostile forces nearby "
+	PRA3_core globalChat "Cannot deploy rally point: Hostile forces nearby"
 };
 
 //Create the RP and set the variable
@@ -62,3 +51,5 @@ PRA3_RPTime = time;
 _rp setVariable ["PRA3_rally_deployTime", time, true];
 _rp setVariable ["PRA3_rally_squad", _squad, true];
 _rp setVariable ["PRA3_rally_tickets", count (_squad call PRA3_fnc_squadGetMembers), true];
+
+[[_squad, _rp], "PRA3_fnc_squadRegisterRallypoint", false] call PRA3_fnc_MP;
