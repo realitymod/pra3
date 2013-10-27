@@ -6,6 +6,10 @@ class Respawn
 	{
 		description = "Returns a list of all spawn points in the mission.";
 	};
+	class getRallyPoints
+	{
+		description = "Returns a list of all rally points that are currently deployed.";
+	};
 	class isSpawnAvailable
 	{
 		description = "Checks if the unit can spawn at the given spawn point.";

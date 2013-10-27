@@ -13,9 +13,17 @@ if (_id == 0) then // Leaving own squad
 }
 else
 {
-	if (_id == 99) then // Creating new squad
+	if (_id == 99) then // Creating new squad or placing a rally point
 	{
-		[player, "PRA3_fnc_squadDlg_server_createSquad", false] call PRA3_fnc_MP;
+		if (player call PRA3_fnc_unitGetSquad == -1) then
+		{
+			[player, "PRA3_fnc_squadDlg_server_createSquad", false] call PRA3_fnc_MP;
+		}
+		else
+		{
+			closeDialog 0;
+			player call compile preprocessFileLineNumbers "pra3\pra3_respawn\deployRallyPoint.sqf";
+		};
 	}
 	else // Joining a squad
 	{

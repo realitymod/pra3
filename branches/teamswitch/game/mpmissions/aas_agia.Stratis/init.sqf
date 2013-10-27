@@ -26,12 +26,6 @@ PRA3_AAS_respawns = [
 	["spawn3", [6  ], [box3, true]]
 ];
 
-"rallyPoint" setMarkerAlphaLocal 0; 
-
-				   /* Distance from |  Wait Time        |  can disable         |      Time RP       | Type of RP object    |                                    Min friendly units | Min Friendly units  */
-				   /*  Enemy units   |    betwwen RP    |  the RP  if close   |    Stays active   |   WEST/EAST         |                                    Required               |        distance         */
-PRA3_rallyPoints = [50,            60,      ["MAN","CAR","TANK"],    60,   ["Land_TentDome_F","Land_TentA_F"], 3            , 20];
-
 PRA3_AAS_startCamera = [
 	[-89965.88,-28833.47,-11838.25], // Camera target
 	[3019.15,6001.51,3.38],          // Camera position

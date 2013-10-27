@@ -10,7 +10,9 @@ switch (_spawn select 0) do
 {
 	case SPAWN_RALLYPOINT:
 	{
-		
+		var(_rally) = _params select 0;
+
+		_unit call PRA3_fnc_unitGetSquad == (_rally getVariable "PRA3_rally_squad")
 	};
 	case SPAWN_ZONE:
 	{
