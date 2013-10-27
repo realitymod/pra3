@@ -58,13 +58,13 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			y = safeZoneY + __spaceY + 0.01;
 			w = 0.32;
 			style = ST_LEFT;
-			text = "RESPAWN LOCATION";
+			text = ""; //Removed "Respawn Location" text for new timer and ticket displays.
 		};
 		class TitleSpawnTime : TitleSpawn
 		{
 			idc = IDC_KITDLG_SPAWNMAP_TIME;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + __mapW - 0.18;
-			w = 0.15;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX + 0.76;
+			w = 0.18;
 			text = "01:27.93";
 		};
 

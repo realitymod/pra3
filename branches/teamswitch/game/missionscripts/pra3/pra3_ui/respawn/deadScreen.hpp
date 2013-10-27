@@ -2,7 +2,7 @@ class PRA3_respawn_deadScreen
 {
 	idd = -1;
 	duration = 1e+1000;
-	fadeIn = 0;
+	fadeIn = 0.5;
 	fadeOut = 0;
 	name = "PRA3_respawn_deadScreen";
 	onLoad = "uiNamespace setVariable [""PRA3_respawn_deadScreen"", _this select 0]";
