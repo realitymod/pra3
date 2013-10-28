@@ -28,7 +28,8 @@ if (!isDedicated) then
 			];
 			_marker setMarkerShapeLocal "ICON";
 			_marker setMarkerTypeLocal "mil_objective";
-			_marker setMarkerColorLocal (if (_attack) then {"ColorRed"} else {"ColorBlue"});
+			_marker setMarkerSizeLocal [0.75,0.75];
+			_marker setMarkerColorLocal (if (_attack) then {"ColorOrange"} else {"ColorCivilian"});
 			PRA3_AAS_attackDefendMarkers set [count PRA3_AAS_attackDefendMarkers, _marker];
 		} forEach _x;
 	} forEach (PRA3_AAS_teamZones select _index);
