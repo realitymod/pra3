@@ -1,5 +1,3 @@
-PRA3_AAS_prepareTime = 15;
-
 PRA3_selectedSpawn     = [];
 PRA3_kitSys_currentKit = "";
 

@@ -24,5 +24,5 @@ PRAA_squadSys_dlgOpenedOn = time;
 
 //Disable switching to the team you in
 call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
-	
+
 [] call PRA3_fnc_squadDlg_updateSquadsInfo;

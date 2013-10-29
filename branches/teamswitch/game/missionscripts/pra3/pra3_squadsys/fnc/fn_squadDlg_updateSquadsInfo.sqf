@@ -382,7 +382,7 @@ else
 call PRA3_fnc_squadDlg_repositionSquadBoxes;
 
 // Here we have a loop that handles the create squad/deploy RP button.
-__ctrl(999901) ctrlEnable false; // Disable the button first, it'll be re-enabled within the loop if needed (script lag prevention)
+__ctrl(999901) ctrlShow false; // Hide the button first, it'll be unhidden within the loop if needed (script lag prevention)
 
 if (!isNil "PRA3_squadSys_rallyMonitor") then
 {
@@ -397,29 +397,48 @@ PRA3_squadSys_rallyMonitor = 0 spawn
 		var(_isLeader) = _squad call PRA3_fnc_squadGetLeader == (player call PRA3_fnc_getPlayerUID);
 		var(_kit)      = player call PRA3_fnc_unitGetKit call PRA3_fnc_getKitInfo;
 
-		// Deploy RP available if player is alive, is in a squad, is the squad leader and has a kit with the rallyPoint ability
-		if (alive player && _squad != -1 && _isLeader && !isNil "_kit" && {"rallyPoint" in (_kit select KIT_ABILITIES)}) then
+		if (_squad == -1) then
 		{
-			var(_enableTime) = (_squad call PRA3_fnc_squadGetRallypointCooldown) - time;
-			if (_enableTime > 0) then
-			{
-				__ctrl(999901) ctrlSetText format["Deploy Rally Point (%1s)", round _enableTime];
-				__ctrl(999901) ctrlEnable false;
-				__ctrl(999901) ctrlSetTooltip "The rally point is not yet available for deployment.";
-			}
-			else
-			{
-				__ctrl(999901) ctrlSetText "Deploy Rally Point";
-				__ctrl(999901) ctrlEnable true;
-				__ctrl(999901) ctrlSetTooltip "Deploys a rally point at your position.";
-			};
+			__ctrl(999901) ctrlSetText "Create Squad";
+			__ctrl(999901) ctrlSetTooltip "";
+			__ctrl(999901) ctrlShow true;
 		}
 		else
 		{
-			__ctrl(999901) ctrlSetText "Create Squad";
-			__ctrl(999901) ctrlEnable (_squad == -1);
-			__ctrl(999901) ctrlSetTooltip "";
+			// Deploy RP available if player is alive, the non-respawn dialog is open, is the squad leader and has a kit with the rallyPoint ability
+			if (alive player && !isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull]) && _isLeader && !isNil "_kit") then
+			{
+				if ("rallyPoint" in (_kit select KIT_ABILITIES)) then
+				{
+					var(_enableTime) = (_squad call PRA3_fnc_squadGetRallypointCooldown) - time;
+					if (_enableTime > 0) then
+					{
+						__ctrl(999901) ctrlSetText format["Deploy Rally Point (%1s)", round _enableTime];
+						__ctrl(999901) ctrlEnable false;
+						__ctrl(999901) ctrlSetTooltip "The rally point is not yet available for deployment.";
+					}
+					else
+					{
+						__ctrl(999901) ctrlSetText "Deploy Rally Point";
+						__ctrl(999901) ctrlEnable true;
+						__ctrl(999901) ctrlSetTooltip "Deploys a rally point at your position.";
+					};
+				}
+				else
+				{
+					__ctrl(999901) ctrlSetText "Deploy Rally Point";
+					__ctrl(999901) ctrlEnable false;
+					__ctrl(999901) ctrlSetTooltip "You must have a Squad Leader kit to deploy a rally point.";
+				};
+
+				__ctrl(999901) ctrlShow true;
+			}
+			else
+			{
+				__ctrl(999901) ctrlShow false;
+			};
 		};
+
 		sleep 1;
 	};
 };
