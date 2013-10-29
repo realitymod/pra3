@@ -66,14 +66,22 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		};
 
 		class BackgroundSpawn : BackgroundSpawn {};
-		class TitleSpawn : TitleSpawn {};
 		class TitleSpawnTime : TitleSpawnTime {};
+		class PlayerTeamTickets : PlayerTeamTickets {};
+		class PlayerTeamFlag : PlayerTeamFlag {};
+		class MissionTime : MissionTime {};
 	};
 	class Controls : Controls
 	{
 		class SpawnMap : SpawnMap {};
 		class SpawnSelection : SpawnSelection {};
 		class SpawnButtonClose : SpawnButtonClose {};
+
+		class SwitchTeam1 : SwitchTeam1 {};
+		class SwitchTeam2 : SwitchTeam2 {};
+
+		class SwitchTeam1Pic : SwitchTeam1Pic {};
+		class SwitchTeam2Pic : SwitchTeam2Pic {};
 
 		class SwitchKitsBtn : SwitchKitsBtn
 		{
@@ -82,37 +90,6 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		class SwitchSquadsBtn : SwitchSquadsBtn
 		{
 			action = "";
-		};
-		
-		class SwitchTeam1 : RscButton
-		{
-			idc = 500;
-			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.05;
-			w = __w1 / 2 - 0.005;
-			h = 0.06;
-			action = "true call PRA3_fnc_switchTeam";
-		};
-		class SwitchTeam2 : SwitchTeam1
-		{
-			idc = 501;
-			x = safeZoneX + __spaceX + __w1 / 2;
-			action = "true call PRA3_fnc_switchTeam";
-		};
-		
-		class SwitchTeam1Pic : RscPicture
-		{
-			idc = 502;
-			x = safeZoneX + __spaceX + 0.005;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.05 + 0.005;
-			w = __w1 / 2 - 0.2;
-			h = 0.05;
-		};
-		
-		class SwitchTeam2Pic : SwitchTeam1Pic
-		{
-			idc = 503;
-			x = safeZoneX + __spaceX + __w1 / 2 + 0.005;
 		};
 
 		class Group : RscControlsGroup
@@ -124,14 +101,14 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.05 + 0.04);
 			onMouseButtonDown = "["""", _this] call PRA3_fnc_squadDlg_onMouseClick";
 			onMouseMoving = "-1 call PRA3_fnc_squadDlg_onMouseMoving";
-			
+
 			class Controls
 			{
 				#define __lbItems 8
 				#define __lbH 0.032
 				#define __grpW 0.47
 				#define __grpH (__lbH*__lbItems + 0.05)
-				
+
 				class ItemSquad01 : RscControlsGroupNoScrollbars
 				{
 					idc = 10000;

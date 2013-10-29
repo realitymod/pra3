@@ -21,7 +21,9 @@ PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active)
 PRA3_AAS_teamZones = []; //Zones that each team has to capture/defend, indexes have to match those of PRA3_AAS_sides
 PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
+PRA3_AAS_prepareTime = 15;
 PRA3_AAS_respawnTime = 30;
+PRA3_AAS_spawnAtTime = PRA3_AAS_prepareTime;
 
 // Initialize each zone and create markers for it
 {

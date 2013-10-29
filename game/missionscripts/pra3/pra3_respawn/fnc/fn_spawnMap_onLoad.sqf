@@ -31,7 +31,7 @@ else
 	} forEach (player call PRA3_fnc_getAvailableSpawns);
 };
 
-ctrl(IDC_KITDLG_SPAWNMAP_TIME) ctrlShow !isNil "PRA3_AAS_spawnAtTime";
+ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlShow !isNil "PRA3_AAS_spawnAtTime";
 
 // If we're switching from a different tab we want to restore the map position
 if (!isNil "PRA3_spawnMapPosition") then
@@ -46,23 +46,23 @@ if (!isNil "PRA3_spawnMapPosition") then
 	PRA3_spawnMapPosition = nil;
 };
 
-if (!isNil "PRA3_AAS_spawnAtTime") then
+0 spawn
 {
-	0 spawn
+	while {!isNull ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME)} do
 	{
-		while {!isNil "PRA3_AAS_spawnAtTime"} do
+		_time = PRA3_AAS_spawnAtTime - time;
+		if (_time < 0) then
 		{
-			_time = PRA3_AAS_spawnAtTime - time;
-			if (_time >= 0) then
-			{
-				_time = [_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
-			}
-			else
-			{
-				_time = "00:00.000";
-			};
-			ctrl(IDC_KITDLG_SPAWNMAP_TIME) ctrlSetText _time;
-			sleep 0.01;
+			_time = 0;
 		};
+		ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlSetText ([_time, "MM:SS.MS"] call BIS_fnc_secondsToString);
+		_time = time - PRA3_AAS_prepareTime;
+		if (_time < 0) then
+		{
+			_time = 0;
+		};
+		ctrl(IDC_KITDLG_SPAWNMAP_MISSIONTIME) ctrlSetText ([_time, "HH:MM:SS"] call BIS_fnc_secondsToString);
+
+		sleep 0.01;
 	};
 };
