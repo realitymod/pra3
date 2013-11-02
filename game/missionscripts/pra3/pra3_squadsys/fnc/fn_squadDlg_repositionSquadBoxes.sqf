@@ -6,27 +6,27 @@ var(_respositionSquadBox) =
 	var(_id) = _this select 0;
 	var(_y)  = _this select 1;
 
-	if (ctrlShown __ctrl(10000*_id)) then
+	if (ctrlShown ctrl(10000*_id)) then
 	{
-		__ctrl(10000*_id)
+		ctrl(10000*_id)
 			ctrlSetPosition [
 				getNumber(__cfgPathItem(01) >> "x"),
 				_y,
 				getNumber(__cfgPathItem(01) >> "w"),
-				ctrlPosition __ctrl(10000*_id) select 3
+				ctrlPosition ctrl(10000*_id) select 3
 			];
 
-		__ctrl(10000*_id)
+		ctrl(10000*_id)
 			ctrlCommit 0;
 
-		(_y + ((ctrlPosition __ctrl(10000*_id)) select 3) + 0.01)
+		(_y + ((ctrlPosition ctrl(10000*_id)) select 3) + 0.01)
 	}
 	else
 	{
-		__ctrl(10000*_id)
+		ctrl(10000*_id)
 			ctrlSetPosition [0,0,0,0];
 
-		__ctrl(10000*_id)
+		ctrl(10000*_id)
 			ctrlCommit 0;
 
 		_y

@@ -1,7 +1,7 @@
 class Rsc_PRA3_kits_kitDlgRespawn
 {
-	idd = -1;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	idd      = -1;
+	onLoad   = "uiNamespace setVariable ['Rsc_PRA3_kits_kitDlgRespawn', _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
 
 	#define __w1 0.5
 	#define __w2 0.5
@@ -63,12 +63,12 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		class PlayerTeamTickets : TitleSpawnTime
 		{
 			idc = IDC_KITDLG_SPAWNMAP_TICKETS;
-			x = __mapX + __mapW - 0.15 - __spaceX - 0.075 - __spaceX - 0.2;
+			x = __mapX + __mapW - 0.15 - __spaceX - 0.075 - __spaceX - 0.15;
 			y = safeZoneY + __spaceY + 0.013;
+			w = 0.15;
 			style = ST_RIGHT;
 			sizeEx = 0.04;
 			text = "200 (-10)";
-			w = 0.2;
 		};
 		class PlayerTeamFlag : RscPicture
 		{
@@ -182,6 +182,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			w = __w1 / 2 - 0.005;
 			h = 0.06;
 			action = "true call PRA3_fnc_switchTeam";
+			default = false;
 		};
 		class SwitchTeam2 : SwitchTeam1
 		{

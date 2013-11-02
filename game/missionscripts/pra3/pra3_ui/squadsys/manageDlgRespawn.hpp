@@ -39,10 +39,8 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 
 class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 {
-	idd = -1;
-	movingEnable = false;
-	enableSimulation = true;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	idd      = -1;
+	onLoad   = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
 
 	#define __w 0.5
 	#define __spaceX 0.01
@@ -764,6 +762,8 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 			action = "99 call PRA3_fnc_squadDlg_actionButton";
 			sizeEx = 0.035;
 			size = 0.035;
+
+			default = true;
 
 			class TextPos
 			{
