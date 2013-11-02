@@ -27,10 +27,10 @@ switch (_this select 0) do
 		var(_key) = _this select 1 select 1;
 		if (PRAA_squadSys_editingCustomName) then
 		{
-			var(_text) = ctrlText __ctrl(500000 + 3003);
+			var(_text) = ctrlText ctrl(500000 + 3003);
 			if (count toArray(_text) >= __customNameCharsMax) then // Name too long
 			{
-				__ctrl(500000 + 3003) ctrlSetText PRAA_squadSys_customNamePrev;
+				ctrl(500000 + 3003) ctrlSetText PRAA_squadSys_customNamePrev;
 			}
 			else
 			{
@@ -68,7 +68,7 @@ switch (_this select 0) do
 		if (PRAA_squadSys_editingCustomName) then
 		{
 			var(_id) = (player call PRA3_fnc_unitGetSquad);
-			var(_newName) = ctrlText __ctrl(500000 + 3003);
+			var(_newName) = ctrlText ctrl(500000 + 3003);
 			if (_newName != (_id call PRA3_fnc_squadGetName) &&
 				(player call PRA3_fnc_getPlayerUID) == (_id call PRA3_fnc_squadGetLeader) &&
 				count toArray(_newName) <= __customNameCharsMax) then
@@ -106,16 +106,16 @@ switch (_this select 0) do
 		var(_SL)   = _this select 1 select 1;
 
 		{
-			__ctrl(500000 + _x)
+			ctrl(500000 + _x)
 				ctrlShow (_show && _SL);
 		} forEach [3003, 3004, 3005];
 
 		// Hide/show action text
-		__ctrl(500000 + 3002) ctrlShow (!_show && _SL);
+		ctrl(500000 + 3002) ctrlShow (!_show && _SL);
 
 		if (_show && _SL) then
 		{
-			ctrlSetFocus __ctrl(500000 + 3003);
+			ctrlSetFocus ctrl(500000 + 3003);
 		};
 	};
 };

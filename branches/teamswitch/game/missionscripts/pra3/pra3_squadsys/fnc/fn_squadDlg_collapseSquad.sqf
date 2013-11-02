@@ -30,7 +30,7 @@ if (_id == 0) then
 
 
 // Set collapse/uncollapse button image
-__ctrl(10000*_id + 7001)
+ctrl(10000*_id + 7001)
 	ctrlSetText (
 		if (_collapse) then {__pic_uncollapse} else {__pic_collapse}
 	);
@@ -49,12 +49,12 @@ var(_boxH) = getNumber(__cfgPathItemHeaderBackground(01) >> "h") +
 	(getNumber(__cfgPathItemListLine(01,"01") >> "h") * _count);
 
 // Resize squad box
-__ctrl(10000*_id)
+ctrl(10000*_id)
 	ctrlSetPosition [
-		(ctrlPosition __ctrl(10000*_id)) select 0,
-		(ctrlPosition __ctrl(10000*_id)) select 1,
-		(ctrlPosition __ctrl(10000*_id)) select 2,
+		(ctrlPosition ctrl(10000*_id)) select 0,
+		(ctrlPosition ctrl(10000*_id)) select 1,
+		(ctrlPosition ctrl(10000*_id)) select 2,
 		_boxH
 	];
-__ctrl(10000*_id)
+ctrl(10000*_id)
 	ctrlCommit 0;

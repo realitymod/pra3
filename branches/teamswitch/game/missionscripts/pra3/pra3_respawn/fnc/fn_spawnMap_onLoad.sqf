@@ -4,6 +4,18 @@
 
 uiNamespace setVariable ["PRA3_spawnMap_display", _this];
 
+//-->Set team Switching
+//Flags
+(_this displayCtrl 502) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamFlag);
+(_this displayCtrl 503) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamFlag);
+
+//Team names
+(_this displayCtrl 500) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName);
+(_this displayCtrl 501) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName);
+
+//Disable switching to the team you in
+_this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
+
 var(_colorOutside) = getArray(configFile >> "CfgWorlds" >> worldName >> "OutsideTerrain" >> "colorOutside");
 _colorOutside call BIS_fnc_colorConfigToRGBA;
 
@@ -16,20 +28,7 @@ if (isNil "PRA3_spawnMapMousePos") then
 	PRA3_spawnMapMousePos = [0,0];
 };
 
-if (count PRA3_selectedSpawn == 0) then
-{
-	call PRA3_fnc_spawnMap_selectNoSpawn;
-}
-else
-{
-	{
-		if ([_x, PRA3_selectedSpawn] call PRA3_fnc_areEqual) exitWith
-		{
-			call PRA3_fnc_spawnMap_populateSpawnLocations;
-			ctrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
-		};
-	} forEach (player call PRA3_fnc_getAvailableSpawns);
-};
+call PRA3_fnc_updateSpawnLocations;
 
 ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlShow !isNil "PRA3_AAS_spawnAtTime";
 
@@ -46,23 +45,38 @@ if (!isNil "PRA3_spawnMapPosition") then
 	PRA3_spawnMapPosition = nil;
 };
 
-0 spawn
+ctrl(IDC_KITDLG_SPAWNMAP_TEAMFLAG) ctrlSetText (player call PRA3_fnc_getPlayerTeam call PRA3_fnc_getTeamFlag);
+
+var(_updateControls) =
+{
+	var(_time) = PRA3_AAS_spawnAtTime - time;
+	if (_time < 0) then
+	{
+		_time = 0;
+	};
+	ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlSetText ([_time, "MM:SS.MS"] call BIS_fnc_secondsToString);
+	_time = time - PRA3_AAS_prepareTime;
+	if (_time < 0) then
+	{
+		_time = 0;
+	};
+	ctrl(IDC_KITDLG_SPAWNMAP_MISSIONTIME) ctrlSetText ([_time, "HH:MM:SS"] call BIS_fnc_secondsToString);
+
+	var(_team) = PRA3_AAS_teams find (player call PRA3_fnc_getPlayerTeam);
+	ctrl(IDC_KITDLG_SPAWNMAP_TICKETS) ctrlSetText format [
+		"%1 (%2)",
+		PRA3_core getVariable "PRA3_AAS_tickets" select _team,
+		-(PRA3_AAS_ticketBleed select _team)
+	];
+};
+
+call _updateControls;
+
+_updateControls spawn
 {
 	while {!isNull ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME)} do
 	{
-		_time = PRA3_AAS_spawnAtTime - time;
-		if (_time < 0) then
-		{
-			_time = 0;
-		};
-		ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlSetText ([_time, "MM:SS.MS"] call BIS_fnc_secondsToString);
-		_time = time - PRA3_AAS_prepareTime;
-		if (_time < 0) then
-		{
-			_time = 0;
-		};
-		ctrl(IDC_KITDLG_SPAWNMAP_MISSIONTIME) ctrlSetText ([_time, "HH:MM:SS"] call BIS_fnc_secondsToString);
-
 		sleep 0.01;
+		call _this;
 	};
 };

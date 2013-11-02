@@ -12,14 +12,14 @@ var(_show) = _this;
 
 if (_show) then
 {
-	__ctrl(301) ctrlShow true;
-	__ctrl(301) ctrlSetPosition PRAA_squadSys_menuPos;
-	__ctrl(301) ctrlCommit 0;
+	ctrl(301) ctrlShow true;
+	ctrl(301) ctrlSetPosition PRAA_squadSys_menuPos;
+	ctrl(301) ctrlCommit 0;
 
-	ctrlSetFocus __ctrl(301);
+	ctrlSetFocus ctrl(301);
 }
 else
 {
-	__ctrl(301) ctrlShow false;
-	__ctrl(302) ctrlShow false;
+	ctrl(301) ctrlShow false;
+	ctrl(302) ctrlShow false;
 };

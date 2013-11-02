@@ -62,7 +62,7 @@
 
 #define __updatePackConstant 100000
 
-#define __ctrl(idc) \
+#define ctrl(idc) \
 	(uiNamespace getVariable (if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {"Rsc_PRA3_squadSys_manageDlgRespawn"} else {"Rsc_PRA3_squadSys_manageDlg"}) displayCtrl (idc))
 
 // TODO: This is replicated in pra_respawn, merge this for addon release

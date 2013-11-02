@@ -15,16 +15,20 @@ PRA3_spawnMapPosition = [
 	ctrlMapScale ctrl(IDC_KITDLG_SPAWNMAP_MAP)
 ];
 
+// For some reason this doesn't actually cause the dialog to unload so we have to
+// clear the variables manually later on...
 closeDialog 0;
 
 switch _tab do
 {
 	case 0:
 	{
+		uiNamespace setVariable ["Rsc_PRA3_kits_kitDlgRespawn", displayNull];
 		true call PRA3_fnc_squadDlg_open;
 	};
 	case 1:
 	{
+		uiNamespace setVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull];
 		true call PRA3_fnc_kitDlg_open;
 	};
 };
