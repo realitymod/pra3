@@ -94,9 +94,9 @@ class SquadSys
 	{
 		description = "Sets the max size of the squad. Returns false if the squad or the unit does not exist.";
 	};
-	class squadRegisterRallypoint
+	class squadCreateRallypoint
 	{
-		description = "Registers a rallypoint object as the new rallypoint of the squad. Rallypoint cooldown time is updated too.";
+		description = "Creates a new rallypoint object at the given position and registers it with the squad. Existing rallypoint is deleted should the squad already have one. Rallypoint cooldown is updated as well.";
 	};
 	class unitGetFt
 	{

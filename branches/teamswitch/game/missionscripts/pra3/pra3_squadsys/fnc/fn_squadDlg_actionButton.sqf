@@ -21,8 +21,10 @@ else
 		}
 		else
 		{
-			closeDialog 0;
-			player call compile preprocessFileLineNumbers "pra3\pra3_respawn\deployRallyPoint.sqf";
+			if (player call compile preprocessFileLineNumbers "pra3\pra3_respawn\deployRallyPoint.sqf") then
+			{
+				closeDialog 0;
+			};
 		};
 	}
 	else // Joining a squad
