@@ -1,7 +1,7 @@
 class Rsc_PRA3_kits_kitDlgRespawn
 {
-	idd = -1;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_kits_kitDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	idd      = -1;
+	onLoad   = "uiNamespace setVariable ['Rsc_PRA3_kits_kitDlgRespawn', _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
 
 	#define __w1 0.5
 	#define __w2 0.5
@@ -9,6 +9,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 	#define __spaceX 0.01
 	#define __spaceY (__spaceX / (4/3))
 
+	#define __mapX (safeZoneX + __spaceX + __w1 + __spaceX + __spaceX)
 	#define __mapW (safeZoneW - __w1 - __spaceX * 3)
 	#define __mapH (safeZoneH - __spaceY * 2)
 
@@ -51,21 +52,41 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			w = __mapW;
 			h = __mapH;
 		};
-		class TitleSpawn : TitleLeft
+		class TitleSpawnTime : TitleLeft
 		{
-			idc = IDC_KITDLG_SPAWNMAP_TITLE;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.075;
-			y = safeZoneY + __spaceY + 0.01;
-			w = 0.32;
+			idc = IDC_KITDLG_SPAWNMAP_SPAWNTIME;
+			x = __mapX + (__mapW - __spaceX * 2 - 0.15) / 2 - 0.09;
+			w = 0.18;
 			style = ST_LEFT;
-			text = "RESPAWN LOCATION";
-		};
-		class TitleSpawnTime : TitleSpawn
-		{
-			idc = IDC_KITDLG_SPAWNMAP_TIME;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + __mapW - 0.18;
-			w = 0.15;
 			text = "01:27.93";
+		};
+		class PlayerTeamTickets : TitleSpawnTime
+		{
+			idc = IDC_KITDLG_SPAWNMAP_TICKETS;
+			x = __mapX + __mapW - 0.15 - __spaceX - 0.075 - __spaceX - 0.15;
+			y = safeZoneY + __spaceY + 0.013;
+			w = 0.15;
+			style = ST_RIGHT;
+			sizeEx = 0.04;
+			text = "200 (-10)";
+		};
+		class PlayerTeamFlag : RscPicture
+		{
+			idc = IDC_KITDLG_SPAWNMAP_TEAMFLAG;
+			x = __mapX + __mapW - 0.15 - __spaceX - 0.075;
+			y = safeZoneY + __spaceY + 0.01 + 0.0025;
+			// Flags should be 3:2 ratio
+			w = 0.075;
+			h = 0.05;
+			text = "\A3\Data_F\Flags\Flag_nato_CO.paa";
+		};
+		class MissionTime : PlayerTeamTickets
+		{
+			idc = IDC_KITDLG_SPAWNMAP_MISSIONTIME;
+			x = __mapX + __mapW - 0.15;
+			style = ST_LEFT;
+			text = "01:34:17";
+			w = 0.15;
 		};
 
 		// Used to detect when the mouse is outside of the kit selection dialog
@@ -85,7 +106,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		class SpawnMap : RscMapControl
 		{
 			idc = IDC_KITDLG_SPAWNMAP_MAP;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX;
+			x = __mapX;
 			y = safeZoneY + __spaceY + 0.07;
 			w = __mapW - __spaceX * 2;
 			h = __mapH - 0.07 - 0.05 - __spaceY;
@@ -136,7 +157,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		class SpawnSelection : RscXListBox
 		{
 			idc = IDC_KITDLG_SPAWNMAP_SELECTION;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + __spaceX;
+			x = __mapX;
 			y = safeZoneY + __spaceY + __mapH - __spaceY - 0.045;
 			w = __mapW - __spaceX * 2 - 0.15;
 			h = 0.045;
@@ -153,12 +174,42 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			action = "closeDialog 0";
 		};
 
-		class SwitchKitsBtn : RscButton
+		class SwitchTeam1 : RscButton
 		{
-			idc = IDC_KITDLG_SWITCH_KITS;
+			idc = 500;
 			x = safeZoneX + __spaceX;
 			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
 			w = __w1 / 2 - 0.005;
+			h = 0.06;
+			action = "true call PRA3_fnc_switchTeam";
+			default = false;
+		};
+		class SwitchTeam2 : SwitchTeam1
+		{
+			idc = 501;
+			x = safeZoneX + __spaceX + __w1 / 2;
+			action = "true call PRA3_fnc_switchTeam";
+		};
+
+		class SwitchTeam1Pic : RscPicture
+		{
+			idc = 502;
+			x = safeZoneX + __spaceX + 0.005;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.005;
+			// Flags should be 3:2 ratio
+			w = 0.075;
+			h = 0.05;
+		};
+		class SwitchTeam2Pic : SwitchTeam1Pic
+		{
+			idc = 503;
+			x = safeZoneX + __spaceX + __w1 / 2 + 0.005;
+		};
+
+		class SwitchKitsBtn : SwitchTeam1
+		{
+			idc = IDC_KITDLG_SWITCH_KITS;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.065;
 			h = 0.04;
 			text = "KITS";
 			action = "";
@@ -175,9 +226,9 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		class KitSelection : RscControlsGroup
 		{
 			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.04;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.04 + 0.065;
 			w = __EVAL(__w1 + 0.021);
-			h = __EVAL("safeZoneH - " + str(__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.04));
+			h = __EVAL("safeZoneH - " + str(__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.04 + 0.065));
 
 			class Controls
 			{

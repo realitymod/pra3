@@ -1,14 +1,5 @@
 #include "fnc\aas_defines.sqh"
 
-// Load mission-defined settings
-if (isServer) then {PRA3_core setVariable ["PRA3_AAS_tickets", _this select 1, true]};
-PRA3_AAS_teams            = _this select 0;
-PRA3_AAS_zones            = _this select 2;
-PRA3_AAS_bases            = _this select 3;
-PRA3_AAS_respawns         = _this select 4;
-PRA3_AAS_restrictionZones = _this select 5;
-PRA3_AAS_startCamera      = _this select 6;
-
 // Figure out what the sides involved are based on the mission-defined teams
 PRA3_AAS_sides = [];
 {
@@ -31,7 +22,9 @@ PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active)
 PRA3_AAS_teamZones = []; //Zones that each team has to capture/defend, indexes have to match those of PRA3_AAS_sides
 PRA3_AAS_teamZones resize (count PRA3_AAS_sides);
 
+PRA3_AAS_prepareTime = 15;
 PRA3_AAS_respawnTime = 30;
+PRA3_AAS_spawnAtTime = PRA3_AAS_prepareTime;
 
 var(_init) =
 {

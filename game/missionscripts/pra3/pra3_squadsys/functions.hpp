@@ -22,6 +22,10 @@ class SquadSys
 	{
 		description = "Returns an array of unassigned players for the given side.";
 	};
+	class getAllSquads
+	{
+		description = "Returns all existing squads.";
+	};
 	class squadExists
 	{
 		description = "Checks if a squad with the given ID exists.";
@@ -54,6 +58,14 @@ class SquadSys
 	{
 		description = "Returns the max size the squad allows. Returns -1 if the squad does not exist.";
 	};
+	class squadGetRallypoint
+	{
+		description = "Returns the rallypoint of the squad Returns objNull if the squad has no rallypoint or doesn't exist.";
+	};
+	class squadGetRallypointCooldown
+	{
+		description = "Returns the the time when a new rallypoint becomes available for deployment. Returns -1 if the squad does not exist.";
+	};
 	class squadIsLocked
 	{
 		description = "Returns whether the squad is locked.";
@@ -81,6 +93,10 @@ class SquadSys
 	class squadSetSize
 	{
 		description = "Sets the max size of the squad. Returns false if the squad or the unit does not exist.";
+	};
+	class squadCreateRallypoint
+	{
+		description = "Creates a new rallypoint object at the given position and registers it with the squad. Existing rallypoint is deleted should the squad already have one. Rallypoint cooldown is updated as well.";
 	};
 	class unitGetFt
 	{
@@ -110,7 +126,7 @@ class SquadSys
 	{
 		description = "Ensures that the squad has a leader and if not, the highest ranking member is promoted. Returns false if the squad does not exist or no changes have been made.";
 	};
-	
+
 	class isSquadLeader
 	{
 		description = "Returns whether the unit is a squad leader. Unassigned units aren't considered squad leaders and return false.";
@@ -118,6 +134,11 @@ class SquadSys
 	class isInSquad
 	{
 		description = "Returns true if the unit is in a squad or fales if it is unassigned.";
+	};
+
+	class switchTeam
+	{
+		description = "Switch the player from one team to another and vice versa.";
 	};
 
 	class squadDlg_actionButton
@@ -171,6 +192,9 @@ class SquadSys
 	class squadDlg_updateSquadsInfo
 	{
 	};
+	class squadDlg_refreshTeamSwitchBtns
+	{
+	};
 
 	class squadDlg_server_createSquad
 	{
@@ -202,7 +226,7 @@ class SquadSys
 	class squadDlg_server_unsetFt
 	{
 	};
-	
+
 	class squadDlg_open
 	{
 		description = "Opens the Squad Management dialog.";

@@ -19,21 +19,24 @@ class PRA3_teams
 {
 	class NATO
 	{
-		side = SIDE_WEST;
-		name = "NATO";
-		flag = "\A3\Data_F\Flags\Flag_nato_CO.paa";
+		side       = SIDE_WEST;
+		name       = "NATO";
+		flag       = "\A3\Data_F\Flags\Flag_nato_CO.paa";
+		rallyPoint = "Land_TentDome_F";
 	};
 	class Iran
 	{
-		side = SIDE_EAST;
-		name = "Iran";
-		flag = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+		side       = SIDE_EAST;
+		name       = "Iran";
+		flag       = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+		rallyPoint = "Land_TentA_F";
 	};
 	class AAF
 	{
-		side = SIDE_RESISTANCE;
-		name = "AAF";
-		flag = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
+		side       = SIDE_RESISTANCE;
+		name       = "AAF";
+		flag       = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
+		rallyPoint = "Land_TentDome_F";
 	};
 };
 
@@ -126,8 +129,7 @@ class PRA3_kits
 			class Requirements
 			{
 				type = LIMIT_SL;
-
-				minMembers = 3;
+				//minMembers  = 3;
 			};
 
 			class Clothing : Clothing
@@ -136,6 +138,8 @@ class PRA3_kits
 				headgear = "H_HelmetB_paint";
 				vest     = "V_PlateCarrier1_rgr";
 			};
+
+			abilities[] = {"rallyPoint"};
 
 			class Variants : Variants
 			{
@@ -401,6 +405,7 @@ class PRA3_kits
 			class Requirements
 			{
 				type = LIMIT_SL;
+				//minMembers  = 3;
 			};
 
 			class Clothing : Clothing
@@ -409,6 +414,8 @@ class PRA3_kits
 				headgear = "H_HelmetIA";
 				vest     = "V_PlateCarrierIA1_dgtl";
 			};
+
+			abilities[] = {"rallyPoint"};
 
 			class Variants : Variants
 			{
@@ -480,7 +487,6 @@ class PRA3_kits
 				};
 			};
 		};
-
 		class Machinegunner_IN : Rifleman_IN
 		{
 			name = "Automatic Rifleman";
@@ -684,6 +690,8 @@ class PRA3_kits
 				headgear = "H_HelmetIA";
 				vest     = "V_PlateCarrierIA1_dgtl";
 			};
+
+			abilities[] = {"rallyPoint"};
 
 			class Variants : Variants
 			{

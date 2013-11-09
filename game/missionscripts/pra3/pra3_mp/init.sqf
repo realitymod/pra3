@@ -3,7 +3,7 @@ call compile preprocessFileLineNumbers "pra3\pra3_mp\playerConnected\init.sqf";
 if !isMultiplayer then
 {
 	{
-		[_x] call compile preprocessFileLineNumbers "pra3\pra3_mp\simulateMultiplayer.sqf";
+		_x call compile preprocessFileLineNumbers "pra3\pra3_mp\simulateMultiplayer.sqf";
 	} forEach allUnits;
 };
 

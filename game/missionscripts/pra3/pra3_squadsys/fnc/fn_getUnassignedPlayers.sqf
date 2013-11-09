@@ -4,22 +4,16 @@
  * Returns an array of unassigned players for the given side.
  *
  *		(in)  <SIDE> Side
- *		(out) <ARRAY> Unnasigned players' UIDs
+ *		(out) <ARRAY> Unassigned players' UIDs
  */
 
-var(_units) = if (isMultiplayer) then
-	{
-		playableUnits
-	}
-	else
-	{
-		allUnits
-	};
+var(_units) = call PRA3_fnc_getConnectedPlayers;
+
 var(_unassigned) = [];
 {
-	if (side _x == _this && (_x call PRA3_fnc_unitGetSquad) == -1) then
+	if (_x call PRA3_fnc_getPlayerSide == _this && (_x call PRA3_fnc_unitGetSquad) == -1) then
 	{
-		_unassigned set [count _unassigned, _x call PRA3_fnc_getPlayerUID];
+		_unassigned set [count _unassigned, _x];
 	};
 } forEach _units;
 

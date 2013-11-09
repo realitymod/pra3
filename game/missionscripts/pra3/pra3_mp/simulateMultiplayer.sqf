@@ -6,7 +6,7 @@
  * and triggering the onPlayerConnected events.
  */
 
-var(_unit) = _this select 0;
+var(_unit) = _this;
 
 if (isNil "PRA3_mp_playerInfoSpUID") then
 {
@@ -26,5 +26,24 @@ _unit setVariable ["PRA3_UID", str PRA3_mp_playerInfoSpUID];
 
 PRA3_mp_playerInfoSpUID = PRA3_mp_playerInfoSpUID + 1;
 
-[PRA3_core, format["PRA3_player_object_%1", _unit call PRA3_fnc_getPlayerUID], _unit, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
-[PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID], side _unit, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
+[
+	PRA3_core,
+	format["PRA3_player_object_%1", _unit call PRA3_fnc_getPlayerUID],
+	_unit,
+	__FILE__,
+	__LINE__
+] call PRA3_fnc_setVarBroadcast;
+[
+	PRA3_core,
+	format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID],
+	side _unit,
+	__FILE__,
+	__LINE__
+] call PRA3_fnc_setVarBroadcast;
+[
+	PRA3_core,
+	format["PRA3_player_team_%1", _unit call PRA3_fnc_getPlayerUID],
+	{if (_x call PRA3_fnc_getTeamSide == side _unit) exitWith {_x}} forEach PRA3_AAS_teams,
+	__FILE__,
+	__LINE__
+] call PRA3_fnc_setVarBroadcast;

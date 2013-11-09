@@ -2,9 +2,13 @@ class Respawn
 {
 	file = "pra3\pra3_respawn\fnc";
 
-	class getAllSpawns
+	class getSpawnPoints
 	{
 		description = "Returns a list of all spawn points in the mission.";
+	};
+	class getRallyPoints
+	{
+		description = "Returns a list of all rally points that are currently deployed.";
 	};
 	class getAvailableSpawns
 	{
@@ -18,13 +22,21 @@ class Respawn
 	{
 		description = "Returns the nearest spawn point available to the unit from given position with optional distance limit. If no spawn is available, empty string is returned.";
 	};
+	class getSpawnName
+	{
+		description = "Returns the name of the spawn";
+	};
+	class getSpawnPosition
+	{
+		description = "Returns the position of the spawn";
+	};
+	class updateSpawnLocations
+	{
+		description = "Updates spawn locations if the spawn map is open.";
+	};
 	class respawnUnit
 	{
 		description = "Respawns the unit at the given spawn point.";
-	};
-	class refreshRespawnDlg
-	{
-		description = "Refreshes the spawn points in the spawn selection screen.";
 	};
 	
 	class scheduleDeleteBody
@@ -41,22 +53,13 @@ class Respawn
 		description = "Handles player's death.";
 	};
 
-	class onRespawnDlgLoad
-	{
-		description = "Handles opening of the spawn selection dialog.";
-	};
-	class onRespawnDlgUnload
-	{
-		description = "Handles closing of the spawn selection dialog.";
-	};
-	class respawnDlgAction
-	{
-		description = "Handles actions performed in the spawn selection dialog.";
-	};
-
 	class respawnOnKeyDown
 	{
 		description = "Handles onKeyDown.";
+	};
+	class switchTeamCheck
+	{
+		description = "Check if the unit switched team and make the switch";
 	};
 
 	class spawnMap_onLoad
