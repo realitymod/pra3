@@ -15,13 +15,28 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_squadSys_manageDlgRespawn
 		class TitleLeft : TitleLeft {};
 		class BackgroundLeft : BackgroundLeft {};
 		class CreateBackground : CreateBackground {};
+
+		class BackgroundMissionInfo : TitleLeftBackground
+		{
+			x = safeZoneX + safeZoneW - __spaceX - 0.15 - __spaceX - 0.075 - __spaceX - 0.15;
+			w = 0.15 + __spaceX + 0.075 + __spaceX + 0.15;
+		};
+
+		class PlayerTeamTickets : PlayerTeamTickets {};
+		class PlayerTeamFlag : PlayerTeamFlag {};
+		class MissionTime : MissionTime {};
 	};
 	class Controls : Controls
 	{
+		class SwitchTeam1 : SwitchTeam1 {};
+		class SwitchTeam2 : SwitchTeam2 {};
+		class SwitchTeam1Pic : SwitchTeam1Pic {};
+		class SwitchTeam2Pic : SwitchTeam2Pic {};
+
 		class Group : Group
 		{
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
-			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.05);
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.06;
+			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.05 + 0.06);
 
 			class Controls : Controls
 			{

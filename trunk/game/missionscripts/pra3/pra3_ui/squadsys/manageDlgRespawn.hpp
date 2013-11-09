@@ -39,10 +39,8 @@ class PRA3_RscPopupMenu : RscControlsGroupNoScrollbars
 
 class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 {
-	idd = -1;
-	movingEnable = false;
-	enableSimulation = true;
-	onLoad = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	idd      = -1;
+	onLoad   = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
 
 	#define __w 0.5
 	#define __spaceX 0.01
@@ -66,14 +64,22 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		};
 
 		class BackgroundSpawn : BackgroundSpawn {};
-		class TitleSpawn : TitleSpawn {};
 		class TitleSpawnTime : TitleSpawnTime {};
+		class PlayerTeamTickets : PlayerTeamTickets {};
+		class PlayerTeamFlag : PlayerTeamFlag {};
+		class MissionTime : MissionTime {};
 	};
 	class Controls : Controls
 	{
 		class SpawnMap : SpawnMap {};
 		class SpawnSelection : SpawnSelection {};
 		class SpawnButtonClose : SpawnButtonClose {};
+
+		class SwitchTeam1 : SwitchTeam1 {};
+		class SwitchTeam2 : SwitchTeam2 {};
+
+		class SwitchTeam1Pic : SwitchTeam1Pic {};
+		class SwitchTeam2Pic : SwitchTeam2Pic {};
 
 		class SwitchKitsBtn : SwitchKitsBtn
 		{
@@ -88,7 +94,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		{
 			idc = 1;
 			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.04;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.04 + 0.07;
 			w = __w;
 			h = safeZoneH - (__spaceY * 2 + 0.01 + 0.05 + 0.01 + 0.05 + 0.04);
 			onMouseButtonDown = "["""", _this] call PRA3_fnc_squadDlg_onMouseClick";
@@ -663,7 +669,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 							colorSelectBackground2[] = {0.5, 0.5, 0.5, 1.0};
 						};
 
-						class InviteButton : ActionButton
+						/*class InviteButton : ActionButton
 						{
 							idc = __EVAL(990000 + 9000);
 							x = ( __grpW - 0.25) / 2;
@@ -672,7 +678,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 
 							text = "Invite selected";
 							action = "call PRA3_fnc_squadDlg_inviteButton";
-						};
+						};*/
 					};
 				};
 				#undef __lbItems
@@ -756,6 +762,8 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 			action = "99 call PRA3_fnc_squadDlg_actionButton";
 			sizeEx = 0.035;
 			size = 0.035;
+
+			default = true;
 
 			class TextPos
 			{

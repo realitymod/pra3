@@ -111,6 +111,14 @@ class Players
 	{
 		description = "Returns object player with the given UID is currently controlling. Returns a null object if the UID is invalid.";
 	};
+	class getMaxPlayers
+	{
+		description = "Get the maximum ammount of players for this mission.";
+	};
+	class getUnbalancedSide
+	{
+		description = "Returns the side that has an unfairly higher number of players. What is considered unfair is configured by the input parameter.";
+	};
 };
 
 class Team
@@ -124,6 +132,10 @@ class Team
 	class getTeamName
 	{
 		description = "Returns the team's name.";
+	};
+	class getTeamRallyPoint
+	{
+		description = "Returns the rally point model for the given team.";
 	};
 	class getTeamSide
 	{

@@ -1,6 +1,8 @@
 #include "defines.sqh"
 #include "scriptDefines.sqh"
 
+#define KIT_ABILITIES 9 //TODO: Include \pra3\pra3_kits\fnc\defines.sqh when possible (addon release)
+
 /**
  *	Updates the squads' info based on its _squadId.
  *	NOTE: Pass in an empty array to update all squads.
@@ -22,27 +24,27 @@ var(_updateSquadInfo) =
 
 	var(_playerIsMember) = _squadId == (player call PRA3_fnc_unitGetSquad);
 	var(_playerIsSL) = (player call PRA3_fnc_getPlayerUID)  == (_squadId call PRA3_fnc_squadGetLeader);
-	var(_id) = _squadId - (playerSide call PRA3_fnc_getSideID);
+	var(_id) = _squadId - ((player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID);
 
 	var(_customName) = _squadId call PRA3_fnc_squadGetName;
 	if (_playerIsMember) then // Player's squad
 	{
 		_id = 50;
 		// Set squad's phonetic name
-		__ctrl(500000 + 2000)
+		ctrl(500000 + 2000)
 			ctrlSetText (__phoneticAlphabet select
-				(_squadId - 1 - (playerSide call PRA3_fnc_getSideID)));
+				(_squadId - 1 - ((player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID)));
 
 		// Display the appropriate custom name control
-		__ctrl(500000 + 3001)
+		ctrl(500000 + 3001)
 				ctrlShow !_playerIsSL;
-		__ctrl(500000 + 3002)
+		ctrl(500000 + 3002)
 				ctrlShow _playerIsSL;
 		// ...and update it
 		if (_playerIsSL) then
 		{
 			// Edit field
-			__ctrl(500000 + 3003)
+			ctrl(500000 + 3003)
 				ctrlSetText _customName;
 
 			if (_customName == "") then
@@ -51,7 +53,7 @@ var(_updateSquadInfo) =
 			};
 
 			// Active text
-			__ctrl(500000 + 3002)
+			ctrl(500000 + 3002)
 				ctrlSetText _customName;
 
 			if (PRA3_squadSys_menuTarget != "") then // Pop-up menu open
@@ -74,7 +76,7 @@ var(_updateSquadInfo) =
 		else
 		{
 			// Normal text
-			__ctrl(500000 + 3001)
+			ctrl(500000 + 3001)
 				ctrlSetText _customName;
 		};
 
@@ -86,7 +88,7 @@ var(_updateSquadInfo) =
 	else
 	{
 		// Set custom name
-		__ctrl(10000*_id + 3001)
+		ctrl(10000*_id + 3001)
 			ctrlSetText _customName;
 	};
 
@@ -94,7 +96,7 @@ var(_updateSquadInfo) =
 	var(_size)    = _squadId call PRA3_fnc_squadGetSize;
 
 	// Set squad size info
-	__ctrl(10000*_id + 4000)
+	ctrl(10000*_id + 4000)
 		ctrlSetText format ["%1/%2",
 			count _members,
 			_size
@@ -102,7 +104,7 @@ var(_updateSquadInfo) =
 
 	var(_locked) = _squadId call PRA3_fnc_squadIsLocked;
 	// Set lock image
-	__ctrl(10000*_id + 5001)
+	ctrl(10000*_id + 5001)
 		ctrlSetText (if (_playerIsSL) then {
 				if (_locked) then {__pic_locked_border} else {__pic_unlocked_border}
 			} else {
@@ -113,21 +115,21 @@ var(_updateSquadInfo) =
 	// Show/hide lock button
 	if (_playerIsMember) then
 	{
-		__ctrl(500000 + 5002)
+		ctrl(500000 + 5002)
 			ctrlShow _playerIsSL;
 	};
 
 	// Set text of the action button
 	if (_playerIsMember) then
 	{
-		__ctrl(500000 + 6000) ctrlSetText "Leave";
+		ctrl(500000 + 6000) ctrlSetText "Leave";
 	}
 	else
 	{
-		__ctrl(10000*_id + 6000)
+		ctrl(10000*_id + 6000)
 			ctrlSetText (if (_locked) then {"Request"} else {"Join"});
 
-		__ctrl(10000*_id + 6000)
+		ctrl(10000*_id + 6000)
 			ctrlEnable (count _members < _size);
 	};
 
@@ -141,7 +143,7 @@ var(_updateSquadInfo) =
 	// Populate list of members
 
 	var(_sortedMembers) = []; // Members sorted by rank and fireteam
-	_sortedMemebers resize (count _members);
+	_sortedMembers resize (count _members);
 	var(_i) = 0;
 	// Find SL
 	{
@@ -195,7 +197,7 @@ var(_updateSquadInfo) =
 	var(_i) = 0;
 	{
 		#define __ctrlLine(num) \
-		(__ctrl(10000*_id + 8000 + 10*(_forEachIndex + 1) + num))
+		(ctrl(10000*_id + 8000 + 10*(_forEachIndex + 1) + num))
 
 		var(_unit) = _x select 0;
 
@@ -281,7 +283,7 @@ var(_showSquadBox) =
 	var(_id)   = _this select 0;
 	var(_show) = _this select 1;
 
-	__ctrl(10000*_id)
+	ctrl(10000*_id)
 		ctrlShow _show;
 };
 
@@ -297,29 +299,29 @@ var(_updateUnassignedInfo) =
 
 	// Populate the correct list box
 	var(_lb) = 990000 + (if (_playerIsSL) then {8002} else {8001});
-	var(_players) = playerSide call PRA3_fnc_getUnassignedPlayers;
-	lbClear __ctrl(_lb);
+	var(_players) = (player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getUnassignedPlayers;
+	lbClear ctrl(_lb);
 	{
-		var(_index) = (__ctrl(_lb) lbAdd (_x call PRA3_fnc_getPlayerName));
-		__ctrl(_lb) lbSetData [_index, _x];
+		var(_index) = (ctrl(_lb) lbAdd (_x call PRA3_fnc_getPlayerName));
+		ctrl(_lb) lbSetData [_index, _x];
 	} forEach _players;
 
 
 	// Set number of unassigned players
-	__ctrl(990000 + 4000)
+	ctrl(990000 + 4000)
 		ctrlSetText str (count _players);
 
 	if (!_collapsed && {_playerIsSL}) then
 	{
 		var(_squadId) = player call PRA3_fnc_unitGetSquad;
-		__ctrl(990000 + 9000) ctrlEnable (
+		ctrl(990000 + 9000) ctrlEnable (
 			count (_squadId call PRA3_fnc_squadGetMembers)
 			< (_squadId call PRA3_fnc_squadGetSize)
 		);
 	};
 };
 
-var(_base) = playerSide call PRA3_fnc_getSideID;
+var(_base) = (player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID;
 var(_playerSquad) = (player call PRA3_fnc_unitGetSquad);
 
 // Hide player's squad if he's not in one
@@ -379,6 +381,64 @@ else
 
 call PRA3_fnc_squadDlg_repositionSquadBoxes;
 
+// Here we have a loop that handles the create squad/deploy RP button.
+ctrl(999901) ctrlShow false; // Hide the button first, it'll be unhidden within the loop if needed (script lag prevention)
 
-// Enable/disable "Create squad" btn based on whether player is in a squad
-__ctrl(999901) ctrlEnable (_playerSquad == -1);
+if (!isNil "PRA3_squadSys_rallyMonitor") then
+{
+	terminate PRA3_squadSys_rallyMonitor;
+};
+
+PRA3_squadSys_rallyMonitor = 0 spawn
+{
+	while {!isNull ctrl(999901)} do
+	{
+		var(_squad)    = player call PRA3_fnc_unitGetSquad;
+		var(_isLeader) = _squad call PRA3_fnc_squadGetLeader == (player call PRA3_fnc_getPlayerUID);
+		var(_kit)      = player call PRA3_fnc_unitGetKit call PRA3_fnc_getKitInfo;
+
+		if (_squad == -1) then
+		{
+			ctrl(999901) ctrlSetText "Create Squad";
+			ctrl(999901) ctrlSetTooltip "";
+			ctrl(999901) ctrlShow true;
+		}
+		else
+		{
+			// Deploy RP available if player is alive, the non-respawn dialog is open, is the squad leader and has a kit with the rallyPoint ability
+			if (alive player && !isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull]) && _isLeader && !isNil "_kit") then
+			{
+				if ("rallyPoint" in (_kit select KIT_ABILITIES)) then
+				{
+					var(_enableTime) = (_squad call PRA3_fnc_squadGetRallypointCooldown) - time;
+					if (_enableTime > 0) then
+					{
+						ctrl(999901) ctrlSetText format["Deploy Rally Point (%1s)", round _enableTime];
+						ctrl(999901) ctrlEnable false;
+						ctrl(999901) ctrlSetTooltip "The rally point is not yet available for deployment.";
+					}
+					else
+					{
+						ctrl(999901) ctrlSetText "Deploy Rally Point";
+						ctrl(999901) ctrlEnable true;
+						ctrl(999901) ctrlSetTooltip "Deploys a rally point at your position.";
+					};
+				}
+				else
+				{
+					ctrl(999901) ctrlSetText "Deploy Rally Point";
+					ctrl(999901) ctrlEnable false;
+					ctrl(999901) ctrlSetTooltip "You must have a Squad Leader kit to deploy a rally point.";
+				};
+
+				ctrl(999901) ctrlShow true;
+			}
+			else
+			{
+				ctrl(999901) ctrlShow false;
+			};
+		};
+
+		sleep 1;
+	};
+};

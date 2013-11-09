@@ -9,12 +9,12 @@
 var(_squadId) = player call PRA3_fnc_unitGetSquad;
 
 {
-	[[(__ctrl(998002) lbData _x) call PRA3_fnc_getPlayerUnit, _squadId], "PRA3_fnc_squadDlg_server_joinSquad", false] call PRA3_fnc_MP;
-} forEach (lbSelection __ctrl(998002));
+	[[(ctrl(998002) lbData _x) call PRA3_fnc_getPlayerUnit, _squadId], "PRA3_fnc_squadDlg_server_joinSquad", false] call PRA3_fnc_MP;
+} forEach (lbSelection ctrl(998002));
 
-for "_i" from 0 to (lbSize __ctrl(998002))-1 do
+for "_i" from 0 to (lbSize ctrl(998002))-1 do
 {
-	__ctrl(998002) lbSetSelected [_i, false];
+	ctrl(998002) lbSetSelected [_i, false];
 };
 
 [_squadId, 99] call PRA3_fnc_squadDlg_updateSquadsInfo;

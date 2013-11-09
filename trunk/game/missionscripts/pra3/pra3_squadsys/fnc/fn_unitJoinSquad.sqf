@@ -2,7 +2,7 @@
 #include "defines.sqh"
 
 /**
- * Assignes the given unit to the squad.
+ * Assigns the given unit to the squad.
  * Returns false if the squad does not exist.
  *		 (in)  <ARRAY>:
  *			0 <OBJECT> Unit
@@ -14,7 +14,7 @@
 
 if (isServer) then
 {
-	var(_unit) = _this select 0;
+	var(_unit)    = _this select 0;
 	var(_squadId) = _this select 1;
 
 	var(_unitID) = "";

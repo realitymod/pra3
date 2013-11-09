@@ -8,6 +8,7 @@ if !(alive player) then
 	var(_body) = _this select 0;
 
 	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
+
 	// Penalize the death
 	// TODO: Remove hardcoded value
 	[player call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
@@ -57,12 +58,13 @@ if !(alive player) then
 		if ((time > PRA3_AAS_spawnAtTime || {alive player}) && {
 			isNull (uiNamespace getVariable "Rsc_PRA3_squadSys_manageDlgRespawn") &&
 			{isNull (uiNamespace getVariable "Rsc_PRA3_kits_kitDlgRespawn") &&
-			{PRA3_selectedSpawn != "" && {PRA3_kitSys_currentKit != ""}} &&
+			{count PRA3_selectedSpawn > 0 && {PRA3_kitSys_currentKit != ""}} &&
 			{[player, PRA3_selectedSpawn] call PRA3_fnc_isSpawnAvailable}
 		}}) exitWith
 		{
 			setPlayerRespawnTime -1;
 			waitUntil {alive player};
+			[player] call PRA3_fnc_switchTeamCheck;
 			[player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 			[player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
 			
@@ -70,7 +72,7 @@ if !(alive player) then
 			player switchCamera "INTERNAL";
 			camDestroy _deathCamera;
 			(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
-			PRA3_selectedSpawn = ""; // Unselect spawn point
+			PRA3_selectedSpawn = []; // Unselect spawn point
 			PRA3_AAS_spawnAtTime = nil;
 
 			// Create marker

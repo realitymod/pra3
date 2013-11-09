@@ -28,7 +28,7 @@ var(_text) = switch true do
 		_nowAvailable = 100;
 		"Debug-enabled"
 	};
-	case (isNil "PRA3_selectedSpawn" || {PRA3_selectedSpawn == ""}):
+	case (isNil "PRA3_selectedSpawn" || {count PRA3_selectedSpawn == 0}):
 	{
 		"Select a respawn location first";
 	};

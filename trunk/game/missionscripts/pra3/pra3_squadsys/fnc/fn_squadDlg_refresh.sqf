@@ -7,7 +7,6 @@
 
 var(_refreshSquads) = _this;
 
-player sideChat "refresh";
 if (
 	!isNull(uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull]) ||
 	{!isNull(uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull])}

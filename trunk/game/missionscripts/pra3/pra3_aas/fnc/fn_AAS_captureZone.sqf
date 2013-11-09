@@ -20,4 +20,4 @@ _zone call PRA3_fnc_AAS_updateZoneMarker;
 call PRA3_fnc_AAS_calculateFrontline;
 call PRA3_fnc_AAS_updateAttackDefendMarkers;
 call PRA3_fnc_AAS_calculateTicketBleed;
-call PRA3_fnc_refreshRespawnDlg;
+call PRA3_fnc_updateSpawnLocations;

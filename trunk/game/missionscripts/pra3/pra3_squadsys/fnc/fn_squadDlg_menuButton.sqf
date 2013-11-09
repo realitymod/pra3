@@ -14,8 +14,8 @@ var(_ft) = [_squad, _unit] call PRA3_fnc_unitGetFt;
 
 var(_common) =
 {
-	__ctrl(301) ctrlShow false;
-	__ctrl(302) ctrlShow false;
+	ctrl(301) ctrlShow false;
+	ctrl(302) ctrlShow false;
 	PRA3_squadSys_menuTarget = "";
 };
 if (_menu == 0) then
@@ -28,30 +28,30 @@ if (_menu == 0) then
 
 			if (_ft == 0) then // No FT assigned
 			{
-				__ctrl(30201) ctrlSetText "Assign to Charlie";
-				__ctrl(30202) ctrlSetText "Assign to Delta";
-				__ctrl(30202) ctrlShow true;
+				ctrl(30201) ctrlSetText "Assign to Charlie";
+				ctrl(30202) ctrlSetText "Assign to Delta";
+				ctrl(30202) ctrlShow true;
 			}
 			else
 			{
-				__ctrl(30201) ctrlSetText "Unassign";
+				ctrl(30201) ctrlSetText "Unassign";
 				if ([_squad, _ft] call PRA3_fnc_squadGetFtLeader == _unit) then // FT leader
 				{
-					__ctrl(30202) ctrlShow false;
+					ctrl(30202) ctrlShow false;
 					_h = 1;
 				}
 				else
 				{
-					__ctrl(30202) ctrlSetText "Set FT leader";
-					__ctrl(30202) ctrlShow true;
+					ctrl(30202) ctrlSetText "Set FT leader";
+					ctrl(30202) ctrlShow true;
 				};
 			};
 
-			__ctrl(302) ctrlSetPosition [(PRA3_squadSys_menuPos select 0) + 0.22, PRA3_squadSys_menuPos select 1, 0.22, _h * 0.04];
-			__ctrl(302) ctrlCommit 0;
-			__ctrl(302) ctrlShow true;
+			ctrl(302) ctrlSetPosition [(PRA3_squadSys_menuPos select 0) + 0.22, PRA3_squadSys_menuPos select 1, 0.22, _h * 0.04];
+			ctrl(302) ctrlCommit 0;
+			ctrl(302) ctrlShow true;
 
-			ctrlSetFocus __ctrl(302);
+			ctrlSetFocus ctrl(302);
 		};
 		case 1:
 		{
