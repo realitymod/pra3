@@ -16,7 +16,7 @@ var(_team)  = _caller call PRA3_fnc_getPlayerTeam;
 var(_squad) = _caller call PRA3_fnc_unitGetSquad;
 
 //find out if there are enough Squad's mates nearby
-var(_nearby) = {alive _x && {_x call PRA3_fnc_unitGetSquad == _squad}} count (getPosATL _caller nearEntities ["CAManBase", REQUIRE_DISTANCE]);
+var(_nearby) = {alive _x && {_x call PRA3_fnc_unitGetSquad == _squad}} count (getPosATL _caller nearEntities ["CAManBase", REQUIRE_DISTANCE]);/*
 if (_nearby < REQUIRE_MEMBERS) exitWith
 {
 	PRA3_core globalChat format [
@@ -24,13 +24,49 @@ if (_nearby < REQUIRE_MEMBERS) exitWith
 		REQUIRE_MEMBERS - _nearby,
 		REQUIRE_DISTANCE
 	];
+
+	false
+};
+*/
+
+var(_pos) = ATLtoASL(player modelToWorld [0,2,0]);
+player groupChat "-----";
+while {lineIntersects [_pos, [_pos select 0, _pos select 1, (_pos select 2) + 1]]} do
+{
+	_pos set [2, (_pos select 2) - 0.1];
+	//player groupChat str (_pos select 2);
 };
 
-var(_safePos) = [[_caller, 2, getDir _caller] call BIS_fnc_relPos ,0.5,2,0.5,0,100,0,[],[[-500,-500,0],[-500,-500,0]]] call BIS_fnc_findSafePos;
-if (_safePos distance [-500,-500,0] < 1) exitWith
+player groupChat format["found non-intersect pos: %1", _pos select 2];
+
+while {!lineIntersects [_pos, [_pos select 0, _pos select 1, (_pos select 2) + 1]] && _pos select 2 > getTerrainHeightASL _pos} do
+{
+	_pos set [2, (_pos select 2) - 0.1];
+	//player groupChat str (_pos select 2);
+};
+
+if (_pos select 2 < getTerrainHeightASL _pos) then
+{
+	_pos set [2, getTerrainHeightASL _pos];
+};
+
+player groupChat format["found intersect pos: %1", _pos select 2];
+
+while {lineIntersects [_pos, [_pos select 0, _pos select 1, (_pos select 2) + 1]]} do
+{
+	_pos set [2, (_pos select 2) + 0.01];
+	//player groupChat str (_pos select 2);
+};
+
+player groupChat format["found final pos: %1", _pos select 2];
+
+if (lineIntersects [getPosASL player, _pos]/* || {terrainIntersectASL [getPosASL player, _pos]}*/) exitWith
 {
 	PRA3_core globalChat "No suitable position found";
+	false
 };
+
+var(_safePos) = ASLtoATL _pos;
 
 //Check if no hostile unit near the RP
 var(_safeSpawn) = true;
@@ -40,16 +76,13 @@ var(_safeSpawn) = true;
 
 if !_safeSpawn exitWith
 {
-	PRA3_core globalChat "Cannot deploy rally point: Hostile forces nearby"
+	PRA3_core globalChat "Cannot deploy rally point: Hostile forces nearby";
+
+	false
 };
 
-//Create the RP and set the variable
-var(_rp) = _team call PRA3_fnc_getTeamRallyPoint createVehicle _safePos;
+[[_squad, _safePos, getDir player, _team call PRA3_fnc_getTeamRallyPoint], "PRA3_fnc_squadCreateRallypoint", false] call PRA3_fnc_MP;
 
-PRA3_RPTime = time;
-"rallyPoint" setMarkerPosLocal _safePos;
-_rp setVariable ["PRA3_rally_deployTime", time, true];
-_rp setVariable ["PRA3_rally_squad", _squad, true];
-_rp setVariable ["PRA3_rally_tickets", count (_squad call PRA3_fnc_squadGetMembers), true];
+PRA3_core globalChat "Rally point deployed.";
 
-[[_squad, _rp], "PRA3_fnc_squadRegisterRallypoint", false] call PRA3_fnc_MP;
+true
