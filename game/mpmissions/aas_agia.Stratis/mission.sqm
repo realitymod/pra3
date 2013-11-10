@@ -81,7 +81,7 @@ class Mission
 					id=1;
 					side="WEST";
 					vehicle="B_Soldier_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1287,7 +1287,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=33;
+		items=35;
 		class Item0
 		{
 			position[]={3239.6538,4.8564601,5824.5874};
@@ -1625,6 +1625,28 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+		};
+		class Item33
+		{
+			position[]={3083.989,2.5005951,5918.229};
+			azimut=-55.298;
+			id=98;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box1";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
+		};
+		class Item34
+		{
+			position[]={2909.2346,3.3499999,6041.5518};
+			azimut=-58.468899;
+			id=99;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			skill=0.60000002;
+			text="box2";
+			init="clearMagazineCargo this; clearWeaponCargo this; this enableSimulation false;";
 		};
 	};
 	class Markers
