@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Morningstar"
+#define __name "Morningstar"
 
 #define PRA3_DEBUG
 

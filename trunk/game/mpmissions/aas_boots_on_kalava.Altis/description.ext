@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Boots on Kalava"
+#define __name "Boots on Kalava"
 
 #define PRA3_DEBUG
 

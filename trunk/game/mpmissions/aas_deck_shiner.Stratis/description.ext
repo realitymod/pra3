@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Deck Shiner"
+#define __name "Deck Shiner"
 
 #define PRA3_DEBUG
 

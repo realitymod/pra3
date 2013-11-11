@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Tale of Two Towns"
+#define __name "Tale of Two Towns"
 
 #define PRA3_DEBUG
 
