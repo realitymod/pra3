@@ -3,7 +3,7 @@
 var(_box) = _this select 0;
 
 var(_closestSpawn) = [getPosATL _box, player, 25] call PRA3_fnc_findNearestSpawn;
-if (_closestSpawn == "") then
+if (count _closestSpawn == 0) then
 {
 	PRA3_core globalChat "Unavailable. Attached spawn must belong to your team.";
 }
@@ -20,9 +20,9 @@ else
 			isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlgRespawn", displayNull])}
 		};
 
-		if (PRA3_selectedSpawn != "") then
+		if (count PRA3_selectedSpawn > 0) then
 		{
-			if (PRA3_selectedSpawn != _this) then
+			if !([_this, PRA3_selectedSpawn] call BIS_fnc_areEqual) then
 			{
 				[player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 			};
