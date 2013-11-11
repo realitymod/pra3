@@ -378,7 +378,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			position[]={3211.1069,4.7735009,5821.6655};
@@ -567,6 +567,15 @@ class Mission
 			colorName="ColorBlue";
 			a=100;
 			b=100;
+		};
+		class Item19
+		{
+			position[]={3026.2034,4.3850574,5976.0879};
+			name="randomDoors1";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=300;
+			b=300;
 		};
 	};
 };

@@ -37,4 +37,6 @@ PRA3_AAS_restrictionZones = [
 	["east_spawn", 		[west]		,10,		false,			false,		true]
 ];
 
+PRA3_AAS_randomDoorsMarkers = ["randomDoors1"];			//doors in the radius of that marker will be randomlly open or close
+
 call compile preprocessFileLineNumbers "pra3\init.sqf";
