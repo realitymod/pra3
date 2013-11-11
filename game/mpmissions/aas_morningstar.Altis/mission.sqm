@@ -14,7 +14,6 @@ class Mission
 		"A3_Characters_F_OPFOR",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"A3_Characters_F_BLUFOR"
 	};
 	addOnsAuto[]=
@@ -30,7 +29,6 @@ class Mission
 		"A3_Structures_F_Mil_Cargo",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"a3_map_altis"
 	};
 	randomSeed=4709894;
@@ -2432,7 +2430,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			position[]={24657.275,18.079582,23177.352};
@@ -2600,6 +2598,17 @@ class Mission
 			name="respawn_west";
 			type="Empty";
 			fillName="Border";
+			drawBorder=1;
+		};
+		class Item17
+		{
+			position[]={24365.898,24.583027,22852.451};
+			name="randomDoors1";
+			markerType="ELLIPSE";
+			type="Empty";
+			fillName="Border";
+			a=1000;
+			b=1000;
 			drawBorder=1;
 		};
 	};

@@ -60,4 +60,8 @@ class AAS
 	{
 		description = "Create restricted zones";
 	};
+	class AAS_createRandomDoor
+	{
+		description = "Randomly close and open doors in the given marker area";
+	};
 };

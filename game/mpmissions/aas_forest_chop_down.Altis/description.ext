@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Forest Chop Down"
+#define __name "Forest Chop Down"
 
 #define PRA3_DEBUG
 

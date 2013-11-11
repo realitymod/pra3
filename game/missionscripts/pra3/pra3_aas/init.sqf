@@ -238,7 +238,7 @@ var(_init) =
 	PRA3_AAS_attackDefendMarkers = [];
 
 	call PRA3_fnc_AAS_createRestrictedZones; //Build restriction zones
-
+	call PRA3_fnc_AAS_createRandomDoor; //Create random door positions
 	call PRA3_fnc_AAS_calculateFrontline;
 	call PRA3_fnc_AAS_updateAttackDefendMarkers;
 

@@ -6,3 +6,4 @@ PRA3_AAS_bases            = _this select 3;
 PRA3_AAS_respawns         = _this select 4;
 PRA3_AAS_restrictionZones = _this select 5;
 PRA3_AAS_startCamera      = _this select 6;
+PRA3_AAS_randomDoorMarker = _this select 7;

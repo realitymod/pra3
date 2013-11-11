@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Agios Valley"
+#define __name "Agios Valley"
 
 #define PRA3_DEBUG
 

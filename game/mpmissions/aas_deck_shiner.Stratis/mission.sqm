@@ -2731,7 +2731,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=16;
+		items=17;
 		class Item0
 		{
 			position[]={3138.884,91.511459,1606.8291};
@@ -2885,6 +2885,17 @@ class Mission
 			name="respawn_west";
 			type="Empty";
 			fillName="Border";
+			drawBorder=1;
+		};
+		class Item16
+		{
+			position[]={3004.9451,165.89522,1974.1421};
+			name="randomDoors1";
+			markerType="ELLIPSE";
+			type="Empty";
+			fillName="Border";
+			a=500;
+			b=500;
 			drawBorder=1;
 		};
 	};

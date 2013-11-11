@@ -36,7 +36,6 @@ class Mission
 		"A3_Structures_F_Ind_Cargo",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"a3_map_altis"
 	};
 	randomSeed=2342695;
@@ -1615,7 +1614,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			position[]={21595.959,19.334614,21279.334};
@@ -1793,6 +1792,17 @@ class Mission
 			name="respawn_west";
 			type="Empty";
 			fillName="Border";
+			drawBorder=1;
+		};
+		class Item18
+		{
+			position[]={22695.41,18.881689,21514.502};
+			name="randomDoors1";
+			markerType="ELLIPSE";
+			type="Empty";
+			fillName="Border";
+			a=1000;
+			b=1000;
 			drawBorder=1;
 		};
 	};

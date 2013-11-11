@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "PR:A3 - Agia Marina"
+#define __name "Agia Marina"
 
 #define PRA3_DEBUG
 
