@@ -2,7 +2,7 @@
 
 [
 	// Opposing sides
-	["NATO", "Iran"],
+	["NATO", "CSAT"],
 	// Initial tickets
 	[300, 300],
 	// Capture zones

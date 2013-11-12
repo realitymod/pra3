@@ -2748,7 +2748,7 @@ class Mission
 		{
 			position[]={3324.8982,151.36241,2364.7183};
 			name="zone4";
-			text="IRAN MAIN";
+			text="CSAT MAIN";
 			markerType="RECTANGLE";
 			type="Empty";
 			a=20;

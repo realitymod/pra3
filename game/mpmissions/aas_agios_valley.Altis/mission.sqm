@@ -8691,7 +8691,7 @@ class Mission
 		items=20;
 		class Item0
 		{
-			position[]={8919.8535,132.62965,16650.924};
+			position[]={8894.4629,130.13196,16622.361};
 			name="resistance_spawn";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -8872,7 +8872,7 @@ class Mission
 		class Item18
 		{
 			position[]={8912.5127,132.66936,16652.031};
-			name="respawn_east";
+			name="respawn_resistance";
 			type="Empty";
 			fillName="Border";
 			drawBorder=1;

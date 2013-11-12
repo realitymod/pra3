@@ -1692,7 +1692,7 @@ class Mission
 		{
 			position[]={23635.598,63.880215,21545.938};
 			name="zone6";
-			text="BLUEFOR MAIN";
+			text="CSAT MAIN";
 			markerType="RECTANGLE";
 			type="Empty";
 			a=14;
