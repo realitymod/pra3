@@ -24,10 +24,10 @@ class PRA3_teams
 		flag       = "\A3\Data_F\Flags\Flag_nato_CO.paa";
 		rallyPoint = "Land_TentDome_F";
 	};
-	class Iran
+	class CSAT
 	{
 		side       = SIDE_EAST;
-		name       = "Iran";
+		name       = "CSAT";
 		flag       = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 		rallyPoint = "Land_TentA_F";
 	};
@@ -335,7 +335,7 @@ class PRA3_kits
 		class Rifleman_IN : Rifleman_US
 		{
 			scope = public;
-			team = Iran;
+			team = CSAT;
 
 			class Clothing
 			{

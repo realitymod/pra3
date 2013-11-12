@@ -3006,7 +3006,7 @@ class Mission
 		{
 			position[]={4617.1304,33.011921,14108.274};
 			name="zone4";
-			text="IRAN MAIN";
+			text="CSAT MAIN";
 			markerType="ELLIPSE";
 			type="Empty";
 			fillName="SolidBorder";
@@ -3031,7 +3031,7 @@ class Mission
 		{
 			position[]={3967.1511,26.872339,13745.251};
 			name="spawn2";
-			text="Iranian Outpost";
+			text="CSAT Outpost";
 			type="Empty";
 		};
 		class Item6

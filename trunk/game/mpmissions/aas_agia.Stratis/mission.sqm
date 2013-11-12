@@ -81,7 +81,7 @@ class Mission
 					id=1;
 					side="WEST";
 					vehicle="B_Soldier_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -1688,7 +1688,7 @@ class Mission
 		class Item3
 		{
 			position[]={3069.8477,4.8935695,6053.1465};
-			name="zone2";
+			name="zone3";
 			text="North Side";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -1700,7 +1700,7 @@ class Mission
 		{
 			position[]={2837.1924,2.5668554,6113.0967};
 			name="zone6";
-			text="IRAN MAIN";
+			text="CSAT MAIN";
 			markerType="RECTANGLE";
 			type="Empty";
 			a=30;
@@ -1710,7 +1710,7 @@ class Mission
 		class Item5
 		{
 			position[]={3075.3096,3.5110524,6006.6973};
-			name="zone3";
+			name="zone2";
 			text="Garden";
 			markerType="RECTANGLE";
 			type="Empty";

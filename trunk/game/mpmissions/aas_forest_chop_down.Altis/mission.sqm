@@ -1084,7 +1084,7 @@ class Mission
 				class Item0
 				{
 					position[]={8316.4912,136.30069,18739.354};
-					azimut=33.993053;
+					azimut=33.993099;
 					id=53;
 					side="EAST";
 					vehicle="O_Soldier_F";
@@ -2851,12 +2851,12 @@ class Mission
 		{
 			position[]={8324.707,136.24738,18739.08};
 			name="zone6";
-			text="IRAN MAIN";
+			text="CSAT MAIN";
 			markerType="RECTANGLE";
 			type="Empty";
 			a=20;
 			b=20;
-			angle=126.76894;
+			angle=126.769;
 		};
 		class Item6
 		{

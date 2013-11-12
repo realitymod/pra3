@@ -2019,7 +2019,7 @@ class Mission
 		{
 			position[]={9194.5059,14.819702,12459.129};
 			name="zone6";
-			text="IRAN MAIN";
+			text="CSAT MAIN";
 			markerType="ELLIPSE";
 			type="Empty";
 			a=30;
