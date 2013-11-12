@@ -75,7 +75,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={19951.334,0.082388245,20365.457};
+					position[]={21510.398,0.11052607,20484.492};
 					id=0;
 					side="LOGIC";
 					vehicle="Logic";
@@ -3813,29 +3813,29 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={22704.01,15.95354,16028.607};
+			position[]={23612.047,6.63905,16120.483};
 			name="borderSouth";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			fillName="Grid";
-			a=3000;
+			a=2300;
 			b=600;
 		};
 		class Item11
 		{
-			position[]={22700.158,31.66378,21207.652};
+			position[]={23608.197,64.362976,21290.549};
 			name="borderNorth_1";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			fillName="Grid";
-			a=3000;
+			a=2300;
 			b=600;
 		};
 		class Item12
 		{
-			position[]={25097.287,-0.017984107,18622.918};
+			position[]={25304.52,0.015713289,18705.809};
 			name="borderEast";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -3847,7 +3847,7 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={19113.994,3.3387647,18606.184};
+			position[]={20749.795,29.929737,18707.047};
 			name="borderWest";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -3916,7 +3916,7 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={22793.938,3.1786134,18624.979};
+			position[]={23032.252,3.1900001,18707.875};
 			name="randomDoors1";
 			markerType="ELLIPSE";
 			type="Empty";
