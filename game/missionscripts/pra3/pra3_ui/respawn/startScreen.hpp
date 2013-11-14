@@ -11,8 +11,11 @@ class PRA3_respawn_startScreen : PRA3_respawn_deadScreen
 		};
 		class InstructionsText : InstructionsText
 		{
-			text = "Press <t color='#aaaaaa'>ENTER</t>, join a squad, select a spawn location and choose a kit.";
+			h = __EVAL(0.05 * 5);
 		};
-		class CountdownText : CountdownText	{};
+		class CountdownText : CountdownText
+		{
+			y = __EVAL(0.35 + 0.05 + 0.05 * 5 + 0.05);
+		};
 	};
 };

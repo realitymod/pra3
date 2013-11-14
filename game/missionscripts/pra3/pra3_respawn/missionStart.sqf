@@ -37,6 +37,27 @@ if (isNil "PRA3_respawn_keyDownHandler") then
 
 ["PRA3_start_black"] call BIS_fnc_rscLayer cutText ["", "BLACK IN", 1];
 
+_updateInstructions =
+{
+	_getImg =
+	{
+		format [
+			"\a3\ui_f\data\map\Diary\Icons\%1",
+			if _this then {"tasksucceeded_ca"} else {"tasknone_ca"}
+		]
+	};
+
+	_text = format [
+		"Press <t color='#aaaaaa'>ENTER</t> and<br/> <img image='%1'/> select a team<br/> <img image='%2'/> join a squad<br/> <img image='%3'/> select a spawn location<br/> <img image='%4'/> choose a kit",
+		true call _getImg,
+		(player call PRA3_fnc_unitGetSquad != -1) call _getImg,
+		(count PRA3_selectedSpawn > 0) call _getImg,
+		(PRA3_kitSys_currentKit != "") call _getImg
+	];
+
+	ctrl(20) ctrlSetStructuredText parseText _text;
+};
+
 waitUntil
 {
 	_time = PRA3_AAS_prepareTime - time;
@@ -47,6 +68,8 @@ waitUntil
 		};
 	ctrl(30) ctrlSetStructuredText parseText _timeStr;
 
+	call _updateInstructions;
+
 	_time <= 0
 };
 
@@ -54,6 +77,8 @@ ctrl(10) ctrlSetStructuredText parseText "The mission has begun...";
 ctrl(30) ctrlShow false;
 
 waitUntil {
+	call _updateInstructions;
+
 	count PRA3_selectedSpawn > 0 && {
 		PRA3_kitSys_currentKit != "" && {
 			isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && {

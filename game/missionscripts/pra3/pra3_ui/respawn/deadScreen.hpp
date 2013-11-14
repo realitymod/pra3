@@ -1,11 +1,11 @@
 class PRA3_respawn_deadScreen
 {
-	idd = -1;
+	idd      = -1;
 	duration = 1e+1000;
-	fadeIn = 0.5;
-	fadeOut = 0;
-	name = "PRA3_respawn_deadScreen";
-	onLoad = "uiNamespace setVariable [""PRA3_respawn_deadScreen"", _this select 0]";
+	fadeIn   = 1;
+	fadeOut  = 0;
+	name     = "PRA3_respawn_deadScreen";
+	onLoad   = "uiNamespace setVariable [""PRA3_respawn_deadScreen"", _this select 0]";
 
 	class ControlsBackground
 	{
@@ -22,13 +22,13 @@ class PRA3_respawn_deadScreen
 		};
 		class StatusText : RscStructuredText
 		{
-			idc = 10;
-			x = 0;
-			y = 0.4 - 0.09;
-			w = 1;
+			idc  = 10;
+			x    = 0;
+			y    = __EVAL(0.35 - 0.09);
+			w    = 1;
 			text = "<t color='#ff0000'>You are dead.</t>";
 			size = 0.09;
-			h = 0.09;
+			h    = 0.09;
 
 			colorBackground[] = {0,0,0,0};
 
@@ -39,19 +39,25 @@ class PRA3_respawn_deadScreen
 		};
 		class InstructionsText : StatusText
 		{
-			idc = 20;
-			y = 0.5 - 0.05/2;
-			h = __EVAL(0.05 * 2);
+			idc   = 20;
+			x     = 0.25;
+			y     = __EVAL(0.35 + 0.05);
+			h     = __EVAL(0.05 * 3);
 			style = ST_MULTI;
-			size = 0.05;
-			text = "Press <t color='#aaaaaa'>ENTER</t> to open the spawn selection screen.";
+			size  = 0.05;
+			text  = "";
+
+			class Attributes : Attributes
+			{
+				align = "left";
+			};
 		};
 		class CountdownText : StatusText
 		{
-			idc = 30;
-			x = 0.375;
-			y = 0.6;
-			text = "00:00.000";
+			idc  = 30;
+			x    = 0.375;
+			y    = __EVAL(0.35 + 0.05 + 0.05 * 4 + 0.05);
+			text = "";
 
 			class Attributes : Attributes
 			{
