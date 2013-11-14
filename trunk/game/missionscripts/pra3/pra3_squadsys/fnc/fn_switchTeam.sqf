@@ -57,12 +57,14 @@ else
 	//Remove current kit
 	PRA3_kitSys_currentKit = "";
 
-	if (alive player) then {
-			//Make the switch if
-			var(_group) = createGroup _newTeamSide;
-			[player] join _group;
-			player setDamage 1;
-		};
+	if (alive player) then
+	{
+		//Make the switch if
+		var(_group) = createGroup _newTeamSide;
+		[player] join _group;
+		player setDamage 1;
+		closeDialog 0;
+	};
 
 	// Update map markers to reflect the new side
 	call PRA3_fnc_AAS_updateEverything;

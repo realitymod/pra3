@@ -81,7 +81,7 @@ class Mission
 					id=1;
 					side="WEST";
 					vehicle="B_Soldier_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
