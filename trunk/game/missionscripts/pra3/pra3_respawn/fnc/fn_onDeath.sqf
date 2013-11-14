@@ -52,7 +52,7 @@ if !(alive player) then
 	1 fadeSound 0;
 
 	// Wait for black screen to fade in
-	sleep 1;
+	sleep 1.1;
 
 	// Create a camera in the middle of nowhere to prevent dead player from talking to people in direct
 	var(_pos) = [1,1,1000];
