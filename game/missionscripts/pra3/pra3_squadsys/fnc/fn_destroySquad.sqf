@@ -32,10 +32,10 @@ if (isServer) then
 				if (_x == _squadId) exitWith
 				{
 					[_squads, _forEachIndex] call PRA3_fnc_arrayRemoveAt;
+					PRA3_core setVariable ["PRA3_squadSys_squads", _squads, true]; // Public broadcast
 					PRA3_core setVariable [format["PRA3_squadSys_squad_%1", _squadId], nil, true];
 					_success = true;
 				};
-
 			} forEach _squads;
 
 			_success
