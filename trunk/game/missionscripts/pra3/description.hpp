@@ -14,11 +14,12 @@ loadScreen = "pra3\PRloadingLogo.jpg";
 
 disabledAI = 1;
 
-respawn = 3;
-respawnDelay = 10;
-respawnDialog = 0;
+respawn            = 3;
+respawnDelay       = 10;
+respawnDialog      = 0;
 respawnTemplates[] = {"PRA3_Select"};
-respawnOnStart = 1;
+respawnOnStart     = 1;
+enableDebugConsole = 2; // Enable debug console for everyone - TODO: Disable
 
 class CfgRespawnTemplates
 {
