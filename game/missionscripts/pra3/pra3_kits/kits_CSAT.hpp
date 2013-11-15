@@ -5,10 +5,9 @@ class Rifleman_CSAT : Rifleman_NATO
 
 	class Clothing
 	{
-		uniform  = "U_I_CombatUniform";
-		headgear = "H_HelmetIA_net";
-		goggles  = "";
-		vest     = "V_PlateCarrierIA2_dgtl";
+		uniform  = "U_O_CombatUniform_ocamo";
+		headgear = "H_HelmetO_ocamo";
+		vest     = "V_HarnessO_brn";
 	};
 
 	class Variants
@@ -32,7 +31,7 @@ class Rifleman_CSAT : Rifleman_NATO
 			};
 			class Backpack
 			{
-				backpack    = "B_Carryall_oli";
+				backpack    = "O_Mortar_01_weapon_F";
 				weapons[]   = {};
 				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}};
 			};
@@ -46,7 +45,7 @@ class Rifleman_CSAT : Rifleman_NATO
 
 			class Backpack : Backpack
 			{
-				backpack    = "B_TacticalPack_oli";
+				backpack    = "B_FieldPack_ocamo_AAR";
 				magazines[] = {{"200Rnd_65x39_belt_Tracer_Green", 5}};
 			};
 		};
@@ -56,7 +55,7 @@ class Rifleman_CSAT : Rifleman_NATO
 
 			class Backpack : Backpack
 			{
-				backpack    = "B_Tacticalpack_oli";
+				backpack    = "B_FieldPack_ocamo_AAR";
 				magazines[] = {{"1Rnd_HE_Grenade_shell", 20}, {"1Rnd_Smoke_Grenade_shell", 10}};
 			};
 		};
@@ -74,9 +73,9 @@ class SquadLeader_CSAT : Rifleman_CSAT
 
 	class Clothing : Clothing
 	{
-		uniform  = "U_I_CombatUniform_tshirt";
-		headgear = "H_HelmetIA";
-		vest     = "V_PlateCarrierIA1_dgtl";
+		uniform  = "U_O_OfficerUniform_ocamo";
+		headgear = "H_Beret_ocamo";
+		vest     = "V_BandollierB_khk";
 	};
 
 	abilities[] = {"rallyPoint"};
@@ -100,6 +99,7 @@ class SquadLeader_CSAT : Rifleman_CSAT
 			};
 			class Backpack
 			{
+				backpack    = "B_FieldPack_ocamo_AAR";
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellRed", 2}};
@@ -119,9 +119,6 @@ class Medic_CSAT : Rifleman_CSAT
 
 	class Clothing : Clothing
 	{
-		uniform  = "U_I_CombatUniform_shortsleeve";
-		vest     = "V_BandollierB_oli";
-		headgear = "H_HelmetIA_camo";
 	};
 
 	class Variants : Variants
@@ -137,7 +134,7 @@ class Medic_CSAT : Rifleman_CSAT
 			};
 			class Backpack
 			{
-				backpack = "B_AssaultPack_khk";
+				backpack = "B_FieldPack_ocamo_AAR";
 				weapons[] = {{"Medikit", 1}, {"FirstAidKit", 10}};
 			};
 
@@ -158,7 +155,6 @@ class Machinegunner_CSAT : Rifleman_CSAT
 
 	class Clothing : Clothing
 	{
-		uniform = "U_I_CombatUniform_shortsleeve";
 	};
 
 	class Variants : Variants
@@ -175,6 +171,7 @@ class Machinegunner_CSAT : Rifleman_CSAT
 			};
 			class Backpack
 			{
+				backpack    = "B_FieldPack_ocamo_AAR";
 			};
 		};
 	};
@@ -191,7 +188,6 @@ class Grenadier_CSAT : Rifleman_CSAT
 
 	class Clothing : Clothing
 	{
-		vest = "V_PlateCarrierIAGL_dgtl";
 	};
 
 	class Variants : Variants
@@ -208,6 +204,7 @@ class Grenadier_CSAT : Rifleman_CSAT
 			};
 			class Backpack
 			{
+				backpack    = "B_FieldPack_ocamo_AAR";
 			};
 
 			explosives[] = {};
@@ -227,8 +224,7 @@ class Marksman_CSAT : Rifleman_CSAT
 
 	class Clothing : Clothing
 	{
-		vest     = "V_ChestrigF_oli";
-		headgear = "H_HelmetIA_camo";
+		vest     = "V_BandollierB_khk";
 	};
 
 	class Variants : Variants
