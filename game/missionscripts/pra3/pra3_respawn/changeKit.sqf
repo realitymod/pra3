@@ -5,7 +5,7 @@ var(_box) = _this select 0;
 var(_closestSpawn) = [getPosATL _box, player, 25] call PRA3_fnc_findNearestSpawn;
 if (_closestSpawn == "") then
 {
-	PRA3_core globalChat "Unavailable. Attached zone must belong to your team.";
+	PRA3_core globalChat "Unavailable. Attached spawn must belong to your team.";
 }
 else
 {
