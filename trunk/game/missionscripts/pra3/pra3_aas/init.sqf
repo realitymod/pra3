@@ -72,23 +72,6 @@ var(_init) =
 
 			_forEachIndex call PRA3_fnc_AAS_updateZoneMarker;
 
-			// Apply spawn protection (invincibility in main bases)
-			// We also have to work around BIS' silly event handler that keeps readding itself...
-			0 spawn
-			{
-				// Wait for the BIS thing to be added
-				waitUntil {!isNil {player getVariable "BIS_fnc_feedback_hitArrayHandler"}};
-				player removeAllEventHandlers "handleDamage";
-				player addEventHandler [
-					"handleDamage",
-					{
-						BIS_hitArray = _this;
-						BIS_wasHit = true;
-						_this call PRA3_fnc_unitHit,
-					}
-				];
-			};
-
 			if (!isNil "PRA3_debug_zoneParticles") then
 			{
 				var(_createSource) =
@@ -241,6 +224,14 @@ var(_init) =
 	call PRA3_fnc_AAS_createRandomDoor; //Create random door positions
 	call PRA3_fnc_AAS_calculateFrontline;
 	call PRA3_fnc_AAS_updateAttackDefendMarkers;
+
+	// Apply spawn protection (invincibility in main bases)
+	player addEventHandler [
+		"handleDamage",
+		{
+			_this call PRA3_fnc_unitHit
+		}
+	];
 
 	// Now that everything is initialized, start the loop
 	execVM "pra3\pra3_aas\loop.sqf";

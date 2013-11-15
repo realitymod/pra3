@@ -21,8 +21,8 @@ var(_side) = _unit call PRA3_fnc_getPlayerSide;
 {
 	if (
 		_x select 2 && // it's a safe zone
-		{_unit distance markerPos (_x  select 0) < ((markerSize (_x  select 0)) select 0)} && // unit is inside the zone
-		{{_x call PRA3_fnc_AAS_getZoneOwner != _side} count (_x select 1) == 0} // the zone is controlled by the unit's side
+		{{_x call PRA3_fnc_AAS_getZoneOwner != _side} count (_x select 1) == 0} && // the zone is controlled by the unit's side
+		{[getPosATL _unit, _x select 0] call PRA3_fnc_isPointInMarker} // unit is inside the zone
 	) exitWith
 	{
 		_unitInSafeZone = true

@@ -30,6 +30,6 @@ private ["_markerName","_markerShape","_sides","_inside","_trg","_time","_air","
 	_trg setTriggerArea[(markerSize _markerName) select 0,(markerSize _markerName) select 1,markerDir _markerName,_markerShape];
 	_trg setTriggerActivation["ANY","PRESENT",true];
 	_trg setTriggerStatements[format ["(vehicle player in thislist) && (playerSide in %1)",_sides], format ["[thisTrigger,%1,%2,%3] spawn PRA3_fnc_RestrictZoneEffect",_time,_inside,_air], ""];
-	if _delete then {deleteMarkerLocal _markerName};
+	if _delete then {_markerName setMarkerAlphaLocal 0};
 
 } forEach PRA3_AAS_restrictionZones;

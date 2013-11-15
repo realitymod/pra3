@@ -6,7 +6,7 @@ class Header
 	playerCountMultipleOf = 2;
 };
 
-author = "Project Reality - www.realitymod.com";
+author = $STR_PRA3_MISSION_AUTHOR;
 
 /*Adds to screen loading*/
 onLoadName = __name;
@@ -19,7 +19,6 @@ respawnDelay       = 10;
 respawnDialog      = 0;
 respawnTemplates[] = {"PRA3_Select"};
 respawnOnStart     = 1;
-enableDebugConsole = 2; // Enable debug console for everyone - TODO: Disable
 
 class CfgRespawnTemplates
 {
@@ -60,6 +59,7 @@ class CfgDebriefing
 
 #ifdef PRA3_DEBUG
 allowFunctionsRecompile = 1;
+enableDebugConsole      = 2; // Enable debug console for everyone
 #endif // PRA3_DEBUG
 
 class CfgFunctions
