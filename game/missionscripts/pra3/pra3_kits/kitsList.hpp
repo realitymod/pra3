@@ -22,21 +22,21 @@ class PRA3_teams
 		side       = SIDE_WEST;
 		name       = "NATO";
 		flag       = "\A3\Data_F\Flags\Flag_nato_CO.paa";
-		rallyPoint = "Land_TentDome_F";
+		rallyPoint = "Land_PaperBox_open_full_F";
 	};
 	class CSAT
 	{
 		side       = SIDE_EAST;
 		name       = "CSAT";
 		flag       = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
-		rallyPoint = "Land_TentA_F";
+		rallyPoint = "Land_Pallet_MilBoxes_F";
 	};
 	class AAF
 	{
 		side       = SIDE_RESISTANCE;
 		name       = "AAF";
 		flag       = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
-		rallyPoint = "Land_TentDome_F";
+		rallyPoint = "Land_Pallet_MilBoxes_F";
 	};
 };
 

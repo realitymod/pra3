@@ -8702,13 +8702,13 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={9008.5547,120.68221,16342.16};
+			position[]={9041.9648,132.56566,16147.738};
 			name="zone5";
 			text="Hill 111";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=100;
-			b=100;
+			a=50;
+			b=50;
 		};
 		class Item2
 		{
@@ -8717,18 +8717,18 @@ class Mission
 			text="West Agios";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=200;
-			b=200;
+			a=100;
+			b=100;
 		};
 		class Item3
 		{
-			position[]={8950.041,44.292358,14614.303};
+			position[]={8825.5732,46.281288,14639.812};
 			name="zone2";
 			text="Farm Fields";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=200;
-			b=200;
+			a=100;
+			b=100;
 		};
 		class Item4
 		{
@@ -8743,7 +8743,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={8820.6133,128.13148,15241.959};
+			position[]={8818.6328,135.59972,15264.504};
 			name="zone3";
 			text="Amoni Hill";
 			markerType="ELLIPSE";
@@ -8771,13 +8771,13 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={9150.04,38.856892,14215.332};
+			position[]={9043.1416,41.057598,14360.746};
 			name="zone1";
 			text="Dam";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=100;
-			b=100;
+			a=50;
+			b=50;
 		};
 		class Item9
 		{
