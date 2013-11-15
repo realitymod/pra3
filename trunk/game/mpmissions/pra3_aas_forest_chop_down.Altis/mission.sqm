@@ -2856,7 +2856,6 @@ class Mission
 			type="Empty";
 			a=20;
 			b=20;
-			angle=126.769;
 		};
 		class Item6
 		{
@@ -2867,7 +2866,6 @@ class Mission
 			type="Empty";
 			a=40;
 			b=40;
-			angle=-102.0387;
 		};
 		class Item7
 		{

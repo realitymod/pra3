@@ -3159,22 +3159,20 @@ class Mission
 			position[]={16828.24,4.8897462,12042.522};
 			name="zone0";
 			text="NATO MAIN";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="Empty";
-			a=42;
-			b=42;
-			angle=-354.89499;
+			a=50;
+			b=50;
 		};
 		class Item6
 		{
 			position[]={17223.844,15.75235,13153.389};
 			name="zone6";
 			text="CSAT MAIN";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="Empty";
-			a=32;
-			b=32;
-			angle=-174.605;
+			a=50;
+			b=50;
 		};
 		class Item7
 		{

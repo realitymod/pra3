@@ -60,7 +60,7 @@ class Mission
 		year=2035;
 		month=6;
 		day=24;
-		hour=13;
+		hour=14;
 		minute=20;
 		startFogBase=0.001;
 		forecastFogBase=0.001;
@@ -724,7 +724,7 @@ class Mission
 				class Item0
 				{
 					position[]={3712.9861,14.498823,10737.536};
-					azimut=349.80582;
+					azimut=349.806;
 					id=34;
 					side="EAST";
 					vehicle="O_Soldier_F";

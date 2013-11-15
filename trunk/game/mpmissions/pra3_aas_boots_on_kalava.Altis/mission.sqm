@@ -3009,10 +3009,8 @@ class Mission
 			text="CSAT MAIN";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="SolidBorder";
 			a=88;
 			b=88;
-			drawBorder=1;
 		};
 		class Item4
 		{
@@ -3021,11 +3019,9 @@ class Mission
 			text="NATO MAIN";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="SolidBorder";
 			a=88;
 			b=88;
 			angle=1.29527;
-			drawBorder=1;
 		};
 		class Item5
 		{
