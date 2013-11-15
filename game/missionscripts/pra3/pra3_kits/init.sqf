@@ -7,6 +7,7 @@ if (!isDedicated) then
 		{
 			waitUntil {sleep 0.1; !isNull (uiNamespace getVariable "RscDisplayInventory")};
 			call PRA3_fnc_blockInventory;
+			waitUntil {sleep 0.1; isNull (uiNamespace getVariable "RscDisplayInventory")};
 		};
 	};
 };
