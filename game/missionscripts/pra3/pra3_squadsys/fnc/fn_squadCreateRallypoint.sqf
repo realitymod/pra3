@@ -32,11 +32,11 @@ if (isServer) then
 		_rally setPosATL _pos;
 
 		_rally setVariable ["PRA3_rally_deployTime", time, true];
-		_rally setVariable ["PRA3_rally_squad", _squad, true];
-		_rally setVariable ["PRA3_rally_tickets", count (_squad call PRA3_fnc_squadGetMembers), true];
+		_rally setVariable ["PRA3_rally_squad", _squadId, true];
+		_rally setVariable ["PRA3_rally_tickets", count (_squadId call PRA3_fnc_squadGetMembers), true];
 
 		_arr set [5, _rally];
-		//_arr set [6, time + RALLYPOINT_COOLDOWN];
+		_arr set [6, time + RALLYPOINT_COOLDOWN];
 
 		_squadId call PRA3_fnc_broadcastSquadVariable;
 
