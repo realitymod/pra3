@@ -11,22 +11,21 @@
 	/*    MARKER | TO    |  team1 team2  | OWNER   |  team1  team2 */
 		["zone0",  [],     [[1,2],[   ]], west,      [0,     0    ]],
 		["zone1",  [2],    [[3  ],[0  ]], __neutral, [__end, 0    ]],
-		["zone2",  [1],    [[3  ],[0  ]], __neutral, [12,    4    ]],
-		["zone3",  [],     [[4,5],[1,2]], __neutral, [10,    10   ]],
-		["zone4",  [5],    [[6  ],[3  ]], __neutral, [4,     12   ]],
-		["zone5",  [4],    [[6  ],[3  ]], __neutral, [0,     __end]],
-		["zone6",  [],     [[   ],[4,5]], east,      [0,     0    ]]
+		["zone2",  [1],    [[3  ],[0  ]], __neutral, [20,    10    ]],
+		["zone3",  [4],    [[5  ],[2  ]], __neutral, [10,    20   ]],
+		["zone4",  [3],    [[5  ],[2  ]], __neutral, [0,     __end]],
+		["zone5",  [],     [[   ],[4,3]], east,      [0,     0    ]],
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
-	[[0], [6]],
+	[[0], [5]],
 	// Respawn definitons
 	[
-	/*   SPAWN   | TIED | SAFE | CHANGE KIT OBJECT       */
-	/*   MARKER  | TO   | ZONE | OBJECT | ALLOW REDEPLOY */
-		["spawn0", [0  ], true,  [box0,   true]],
-		//["spawn1", [1,2], false, [box1,   false]],
-		//["spawn2", [4,5], false, [box2,   false]],
-		["spawn3", [6  ], true,  [box3,   true]]
+		/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
+		/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
+		["spawn0",   [0  ], true,  [box0,       true]],
+		//["spawn1", [1,2], false, [box1,       false]],
+		//["spawn2", [4,5], false, [box2,       false]],
+		["spawn3",   [6  ], true,  [box3,       true]]
 	],
 	// Restricted areas
 	[
