@@ -1,4 +1,3 @@
-scriptName "pra3\pra3_functions\objects\fn_unitHit.sqf";
 /************************************************************
 Author:	Shay_gman
 

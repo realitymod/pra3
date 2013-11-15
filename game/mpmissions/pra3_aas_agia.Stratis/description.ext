@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Agia Marina"
+#define __name $STR_PRA3_MISSION_NAME_AAS_AGIA_SHORT
 
 #define PRA3_DEBUG
 

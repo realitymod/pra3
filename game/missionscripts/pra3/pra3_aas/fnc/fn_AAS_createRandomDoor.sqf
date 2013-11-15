@@ -24,19 +24,19 @@ if (count PRA3_AAS_randomDoorMarker==0) exitWith {diag_log "PRA3_AAS_randomDoors
 			{
 				if (random 1 > 0.5) then
 				{
-						_x animate [format [_doorAnimName, _i], 1];
+					_x animate [format [_doorAnimName, _i], 1];
 				};
 			};
 			for "_i" from 1 to _MaxHatchesInHouse do
 			{
 				if (random 1 > 0.5) then
 				{
-						_x animate [format [_hatchAnimName, _i], 1];
+					_x animate [format [_hatchAnimName, _i], 1];
 				};
 			};
 		} foreach _objects;
 	};
  
-	deleteMarker _marker;
+	_marker setMarkerAlphaLocal 0;
  
 } foreach PRA3_AAS_randomDoorMarker;
