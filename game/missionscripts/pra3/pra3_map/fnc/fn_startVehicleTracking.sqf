@@ -14,8 +14,8 @@ var(_vehicle) = _this;
 if !isDedicated then
 {
 	// Only track friendly vehicles
-	if (((_vehicle call PRA3_fnc_getVehicleSide) == playerSide) &&
-		{isNil {_vehicle getVariable "PRA3_map_marker"}}) then
+	if (_vehicle call PRA3_fnc_getVehicleSide == player call PRA3_fnc_getPlayerSide &&
+		isNil {_vehicle getVariable "PRA3_map_marker"}) then
 	{
 		[format["Registering %1 [%2]", _vehicle, typeOf _vehicle]] call PRA3_fnc_logInfo;
 
