@@ -31,7 +31,7 @@ class Rifleman_CSAT : Rifleman_NATO
 			};
 			class Backpack
 			{
-				backpack    = "O_Mortar_01_weapon_F";
+				backpack    = "B_FieldPack_cbr_LAT";
 				weapons[]   = {};
 				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}};
 			};
@@ -171,7 +171,7 @@ class Machinegunner_CSAT : Rifleman_CSAT
 			};
 			class Backpack
 			{
-				backpack    = "B_FieldPack_ocamo_AAR";
+				backpack    = "B_FieldPack_cbr_LAT";
 			};
 		};
 	};
@@ -204,7 +204,7 @@ class Grenadier_CSAT : Rifleman_CSAT
 			};
 			class Backpack
 			{
-				backpack    = "B_FieldPack_ocamo_AAR";
+				backpack    = "B_FieldPack_cbr_LAT";
 			};
 
 			explosives[] = {};
@@ -235,7 +235,7 @@ class Marksman_CSAT : Rifleman_CSAT
 			{
 				weapon      = "srifle_DMR_01_DMS_F";
 				optics      = "optic_Arco";
-				magazines[] = {{"20Rnd_762x51_Mag", 8}};
+				magazines[] = {{"10Rnd_762x51_Mag", 9}};
 			};
 			class Secondary
 			{
