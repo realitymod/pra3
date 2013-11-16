@@ -1,0 +1,11 @@
+#define var(name) private #name; name
+#define gvar(name) if (isNil "PRA3_gvars") then {PRA3_gvars = []}; if (isNil "PRA3_fncs") then {PRA3_fncs = []}; if (isNil "PRA3_pfncs") then {PRA3_pfncs = []}; var(_found) = false; {if (#name == (_x select 0)) exitWith {var(_text) = format ["GVar %1 previously declared at %2:%3 (by %4:%5)", #name, _x select 1, _x select 2, __FILE__, __LINE__]; hint _text; diag_log text _text; _found = true}} forEach (PRA3_gvars + PRA3_fncs + PRA3_pfncs); if (!_found) then {PRA3_gvars set [count PRA3_gvars, [#name, __FILE__, __LINE__]]}; name
+#define fnc(name)  if (isNil "PRA3_gvars") then {PRA3_gvars = []}; if (isNil "PRA3_fncs") then {PRA3_fncs = []}; if (isNil "PRA3_pfncs") then {PRA3_pfncs = []}; var(_found) = false; {if (#name == (_x select 0)) exitWith {var(_text) = format ["GVar %1 previously declared at %2:%3 (by %4:%5)", #name, _x select 1, _x select 2, __FILE__, __LINE__]; hint _text; diag_log text _text; _found = true}} forEach (PRA3_gvars + PRA3_fncs + PRA3_pfncs); if (!_found) then {PRA3_fncs set  [count PRA3_fncs,  [#name, __FILE__, __LINE__]]}; name
+#define pfnc(name) if (isNil "PRA3_gvars") then {PRA3_gvars = []}; if (isNil "PRA3_fncs") then {PRA3_fncs = []}; if (isNil "PRA3_pfncs") then {PRA3_pfncs = []}; var(_found) = false; {if (#name == (_x select 0)) exitWith {var(_text) = format ["GVar %1 previously declared at %2:%3 (by %4:%5)", #name, _x select 1, _x select 2, __FILE__, __LINE__]; hint _text; diag_log text _text; _found = true}} forEach (PRA3_gvars + PRA3_fncs + PRA3_pfncs); if (!_found) then {PRA3_pfncs set [count PRA3_pfncs, [#name, __FILE__, __LINE__]]}; name
+
+_stacktrace = if (isNil "_stacktrace") then {[]} else {_stacktrace}; private "_trace"; _trace = _stacktrace + [[_fnc_scriptName, if (isNil "_this") then {"<void>"} else {str _this}]]; private "_stacktrace"; _stacktrace = _trace;
+
+#define SIDE_EAST		0
+#define SIDE_WEST		1
+#define SIDE_RESISTANCE	2
+#define SIDE_CIVILIAN	3
