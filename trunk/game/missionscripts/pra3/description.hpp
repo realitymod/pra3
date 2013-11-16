@@ -43,14 +43,14 @@ class CfgDebriefing
 	};
 	class End2
 	{
-		subtitle = "Iranian Army are victorious";
+		subtitle = "CSAT Forces are victorious";
 		backgroundPicture = "";
 		picture = "b_inf";
 		pictureColor[] = {0.5,0.0,0.0,1};
 	};
 	class Draw
 	{
-		subtitle = "Tha battle was a stalemate";
+		subtitle = "The battle was a stalemate";
 		backgroundPicture = "";
 		picture = "b_inf";
 		pictureColor[] = {0.7,0.7,0.7,1};
