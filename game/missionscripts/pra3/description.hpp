@@ -39,7 +39,7 @@ class CfgDebriefing
 {
 	class End1
 	{
-		subtitle = "NATO forces are victorious";
+		subtitle = "NATO Forces are victorious";
 		backgroundPicture = "";
 		picture = "b_inf";
 		pictureColor[] = {0.0,0.3,0.6,1};
@@ -47,6 +47,13 @@ class CfgDebriefing
 	class End2
 	{
 		subtitle = "CSAT Forces are victorious";
+		backgroundPicture = "";
+		picture = "b_inf";
+		pictureColor[] = {0.5,0.0,0.0,1};
+	};
+	class End3
+	{
+		subtitle = "AAF Forces are victorious";
 		backgroundPicture = "";
 		picture = "b_inf";
 		pictureColor[] = {0.5,0.0,0.0,1};

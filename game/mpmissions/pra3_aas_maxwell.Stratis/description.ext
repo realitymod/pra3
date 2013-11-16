@@ -1,5 +1,7 @@
 #define __maxPlayers 64
 #define __name $STR_PRA3_MISSION_NAME_AAS_MAXWELL_SHORT
+#define __name2 $STR_PRA3_MISSION_NAME_AAS_MAXWELL
+#define __description $STR_PRA3_MISSION_DESC_AAS_INF
 
 #define PRA3_DEBUG
 

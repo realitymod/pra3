@@ -3,8 +3,8 @@
 	<Package name="MPMissions">
 		<Container name="MissionNames">
 			<Key ID="str_pra3_mission_name_aas_deck">
-				<Original>PR:A3 Deck Shiner [AAS;INF]</Original>
-				<English>PR:A3 Deck Shiner [AAS;INF]</English>
+				<Original>PR:A3 Deck Shiner [AAS:INF](S)</Original>
+				<English>PR:A3 Deck Shiner [AAS:INF](S)</English>
 			</Key>
 			<Key ID="str_pra3_mission_name_aas_deck_short">
 				<Original>Deck Shiner</Original>

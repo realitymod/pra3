@@ -147,7 +147,8 @@ class Mission
 					azimut=-5.4820881;
 					id=4;
 					side="WEST";
-					vehicle="B_Soldier_F";					player="PLAY CDG";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
 					leader=1;
 					skill=1;
 					text="p3";
@@ -2891,7 +2892,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={3139.45,92.119438,1611.1318};
+			position[]={3139.0156,91.454887,1605.6978};
 			name="spawn0";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -2901,7 +2902,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={3320.3552,151.54289,2369.7939};
+			position[]={3316.4995,151.71404,2373.4565};
 			name="spawn3";
 			markerType="ELLIPSE";
 			type="Empty";

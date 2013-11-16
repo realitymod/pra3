@@ -3,8 +3,8 @@
 	<Package name="MPMissions">
 		<Container name="MissionNames">
 			<Key ID="str_pra3_mission_name_aas_morningstar">
-				<Original>PR:A3 Morningstar [AAS;INF]</Original>
-				<English>PR:A3 Morningstar [AAS;INF]</English>
+				<Original>PR:A3 Morningstar [AAS:INF](M)</Original>
+				<English>PR:A3 Morningstar [AAS:INF](M)</English>
 			</Key>
 			<Key ID="str_pra3_mission_name_aas_morningstar_short">
 				<Original>Morningstar</Original>
