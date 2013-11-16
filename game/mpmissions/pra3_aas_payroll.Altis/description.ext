@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Payroll"
+#define __name $STR_PRA3_MISSION_NAME_AAS_PAYROLL_SHORT
 
 #define PRA3_DEBUG
 

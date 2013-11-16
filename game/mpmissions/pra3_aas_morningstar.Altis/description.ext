@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Morningstar"
+#define __name $STR_PRA3_MISSION_NAME_AAS_MORNINGSTAR_SHORT
 
 #define PRA3_DEBUG
 

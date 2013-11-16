@@ -1,5 +1,5 @@
 #define __maxPlayers 64
-#define __name "Salt Lake"
+#define __name $STR_PRA3_MISSION_NAME_AAS_SALT_LAKE_SHORT
 
 #define PRA3_DEBUG
 
