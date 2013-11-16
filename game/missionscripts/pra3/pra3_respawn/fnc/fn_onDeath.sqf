@@ -18,6 +18,12 @@ if !(alive player) then
 	{
 		deleteVehicle _x;
 	} forEach nearestObjects [player, ["WeaponHolderSimulated"], 10];
+	
+	//Delete medkits and FAKs
+	{
+		if (_x in ["FirstAidKit","Medikit"]) then {player removeItem _x}; 
+	} forEach items player;
+	
 
 	// Schedule body deletion
 	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;
