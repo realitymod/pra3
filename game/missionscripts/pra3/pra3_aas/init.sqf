@@ -1,22 +1,5 @@
 #include "fnc\aas_defines.sqh"
 
-// Figure out what the sides involved are based on the mission-defined teams
-PRA3_AAS_sides = [];
-{
-	var(_side) = _x call PRA3_fnc_getTeamSide;
-	PRA3_AAS_sides set [_forEachIndex, _side];
-
-	// Save player's team
-	if (isClient && playerSide == _side) then
-	{
-		PRA3_core setVariable [
-			format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
-			_x,
-			true
-		];
-	};
-} forEach PRA3_AAS_teams;
-
 PRA3_AAS_ticketBleed = [0,0];
 PRA3_AAS_activeZones = []; //Zones that are currently on the frontlines (active) and can be captured by somebody
 PRA3_AAS_teamZones = []; //Zones that each team has to capture/defend, indexes have to match those of PRA3_AAS_sides
@@ -28,19 +11,6 @@ PRA3_AAS_spawnAtTime = PRA3_AAS_prepareTime;
 
 var(_init) =
 {
-	// Save player's team
-	{
-		var(_side) = _x call PRA3_fnc_getTeamSide;
-		if (playerSide == _side) then
-		{
-			PRA3_core setVariable [
-				format["PRA3_player_team_%1", player call PRA3_fnc_getPlayerUID],
-				_x,
-				true
-			];
-		};
-	} forEach PRA3_AAS_teams;
-
 	// Initialize each zone and create markers for it
 	{
 		if isServer then
@@ -63,7 +33,7 @@ var(_init) =
 			_smallMarker setMarkerShapeLocal "Ellipse";
 			_smallMarker setMarkerBrushLocal "SolidBorder";
 			_smallMarker setMarkerSizeLocal [0.3,0.3];
-			_smallMarker setMarkerTextLocal "Hello";
+			_smallMarker setMarkerTextLocal "";
 			PRA3_core setVariable [format["PRA3_AAS_%1_marker_2", _forEachIndex], _smallMarker];
 
 			var(_location) = createLocation ["NameVillage", _pos, 0, 0];
@@ -238,7 +208,7 @@ var(_init) =
 };
 
 // Client might need to wait so he'll need a scheduled thread
-if isServer then
+if isDedicated then
 {
 	call _init;
 }
@@ -249,11 +219,18 @@ else
 		// playerSide will return garbage for JIP players without this wait, causing zone markers to have the wrong colors
 		waitUntil {!isNull player};
 
-		// We need to make sure the server has initialzed all the zones
-		{
-			waitUntil {!isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}};
-		} forEach PRA3_AAS_zones;
+		// Wait for server to assign side and team
+		waitUntil {player call PRA3_fnc_getPlayerSide != sideLogic && player call PRA3_fnc_getPlayerTeam != ""};
 
+		if !isServer then
+		{
+			// We need to make sure the server has initialized all the zones
+			{
+				waitUntil {!isNil {PRA3_core getVariable format["PRA3_AAS_%1_owner", _forEachIndex]}};
+			} forEach PRA3_AAS_zones;
+		};
+
+		diag_log "AAS client start init";
 		call _this;
 	};
 };

@@ -42,7 +42,6 @@
 	uiNamespace getVariable "RscDisplayInventory" displayCtrl _x ctrlAddEventHandler [
 		"mouseMoving",
 		{
-			player groupChat "click";
 			{
 				ctrlParent (_this select 0) displayCtrl _x ctrlEnable false;
 			} forEach [
