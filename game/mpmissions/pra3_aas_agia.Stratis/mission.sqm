@@ -1650,7 +1650,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=17;
+		items=19;
 		class Item0
 		{
 			position[]={3257.1758,5.129353,5802.0259};
@@ -1828,6 +1828,18 @@ class Mission
 			text="Project Reality : Arma 3 Team (www.realitymod.com)";
 			type="mil_box";
 			colorName="ColorBlack";
+		};
+		class Item17
+		{
+			position[]={3089.5034,2.5730224,5913.4404};
+			name="spawn1";
+			type="Empty";
+		};
+		class Item18
+		{
+			position[]={2906.3315,3.3499999,6043.3936};
+			name="spawn2";
+			type="Empty";
 		};
 	};
 };
