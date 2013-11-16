@@ -9706,9 +9706,8 @@ class Mission
 			text="CSAT MAIN";
 			markerType="RECTANGLE";
 			type="Empty";
-			a=80;
-			b=150;
-			angle=169.87199;
+			a=100;
+			b=100;
 		};
 		class Item4
 		{
@@ -9738,7 +9737,6 @@ class Mission
 			type="flag_NATO";
 			a=100;
 			b=100;
-			angle=-48.768799;
 		};
 		class Item7
 		{
@@ -9849,7 +9847,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={399.81821,-0.32362601,5625.0552};
+			position[]={410.23737,0.02536273,5635.4746};
 			name="author";
 			text="Project Reality : Arma 3 Team (www.realitymod.com)";
 			type="mil_box";

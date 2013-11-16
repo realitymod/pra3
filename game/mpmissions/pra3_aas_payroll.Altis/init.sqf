@@ -41,9 +41,9 @@
 	],
 	// Start camera position
 	[
-		[-89965.88,-28833.47,-11838.25], // Camera target
-		[3019.15,6001.51,3.38],          // Camera position
-		0.7                              // Camera FOV
+		[21663,21272,0], 	// Camera target 	- x,y,z
+		[21365,21302,40],  	// Camera position 	- x,y,z
+		0.7             	// Camera FOV 		- 0 to 1
 	],
 	//Random door positions
 	["randomDoors1"]
