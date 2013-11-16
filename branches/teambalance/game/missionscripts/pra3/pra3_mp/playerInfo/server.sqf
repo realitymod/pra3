@@ -16,11 +16,25 @@
 
 		_uid spawn
 		{
-			waitUntil {!isNull(_this call PRA3_fnc_getPlayerUnit)};
+			waitUntil {!isNull (_this call PRA3_fnc_getPlayerUnit)};
+
+			var(_unit) = _this call PRA3_fnc_getPlayerUnit;
+
+			var(_balance) = 1 call PRA3_fnc_getUnbalancedSide;
+			if (count _balance == 0) then
+			{
+				[[_unit, side _unit], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
+			}
+			else
+			{
+				diag_log "Switch side";
+				[[_unit, _balance select 1], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
+			};
+
 			[
 				PRA3_core,
 				format["PRA3_player_cid_%1", _this],
-				owner (_this call PRA3_fnc_getPlayerUnit),
+				owner _unit,
 				"praa_mp\playerInfo\server.sqf OPC"
 			] call PRA3_fnc_setVarBroadcast;
 		};

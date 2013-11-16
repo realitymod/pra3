@@ -181,14 +181,14 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
 			w = __w1 / 2 - 0.005;
 			h = 0.06;
-			action = "true call PRA3_fnc_switchTeam";
+			action = "player call PRA3_fnc_switchTeam";
 			default = false;
 		};
 		class SwitchTeam2 : SwitchTeam1
 		{
 			idc = 501;
 			x = safeZoneX + __spaceX + __w1 / 2;
-			action = "true call PRA3_fnc_switchTeam";
+			action = "player call PRA3_fnc_switchTeam";
 		};
 
 		class SwitchTeam1Pic : RscPicture
