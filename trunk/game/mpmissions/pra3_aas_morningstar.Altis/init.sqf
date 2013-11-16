@@ -35,8 +35,8 @@
 		["borderEast",  [west,east], 10,           false,        false,     false],
 		["borderSouth", [west,east], 10,           false,        false,     false],
 		["borderWest",  [west,east], 10,           false,        false,     false],
-		["west_spawn",  [east]     , 10,           false,        true,      true],
-		["east_spawn",  [west]     , 10,           false,        true,      true]
+		["spawn0",  	[east]     , 10,           false,        true,      true],
+		["spawn3",  	[west]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[

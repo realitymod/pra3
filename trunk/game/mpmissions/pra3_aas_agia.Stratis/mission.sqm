@@ -6,7 +6,6 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
 		"A3_Data_F",
-		"A3_Characters_F_OPFOR",
 		"A3_Weapons_F_Ammoboxes",
 		"a3_weapons_f_beta_ammoboxes",
 		"A3_Structures_F_Mil_Flags",
@@ -1777,7 +1776,7 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={3254.8938,5.142169,5801.292};
+			position[]={3259.3792,5.1588082,5800.8477};
 			name="spawn0";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -1787,7 +1786,7 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={2836.0305,2.3484941,6106.2124};
+			position[]={2835.5403,2.3453538,6106.9478};
 			name="spawn3";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -1824,10 +1823,10 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={2103.5735,11.311931,5178.5503};
+			position[]={931.24652,-0.030648675,8026.3311};
 			name="author";
-			text="Author: Project Reality Team (www.realitymod.com)";
-			type="mil_dot";
+			text="Project Reality : Arma 3 Team (www.realitymod.com)";
+			type="mil_box";
 			colorName="ColorBlack";
 		};
 	};

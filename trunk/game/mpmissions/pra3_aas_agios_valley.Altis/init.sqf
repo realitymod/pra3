@@ -1,7 +1,7 @@
 #include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
 [
-	// Opposing sides
+	// Opposing teams
 	["NATO", "AAF"],
 	// Initial tickets
 	[300, 300],
@@ -36,8 +36,8 @@
 		["borderEast",  [west,resistance], 10,       false,        false,     false],
 		["borderSouth", [west,resistance], 10,       false,        false,     false],
 		["borderWest",  [west,resistance], 10,       false,        false,     false],
-		["west_spawn",  [resistance]     , 10,       false,        true,      true],
-		["resistance_spawn",  [west]     , 10,       false,        true,      true]
+		["spawn0",      [resistance]     , 10,       false,        true,      true],
+		["spawn3",      [west]     		 , 10,       false,        true,      true]
 	],
 	// Start camera position
 	[
