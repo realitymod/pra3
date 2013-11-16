@@ -2498,7 +2498,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={23834.732,63.186169,22284.363};
+			position[]={23836.402,63.390945,22282.695};
 			name="spawn0";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -2542,7 +2542,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={25054.303,2.4258375,23402.971};
+			position[]={25060.229,1.7378784,23429.27};
 			name="spawn3";
 			markerType="ELLIPSE";
 			type="Empty";

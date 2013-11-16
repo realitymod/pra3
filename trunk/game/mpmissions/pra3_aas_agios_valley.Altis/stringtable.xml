@@ -3,8 +3,8 @@
 	<Package name="MPMissions">
 		<Container name="MissionNames">
 			<Key ID="str_pra3_mission_name_aas_agios_valley">
-				<Original>PR:A3 Agios Valley [AAS;INF]</Original>
-				<English>PR:A3 Agios Valley [AAS;INF]</English>
+				<Original>PR:A3 Agios Valley [AAS:INF](L)</Original>
+				<English>PR:A3 Agios Valley [AAS:INF](L)</English>
 			</Key>
 			<Key ID="str_pra3_mission_name_aas_agios_valley_short">
 				<Original>Agios Valley</Original>

@@ -2,11 +2,11 @@
 <Project name="PRA3">
 	<Package name="MPMissions">
 		<Container name="MissionNames">
-			<Key ID="str_pra3_mission_name_aas_salt_lake">
-				<Original>PR:A3 Sidewinder [AAS;INF]</Original>
-				<English>PR:A3 Sidewinder [AAS;INF]</English>
+			<Key ID="str_pra3_mission_name_aas_sidewinder">
+				<Original>PR:A3 Sidewinder [AAS:INF](M)</Original>
+				<English>PR:A3 Sidewinder [AAS:INF](M)</English>
 			</Key>
-			<Key ID="str_pra3_mission_name_aas_salt_lake_short">
+			<Key ID="str_pra3_mission_name_aas_sidewinder_short">
 				<Original>Sidewinder</Original>
 				<English>Sidewinder</English>
 			</Key>

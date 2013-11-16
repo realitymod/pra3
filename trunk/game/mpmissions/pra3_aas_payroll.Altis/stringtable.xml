@@ -3,8 +3,8 @@
 	<Package name="MPMissions">
 		<Container name="MissionNames">
 			<Key ID="str_pra3_mission_name_aas_payroll">
-				<Original>PR:A3 Payroll [AAS;INF]</Original>
-				<English>PR:A3 Payroll [AAS;INF]</English>
+				<Original>PR:A3 Payroll [AAS:INF](M)</Original>
+				<English>PR:A3 Payroll [AAS:INF](M)</English>
 			</Key>
 			<Key ID="str_pra3_mission_name_aas_payroll_short">
 				<Original>Payroll</Original>

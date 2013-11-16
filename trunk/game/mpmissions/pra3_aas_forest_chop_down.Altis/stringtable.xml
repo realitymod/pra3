@@ -3,8 +3,8 @@
 	<Package name="MPMissions">
 		<Container name="MissionNames">
 			<Key ID="str_pra3_mission_name_aas_forest_chop_down">
-				<Original>PR:A3 Forest Chop Down [AAS;INF]</Original>
-				<English>PR:A3 Forest Chop Down [AAS;INF]</English>
+				<Original>PR:A3 Forest Chop Down [AAS:INF](M)</Original>
+				<English>PR:A3 Forest Chop Down [AAS:INF](M)</English>
 			</Key>
 			<Key ID="str_pra3_mission_name_aas_forest_chop_down_short">
 				<Original>Forest Chop Down</Original>
