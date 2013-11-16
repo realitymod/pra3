@@ -9,8 +9,11 @@ class Header
 author = $STR_PRA3_MISSION_AUTHOR;
 
 /*Adds to screen loading*/
-onLoadName = __name;
-loadScreen = "pra3\PRloadingLogo.jpg";
+onLoadName 		= __name;
+briefingName 	= __name2;
+overviewText 	= __description;
+
+loadScreen 		= "pra3\PRloadingLogo.jpg";
 
 disabledAI = 1;
 
