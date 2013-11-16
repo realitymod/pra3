@@ -12,17 +12,6 @@ _camera camPreparePos (PRA3_AAS_startCamera select 1);
 _camera camPrepareFOV (PRA3_AAS_startCamera select 2);
 _camera camCommitPrepared 0;
 _camera cameraEffect ["INTERNAL", "BACK"];
-
-// Put player in the team with less players
-_unfairSide = 1 call PRA3_fnc_getUnbalancedSide;
-if (_unfairSide != sideLogic) then // Some unbalance is going on, some side has >1 players more
-{
-	if (player call PRA3_fnc_getPlayerSide == _unfairSide) then
-	{
-		call PRA3_fnc_switchTeam;
-	};
-};
-
 _camera camPreload 10;
 
 waitUntil {time > 1};
@@ -87,6 +76,8 @@ waitUntil {
 		}
 	}
 };
+
+PRA3_joinedGame = true;
 
 [player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
 [player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
