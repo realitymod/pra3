@@ -119,8 +119,11 @@ VARIANT_PISTOL call _giveWeapon;
 
 [_unit, _clothing select CLOTHING_UNIFORM] spawn
 {
-	sleep 0.1; // Arbitrary sleep because executing addUniform in the same frame as removeUniform causes naked people...
-	[[_this, {_this select 0 addUniform (_this select 1)}], "BIS_fnc_spawn", true] call PRA3_fnc_MP;
+	while {(uniform (_this select 0)) == ""} do
+		{
+			[[_this, {_this select 0 addUniform (_this select 1)}], "BIS_fnc_spawn", true] call PRA3_fnc_MP;
+			sleep 0.3; // Arbitrary sleep because executing addUniform in the same frame as removeUniform causes naked people...
+		};
 };
 
 [[_unit, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
