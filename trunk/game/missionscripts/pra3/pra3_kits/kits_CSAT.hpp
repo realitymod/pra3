@@ -33,7 +33,7 @@ class Rifleman_CSAT : Rifleman_NATO
 			{
 				backpack    = "B_FieldPack_cbr_LAT";
 				weapons[]   = {};
-				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}};
+				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}, {"10Rnd_762x51_Mag", 9}};
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
