@@ -16,6 +16,8 @@ if (isNil "PRA3_mp_playerInfoSpUID") then
 // Assign the UID
 _unit setVariable ["PRA3_UID", str PRA3_mp_playerInfoSpUID];
 
+// Stop them from shooting each other
+_unit setBehaviour "CARELESS";
 
 // Trigger onPlayerConnected
 [PRA3_mp_playerInfoSpUID, _unit] spawn
