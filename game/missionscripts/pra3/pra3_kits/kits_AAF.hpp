@@ -6,9 +6,9 @@ class Rifleman_AAF : Rifleman_CSAT
 	class Clothing
 	{
 		uniform  = "U_I_CombatUniform";
-		headgear = "H_HelmetIA_net";
+		headgear = "H_HelmetIA";
 		goggles  = "";
-		vest     = "V_PlateCarrierIA2_dgtl";
+		vest     = "V_PlateCarrierIA1_dgtl";
 	};
 
 	class Variants
@@ -21,11 +21,11 @@ class Rifleman_AAF : Rifleman_CSAT
 			};
 			class Primary
 			{
-				weapon      = "arifle_Katiba_F";
+				weapon      = "arifle_Mk20C_F";
 				optics      = "optic_ACO_grn";
 				rail        = "";
 				muzzle      = "";
-				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 9}};
+				magazines[] = {{"30Rnd_556x45_Stanag_Tracer_Yellow", 9}};
 			};
 			class Secondary
 			{
@@ -74,9 +74,9 @@ class SquadLeader_AAF : Rifleman_AAF
 
 	class Clothing : Clothing
 	{
-		uniform  = "U_I_CombatUniform_tshirt";
-		headgear = "H_HelmetIA";
-		vest     = "V_PlateCarrierIA1_dgtl";
+		uniform  = "U_I_OfficerUniform";
+		headgear = "H_MilCap_dgtl";
+		vest     = "V_Chestrig_oli";
 	};
 
 	abilities[] = {"rallyPoint"};
@@ -88,22 +88,23 @@ class SquadLeader_AAF : Rifleman_AAF
 			name = "Standard";
 			class Pistol
 			{
-				weapon      = "hgun_Rook40_F";
-				magazines[] = {{"16Rnd_9x21_Mag", 3}};
+				weapon      = "hgun_ACPC2_F";
+				magazines[] = {{"9Rnd_45ACP_Mag", 3}};
 			};
 			class Primary : Primary
 			{
-				optics      = "optic_Arco";
+				optics      = "optic_MRCO";
 			};
 			class Secondary
 			{
 			};
 			class Backpack
 			{
+				backpack    = "B_Carryall_oli";
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellRed", 2}};
-			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}};
+			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
 		};
 	};
 };
@@ -130,14 +131,14 @@ class Medic_AAF : Rifleman_AAF
 		{
 			class Primary : Primary
 			{
-				weapon      = "arifle_Katiba_C_F";
+				weapon      = "arifle_Mk20C_F";
 			};
 			class Secondary
 			{
 			};
 			class Backpack
 			{
-				backpack  = "B_AssaultPack_khk";
+				backpack  = "I_Fieldpack_oli_Medic";
 				weapons[] = {{"Medikit", 1}, {"FirstAidKit", 10}};
 			};
 
@@ -158,7 +159,6 @@ class Machinegunner_AAF : Rifleman_AAF
 
 	class Clothing : Clothing
 	{
-		uniform = "U_I_CombatUniform_shortsleeve";
 	};
 
 	class Variants : Variants
@@ -168,6 +168,7 @@ class Machinegunner_AAF : Rifleman_AAF
 			class Primary : Primary
 			{
 				weapon      = "LMG_Mk200_F";
+				optics      = "optic_MRCO";
 				magazines[] = {{"200Rnd_65x39_cased_Box_Tracer", 3}};
 			};
 			class Secondary
@@ -200,8 +201,8 @@ class Grenadier_AAF : Rifleman_AAF
 		{
 			class Primary : Primary
 			{
-				weapon      = "arifle_Katiba_GL_F";
-				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 9}, {"1Rnd_HE_Grenade_shell", 8}, {"1Rnd_Smoke_Grenade_shell", 4}};
+				weapon      = "arifle_Mk20_GL_F";
+				magazines[] = {{"30Rnd_556x45_Stanag_Tracer_Yellow", 9}, {"1Rnd_HE_Grenade_shell", 8}, {"1Rnd_Smoke_Grenade_shell", 4}};
 			};
 			class Secondary
 			{
@@ -227,8 +228,6 @@ class Marksman_AAF : Rifleman_AAF
 
 	class Clothing : Clothing
 	{
-		vest = "V_ChestrigF_oli";
-		headgear = "H_HelmetIA_camo";
 	};
 
 	class Variants : Variants
@@ -239,7 +238,7 @@ class Marksman_AAF : Rifleman_AAF
 			{
 				weapon      = "srifle_EBR_F";
 				optics      = "optic_Arco";
-				magazines[] = {{"20Rnd_762x51_Mag", 8}};
+				magazines[] = {{"20Rnd_762x51_Mag", 9}};
 			};
 			class Secondary
 			{

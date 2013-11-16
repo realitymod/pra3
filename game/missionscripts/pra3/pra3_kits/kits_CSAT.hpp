@@ -103,7 +103,7 @@ class SquadLeader_CSAT : Rifleman_CSAT
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellRed", 2}};
-			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}};
+			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
 		};
 	};
 };

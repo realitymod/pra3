@@ -115,7 +115,7 @@ class SquadLeader_NATO : Rifleman_NATO
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellBlue", 2}};
-			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}};
+			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
 		};
 	};
 };
@@ -251,6 +251,7 @@ class Marksman_NATO : Rifleman_NATO
 			{
 				weapon      = "arifle_MXM_F";
 				optics      = "optic_Hamr";
+				magazines[] = {{"30Rnd_65x39_caseless_mag_Tracer", 9}};
 			};
 			class Secondary
 			{
