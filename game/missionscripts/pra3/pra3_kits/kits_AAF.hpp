@@ -34,7 +34,7 @@ class Rifleman_AAF : Rifleman_CSAT
 			{
 				backpack    = "B_Carryall_oli";
 				weapons[]   = {};
-				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}};
+				magazines[] = {{"30Rnd_65x39_caseless_green_mag_Tracer", 12}, {"20Rnd_762x51_Mag", 9}};
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
