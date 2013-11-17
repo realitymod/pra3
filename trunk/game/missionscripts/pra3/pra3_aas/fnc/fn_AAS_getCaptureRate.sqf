@@ -12,4 +12,4 @@
 
 var(_zone)      = _this select 0;
 var(_attackers) = _this select 1;
-(_attackers * 3)
+(_attackers)

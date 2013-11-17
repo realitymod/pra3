@@ -46,7 +46,7 @@ class Rifleman_CSAT : Rifleman_NATO
 			class Backpack : Backpack
 			{
 				backpack    = "B_FieldPack_ocamo_AAR";
-				magazines[] = {{"200Rnd_65x39_belt_Tracer_Green", 5}};
+				magazines[] = {{"200Rnd_65x39_cased_Box_Tracer", 5}};
 			};
 		};
 		class Variant3 : Variant1
