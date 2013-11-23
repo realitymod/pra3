@@ -24,6 +24,6 @@ else
 	else // Re-select previous spawn
 	{
 		call PRA3_fnc_spawnMap_populateSpawnLocations;
-		ctrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _forEachIndex;
+		ctrl(IDC_KITDLG_SPAWNMAP_SELECTION) lbSetCurSel _selectedIndex;
 	};
 };
