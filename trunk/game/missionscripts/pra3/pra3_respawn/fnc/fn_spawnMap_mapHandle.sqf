@@ -8,7 +8,6 @@ switch (_this select 0) do
 	case 0: // Mouse moving on map
 	{
 		PRA3_spawnMapMousePos = _param select 0 ctrlMapScreenToWorld [_param select 1, _param select 2];
-		call PRA3_fnc_kitDlg_hideKitDetails; // Collapse kit details
 	};
 	case 1: // Mouse click on map
 	{
