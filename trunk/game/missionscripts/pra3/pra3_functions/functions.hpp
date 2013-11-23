@@ -153,6 +153,10 @@ class Team
 	{
 		description = "Returns the ID of the given side.";
 	};
+	class count_PlayersTeam
+	{
+		description = "Get one team name and return the number of active players on each team.";
+	};
 };
 
 class Objects

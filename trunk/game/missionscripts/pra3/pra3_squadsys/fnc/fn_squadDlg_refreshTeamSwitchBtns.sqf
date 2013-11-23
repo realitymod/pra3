@@ -7,6 +7,12 @@ diag_log [__FILE__, _this, _team1, _this displayCtrl 500];
 _this displayCtrl 500 ctrlEnable !_team1;
 _this displayCtrl 501 ctrlEnable _team1;
 
+//Team names
+var(_teamCount) = (PRA3_AAS_teams select 0) call PRA3_fnc_count_PlayersTeam;
+
+(_this displayCtrl 500) ctrlSetText format["%1-%2",((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName),_teamCount select 0];
+(_this displayCtrl 501) ctrlSetText format["%1-%2",((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName),_teamCount select 1];
+
 // Only run this for the lite dialog, work around for the missing flags
 if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull])) then
 	{
