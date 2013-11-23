@@ -31,6 +31,7 @@ _this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
 if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull])) then
 {
 	ctrl(IDC_KITDLG_SPAWNMAP_TEAMFLAG) ctrlSetText (player call PRA3_fnc_getPlayerTeam call PRA3_fnc_getTeamFlag);
+	ctrl(IDC_KITDLG_SPAWNMAP_MISSIONNAME) ctrlSetText call PRA3_fnc_missionName; //Mission name
 
 	var(_updateControls) =
 	{

@@ -6,7 +6,17 @@ class PRA3_respawn_deadScreen
 	fadeOut  = 0;
 	name     = "PRA3_respawn_deadScreen";
 	onLoad   = "uiNamespace setVariable [""PRA3_respawn_deadScreen"", _this select 0]";
+	
+	#define __w1 0.5
+	#define __w2 0.5
 
+	#define __spaceX 0.01
+	#define __spaceY (__spaceX / (4/3))
+
+	#define __mapX (safeZoneX + __spaceX + __w1 + __spaceX + __spaceX)
+	#define __mapW (safeZoneW - __w1 - __spaceX * 3)
+	#define __mapH (safeZoneH - __spaceY * 2)
+	
 	class ControlsBackground
 	{
 		class Background : RscBackground
@@ -20,7 +30,54 @@ class PRA3_respawn_deadScreen
 			w = "safeZoneWAbs";
 			h = "safeZoneH";
 		};
-		class StatusText : RscStructuredText
+		class StartBackground : RscBackground
+		{
+			colorBackground[] = {0,0,0,0};
+			x = safeZoneX + 0.5 * 1.53;
+			y = safeZoneY + (0.01 / (4/3)) + 0.64;
+			w = __mapW - 0.5 * 2;
+			h = __mapH - 0.98 - __spaceY;
+		};
+		class StartBackground2 : RscBackground
+		{
+			colorBackground[] = {0,0,0,0};
+			x = safeZoneX + 0.5 * 1.53;
+			y = safeZoneY + (0.01 / (4/3)) + 0.64;
+			w = __mapW - 0.5 * 2;
+			h = __mapH - 0.98 - __spaceY;
+		};
+		class AlphaRelease : RscText
+		{
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01;
+			w = __EVAL(0.3);
+			h = 0.05;
+			sizeEx = 0.05;
+			text = "ALPHA RELEASE";
+			font = "PuristaBold";
+			colorText[] = {1,1,1,1};
+			style = ST_CENTER;
+			colorBackground[] = {0,0,0,0};
+		};
+		class MissionText : RscStructuredText
+		{
+			idc  = 5;
+			x    = 0;
+			y    = __EVAL(0.98 - 0.02);
+			w    = 1;
+			h    = 0.04;
+			size = 0.04;
+			text = "";
+
+			colorBackground[] = {0,0,0,0};
+
+			class Attributes : Attributes
+			{
+				align = "center";
+				valign = "top";
+			};
+		};
+		class StatusText : MissionText
 		{
 			idc  = 10;
 			x    = 0;
@@ -40,7 +97,7 @@ class PRA3_respawn_deadScreen
 		class InstructionsText : StatusText
 		{
 			idc   = 20;
-			x     = 0.25;
+			x     = 0.34;
 			y     = __EVAL(0.35 + 0.05);
 			h     = __EVAL(0.05 * 3);
 			style = ST_MULTI;

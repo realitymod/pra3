@@ -32,6 +32,10 @@ class Config
 	{
 		description = "Returns whether the vehicle has any ""seats"" that can be entered.";
 	};
+	class missionName
+	{
+		description = "Returns mission name.";
+	};
 };
 
 class Debug

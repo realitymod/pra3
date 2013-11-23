@@ -46,6 +46,7 @@ if (!isNil "PRA3_spawnMapPosition") then
 };
 
 ctrl(IDC_KITDLG_SPAWNMAP_TEAMFLAG) ctrlSetText (player call PRA3_fnc_getPlayerTeam call PRA3_fnc_getTeamFlag);
+ctrl(IDC_KITDLG_SPAWNMAP_MISSIONNAME) ctrlSetText call PRA3_fnc_missionName; //Mission name
 
 if (!isNil "PRA3_AAS_spawnAtTime") then
 {
