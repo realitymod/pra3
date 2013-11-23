@@ -4,7 +4,6 @@ PRA3_kitSys_currentKit = "";
 #define ctrl(idc) (uiNamespace getVariable "PRA3_respawn_startScreen" displayCtrl idc)
 
 ["PRA3_start_black"] call BIS_fnc_rscLayer cutText ["", "BLACK FADED", 30];
-["PRA3_start_info"] call BIS_fnc_rscLayer cutRsc ["PRA3_respawn_startScreen", "PLAIN"];
 
 _camera = "camera" camCreate getPosATL player;
 _camera camPrepareTarget (PRA3_AAS_startCamera select 0);
@@ -25,19 +24,22 @@ if (isNil "PRA3_respawn_keyDownHandler") then
 };
 
 ["PRA3_start_black"] call BIS_fnc_rscLayer cutText ["", "BLACK IN", 1];
+["PRA3_start_info"] call BIS_fnc_rscLayer cutRsc ["PRA3_respawn_startScreen", "PLAIN"];
 
 _updateInstructions =
 {
 	_getImg =
 	{
-		format [
+		format 
+		[
 			"\a3\ui_f\data\map\Diary\Icons\%1",
 			if _this then {"tasksucceeded_ca"} else {"tasknone_ca"}
 		]
 	};
 
-	_text = format [
-		"Press <t color='#aaaaaa'>ENTER</t> and<br/> <img image='%1'/> select a team<br/> <img image='%2'/> join a squad<br/> <img image='%3'/> select a spawn location<br/> <img image='%4'/> choose a kit",
+	_text = format 
+	[
+		"Press <t underline='true'><t color='#d5d5d5'>ENTER</t></t> and<br/> <img image='%1'/> Select a team<br/> <img image='%2'/> Join a squad<br/> <img image='%3'/> Select a spawn<br/> <img image='%4'/> Choose a kit",
 		true call _getImg,
 		(player call PRA3_fnc_unitGetSquad != -1) call _getImg,
 		(count PRA3_selectedSpawn > 0) call _getImg,
@@ -45,16 +47,19 @@ _updateInstructions =
 	];
 
 	ctrl(20) ctrlSetStructuredText parseText _text;
+	ctrl(5) ctrlSetStructuredText parseText call PRA3_fnc_missionName;
 };
 
 waitUntil
 {
 	_time = PRA3_AAS_prepareTime - time;
-	_timeStr = if (_time >= 0) then	{
-			[_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
-		} else {
-			"00:00.000";
-		};
+	_timeStr = if (_time >= 0) then	
+	{
+		[_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
+	} else 
+	{
+		"00:00.000";
+	};
 	ctrl(30) ctrlSetStructuredText parseText _timeStr;
 
 	call _updateInstructions;
@@ -62,15 +67,19 @@ waitUntil
 	_time <= 0
 };
 
-ctrl(10) ctrlSetStructuredText parseText "The mission has begun...";
+ctrl(10) ctrlSetStructuredText parseText "The mission has started.";
 ctrl(30) ctrlShow false;
 
-waitUntil {
+waitUntil 
+{
 	call _updateInstructions;
 
-	count PRA3_selectedSpawn > 0 && {
-		PRA3_kitSys_currentKit != "" && {
-			isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && {
+	count PRA3_selectedSpawn > 0 && 
+	{
+		PRA3_kitSys_currentKit != "" && 
+		{
+			isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull]) && 
+			{
 				isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlgRespawn", displayNull])
 			}
 		}

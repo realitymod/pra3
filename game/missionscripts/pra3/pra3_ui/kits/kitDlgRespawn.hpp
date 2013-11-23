@@ -52,10 +52,19 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			w = __mapW;
 			h = __mapH;
 		};
+		class MissionName : TitleLeft
+		{
+			idc = IDC_KITDLG_SPAWNMAP_MISSIONNAME;
+			x = 0.01 + (__spaceX * 2 - 0.18) / 2 - 0.09;
+			w = 1;
+			style = ST_LEFT;
+			sizeEx = 0.04;
+			text = "Debug_missionName";
+		};
 		class TitleSpawnTime : TitleLeft
 		{
 			idc = IDC_KITDLG_SPAWNMAP_SPAWNTIME;
-			x = __mapX + (__mapW - __spaceX * 2 - 0.15) / 2 - 0.09;
+			x = __mapX + (__mapW - __spaceX * 2 - 0.01) / 2 - 0.09;
 			w = 0.18;
 			style = ST_LEFT;
 			text = "01:27.93";

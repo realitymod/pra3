@@ -64,6 +64,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		};
 
 		class BackgroundSpawn : BackgroundSpawn {};
+		class MissionName : MissionName {};
 		class TitleSpawnTime : TitleSpawnTime {};
 		class PlayerTeamTickets : PlayerTeamTickets {};
 		class PlayerTeamFlag : PlayerTeamFlag {};
