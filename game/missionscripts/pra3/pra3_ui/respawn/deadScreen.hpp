@@ -46,18 +46,9 @@ class PRA3_respawn_deadScreen
 			w = __mapW - 0.5 * 2;
 			h = __mapH - 0.98 - __spaceY;
 		};
-		class AlphaRelease : RscText
+		class AlphaRelease : RscText 
 		{
-			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY + 0.01;
-			w = __EVAL(0.3);
-			h = 0.05;
-			sizeEx = 0.05;
-			text = "ALPHA RELEASE";
-			font = "PuristaBold";
-			colorText[] = {1,1,1,1};
-			style = ST_CENTER;
-			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,0};
 		};
 		class MissionText : RscStructuredText
 		{

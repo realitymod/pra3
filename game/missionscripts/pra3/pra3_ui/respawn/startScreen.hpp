@@ -15,7 +15,19 @@ class PRA3_respawn_startScreen : PRA3_respawn_deadScreen
 
 	class ControlsBackground : ControlsBackground
 	{
-		class AlphaRelease : AlphaRelease {};
+		class AlphaRelease : AlphaRelease 
+		{
+			x = safeZoneX + __spaceX;
+			y = safeZoneY + __spaceY + 0.01;
+			w = __EVAL(0.3);
+			h = 0.05;
+			sizeEx = 0.05;
+			text = "ALPHA RELEASE";
+			font = "PuristaBold";
+			colorText[] = {1,1,1,1};
+			style = ST_CENTER;
+			colorBackground[] = {0,0,0,0};
+		};
 		class StartBackground : StartBackground 
 		{
 			colorBackground[] = {0,0,0,1};

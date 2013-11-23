@@ -41,7 +41,7 @@ if !(alive player) then
 		};
 
 		_text = format [
-			"Press <t color='#aaaaaa'>ENTER</t> and<br/> <img image='%1'/> select a spawn location<br/> <img image='%2'/> choose a kit",
+			"Press <t underline='true'><t color='#d5d5d5'>ENTER</t></t> and<br/> <img image='%1'/> Select a spawn<br/> <img image='%2'/> Choose a kit",
 			(count PRA3_selectedSpawn > 0) call _getImg,
 			(PRA3_kitSys_currentKit != "") call _getImg
 		];
