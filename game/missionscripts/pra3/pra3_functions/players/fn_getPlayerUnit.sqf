@@ -21,7 +21,7 @@ else
 
 if (isNull _obj) then
 {
-	[format["object missing for %1 (%2)", str _this, str _unit]] call PRA3_fnc_logWarning;
+	[format["object missing for %1 (%2)", str _this, str _unitID]] call PRA3_fnc_logWarning;
 };
 
 _obj
