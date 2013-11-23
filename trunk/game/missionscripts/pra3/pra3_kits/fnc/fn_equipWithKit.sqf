@@ -117,6 +117,9 @@ VARIANT_PISTOL call _giveWeapon;
 	};
 } forEach (_variant select VARIANT_ITEMS);
 
+_unit addUniform ( _clothing select CLOTHING_UNIFORM);	//Let see if we still have nacked ppl now
+ 
+/*
 [_unit, _clothing select CLOTHING_UNIFORM] spawn
 {
 	while {(uniform (_this select 0)) == ""} do
@@ -125,5 +128,5 @@ VARIANT_PISTOL call _giveWeapon;
 			sleep 0.3; // Arbitrary sleep because executing addUniform in the same frame as removeUniform causes naked people...
 		};
 };
-
+*/
 [[_unit, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
