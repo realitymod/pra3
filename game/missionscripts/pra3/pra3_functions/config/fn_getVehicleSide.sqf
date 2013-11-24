@@ -17,71 +17,78 @@
  *		(out) <STRING> Display name
  */
 
-var(_className) = if (typeName _this == "STRING") then {_this} else {typeOf _this};
-
-var(_cfg) = (configFile >> "CfgVehicles" >> _className >> "side");
-var(_side) = if (isNumber _cfg) then {getNumber _cfg} else {TSideUnknown};
-
-switch (_side) do
+if (typeName _this == "OBJECT" && _this isKindOf "CAManBase") then
 {
-	case TEast:
+	_this call PRA3_fnc_getPlayerSide
+}
+else
+{
+	var(_className) = if (typeName _this == "STRING") then {_this} else {typeOf _this};
+
+	var(_cfg) = (configFile >> "CfgVehicles" >> _className >> "side");
+	var(_side) = if (isNumber _cfg) then {getNumber _cfg} else {TSideUnknown};
+
+	switch (_side) do
 	{
-		east
-	};
-	case TWest:
-	{
-		west
-	};
-	case TGuerrila:
-	{
-		resistance
-	};
-	case TCivilian:
-	{
-		if (_className isKindOf "ReammoBox") then
+		case TEast:
 		{
-			if (_className isKindOf "USBasicAmmunitionBox") then
+			east
+		};
+		case TWest:
+		{
+			west
+		};
+		case TGuerrila:
+		{
+			resistance
+		};
+		case TCivilian:
+		{
+			if (_className isKindOf "ReammoBox") then
 			{
-				west
-			}
-			else
-			{
-				if (_className isKindOf "RUBasicAmmunitionBox") then
+				if (_className isKindOf "USBasicAmmunitionBox") then
 				{
-					east
+					west
 				}
 				else
 				{
-					if (_className isKindOf "GuerillaCacheBox") then
+					if (_className isKindOf "RUBasicAmmunitionBox") then
 					{
-						resistance
+						east
 					}
 					else
 					{
-						civilian
+						if (_className isKindOf "GuerillaCacheBox") then
+						{
+							resistance
+						}
+						else
+						{
+							civilian
+						}
 					}
 				}
 			}
-		}
-		else
+			else
+			{
+				civilian
+			}
+		};
+		case TEnemy:
+		{
+			sideEnemy
+		};
+		case TFriendly:
+		{
+			sideFriendly
+		};
+		case TLogic:
+		{
+			sideLogic
+		};
+		default
 		{
 			civilian
-		}
-	};
-	case TEnemy:
-	{
-		sideEnemy
-	};
-	case TFriendly:
-	{
-		sideFriendly
-	};
-	case TLogic:
-	{
-		sideLogic
-	};
-	default
-	{
-		civilian
-	};
+		};
+	}
 }

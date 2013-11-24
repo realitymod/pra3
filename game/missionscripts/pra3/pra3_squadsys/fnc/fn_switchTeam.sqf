@@ -81,6 +81,18 @@ else
 	//Remove current kit
 	PRA3_kitSys_currentKit = "";
 
+	[
+		[
+			[_unit],
+			{
+				_this select 0 call PRA3_fnc_stopVehicleTracking;
+				_this select 0 call PRA3_fnc_startVehicleTracking;
+			}
+		],
+		"BIS_fnc_spawn",
+		true
+	] call PRA3_fnc_MP;
+
 	if (alive _unit) then
 	{
 		//Make the switch if
