@@ -157,6 +157,10 @@ class Team
 	{
 		description = "Get one team name and return the number of active players on each team.";
 	};
+	class sideToTeam
+	{
+		description = "Get team name from side either integer or side variable accepted.";
+	};
 };
 
 class Objects

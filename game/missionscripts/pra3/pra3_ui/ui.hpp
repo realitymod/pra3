@@ -10,6 +10,11 @@ class RscTitles
 	#include "respawn\startScreen.hpp"
 };
 
+class CfgNotifications
+{
+	#include "aas\captureNotifications.hpp"
+}
+
 #include "kits\kitDlgRespawn.hpp"
 #include "kits\kitDlg.hpp"
 #include "squadsys\manageDlgRespawn.hpp"
