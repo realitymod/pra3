@@ -28,15 +28,6 @@ class PRA3_respawn_startScreen : PRA3_respawn_deadScreen
 			style = ST_CENTER;
 			colorBackground[] = {0,0,0,0};
 		};
-		class StartBackground : StartBackground 
-		{
-			colorBackground[] = {0,0,0,1};
-			style = ST_FRAME;
-		};
-		class StartBackground2 : StartBackground2 
-		{
-			colorBackground[] = {0,0,0,0.5};
-		};
 		class MissionText : MissionText
 		{
 			text = "";
