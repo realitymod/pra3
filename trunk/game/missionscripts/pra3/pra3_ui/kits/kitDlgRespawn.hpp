@@ -55,7 +55,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		class MissionName : TitleLeft
 		{
 			idc = IDC_KITDLG_SPAWNMAP_MISSIONNAME;
-			x = 0.01 + (__spaceX * 2 - 0.18) / 2 - 0.09;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.02;
 			w = 1;
 			style = ST_LEFT;
 			sizeEx = 0.04;
