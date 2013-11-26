@@ -269,7 +269,7 @@ while {true} do
 	{
 		{ // For each team's ticket bleed...
 			var(_bleed) = (_x / 60) * (time - _time);
-			var(_newVal) = (_tickets select _forEachIndex) - _bleed;
+			var(_newVal) = (_tickets select _forEachIndex) - (round _bleed);
 			// Only server can have < 0 tickets because < 0 marks game over
 			if (_newVal < 0 && !isServer) then
 			{
