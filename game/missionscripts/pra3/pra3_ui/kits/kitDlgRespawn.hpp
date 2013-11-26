@@ -97,17 +97,6 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			text = "01:34:17";
 			w = 0.15;
 		};
-
-		// Used to detect when the mouse is outside of the kit selection dialog
-		class MouseDetector : RscControlsGroup
-		{
-			x = safeZoneXAbs;
-			y = safeZoneY;
-			w = safeZoneWAbs;
-			h = safeZoneH;
-
-			onMouseMoving = "call PRA3_fnc_kitDlg_hideKitDetails";
-		};
 	};
 	class Controls
 	{
