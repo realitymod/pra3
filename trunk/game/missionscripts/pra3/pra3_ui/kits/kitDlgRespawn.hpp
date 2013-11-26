@@ -55,7 +55,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		class MissionName : TitleLeft
 		{
 			idc = IDC_KITDLG_SPAWNMAP_MISSIONNAME;
-			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.02;
+			x = safeZoneX + __spaceX + __w1 + __spaceX + 0.03;
 			w = 1;
 			style = ST_LEFT;
 			sizeEx = 0.04;
@@ -83,10 +83,10 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		{
 			idc = IDC_KITDLG_SPAWNMAP_TEAMFLAG;
 			x = __mapX + __mapW - 0.15 - __spaceX - 0.075;
-			y = safeZoneY + __spaceY + 0.01 + 0.0025;
+			y = safeZoneY + __spaceY + 0.01 + 0.0050;
 			// Flags should be 3:2 ratio
-			w = 0.075;
-			h = 0.05;
+			w = 0.06;
+			h = 0.04;
 			text = "\A3\Data_F\Flags\Flag_nato_CO.paa";
 		};
 		class MissionTime : PlayerTeamTickets
@@ -193,10 +193,10 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		{
 			idc = 502;
 			x = safeZoneX + __spaceX + 0.005;
-			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.005;
+			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.01;
 			// Flags should be 3:2 ratio
-			w = 0.075;
-			h = 0.05;
+			w = 0.06;
+			h = 0.04;
 		};
 		class SwitchTeam2Pic : SwitchTeam1Pic
 		{

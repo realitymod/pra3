@@ -39,7 +39,7 @@ _updateInstructions =
 
 	_text = format 
 	[
-		"Press <t underline='true'><t color='#d5d5d5'>ENTER</t></t> and<br/> <img image='%1'/> Select a team<br/> <img image='%2'/> Join a squad<br/> <img image='%3'/> Select a spawn<br/> <img image='%4'/> Choose a kit",
+		"Press <t underline='true'>ENTER</t> and<br/> <img image='%1'/> Select a team<br/> <img image='%2'/> Join a squad<br/> <img image='%3'/> Select a spawn<br/> <img image='%4'/> Choose a kit",
 		true call _getImg,
 		(player call PRA3_fnc_unitGetSquad != -1) call _getImg,
 		(count PRA3_selectedSpawn > 0) call _getImg,
