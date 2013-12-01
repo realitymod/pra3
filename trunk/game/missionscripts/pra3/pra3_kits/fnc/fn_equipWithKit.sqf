@@ -79,7 +79,17 @@ if (count _stuff > 0) then
 	clearWeaponCargoGlobal _backpack;
 	clearMagazineCargoGlobal _backpack;
 	{
-		_backpack addWeaponCargoGlobal _x;
+		if (getNumber(configFile >> "CfgWeapons" >> (_x select 0) >> "type") == 131072) then
+		{
+			for "_i" from 1 to (_x select 1) do
+			{
+				_unit addItemToBackpack (_x select 0);
+			};
+		}
+		else
+		{
+			_backpack addWeaponCargoGlobal _x;
+		};
 	} forEach (_stuff select 1);
 
 	{
@@ -118,7 +128,7 @@ VARIANT_PISTOL call _giveWeapon;
 } forEach (_variant select VARIANT_ITEMS);
 
 _unit addUniform ( _clothing select CLOTHING_UNIFORM);	//Let see if we still have nacked ppl now
- 
+
 /*
 [_unit, _clothing select CLOTHING_UNIFORM] spawn
 {
