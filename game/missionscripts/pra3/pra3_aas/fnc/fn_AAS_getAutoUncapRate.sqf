@@ -8,4 +8,11 @@
  *		(out) <FLOAT> Uncapture rate
  */
 
-1
+if (PRA3_core getVariable ["PRA3_debug_AAS_fastCap", false]) then
+{
+	10
+}
+else
+{
+	1
+}

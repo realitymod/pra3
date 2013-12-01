@@ -381,6 +381,12 @@ class Rsc_PRA3_kits_kitDlgRespawn
 				__kit(10);
 				__kit(11);
 				__kit(12);
+				__kit(13);
+				__kit(14);
+				__kit(15);
+				__kit(16);
+				__kit(17);
+				__kit(18);
 			};
 		};
 

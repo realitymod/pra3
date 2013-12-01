@@ -23,7 +23,7 @@ var(_maxAvailable) = 0;
 
 var(_text) = switch true do
 {
-	case (!isNil "PRA3_debug_kits_showAllKits"):
+	case (PRA3_core getVariable ["PRA3_debug_kits_showAllKits", false]):
 	{
 		_nowAvailable = 100;
 		"Debug-enabled"

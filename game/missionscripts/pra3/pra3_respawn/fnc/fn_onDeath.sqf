@@ -7,7 +7,14 @@ if !(alive player) then
 {
 	var(_body) = _this select 0;
 
-	PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
+	if (PRA3_core getVariable ["PRA3_debug_respawn_instant", false]) then
+	{
+		PRA3_AAS_spawnAtTime = time + 3;
+	}
+	else
+	{
+		PRA3_AAS_spawnAtTime = time + PRA3_AAS_respawnTime;
+	};
 
 	// Penalize the death
 	// TODO: Remove hardcoded value
@@ -18,12 +25,12 @@ if !(alive player) then
 	{
 		deleteVehicle _x;
 	} forEach nearestObjects [player, ["WeaponHolderSimulated"], 10];
-	
+
 	//Delete medkits and FAKs
 	{
-		if (_x in ["FirstAidKit","Medikit"]) then {player removeItem _x}; 
+		if (_x in ["FirstAidKit","Medikit"]) then {player removeItem _x};
 	} forEach items player;
-	
+
 
 	// Schedule body deletion
 	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;

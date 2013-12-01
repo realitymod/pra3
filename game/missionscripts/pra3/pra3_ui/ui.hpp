@@ -19,3 +19,4 @@ class CfgNotifications
 #include "kits\kitDlg.hpp"
 #include "squadsys\manageDlgRespawn.hpp"
 #include "squadsys\manageDlg.hpp"
+#include "debug\debugMenu.hpp"

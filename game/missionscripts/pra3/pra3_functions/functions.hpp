@@ -23,7 +23,7 @@ class Array
 class Config
 {
 	file = "pra3\pra3_functions\config";
-	
+
 	class getVehicleSide
 	{
 		description = "Returns the side the vehicle belongs to, regardless of who is inside it.";
@@ -56,6 +56,13 @@ class Debug
 	{
 		description = "Logs the message.";
 		headerType = 1;
+	};
+
+	class debugMenu_onLoad
+	{
+	};
+	class debugMenu_toggle
+	{
 	};
 };
 
@@ -171,18 +178,18 @@ class Objects
 	{
 		description = "Handle damage on units and vehicles";
 	};
-	
+
 };
 
 class Zones
 {
 	file = "pra3\pra3_functions\zones";
-	
+
 	class unitInSafeZone
 	{
 		description = "Checks if a unit is inside a safe zone.";
 	};
-	
+
 	class RestrictZoneEffect
 	{
 		description = "Effects while unit enters a restrict zone or exiting a fighting area";
