@@ -12,3 +12,11 @@ _this call compile preprocessFile "pra3\pra3_aas\loadMissionParams.sqf";
 	"squadsys",
 	"map"
 ];
+
+if !isDedicated then
+{
+	_debug = createTrigger["EmptyDetector",getPos player];
+	_debug setTriggerActivation ["ALPHA", "PRESENT", true];
+	_debug setTriggerStatements ["this", "0 = createDialog 'Rsc_PRA3_debugMenu'", ""];
+	_debug setTriggerText "Show debug options";
+};

@@ -1,0 +1,9 @@
+#define ctrl(idc) (uiNamespace getVariable ["Rsc_PRA3_debugMenu", displayNull] displayCtrl idc)
+
+#define DEBUG_ITEMS [ \
+	["Show all kits", "PRA3_debug_kits_showAllSides", {}], \
+	["Disable kit restrictions", "PRA3_debug_kits_showAllKits", {}], \
+	["Disable RP cooldown", "PRA3_debug_squadSys_noRPCooldown", {}], \
+	["Instant respawn", "PRA3_debug_respawn_instant", {}], \
+	["Fast capture", "PRA3_debug_AAS_fastCap", {}] \
+]
