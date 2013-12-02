@@ -83,10 +83,10 @@ class Rsc_PRA3_kits_kitDlgRespawn
 		{
 			idc = IDC_KITDLG_SPAWNMAP_TEAMFLAG;
 			x = __mapX + __mapW - 0.15 - __spaceX - 0.075;
-			y = safeZoneY + __spaceY + 0.01 + 0.0050;
+			y = safeZoneY + __spaceY + 0.01 + 0.0025;
 			// Flags should be 3:2 ratio
-			w = 0.06;
-			h = 0.04;
+			w = 0.075;
+			h = 0.05;
 			text = "\A3\Data_F\Flags\Flag_nato_CO.paa";
 		};
 		class MissionTime : PlayerTeamTickets
@@ -303,7 +303,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 							h = __h;
 							animTextureNormal	= "pra3\pra3_ui\data\button_tall_88.paa";
 							animTextureDisabled	= "pra3\pra3_ui\data\button_tall_88.paa";
-							animTextureOver		= "pra3\pra3_ui\data\button_tall_88.paa";
+							animTextureOver	= "pra3\pra3_ui\data\button_tall_88.paa";
 							animTextureFocused	= "pra3\pra3_ui\data\button_tall_88.paa";
 							animTexturePressed	= "pra3\pra3_ui\data\button_tall_88.paa";
 							animTextureDefault	= "pra3\pra3_ui\data\button_tall_88.paa";
