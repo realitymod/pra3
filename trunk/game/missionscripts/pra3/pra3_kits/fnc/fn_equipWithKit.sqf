@@ -138,5 +138,7 @@ _unit addUniform ( _clothing select CLOTHING_UNIFORM);	//Let see if we still hav
 			sleep 0.3; // Arbitrary sleep because executing addUniform in the same frame as removeUniform causes naked people...
 		};
 };
-*/
+
+_unit addUniform ( _clothing select CLOTHING_UNIFORM);	//Let add another failk safe and see if we still have nacked ppl now
+
 [[_unit, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
