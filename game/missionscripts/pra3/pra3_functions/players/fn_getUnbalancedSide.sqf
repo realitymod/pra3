@@ -19,10 +19,8 @@ var(_numbers) = [0, 0];
 
 	var(_idx) = PRA3_AAS_sides find _side;
 	_numbers set [_idx, (_numbers select _idx) + 1];
-} forEach allUnits;
+} forEach call PRA3_fnc_getConnectedPlayers;
 
-var(_num1) = playersNumber (PRA3_AAS_sides select 0);
-var(_num2) = playersNumber (PRA3_AAS_sides select 1);
 var(_diff) = (_numbers select 0) - (_numbers select 1);
 
 if (abs(_diff) > _threshold) then
@@ -39,4 +37,4 @@ if (abs(_diff) > _threshold) then
 else
 {
 	[]
-};
+}

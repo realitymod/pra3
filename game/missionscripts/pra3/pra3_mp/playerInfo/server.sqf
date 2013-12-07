@@ -8,34 +8,42 @@
 	[format ["PLAYER: _id=%1 _name=%2 _uid=%3", _id, str _name, str _uid], "onPlayerConnected"] call PRA3_fnc_logInfo;
 	if (_name != "__SERVER__") then
 	{
+		// Figure out which side the player should be put on
+		var(_balance) = 1 call PRA3_fnc_getUnbalancedSide;
+		var(_targetSide) = if (count _balance == 0) then {
+			side _unit
+		} else {
+			_balance select 1
+		};
+
+		// Register the player as connected
 		var(_players) = PRA3_core getVariable ["PRA3_connectedPlayers", []];
 		_players set [count _players, _uid];
-		[PRA3_core, "PRA3_connectedPlayers", _players, "praa_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
+		[PRA3_core, "PRA3_connectedPlayers", _players, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 
-		[PRA3_core, format["PRA3_player_name_%1", _uid], _name, "praa_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
+		// And remember his name
+		[PRA3_core, format["PRA3_player_name_%1", _uid], _name, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 
-		_uid spawn
+		// And his side
+		[PRA3_core, format["PRA3_player_side_%1", _uid], _side, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
+		
+		// Switch him to the correct team and save his client ID, we'll have to wait for his unit to exist for this...
+		[_uid, _targetSide] spawn
 		{
-			waitUntil {!isNull (_this call PRA3_fnc_getPlayerUnit)};
+			var(_uid)        = _this select 0;
+			var(_targetSide) = _this select 1;
 
-			var(_unit) = _this call PRA3_fnc_getPlayerUnit;
+			waitUntil {!isNull (_uid call PRA3_fnc_getPlayerUnit)};
 
-			var(_balance) = 1 call PRA3_fnc_getUnbalancedSide;
-			if (count _balance == 0) then
-			{
-				[[_unit, side _unit], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
-			}
-			else
-			{
-				diag_log "Switch side";
-				[[_unit, _balance select 1], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
-			};
+			var(_unit) = _uid call PRA3_fnc_getPlayerUnit;
+
+			[[_unit, _targetSide], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
 
 			[
 				PRA3_core,
-				format["PRA3_player_cid_%1", _this],
+				format["PRA3_player_cid_%1", _uid],
 				owner _unit,
-				"praa_mp\playerInfo\server.sqf OPC"
+				"pra3_mp\playerInfo\server.sqf OPC"
 			] call PRA3_fnc_setVarBroadcast;
 		};
 	};
@@ -51,6 +59,6 @@
 	{
 		var(_players) = PRA3_core getVariable ["PRA3_connectedPlayers", []];
 		[_players, _uid] call PRA3_fnc_arrayRemove;
-		[PRA3_core, "PRA3_connectedPlayers", _players, "praa_mp\playerInfo\server.sqf OPD"] call PRA3_fnc_setVarBroadcast;
+		[PRA3_core, "PRA3_connectedPlayers", _players, "pra3_mp\playerInfo\server.sqf OPD"] call PRA3_fnc_setVarBroadcast;
 	};
 } call PRA3_fnc_registerPlayerDisconnectedHandler;
