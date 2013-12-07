@@ -25,10 +25,10 @@ class PRA3_respawn_deadScreen
 
 			colorBackground[] = {0,0,0,1};
 
-			x = safeZoneX + __spaceX;
-			y = safeZoneY + __spaceY;
-			w = __EVAL(__w1);
-			h = safeZoneH;
+			x = "safeZoneXAbs";
+			y = "safeZoneY";
+			w = "safeZoneWabs";
+			h = "safeZoneH";
 		};
 		class AlphaRelease : RscText 
 		{
