@@ -1,6 +1,6 @@
 class PRA3_AAS_captureNotification
 {
-	colorIconPicture[] = {0.5,0,0,1};
+	colorIconPicture[] = {"%5"};
 	description = "Objective %1 captured by %2";
 	iconPicture = "%3";
 	iconText = "%4";
@@ -11,8 +11,8 @@ class PRA3_AAS_captureNotification
 
 class PRA3_AAS_neutralizedNotification
 {
-	colorIconPicture[] = {0,0,0.5,1};
-	description = "Objective %1 neutralized by %2";
+	colorIconPicture[] = {"%5"};
+	description = "%1 lost control of Objective %2";
 	iconPicture = "%3";
 	iconText = "%4";
 	priority = 4;

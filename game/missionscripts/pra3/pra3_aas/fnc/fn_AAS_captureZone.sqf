@@ -4,17 +4,19 @@
 var(_zone) = _this select 0;
 var(_prevOwner) = _this select 1;
 
+var(_color) = if ((player call PRA3_fnc_getPlayerSide) == _prevOwner) then {"0,0,0.5,1"} else {"0.5,0,0,1"}; 
+
 if (isClient) then
 {
 	if (_prevOwner == __neutral) then
 	{
 		player globalChat format["%1 captured %2", _zone call PRA3_fnc_AAS_getZoneOwner, _zone call PRA3_fnc_AAS_getZoneName];
-		["PRA3_AAS_captureNotification",[str (_zone call PRA3_fnc_AAS_getZoneName) ,((_zone call PRA3_fnc_AAS_getZoneOwner) call PRA3_fnc_sideToTeam) ,"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa",""]] call bis_fnc_showNotification;
+		["PRA3_AAS_captureNotification",[str (_zone call PRA3_fnc_AAS_getZoneName) ,((_zone call PRA3_fnc_AAS_getZoneOwner) call PRA3_fnc_sideToTeam) ,"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa","",_color]] call bis_fnc_showNotification;
 	}
 	else
 	{
 		player globalChat format["%1 lost control of %2", _prevOwner, _zone call PRA3_fnc_AAS_getZoneName];
-		["PRA3_AAS_neutralizedNotification",[str (_zone call PRA3_fnc_AAS_getZoneName) ,((_zone call PRA3_fnc_AAS_getZoneOwner) call PRA3_fnc_sideToTeam) ,"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa",""]] call bis_fnc_showNotification;
+		["PRA3_AAS_neutralizedNotification",[(_prevOwner call PRA3_fnc_sideToTeam), str (_zone call PRA3_fnc_AAS_getZoneName) ,"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa","",_color]] call bis_fnc_showNotification;
 	};
 };
 
