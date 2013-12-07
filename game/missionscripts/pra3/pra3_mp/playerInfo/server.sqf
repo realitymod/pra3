@@ -11,7 +11,7 @@
 		// Figure out which side the player should be put on
 		var(_balance) = 1 call PRA3_fnc_getUnbalancedSide;
 		var(_targetSide) = if (count _balance == 0) then {
-			side _unit
+			PRA3_AAS_sides select 0
 		} else {
 			_balance select 1
 		};
@@ -25,7 +25,7 @@
 		[PRA3_core, format["PRA3_player_name_%1", _uid], _name, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 
 		// And his side
-		[PRA3_core, format["PRA3_player_side_%1", _uid], _side, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
+		[PRA3_core, format["PRA3_player_side_%1", _uid], _targetSide, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 		
 		// Switch him to the correct team and save his client ID, we'll have to wait for his unit to exist for this...
 		[_uid, _targetSide] spawn
