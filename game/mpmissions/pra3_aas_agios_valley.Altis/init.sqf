@@ -43,7 +43,7 @@
 	[
 		[9225,14431,0], 	// Camera target 	- x,y,z
 		[9327,13501,200],  	// Camera position 	- x,y,z
-		0.7             	// Camera FOV 		- 0 to 1
+		0.7				// Camera FOV 		- 0 to 1
 	],
 	//Random door positions
 	["randomDoors1"]

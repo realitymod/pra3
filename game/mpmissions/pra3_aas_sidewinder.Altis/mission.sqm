@@ -49,7 +49,6 @@ class Mission
 	randomSeed=7417221;
 	class Intel
 	{
-		briefingName="Operation Uppercut";
 		startWeather=0.39999998;
 		startWind=0.099999994;
 		startWaves=0.099999994;
