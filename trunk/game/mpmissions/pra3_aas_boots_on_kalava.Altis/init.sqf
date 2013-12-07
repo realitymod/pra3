@@ -9,11 +9,11 @@
 	[
 	/*    ZONE   | SYNCH | CONNECTS TO   | INITIAL | TICKET BLEED  */
 	/*    MARKER | TO    |  team1 team2  | OWNER   |  team1  team2 */
-		["zone0",  [ ],      [[1  ],[   ]], west,      [0,     0    ]],
-		["zone1",  [ ],      [[2  ],[0  ]], __neutral, [__end, 0    ]],
-		["zone2",  [1,3],    [[3  ],[1  ]], __neutral, [10,    10   ]],
-		["zone3",  [ ],      [[4  ],[2  ]], __neutral, [0,    __end ]],
-		["zone4",  [ ],      [[   ],[3  ]], east,      [0,     0    ]],
+		["zone0",  [],      [[1  ],[   ]], west,       [0,        0   ]],
+		["zone1",  [],      [[2  ],[   ]], __neutral, [__end, 0    ]],
+		["zone2",  [],      [[3  ],[1 ]], __neutral, [10,     10   ]],
+		["zone3",  [],      [[   ],[2  ]], __neutral, [0,        __end ]],
+		["zone4",  [],      [[   ],[3  ]], east,        [0,       0    ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [4]],
@@ -23,8 +23,8 @@
 	/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
 		["spawn0", [0  ], true,  [box0,       true]],
 		["spawn1", [1,2], false, [box1,       false]],
-		["spawn2", [4,5], false, [box2,       false]],
-		["spawn3", [6  ], true,  [box3,       true]]
+		["spawn3", [3,2], false, [box3,       false]],
+		["spawn4", [4  ], true,  [box4,       true]]
 	],
 	// Restricted areas
 	[
@@ -34,14 +34,14 @@
 		["borderEast",  [west,east], 10,           false,        false,     false],
 		["borderSouth", [west,east], 10,           false,        false,     false],
 		["borderWest",  [west,east], 10,           false,        false,     false],
-		["spawn0",  	[east]     , 10,           false,        true,      true],
-		["spawn3",  	[west]     , 10,           false,        true,      true]
+		["spawn0",      [east]     , 10,           false,        true,      true],
+		["spawn3",      [west]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[
-		[3520,13073,0], 	// Camera target 	- x,y,z
-		[2928,13377,152],  	// Camera position 	- x,y,z
-		0.7             	// Camera FOV 		- 0 to 1
+		[3520,13073,0],    	// Camera target   - x,y,z
+		[2928,13377,152],   	// Camera position - x,y,z
+		0.7                 		// Camera FOV      - 0 to 1
 	],
 	//Random door positions
 	["randomDoors1"]

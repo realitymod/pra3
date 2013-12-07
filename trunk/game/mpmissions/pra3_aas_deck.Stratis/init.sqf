@@ -9,13 +9,13 @@
 	[
 	/*   ZONE   | SYNCH |  CONNECTS TO | INITIAL  | TICKET BLEED  */
 	/*   MARKER | TO    |  team1 team2 | OWNER    |  team1  team2 */
-		["zone0", [],     [[1,2],[   ]], west,    	[0    , 0    ]],
-		["zone1", [2],    [[3  ],[0  ]], __neutral, [__end, 0    ]],
-		["zone2", [1],    [[3  ],[0  ]], __neutral, [20,    0    ]],
-		["zone3", [],     [[4,5],[1,2]], __neutral, [5,     5    ]],
-		["zone4", [5],    [[6  ],[3  ]], __neutral, [0,     20   ]],
-		["zone5", [4],    [[6  ],[3  ]], __neutral, [0,     __end]],
-		["zone6", [],     [[   ],[4,5]], east,    	[0,    	0    ]]
+		["zone0", [],    [[1  ],[   ]], west,        [0    , 0    ]],
+		["zone1", [],    [[2  ],[   ]], __neutral, [__end, 0  ]],
+		["zone2", [],    [[3  ],[1  ]], __neutral, [20,    0    ]],
+		["zone3", [],    [[4  ],[2  ]], __neutral, [5,     5    ]],
+		["zone4", [],    [[5  ],[3  ]], __neutral, [0,     20   ]],
+		["zone5", [],    [[    ],[4  ]], __neutral, [0,   __end]],
+		["zone6", [],    [[    ],[5  ]], east,        [0,     0    ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [6]],
@@ -24,8 +24,6 @@
 	/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
 	/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
 		["spawn0", [0  ], true,  [box0,       true]],
-		//["spawn1", [1,2], false, [box1,       false]],
-		//["spawn2", [4,5], false, [box2,       false]],
 		["spawn3", [6  ], true,  [box3,       true]]
 	],
 	// Restricted areas
@@ -43,7 +41,7 @@
 	[
 		[1968,2695,0], 		// Camera target	- x,y,z
 		[1479,2603,69],  	// Camera position 	- x,y,z
-		0.7             	// Camera FOV 		- 0 to 1
+		0.7				// Camera FOV 		- 0 to 1
 	],
 	//Random door positions
 	["randomDoors1"]

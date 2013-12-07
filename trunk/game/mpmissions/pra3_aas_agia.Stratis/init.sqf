@@ -9,13 +9,13 @@
 	[
 	/*   ZONE   | SYNCH |  CONNECTS TO | INITIAL  | TICKET BLEED  */
 	/*   MARKER | TO    |  team1 team2 | OWNER    |  team1  team2 */
-		["zone0", [],     [[1,2],[   ]], west,    	[0    , 0    ]],
-		["zone1", [2],    [[3  ],[0  ]], __neutral, [__end, 0    ]],
+		["zone0", [],     [[1,2],[   ]], west,        [0    , 0     ]],
+		["zone1", [2],    [[3  ],[0  ]], __neutral, [__end, 0  ]],
 		["zone2", [1],    [[3  ],[0  ]], __neutral, [20,    0    ]],
 		["zone3", [],     [[4,5],[1,2]], __neutral, [5,     5    ]],
 		["zone4", [5],    [[6  ],[3  ]], __neutral, [0,     20   ]],
 		["zone5", [4],    [[6  ],[3  ]], __neutral, [0,     __end]],
-		["zone6", [],     [[   ],[4,5]], east,    	[0,    	0    ]]
+		["zone6", [],     [[   ],[4,5]], east,    	[0,    0    ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [6]],
@@ -43,7 +43,7 @@
 	[
 		[3283,5794,0], 		// Camera target 	- x,y,z
 		[2630,6163,59],  	// Camera position 	- x,y,z
-		0.7             	// Camera FOV 		- 0 to 1
+		0.7				// Camera FOV 		- 0 to 1
 	],
 	//Random door positions
 	["randomDoors1"]
