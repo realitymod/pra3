@@ -41,6 +41,9 @@ class PlayerRespawned
 	{
 		description = "Removes a previously registered player respawn handler.";
 	};
+	class playerRespawnedHandler
+	{
+	};
 };
 
 class MP
