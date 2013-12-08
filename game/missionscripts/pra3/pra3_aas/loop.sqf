@@ -114,7 +114,7 @@ while {true} do
 				};
 			};
 
-			var(_capPerSecond) = [_zone, _attackersNum - _defendersNum] call PRA3_fnc_AAS_getCaptureRate;
+			var(_capPerSecond) = [_zone, _attackersNum, _defendersNum] call PRA3_fnc_AAS_getCaptureRate;
 			var(_cap) = _capPerSecond * (time - _time);
 
 			if (_attackersSide == _attacker) then
