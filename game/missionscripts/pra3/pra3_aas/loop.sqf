@@ -189,7 +189,7 @@ while {true} do
 				{
 					PRA3_core setVariable [format["PRA3_AAS_%1_owner", _zone], _owner, true];
 
-					[[_zone, _prevOwner], "PRA3_fnc_AAS_captureZone", true] call PRA3_fnc_MP;
+					[[_zone, _owner, _prevOwner, _attackersSide], "PRA3_fnc_AAS_captureZone", true] call PRA3_fnc_MP;
 
 					_sinceUpdate = __updateEvery; //Enforce update if the zone owner changes
 				};
@@ -253,9 +253,9 @@ while {true} do
 	};
 
 	// ---------- HANDLE TICKET BLEED ----------
-	
+
 	var(_tickets) = PRA3_core getVariable "PRA3_AAS_tickets";
-	
+
 	// Check for game over...
 	var(_gameOver) = false;
 	{
@@ -299,14 +299,14 @@ while {true} do
 			_sinceUpdate = 0;
 		};
 	};
-	
+
 	if (_gameOver) exitWith // End the game
 	{
 		if (!isNull player) then
 		{
 			vehicle player enableSimulation false;
 		};
-		
+
 		//NOTE: This part does not support >2 teams correctly
 		var(_winner) = 0;
 		var(_maxTickets) = _tickets select 0;
@@ -323,7 +323,7 @@ while {true} do
 				_winner = _i;
 			};
 		};
-		
+
 		if (_winner == -1) then
 		{
 			["draw", false, true] call BIS_fnc_endMission;
