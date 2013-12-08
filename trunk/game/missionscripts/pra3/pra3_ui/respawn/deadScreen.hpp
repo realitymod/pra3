@@ -6,7 +6,7 @@ class PRA3_respawn_deadScreen
 	fadeOut  = 0;
 	name     = "PRA3_respawn_deadScreen";
 	onLoad   = "uiNamespace setVariable [""PRA3_respawn_deadScreen"", _this select 0]";
-	
+
 	#define __w1 0.5
 	#define __w2 0.5
 
@@ -16,7 +16,7 @@ class PRA3_respawn_deadScreen
 	#define __mapX (safeZoneX + __spaceX + __w1 + __spaceX + __spaceX)
 	#define __mapW (safeZoneW - __w1 - __spaceX * 3)
 	#define __mapH (safeZoneH - __spaceY * 2)
-	
+
 	class ControlsBackground
 	{
 		class Background : RscBackground
@@ -30,7 +30,7 @@ class PRA3_respawn_deadScreen
 			w = "safeZoneWabs";
 			h = "safeZoneH";
 		};
-		class AlphaRelease : RscText 
+		class AlphaRelease : RscText
 		{
 			colorText[] = {1,1,1,0};
 		};

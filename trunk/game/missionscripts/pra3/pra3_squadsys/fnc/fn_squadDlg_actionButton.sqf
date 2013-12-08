@@ -29,7 +29,7 @@ else
 	}
 	else // Joining a squad
 	{
-		_id = _id + ((player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID);
+		_id = _id + (PRA3_player_side call PRA3_fnc_getSideID);
 		if (_id call PRA3_fnc_squadIsLocked) then // Send request
 		{
 			// TODO: Implement

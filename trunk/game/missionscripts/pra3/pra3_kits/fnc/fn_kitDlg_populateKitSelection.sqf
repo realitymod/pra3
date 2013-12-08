@@ -7,9 +7,8 @@ PRA3_shownKits = [];
 var(_i) = 1;
 {
 	var(_kitInfo)    = _x call PRA3_fnc_getKitInfo;
-	var(_playerSide) = player call PRA3_fnc_getPlayerTeam;
 
-	if (_kitInfo select KIT_TEAM == _playerSide || PRA3_core getVariable ["PRA3_debug_kits_showAllSides", false]) then
+	if (_kitInfo select KIT_TEAM == PRA3_player_team || PRA3_core getVariable ["PRA3_debug_kits_showAllSides", false]) then
 	{
 		PRA3_shownKits set [count PRA3_shownKits, _x];
 
