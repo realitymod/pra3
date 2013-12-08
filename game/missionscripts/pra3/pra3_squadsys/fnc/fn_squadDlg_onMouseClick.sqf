@@ -31,4 +31,4 @@ else
 	false call PRA3_fnc_squadDlg_showPopupMenu;
 };
 
-call PRA3_fSquadSys_highlightLines;
+call PRA3_fnc_squadDlg_highlightLines;

@@ -12,7 +12,7 @@ if (typeName _spawn == "STRING") then
 		{
 			_spawn = _x;
 		};
-	} forEach call PRA3_fnc_getAllSpawns;
+	} forEach call PRA3_fnc_AAS_getAllSpawns;
 };
 
 _spawn select 3 in (_kit call PRA3_fnc_getKitInfo select KIT_AVAILABLEAT)
