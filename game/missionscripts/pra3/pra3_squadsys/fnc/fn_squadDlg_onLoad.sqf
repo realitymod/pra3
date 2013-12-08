@@ -30,7 +30,7 @@ _this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
 // Only run this for the lite dialog, the full one will handle the update elsewhere
 if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull])) then
 {
-	ctrl(IDC_KITDLG_SPAWNMAP_TEAMFLAG) ctrlSetText (player call PRA3_fnc_getPlayerTeam call PRA3_fnc_getTeamFlag);
+	ctrl(IDC_KITDLG_SPAWNMAP_TEAMFLAG) ctrlSetText (PRA3_player_team call PRA3_fnc_getTeamFlag);
 	ctrl(IDC_KITDLG_SPAWNMAP_MISSIONNAME) ctrlSetText call PRA3_fnc_missionName; //Mission name
 
 	var(_updateControls) =
@@ -42,11 +42,11 @@ if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displ
 		};
 		ctrl(IDC_KITDLG_SPAWNMAP_MISSIONTIME) ctrlSetText ([_time, "HH:MM:SS"] call BIS_fnc_secondsToString);
 
-		var(_team) = PRA3_AAS_teams find (player call PRA3_fnc_getPlayerTeam);
+		var(_team) = PRA3_AAS_teams find PRA3_player_team;
 		ctrl(IDC_KITDLG_SPAWNMAP_TICKETS) ctrlSetText format [
 			"%1 (%2)",
-			PRA3_core getVariable "PRA3_AAS_tickets" select _team,
-			-(PRA3_AAS_ticketBleed select _team)
+			round (PRA3_core getVariable "PRA3_AAS_tickets" select _team),
+			- round (PRA3_AAS_ticketBleed select _team)
 		];
 	};
 
