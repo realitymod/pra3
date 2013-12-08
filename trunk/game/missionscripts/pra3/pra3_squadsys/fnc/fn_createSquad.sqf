@@ -63,7 +63,8 @@ if (isServer) then
 					false,                                //3: Squad locked
 					_group,                               //4: Arma group
 					objNull,                              //5: Rallypoint
-					if (time > NO_COOLDOWN_BEFORE) then { //6: Rallypoint available at
+					                                      //6: Rallypoint available at
+					if (time > NO_COOLDOWN_BEFORE && (PRA3_core getVariable ["PRA3_debug_squadSys_noRPCooldown", false])) then {
 						time + RALLYPOINT_COOLDOWN
 					} else {
 						0
