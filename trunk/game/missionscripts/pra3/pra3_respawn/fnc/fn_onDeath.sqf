@@ -31,11 +31,13 @@ if !(alive player) then
 		if (_x in ["FirstAidKit","Medikit"]) then {player removeItem _x};
 	} forEach items player;
 
-
 	// Schedule body deletion
 	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;
 
 	sleep (1 + random 2);
+	
+	// Create black screen
+	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
 
 	_updateInstructions =
 	{
@@ -57,9 +59,6 @@ if !(alive player) then
 	};
 
 	call _updateInstructions;
-
-	// Create black screen
-	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
 
 	// Mute sound
 	1 fadeSound 0;
