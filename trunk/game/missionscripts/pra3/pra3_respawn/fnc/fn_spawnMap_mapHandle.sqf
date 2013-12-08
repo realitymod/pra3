@@ -13,6 +13,7 @@ switch (_this select 0) do
 	{
 		if (_param select 1 == 0) then // Left mouse
 		{
+			call PRA3_fnc_kitDlg_hideKitDetails;
 			PRA3_selectedSpawn = [];
 			var(_clickPos) = _param select 0 ctrlMapScreenToWorld [_param select 2, _param select 3];
 			{
