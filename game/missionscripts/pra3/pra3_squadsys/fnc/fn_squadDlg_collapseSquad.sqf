@@ -18,7 +18,7 @@ PRA3_squadSys_collapsedSquads set [_id, _collapse];
 var(_squadId) = (if (_id == 0) then {
 		(player call PRA3_fnc_unitGetSquad)
 	} else {
-		((player call PRA3_fnc_getPlayerSide) call PRA3_fnc_getSideID) + _id
+		(PRA3_player_side call PRA3_fnc_getSideID) + _id
 	}
 );
 

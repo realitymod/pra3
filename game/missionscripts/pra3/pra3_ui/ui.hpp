@@ -8,6 +8,7 @@ class RscTitles
 	#include "aas\captureIndicator.hpp"
 	#include "respawn\deadScreen.hpp"
 	#include "respawn\startScreen.hpp"
+	#include "hud\playerRecognition.hpp"
 };
 
 class CfgNotifications

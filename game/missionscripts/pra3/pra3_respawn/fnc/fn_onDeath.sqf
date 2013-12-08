@@ -18,7 +18,7 @@ if !(alive player) then
 
 	// Penalize the death
 	// TODO: Remove hardcoded value
-	[player call PRA3_fnc_getPlayerSide, 1] call PRA3_fnc_AAS_removeTickets;
+	[PRA3_player_side, 1] call PRA3_fnc_AAS_removeTickets;
 
 	sleep 1;
 	// Delete any weapons the player dropped

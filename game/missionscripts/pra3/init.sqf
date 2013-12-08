@@ -10,7 +10,8 @@ _this call compile preprocessFile "pra3\pra3_aas\loadMissionParams.sqf";
 	"aas",
 	"kits",
 	"squadsys",
-	"map"
+	"map",
+	"hud"
 ];
 
 if !isDedicated then

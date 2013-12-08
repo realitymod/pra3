@@ -4,7 +4,7 @@
 var(_zone) = _this select 0;
 var(_prevOwner) = _this select 1;
 
-var(_text) = if ((player call PRA3_fnc_getPlayerSide) == _prevOwner) then {"Hostile"} else {"Friendly"}; 
+var(_text) = if (PRA3_player_side == _prevOwner) then {"Hostile"} else {"Friendly"}; 
 
 if (isClient) then
 {

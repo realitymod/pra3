@@ -220,7 +220,7 @@ else
 		waitUntil {!isNull player};
 
 		// Wait for server to assign side and team
-		waitUntil {player call PRA3_fnc_getPlayerSide != sideLogic && player call PRA3_fnc_getPlayerTeam != ""};
+		waitUntil {!isNil "PRA3_player_side"};
 
 		if !isServer then
 		{

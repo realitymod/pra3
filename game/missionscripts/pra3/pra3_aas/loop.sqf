@@ -238,7 +238,7 @@ while {true} do
 			_pos set [2, (0.39 * _capture / 100)];
 			ctrl(1) ctrlSetPosition _pos;
 			ctrl(1) ctrlSetBackgroundColor (
-				if (_side == (player call PRA3_fnc_getPlayerSide)) then {
+				if (_side == PRA3_player_side) then {
 					__colorFriendly
 				} else {
 					if (_side == __neutral) then {
@@ -330,7 +330,7 @@ while {true} do
 		}
 		else
 		{
-			[format["end%1", _winner + 1], isClient && {PRA3_AAS_sides select _winner == (player call PRA3_fnc_getPlayerSide)}, true] call BIS_fnc_endMission;
+			[format["end%1", _winner + 1], isClient && {PRA3_AAS_sides select _winner == PRA3_player_side}, true] call BIS_fnc_endMission;
 		};
 	};
 
