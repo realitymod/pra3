@@ -13,7 +13,7 @@
 
 var(_zone)      = _this select 0;
 var(_attackers) = _this select 1;
-var(_defenders) = _this select 2.
+var(_defenders) = _this select 2;
 
 if (PRA3_core getVariable ["PRA3_debug_AAS_fastCap", false]) then
 {
