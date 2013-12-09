@@ -33,7 +33,7 @@ if (isServer) then
 
 		_rally setVariable ["PRA3_rally_deployTime", time, true];
 		_rally setVariable ["PRA3_rally_squad", _squadId, true];
-		_rally setVariable ["PRA3_rally_tickets", count (_squadId call PRA3_fnc_squadGetMembers), true];
+		_rally setVariable ["PRA3_rally_tickets", (count (_squadId call PRA3_fnc_squadGetMembers))*2, true];
 
 		_arr set [5, _rally];
 
