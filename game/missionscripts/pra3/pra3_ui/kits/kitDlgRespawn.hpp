@@ -182,8 +182,8 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			sizeEx = 0.035;
 			colorBackground[] = {0.5,0.5,0.5,0.5};
 			colorBorder[] = {0.5,0.5,0.5,0.5};
-			colorBackgroundDisabled[] =  {0.95,0.95,0.95,1};
-			colorDisabled[] =  {0.95,0.95,0.95,1};
+			colorBackgroundDisabled[] =  {0.5,0.5,0.5,0.5};
+			colorDisabled[] =  {0.5,0.5,0.5,0.5};
 			action = "player call PRA3_fnc_switchTeam";
 			default = false;
 		};
@@ -217,6 +217,10 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.065;
 			w = __w1 / 2 - 0.005;
 			h = 0.04;
+			colorBackground[] = {0.5,0.5,0.5,0.5};
+			colorBorder[] = {0.5,0.5,0.5,0.5};
+			colorBackgroundDisabled[] =  {0.5,0.5,0.5,0.5};
+			colorDisabled[] =  {0.5,0.5,0.5,0.5};
 			text = "KITS";
 			action = "";
 		};
@@ -305,9 +309,9 @@ class Rsc_PRA3_kits_kitDlgRespawn
 						class DetailsButton : RscShortcutButton
 						{
 							idc = __EVAL(IDC_KITDLG_SELECTION_KIT + 105);
-							x = __EVAL(__w1 - 0.005*2 - 0.031);
+							x = __EVAL(__w1 - 0.005*2 - 0.048);
 							y = 0;
-							w = 0.031;
+							w = 0.048;
 							h = __h;
 							animTextureNormal	= "pra3\pra3_ui\data\button_tall_88.paa";
 							animTextureDisabled	= "pra3\pra3_ui\data\button_tall_88.paa";
@@ -332,9 +336,9 @@ class Rsc_PRA3_kits_kitDlgRespawn
 							};
 							class TextPos
 							{
-								left = 0.0;
+								left = 0.01;
 								top = 0.0;
-								right = 0.0;
+								right = 0.01;
 								bottom = 0.0;
 							};
 						};
