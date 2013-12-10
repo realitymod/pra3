@@ -40,6 +40,7 @@ class Mission
 	randomSeed=2342695;
 	class Intel
 	{
+		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
 		briefingName="PR:A3: Payroll";
 		startWeather=0.50999999;
 		startFog=0.25;
