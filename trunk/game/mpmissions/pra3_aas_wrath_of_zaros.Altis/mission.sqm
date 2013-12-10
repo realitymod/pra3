@@ -33,6 +33,7 @@ class Mission
 	randomSeed=14028797;
 	class Intel
 	{
+		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
 		startWeather=0.39999998;
 		startWind=0;
 		startWaves=0.099999994;
