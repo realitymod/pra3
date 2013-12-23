@@ -21,7 +21,7 @@ if (PRA3_core getVariable ["PRA3_debug_AAS_fastCap", false]) then
 }
 else
 {
-	if (_attackers < 2) then
+	if (_attackers < 2 && isMultiplayer) then
 	{
 		0
 	}
