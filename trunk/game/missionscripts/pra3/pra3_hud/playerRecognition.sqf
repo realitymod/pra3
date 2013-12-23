@@ -37,7 +37,7 @@ addMissionEventHandler [
 					{
 						PRA3_recognize_knownUnits set [count PRA3_recognize_knownUnits, _x];
 					};
-				} forEach (player nearEntities ["Man", MAX_RECOGNIZE_DISTANCE]);
+				} forEach (player nearEntities ["CAManBase", MAX_RECOGNIZE_DISTANCE]);
 			};
 
 			PRA3_recognize_nextNearCheck = diag_frameNo + DELAY_FRAMES;
