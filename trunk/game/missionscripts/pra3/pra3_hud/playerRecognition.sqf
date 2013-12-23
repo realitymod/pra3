@@ -22,20 +22,23 @@ addMissionEventHandler [
 		if (diag_frameNo > PRA3_recognize_nextNearCheck) then
 		{
 			PRA3_recognize_knownUnits = [];
+			if (!isNull player) then
 			{
-				var(_cameraPos) = positionCameraToWorld [0,0,0];
-				var(_screenPos) = worldToScreen ASLToATL eyePos _x;
-				if (
-					count _screenPos > 0 &&
-					_cameraPos distance _x < MAX_RECOGNIZE_DISTANCE * 1.5 &&
-					_x != player &&
-					{PRA3_player_side == _x call PRA3_fnc_getPlayerSide} &&
-					{!lineIntersects [ATLToASL _cameraPos, eyePos _x, player, _x]}
-				) then
 				{
-					PRA3_recognize_knownUnits set [count PRA3_recognize_knownUnits, _x];
-				};
-			} forEach (player nearEntities ["Man", MAX_RECOGNIZE_DISTANCE]);
+					var(_cameraPos) = positionCameraToWorld [0,0,0];
+					var(_screenPos) = worldToScreen ASLToATL eyePos _x;
+					if (
+						count _screenPos > 0 &&
+						_cameraPos distance _x < MAX_RECOGNIZE_DISTANCE * 1.5 &&
+						_x != player &&
+						{PRA3_player_side == _x call PRA3_fnc_getPlayerSide} &&
+						{!lineIntersects [ATLToASL _cameraPos, eyePos _x, player, _x]}
+					) then
+					{
+						PRA3_recognize_knownUnits set [count PRA3_recognize_knownUnits, _x];
+					};
+				} forEach (player nearEntities ["Man", MAX_RECOGNIZE_DISTANCE]);
+			};
 
 			PRA3_recognize_nextNearCheck = diag_frameNo + DELAY_FRAMES;
 		};
@@ -46,7 +49,7 @@ addMissionEventHandler [
 			_pos set [2, (_pos select 2) + (ASLToATL eyePos _x select 2) - (_pos select 2) + 0.4];
 			_pos = worldToScreen _pos;
 
-			if (alive _x && count _pos > 0) then
+			if (!visibleMap && alive _x && count _pos > 0) then
 			{
 				var(_stareTime) = _x getVariable ["PRA3_stareTime", 0];
 				if (_stareTime > RECOGNIZE_DELAY) then
