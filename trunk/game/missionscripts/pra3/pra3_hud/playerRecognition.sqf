@@ -46,7 +46,7 @@ addMissionEventHandler [
 		var(_lastUsed) = 1;
 		{
 			var(_pos) = visiblePosition _x;
-			_pos set [2, (_pos select 2) + (ASLToATL eyePos _x select 2) - (_pos select 2) + 0.4];
+			_pos set [2, (_pos select 2) + ((eyePos _x select 2) - (getPosASL _x select 2)) + 0.3];
 			_pos = worldToScreen _pos;
 
 			if (!visibleMap && alive _x && count _pos > 0) then

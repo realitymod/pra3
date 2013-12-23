@@ -18,6 +18,9 @@ _unit setVariable ["PRA3_UID", str PRA3_mp_playerInfoSpUID];
 
 // Stop them from shooting each other
 _unit setBehaviour "CARELESS";
+_unit disableAI "MOVE";
+_unit disableAI "TARGET";
+_unit disableAI "AUTOTARGET";
 
 // Trigger onPlayerConnected
 [PRA3_mp_playerInfoSpUID, _unit] spawn
