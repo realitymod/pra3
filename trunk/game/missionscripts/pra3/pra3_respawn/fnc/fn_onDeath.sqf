@@ -83,11 +83,11 @@ if !(alive player) then
 		var(_time) = PRA3_AAS_spawnAtTime - time;
 		_timeStr = if (_time >= 0) then
 		{
-			[_time ,"MM:SS.MS"] call BIS_fnc_secondsToString;
+			[_time ,"MM:SS"] call BIS_fnc_secondsToString;
 		}
 		else
 		{
-			"00:00.000";
+			"00:00";
 		};
 		uiNamespace getVariable "PRA3_respawn_deadScreen" displayCtrl 30 ctrlSetStructuredText parseText _timeStr;
 
