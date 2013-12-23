@@ -6,9 +6,6 @@
  *		(out) <VOID>
  */
 
-if !isDedicated then
 {
-	{
-		_this call (_x select 0);
-	} forEach PRA3_mp_playerConnectedHandlers;
-};
+	_this call (_x select 0);
+} forEach PRA3_mp_playerDisconnectedHandlers;
