@@ -1,0 +1,6 @@
+#define ctrl(idc) (uiNamespace getVariable "PRA3_hud_playerRecognition" displayCtrl idc)
+#define var(x) private #x; x
+
+#define MAX_RECOGNIZE_DISTANCE 20
+#define RECOGNIZE_DELAY        0.5
+#define DELAY_FRAMES           30
