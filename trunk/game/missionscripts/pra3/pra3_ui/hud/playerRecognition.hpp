@@ -21,7 +21,7 @@ class PRA3_hud_playerRecognition
 			sizeEx = 0.04;
 			shadow = 2;
 
-			colorText[] = IGUI_TEXT_COLOR;
+			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 		};
 
