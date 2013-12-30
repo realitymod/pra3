@@ -67,7 +67,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			x = __mapX + (__mapW - __spaceX * 2 - 0.01) / 2 - 0.09;
 			w = 0.18;
 			style = ST_LEFT;
-			text = "01:27.93";
+			text = "";
 		};
 		class PlayerTeamTickets : TitleSpawnTime
 		{

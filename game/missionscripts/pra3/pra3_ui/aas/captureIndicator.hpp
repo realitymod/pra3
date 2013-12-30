@@ -2,8 +2,8 @@ class PRA3_AAS_captureIndicator
 {
 	idd = -1;
 	duration = 1e+1000;
-	fadeIn = 0;
-	fadeOut = 0;
+	fadeIn = 0.5;
+	fadeOut = 0.5;
 	name = "PRA3_AAS_captureIndicator";
 	onLoad = "uiNamespace setVariable [""PRA3_AAS_captureIndicator"", _this select 0]";
 

@@ -34,33 +34,92 @@ class RscBackground : RscText
 	SizeEx = 1;
 };
 
+class ScrollBar
+{
+	color[] = {1,1,1,0.6};
+	colorActive[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.3};
+	thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+	shadow = 0;
+	scrollSpeed = 0.06;
+};
+
+class RscControlsGroup
+{
+	type = 15;
+	idc = -1;
+	x = 0;
+	y = 0;
+	w = 1;
+	h = 1;
+	shadow = 0;
+	style = 16;
+	class VScrollbar: ScrollBar
+	{
+		width = 0.021;
+		autoScrollEnabled = 1;
+		autoScrollSpeed = -1;
+		autoScrollDelay = 5;
+		autoScrollRewind = 0;
+		shadow = 0;
+		color[] = {1,1,1,1};
+	};
+	class HScrollbar: ScrollBar
+	{
+		color[] = {1,1,1,1};
+		height = 0.028;
+		shadow = 0;
+	};
+	class Controls{};
+};
+
+class RscControlsGroupNoScrollbars: RscControlsGroup
+{
+	class VScrollbar: VScrollbar
+	{
+		width = 0;
+	};
+	class HScrollbar: HScrollbar
+	{
+		height = 0;
+	};
+};
+
 class RscListBox
 {
 	type = 5;
 	style = 16;
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	shadow = 0;
-	colorShadow[] = {0, 0, 0, 0.5};
-	color[] = {1, 1, 1, 1};
-	colorText[] = {1, 1, 1, 1.0};
-	colorDisabled[] = {1, 1, 1, 0.25};
-	colorScrollbar[] = {1, 0, 0, 0};
-	colorSelect[] = {0, 0, 0, 1};
-	colorSelect2[] = {0, 0, 0, 1};
-	colorSelectBackground[] = {0.95, 0.95, 0.95, 1};
-	colorSelectBackground2[] = {1, 1, 1, 0.5};
+	colorShadow[] = {0,0,0,0.5};
+	colorText[] = {1,1,1,1.0};
+	colorDisabled[] = {1,1,1,0.25};
+	colorScrollbar[] = {1,0,0,0};
+	colorSelect[] = {0,0,0,1};
+	colorSelect2[] = {0,0,0,1};
+	colorSelectBackground[] = {0.95,0.95,0.95,1};
+	colorSelectBackground2[] = {1,1,1,0.5};
 	period = 1.2;
-	colorBackground[] = {0, 0, 0, 0.3};
+	colorBackground[] = {0,0,0,0.3};
 	maxHistoryDelay = 1.0;
+	soundSelect[] =	{"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1};
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
+	rowHeight = 0;
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
-	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1};
-	rowHeight = 0;
-
-	class ScrollBar {
-		color[] = {1, 1, 1, 0.6};
+	
+	class ListScrollBar : ScrollBar
+	{
+		color[] = {1,1,1,1};
+		autoScrollEnabled = 1;
+		
 		colorActive[] = {1, 1, 1, 1};
 		colorDisabled[] = {1, 1, 1, 0.3};
 		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
@@ -69,7 +128,9 @@ class RscListBox
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
 };
-class RscMapControl {
+
+class RscMapControl 
+{
 	type = 101;
 	style = 48;
 	colorText[] = {0,0,0,1};
@@ -439,7 +500,8 @@ class RscMapControl {
 	};
 };
 
-class RscStructuredText {
+class RscStructuredText 
+{
 	idc = -1;
 	x = 0;
 	y = 0;
@@ -507,7 +569,8 @@ class RscStructuredText {
 	};
 };
 
-class RscActiveText {
+class RscActiveText 
+{
 	idc = -1;
 	x = 0;
 	y = 0;
@@ -529,56 +592,8 @@ class RscActiveText {
 	soundPush[] = {"",0.1,1};
 };
 
-class RscControlsGroup {
-	type = 15;
-	idc = -1;
-	x = 0;
-	y = 0;
-	w = 1;
-	h = 1;
-	shadow = 0;
-	style = 16;
-
-	class VScrollbar {
-		width = 0.021;
-		autoScrollSpeed = -1;
-		autoScrollDelay = 5;
-		autoScrollRewind = 0;
-		shadow = 0;
-		color[] = {1,1,1,1};
-	};
-
-	class HScrollbar {
-		color[] = {1,1,1,1};
-		height = 0.028;
-		shadow = 0;
-	};
-
-	class ScrollBar {
-		color[] = {1, 1, 1, 0.6};
-		colorActive[] = {1, 1, 1, 1};
-		colorDisabled[] = {1, 1, 1, 0.3};
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-		shadow = 0;
-	};
-
-	class Controls {};
-};
-
-class RscControlsGroupNoScrollbars : RscControlsGroup {
-	class VScrollbar : VScrollbar {
-		width = 0;
-	};
-
-	class HScrollbar : HScrollbar {
-		height = 0;
-	};
-};
-
-class RscShortcutButton {
+class RscShortcutButton 
+{
 	idc = -1;
 	style = 0;
 	default = 0;
@@ -611,32 +626,37 @@ class RscShortcutButton {
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
 	action = "";
 
-	class Attributes {
+	class Attributes 
+	{
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "true";
 	};
 
-	class AttributesImage {
+	class AttributesImage 
+	{
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "left";
 	};
-	class HitZone {
+	class HitZone 
+	{
 		left = 0.0;
 		top = 0.0;
 		right = 0.0;
 		bottom = 0.0;
 	};
 
-	class ShortcutPos {
+	class ShortcutPos 
+	{
 		left = 0;
 		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
 		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	};
-	class TextPos {
+	class TextPos 
+	{
 		left = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
 		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
@@ -644,7 +664,8 @@ class RscShortcutButton {
 	};
 };
 
-class RscButton {
+class RscButton 
+{
 	style = 2;
 	x = 0;
 	y = 0;
@@ -686,7 +707,8 @@ class PRA3_RscInvisibleButton : RscButton
 	colorBorder[] = {0,0,0,0};
 };
 
-class RscPicture {
+class RscPicture 
+{
 	type = 0;
 	style = 48;
 	shadow = 0;
@@ -704,7 +726,8 @@ class RscPicture {
 	text = "";
 };
 
-class RscEdit {
+class RscEdit 
+{
 	style = 0x00 + 0x40;
 	font = "PuristaMedium";
 	shadow = 2;
@@ -718,22 +741,26 @@ class RscEdit {
 	type = 2;
 };
 
-class RscXListBox {
+class RscXListBox
+{
 	idc = -1;
 	type = 42;
-	style = 0x400 + 0x02 +	0x10;
+	style = "0x400 + 0x02 + 0x10";
 	shadow = 2;
 	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
 	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
 	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
 	w = 0.14706;
 	h = 0.039216;
+	colorSelect[] ={0.95,0.95,0.95,1};
+	colorText[] ={1,1,1,1.0};
+	colorDisabled[] ={1,1,1,0.25};
 	color[] = {1,1,1,0.6};
 	colorActive[] = {1,1,1,1};
-	colorSelect[] = {0.95, 0.95, 0.95, 1};
-	colorText[] = {1, 1, 1, 1.0};
-	colorDisabled[] = {1, 1, 1, 0.25};
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect", 0.09, 1};
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1};
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] =	{0,0,0,0.65};
 };

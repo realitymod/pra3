@@ -58,8 +58,9 @@ if (!isNil "PRA3_AAS_spawnAtTime") then
 		if (_time < 0) then
 		{
 			_time = 0;
+			ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlShow false;
 		};
-		ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlSetText ([_time, "MM:SS.MS"] call BIS_fnc_secondsToString);
+		ctrl(IDC_KITDLG_SPAWNMAP_SPAWNTIME) ctrlSetText ([_time, "MM:SS"] call BIS_fnc_secondsToString);
 		_time = time - PRA3_AAS_prepareTime;
 		if (_time < 0) then
 		{
@@ -86,3 +87,4 @@ if (!isNil "PRA3_AAS_spawnAtTime") then
 		};
 	};
 };
+

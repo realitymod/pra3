@@ -45,9 +45,10 @@ var(_lastUsed) = 1;
 			var(_distance) = eyePos _x distance positionCameraToWorld [0,0,0];
 			var(_scale)    = ((MAX_RECOGNIZE_DISTANCE - _distance) / MAX_RECOGNIZE_DISTANCE + 0.5) min 1;
 			var(_fade)     = ((_distance / MAX_RECOGNIZE_DISTANCE * 0.9)^3) + (RECOGNIZE_DELAY*2 - _stareTime);
-
+			
 			ctrl(_idc) ctrlShow true;
 			ctrl(_idc) ctrlSetText name _x;
+			ctrl(_idc) ctrlSetTextColor [0,0.75,1,1];
 			ctrl(_idc) ctrlSetPosition [
 				(_pos select 0) - 0.5 * _scale,
 				(_pos select 1) max safeZoneY // Cap it at the top of the screen
@@ -57,6 +58,16 @@ var(_lastUsed) = 1;
 			ctrl(_idc) ctrlCommit 0;
 
 			_lastUsed = _lastUsed + 1;
+			
+			var(_caller) = _this;
+			var(_squad) = _caller call PRA3_fnc_unitGetSquad;
+			
+			{
+				if (player call PRA3_fnc_unitGetSquad == _squad) then
+				{
+					ctrl(_idc) ctrlSetTextColor [0,1,0,1];
+				};
+			} forEach (player nearEntities ["CAManBase", MAX_RECOGNIZE_DISTANCE]);
 		};
 		var(_add) = diag_tickTime - PRA3_recognize_lastRun;
 		_x setVariable ["PRA3_stareTime", (_stareTime + _add) min (RECOGNIZE_DELAY*2)];

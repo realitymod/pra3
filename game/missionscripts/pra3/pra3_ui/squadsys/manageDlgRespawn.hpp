@@ -150,7 +150,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 							w = ( __grpW - (0.04+0.005)/(4/3) - 0.09 - 0.005 - (0.04)/(4/3) - 0.005 - 0.05) - 0.10 + 0.005;
 							colorText[] = __colorText;
 							sizeEx = 0.032;
-							text = "AAAAAAAAAAAAAAA";
+							text = "";
 							style = ST_RIGHT;
 						};
 
