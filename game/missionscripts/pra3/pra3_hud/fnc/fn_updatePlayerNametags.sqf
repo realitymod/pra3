@@ -58,16 +58,6 @@ var(_lastUsed) = 1;
 			ctrl(_idc) ctrlCommit 0;
 
 			_lastUsed = _lastUsed + 1;
-			
-			var(_caller) = _this;
-			var(_squad) = _caller call PRA3_fnc_unitGetSquad;
-			
-			{
-				if (player call PRA3_fnc_unitGetSquad == _squad) then
-				{
-					ctrl(_idc) ctrlSetTextColor [0,1,0,1];
-				};
-			} forEach (player nearEntities ["CAManBase", MAX_RECOGNIZE_DISTANCE]);
 		};
 		var(_add) = diag_tickTime - PRA3_recognize_lastRun;
 		_x setVariable ["PRA3_stareTime", (_stareTime + _add) min (RECOGNIZE_DELAY*2)];
