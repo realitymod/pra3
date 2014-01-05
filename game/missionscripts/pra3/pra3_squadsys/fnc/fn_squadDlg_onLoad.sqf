@@ -6,7 +6,7 @@
  *	Dialog onLoad handler.
  */
 
-(_this displayCtrl IDC_KITDLG_SWITCH_SQUADS) ctrlEnable false;
+ctrlSetFocus (_this displayCtrl IDC_KITDLG_SWITCH_SQUADS);
 
 (_this displayCtrl 301) ctrlShow false;
 (_this displayCtrl 302) ctrlShow false;
