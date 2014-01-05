@@ -1,3 +1,4 @@
+#include "defines.sqh"
 #include "scriptDefines.sqh"
 
 var(_showSpawnMap) = _this;

@@ -182,8 +182,8 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			sizeEx = 0.035;
 			colorBackground[] = {0.5,0.5,0.5,0.5};
 			colorBorder[] = {0.5,0.5,0.5,0.5};
-			colorBackgroundDisabled[] =  {0.5,0.5,0.5,0.5};
-			colorDisabled[] =  {0.5,0.5,0.5,0.5};
+			colorBackgroundDisabled[] =  {0.8,0.8,0.8,0.5};
+			colorDisabled[] =  {0.8,0.8,0.8,0.8};
 			action = "player call PRA3_fnc_switchTeam";
 			default = false;
 		};
