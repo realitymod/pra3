@@ -13,19 +13,30 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 		if ((_x select 0) == _unit) then
 		{
 			[
-				_x select 0,
-				"localizedMessage",
-				"str_praa_squadsys_promote_sl_you"
-			] call PRA3_fMp_execClient;
+				[
+					"PRA3_squadsys_eventNotification",
+					[
+						"NEW SQUAD LEADER",
+						"You are now the leader of your squad"
+					]
+				],
+				"BIS_fnc_showNotification",
+				_x select 0
+			] call PRA3_fnc_MP;
 		}
 		else
 		{
 			[
-				_x select 0,
-				"localizedMessage",
-				"str_praa_squadsys_promote_sl",
-				_unit call PRA3_fnc_getPlayerName
-			] call PRA3_fMp_execClient;
+				[
+					"PRA3_squadsys_eventNotification",
+					[
+						"NEW SQUAD LEADER",
+						format ["%1 is the new leader of your squad", _unit call PRA3_fnc_getPlayerName]
+					]
+				],
+				"BIS_fnc_showNotification",
+				_x select 0
+			] call PRA3_fnc_MP;
 		};
 
 		[

@@ -14,6 +14,7 @@ class RscTitles
 class CfgNotifications
 {
 	#include "aas\captureNotifications.hpp"
+	#include "squadsys\eventNotifications.hpp"
 }
 
 #include "kits\kitDlgRespawn.hpp"

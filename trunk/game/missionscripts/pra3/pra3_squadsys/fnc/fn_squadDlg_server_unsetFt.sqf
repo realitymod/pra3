@@ -22,37 +22,59 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 			if ((_x select 1) == _prevFt) then
 			{
 				[
-					_x select 0,
-					"localizedMessage",
-					"str_praa_squadsys_promote_ft",
-					_unit call PRA3_fnc_getPlayerName
-				] call PRA3_fMp_execClient;
+					[
+						"PRA3_squadsys_eventNotification",
+						[
+							"NEW FT LEADER",
+							format ["%1 is now the leader of your fireteam", _unit call PRA3_fnc_getPlayerName]
+						]
+					],
+					"BIS_fnc_showNotification",
+					_x select 0
+				] call PRA3_fnc_MP;
 			};
 		} forEach _members;
 		if (_newLeader != "") then
 		{
 			[
-				_newLeader,
-				"localizedMessage",
-				"str_praa_squadsys_promote_ft_you"
-			] call PRA3_fMp_execClient;
+				[
+					"PRA3_squadsys_eventNotification",
+					[
+						"NEW FT LEADER",
+						"You are now the leader of your fireteam"
+					]
+				],
+				"BIS_fnc_showNotification",
+				_newLeader
+			] call PRA3_fnc_MP;
 		};
 	}
 	else
 	{
 		[
-			_ftLeader,
-			"localizedMessage",
-			"str_praa_squadsys_unassign_ft",
-			_unit call PRA3_fnc_getPlayerName
-		] call PRA3_fMp_execClient;
+			[
+				"PRA3_squadsys_eventNotification",
+				[
+					"FT MEMBER UNASSIGNED",
+					format ["%1 has been unassigned from your fireteam", _unit call PRA3_fnc_getPlayerName]
+				]
+			],
+			"BIS_fnc_showNotification",
+			_ftLeader
+		] call PRA3_fnc_MP;
 	};
 
 	[
-		_unit,
-		"localizedMessage",
-		"str_praa_squadsys_unassign_ft_you"
-	] call PRA3_fMp_execClient;
+		[
+			"PRA3_squadsys_eventNotification",
+			[
+				"FIRETEAM UNASSIGNED",
+				"You have been unassigned from your fireteam"
+			]
+		],
+		"BIS_fnc_showNotification",
+		_unit
+	] call PRA3_fnc_MP;
 };
 
 [[_squadId], _squadId call PRA3_fnc_squadGetSide] call PRA3_fnc_squadDlg_server_refresh;

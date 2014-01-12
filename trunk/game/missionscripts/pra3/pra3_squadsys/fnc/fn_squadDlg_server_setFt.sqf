@@ -15,26 +15,35 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 		if ((_x select 0) == _unit) then
 		{
 			[
-				_unit,
-				"localizedMessage",
-				"str_praa_squadsys_assign_ft_you",
-				__fireteamNames select (_ft-1)
-			] call PRA3_fMp_execClient;
+				[
+					"PRA3_squadsys_eventNotification",
+					[
+						"FIRETEAM ASSIGNED",
+						format ["You have been assigned to FT %1", __fireteamNames select (_ft-1)]
+					]
+				],
+				"BIS_fnc_showNotification",
+				_unit
+			] call PRA3_fnc_MP;
 		}
 		else
 		{
 			if ((_x select 1) == (_ft + 10)) then
 			{
 				[
-					_x select 0,
-					"localizedMessage",
-					"str_praa_squadsys_assign_ft",
-					_unit call PRA3_fnc_getPlayerName
-				] call PRA3_fMp_execClient;
+					[
+						"PRA3_squadsys_eventNotification",
+						[
+							"NEW FT MEMBER",
+							format ["%1 has been assigned to your FT", _unit call PRA3_fnc_getPlayerName]
+						]
+					],
+					"BIS_fnc_showNotification",
+					_x select 0
+				] call PRA3_fnc_MP;
 			};
 		};
 	} forEach _members;
-	diag_log _members;
 
 	[_squadId, _unit, _ft] call PRA3_fnc_unitSetFt;
 };

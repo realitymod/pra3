@@ -11,10 +11,16 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 	if (_prevLeader != "") then // Previous leader being replaced
 	{
 		[
-			_prevLeader,
-			"localizedMessage",
-			"str_praa_squadsys_demote_ft"
-		] call PRA3_fMp_execClient;
+			[
+				"PRA3_squadsys_eventNotification",
+				[
+					"FT LEADER DEMOTION",
+					"You are no longer the fireteam leader"
+				]
+			],
+			"BIS_fnc_showNotification",
+			_prevLeader
+		] call PRA3_fnc_MP;
 	};
 
 	[_squadId, _ft, _unit] call PRA3_fnc_squadSetFtLeader;
@@ -24,18 +30,29 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 		if ((_x select 1) == _ft && (_x select 0) != _prevLeader) then
 		{
 			[
-				_x select 0,
-				"localizedMessage",
-				"str_praa_squadsys_promote_ft",
-				_unit call PRA3_fnc_getPlayerName
-			] call PRA3_fMp_execClient;
+				[
+					"PRA3_squadsys_eventNotification",
+					[
+						"NEW FT LEADER",
+						format ["%1 is the new leader of your fireteam", _unit call PRA3_fnc_getPlayerName]
+					]
+				],
+				"BIS_fnc_showNotification",
+				_x select 0
+			] call PRA3_fnc_MP;
 		};
 	} forEach _members;
 	[
-		_newLeader,
-		"localizedMessage",
-		"str_praa_squadsys_promote_ft_you"
-	] call PRA3_fMp_execClient;
+		[
+			"PRA3_squadsys_eventNotification",
+			[
+				"NEW FT LEADER",
+				"You are now the fireteam leader"
+			]
+		],
+		"BIS_fnc_showNotification",
+		_newLeader
+	] call PRA3_fnc_MP;
 };
 
 [[_squadId], _squadId call PRA3_fnc_squadGetSide] call PRA3_fnc_squadDlg_server_refresh;
