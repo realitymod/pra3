@@ -18,8 +18,7 @@ if isClient then
 			[
 				str (_zone call PRA3_fnc_AAS_getZoneName),
 				_newOwner call PRA3_fnc_sideToTeam call PRA3_fnc_getTeamName,
-				"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa",
-				""
+				"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa"
 			]
 		] call bis_fnc_showNotification;
 	}
@@ -33,8 +32,7 @@ if isClient then
 			[
 				str (_zone call PRA3_fnc_AAS_getZoneName),
 				_attackSide call PRA3_fnc_sideToTeam call PRA3_fnc_getTeamName,
-				"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa",
-				""
+				"\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa"
 			]
 		] call bis_fnc_showNotification;
 	};

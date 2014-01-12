@@ -25,26 +25,42 @@ if (_prevSquadId != -1) then // Unit already a member of a squad, let's remove h
 				if ((_x select 0) != _leader) then
 				{
 					[
-						_x select 0,
-						"localizedMessage",
-						"str_praa_squadsys_promote_sl",
-						_leader call PRA3_fnc_getPlayerName
+						[
+							"PRA3_squadsys_eventNotification",
+							[
+								"NEW SQUAD LEADER",
+								format ["%1 is the new leader of your squad", _leader call PRA3_fnc_getPlayerName]
+							]
+						],
+						"BIS_fnc_showNotification",
+						_x select 0
 					] call PRA3_fnc_MP;
 				};
 			} forEach _members;
 
 			[
-				_leader,
-				"localizedMessage",
-				"str_praa_squadsys_promote_sl_you"
+				[
+					"PRA3_squadsys_eventNotification",
+					[
+						"NEW SQUAD LEADER",
+						"You are now the squad leader"
+					]
+				],
+				"BIS_fnc_showNotification",
+				_leader
 			] call PRA3_fnc_MP;
 		};
 
 		[
-			_leader,
-			"localizedMessage",
-			"str_PRA3_squadSys_squad_leave",
-			_unit call PRA3_fnc_getPlayerName
+			[
+				"PRA3_squadsys_eventNotification",
+				[
+					"PLAYER LEFT",
+					format ["%1 has left the squad", _unit call PRA3_fnc_getPlayerName]
+				]
+			],
+			"BIS_fnc_showNotification",
+			_leader
 		] call PRA3_fnc_MP;
 
 		var(_others) = [];
@@ -81,10 +97,15 @@ if (_newSquadId != -1) then // Unit wants to join a new squad, let's add him to 
 	[_unit, _newSquadId] call PRA3_fnc_unitJoinSquad;
 
 	[
-		_leader,
-		"localizedMessage",
-		"str_PRA3_squadSys_squad_join",
-		_unit call PRA3_fnc_getPlayerName
+		[
+			"PRA3_squadsys_eventNotification",
+			[
+				"PLAYER JOINED",
+				format ["%1 has joined your squad", _unit call PRA3_fnc_getPlayerName]
+			]
+		],
+		"BIS_fnc_showNotification",
+		_leader
 	] call PRA3_fnc_MP;
 
 	var(_members) = _newSquadId call PRA3_fnc_squadGetMembers;
@@ -100,14 +121,11 @@ if (_newSquadId != -1) then // Unit wants to join a new squad, let's add him to 
 		_others set [_forEachIndex, (_x select 0) call PRA3_fnc_getPlayerUnit];
 	} forEach _members;
 
-
-	diag_log ["UPDATE CLIENTS:", _others];
 	[
 		_others,
 		"PRA3_fnc_updateVehicleMarker",
 		_unit
 	] call PRA3_fnc_MP;
-	diag_log "///////";
 
 	_updates set [count _updates, _newSquadId];
 }
