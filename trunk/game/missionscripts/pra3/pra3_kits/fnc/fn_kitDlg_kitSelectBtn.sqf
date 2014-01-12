@@ -19,6 +19,7 @@ else // Clicked on the kit itself
 if ([player, _kit] call PRA3_fnc_getKitAvailableInfo select 0) then // Only if kit is still available
 {
 	PRA3_kitSys_currentKit = _kit;
+	[[player, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
 };
 
 call PRA3_fnc_kitDlg_populateKitSelection;
