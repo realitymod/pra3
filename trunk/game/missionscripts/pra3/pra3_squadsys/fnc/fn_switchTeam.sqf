@@ -58,8 +58,11 @@ else
 	};
 
 	//Change the new team and side in PRA3_core to make sure all the functions work
-	PRA3_player_team = _team;
-	PRA3_player_side = _side;
+	if (_unit == player) then
+	{
+		PRA3_player_team = _team;
+		PRA3_player_side = _side;
+	};
 	[PRA3_core, format["PRA3_player_team_%1", _unit call PRA3_fnc_getPlayerUID], _team, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 	[PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID], _side, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 
@@ -84,17 +87,7 @@ else
 	//Remove current kit
 	PRA3_kitSys_currentKit = "";
 
-	[
-		[
-			[_unit],
-			{
-				_this select 0 call PRA3_fnc_stopVehicleTracking;
-				_this select 0 call PRA3_fnc_startVehicleTracking;
-			}
-		],
-		"BIS_fnc_spawn",
-		true
-	] call PRA3_fnc_MP;
+	[nil, "PRA3_fnc_refreshVehicleMarkers"] call PRA3_fnc_MP;
 
 	if (alive _unit) then
 	{

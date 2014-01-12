@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Games\ARMA 2\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, updateVehicleMarkers">*/
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, updateVehicleMarkers">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"start",0,250,-39.117645,-102.162613,50.882355,-52.162613,0.000000,"start"};
@@ -7,8 +7,8 @@ item2[] = {"update",2,4346,-39.123909,83.062134,50.876095,133.062057,0.000000,"u
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-313.758911,325.775024,374.235840,-211.791245,1004,920,1};
-window[] = {2,-1,-1,-1,-1,793,26,1239,26,3,1022};
+globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-313.758911,325.775024,374.235840,-211.791245,1004,1071,1};
+window[] = {2,-1,-1,-1,-1,1017,250,1463,250,3,1022};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -40,7 +40,7 @@ class FSM
     class update
     {
       name = "update";
-      init = /*%FSM<STATEINIT""">*/"private [""_over"", ""_vehicles"", ""_vehicle"", ""_marker"", ""_label""];" \n
+      init = /*%FSM<STATEINIT""">*/"private [""_over"", ""_vehicle"", ""_marker"", ""_label""];" \n
        "" \n
        "_over = ctrlMapMouseOver (findDisplay 12 displayCtrl 51);" \n
        "_over = if (!isNil ""_over"" && {count _over > 0 && {_over select 0 == ""marker""}}) then {" \n
@@ -49,7 +49,6 @@ class FSM
        "	""""" \n
        "};" \n
        "" \n
-       "_vehicles = PRA3_core getVariable [""PRA3_map_trackedVehicles"", []];" \n
        "{" \n
        "	_vehicle = _x select 0;" \n
        "	if (isNull _vehicle) exitWith // Vehicle doesn't exist anymore" \n
@@ -60,7 +59,7 @@ class FSM
        "		] call PRA3_fnc_logInfo;" \n
        "" \n
        "		deleteMarkerLocal (_x select 1);" \n
-       "		[_vehicles, _forEachIndex] call PRA3_fnc_arrayRemoveAt;" \n
+       "		[PRA3_map_markedVehicles, _forEachIndex] call PRA3_fnc_arrayRemoveAt;" \n
        "	};" \n
        "" \n
        "	_marker = _vehicle getVariable [""PRA3_map_marker"", """"];" \n
@@ -94,7 +93,7 @@ class FSM
        "	};" \n
        "" \n
        "	_marker setMarkerTextLocal _label;" \n
-       "} forEach _vehicles;" \n
+       "} forEach PRA3_map_markedVehicles;" \n
        ""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links

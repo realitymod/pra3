@@ -36,6 +36,8 @@
 			waitUntil {!isNull (_uid call PRA3_fnc_getPlayerUnit)};
 
 			var(_unit) = _uid call PRA3_fnc_getPlayerUnit;
+			
+			_unit call PRA3_fnc_startVehicleTracking;
 
 			[[_unit, _targetSide], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
 
