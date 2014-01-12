@@ -14,11 +14,10 @@ class Map
 	{
 		description = "Stops tracking of the vehicle via map markers. Returns false if the vehicle wasn't being tracked. Client-only function.";
 	};
-	class updateVehicleMarker
+	class refreshVehicleMarkers
 	{
 	};
-	class createMarkers
+	class updateVehicleMarker
 	{
-		description = "Creates markers for all vehicles.";
 	};
 };

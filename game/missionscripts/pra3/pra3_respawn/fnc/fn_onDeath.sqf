@@ -72,12 +72,6 @@ if !(alive player) then
 	_deathCamera setPosATL _pos;
 	_deathCamera switchCamera "INTERNAL";
 
-	// Remove map marker
-	[
-		player,
-		"PRA3_fnc_stopVehicleTracking"
-	] call PRA3_fnc_MP;
-
 	waitUntil
 	{
 		var(_time) = PRA3_AAS_spawnAtTime - time;
