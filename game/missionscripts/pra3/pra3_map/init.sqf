@@ -1,4 +1,5 @@
 PRA3_map_markerCounter = 0;
+PRA3_map_markedVehicles = [];
 
 if (!isDedicated) then
 {
