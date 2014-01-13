@@ -22,7 +22,7 @@ var(_cfg) = configFile >> "CfgVehicles" >> _vehicle >> "PRA3_marker";
 getText(_cfg)
 */
 
-if (_vehicle isKindOf "Man") then
+if (_vehicle isKindOf "CAManBase") then
 {
 	"mil_dot"
 }
