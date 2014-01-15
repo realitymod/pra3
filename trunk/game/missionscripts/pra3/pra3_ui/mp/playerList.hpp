@@ -19,28 +19,28 @@ class Rsc_PRA3_AAS_playerList
 
 	class ControlsBackground
 	{
-		class PlayerListBackground : RscBackground
+		class PlayerListTopBackground : RscBackground
 		{
 			x = __listX - 0.04;
 			y = safeZoneY + __spaceY + 0.36;
 			w = __EVAL(__w1);
 			h = 0.06;
-			colorBackground[] = {0.1,0.1,0.1,0.8};
+			colorBackground[] = {0.153,0.153,0.153,1.0};
 		};
-		class PlayerListBottomBar : PlayerListBackground
+		class PlayerListBottomBackground : PlayerListTopBackground
 		{
 			x = __listX - 0.04;
 			y = safeZoneY + __spaceY + __mapH - __spaceY - 0.045 - __spaceY - 0.524;
 			w = __EVAL(__w1);
 			h = 0.045;
-			colorBackground[] = {0.1,0.1,0.1,0.8};
+			colorBackground[] = {0.153,0.153,0.153,1.0};
 		};
-		class PlayerListMiddleLine : PlayerListBackground
+		class PlayerListMiddleLine : PlayerListBottomBackground
 		{
 			x = __listX + __w1 / 2 - 0.0025  - 0.04;
-			y = safeZoneY + __spaceY + 0.36;
+			y = safeZoneY + __spaceY + 0.42;
 			w = __EVAL(0.005);
-			h = 0.86;
+			h = 0.8;
 		};
 	};
 	class Controls 
@@ -55,14 +55,19 @@ class Rsc_PRA3_AAS_playerList
 			text = "DONE";
 			action = "closeDialog 0";
 			
-			colorFocused[] = {0.4, 0.4, 0.4, 1};
-			colorShadow[] = {0, 0, 0, 1};
+			shadow = 0;
+			
+			offsetX = 0.000;
+			offsetY = 0.000;
+			
+			colorFocused[] = {0.3, 0.3, 0.3, 1};
+			colorShadow[] = {0, 0, 0, 0};
 			colorBorder[] = {0, 0, 0, 1};
 			
 			colorText[] = {1, 1, 1, 1.0};
 			colorDisabled[] = {0.4, 0.4, 0.4, 1};
 			colorBackground[] = {0.2, 0.2, 0.2, 1};
-			colorBackgroundActive[] = {0.4, 0.4, 0.4, 1};
+			colorBackgroundActive[] = {0.3, 0.3, 0.3, 1};
 			colorBackgroundDisabled[] = {0.1, 0.1, 0.1, 1};
 		};
 		class NameTeam1 : RscText
