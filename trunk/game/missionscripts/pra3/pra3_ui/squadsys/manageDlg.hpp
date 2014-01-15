@@ -18,8 +18,8 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_squadSys_manageDlgRespawn
 
 		class BackgroundMissionInfo : TitleLeftBackground
 		{
-			x = safeZoneX + safeZoneW - __spaceX - 0.15 - __spaceX - 0.075 - __spaceX - 0.15;
-			w = 0.15 + __spaceX + 0.075 + __spaceX + 0.15;
+			x = safeZoneX + safeZoneW - __spaceX - 0.34 - __spaceX - 0.075 - __spaceX - 0.15;
+			w = 0.15 + __spaceX + 0.075 + __spaceX + 0.342;
 		};
 
 		class PlayerTeamTickets : PlayerTeamTickets {};
@@ -32,6 +32,8 @@ class Rsc_PRA3_squadSys_manageDlg : Rsc_PRA3_squadSys_manageDlgRespawn
 		class SwitchTeam2 : SwitchTeam2 {};
 		class SwitchTeam1Pic : SwitchTeam1Pic {};
 		class SwitchTeam2Pic : SwitchTeam2Pic {};
+		
+		class PlayerListButtonOpen : PlayerListButtonOpen {};
 
 		class Group : Group
 		{

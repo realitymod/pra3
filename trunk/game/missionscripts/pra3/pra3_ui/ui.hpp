@@ -1,6 +1,5 @@
 #include "defines.hpp"
 #include "uiBases.hpp"
-
 #include "idcs.hpp"
 
 class RscTitles
@@ -21,4 +20,5 @@ class CfgNotifications
 #include "kits\kitDlg.hpp"
 #include "squadsys\manageDlgRespawn.hpp"
 #include "squadsys\manageDlg.hpp"
+#include "mp\playerList.hpp"
 #include "debug\debugMenu.hpp"

@@ -75,6 +75,8 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		class SpawnMap : SpawnMap {};
 		class SpawnSelection : SpawnSelection {};
 		class SpawnButtonClose : SpawnButtonClose {};
+		
+		class PlayerListButtonOpen : PlayerListButtonOpen {};
 
 		class SwitchTeam1 : SwitchTeam1 {};
 		class SwitchTeam2 : SwitchTeam2 {};

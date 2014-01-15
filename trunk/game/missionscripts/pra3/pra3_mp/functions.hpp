@@ -53,5 +53,13 @@ class MP
 	class MP
 	{
 		description = "Wrapper for BIS_fnc_MP_packet to make everything call by default.";
+	};	
+	class playerListDlg_onLoad
+	{
+		description = "Dialog load.";
+	};	
+	class playerListDlg_open
+	{
+		description = "Dialog open.";
 	};
 };

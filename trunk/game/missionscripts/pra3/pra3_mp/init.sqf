@@ -14,6 +14,12 @@ if isServer then //Server only
 if !isDedicated then //Client only
 {
 	execVM "pra3\pra3_mp\playerInfo\client.sqf";
+	0 spawn
+	{
+		waitUntil {!isNull (findDisplay 46)};
+		findDisplay 46 displayAddEventHandler ["keyDown", "if (_this select 1 == 23) then {if dialog then {closeDialog 0} else {false call PRA3_fnc_playerListDlg_open}; true} else {false}"];
+
+	};
 };
 
 call compile preprocessFileLineNumbers "pra3\pra3_mp\playerRespawned\init.sqf";
