@@ -43,7 +43,6 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			h = safeZoneH - __spaceY * 2 - 0.069;
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
-
 		class BackgroundSpawn : TitleLeftBackground
 		{
 			idc = IDC_KITDLG_SPAWNMAP_BG;
@@ -67,7 +66,6 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			x = __mapX + (__mapW - __spaceX * 2 - 0.01) / 2 - 0.09;
 			w = 0.18;
 			style = ST_LEFT;
-			text = "";
 		};
 		class PlayerTeamTickets : TitleSpawnTime
 		{
@@ -77,7 +75,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			w = 0.15;
 			style = ST_RIGHT;
 			sizeEx = 0.04;
-			text = "200 (-10)";
+			text = "Debug_200 (-10)";
 		};
 		class PlayerTeamFlag : RscPicture
 		{
@@ -94,7 +92,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			idc = IDC_KITDLG_SPAWNMAP_MISSIONTIME;
 			x = __mapX + __mapW - 0.15;
 			style = ST_LEFT;
-			text = "01:34:17";
+			text = "Debug_01:34:17";
 			w = 0.15;
 		};
 	};
@@ -171,7 +169,27 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			text = "DONE";
 			action = "closeDialog 0";
 		};
-
+		class PlayerListButtonOpen : RscButton
+		{
+			idc = IDC_MPLISTDLG_OPEN_BTN;
+			x = __mapX + __mapW - 0.15 - __spaceX - 0.075 - __spaceX - 0.2 - __spaceX - 0.1;
+			y = safeZoneY + __spaceY + 0.013;
+			w = 0.17;
+			h = 0.05;
+			font = "PuristaBold";
+			text = "PLAYER LIST";
+			action = "call PRA3_fnc_playerListDlg_open";
+			
+			colorFocused[] = {0.4, 0.4, 0.4, 1};
+			colorShadow[] = {0, 0, 0, 1};
+			colorBorder[] = {0, 0, 0, 1};
+			
+			colorText[] = {1, 1, 1, 1.0};
+			colorDisabled[] = {0.4, 0.4, 0.4, 1};
+			colorBackground[] = {0.2, 0.2, 0.2, 1};
+			colorBackgroundActive[] = {0.4, 0.4, 0.4, 1};
+			colorBackgroundDisabled[] = {0.1, 0.1, 0.1, 1};
+		};
 		class SwitchTeam1 : RscButton
 		{
 			idc = 500;

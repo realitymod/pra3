@@ -1,0 +1,74 @@
+#define __pic_collapse		"pra3\pra3_ui\squadsys\img\arrow_up_88.paa"
+#define __pic_uncollapse	"pra3\pra3_ui\squadsys\img\arrow_down_88.paa"
+
+#define __pic_locked			"pra3\pra3_ui\squadsys\img\locked_88.paa"
+#define __pic_unlocked			"pra3\pra3_ui\squadsys\img\unlocked_88.paa"
+#define __pic_locked_border		"pra3\pra3_ui\squadsys\img\locked_border_88.paa"
+#define __pic_unlocked_border	"pra3\pra3_ui\squadsys\img\unlocked_border_88.paa"
+
+#define __cfgPath							missionConfigFile >> (if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {"Rsc_PRA3_squadSys_manageDlgRespawn"} else {"Rsc_PRA3_squadSys_manageDlg"}) >> "Controls" >> "Group"
+#define __cfgPathItem(num)					__cfgPath >> "Controls" >> 'ItemSquad##num'
+#define __cfgPathItemBackground(num)		__cfgPathItem(num) >> "Controls" >> "Background"
+#define __cfgPathItemHeaderBackground(num)	__cfgPathItem(num) >> "Controls" >> "HeaderBackground"
+#define __cfgPathItemList(num)				__cfgPathItem(num) >> "Controls" >> "MembersList"
+#define __cfgPathItemListLine(num1,num2)	__cfgPathItemList(num1) >> "Controls" >> ("Line" + (num2))
+
+#define __maxSquads 26
+#define __squadSize 20
+#define __squadIDD 1234
+
+#define __squadListColors [[0.8,0.8,0.8,1.0], [0.3412,0.6745,0.3373,1.0], [0.2, 0.5765, 1.0, 1.0]]
+
+#define __memberLineColorNormal				[0.8, 0.8, 0.8, 0.0]
+#define __memberLineColorNormalPlayer		[0.9, 0.9, 0.9, 0.1]
+#define __memberLineColorHighlight			[0.8, 0.8, 0.8, 0.3]
+#define __memberLineColorHighlightPlayer	[0.9, 0.9, 0.9, 0.3]
+
+#define __customNameCharsMax 12
+
+#define __phoneticAlphabet [ \
+	"1 Alpha",	\
+	"2 Bravo",	\
+	"3 Charlie",	\
+	"4 Delta",	\
+	"5 Echo",		\
+	"6 Foxtrot",	\
+	"7 Golf",		\
+	"8 Hotel",	\
+	"9 India",	\
+	"10 Juliet",	\
+	"11 Kilo",		\
+	"12 Lima",		\
+	"13 Mike",		\
+	"14 November",	\
+	"15 Oscar",	\
+	"16 Papa",		\
+	"17 Quebec",	\
+	"18 Romeo",	\
+	"19 Sierra",	\
+	"20 Tango",	\
+	"21 Uniform",	\
+	"22 Victor",	\
+	"23 Whiskey",	\
+	"24 X-ray",	\
+	"25 Yankee",	\
+	"26 Zulu"		\
+]
+
+#define __fireteamNames [\
+	"Charlie",	\
+	"Delta"		\
+]
+
+#define __updatePackConstant 100000
+
+#define ctrl(idc) \
+	(uiNamespace getVariable (if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {"Rsc_PRA3_squadSys_manageDlgRespawn"} else {"Rsc_PRA3_squadSys_manageDlg"}) displayCtrl (idc))
+
+// TODO: This is replicated in pra_respawn, merge this for addon release
+// How long you have to wait before deploying a new RP.
+#define RALLYPOINT_COOLDOWN (5*60)
+// New squads will have the cooldown applied unless they are created less than NO_COOLDOWN_BEFORE after the mission start.
+// We want to prevent exploit where players could create a new squad to gain access to RP immediatelly.
+// At the same time we don't want this restriction for squads created at the start of the game.
+#define NO_COOLDOWN_BEFORE (3*60)

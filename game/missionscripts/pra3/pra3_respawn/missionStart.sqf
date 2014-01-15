@@ -67,7 +67,7 @@ waitUntil
 	_time <= 0
 };
 
-ctrl(10) ctrlSetStructuredText parseText "The mission has started.";
+ctrl(10) ctrlSetStructuredText parseText "The mission has started";
 ctrl(30) ctrlShow false;
 
 waitUntil 

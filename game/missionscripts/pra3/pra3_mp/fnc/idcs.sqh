@@ -1,5 +1,3 @@
-// NOTE: Don't forget to copy changes to \pra3\pra3_kits\fnc\idcs.sqh
-
 #define IDC_KITDLG_SWITCH_KITS          51
 #define IDC_KITDLG_SWITCH_SQUADS        52
 

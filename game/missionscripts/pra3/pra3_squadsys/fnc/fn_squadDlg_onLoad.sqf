@@ -19,8 +19,10 @@ PRA3_squadSys_dlgOpenedOn = time;
 (_this displayCtrl 503) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamFlag);
 
 //Team names
-(_this displayCtrl 500) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName);
-(_this displayCtrl 501) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName);
+var(_teamCount) = (PRA3_AAS_teams select 0) call PRA3_fnc_count_PlayersTeam;
+
+(_this displayCtrl 500) ctrlSetText format["%1 [%2]",((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName),_teamCount select 0];
+(_this displayCtrl 501) ctrlSetText format["%1 [%2]",((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName),_teamCount select 1];
 
 //Disable switching to the team you in
 _this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;

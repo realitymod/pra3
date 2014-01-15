@@ -30,10 +30,6 @@ class PRA3_respawn_deadScreen
 			w = "safeZoneWabs";
 			h = "safeZoneH";
 		};
-		class AlphaRelease : RscText
-		{
-			colorText[] = {1,1,1,0};
-		};
 		class MissionText : RscStructuredText
 		{
 			idc  = 5;

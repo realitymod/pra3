@@ -15,14 +15,14 @@ class PRA3_respawn_startScreen : PRA3_respawn_deadScreen
 
 	class ControlsBackground : ControlsBackground
 	{
-		class AlphaRelease : AlphaRelease 
+		class AlphaRelease : RscText 
 		{
 			x = safeZoneX + __spaceX;
 			y = safeZoneY + __spaceY + 0.01;
-			w = __EVAL(0.3);
+			w = __EVAL(0.4);
 			h = 0.05;
 			sizeEx = 0.05;
-			text = "ALPHA RELEASE";
+			text = "PR:A3 ALPHA RELEASE";
 			font = "PuristaBold";
 			colorText[] = {1,1,1,1};
 			style = ST_CENTER;
@@ -34,7 +34,7 @@ class PRA3_respawn_startScreen : PRA3_respawn_deadScreen
 		};
 		class StatusText : StatusText
 		{
-			text = "The mission will begin shortly...";
+			text = "The mission will start shortly";
 		};
 		class InstructionsText : InstructionsText
 		{
@@ -43,6 +43,7 @@ class PRA3_respawn_startScreen : PRA3_respawn_deadScreen
 		class CountdownText : CountdownText
 		{
 			y = __EVAL(0.35 + 0.05 + 0.05 * 5 + 0.05);
+			size = 0.08;
 		};
 	};
 };
