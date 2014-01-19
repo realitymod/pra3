@@ -18,7 +18,8 @@ var(_toRemove) = [];
 	if (!(_vehicle in _registeredVehs) || _vehicle call PRA3_fnc_getVehicleSide != PRA3_player_side) then
 	{
 		// Remove the marker for this vehicle
-		deleteMarkerLocal (_x getVariable "PRA3_map_marker");
+		deleteMarkerLocal (_vehicle getVariable "PRA3_map_marker");
+		_vehicle setVariable ["PRA3_map_marker", nil];
 
 		_vehicle removeEventHandler ["getIn",  _vehicle getVariable ["PRA3_map_getInEH", -1]];
 		_vehicle removeEventHandler ["getOut", _vehicle getVariable ["PRA3_map_getOutEH", -1]];
@@ -58,7 +59,7 @@ var(_toRemove) = [];
 
 		// Save the vehicle's marker
 		_vehicle setVariable ["PRA3_map_marker", _marker];
-		
+
 		PRA3_map_markedVehicles set [count PRA3_map_markedVehicles, [_vehicle, _marker]];
 
 		// Extra handling for mountable vehicles
