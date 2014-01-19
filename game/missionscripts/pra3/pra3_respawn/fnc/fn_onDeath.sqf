@@ -31,11 +31,14 @@ if !(alive player) then
 		if (_x in ["FirstAidKit","Medikit"]) then {player removeItem _x};
 	} forEach items player;
 
+	// Remove map marker
+	_body call PRA3_fnc_stopVehicleTracking;
+
 	// Schedule body deletion
 	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;
 
 	sleep (1 + random 2);
-	
+
 	// Create black screen
 	(["PRA3_respawn_deadScreen"] call BIS_fnc_rscLayer) cutRsc ["PRA3_respawn_deadScreen", "PLAIN"];
 
@@ -109,8 +112,5 @@ if !(alive player) then
 	PRA3_AAS_spawnAtTime = nil;
 
 	// Create marker
-	[
-		player,
-		"PRA3_fnc_startVehicleTracking"
-	] call PRA3_fnc_MP;
+	player call PRA3_fnc_startVehicleTracking;
 };
