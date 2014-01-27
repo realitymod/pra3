@@ -9,6 +9,29 @@ if (PRA3_kitSys_currentKit != "" && {
 	PRA3_kitSys_currentKit = "";
 };
 
+// Team switch buttons
+_this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
+
+uiNamespace setVariable [
+	"PRA3_kitDlg_teamChangedEvent",
+	[
+		missionNamespace,
+		"teamChanged",
+		{
+			disableSerialization;
+
+			uiNamespace getVariable [
+				if (isNull (uiNamespace getVariable ["Rsc_PRA3_kits_kitDlg", displayNull])) then {
+					"Rsc_PRA3_kits_kitDlgRespawn"
+				} else {
+					"Rsc_PRA3_kits_kitDlg"
+				},
+				displayNull
+			] call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
+		}
+	] call BIS_fnc_addScriptedEventHandler
+];
+
 PRA3_kitSys_currentKit call PRA3_fnc_kitDlg_populateKitSelection;
 __getCtrl(IDC_KITDLG_DETAILS) ctrlShow false;
 PRA3_kitSys_kitDetailsExpanded = "";

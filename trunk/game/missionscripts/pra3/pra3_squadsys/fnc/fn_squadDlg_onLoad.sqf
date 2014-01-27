@@ -13,19 +13,34 @@ ctrlSetFocus (_this displayCtrl IDC_KITDLG_SWITCH_SQUADS);
 PRA3_squadSys_menuTarget = "";
 PRA3_squadSys_dlgOpenedOn = time;
 
-//-->Set team Switching
-//Flags
-(_this displayCtrl 502) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamFlag);
-(_this displayCtrl 503) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamFlag);
-
-//Team names
-var(_teamCount) = (PRA3_AAS_teams select 0) call PRA3_fnc_count_PlayersTeam;
-
-(_this displayCtrl 500) ctrlSetText format["%1 [%2]",((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName),_teamCount select 0];
-(_this displayCtrl 501) ctrlSetText format["%1 [%2]",((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName),_teamCount select 1];
-
-//Disable switching to the team you in
+// Team switch buttons
 _this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
+
+uiNamespace setVariable [
+	"PRA3_squadDlg_teamChangedEvent",
+	[
+		missionNamespace,
+		"teamChanged",
+		{
+			disableSerialization;
+
+			uiNamespace getVariable [
+				if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then {
+					"Rsc_PRA3_squadSys_manageDlgRespawn"
+				} else {
+					"Rsc_PRA3_squadSys_manageDlg"
+				},
+				displayNull
+			] call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
+
+			// Also update squads if the guy is of the same team
+			if (PRA3_player_team == _this select 1) then
+			{
+				[] call PRA3_fnc_squadDlg_updateSquadsInfo;
+			};
+		}
+	] call BIS_fnc_addScriptedEventHandler
+];
 
 [] call PRA3_fnc_squadDlg_updateSquadsInfo;
 

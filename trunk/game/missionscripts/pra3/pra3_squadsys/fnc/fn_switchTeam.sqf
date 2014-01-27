@@ -36,7 +36,7 @@ else
 	_team = PRA3_AAS_teams select (PRA3_AAS_sides find _side);
 };
 
-diag_log ["SWITCH TEAM", _this,  _unit, _side, _team];
+diag_log ["SWITCH TEAM", _this, _unit, _side, _team];
 
 if false then/*
 var(_maxPlayers)      = call PRA3_fnc_getMaxPlayers;
@@ -51,6 +51,15 @@ if (playersNumber _newTeamSide >= _maxPlayers/2 || {playersNumber _newTeamSide >
 }
 else
 {
+	[
+		[
+			missionNamespace,
+			"teamChanged",
+			[_unit call PRA3_fnc_getPlayerUID, _team, _unit call PRA3_fnc_getPlayerTeam]
+		],
+		"BIS_fnc_callScriptedEventHandler"
+	] call PRA3_fnc_MP;
+
 	//If player in a squad
 	if (_unit call PRA3_fnc_unitGetSquad != -1) then
 	{
@@ -68,21 +77,6 @@ else
 
 	// Refresh dialog
 	[[[], _side], "PRA3_fnc_squadDlg_server_refresh", false] call PRA3_fnc_MP;
-	var(_display) = displayNull;
-	{
-		if (!isNull (uiNamespace getVariable [_x, displayNull])) exitWith
-		{
-			_display = uiNamespace getVariable _x;
-		};
-	} forEach [
-		"Rsc_PRA3_squadSys_manageDlg", "Rsc_PRA3_squadSys_manageDlgRespawn",
-		"Rsc_PRA3_kits_kitDlg", "Rsc_PRA3_kits_kitDlgRespawn"
-	];
-
-	if (!isNil "_display") then
-	{
-		_display call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
-	};
 
 	//Remove current kit
 	PRA3_kitSys_currentKit = "";
