@@ -24,9 +24,22 @@
 		// And remember his name
 		[PRA3_core, format["PRA3_player_name_%1", _uid], _name, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 
-		// And his side
+		// ...his side
 		[PRA3_core, format["PRA3_player_side_%1", _uid], _targetSide, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
-		
+
+		// ...and the unit he's playing as
+		{
+			if (name _x == _name) exitWith
+			{
+				[PRA3_core, format["PRA3_player_object_%1", _uid], _x, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
+
+				if !isDedicated then
+				{
+					[_x, "PRA3_UID", _name, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
+				};
+			};
+		} forEach allUnits;
+
 		// Switch him to the correct team and save his client ID, we'll have to wait for his unit to exist for this...
 		[_uid, _targetSide] spawn
 		{
@@ -36,7 +49,9 @@
 			waitUntil {!isNull (_uid call PRA3_fnc_getPlayerUnit)};
 
 			var(_unit) = _uid call PRA3_fnc_getPlayerUnit;
-			
+
+			diag_log [__FILE__, "PLAYER CONNECTED", _uid, _targetSide, _unit];
+
 			_unit call PRA3_fnc_startVehicleTracking;
 
 			[[_unit, _targetSide], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;

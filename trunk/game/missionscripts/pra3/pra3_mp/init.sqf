@@ -18,7 +18,6 @@ if !isDedicated then //Client only
 	{
 		waitUntil {!isNull (findDisplay 46)};
 		findDisplay 46 displayAddEventHandler ["keyDown", "if (_this select 1 == 23) then {if dialog then {closeDialog 0} else {false call PRA3_fnc_playerListDlg_open}; true} else {false}"];
-
 	};
 };
 
