@@ -228,17 +228,11 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			x = safeZoneX + __spaceX + __w1 / 2 + 0.005;
 		};
 
-		class SwitchKitsBtn : RscButton
+		class SwitchKitsBtn : SwitchTeam1
 		{
 			idc = IDC_KITDLG_SWITCH_KITS;
-			x = safeZoneX + __spaceX;
 			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01 + 0.065;
-			w = __w1 / 2 - 0.005;
 			h = 0.04;
-			colorBackground[] = {0.5,0.5,0.5,0.5};
-			colorBorder[] = {0.5,0.5,0.5,0.5};
-			colorBackgroundDisabled[] =  {0.5,0.5,0.5,0.5};
-			colorDisabled[] =  {0.5,0.5,0.5,0.5};
 			text = "KITS";
 			action = "";
 		};
