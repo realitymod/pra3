@@ -16,14 +16,7 @@ var(_uid) = if (typeName _unit == "STRING") then //Already UID
 }
 else
 {
-	if (isMultiplayer) then
-	{
-		getPlayerUID _unit
-	}
-	else
-	{
-		_unit getVariable ["PRA3_UID", ""]
-	}
+	_unit getVariable ["PRA3_UID", getPlayerUID _unit]
 };
 
 if (_uid == "") then
