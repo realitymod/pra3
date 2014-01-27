@@ -4,20 +4,6 @@
 
 uiNamespace setVariable ["PRA3_spawnMap_display", _this];
 
-//-->Set team Switching
-//Flags
-(_this displayCtrl 502) ctrlSetText ((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamFlag);
-(_this displayCtrl 503) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamFlag);
-
-//Team names
-var(_teamCount) = (PRA3_AAS_teams select 0) call PRA3_fnc_count_PlayersTeam;
-
-(_this displayCtrl 500) ctrlSetText format["%1 [%2]",((PRA3_AAS_teams select 0) call PRA3_fnc_getTeamName),_teamCount select 0];
-(_this displayCtrl 501) ctrlSetText format["%1 [%2]",((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamName),_teamCount select 1];
-
-//Disable switching to the team you in
-_this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
-
 var(_colorOutside) = getArray(configFile >> "CfgWorlds" >> worldName >> "OutsideTerrain" >> "colorOutside");
 _colorOutside call BIS_fnc_colorConfigToRGBA;
 

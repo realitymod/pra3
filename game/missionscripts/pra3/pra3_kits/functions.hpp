@@ -67,6 +67,10 @@ class Kits
 	{
 		description = "Handles opening of the kit selection dialog.";
 	};
+	class kitDlg_onUnload
+	{
+		description = "Handles closing of the kit selection dialog.";
+	};
 	class kitDlg_populateKitSelection
 	{
 		description = "Populates the list of all selectable kits.";

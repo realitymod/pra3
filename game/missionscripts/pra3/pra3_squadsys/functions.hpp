@@ -171,6 +171,9 @@ class SquadSys
 	class squadDlg_onLoad
 	{
 	};
+	class squadDlg_onUnload
+	{
+	};
 	class squadDlg_onMouseClick
 	{
 	};

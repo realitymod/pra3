@@ -2,6 +2,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 {
 	idd      = -1;
 	onLoad   = "uiNamespace setVariable ['Rsc_PRA3_kits_kitDlgRespawn', _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
+	onUnload = "(_this select 0) call PRA3_fnc_kitDlg_onUnload";
 
 	#define __w1 0.5
 	#define __w2 0.5
@@ -179,11 +180,11 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			font = "PuristaBold";
 			text = "PLAYER LIST";
 			action = "call PRA3_fnc_playerListDlg_open";
-			
+
 			colorFocused[] = {0.4, 0.4, 0.4, 1};
 			colorShadow[] = {0, 0, 0, 1};
 			colorBorder[] = {0, 0, 0, 1};
-			
+
 			colorText[] = {1, 1, 1, 1.0};
 			colorDisabled[] = {0.4, 0.4, 0.4, 1};
 			colorBackground[] = {0.2, 0.2, 0.2, 1};
@@ -196,7 +197,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			x = safeZoneX + __spaceX;
 			y = safeZoneY + __spaceY + 0.01 + 0.05 + 0.01;
 			w = __w1 / 2 - 0.005;
-			h = 0.06; 
+			h = 0.06;
 			sizeEx = 0.035;
 			colorBackground[] = {0.5,0.5,0.5,0.5};
 			colorBorder[] = {0.5,0.5,0.5,0.5};
@@ -205,7 +206,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			action = "player call PRA3_fnc_switchTeam";
 			default = false;
 		};
-		
+
 		class SwitchTeam2 : SwitchTeam1
 		{
 			idc = 501;
