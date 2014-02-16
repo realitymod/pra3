@@ -6,8 +6,8 @@ _syncArray resize (count PRA3_AAS_zones);
 	_syncArray set [_forEachIndex, -1];
 } forEach PRA3_AAS_zones;
 
-var(_hudLayer) = ["PRA3_AAS_captureIndicator"] call BIS_fnc_rscLayer;
-var(_time) = time;
+var(_hudLayer)    = ["PRA3_AAS_captureIndicator"] call BIS_fnc_rscLayer;
+var(_time)        = time;
 var(_sinceUpdate) = 0; //Number of iterations since the last public update
 while {true} do
 {
@@ -326,11 +326,11 @@ while {true} do
 
 		if (_winner == -1) then
 		{
-			["draw", false, true] call BIS_fnc_endMission;
+			["draw", false] call BIS_fnc_endMission;
 		}
 		else
 		{
-			[format["end%1", _winner + 1], isClient && {PRA3_AAS_sides select _winner == PRA3_player_side}, true] call BIS_fnc_endMission;
+			[format["End_%1", PRA3_AAS_teams select _winner], isClient && {PRA3_AAS_sides select _winner == PRA3_player_side}, true] call BIS_fnc_endMission;
 		};
 	};
 
