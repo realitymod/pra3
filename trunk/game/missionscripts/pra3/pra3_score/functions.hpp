@@ -6,6 +6,10 @@ class Score
 	{
 		description = "";
 	};
+	class playersDlg_onUnload
+	{
+		description = "";
+	};
 	class playersDlg_open
 	{
 		description = "";
