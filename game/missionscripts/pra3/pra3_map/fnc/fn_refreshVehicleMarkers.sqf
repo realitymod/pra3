@@ -7,6 +7,7 @@
  *		(out) <VOID>
  */
 
+if (isNil "PRA3_player_team" || isNil "PRA3_player_side") exitWith {};
 if (isNil "PRA3_map_markedVehicles") then {PRA3_map_markedVehicles = []};
 
 var(_registeredVehs) = PRA3_core getVariable ["PRA3_map_trackedVehicles", []];
