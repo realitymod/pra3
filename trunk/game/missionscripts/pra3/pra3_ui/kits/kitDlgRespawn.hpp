@@ -179,7 +179,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			h = 0.05;
 			font = "PuristaBold";
 			text = "PLAYER LIST";
-			action = "call PRA3_fnc_playerListDlg_open";
+			action = "call PRA3_fnc_playersDlg_open";
 
 			colorFocused[] = {0.4, 0.4, 0.4, 1};
 			colorShadow[] = {0, 0, 0, 1};

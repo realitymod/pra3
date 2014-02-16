@@ -1,0 +1,1 @@
+#define ctrl(idc) (uiNamespace getVariable ["Rsc_PRA3_score_playersDlg", displayNull] displayCtrl idc)

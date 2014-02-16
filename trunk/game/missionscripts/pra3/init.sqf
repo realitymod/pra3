@@ -8,8 +8,8 @@ _this call compile preprocessFile "pra3\pra3_aas\loadMissionParams.sqf";
 	"executor",
 	"mp",
 	"aas",
-	"kits",
 	"squadsys",
+	"kits",
 	"map",
 	"hud"
 ];
