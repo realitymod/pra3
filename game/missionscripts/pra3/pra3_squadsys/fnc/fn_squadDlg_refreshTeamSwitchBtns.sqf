@@ -17,7 +17,7 @@ var(_teamCount) = (PRA3_AAS_teams select 0) call PRA3_fnc_count_PlayersTeam;
 (_this displayCtrl 503) ctrlSetText ((PRA3_AAS_teams select 1) call PRA3_fnc_getTeamFlag);
 
 // Only run this for the lite dialog, work around for the missing flags
-if (isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlgRespawn", displayNull])) then
+if (!isNull (uiNamespace getVariable ["Rsc_PRA3_squadSys_manageDlg", displayNull])) then
 {
 	ctrlSetFocus ctrl(990000 + 7002);
 };

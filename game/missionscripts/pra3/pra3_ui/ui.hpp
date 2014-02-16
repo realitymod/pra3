@@ -1,3 +1,4 @@
+#include "\a3\ui_f\hpp\defineCommon.inc"
 #include "defines.hpp"
 #include "uiBases.hpp"
 #include "idcs.hpp"
@@ -20,5 +21,5 @@ class CfgNotifications
 #include "kits\kitDlg.hpp"
 #include "squadsys\manageDlgRespawn.hpp"
 #include "squadsys\manageDlg.hpp"
-#include "mp\playerList.hpp"
+#include "score\playerList.hpp"
 #include "debug\debugMenu.hpp"

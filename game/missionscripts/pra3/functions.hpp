@@ -7,3 +7,4 @@
 #include "pra3_kits\functions.hpp"
 #include "pra3_squadsys\functions.hpp"
 #include "pra3_hud\functions.hpp"
+#include "pra3_score\functions.hpp"
