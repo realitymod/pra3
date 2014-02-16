@@ -1,7 +1,8 @@
 class Rsc_PRA3_score_playersDlg
 {
 	idd              = -1;
-	onLoad           = "uiNamespace setVariable [""Rsc_PRA3_score_playersDlg"", _this select 0]; (_this select 0) call PRA3_fnc_playersDlg_onLoad;";
+	onLoad           = "uiNamespace setVariable [""Rsc_PRA3_score_playersDlg"", _this select 0]; _this select 0 call PRA3_fnc_playersDlg_onLoad;";
+	onUnload           = "_this select 0 call PRA3_fnc_playersDlg_onUnload;";
 	movingEnable     = false;
 	enableSimulation = true;
 

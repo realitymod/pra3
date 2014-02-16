@@ -51,15 +51,6 @@ if (playersNumber _newTeamSide >= _maxPlayers/2 || {playersNumber _newTeamSide >
 }
 else
 {
-	[
-		[
-			missionNamespace,
-			"teamChanged",
-			[_unit call PRA3_fnc_getPlayerUID, _team, _unit call PRA3_fnc_getPlayerTeam]
-		],
-		"BIS_fnc_callScriptedEventHandler"
-	] call PRA3_fnc_MP;
-
 	//If player in a squad
 	if (_unit call PRA3_fnc_unitGetSquad != -1) then
 	{
@@ -72,6 +63,16 @@ else
 		PRA3_player_team = _team;
 		PRA3_player_side = _side;
 	};
+
+	[
+		[
+			missionNamespace,
+			"teamChanged",
+			[_unit call PRA3_fnc_getPlayerUID, _team, _unit call PRA3_fnc_getPlayerTeam]
+		],
+		"BIS_fnc_callScriptedEventHandler"
+	] call PRA3_fnc_MP;
+
 	[PRA3_core, format["PRA3_player_team_%1", _unit call PRA3_fnc_getPlayerUID], _team, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 	[PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID], _side, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 
