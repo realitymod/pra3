@@ -70,7 +70,6 @@ class Rsc_PRA3_score_playersDlg
 	{
 		class PlayerListButtonClose : RscButton
 		{
-			idc = IDC_MPLISTDLG_OPEN_BTN;
 			x = __x + __w - GUI_GRID_W * 4;
 			y = __y + __h - GUI_GRID_H;
 			w = GUI_GRID_W * 4;
@@ -93,7 +92,7 @@ class Rsc_PRA3_score_playersDlg
 			colorBackgroundActive[] = {0.3, 0.3, 0.3, 1};
 			colorBackgroundDisabled[] = {0.1, 0.1, 0.1, 1};
 		};
-		class PlayerListTeam1 : RscControlsGroup
+		class PlayerList : RscControlsGroup
 		{
 			x   = __x;
 			y   = __y + __titleH;
