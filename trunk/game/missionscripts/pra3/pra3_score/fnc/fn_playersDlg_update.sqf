@@ -32,9 +32,9 @@ var(_num2) = 0;
 	ctrl(_idc) ctrlSetText (_x call PRA3_fnc_getPlayerName);
 } forEach call PRA3_fnc_getConnectedPlayers;
 
-for "_i" from 1 to 64 do
+for "_i" from 1 to 50 do
 {
-	ctrl(100 * _i) ctrlShow (_i < _num1 && _i < _num2);
-	ctrl(100 * _i + 1) ctrlShow (_i < _num2);
-	ctrl(100 * _i + 2) ctrlShow (_i < _num2);
+	ctrl(100 * _i) ctrlShow (_i <= _num1 || _i <= _num2);
+	ctrl(100 * _i + 1) ctrlShow (_i <= _num1);
+	ctrl(100 * _i + 2) ctrlShow (_i <= _num2);
 };
