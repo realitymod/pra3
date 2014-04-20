@@ -1,5 +1,4 @@
 #include "scriptDefines.sqh"
 
-var(_body) = _this;
-
+diag_log [__FILE__, "Delete:", _this];
 deleteVehicle _this;
