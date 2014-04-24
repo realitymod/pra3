@@ -18,10 +18,11 @@ loadScreen   = "pra3\PRloadingLogo.jpg";
 disabledAI   = 1;
 
 respawn            = 3;
-respawnDelay       = 10;
-respawnDialog      = 0;
+respawnDelay    = 0;
+respawnButton   = 0;
+respawnDialog   = 0;
 respawnTemplates[] = {"PRA3_Select"};
-respawnOnStart     = 1;
+respawnOnStart = 0;
 
 class CfgRespawnTemplates
 {
