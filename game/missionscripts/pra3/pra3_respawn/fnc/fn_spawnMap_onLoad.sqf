@@ -74,3 +74,16 @@ if (!isNil "PRA3_AAS_spawnAtTime") then
 	};
 };
 
+uiNamespace setVariable [
+	"PRA3_spawnMap_teamChangedEvent",
+	[
+		missionNamespace,
+		"teamChanged",
+		{
+			disableSerialization;
+
+			PRA3_selectedSpawn = [];
+			call PRA3_fnc_spawnMap_selectNoSpawn;
+		}
+	] call BIS_fnc_addScriptedEventHandler
+];

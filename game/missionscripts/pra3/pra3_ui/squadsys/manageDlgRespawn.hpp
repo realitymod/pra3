@@ -41,7 +41,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 {
 	idd      = -1;
 	onLoad   = "uiNamespace setVariable [""Rsc_PRA3_squadSys_manageDlgRespawn"", _this select 0]; (_this select 0) call PRA3_fnc_squadDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
-	onUnload = "(_this select 0) call PRA3_fnc_squadDlg_onUnload";
+	onUnload = "(_this select 0) call PRA3_fnc_squadDlg_onUnload; (_this select 0) call PRA3_fnc_spawnMap_onUnload";
 
 	#define __w 0.5
 	#define __spaceX 0.01
@@ -76,7 +76,7 @@ class Rsc_PRA3_squadSys_manageDlgRespawn : Rsc_PRA3_kits_kitDlgRespawn
 		class SpawnMap : SpawnMap {};
 		class SpawnSelection : SpawnSelection {};
 		class SpawnButtonClose : SpawnButtonClose {};
-		
+
 		class PlayerListButtonOpen : PlayerListButtonOpen {};
 
 		class SwitchTeam1 : SwitchTeam1 {};

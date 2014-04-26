@@ -66,6 +66,10 @@ class Respawn
 	{
 		description = "";
 	};
+	class spawnMap_onUnload
+	{
+		description = "";
+	};
 	class spawnMap_onMapDraw
 	{
 		description = "";

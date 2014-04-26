@@ -2,7 +2,7 @@ class Rsc_PRA3_kits_kitDlgRespawn
 {
 	idd      = -1;
 	onLoad   = "uiNamespace setVariable ['Rsc_PRA3_kits_kitDlgRespawn', _this select 0]; (_this select 0) call PRA3_fnc_kitDlg_onLoad; (_this select 0) call PRA3_fnc_spawnMap_onLoad";
-	onUnload = "(_this select 0) call PRA3_fnc_kitDlg_onUnload";
+	onUnload = "(_this select 0) call PRA3_fnc_kitDlg_onUnload; (_this select 0) call PRA3_fnc_spawnMap_onUnload";
 
 	#define __w1 0.5
 	#define __w2 0.5
