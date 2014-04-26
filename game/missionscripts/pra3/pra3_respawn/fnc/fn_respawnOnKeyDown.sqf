@@ -1,9 +1,12 @@
 #include "scriptDefines.sqh"
 
-if (_this select 1 == 28 &&	{
-		!isNull (uiNamespace getVariable ["PRA3_respawn_deadScreen", displayNull]) || {
-		!isNull (uiNamespace getVariable ["PRA3_respawn_startScreen", displayNull])}
-}) then
+if (_this select 1 == 28 &&
+	(
+		!isNull (uiNamespace getVariable ["PRA3_respawn_deadScreen", displayNull]) ||
+		!isNull (uiNamespace getVariable ["PRA3_respawn_startScreen", displayNull])
+	) &&
+	isNil "PRA3_respawn_lock"
+) then
 {
 	if dialog then
 	{
@@ -11,7 +14,7 @@ if (_this select 1 == 28 &&	{
 	}
 	else
 	{
-		// Check if we remember what was openend last
+		// Check if we remember what was opened last
 		if (isNil "PRA3_respawn_lastOpenTab") then
 		{
 			// I guess not, decide what to open based on where we are
