@@ -28,6 +28,10 @@ uiNamespace setVariable [
 				},
 				displayNull
 			] call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
+
+			PRA3_kitSys_currentKit = "";
+			"" call PRA3_fnc_kitDlg_updateAvailability;
+			"" call PRA3_fnc_kitDlg_populateKitSelection;
 		}
 	] call BIS_fnc_addScriptedEventHandler
 ];
