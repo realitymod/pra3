@@ -98,6 +98,11 @@ if !(alive player) then
 		{[player, PRA3_selectedSpawn] call PRA3_fnc_isSpawnAvailable}
 	};
 
+	// Make sure the player cannot mess with the respawn settings from now on
+	PRA3_respawn_lock = true;
+
+	uiNamespace getVariable "PRA3_respawn_deadScreen" displayCtrl 30 ctrlSetStructuredText parseText "Loading area...";
+
 	setPlayerRespawnTime -1;
 	waitUntil {alive player};
 	[player] call PRA3_fnc_switchTeamCheck;
@@ -113,4 +118,6 @@ if !(alive player) then
 
 	// Create marker
 	player call PRA3_fnc_startVehicleTracking;
+
+	PRA3_respawn_lock = nil;
 };
