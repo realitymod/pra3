@@ -174,9 +174,13 @@ var(_init) =
 		var(_allowRedeploy) = _x select 3 select 1;
 
 		_box allowDamage false;
-		clearBackpackCargo _box;
-		clearMagazineCargo _box;
-		clearWeaponCargo _box;
+		if (local _box) then
+		{
+			// For whatever reason the local commands don't actually work despite running on all clients...
+			clearBackpackCargoGlobal _box;
+			clearMagazineCargoGlobal _box;
+			clearWeaponCargoGlobal _box;
+		};
 
 		if _allowRedeploy then
 		{
