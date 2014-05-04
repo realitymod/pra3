@@ -3,6 +3,10 @@
 #define __name2 $STR_PRA3_MISSION_NAME_AAS_MORNINGSTAR
 #define __description $STR_PRA3_MISSION_DESC_AAS_INF
 
+#define MISSION_VERSION_MAJOR   1
+#define MISSION_VERSION_MINOR   0
+#define MISSION_VERSION_RELEASE 1
+
 #define PRA3_DEBUG
 
 #include "pra3\description.hpp"

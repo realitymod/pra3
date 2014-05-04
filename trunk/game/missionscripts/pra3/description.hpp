@@ -99,3 +99,32 @@ class CfgFunctions
 };
 
 #include "pra3_kits\kitsList.hpp"
+
+
+#include "version.hpp"
+
+class CfgPatches
+{
+	class PRA3_core
+	{
+		units[]          = {};
+		weapons[]        = {};
+		requiredAddons[] = {};
+		requiredVersion  = 1.07;
+		version[]        =
+		{
+			PRA3_VERSION_MAJOR,
+			PRA3_VERSION_MINOR,
+			PRA3_VERSION_RELEASE,
+			PRA3_VERSION_REVISION
+		};
+	};
+};
+
+missionVersion[] =
+{
+	MISSION_VERSION_MAJOR,
+	MISSION_VERSION_MINOR,
+	MISSION_VERSION_RELEASE,
+	__EVAL(parseNumber loadFile "revision.txt")
+};

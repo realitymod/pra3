@@ -58,6 +58,11 @@ class Debug
 		headerType = 1;
 	};
 
+	class getVersion
+	{
+		description = "Returns the version number of the given component.";
+	};
+
 	class debugMenu_onLoad
 	{
 	};
