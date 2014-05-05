@@ -119,5 +119,6 @@ if !(alive player) then
 	// Create marker
 	player call PRA3_fnc_startVehicleTracking;
 
-	PRA3_respawn_lock = nil;
+	PRA3_respawn_lock    = nil;
+	PRA3_blockTeamSwitch = nil;
 };
