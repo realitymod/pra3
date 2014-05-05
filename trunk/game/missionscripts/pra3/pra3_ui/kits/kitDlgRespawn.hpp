@@ -203,15 +203,13 @@ class Rsc_PRA3_kits_kitDlgRespawn
 			colorBorder[] = {0.5,0.5,0.5,0.5};
 			colorBackgroundDisabled[] =  {0.8,0.8,0.8,0.5};
 			colorDisabled[] =  {0.8,0.8,0.8,0.8};
-			action = "player call PRA3_fnc_switchTeam";
+			action = "call PRA3_fnc_squadDlg_switchTeam";
 			default = false;
 		};
-
 		class SwitchTeam2 : SwitchTeam1
 		{
 			idc = 501;
 			x = safeZoneX + __spaceX + __w1 / 2;
-			action = "player call PRA3_fnc_switchTeam";
 		};
 
 		class SwitchTeam1Pic : RscPicture

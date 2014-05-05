@@ -174,6 +174,9 @@ class SquadSys
 	class squadDlg_onUnload
 	{
 	};
+	class squadDlg_switchTeam
+	{
+	};
 	class squadDlg_onMouseClick
 	{
 	};
