@@ -9,6 +9,9 @@ if (PRA3_kitSys_currentKit != "" && {
 	PRA3_kitSys_currentKit = "";
 };
 
+// Disable the Kits button
+__getCtrl(IDC_KITDLG_SWITCH_KITS) ctrlEnable false;
+
 // Team switch buttons
 _this call PRA3_fnc_squadDlg_refreshTeamSwitchBtns;
 
@@ -40,5 +43,4 @@ PRA3_kitSys_currentKit call PRA3_fnc_kitDlg_populateKitSelection;
 __getCtrl(IDC_KITDLG_DETAILS) ctrlShow false;
 PRA3_kitSys_kitDetailsExpanded = "";
 
-ctrlSetFocus __getCtrl(IDC_KITDLG_SWITCH_KITS);
 __getCtrl(IDC_KITDLG_CHANGEKIT_BTN) ctrlEnable (PRA3_kitSys_currentKit != "");
