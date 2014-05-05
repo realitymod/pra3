@@ -6,7 +6,8 @@
  *	Dialog onLoad handler.
  */
 
-ctrlSetFocus (_this displayCtrl IDC_KITDLG_SWITCH_SQUADS);
+// Disable the Squads button
+(_this displayCtrl IDC_KITDLG_SWITCH_SQUADS) ctrlEnable false;
 
 (_this displayCtrl 301) ctrlShow false;
 (_this displayCtrl 302) ctrlShow false;
