@@ -22,11 +22,30 @@ var(_version) = switch (toLower _component) do
 {
 	case "core":
 	{
-		getArray(missionConfigFile >> "CfgPatches" >> "PRA3_core" >> "version")
+		if (isNil "PRA3_coreVersion") then
+		{
+			PRA3_coreVersion = getArray(missionConfigFile >> "CfgPatches" >> "PRA3_core" >> "version");
+			PRA3_coreVersion set [3, parseNumber loadFile "pra3\revision.txt"];
+		};
+
+		PRA3_coreVersion
 	};
 	case "mission":
 	{
-		getArray(missionConfigFile >> "missionVersion")
+		if (isNil "PRA3_missionVersion") then
+		{
+			PRA3_missionVersion = getArray(missionConfigFile >> "missionVersion");
+			if (count PRA3_missionVersion > 0) then // Make sure we're in a PR mission, we don't want file not found error messages otherwise
+			{
+				PRA3_missionVersion set [3, parseNumber loadFile "revision.txt"];
+			}
+			else
+			{
+				PRA3_missionVersion = [];
+			};
+		};
+
+		PRA3_missionVersion
 	};
 	default
 	{
