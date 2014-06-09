@@ -1,5 +1,7 @@
 #include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
+0 setFog [0.001, 0.3, 92];
+
 [
 	// Opposing sides
 	["NATO", "CSAT"],

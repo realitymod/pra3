@@ -21,11 +21,13 @@ class Mission
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Civ_Market",
 		"A3_Structures_F_Furniture",
-		"A3_Structures_F_Mil_Shelters"
+		"A3_Structures_F_Mil_Shelters",
+		"a3_characters_f"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
 		"A3_Structures_F_Mil_Fortification",
 		"A3_Structures_F_Mil_Cargo",
 		"A3_Structures_F_Ind_Cargo",
@@ -47,20 +49,19 @@ class Mission
 	randomSeed=6995911;
 	class Intel
 	{
-		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
+		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.29999998;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
 		year=2035;
 		month=6;
 		day=24;
-		hour=12;
-		minute=0;
+		hour=4;
+		minute=45;
 		startFogBase=0.001;
 		forecastFogBase=0.001;
 		startFogDecay=0.0049999999;
@@ -77,7 +78,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7997.5913,92.990028,20865.438};
+					position[]={7989.1191,94.909142,20840.023};
 					id=0;
 					side="LOGIC";
 					vehicle="Logic";
@@ -2607,7 +2608,7 @@ class Mission
 		};
 		class Item144
 		{
-			position[]={8205.5576,65.691254,19592.029};
+			position[]={8247.8994,62.47134,19698.152};
 			azimut=-90.939209;
 			id=209;
 			side="EMPTY";
@@ -2803,14 +2804,14 @@ class Mission
 			text="Chapel";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=50;
-			b=50;
+			a=75;
+			b=75;
 		};
 		class Item1
 		{
-			position[]={8399.5293,95.255821,19411.416};
+			position[]={8235.1387,69.072327,19381.135};
 			name="zone4";
-			text="North forest";
+			text="South Forest";
 			markerType="ELLIPSE";
 			type="Empty";
 			a=50;
@@ -2824,22 +2825,22 @@ class Mission
 			text="Hill Top";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=50;
-			b=50;
+			a=100;
+			b=100;
 		};
 		class Item3
 		{
-			position[]={8334.6406,69.269623,19746.713};
+			position[]={8506.5498,83.856529,19840.371};
 			name="zone1";
-			text="Old Shack";
+			text="Supply Road";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=50;
-			b=50;
+			a=75;
+			b=75;
 		};
 		class Item4
 		{
-			position[]={8206.2305,65.713379,19593.826};
+			position[]={8248.5723,62.347469,19699.949};
 			name="zone2";
 			text="Riverbed Bunker";
 			markerType="ELLIPSE";
