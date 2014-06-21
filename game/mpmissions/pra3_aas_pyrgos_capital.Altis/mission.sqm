@@ -12,16 +12,19 @@ class Mission
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Civ_Market",
 		"A3_Structures_F_Civ_InfoBoards",
-		"A3_Structures_F_Furniture"
+		"A3_Structures_F_Furniture",
+		"A3_Modules_F",
+		"a3_characters_f"
 	};
 	addOnsAuto[]=
 	{
+		"A3_Modules_F",
 		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Civ_Market",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"A3_Structures_F_Furniture",
 		"A3_Structures_F_Mil_Fortification",
 		"a3_map_altis"
@@ -29,19 +32,21 @@ class Mission
 	randomSeed=5370741;
 	class Intel
 	{
-		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
+		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		startWeather=0.84999996;
+		startWind=0.099999994;
+		startLightnings=0.5;
+		forecastWeather=0.84999996;
+		forecastFog=0.099999994;
+		forecastWind=0.099999994;
+		forecastWaves=0;
+		forecastRain=0.59999996;
+		forecastLightnings=1;
+		rainForced=1;
+		lightningsForced=1;
 		year=2035;
 		month=6;
 		day=24;
-		hour=12;
 		minute=0;
 		startFogBase=0.001;
 		forecastFogBase=0.001;
@@ -3117,8 +3122,8 @@ class Mission
 			text="Church";
 			markerType="ELLIPSE";
 			type="Empty";
-			a=30;
-			b=30;
+			a=50;
+			b=50;
 			angle=200.72099;
 		};
 		class Item2

@@ -1,30 +1,29 @@
 #include "pra3\pra3_aas\fnc\aas_defines.sqh"
 
 [
-	// Opposing sides
+	// Opposing teams
 	["NATO", "CSAT"],
 	// Initial tickets
 	[300, 300],
 	// Capture zones
 	[
-	/*    ZONE   | SYNCH | CONNECTS TO   | INITIAL | TICKET BLEED  */
-	/*    MARKER | TO    |  team1 team2  | OWNER   |  team1  team2 */
-		["zone0",  [],      [[1  ],[   ]], west,       [0,        0   ]],
-		["zone1",  [],      [[2  ],[   ]], __neutral, [__end, 0    ]],
-		["zone2",  [],      [[3  ],[1 ]], __neutral, [10,     10   ]],
-		["zone3",  [],      [[   ],[2  ]], __neutral, [0,        __end ]],
-		["zone4",  [],      [[   ],[3  ]], east,        [0,       0    ]]
+	/*   ZONE   | SYNCH |  CONNECTS TO | INITIAL  | TICKET BLEED  */
+	/*   MARKER | TO    |  team1 team2 | OWNER    |  team1  team2 */
+		["zone0", [],    [[1  ],[   ]], west,        [0    , 0    ]],
+		["zone1", [],    [[2  ],[   ]], __neutral, [__end, 0    ]],
+		["zone2", [],    [[3  ],[1  ]], __neutral, [20,    0    ]],
+		["zone3", [],    [[4  ],[2  ]], __neutral, [0,     20    ]],
+		["zone4", [],    [[    ],[3 ]], __neutral, [0,     __end]],
+		["zone5", [],    [[    ],[4  ]], east,        [0,     0    ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
-	[[0], [4]],
+	[[0], [5]],
 	// Respawn definitons
 	[
-	/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
-	/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
-		["spawn0", [0  ], true,  [box0,       true]],
-		["spawn1", [1,2], false, [box1,       false]],
-		["spawn3", [3,2], false, [box3,       false]],
-		["spawn4", [4  ], true,  [box4,       true]]
+		/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
+		/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
+		["spawn0",   [0  ], true,  [box0,       true]],
+		["spawn3",   [5  ], true,  [box3,       true]]
 	],
 	// Restricted areas
 	[
@@ -34,8 +33,8 @@
 		["borderEast",  [west,east], 10,           false,        false,     false],
 		["borderSouth", [west,east], 10,           false,        false,     false],
 		["borderWest",  [west,east], 10,           false,        false,     false],
-		["spawn0",      [east]     , 10,           false,        true,      true],
-		["spawn3",      [west]     , 10,           false,        true,      true]
+		["spawn0",  	[east]     , 10,           false,        true,      true],
+		["spawn3",  	[west]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[

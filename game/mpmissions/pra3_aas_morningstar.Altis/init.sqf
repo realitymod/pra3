@@ -11,8 +11,8 @@
 	/*    MARKER | TO    |  team1 team2  | OWNER   |  team1  team2 */
 		["zone0",  [],    [[1  ],[   ]], west,        [0,     0    ]],
 		["zone1",  [],    [[2  ],[   ]], __neutral, [__end, 0    ]],
-		["zone2",  [],    [[3  ],[1  ]], __neutral, [20,    10    ]],
-		["zone3",  [],    [[4  ],[2  ]], __neutral, [10,    20   ]],
+		["zone2",  [],    [[3  ],[1  ]], __neutral, [20,    0    ]],
+		["zone3",  [],    [[4  ],[2  ]], __neutral, [0,    20   ]],
 		["zone4",  [],    [[    ],[3  ]], __neutral, [0,     __end]],
 		["zone5",  [],    [[    ],[4  ]], east,         [0,     0    ]]
 	],
@@ -23,7 +23,7 @@
 		/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
 		/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
 		["spawn0",   [0  ], true,  [box0,       true]],
-		["spawn3",   [6  ], true,  [box3,       true]]
+		["spawn3",   [5  ], true,  [box3,       true]]
 	],
 	// Restricted areas
 	[
