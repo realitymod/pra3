@@ -14,11 +14,15 @@ class Mission
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_BLUFOR",
 		"A3_Structures_F_Mil_Flags",
-		"A3_Weapons_F_Ammoboxes"
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Modules_F",
+		"a3_characters_f"
 	};
 	addOnsAuto[]=
 	{
+		"A3_Modules_F",
 		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
 		"A3_Structures_F_Civ_Camping",
 		"A3_Structures_F_Mil_Fortification",
 		"A3_Structures_F_Walls",
@@ -33,7 +37,7 @@ class Mission
 	randomSeed=14028797;
 	class Intel
 	{
-		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
+		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
 		startWeather=0.39999998;
 		startWind=0;
 		startWaves=0.099999994;
@@ -1294,7 +1298,7 @@ class Mission
 		items=72;
 		class Item0
 		{
-			position[]={9083.7119,25.659439,12264.58};
+			position[]={8940.6436,27.682224,12259.739};
 			azimut=120.793;
 			id=65;
 			side="EMPTY";
@@ -1303,7 +1307,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={9078.3691,25.661024,12266.226};
+			position[]={8935.3008,27.219719,12261.385};
 			azimut=355.92752;
 			id=66;
 			side="EMPTY";
@@ -1312,7 +1316,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={9085.4365,25.209526,12269.878};
+			position[]={8942.3682,26.915304,12265.037};
 			azimut=-16.297882;
 			id=67;
 			side="EMPTY";
@@ -1321,7 +1325,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={9079.3799,26.20306,12259.541};
+			position[]={8936.3115,28.559681,12254.7};
 			azimut=195.78326;
 			id=68;
 			side="EMPTY";
@@ -1330,7 +1334,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={9084.6025,26.071064,12258.811};
+			position[]={8941.5342,28.806458,12253.97};
 			azimut=182.64346;
 			id=69;
 			side="EMPTY";
@@ -1339,7 +1343,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={9089.377,25.788378,12267.502};
+			position[]={8946.3086,27.544373,12262.661};
 			azimut=-290.01984;
 			id=70;
 			side="EMPTY";
@@ -1348,7 +1352,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={9088.9434,26.046076,12263.745};
+			position[]={8945.875,28.148359,12258.904};
 			id=71;
 			side="EMPTY";
 			vehicle="Land_TentDome_F";
@@ -1975,7 +1979,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={9082.3965,25.772335,12263.249};
+			position[]={8939.3281,27.874939,12258.408};
 			name="zone5";
 			text="Camp";
 			markerType="ELLIPSE";
@@ -2044,8 +2048,8 @@ class Mission
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorBlue";
-			a=100;
-			b=100;
+			a=300;
+			b=200;
 		};
 		class Item9
 		{
@@ -2088,8 +2092,8 @@ class Mission
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorBlue";
-			a=100;
-			b=100;
+			a=200;
+			b=200;
 		};
 		class Item13
 		{
