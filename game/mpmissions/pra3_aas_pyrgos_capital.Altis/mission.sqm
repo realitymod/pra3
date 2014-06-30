@@ -76,7 +76,7 @@ class Mission
 		};
 		class Item1
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -84,8 +84,8 @@ class Mission
 				{
 					position[]={16710.055,7.9918499,15313.299};
 					id=1;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -95,7 +95,7 @@ class Mission
 		};
 		class Item2
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -103,8 +103,8 @@ class Mission
 				{
 					position[]={16712.055,8.0697975,15313.299};
 					id=2;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -114,7 +114,7 @@ class Mission
 		};
 		class Item3
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -122,8 +122,8 @@ class Mission
 				{
 					position[]={16714.055,8.2857447,15313.299};
 					id=3;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -133,7 +133,7 @@ class Mission
 		};
 		class Item4
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -141,8 +141,8 @@ class Mission
 				{
 					position[]={16716.055,8.5016918,15313.299};
 					id=4;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -152,7 +152,7 @@ class Mission
 		};
 		class Item5
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -160,8 +160,8 @@ class Mission
 				{
 					position[]={16718.055,8.6969261,15313.299};
 					id=5;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -171,7 +171,7 @@ class Mission
 		};
 		class Item6
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -179,8 +179,8 @@ class Mission
 				{
 					position[]={16720.055,8.8086796,15313.299};
 					id=6;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -190,7 +190,7 @@ class Mission
 		};
 		class Item7
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -198,8 +198,8 @@ class Mission
 				{
 					position[]={16722.055,8.880662,15313.299};
 					id=7;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -209,7 +209,7 @@ class Mission
 		};
 		class Item8
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -217,8 +217,8 @@ class Mission
 				{
 					position[]={16724.055,8.9526443,15313.299};
 					id=8;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -228,7 +228,7 @@ class Mission
 		};
 		class Item9
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -236,8 +236,8 @@ class Mission
 				{
 					position[]={16710.055,7.9571757,15311.299};
 					id=9;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -247,7 +247,7 @@ class Mission
 		};
 		class Item10
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -255,8 +255,8 @@ class Mission
 				{
 					position[]={16712.055,8.005208,15311.299};
 					id=10;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -266,7 +266,7 @@ class Mission
 		};
 		class Item11
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -274,8 +274,8 @@ class Mission
 				{
 					position[]={16714.055,8.0830345,15311.299};
 					id=11;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -285,7 +285,7 @@ class Mission
 		};
 		class Item12
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -293,8 +293,8 @@ class Mission
 				{
 					position[]={16716.055,8.2989817,15311.299};
 					id=12;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -304,7 +304,7 @@ class Mission
 		};
 		class Item13
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -312,8 +312,8 @@ class Mission
 				{
 					position[]={16718.055,8.494216,15311.299};
 					id=13;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -323,7 +323,7 @@ class Mission
 		};
 		class Item14
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -331,8 +331,8 @@ class Mission
 				{
 					position[]={16720.055,8.6356449,15311.299};
 					id=14;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -342,7 +342,7 @@ class Mission
 		};
 		class Item15
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -350,8 +350,8 @@ class Mission
 				{
 					position[]={16722.055,8.7473001,15311.299};
 					id=15;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -361,7 +361,7 @@ class Mission
 		};
 		class Item16
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -369,8 +369,8 @@ class Mission
 				{
 					position[]={16724.055,8.8192825,15311.299};
 					id=16;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -380,7 +380,7 @@ class Mission
 		};
 		class Item17
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -388,8 +388,8 @@ class Mission
 				{
 					position[]={16710.055,7.9225173,15309.299};
 					id=17;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -399,7 +399,7 @@ class Mission
 		};
 		class Item18
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -407,8 +407,8 @@ class Mission
 				{
 					position[]={16712.055,7.9705496,15309.299};
 					id=18;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -418,7 +418,7 @@ class Mission
 		};
 		class Item19
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -426,8 +426,8 @@ class Mission
 				{
 					position[]={16714.055,8.0185375,15309.299};
 					id=19;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -437,7 +437,7 @@ class Mission
 		};
 		class Item20
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -445,8 +445,8 @@ class Mission
 				{
 					position[]={16716.055,8.096365,15309.299};
 					id=20;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -456,7 +456,7 @@ class Mission
 		};
 		class Item21
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -464,8 +464,8 @@ class Mission
 				{
 					position[]={16718.055,8.2915993,15309.299};
 					id=21;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -475,7 +475,7 @@ class Mission
 		};
 		class Item22
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -483,8 +483,8 @@ class Mission
 				{
 					position[]={16720.055,8.4330282,15309.299};
 					id=22;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -494,7 +494,7 @@ class Mission
 		};
 		class Item23
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -502,8 +502,8 @@ class Mission
 				{
 					position[]={16722.055,8.5743265,15309.299};
 					id=23;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -513,7 +513,7 @@ class Mission
 		};
 		class Item24
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -521,8 +521,8 @@ class Mission
 				{
 					position[]={16724.055,8.6859818,15309.299};
 					id=24;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -532,7 +532,7 @@ class Mission
 		};
 		class Item25
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -540,8 +540,8 @@ class Mission
 				{
 					position[]={16710.055,7.8951855,15307.299};
 					id=25;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -551,7 +551,7 @@ class Mission
 		};
 		class Item26
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -559,8 +559,8 @@ class Mission
 				{
 					position[]={16712.055,7.9449649,15307.299};
 					id=26;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -570,7 +570,7 @@ class Mission
 		};
 		class Item27
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -578,8 +578,8 @@ class Mission
 				{
 					position[]={16714.055,7.9929528,15307.299};
 					id=27;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -589,7 +589,7 @@ class Mission
 		};
 		class Item28
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -597,8 +597,8 @@ class Mission
 				{
 					position[]={16716.055,8.0409412,15307.299};
 					id=28;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -608,7 +608,7 @@ class Mission
 		};
 		class Item29
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -616,8 +616,8 @@ class Mission
 				{
 					position[]={16718.055,8.1228399,15307.299};
 					id=29;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -627,7 +627,7 @@ class Mission
 		};
 		class Item30
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -635,8 +635,8 @@ class Mission
 				{
 					position[]={16720.055,8.2642689,15307.299};
 					id=30;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -646,7 +646,7 @@ class Mission
 		};
 		class Item31
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -654,8 +654,8 @@ class Mission
 				{
 					position[]={16722.055,8.4055672,15307.299};
 					id=31;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -665,7 +665,7 @@ class Mission
 		};
 		class Item32
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -673,8 +673,8 @@ class Mission
 				{
 					position[]={16724.055,8.5468664,15307.299};
 					id=32;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -684,7 +684,7 @@ class Mission
 		};
 		class Item33
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -692,8 +692,8 @@ class Mission
 				{
 					position[]={16710.055,7.9271774,15305.299};
 					id=33;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -703,7 +703,7 @@ class Mission
 		};
 		class Item34
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -711,8 +711,8 @@ class Mission
 				{
 					position[]={16712.055,7.9992256,15305.299};
 					id=34;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -722,7 +722,7 @@ class Mission
 		};
 		class Item35
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -730,8 +730,8 @@ class Mission
 				{
 					position[]={16714.055,8.0489397,15305.299};
 					id=35;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -741,7 +741,7 @@ class Mission
 		};
 		class Item36
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -749,8 +749,8 @@ class Mission
 				{
 					position[]={16716.055,8.0969276,15305.299};
 					id=36;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -760,7 +760,7 @@ class Mission
 		};
 		class Item37
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -768,8 +768,8 @@ class Mission
 				{
 					position[]={16718.055,8.1929989,15305.299};
 					id=37;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -779,7 +779,7 @@ class Mission
 		};
 		class Item38
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -787,8 +787,8 @@ class Mission
 				{
 					position[]={16720.055,8.4002361,15305.299};
 					id=38;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -798,7 +798,7 @@ class Mission
 		};
 		class Item39
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -806,8 +806,8 @@ class Mission
 				{
 					position[]={16722.055,8.5415344,15305.299};
 					id=39;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -817,7 +817,7 @@ class Mission
 		};
 		class Item40
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -825,8 +825,8 @@ class Mission
 				{
 					position[]={16724.055,8.6828337,15305.299};
 					id=40;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -836,7 +836,7 @@ class Mission
 		};
 		class Item41
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -844,8 +844,8 @@ class Mission
 				{
 					position[]={16710.055,7.9591846,15303.299};
 					id=41;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -855,7 +855,7 @@ class Mission
 		};
 		class Item42
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -863,8 +863,8 @@ class Mission
 				{
 					position[]={16712.055,8.0312328,15303.299};
 					id=42;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -874,7 +874,7 @@ class Mission
 		};
 		class Item43
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -882,8 +882,8 @@ class Mission
 				{
 					position[]={16714.055,8.1032152,15303.299};
 					id=43;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -893,7 +893,7 @@ class Mission
 		};
 		class Item44
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -901,8 +901,8 @@ class Mission
 				{
 					position[]={16716.055,8.1529388,15303.299};
 					id=44;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -912,7 +912,7 @@ class Mission
 		};
 		class Item45
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -920,8 +920,8 @@ class Mission
 				{
 					position[]={16718.055,8.2490101,15303.299};
 					id=45;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -931,7 +931,7 @@ class Mission
 		};
 		class Item46
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -939,8 +939,8 @@ class Mission
 				{
 					position[]={16720.055,8.4704924,15303.299};
 					id=46;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -950,7 +950,7 @@ class Mission
 		};
 		class Item47
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -958,8 +958,8 @@ class Mission
 				{
 					position[]={16722.055,8.6775627,15303.299};
 					id=47;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -969,7 +969,7 @@ class Mission
 		};
 		class Item48
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -977,8 +977,8 @@ class Mission
 				{
 					position[]={16724.055,8.818862,15303.299};
 					id=48;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -988,7 +988,7 @@ class Mission
 		};
 		class Item49
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -996,8 +996,8 @@ class Mission
 				{
 					position[]={16710.055,7.9911766,15301.299};
 					id=49;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1007,7 +1007,7 @@ class Mission
 		};
 		class Item50
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1015,8 +1015,8 @@ class Mission
 				{
 					position[]={16712.055,8.0632248,15301.299};
 					id=50;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1026,7 +1026,7 @@ class Mission
 		};
 		class Item51
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1034,8 +1034,8 @@ class Mission
 				{
 					position[]={16714.055,8.1352072,15301.299};
 					id=51;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1045,7 +1045,7 @@ class Mission
 		};
 		class Item52
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1053,8 +1053,8 @@ class Mission
 				{
 					position[]={16716.055,8.2071896,15301.299};
 					id=52;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1064,7 +1064,7 @@ class Mission
 		};
 		class Item53
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1072,8 +1072,8 @@ class Mission
 				{
 					position[]={16718.055,8.3049965,15301.299};
 					id=53;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1083,7 +1083,7 @@ class Mission
 		};
 		class Item54
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1091,8 +1091,8 @@ class Mission
 				{
 					position[]={16720.055,8.5264788,15301.299};
 					id=54;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1102,7 +1102,7 @@ class Mission
 		};
 		class Item55
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1110,8 +1110,8 @@ class Mission
 				{
 					position[]={16722.055,8.7477579,15301.299};
 					id=55;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1121,7 +1121,7 @@ class Mission
 		};
 		class Item56
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1129,8 +1129,8 @@ class Mission
 				{
 					position[]={16724.055,8.9548292,15301.299};
 					id=56;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1140,7 +1140,7 @@ class Mission
 		};
 		class Item57
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1148,8 +1148,8 @@ class Mission
 				{
 					position[]={16710.055,7.9777188,15299.299};
 					id=57;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1159,7 +1159,7 @@ class Mission
 		};
 		class Item58
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1167,8 +1167,8 @@ class Mission
 				{
 					position[]={16712.055,8.0532093,15299.299};
 					id=58;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1178,7 +1178,7 @@ class Mission
 		};
 		class Item59
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1186,8 +1186,8 @@ class Mission
 				{
 					position[]={16714.055,8.1251917,15299.299};
 					id=59;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1197,7 +1197,7 @@ class Mission
 		};
 		class Item60
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1205,8 +1205,8 @@ class Mission
 				{
 					position[]={16716.055,8.1971741,15299.299};
 					id=60;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1216,7 +1216,7 @@ class Mission
 		};
 		class Item61
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1224,8 +1224,8 @@ class Mission
 				{
 					position[]={16718.055,8.3031845,15299.299};
 					id=61;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1235,7 +1235,7 @@ class Mission
 		};
 		class Item62
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1243,8 +1243,8 @@ class Mission
 				{
 					position[]={16720.055,8.5227251,15299.299};
 					id=62;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1254,7 +1254,7 @@ class Mission
 		};
 		class Item63
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1262,8 +1262,8 @@ class Mission
 				{
 					position[]={16722.055,8.7440042,15299.299};
 					id=63;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -1273,7 +1273,7 @@ class Mission
 		};
 		class Item64
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
@@ -1281,8 +1281,8 @@ class Mission
 				{
 					position[]={16724.055,8.9652834,15299.299};
 					id=64;
-					side="WEST";
-					vehicle="B_medic_F";
+					side="GUER";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=1;
@@ -3216,7 +3216,7 @@ class Mission
 		class Item10
 		{
 			position[]={15281.422,-0.13164645,12632.364};
-			name="borderWest";
+			name="borderGUER";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
@@ -3266,7 +3266,7 @@ class Mission
 		class Item15
 		{
 			position[]={16710.156,8.0892143,15316.631};
-			name="respawn_west";
+			name="respawn_GUER";
 			type="Empty";
 			fillName="Border";
 			drawBorder=1;
