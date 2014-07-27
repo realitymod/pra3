@@ -68,7 +68,7 @@
 
 			_unit call PRA3_fnc_startVehicleTracking;
 
-			[[_unit, _targetSide], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
+			[[_unit, _targetSide, true], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
 
 			[
 				PRA3_core,

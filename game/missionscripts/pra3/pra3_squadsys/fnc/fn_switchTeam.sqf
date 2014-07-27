@@ -12,9 +12,10 @@
 
 disableSerialization;
 
-var(_unit) = objNull;
-var(_team) = "";
-var(_side) = sideLogic;
+var(_unit)     = objNull;
+var(_team)     = "";
+var(_side)     = sideLogic;
+var(_isPlayer) = false;
 
 if (typeName _this == "OBJECT") then
 {
@@ -27,13 +28,15 @@ if (typeName _this == "OBJECT") then
 	{
 		PRA3_AAS_teams select 0
 	};
-	_side = _team call PRA3_fnc_getTeamSide;
+	_side     = _team call PRA3_fnc_getTeamSide;
+	_isPlayer = player == _unit;
 }
 else
 {
-	_unit = _this select 0;
-	_side = _this select 1;
-	_team = PRA3_AAS_teams select (PRA3_AAS_sides find _side);
+	_unit     = _this select 0;
+	_side     = _this select 1;
+	_isPlayer = if (count _this > 2) then {_this select 2} else {player == _unit};
+	_team     = PRA3_AAS_teams select (PRA3_AAS_sides find _side);
 };
 
 diag_log ["SWITCH TEAM", _this, _unit, _side, _team];
@@ -58,7 +61,7 @@ else
 	};
 
 	//Change the new team and side in PRA3_core to make sure all the functions work
-	if (_unit == player) then
+	if _isPlayer then
 	{
 		PRA3_player_team = _team;
 		PRA3_player_side = _side;
@@ -76,11 +79,14 @@ else
 	[PRA3_core, format["PRA3_player_team_%1", _unit call PRA3_fnc_getPlayerUID], _team, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 	[PRA3_core, format["PRA3_player_side_%1", _unit call PRA3_fnc_getPlayerUID], _side, __FILE__, __LINE__] call PRA3_fnc_setVarBroadcast;
 
-	// Refresh dialog
-	[[[], _side], "PRA3_fnc_squadDlg_server_refresh", false] call PRA3_fnc_MP;
+	if _isPlayer then
+	{
+		// Refresh dialog
+		[[[], _side], "PRA3_fnc_squadDlg_server_refresh", false] call PRA3_fnc_MP;
 
-	//Remove current kit
-	PRA3_kitSys_currentKit = "";
+		//Remove current kit
+		PRA3_kitSys_currentKit = "";
+	};
 
 	[nil, "PRA3_fnc_refreshVehicleMarkers"] call PRA3_fnc_MP;
 
