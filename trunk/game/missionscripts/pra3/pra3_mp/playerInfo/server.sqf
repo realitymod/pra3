@@ -28,9 +28,12 @@
 		[PRA3_core, format["PRA3_player_side_%1", _uid], _targetSide, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 
 		// ...and the unit he's playing as
+		var(_unit) = objNull;
 		{
 			if (name _x == _name) exitWith
 			{
+				_unit = _x;
+
 				[PRA3_core, format["PRA3_player_object_%1", _uid], _x, "pra3_mp\playerInfo\server.sqf OPC"] call PRA3_fnc_setVarBroadcast;
 
 				if !isDedicated then
@@ -41,14 +44,25 @@
 		} forEach allUnits;
 
 		// Switch him to the correct team and save his client ID, we'll have to wait for his unit to exist for this...
-		[_uid, _targetSide] spawn
+		[_uid, _targetSide, _unit, _name] spawn
 		{
 			var(_uid)        = _this select 0;
 			var(_targetSide) = _this select 1;
+			var(_unit)       = _this select 2;
+			var(_name)       = _this select 3;
 
-			waitUntil {!isNull (_uid call PRA3_fnc_getPlayerUnit)};
+			// In case of JIP we may not have found the unit. Try again.
+			waitUntil
+			{
+				{
+					if (name _x == _name) exitWith
+					{
+						_unit = _x;
+					};
+				} forEach allUnits;
 
-			var(_unit) = _uid call PRA3_fnc_getPlayerUnit;
+				!isNull _unit
+			};
 
 			diag_log [__FILE__, "PLAYER CONNECTED", _uid, _targetSide, _unit];
 

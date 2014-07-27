@@ -1,19 +1,19 @@
 #define public 2
 
-#define TYPE_WEAPON		1
-#define TYPE_BACKPACK	2
+#define TYPE_WEAPON     1
+#define TYPE_BACKPACK   2
 
-#define SIDE_EAST		0
-#define SIDE_WEST		1
-#define SIDE_RESISTANCE	2
-#define SIDE_CIVILIAN	3
+#define SIDE_EAST       0
+#define SIDE_WEST       1
+#define SIDE_RESISTANCE 2
+#define SIDE_CIVILIAN   3
 
-#define LIMIT_NO		0
-#define LIMIT_SQUAD		1
-#define LIMIT_SL		2
+#define LIMIT_NO        0
+#define LIMIT_SQUAD     1
+#define LIMIT_SL        2
 
-#define SPAWN_MAIN		0
-#define SPAWN_FORWARD	1
+#define SPAWN_MAIN      0
+#define SPAWN_FORWARD   1
 
 class PRA3_teams
 {
