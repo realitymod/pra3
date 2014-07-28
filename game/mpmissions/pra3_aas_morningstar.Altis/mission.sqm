@@ -91,7 +91,7 @@ class Mission
 					id=1;
 					side="GUER";
 					vehicle="I_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";
@@ -2508,6 +2508,7 @@ class Mission
 			colorName="ColorBlue";
 			a=100;
 			b=100;
+			angle=43.085602;
 		};
 		class Item6
 		{
@@ -2552,6 +2553,7 @@ class Mission
 			colorName="ColorBlue";
 			a=200;
 			b=200;
+			angle=-171.659;
 		};
 		class Item10
 		{
