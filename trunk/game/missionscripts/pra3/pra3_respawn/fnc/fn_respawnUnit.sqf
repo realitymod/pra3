@@ -1,10 +1,10 @@
 #include "scriptDefines.sqh"
 #include "defines.sqh"
 
+#define RANDOM_DIR 40
+
 var(_unit)  = _this select 0;
 var(_spawn) = _this select 1;
-
-diag_log str _this;
 
 if (count _spawn > 0) then
 {
@@ -26,7 +26,15 @@ if (count _spawn > 0) then
 
 	// Find some good position to spawn
 	var(_pos) = _spawn call PRA3_fnc_getSpawnPosition findEmptyPosition [0, 20, typeOf _unit];
+
+	// Get direction and randomize it a bit
+	var(_dir) = (_spawn call PRA3_fnc_getSpawnDirection) + RANDOM_DIR * 0.5 - random RANDOM_DIR;
+
+	// Wait for the position to be loaded
 	waitUntil {preloadCamera _pos};
+
+	// Move the unit there
+	_unit setDir _dir;
 	_unit setPosATL _pos;
 
 	true

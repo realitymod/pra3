@@ -30,6 +30,10 @@ class Respawn
 	{
 		description = "Returns the position of the spawn";
 	};
+	class getSpawnDirection
+	{
+		description = "Returns the direction of the spawn";
+	};
 	class updateSpawnLocations
 	{
 		description = "Updates spawn locations if the spawn map is open.";
@@ -38,7 +42,7 @@ class Respawn
 	{
 		description = "Respawns the unit at the given spawn point.";
 	};
-	
+
 	class scheduleDeleteBody
 	{
 		description = "Schedules a body to be deleted. Has to run on the server.";
