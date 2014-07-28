@@ -9,7 +9,6 @@ class Mission
 		"a3_map_stratis",
 		"A3_Structures_F_Walls",
 		"A3_Structures_F_Civ_Lamps",
-		"A3_Characters_F_BLUFOR",
 		"A3_Structures_F_Naval_Piers",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Civ_Market",
@@ -45,6 +44,7 @@ class Mission
 	class Intel
 	{
 		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		resistanceWest=0;
 		startWeather=0.29999998;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -9005,7 +9005,7 @@ class Mission
 		class Item684
 		{
 			position[]={8809.9033,138.44,15297.629};
-			azimut=-90;
+			azimut=-92.591728;
 			id=749;
 			side="EMPTY";
 			vehicle="Land_BagBunker_Large_F";
