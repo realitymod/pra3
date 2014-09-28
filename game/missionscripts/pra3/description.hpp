@@ -24,6 +24,11 @@ respawnDialog      = 0;
 respawnOnStart     = 0;
 respawnTemplates[] = {"PRA3_Select"};
 
+corpseManagerMode    = 1; // Delete all corpses
+corpseLimit          = 32;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 300;
+
 class CfgRespawnTemplates
 {
 	class PRA3_Select

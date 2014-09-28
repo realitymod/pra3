@@ -34,9 +34,6 @@ if !(alive player) then
 	// Remove map marker
 	_body call PRA3_fnc_stopVehicleTracking;
 
-	// Schedule body deletion
-	[_body, "PRA3_fnc_scheduleDeleteBody", false] call PRA3_fnc_MP;
-
 	sleep (1 + random 2);
 
 	// Create black screen

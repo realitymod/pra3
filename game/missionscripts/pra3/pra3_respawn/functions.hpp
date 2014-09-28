@@ -43,15 +43,6 @@ class Respawn
 		description = "Respawns the unit at the given spawn point.";
 	};
 
-	class scheduleDeleteBody
-	{
-		description = "Schedules a body to be deleted. Has to run on the server.";
-	};
-	class deleteBody
-	{
-		description = "Deletes a body, called by PRA3_fnc_scheduleDeleteBody. Body has to be local.";
-	};
-
 	class onDeath
 	{
 		description = "Handles player's death.";
