@@ -38,18 +38,20 @@ var(_lastUsed) = 1;
 
 	if (!visibleMap && alive _x && count _pos > 0) then
 	{
+		var(_playerSquad) = player call PRA3_fnc_unitGetSquad;
+
 		var(_stareTime) = _x getVariable ["PRA3_stareTime", 0];
 		if (_stareTime > RECOGNIZE_DELAY) then
 		{
 			var(_idc)      = _lastUsed * 10;
-			var(_distance) = eyePos _x distance positionCameraToWorld [0,0,0];
+			var(_distance) = eyePos _x distance ASLToATL positionCameraToWorld [0,0,0];
 			var(_scale)    = ((MAX_RECOGNIZE_DISTANCE - _distance) / MAX_RECOGNIZE_DISTANCE + 0.5) min 1;
 			var(_fade)     = ((_distance / MAX_RECOGNIZE_DISTANCE * 0.9)^3) + (RECOGNIZE_DELAY*2 - _stareTime);
-			
+
 			ctrl(_idc) ctrlShow true;
 			ctrl(_idc) ctrlSetText name _x;
 			ctrl(_idc) ctrlSetTextColor (
-				if (player call PRA3_fnc_unitGetSquad == _x call PRA3_fnc_unitGetSquad) then {
+				if (_playerSquad == -1 || _playerSquad != _x call PRA3_fnc_unitGetSquad) then {
 					[0,0.75,1,1]
 				} else {
 					[0,1,0,1]
