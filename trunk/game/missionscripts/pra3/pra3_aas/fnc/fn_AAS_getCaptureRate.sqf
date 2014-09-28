@@ -11,6 +11,9 @@
  *		(out) <FLOAT> Capture rate - capture points per second
  */
 
+// Defines the number of connected players from where at least two attackers are required to capture
+#define TWO_CAP_THRESHOLD 8
+
 var(_zone)      = _this select 0;
 var(_attackers) = _this select 1;
 var(_defenders) = _this select 2;
@@ -21,9 +24,9 @@ if (PRA3_core getVariable ["PRA3_debug_AAS_fastCap", false]) then
 }
 else
 {
-	if (_attackers < 2 && isMultiplayer) then
+	if (_attackers < 2 && isMultiplayer && call PRA3_fnc_getConectedPlayers >= TWO_CAP_THRESHOLD) then
 	{
-		0
+		_defenders
 	}
 	else
 	{
