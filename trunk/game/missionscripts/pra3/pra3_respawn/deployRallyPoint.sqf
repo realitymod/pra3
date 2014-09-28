@@ -30,19 +30,15 @@ if (_nearby < REQUIRE_MEMBERS) exitWith
 */
 
 var(_pos) = ATLtoASL(player modelToWorld [0,2,0]);
-player groupChat "-----";
+
 while {lineIntersects [_pos, [_pos select 0, _pos select 1, (_pos select 2) + 1]]} do
 {
 	_pos set [2, (_pos select 2) - 0.1];
-	//player groupChat str (_pos select 2);
 };
-
-player groupChat format["found non-intersect pos: %1", _pos select 2];
 
 while {!lineIntersects [_pos, [_pos select 0, _pos select 1, (_pos select 2) + 1]] && _pos select 2 > getTerrainHeightASL _pos} do
 {
 	_pos set [2, (_pos select 2) - 0.1];
-	//player groupChat str (_pos select 2);
 };
 
 if (_pos select 2 < getTerrainHeightASL _pos) then
@@ -50,15 +46,10 @@ if (_pos select 2 < getTerrainHeightASL _pos) then
 	_pos set [2, getTerrainHeightASL _pos];
 };
 
-player groupChat format["found intersect pos: %1", _pos select 2];
-
 while {lineIntersects [_pos, [_pos select 0, _pos select 1, (_pos select 2) + 1]]} do
 {
 	_pos set [2, (_pos select 2) + 0.01];
-	//player groupChat str (_pos select 2);
 };
-
-player groupChat format["found final pos: %1", _pos select 2];
 
 if (lineIntersects [getPosASL player, _pos]/* || {terrainIntersectASL [getPosASL player, _pos]}*/) exitWith
 {
