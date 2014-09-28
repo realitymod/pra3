@@ -32,11 +32,12 @@ if (diag_frameNo > PRA3_recognize_nextNearCheck) then
 
 var(_lastUsed) = 1;
 {
-	var(_pos) = visiblePosition _x;
-	_pos set [2, (_pos select 2) + ((eyePos _x select 2) - (getPosASL _x select 2)) + 0.3];
-	_pos = worldToScreen _pos;
+	var(_pos) = visiblePositionASL _x;
+	// Move the tags so they are 0.3m above the player's eyes
+	_pos set [2, (getPosASL _x select 2) + ((eyePos _x select 2) - (getPosASL _x select 2)) + 0.3];
+	_pos = worldToScreen ASLToATL _pos;
 
-	if (!visibleMap && alive _x && count _pos > 0) then
+	if (!visibleMap && alive _x) then
 	{
 		var(_playerSquad) = player call PRA3_fnc_unitGetSquad;
 
@@ -44,7 +45,7 @@ var(_lastUsed) = 1;
 		if (_stareTime > RECOGNIZE_DELAY) then
 		{
 			var(_idc)      = _lastUsed * 10;
-			var(_distance) = eyePos _x distance ASLToATL positionCameraToWorld [0,0,0];
+			var(_distance) = positionCameraToWorld [0,0,0] distance ASLToATL eyePos _x;
 			var(_scale)    = ((MAX_RECOGNIZE_DISTANCE - _distance) / MAX_RECOGNIZE_DISTANCE + 0.5) min 1;
 			var(_fade)     = ((_distance / MAX_RECOGNIZE_DISTANCE * 0.9)^3) + (RECOGNIZE_DELAY*2 - _stareTime);
 
