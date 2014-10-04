@@ -24,7 +24,7 @@ if (PRA3_core getVariable ["PRA3_debug_AAS_fastCap", false]) then
 }
 else
 {
-	if (_attackers < 2 && isMultiplayer && call PRA3_fnc_getConectedPlayers >= TWO_CAP_THRESHOLD) then
+	if (_attackers < 2 && isMultiplayer && call PRA3_fnc_getConnectedPlayers >= TWO_CAP_THRESHOLD) then
 	{
 		_defenders
 	}
