@@ -59,9 +59,6 @@ if (isServer) then
 			}
 			else
 			{
-				// Update map markers
-				[[_memberUnits, {_this call PRA3_fnc_updateVehicleMarker}], "BIS_fnc_call", _unit] call PRA3_fnc_MP;
-
 				if (_leader >= 10) then
 				{
 					if (_leader == 10) then //Removing a squad leader
@@ -87,6 +84,9 @@ if (isServer) then
 			{
 				[_unit] joinSilent grpNull; //TODO: locality issues (has to be client-side)
 			};
+
+			// Update map markers
+			[[_memberUnits, {_this call PRA3_fnc_updateVehicleMarker}], "BIS_fnc_call"] call PRA3_fnc_MP;
 
 			true
 		}
