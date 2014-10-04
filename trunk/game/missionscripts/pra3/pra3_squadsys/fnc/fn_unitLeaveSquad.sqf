@@ -14,7 +14,7 @@
 
 if (isServer) then
 {
-	var(_unit) = _this select 0;
+	var(_unit)    = _this select 0;
 	var(_squadId) = _this select 1;
 
 	var(_success) = false;
@@ -33,11 +33,13 @@ if (isServer) then
 	{
 		diag_log ["before", PRA3_core getVariable format["PRA3_squadSys_squad_%1", _squadId]];
 		var(_members) = (PRA3_core getVariable format["PRA3_squadSys_squad_%1", _squadId]) select 0;
+		var(_memberUnits) = [];
+		_memberUnits resize count _members;
 		var(_idx) = -1; //unit's squad array index
 		var(_leader) = 0;
 		{
-			diag_log ["dump", (_x select 0), _unitID];
-			if ((_x select 0) == _unitID) exitWith
+			_memberUnits set [_forEachIndex, _x select 0 call PRA3_fnc_getPlayerUnit];
+			if ((_x select 0) == _unitID) then
 			{
 				_idx = _forEachIndex;
 				_leader = _x select 1;
@@ -57,6 +59,9 @@ if (isServer) then
 			}
 			else
 			{
+				// Update map markers
+				[[_memberUnits, {_this call PRA3_fnc_updateVehicleMarker}], "BIS_fnc_call", _unit] call PRA3_fnc_MP;
+
 				if (_leader >= 10) then
 				{
 					if (_leader == 10) then //Removing a squad leader
