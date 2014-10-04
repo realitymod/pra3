@@ -37,7 +37,7 @@ var(_lastUsed) = 1;
 	_pos set [2, (getPosASL _x select 2) + ((eyePos _x select 2) - (getPosASL _x select 2)) + 0.3];
 	_pos = worldToScreen ASLToATL _pos;
 
-	if (!visibleMap && alive _x) then
+	if (!visibleMap && alive _x && count _pos > 0) then
 	{
 		var(_playerSquad) = player call PRA3_fnc_unitGetSquad;
 
