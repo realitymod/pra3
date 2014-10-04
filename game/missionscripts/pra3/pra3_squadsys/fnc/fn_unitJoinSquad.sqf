@@ -51,6 +51,15 @@ if (isServer) then
 		[_unit] joinSilent (_squad select 4);
 		diag_log ["JOIN", _unit, _squad select 4];
 
+		// Update map markers
+		var(_memberUnits) = [];
+		_memberUnits resize count _members;
+		{
+			_memberUnits set [_forEachIndex, _x call PRA3_fnc_getPlayerUnit];
+		} forEach _members;
+
+		[[_memberUnits, {_this call PRA3_fnc_updateVehicleMarker}], "BIS_fnc_call", _unit] call PRA3_fnc_MP;
+
 		if (_prevSquad == -1) then // Previously unassigned
 		{
 			// Delete the lone (now empty) unassigned group.
