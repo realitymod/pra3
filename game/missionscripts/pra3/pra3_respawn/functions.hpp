@@ -38,6 +38,11 @@ class Respawn
 	{
 		description = "Updates spawn locations if the spawn map is open.";
 	};
+
+	class initUnit
+	{
+		description = "Performs the necessary initialization on the unit after mission start or respawn.";
+	};
 	class respawnUnit
 	{
 		description = "Respawns the unit at the given spawn point.";
