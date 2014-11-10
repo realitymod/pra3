@@ -58,7 +58,7 @@ if (isServer) then
 			_memberUnits set [_forEachIndex, _x call PRA3_fnc_getPlayerUnit];
 		} forEach _members;
 
-		[[_memberUnits, {_this call PRA3_fnc_updateVehicleMarker}], "BIS_fnc_call"] call PRA3_fnc_MP;
+		[_memberUnits, "PRA3_fnc_updateVehicleMarker"] call PRA3_fnc_MP;
 
 		if (_prevSquad == -1) then // Previously unassigned
 		{
