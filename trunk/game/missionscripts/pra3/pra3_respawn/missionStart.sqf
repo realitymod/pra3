@@ -97,6 +97,7 @@ waitUntil
 
 PRA3_joinedGame = true;
 
+[player, "PRA3_fnc_initUnit"] call PRA3_fnc_MP;
 [player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
 [player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 

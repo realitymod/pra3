@@ -63,7 +63,7 @@ if !(alive player) then
 	// Mute sound
 	1 fadeSound 0;
 
-	// Wait for black screen to fade in
+	// Wait for black screen to fade in, we give it slightly longer just to be safe
 	sleep 1.1;
 
 	// Create a camera in the middle of nowhere to prevent dead player from talking to people in direct
@@ -102,6 +102,7 @@ if !(alive player) then
 
 	setPlayerRespawnTime -1;
 	waitUntil {alive player};
+	[player, "PRA3_fnc_initUnit"] call PRA3_fnc_MP;
 	[player] call PRA3_fnc_switchTeamCheck;
 	[player, PRA3_selectedSpawn] call PRA3_fnc_respawnUnit;
 	[player, PRA3_kitSys_currentKit] call PRA3_fnc_equipWithKit;
