@@ -22,6 +22,7 @@ if ([player, _kit] call PRA3_fnc_getKitAvailableInfo select 0) then // Only if k
 	[[player, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
 };
 
-call PRA3_fnc_kitDlg_populateKitSelection;
+// Refresh the kit selection screen for everyone
+[0, "PRA3_fnc_kitDlg_populateKitSelection", true] call PRA3_fnc_MP;
 
 __getCtrl(IDC_KITDLG_CHANGEKIT_BTN) ctrlEnable (PRA3_kitSys_currentKit != "");
