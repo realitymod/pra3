@@ -3,7 +3,7 @@
 /**
  * Removes the given unit from the squad.
  * Updates leadership within the squad or completely dissolves it if necessary.
- * Returns false if the squad does not exist or the unit is not a memeber.
+ * Returns false if the squad does not exist or the unit is not a member.
  *		(in)  <ARRAY>:
  *			0 <OBJECT> Unit
  *				or
@@ -86,7 +86,7 @@ if (isServer) then
 			};
 
 			// Update map markers
-			[[_memberUnits, {_this call PRA3_fnc_updateVehicleMarker}], "BIS_fnc_call"] call PRA3_fnc_MP;
+			[_memberUnits, "PRA3_fnc_updateVehicleMarker"] call PRA3_fnc_MP;
 
 			true
 		}
