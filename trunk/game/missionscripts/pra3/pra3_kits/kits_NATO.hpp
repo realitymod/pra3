@@ -48,7 +48,7 @@ class Rifleman_NATO
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
-			items[]      = {{"FirstAidKit", 2}};
+			items[]      = {COMMON_ITEMS, {"FirstAidKit", 2}};
 		};
 		class Variant2 : Variant1
 		{
@@ -115,7 +115,7 @@ class SquadLeader_NATO : Rifleman_NATO
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellBlue", 2}};
-			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
+			items[]      = {COMMON_ITEMS, {"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
 		};
 	};
 };
@@ -154,7 +154,7 @@ class Medic_NATO : Rifleman_NATO
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 5}};
-			items[]      = {};
+			items[]      = {COMMON_ITEMS};
 		};
 	};
 };

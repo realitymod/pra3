@@ -40,6 +40,9 @@ class PRA3_teams
 	};
 };
 
+// Common assigned items all kits should have
+#define COMMON_ITEMS {"ItemMap",1},{"ItemCompass",1},{"ItemWatch",1},{"ItemRadio",1},{"NVGoggles",1}
+
 class PRA3_kits
 {
 	class RequirementsSL

@@ -38,7 +38,7 @@ class Rifleman_AAF : Rifleman_CSAT
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 2}};
-			items[]      = {{"FirstAidKit", 1}};
+			items[]      = {COMMON_ITEMS, {"FirstAidKit", 1}};
 		};
 		class Variant2 : Variant1
 		{
@@ -104,7 +104,7 @@ class SquadLeader_AAF : Rifleman_AAF
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 4}, {"SmokeShellRed", 2}};
-			items[]      = {{"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
+			items[]      = {COMMON_ITEMS, {"FirstAidKit", 3}, {"Rangefinder", 1}, {"ItemGPS", 1}};
 		};
 	};
 };
@@ -143,7 +143,7 @@ class Medic_AAF : Rifleman_AAF
 			};
 
 			explosives[] = {{"HandGrenade", 2}, {"SmokeShell", 5}};
-			items[]      = {};
+			items[]      = {COMMON_ITEMS};
 		};
 	};
 };
