@@ -1,3 +1,8 @@
+/**
+ * PRA3_fnc_MP
+ * Wrapper for BIS_fnc_MP, extends its functionality to accept UIDs as the message target.
+ */
+
 private "_things";
 _things = [
 	_this select 0,
@@ -6,6 +11,12 @@ _things = [
 	if (count _this > 3) then {_this select 3} else {false},
 	if (count _this > 4) then {_this select 4} else {true} // this makes things call rather than spawn
 ];
+
+if (typeName (_things select 2) == "STRING") then
+{
+	// UID, convert it to the unit
+	_things set [2, (_things select 2) call PRA3_fnc_getPlayerUnit];
+};
 
 if (isMultiplayer) then
 {
