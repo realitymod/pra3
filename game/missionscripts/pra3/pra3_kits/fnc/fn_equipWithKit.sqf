@@ -9,19 +9,20 @@
  *		(out) <VOID>
  */
 
+// Type of items that are assigned (NVGs, watch, map, etc.)
+#define ASSIGNED_ITEM_TYPE 131072
+
 var(_unit) = _this select 0;
 var(_kit)  = _this select 1;
 
 // Remove all the stuff
 removeAllWeapons _unit;
+removeAllAssignedItems _unit;
 removeAllItems _unit;
 
 // Remove all clothing to make epoch happy
-removeUniform _unit;
+removeAllContainers _unit;
 removeHeadgear _unit;
-removeGoggles _unit;
-removeVest _unit;
-removeBackpack _unit;
 
 var(_kitInfo) = _kit call PRA3_fnc_getKitInfo;
 
@@ -79,7 +80,7 @@ if (count _stuff > 0) then
 	clearWeaponCargoGlobal _backpack;
 	clearMagazineCargoGlobal _backpack;
 	{
-		if (getNumber(configFile >> "CfgWeapons" >> (_x select 0) >> "type") == 131072) then
+		if (getNumber(configFile >> "CfgWeapons" >> (_x select 0) >> "type") == ASSIGNED_ITEM_TYPE) then
 		{
 			for "_i" from 1 to (_x select 1) do
 			{
@@ -106,14 +107,17 @@ VARIANT_PISTOL call _giveWeapon;
 	};
 } forEach (_variant select VARIANT_EXPLOSIVES);
 
+_unit forceAddUniform (_clothing select CLOTHING_UNIFORM);
+
 {
 	for "_i" from 1 to (_x select 1) do
 	{
 		if (isClass(configFile >> "CfgWeapons" >> (_x select 0))) then
 		{
-			if (getNumber(configFile >> "CfgWeapons" >> (_x select 0) >> "type") == 131072) then
+			if (getNumber(configFile >> "CfgWeapons" >> (_x select 0) >> "type") == ASSIGNED_ITEM_TYPE) then
 			{
 				_unit addItem (_x select 0);
+				_unit assignItem (_x select 0);
 			}
 			else
 			{
@@ -126,7 +130,5 @@ VARIANT_PISTOL call _giveWeapon;
 		};
 	};
 } forEach (_variant select VARIANT_ITEMS);
-
-_unit forceAddUniform (_clothing select CLOTHING_UNIFORM);
 
 [[_unit, _kit], "PRA3_fnc_unitSetKit", false] call PRA3_fnc_MP;
