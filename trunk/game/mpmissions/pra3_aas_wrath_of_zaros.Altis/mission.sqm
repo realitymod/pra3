@@ -37,7 +37,7 @@ class Mission
 	randomSeed=14028797;
 	class Intel
 	{
-		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
 		startWeather=0.39999998;
 		startWind=0;
 		startWaves=0.099999994;

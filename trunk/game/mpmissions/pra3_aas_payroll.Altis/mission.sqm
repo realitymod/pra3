@@ -41,7 +41,6 @@ class Mission
 	class Intel
 	{
 		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
-		briefingName="PR:A3: Payroll";
 		startWeather=0.50999999;
 		startFog=0.25;
 		startWind=0.44999999;
