@@ -49,7 +49,6 @@ if (isServer) then
 		_squadId call PRA3_fnc_broadcastSquadVariable;
 
 		[_unit] joinSilent (_squad select 4);
-		diag_log ["JOIN", _unit, _squad select 4];
 
 		// Update map markers
 		var(_memberUnits) = [];

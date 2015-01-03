@@ -17,8 +17,6 @@ if (isServer) then
 	var(_ft) = _this select 1;
 	var(_leader) = _this select 2;
 
-	diag_log _this;
-
 	var(_success) = false;
 
 	if (typeName _leader == "OBJECT") then

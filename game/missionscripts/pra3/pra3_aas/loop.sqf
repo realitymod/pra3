@@ -24,12 +24,16 @@ while {true} do
 			var(_serverCap) = PRA3_core getVariable [format["PRA3_AAS_%1_capture_sync", _zone], 0]; // Capture percentage, synchronized from the server
 			if (_serverCap != (_syncArray select _forEachIndex)) then
 			{
-				diag_log text format["Synchronizing zone %1 with server: %2 => %3 (diff %4)",
-					_zone,
-					PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone],
-					_serverCap,
-					_serverCap - (PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone])
-				];
+				[
+					format["Synchronizing zone %1 with server: %2 => %3 (diff %4)",
+						_zone,
+						PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone],
+						_serverCap,
+						_serverCap - (PRA3_core getVariable format["PRA3_AAS_%1_capture_local", _zone])
+					],
+					__FILE__,
+					__LINE__
+				] call PRA3_fnc_logInfo;
 				PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _zone], _serverCap];
 				_syncArray set [_forEachIndex, _serverCap];
 			};
