@@ -2297,7 +2297,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CrabCages_F";
 			skill=0.60000002;
-			init="this enableSilumation false; this setVectorUp [0,0,1]";
+			init="this enableSimulation false; this setVectorUp [0,0,1]";
 		};
 		class Item101
 		{
