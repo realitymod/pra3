@@ -5,23 +5,24 @@ class Mission
 	{
 		"a3_map_stratis",
 		"A3_Data_F",
-		"A3_Weapons_F_Ammoboxes",
 		"a3_weapons_f_beta_ammoboxes",
-		"A3_Structures_F_Mil_Flags",
-		"A3_Structures_F_Civ_Market",
-		"A3_Structures_F_Civ_InfoBoards",
-		"A3_Structures_F_Furniture",
-		"A3_Structures_F_Walls",
 		"A3_Modules_F",
 		"A3_Characters_F_INDEP",
 		"a3_characters_f",
-		"A3_Signs_F",
-		"A3_Structures_F_Civ_Constructions",
 		"A3_Structures_F_Items_Vessels",
+		"A3_Structures_F_Wrecks",
+		"A3_Structures_F_Civ_Constructions",
+		"A3_Signs_F",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Structures_F_Civ_Market",
+		"A3_Structures_F_Civ_InfoBoards",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Structures_F_Furniture",
+		"A3_Structures_F_Walls",
 		"A3_Structures_F_Civ_Garbage",
 		"A3_Structures_F_EPB_Civ_Garbage",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
-		"A3_Structures_F_Wrecks"
+		"A3_Structures_F_EPB_Naval_Fishing"
 	};
 	addOnsAuto[]=
 	{
@@ -36,11 +37,12 @@ class Mission
 		"A3_Structures_F_Walls",
 		"A3_Signs_F",
 		"A3_Structures_F_Civ_Constructions",
-		"A3_Structures_F_Items_Vessels",
 		"A3_Structures_F_Civ_Garbage",
 		"A3_Structures_F_EPB_Civ_Garbage",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Structures_F_Wrecks",
+		"A3_Structures_F_Items_Vessels",
+		"A3_Structures_F_EPB_Naval_Fishing",
 		"a3_map_stratis"
 	};
 	randomSeed=11866082;
@@ -95,7 +97,7 @@ class Mission
 					id=1;
 					side="GUER";
 					vehicle="I_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";
@@ -1302,7 +1304,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=99;
+		items=113;
 		class Item0
 		{
 			position[]={3239.6538,4.8564601,5824.5874};
@@ -1322,6 +1324,7 @@ class Mission
 			vehicle="Land_CratesWooden_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item2
 		{
@@ -1332,6 +1335,7 @@ class Mission
 			vehicle="MapBoard_stratis_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item3
 		{
@@ -1364,6 +1368,7 @@ class Mission
 			vehicle="Land_Bench_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item6
 		{
@@ -1386,6 +1391,7 @@ class Mission
 			vehicle="Land_CratesWooden_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item8
 		{
@@ -1406,6 +1412,7 @@ class Mission
 			vehicle="Land_CratesWooden_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item10
 		{
@@ -1416,6 +1423,7 @@ class Mission
 			vehicle="MapBoard_stratis_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item11
 		{
@@ -1448,6 +1456,7 @@ class Mission
 			vehicle="Land_Bench_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item14
 		{
@@ -1470,6 +1479,7 @@ class Mission
 			vehicle="Land_CratesWooden_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item16
 		{
@@ -1480,6 +1490,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item17
 		{
@@ -1490,6 +1501,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item18
 		{
@@ -1500,6 +1512,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item19
 		{
@@ -1510,6 +1523,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item20
 		{
@@ -1520,6 +1534,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item21
 		{
@@ -1530,6 +1545,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item22
 		{
@@ -1540,6 +1556,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item23
 		{
@@ -1550,6 +1567,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item24
 		{
@@ -1560,6 +1578,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item25
 		{
@@ -1570,6 +1589,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item26
 		{
@@ -1580,6 +1600,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item27
 		{
@@ -1590,6 +1611,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item28
 		{
@@ -1600,6 +1622,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item29
 		{
@@ -1610,6 +1633,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item30
 		{
@@ -1620,6 +1644,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item31
 		{
@@ -1630,6 +1655,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item32
 		{
@@ -1640,6 +1666,7 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			leader=1;
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item33
 		{
@@ -1649,6 +1676,7 @@ class Mission
 			side="EMPTY";
 			vehicle="RoadBarrier_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item34
 		{
@@ -1657,22 +1685,27 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ConcretePipe_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item35
 		{
-			position[]={3018.7854,3.8196838,5986.9009};
+			position[]={3056.2883,1.4869928,5964.2021};
+			azimut=-179.59;
 			id=100;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Wreck_Ural_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item36
 		{
 			position[]={3013.7336,1.5743341,5972.9375};
+			azimut=-152.2392;
 			id=101;
 			side="EMPTY";
 			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item37
 		{
@@ -1681,6 +1714,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item38
 		{
@@ -1689,6 +1723,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_JunkPile_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item39
 		{
@@ -1697,6 +1732,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Tyres_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item40
 		{
@@ -1705,6 +1741,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbageContainer_open_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item41
 		{
@@ -1713,6 +1750,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ScrapHeap_1_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item42
 		{
@@ -1721,6 +1759,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ScrapHeap_2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item43
 		{
@@ -1729,6 +1768,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_BMP2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item44
 		{
@@ -1737,6 +1777,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Car_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item45
 		{
@@ -1745,6 +1786,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Skodovka_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item46
 		{
@@ -1753,6 +1795,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_UAZ_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item47
 		{
@@ -1761,6 +1804,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Van_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item48
 		{
@@ -1769,6 +1813,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Offroad2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item49
 		{
@@ -1777,6 +1822,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item50
 		{
@@ -1785,6 +1831,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item51
 		{
@@ -1793,6 +1840,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item52
 		{
@@ -1801,6 +1849,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item53
 		{
@@ -1809,6 +1858,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item54
 		{
@@ -1817,6 +1867,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item55
 		{
@@ -1825,6 +1876,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item56
 		{
@@ -1833,62 +1885,77 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item57
 		{
-			position[]={3002.6111,3.49,5943.584};
+			position[]={2887.3586,1.472486,6032.2012};
+			azimut=-20.932587;
 			id=122;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item58
 		{
-			position[]={2976.1914,1.4286829,5977.853};
+			position[]={2901.3059,1.5785602,6019.5063};
+			azimut=-71.567284;
 			id=123;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item59
 		{
-			position[]={3004.3159,1.6035694,5973.5986};
+			position[]={2920.1111,1.5783906,6012.689};
+			azimut=-37.106491;
 			id=124;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item60
 		{
-			position[]={2926.0876,1.5052191,6005.7412};
+			position[]={2941.1096,1.3842999,5994.7437};
+			azimut=143.49998;
 			id=125;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item61
 		{
-			position[]={2896.5454,1.4018921,6025.1211};
+			position[]={2955.6833,1.4291955,5988.3184};
+			azimut=113.06705;
 			id=126;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item62
 		{
-			position[]={3073.7202,1.7181103,5953.5654};
+			position[]={2969.5522,1.4286914,5981.814};
+			azimut=48.840862;
 			id=127;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item63
 		{
-			position[]={3113.6929,1.8403113,5910.8828};
+			position[]={3000.0317,1.560293,5977.3472};
+			azimut=-22.800211;
 			id=128;
 			side="EMPTY";
-			vehicle="MetalBarrel_burning_F";
+			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item64
 		{
@@ -1897,6 +1964,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item65
 		{
@@ -1905,6 +1973,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item66
 		{
@@ -1913,6 +1982,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item67
 		{
@@ -1921,6 +1991,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item68
 		{
@@ -1929,6 +2000,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item69
 		{
@@ -1937,6 +2009,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item70
 		{
@@ -1945,6 +2018,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item71
 		{
@@ -1953,6 +2027,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item72
 		{
@@ -1961,6 +2036,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item73
 		{
@@ -1969,6 +2045,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item74
 		{
@@ -1977,6 +2054,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_UAZ_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item75
 		{
@@ -1986,6 +2064,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_UAZ_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item76
 		{
@@ -1994,14 +2073,17 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Skodovka_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item77
 		{
 			position[]={2933.7583,1.4519299,6004.0649};
+			azimut=113.16418;
 			id=142;
 			side="EMPTY";
 			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item78
 		{
@@ -2010,6 +2092,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item79
 		{
@@ -2018,6 +2101,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Garbage_square5_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item80
 		{
@@ -2026,6 +2110,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Skodovka_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item81
 		{
@@ -2035,6 +2120,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Offroad2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item82
 		{
@@ -2044,6 +2130,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Offroad2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item83
 		{
@@ -2052,6 +2139,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Wreck_Offroad2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item84
 		{
@@ -2060,6 +2148,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item85
 		{
@@ -2068,6 +2157,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item86
 		{
@@ -2076,6 +2166,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item87
 		{
@@ -2084,6 +2175,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item88
 		{
@@ -2092,6 +2184,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item89
 		{
@@ -2100,6 +2193,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item90
 		{
@@ -2108,6 +2202,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item91
 		{
@@ -2116,6 +2211,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item92
 		{
@@ -2124,6 +2220,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item93
 		{
@@ -2132,6 +2229,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item94
 		{
@@ -2140,6 +2238,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item95
 		{
@@ -2148,6 +2247,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item96
 		{
@@ -2156,6 +2256,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item97
 		{
@@ -2164,6 +2265,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_GarbagePallet_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
 		};
 		class Item98
 		{
@@ -2173,6 +2275,150 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ScrapHeap_2_F";
 			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item99
+		{
+			position[]={2878.6238,1.5964386,6036.9419};
+			azimut=-57.342449;
+			id=164;
+			side="EMPTY";
+			vehicle="Land_IronPipes_F";
+			leader=1;
+			skill=1;
+			init="this enableSimulation false";
+		};
+		class Item100
+		{
+			position[]={2834.3992,0,6085.6821};
+			azimut=3.719492;
+			offsetY=2;
+			id=165;
+			side="EMPTY";
+			vehicle="Land_CrabCages_F";
+			skill=0.60000002;
+			init="this enableSilumation false; this setVectorUp [0,0,1]";
+		};
+		class Item101
+		{
+			position[]={3075.3298,1.691123,5952.4282};
+			azimut=-131.20894;
+			id=166;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item102
+		{
+			position[]={3102.1272,1.78,5933.4644};
+			azimut=-147.83086;
+			id=167;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item103
+		{
+			position[]={3117.9546,1.6952758,5913.3247};
+			azimut=-52.313244;
+			id=168;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item104
+		{
+			position[]={3131.3442,1.4596289,5905.3857};
+			id=169;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item105
+		{
+			position[]={2864.6321,1.5687439,6046.0737};
+			azimut=87.729523;
+			id=170;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item106
+		{
+			position[]={3107.1116,1.7862659,5922.1416};
+			azimut=-69.991173;
+			id=171;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item107
+		{
+			position[]={3086.239,1.6168518,5942.2896};
+			azimut=-62.963631;
+			id=172;
+			side="EMPTY";
+			vehicle="Land_Garbage_square5_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item108
+		{
+			position[]={3201.0837,1.4275171,5849.8667};
+			id=173;
+			side="EMPTY";
+			vehicle="Land_GarbageBags_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item109
+		{
+			position[]={2974.4956,5.7082119,6068.5439};
+			azimut=-25.878;
+			id=174;
+			side="EMPTY";
+			vehicle="Land_Wreck_Heli_Attack_01_F";
+			skill=0.60000002;
+			init="this enableSimulation false";
+		};
+		class Item110
+		{
+			position[]={3055.7957,1.4310784,5959.3794};
+			azimut=107.35946;
+			id=175;
+			side="EMPTY";
+			vehicle="Land_Pipes_small_F";
+			leader=1;
+			skill=1;
+			init="this enableSimulation false";
+		};
+		class Item111
+		{
+			position[]={3052.5398,2.261153,5953.5864};
+			azimut=20.942175;
+			id=176;
+			side="EMPTY";
+			vehicle="RoadBarrier_F";
+			leader=1;
+			skill=1;
+			init="this enableSimulation false; this setVectorUp [0,0,1]";
+		};
+		class Item112
+		{
+			position[]={3056.5715,1.4741156,5958.1187};
+			azimut=88.770432;
+			id=177;
+			side="EMPTY";
+			vehicle="Land_Pipes_small_F";
+			leader=1;
+			skill=1;
+			init="this enableSimulation false";
 		};
 	};
 	class Markers
