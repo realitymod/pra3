@@ -64,11 +64,11 @@
 				!isNull _unit
 			};
 
-			diag_log [__FILE__, "PLAYER CONNECTED", _uid, _targetSide, _unit];
+			[str ["Player connected", _uid, _targetSide, _unit], __FILE__, __LINE__] call PRA3_fnc_logInfo;
 
 			_unit call PRA3_fnc_startVehicleTracking;
 
-			[[_unit, _targetSide, true], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
+			[[_unit, _targetSide], "PRA3_fnc_switchTeam", _unit] call PRA3_fnc_MP;
 
 			[
 				PRA3_core,

@@ -235,7 +235,7 @@ else
 			} forEach PRA3_AAS_zones;
 		};
 
-		diag_log "AAS client start init";
+		["AAS client start init", __FILE__, __LINE__] call PRA3_fnc_logInfo;
 		call _this;
 	};
 };

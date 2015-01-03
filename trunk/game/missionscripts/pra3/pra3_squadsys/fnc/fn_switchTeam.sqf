@@ -29,17 +29,17 @@ if (typeName _this == "OBJECT") then
 		PRA3_AAS_teams select 0
 	};
 	_side     = _team call PRA3_fnc_getTeamSide;
-	_isPlayer = player == _unit;
 }
 else
 {
 	_unit     = _this select 0;
 	_side     = _this select 1;
-	_isPlayer = if (count _this > 2) then {_this select 2} else {player == _unit};
 	_team     = PRA3_AAS_teams select (PRA3_AAS_sides find _side);
 };
 
-diag_log ["SWITCH TEAM", _this, _unit, _side, _team];
+_isPlayer = player == _unit;
+
+[["SWITCH TEAM", _this, _unit, _side, _team, _isPlayer], __FILE__, __LINE__] call PRA3_fnc_logInfo;
 
 if false then/*
 var(_maxPlayers)      = call PRA3_fnc_getMaxPlayers;

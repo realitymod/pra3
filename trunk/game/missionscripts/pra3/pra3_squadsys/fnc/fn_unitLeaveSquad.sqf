@@ -31,7 +31,6 @@ if (isServer) then
 
 	if (_squadId call PRA3_fnc_squadExists) then
 	{
-		diag_log ["before", PRA3_core getVariable format["PRA3_squadSys_squad_%1", _squadId]];
 		var(_members) = (PRA3_core getVariable format["PRA3_squadSys_squad_%1", _squadId]) select 0;
 		var(_memberUnits) = [];
 		_memberUnits resize count _members;
@@ -51,7 +50,6 @@ if (isServer) then
 			PRA3_core setVariable [format["PRA3_squadSys_unitSquad_%1", _unitID], -1, true];
 
 			[_members, _idx] call PRA3_fnc_arrayRemoveAt;
-			diag_log ["after", PRA3_core getVariable format["PRA3_squadSys_squad_%1", _squadId]];
 
 			if (count _members == 0) then //Empty squad, dissolve it
 			{

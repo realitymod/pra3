@@ -36,8 +36,6 @@ if (isServer) then
 	{
 		var(_side) = _leaderId call PRA3_fnc_getPlayerSide;
 
-		diag_log ["leaderUnit",_leaderUnit];
-
 		var(_id) = _side call PRA3_fnc_getSideID;
 		var(_i) = 1;
 		while {(_id + _i) call PRA3_fnc_squadExists} do

@@ -5,9 +5,9 @@
  * Randomly close and open doors in the given marker area
  */
 
-if (count PRA3_AAS_randomDoorMarker==0) exitWith
+if (count PRA3_AAS_randomDoorMarker == 0) exitWith
 {
-	diag_log "PRA3_AAS_randomDoorsMarker contains no marker";
+	["PRA3_AAS_randomDoorsMarker contains no marker", __FILE__, __LINE__] call PRA3_fnc_logInfo;
 };
 
 if isServer then
@@ -47,6 +47,7 @@ if isServer then
 }
 else
 {
+	// Hide the markers for the client
 	{
 		_x setMarkerAlphaLocal 0;
 	} forEach PRA3_AAS_randomDoorMarker;

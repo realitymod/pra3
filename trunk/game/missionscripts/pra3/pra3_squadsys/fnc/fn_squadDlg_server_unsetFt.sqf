@@ -11,11 +11,8 @@ if (_squadId == (_unit call PRA3_fnc_unitGetSquad)) then
 
 	[_squadId, _unit, 0] call PRA3_fnc_unitSetFt;
 
-	diag_log ["dump", _this, _prevFt, _ftLeader];
-
 	if (_ftLeader == _unit) then
 	{
-		diag_log [_ftLeader, _unit];
 		var(_newLeader) = [_squadId, _prevFt] call PRA3_fnc_squadGetFtLeader;
 		var(_members) = _squadId call PRA3_fnc_squadGetMembers;
 		{
