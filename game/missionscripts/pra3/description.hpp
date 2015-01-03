@@ -31,7 +31,7 @@ onLoadName   = MISSION_NAME;
 briefingName = MISSION_NAME_BRIEFING;
 overviewText = MISSION_DESCRIPTION;
 
-loadScreen   = "pra3\PRloadingLogo.jpg";
+loadScreen   = "pra3\pra3_ui\data\loadScreen_pra3_logo.jpg";
 
 disabledAI   = 1;
 
