@@ -239,6 +239,24 @@ else
 	};
 };
 
+// Update the author marker
+if (getMarkerPos "author" distance [0,0] > 0.1) then
+{
+	var(_missionAuthor) = missionConfigFile >> "PRA3_Credits" >> "Mission" >> "value";
+	if (isText _missionAuthor) then
+	{
+		"author" setMarkerTextLocal format ["Mission by %1", getText _missionAuthor];
+	}
+	else
+	{
+		["No MISSION_AUTHOR defined"] call PRA3_fnc_logError;
+	};
+}
+else
+{
+	['"author" marker is missing'] call PRA3_fnc_logError;
+};
+
 if isClient then
 {
 	execVM "pra3\pra3_respawn\missionStart.sqf";
