@@ -141,7 +141,7 @@ while {true} do
 				var(_prevOwner) = _owner;
 
 				PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _zone], _attackersSide, isServer];
-				_owner = __neutral;
+				_owner = NEUTRAL_SIDE;
 				_capture = 0;
 			}
 			else
@@ -155,7 +155,7 @@ while {true} do
 		}
 		else //No one present, slowly neutralize/recapture on its own
 		{
-			if (_owner == __neutral) then
+			if (_owner == NEUTRAL_SIDE) then
 			{
 				if (_capture > 0) then
 				{
@@ -195,14 +195,14 @@ while {true} do
 
 					[[_zone, _owner, _prevOwner, _attackersSide], "PRA3_fnc_AAS_captureZone", true] call PRA3_fnc_MP;
 
-					_sinceUpdate = __updateEvery; //Enforce update if the zone owner changes
+					_sinceUpdate = UPDATE_FREQ; //Enforce update if the zone owner changes
 				};
 
 				// Periodically update clients too
 				PRA3_core setVariable [
 					format["PRA3_AAS_%1_capture_sync", _zone],
 					_capture,
-					_sinceUpdate >= __updateEvery
+					_sinceUpdate >= UPDATE_FREQ
 				];
 			};
 		};
@@ -243,12 +243,12 @@ while {true} do
 			ctrl(1) ctrlSetPosition _pos;
 			ctrl(1) ctrlSetBackgroundColor (
 				if (_side == PRA3_player_side) then {
-					__colorFriendly
+					COLOR_FRIENDLY
 				} else {
-					if (_side == __neutral) then {
-						__colorNeutral
+					if (_side == NEUTRAL_SIDE) then {
+						COLOR_NEUTRAL
 					} else {
-						__colorEnemy
+						COLOR_ENEMY
 					}
 				}
 			);
@@ -288,7 +288,7 @@ while {true} do
 
 	if (isServer) then
 	{
-		if ( (_sinceUpdate >= __updateEvery &&
+		if ( (_sinceUpdate >= UPDATE_FREQ &&
 			!([_tickets, PRA3_core getVariable "PRA3_AAS_tickets"] call BIS_fnc_areEqual) ) ||
 			_gameOver
 			) then
@@ -298,7 +298,7 @@ while {true} do
 
 		_sinceUpdate = _sinceUpdate + 1;
 		// Reset the update counter if needed
-		if (_sinceUpdate > __updateEvery) then
+		if (_sinceUpdate > UPDATE_FREQ) then
 		{
 			_sinceUpdate = 0;
 		};

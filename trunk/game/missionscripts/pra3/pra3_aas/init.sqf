@@ -18,8 +18,8 @@ var(_init) =
 			var(_owner) = (_x select 3) call PRA3_fnc_getTeamSide;
 			PRA3_core setVariable [format["PRA3_AAS_%1_owner", _forEachIndex], _owner, true];
 			PRA3_core setVariable [format["PRA3_AAS_%1_attacker", _forEachIndex], _owner, true];
-			PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
-			PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == __neutral) then {0} else {100}, true];
+			PRA3_core setVariable [format["PRA3_AAS_%1_capture_local", _forEachIndex], if (_owner == NEUTRAL_SIDE) then {0} else {100}, true];
+			PRA3_core setVariable [format["PRA3_AAS_%1_capture_sync", _forEachIndex], if (_owner == NEUTRAL_SIDE) then {0} else {100}, true];
 		};
 
 		if isClient then

@@ -8,7 +8,7 @@ var(_attackSide) = _this select 3;
 
 if isClient then
 {
-	if (_prevOwner == __neutral) then
+	if (_prevOwner == NEUTRAL_SIDE) then
 	{
 		[
 			format [

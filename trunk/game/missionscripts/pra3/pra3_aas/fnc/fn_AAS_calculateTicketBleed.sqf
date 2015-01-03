@@ -10,7 +10,7 @@
 // For each zone...
 {
 	var(_owner) = _forEachIndex call PRA3_fnc_AAS_getZoneOwner;
-	if (_owner != __neutral) then
+	if (_owner != NEUTRAL_SIDE) then
 	{
 		var(_bleed) = _x select 4;
 		// For each team...
