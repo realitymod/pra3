@@ -13,6 +13,8 @@ _camera camCommitPrepared 0;
 _camera cameraEffect ["INTERNAL", "BACK"];
 _camera camPreload 10;
 
+call compile preprocessFile "pra3\pra3_respawn\help.sqf";
+
 waitUntil {time > 1};
 showCinemaBorder false;
 enableEnvironment false;
