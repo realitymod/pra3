@@ -10,6 +10,86 @@
 				<Original>Agia Marina</Original>
 				<English>Agia Marina</English>
 			</Key>
+			<Key ID="str_pra3_mission_name_aas_agios_valley">
+				<Original>PR:A3 Agios Valley [AAS:INF](L)</Original>
+				<English>PR:A3 Agios Valley [AAS:INF](L)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_agios_valley_short">
+				<Original>Agios Valley</Original>
+				<English>Agios Valley</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_boots_on_kalava">
+				<Original>PR:A3 Boots on Kalava [AAS:INF](M)</Original>
+				<English>PR:A3 Boots on Kalava [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_boots_on_kalava_short">
+				<Original>Boots on Kalava</Original>
+				<English>Boots on Kalava</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_forest_chop_down">
+				<Original>PR:A3 Forest Chop Down [AAS:INF](M)</Original>
+				<English>PR:A3 Forest Chop Down [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_forest_chop_down_short">
+				<Original>Forest Chop Down</Original>
+				<English>Forest Chop Down</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_maxwell">
+				<Original>PR:A3 Maxwell [AAS:INF](L)</Original>
+				<English>PR:A3 Maxwell [AAS:INF](L)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_maxwell_short">
+				<Original>Maxwell</Original>
+				<English>Maxwell</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_morningstar">
+				<Original>PR:A3 Morningstar [AAS:INF](M)</Original>
+				<English>PR:A3 Morningstar [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_morningstar_short">
+				<Original>Morningstar</Original>
+				<English>Morningstar</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_payroll">
+				<Original>PR:A3 Payroll [AAS:INF](M)</Original>
+				<English>PR:A3 Payroll [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_payroll_short">
+				<Original>Payroll</Original>
+				<English>Payroll</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_pyrgos_capital">
+				<Original>PR:A3 Pyrgos Capital [AAS:INF](M)</Original>
+				<English>PR:A3 Pyrgos Capital [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_pyrgos_capital_short">
+				<Original>Pyrgos Capital</Original>
+				<English>Pyrgos Capital</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_salt_lake">
+				<Original>PR:A3 Salt Lake [AAS:INF](L)</Original>
+				<English>PR:A3 Salt Lake [AAS:INF](L)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_salt_lake_short">
+				<Original>Salt Lake</Original>
+				<English>Salt Lake</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_sidewinder">
+				<Original>PR:A3 Sidewinder [AAS:INF](M)</Original>
+				<English>PR:A3 Sidewinder [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_sidewinder_short">
+				<Original>Sidewinder</Original>
+				<English>Sidewinder</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_wrath_of_zaros">
+				<Original>PR:A3 Wrath of Zaros [AAS:INF](M)</Original>
+				<English>PR:A3 Wrath of Zaros [AAS:INF](M)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_wrath_of_zaros_short">
+				<Original>Wrath of Zaros</Original>
+				<English>Wrath of Zaros</English>
+			</Key>
 		</Container>
 		<Container name="General">
 			<Key ID="str_pra3_mission_desc_aas_inf">
