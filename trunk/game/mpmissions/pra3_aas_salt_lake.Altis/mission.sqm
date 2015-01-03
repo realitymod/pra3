@@ -21,11 +21,14 @@ class Mission
 		"a3_weapons_f_beta_ammoboxes",
 		"A3_Structures_F_Furniture",
 		"A3_Characters_F_BLUFOR",
-		"a3_characters_f"
+		"a3_characters_f",
+		"A3_Modules_F",
+		"A3_Characters_F_INDEP"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
+		"A3_Modules_F",
+		"A3_Characters_F_INDEP",
 		"a3_characters_f",
 		"A3_Structures_F_Mil_Fortification",
 		"A3_Structures_F_Mil_Shelters",
@@ -40,14 +43,13 @@ class Mission
 		"A3_Structures_F_Civ_Market",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"A3_Structures_F_Furniture",
 		"a3_map_altis"
 	};
 	randomSeed=13349739;
 	class Intel
 	{
-		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
 		startWeather=0.29999998;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -98,7 +100,7 @@ class Mission
 					id=1;
 					side="GUER";
 					vehicle="I_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";

@@ -48,7 +48,7 @@ class Mission
 	randomSeed=6995911;
 	class Intel
 	{
-		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
 		startWeather=0.29999998;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -99,7 +99,7 @@ class Mission
 					id=1;
 					side="GUER";
 					vehicle="I_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";

@@ -6,7 +6,6 @@ class Mission
 		"a3_map_altis",
 		"A3_Structures_F_Mil_Fortification",
 		"A3_Structures_F_Mil_Cargo",
-		"a3_map_stratis",
 		"A3_Structures_F_Walls",
 		"A3_Structures_F_Civ_Lamps",
 		"A3_Structures_F_Naval_Piers",
@@ -95,7 +94,7 @@ class Mission
 					id=1;
 					side="EAST";
 					vehicle="O_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";

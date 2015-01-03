@@ -23,17 +23,17 @@ class Mission
 		"A3_Soft_F_TruckHeavy",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Soft_F_Gamma_TruckHeavy",
-		"A3_Characters_F_OPFOR",
 		"A3_Structures_F_Civ_Market",
 		"A3_Soft_F_MRAP_01",
 		"A3_Characters_F_BLUFOR",
 		"A3_Modules_F",
-		"a3_characters_f"
+		"a3_characters_f",
+		"A3_Characters_F_INDEP"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Modules_F",
-		"A3_Characters_F_BLUFOR",
+		"A3_Characters_F_INDEP",
 		"a3_characters_f",
 		"A3_Structures_F_Wrecks",
 		"A3_Structures_F_Civ_Garbage",
@@ -56,7 +56,7 @@ class Mission
 	randomSeed=11215383;
 	class Intel
 	{
-		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
+		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
 		startWeather=0.29999998;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -107,7 +107,7 @@ class Mission
 					id=1;
 					side="GUER";
 					vehicle="I_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";

@@ -19,11 +19,16 @@ class Mission
 		"A3_Characters_F_OPFOR",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes"
+		"a3_weapons_f_beta_ammoboxes",
+		"A3_Modules_F",
+		"A3_Characters_F_INDEP",
+		"a3_characters_f"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
+		"A3_Modules_F",
+		"A3_Characters_F_INDEP",
+		"a3_characters_f",
 		"A3_Structures_F_Training",
 		"A3_Structures_F_Mil_Shelters",
 		"A3_Structures_F_Civ_InfoBoards",
@@ -41,7 +46,6 @@ class Mission
 	class Intel
 	{
 		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
-		briefingName="PR:A3: Payroll";
 		startWeather=0.50999999;
 		startFog=0.25;
 		startWind=0.44999999;
@@ -95,7 +99,7 @@ class Mission
 					id=1;
 					side="GUER";
 					vehicle="I_medic_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=1;
 					text="p0";
