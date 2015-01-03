@@ -76,7 +76,7 @@ PRA3_AAS_activeZones resize 0;
 
 			var(_owner) = _x call PRA3_fnc_AAS_getZoneOwner;
 			// Unless the zone is neutral somebody has to defend it
-			if (_owner != __neutral) then
+			if (_owner != NEUTRAL_SIDE) then
 			{
 				// Task the owner with defending it
 				var(_defend) = (PRA3_AAS_teamZones select (PRA3_AAS_sides find _owner)) select 1;

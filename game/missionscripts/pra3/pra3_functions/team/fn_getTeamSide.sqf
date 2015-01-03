@@ -11,8 +11,15 @@ var(_team) = _this;
 
 if (typeName _team != "SIDE") then
 {
-	var(_side) = getNumber(missionConfigFile >> "PRA3_teams" >> _team >> "side");
-	_side call PRA3_fnc_IDToSide
+	if (isClass (missionConfigFile >> "PRA3_teams" >> _team)) then
+	{
+		var(_side) = getNumber(missionConfigFile >> "PRA3_teams" >> _team >> "side");
+		_side call PRA3_fnc_IDToSide
+	}
+	else
+	{
+		sideLogic
+	}
 }
 else
 {

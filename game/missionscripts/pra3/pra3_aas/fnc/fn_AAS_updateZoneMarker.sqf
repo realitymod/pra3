@@ -6,7 +6,7 @@ var(_color) = (
 	if (_side == PRA3_player_side) then {
 		"ColorBLUFOR"
 	} else {
-		if (_side == __neutral) then {
+		if (_side == NEUTRAL_SIDE) then {
 			"ColorBlack"
 		} else {
 			"ColorOPFOR"
