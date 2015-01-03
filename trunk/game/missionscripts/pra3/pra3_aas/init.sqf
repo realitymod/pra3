@@ -193,6 +193,7 @@ var(_init) =
 	} forEach PRA3_AAS_respawns;
 
 	PRA3_AAS_attackDefendMarkers = [];
+	PRA3_AAS_attackDefendTasks   = [];
 
 	call PRA3_fnc_AAS_createRestrictedZones; //Build restriction zones
 	call PRA3_fnc_AAS_createRandomDoor; //Create random door positions
