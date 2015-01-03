@@ -37,7 +37,7 @@ class Mission
 	randomSeed=14028797;
 	class Intel
 	{
-		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
+		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
 		startWeather=0.39999998;
 		startWind=0;
 		startWaves=0.099999994;
@@ -2099,7 +2099,7 @@ class Mission
 		{
 			position[]={7128.1182,196.37849,13965.476};
 			name="author";
-			text="Community Mission by Seraph";
+			text="This will be dynamically filled in";
 			type="mil_box";
 		};
 		class Item14

@@ -1,17 +1,35 @@
+#ifdef MISSION_TYPE_AAS_INF
+	#define MISSION_DESCRIPTION   $STR_PRA3_MISSION_DESC_AAS_INF
+#endif // MISSION_TYPE_AAS
+
 class Header
 {
 	gameType              = SC;
 	minPlayers            = 1;
-	maxPlayers            = __maxPlayers;
+	maxPlayers            = 64;
 	playerCountMultipleOf = 2;
 };
 
 author = $STR_PRA3_MISSION_AUTHOR;
 
+class PRA3_Credits
+{
+	class Mission
+	{
+		displayName = "Mission";
+		value       = MISSION_AUTHOR;
+	};
+	class Gameplay
+	{
+		displayName = "Gameplay";
+		value       = "Project Reality: ARMA 3 Team (www.realitymod.com)";
+	};
+};
+
 /*Adds to screen loading*/
-onLoadName   = __name;
-briefingName = __name2;
-overviewText = __description;
+onLoadName   = MISSION_NAME;
+briefingName = MISSION_NAME_BRIEFING;
+overviewText = MISSION_DESCRIPTION;
 
 loadScreen   = "pra3\PRloadingLogo.jpg";
 

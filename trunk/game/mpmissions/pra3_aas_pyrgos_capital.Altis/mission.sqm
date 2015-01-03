@@ -32,7 +32,7 @@ class Mission
 	randomSeed=5370741;
 	class Intel
 	{
-		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
+		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
 		startWeather=0.84999996;
 		startWind=0.099999994;
 		startLightnings=0.5;
@@ -3249,7 +3249,7 @@ class Mission
 		{
 			position[]={14753.236,0.22294629,14710.783};
 			name="author";
-			text="Community Mission by Steeps";
+			text="This will be dynamically filled in";
 			type="mil_box";
 		};
 		class Item14

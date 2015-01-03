@@ -9517,7 +9517,7 @@ class Mission
 		{
 			position[]={6408.293,204.0013,18261.92};
 			name="author";
-			text="Project Reality : Arma 3 [www.realitymod.com]";
+			text="This will be dynamically filled in";
 			type="mil_box";
 			colorName="ColorBlack";
 		};
