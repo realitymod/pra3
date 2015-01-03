@@ -47,7 +47,7 @@ class Mission
 	randomSeed=13349739;
 	class Intel
 	{
-		overviewText = $STR_PRA3_MISSION_DESC_AAS_INF;
+		overviewText="Advance and Secure, Infantry-only; You will select your team in-game.";
 		startWeather=0.29999998;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -3836,7 +3836,7 @@ class Mission
 		{
 			position[]={20243.537,-0.054812469,22031.486};
 			name="author";
-			text="Project Reality : Arma 3 [www.realitymod.com]";
+			text="This will be dynamically filled in";
 			type="mil_box";
 			colorName="ColorBlack";
 		};
