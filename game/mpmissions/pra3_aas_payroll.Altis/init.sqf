@@ -13,7 +13,7 @@
 	/*   ZONE   | SYNCH |  CONNECTS TO | INITIAL  | TICKET BLEED  */
 	/*   MARKER | TO    |  team1 team2 | OWNER    |  team1  team2 */
 		["zone0", [],     [[1  ],[    ]], "NATO", [0    , 0    ]],
-		["zone1", [],     [[2  ],[    ]], "",          [INF, 0  ]],
+		["zone1", [],     [[2  ],[    ]], "",          [INF, 0     ]],
 		["zone2", [],     [[3  ],[1  ]], "",          [20,    0    ]],
 		["zone3", [],     [[4  ],[2  ]], "",          [5,     5    ]],
 		["zone4", [],     [[5  ],[3  ]], "",          [0,     20   ]],
@@ -37,14 +37,14 @@
 		["borderEast",  ["NATO","CSAT"], 10,           false,        false,     false],
 		["borderSouth", ["NATO","CSAT"], 10,           false,        false,     false],
 		["borderWest",  ["NATO","CSAT"], 10,           false,        false,     false],
-		["spawn0",  	["CSAT"]     , 10,           false,        true,      true],
-		["spawn3",  	["NATO"]     , 10,           false,        true,      true]
+		["spawn0",       ["CSAT"]     , 10,           false,        true,      true],
+		["spawn3",       ["NATO"]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[
-		[21663,21272,0], 	// Camera target 	- x,y,z
-		[21365,21302,40],  	// Camera position 	- x,y,z
-		0.7				// Camera FOV 		- 0 to 1
+		[21663,21272,0],        // Camera target     - x,y,z
+		[21365,21302,40],      // Camera position   - x,y,z
+		0.7                           // Camera FOV       - 0 to 1
 	],
 	// Markers defining area where doors on buildings should be randomly opened/closed on mission start
 	["randomDoors1"]

@@ -44,7 +44,7 @@
 	[
 		[3283,5794,0],  // Camera target   - x,y,z
 		[2630,6163,59], // Camera position - x,y,z
-		0.7             // Camera FOV      - 0 to 1
+		0.7                   // Camera FOV      - 0 to 1
 	],
 	// Markers defining area where doors on buildings should be randomly opened/closed on mission start
 	["randomDoors1"]

@@ -15,7 +15,7 @@
 		["zone0",  [],     [[1,2],[   ]], "NATO",  [0,     0    ]],
 		["zone1",  [2],    [[3  ],[0  ]], "",          [INF, 0    ]],
 		["zone2",  [1],    [[3  ],[0  ]], "",          [12,    4    ]],
-		["zone3",  [],     [[4,5],[1,2]], "",          [10,    10   ]],
+		["zone3",  [],     [[4,5],[1,2]], "",          [10,    10  ]],
 		["zone4",  [5],    [[6  ],[3  ]], "",          [4,     12   ]],
 		["zone5",  [4],    [[6  ],[3  ]], "",          [0,     INF]],
 		["zone6",  [],     [[   ],[4,5]], "CSAT",  [0,     0    ]]
@@ -37,14 +37,14 @@
 		["borderEast",  ["NATO","CSAT"], 10,           false,        false,     false],
 		["borderSouth", ["NATO","CSAT"], 10,           false,        false,     false],
 		["borderWest",  ["NATO","CSAT"], 10,           false,        false,     false],
-		["spawn0",  	["CSAT"]     , 10,           false,        true,      true],
-		["spawn3",  	["NATO"]     , 10,           false,        true,      true]
+		["spawn0",        ["CSAT"]     , 10,           false,        true,      true],
+		["spawn3",        ["NATO"]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[
-		[3120,2817,0], 		// Camera target 	- x,y,z
-		[3390,3123,130],  	// Camera position 	- x,y,z
-		0.7				// Camera FOV 		- 0 to 1
+		[3120,2817,0],      // Camera target  - x,y,z
+		[3390,3123,130],  // Camera position - x,y,z
+		0.7                      // Camera FOV      - 0 to 1
 	],
 	// Markers defining area where doors on buildings should be randomly opened/closed on mission start
 	["randomDoors1"]
