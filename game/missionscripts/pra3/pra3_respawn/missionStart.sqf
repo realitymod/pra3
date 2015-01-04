@@ -3,8 +3,13 @@ PRA3_kitSys_currentKit = "";
 
 #define ctrl(idc) (uiNamespace getVariable "PRA3_respawn_startScreen" displayCtrl idc)
 
+call compile preprocessFile "pra3\pra3_respawn\help.sqf";
+
+var(_camera) = objNull;
 if (!isNil "PRA3_debug_skipMissionStart") then // If debug is enabled skip the whole mission start business
 {
+	PRA3_player_team       = PRA3_AAS_teams select 0;
+	PRA3_player_side       = PRA3_AAS_sides select 0;
 	PRA3_selectedSpawn     = player call PRA3_fnc_getAvailableSpawns select 0;
 	PRA3_kitSys_currentKit = "SquadLeader_NATO";
 }
@@ -19,8 +24,6 @@ else
 	_camera camCommitPrepared 0;
 	_camera cameraEffect ["INTERNAL", "BACK"];
 	_camera camPreload 10;
-
-	call compile preprocessFile "pra3\pra3_respawn\help.sqf";
 
 	waitUntil {time > 1};
 	showCinemaBorder false;
