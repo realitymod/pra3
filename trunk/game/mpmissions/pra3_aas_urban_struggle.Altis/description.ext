@@ -1,0 +1,13 @@
+#define MISSION_TYPE_AAS_INF
+
+#define MISSION_NAME            $STR_PRA3_MISSION_NAME_AAS_AGIA_SHORT
+#define MISSION_NAME_BRIEFING   $STR_PRA3_MISSION_NAME_AAS_AGIA
+#define MISSION_AUTHOR          "[R-DEV]Deadfast"
+
+#define MISSION_VERSION_MAJOR   1
+#define MISSION_VERSION_MINOR   0
+#define MISSION_VERSION_RELEASE 1
+
+#define PRA3_DEBUG
+
+#include "pra3\description.hpp"
