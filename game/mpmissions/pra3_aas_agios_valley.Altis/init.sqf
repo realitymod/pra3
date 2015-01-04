@@ -10,19 +10,19 @@
 	[300, 300],
 	// Capture zones
 	[
-	/*   ZONE   | SYNCH |  CONNECTS TO | INITIAL | TICKET BLEED  */
-	/*   MARKER | TO    |  team1 team2 | OWNER   |  team1  team2 */
-		["zone0", [],     [[1,2],[   ]], "NATO", [0,   0  ]],
-		["zone1", [2],    [[3  ],[0  ]], "",     [INF, 0  ]],
-		["zone2", [1],    [[3  ],[0  ]], "",     [20,  0  ]],
-		["zone3", [],     [[4,5],[1,2]], "",     [5,   5  ]],
-		["zone4", [5],    [[6  ],[3  ]], "",     [0,   20 ]],
-		["zone5", [4],    [[6  ],[3  ]], "",     [0,   INF]],
-		["zone6", [],     [[   ],[4,5]], "AAF",  [0,   0  ]]
+	/*   ZONE       | SYNC WITH             | CONNECTS TO   | INITIAL      | TICKET BLEED  */
+	/*   MARKER  |   team1        team2   |  team1    team2   | OWNER   |  team1  team2    */
+		["zone0", [[        ],[        ]],        [[1,2],[   ]], "NATO",  [0,   0  ]],
+		["zone1", [[2      ],[        ]],        [[3  ],[0  ]], "",           [INF, 0  ]],
+		["zone2", [[1       ],[        ]],        [[3  ],[0  ]], "",           [20,  0  ]],
+		["zone3", [[        ],[        ]],        [[4,5],[1,2]], "",          [5,   5  ]],
+		["zone4", [[        ],[5       ]],       [[6  ],[3  ]], "",            [0,   20 ]],
+		["zone5", [[        ],[4      ]],        [[6  ],[3  ]], "",            [0,   INF]],
+		["zone6", [[        ],[        ]],        [[   ],[4,5]], "AAF",   [0,   0  ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [6]],
-	// Respawn definitons
+	// Respawn definitions
 	[
 	/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
 	/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
