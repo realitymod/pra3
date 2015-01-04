@@ -10,17 +10,17 @@
 	[300, 300],
 	// Capture zones
 	[
-	/*    ZONE   | SYNCH | CONNECTS TO   | INITIAL | TICKET BLEED  */
-	/*    MARKER | TO    |  team1 team2  | OWNER   |  team1  team2 */
-		["zone0",  [],    [[1  ],[   ]], "NATO", [0,     0   ]],
-		["zone1",  [],    [[2  ],[   ]], "",         [INF, 0    ]],
-		["zone2",  [],    [[3  ],[1  ]], "",        [20,    20]],
-		["zone3",  [],    [[   ],[2  ]], "",          [0,    INF]],
-		["zone4",  [],    [[    ],[3  ]], "CSAT", [0,     0]]
+	/*   ZONE       | SYNC WITH             | CONNECTS TO   | INITIAL      | TICKET BLEED  */
+	/*   MARKER  |   team1        team2   |  team1    team2   | OWNER   |  team1  team2    */
+		["zone0", [[        ],[        ]],        [[1  ],[   ]], "NATO", [0,     0   ]],
+		["zone1", [[        ],[        ]],        [[2  ],[   ]], "",         [INF, 0    ]],
+		["zone2", [[        ],[        ]],        [[3  ],[1  ]], "",        [20,    20]],
+		["zone3", [[        ],[        ]],        [[   ],[2  ]], "",          [0,    INF]],
+		["zone4", [[        ],[        ]],        [[    ],[3  ]], "CSAT", [0,     0]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [4]],
-	// Respawn definitons
+	// Respawn definitions
 	[
 		/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
 		/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
