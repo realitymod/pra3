@@ -2805,7 +2805,7 @@ class Mission
 		class Item11
 		{
 			position[]={7243.1777,197.45299,19539.359};
-			name="borderGUER";
+			name="borderWest";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
