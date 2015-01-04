@@ -22,8 +22,9 @@ var(_traverse) =
 	}
 	else
 	{
-		var(_connected)    = ((PRA3_AAS_zones select _idx) select 2) select (PRA3_AAS_sides find _team);
-		var(_synchronized) = (PRA3_AAS_zones select _idx) select 1;
+		var(_teamIdx) = (PRA3_AAS_sides find _team);
+		var(_connected)    = ((PRA3_AAS_zones select _idx) select 2) select _teamIdx;
+		var(_synchronized) = ((PRA3_AAS_zones select _idx) select 1) select _teamIdx;
 
 		// Make sure there are no sync'ed zones that were NOT captured
 		if ({_x call PRA3_fnc_AAS_getZoneOwner != _team && !(_x in _connected)} count _synchronized == 0) then
