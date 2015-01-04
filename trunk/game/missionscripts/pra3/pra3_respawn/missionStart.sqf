@@ -5,7 +5,7 @@ PRA3_kitSys_currentKit = "";
 
 call compile preprocessFile "pra3\pra3_respawn\help.sqf";
 
-var(_camera) = objNull;
+private "_camera";
 if (!isNil "PRA3_debug_skipMissionStart") then // If debug is enabled skip the whole mission start business
 {
 	PRA3_player_team       = PRA3_AAS_teams select 0;
