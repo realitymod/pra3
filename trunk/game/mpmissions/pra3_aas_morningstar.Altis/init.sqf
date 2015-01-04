@@ -35,14 +35,14 @@
 		["borderEast",  ["NATO","CSAT"], 10,           false,        false,     false],
 		["borderSouth", ["NATO","CSAT"], 10,           false,        false,     false],
 		["borderWest",  ["NATO","CSAT"], 10,           false,        false,     false],
-		["spawn0",  	["CSAT"]     , 10,           false,        true,      true],
-		["spawn3",  	["NATO"]     , 10,           false,        true,      true]
+		["spawn0",       ["CSAT"]     , 10,           false,        true,      true],
+		["spawn3",       ["NATO"]     , 10,           false,        true,      true]
 	],
 	// Start camera position
 	[
-		[24107,23250,0],	// Camera target 	- x,y,z
-		[24234,23473,76],	// Camera position 	- x,y,z
-		0.7				// Camera FOV 		- 0 to 1
+		[24107,23250,0],         // Camera target    - x,y,z
+		[24234,23473,76],       // Camera position - x,y,z
+		0.7                             // Camera FOV     - 0 to 1
 	],
 	// Markers defining area where doors on buildings should be randomly opened/closed on mission start
 	["randomDoors1"]
