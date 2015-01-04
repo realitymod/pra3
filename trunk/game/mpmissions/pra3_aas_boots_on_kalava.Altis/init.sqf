@@ -10,14 +10,14 @@
 	[300, 300],
 	// Capture zones
 	[
-	/*   ZONE         | SYNC WITH           |    CONNECTS TO  | INITIAL| TICKET BLEED  */
-	/*   MARKER       |   team1     team2   |   team1  team2  | OWNER  | team1  team2 */
-		["zone0", [[        ],[        ]],[[1  ], [   ]], "NATO",  [0,   0  ]],
-		["zone1", [[        ],[        ]],[[2  ], [   ]], "",      [INF, 0  ]],
-		["zone2", [[        ],[        ]],[[3  ], [1  ]], "",      [20,  0  ]],
-		["zone3", [[        ],[        ]],[[4  ], [2  ]], "",      [0,   20 ]],
-		["zone4", [[        ],[        ]],[[   ], [3  ]], "",      [0,   INF]],
-		["zone5", [[        ],[        ]],[[   ], [4  ]], "CSAT",  [0,   0  ]]
+	/*   ZONE   | SYNC WITH    | CONNECTS TO  | INITIAL| TICKET BLEED  */
+	/*   MARKER |  team1 team2 |  team1 team2 | OWNER  |  team1  team2 */
+		["zone0", [[   ],[   ]],[[1  ], [   ]], "NATO",  [0,   0  ]],
+		["zone1", [[   ],[   ]],[[2  ], [   ]], "",      [INF, 0  ]],
+		["zone2", [[   ],[   ]],[[3  ], [1  ]], "",      [20,  0  ]],
+		["zone3", [[   ],[   ]],[[4  ], [2  ]], "",      [0,   20 ]],
+		["zone4", [[   ],[   ]],[[   ], [3  ]], "",      [0,   INF]],
+		["zone5", [[   ],[   ]],[[   ], [4  ]], "CSAT",  [0,   0  ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [5]],
@@ -31,13 +31,13 @@
 	// Restricted areas
 	[
 	/*   MARKER       |  RESTRICT  | TIME BEFORE | PUNISH WHEN | ALLOW    | DELETE */
-	/*   ZONE         |  SIDE      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
-		["borderNorth", ["NATO", "CSAT"], 10,      false,        false,     false],
-		["borderEast",  ["NATO", "CSAT"], 10,      false,        false,     false],
-		["borderSouth", ["NATO", "CSAT"], 10,      false,        false,     false],
-		["borderWest",  ["NATO", "CSAT"], 10,      false,        false,     false],
-		["spawn0",      ["CSAT"],         10,      false,        true,      true],
-		["spawn3",      ["NATO"],         10,      false,        true,      true]
+	/*   ZONE         |  TEAM      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
+		["borderNorth", ["NATO", "CSAT"], 10,    false,        false,     false],
+		["borderEast",  ["NATO", "CSAT"], 10,    false,        false,     false],
+		["borderSouth", ["NATO", "CSAT"], 10,    false,        false,     false],
+		["borderWest",  ["NATO", "CSAT"], 10,    false,        false,     false],
+		["spawn0",      ["CSAT"],         10,    false,        true,      true],
+		["spawn3",      ["NATO"],         10,    false,        true,      true]
 	],
 	// Start camera position
 	[
