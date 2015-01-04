@@ -46,7 +46,7 @@ PRA3_debug_skipMissionStart = true;
 	// Restricted areas
 	[
 	/*   MARKER            | RESTRICT       | TIME BEFORE | PUNISH WHEN  | ALLOW     | DELETE */
-	/*   ZONE              | SIDE           | PUNISHMENT  | OUTSIDE      | AIRCRAFT  | MARKER */
+	/*   ZONE              | TEAM           | PUNISHMENT  | OUTSIDE      | AIRCRAFT  | MARKER */
 		["borderNorth",   ["CSAT","AAF"], 10,           false,        false,     false],
 		["borderEast",    ["CSAT","AAF"], 10,           false,        false,     false],
 		["borderSouth",   ["CSAT","AAF"], 10,           false,        false,     false],

@@ -10,35 +10,35 @@
 	[300, 300],
 	// Capture zones
 	[
-	/*   ZONE         | SYNC WITH            |    CONNECTS TO | INITIAL| TICKET BLEED  */
-	/*   MARKER       |   team1      team2   |  team1  team2  | OWNER  |  team1  team2 */
-		["zone0", [[        ],[        ]],[[1,2],[   ]], "NATO",  [0,   0  ]],
-		["zone1", [[2       ],[2       ]],[[3  ],[0  ]], "",      [INF, 0  ]],
-		["zone2", [[1       ],[1       ]],[[3  ],[0  ]], "",      [20,  0  ]],
-		["zone3", [[        ],[        ]],[[4,5],[1,2]], "",      [5,   5  ]],
-		["zone4", [[5       ],[5       ]],[[6  ],[3  ]], "",      [0,   20 ]],
-		["zone5", [[4       ],[4       ]],[[6  ],[3  ]], "",      [0,   INF]],
-		["zone6", [[        ],[        ]],[[   ],[4,5]], "AAF",   [0,   0  ]]
+	/*   ZONE   | SYNC WITH    | CONNECTS TO  | INITIAL| TICKET BLEED  */
+	/*   MARKER |  team1 team2 |  team1 team2 | OWNER  |  team1  team2 */
+		["zone0", [[   ],[   ]],[[1,2],[   ]], "NATO",  [0,   0  ]],
+		["zone1", [[2  ],[2  ]],[[3  ],[0  ]], "",      [INF, 0  ]],
+		["zone2", [[1  ],[1  ]],[[3  ],[0  ]], "",      [20,  0  ]],
+		["zone3", [[   ],[   ]],[[4,5],[1,2]], "",      [5,   5  ]],
+		["zone4", [[5  ],[5  ]],[[6  ],[3  ]], "",      [0,   20 ]],
+		["zone5", [[4  ],[4  ]],[[6  ],[3  ]], "",      [0,   INF]],
+		["zone6", [[   ],[   ]],[[   ],[4,5]], "AAF",   [0,   0  ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [6]],
 	// Respawn definitions
 	[
-	/*   SPAWN   | TIED | SAFE | CHANGE KIT OBJECT       */
-	/*   MARKER  | TO   | ZONE | OBJECT | ALLOW REDEPLOY */
-		["spawn0", [0  ], true,  [box0,   true]],
-		["spawn3", [6  ], true,  [box3,   true]]
+		/*   SPAWN   | TIED | SAFE | CHANGE KIT | ALLOW    */
+		/*   MARKER  | TO   | ZONE | OBJECT     | REDEPLOY */
+		["spawn0",   [0  ], true,  [box0,        true]],
+		["spawn3",   [6  ], true,  [box3,        true]]
 	],
 	// Restricted areas
 	[
 	/*   MARKER       |  RESTRICT  | TIME BEFORE | PUNISH WHEN | ALLOW    | DELETE */
-	/*   ZONE         |  SIDE      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
-		["borderNorth", ["NATO","CSAT"], 10,           false,        false,     false],
-		["borderEast",  ["NATO","CSAT"], 10,           false,        false,     false],
-		["borderSouth", ["NATO","CSAT"], 10,           false,        false,     false],
-		["borderWest",  ["NATO","CSAT"], 10,           false,        false,     false],
-		["spawn0",        ["CSAT"]     , 10,           false,        true,      true],
-		["spawn3",        ["NATO"]     , 10,           false,        true,      true]
+	/*   ZONE         |  TEAM      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
+		["borderNorth", ["NATO","CSAT"], 10,     false,        false,     false],
+		["borderEast",  ["NATO","CSAT"], 10,     false,        false,     false],
+		["borderSouth", ["NATO","CSAT"], 10,     false,        false,     false],
+		["borderWest",  ["NATO","CSAT"], 10,     false,        false,     false],
+		["spawn0",      ["CSAT"]       , 10,     false,        true,      true],
+		["spawn3",      ["NATO"]       , 10,     false,        true,      true]
 	],
 	// Start camera position
 	[

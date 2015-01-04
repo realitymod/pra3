@@ -10,15 +10,15 @@
 	[300, 300],
 	// Capture zones
 	[
-	/*   ZONE         | SYNC WITH            | CONNECTS TO      | INITIAL | TICKET BLEED  */
-	/*   MARKER       |   team1      team2   |  team1    team2  | OWNER   |  team1  team2 */
-		["zone0", [[        ],[        ]],   [[1  ],[   ]], "NATO",   [0    , 0    ]],
-		["zone1", [[        ],[        ]],   [[2  ],[   ]], "",       [INF,   0    ]],
-		["zone2", [[        ],[        ]],   [[3  ],[1  ]], "",       [20,    0    ]],
-		["zone3", [[        ],[        ]],   [[4  ],[2  ]], "",       [5,     5    ]],
-		["zone4", [[        ],[        ]],   [[5  ],[3  ]], "",       [0,     20   ]],
-		["zone5", [[        ],[        ]],   [[   ],[4  ]], "",       [0,     INF  ]],
-		["zone6", [[        ],[        ]],   [[   ],[5  ]], "CSAT",   [0,     0    ]]
+	/*   ZONE   | SYNC WITH    | CONNECTS TO  | INITIAL| TICKET BLEED  */
+	/*   MARKER |  team1 team2 |  team1 team2 | OWNER  |  team1  team2 */
+		["zone0", [[   ],[   ]],[[1  ],[   ]], "NATO", [0,    0  ]],
+		["zone1", [[   ],[   ]],[[2  ],[   ]], "",     [INF,  0  ]],
+		["zone2", [[   ],[   ]],[[3  ],[1  ]], "",     [20,   0  ]],
+		["zone3", [[   ],[   ]],[[4  ],[2  ]], "",     [5,    5  ]],
+		["zone4", [[   ],[   ]],[[5  ],[3  ]], "",     [0,    20 ]],
+		["zone5", [[   ],[   ]],[[   ],[4  ]], "",     [0,    INF]],
+		["zone6", [[   ],[   ]],[[   ],[5  ]], "CSAT", [0,    0  ]]
 	],
 	// Bases for each team, indexes have to match those of PRA3_AAS_sides
 	[[0], [6]],
@@ -32,19 +32,19 @@
 	// Restricted areas
 	[
 	/*   MARKER       |  RESTRICT  | TIME BEFORE | PUNISH WHEN | ALLOW    | DELETE */
-	/*   ZONE         |  SIDE      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
-		["borderNorth", ["NATO","CSAT"], 10,       false,        false,     false],
-		["borderEast",  ["NATO","CSAT"], 10,       false,        false,     false],
-		["borderSouth", ["NATO","CSAT"], 10,       false,        false,     false],
-		["borderWest",  ["NATO","CSAT"], 10,       false,        false,     false],
-		["spawn0",      ["CSAT"]       , 10,       false,        true,      true],
-		["spawn3",      ["NATO"]       , 10,       false,        true,      true]
+	/*   ZONE         |  TEAM      | PUNISHMENT  | OUTSIDE     | AIRCRAFT | MARKER */
+		["borderNorth", ["NATO","CSAT"], 10,     false,        false,     false],
+		["borderEast",  ["NATO","CSAT"], 10,     false,        false,     false],
+		["borderSouth", ["NATO","CSAT"], 10,     false,        false,     false],
+		["borderWest",  ["NATO","CSAT"], 10,     false,        false,     false],
+		["spawn0",      ["CSAT"]       , 10,     false,        true,      true],
+		["spawn3",      ["NATO"]       , 10,     false,        true,      true]
 	],
 	// Start camera position
 	[
-		[9214,12066,0],       // Camera target      - x,y,z
-		[8944,11860,6],       // Camera position    - x,y,z
-		0.7                   // Camera FOV         - 0 to 1
+		[9214,12066,0],    // Camera target      - x,y,z
+		[8944,11860,6],    // Camera position    - x,y,z
+		0.7                // Camera FOV         - 0 to 1
 	],
 	// Markers defining area where doors on buildings should be randomly opened/closed on mission start
 	["randomDoors1"]
