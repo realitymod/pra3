@@ -10,8 +10,8 @@ PRA3_debug_skipMissionStart = true;
 	[300, 500],
 	// Capture zones
 	[
-	/*   ZONE         | SYNC WITH             | CONNECTS TO       | INITIAL | TICKET BLEED  */
-	/*   MARKER       |   team1       team2   |  team1    team2   | OWNER   |  team1  team2 */
+	/*   ZONE      | SYNC WITH                | CONNECTS TO     | INITIAL | TICKET BLEED  */
+	/*   MARKER    |   team1      team2       |team1    team2   | OWNER   | team1  team2 */
 		["zone0",  [[        ],[        ]],  [[1    ], [     ]], "CSAT",   [0, 0  ]],
 		["zone1",  [[        ],[        ]],  [[2,3  ], [     ]], "",       [0, 0  ]],
 		["zone2",  [[3       ],[        ]],  [[4    ], [     ]], "AAF",    [0, 0  ]],
@@ -33,8 +33,8 @@ PRA3_debug_skipMissionStart = true;
 	[[0], [15]],
 	// Respawn definitions
 	[
-	/*   SPAWN                   | TIED | SAFE | CHANGE KIT    | ALLOW    */
-	/*   MARKER                  | TO   | ZONE | OBJECT        | REDEPLOY */
+	/*   SPAWN               | TIED | SAFE | CHANGE KIT    | ALLOW    */
+	/*   MARKER              | TO   | ZONE | OBJECT        | REDEPLOY */
 		["spawnBaseCSAT",     [0  ], true,  [boxBaseCSAT,     true ]],
 		["spawnGardens",      [15 ], false, [boxGardens,      false]],
 		["spawnHospital",     [15 ], false, [boxHospital,     false]],
@@ -45,8 +45,8 @@ PRA3_debug_skipMissionStart = true;
 	],
 	// Restricted areas
 	[
-	/*   MARKER            | RESTRICT       | TIME BEFORE | PUNISH WHEN  | ALLOW     | DELETE */
-	/*   ZONE              | TEAM           | PUNISHMENT  | OUTSIDE      | AIRCRAFT  | MARKER */
+	/*   MARKER          | RESTRICT     | TIME BEFORE | PUNISH WHEN  | ALLOW     | DELETE */
+	/*   ZONE            | TEAM         | PUNISHMENT  | OUTSIDE      | AIRCRAFT  | MARKER */
 		["borderNorth",   ["CSAT","AAF"], 10,           false,        false,     false],
 		["borderEast",    ["CSAT","AAF"], 10,           false,        false,     false],
 		["borderSouth",   ["CSAT","AAF"], 10,           false,        false,     false],
