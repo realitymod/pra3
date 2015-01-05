@@ -82,6 +82,14 @@
 				<Original>Sidewinder</Original>
 				<English>Sidewinder</English>
 			</Key>
+			<Key ID="str_pra3_mission_name_aas_urban">
+				<Original>PR:A3 Urban Struggle [AAS:INF](L)</Original>
+				<English>PR:A3 Urban Struggle [AAS:INF](L)</English>
+			</Key>
+			<Key ID="str_pra3_mission_name_aas_urban_short">
+				<Original>Urban Struggle</Original>
+				<English>Urban Struggle</English>
+			</Key>
 			<Key ID="str_pra3_mission_name_aas_wrath_of_zaros">
 				<Original>PR:A3 Wrath of Zaros [AAS:INF](M)</Original>
 				<English>PR:A3 Wrath of Zaros [AAS:INF](M)</English>
