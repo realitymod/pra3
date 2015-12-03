@@ -1,6 +1,6 @@
-# Project Reality: ARMA 3
+# =DRK= Project Reality: ARMA 3
 
-This is a source code for Project Reality: ARMA 3 (http://realitymod.com), a set of missions and scripts for ARMA 3.
+This is a source code for "=DRK= Project Reality: ARMA 3" (http://realitymod.com), a set of missions and scripts for ARMA 3.
 
 ## Getting it to work
 To get each mission from **game/mpmissions** to work you must copy **game/missionscripts/stringtable.xml** and **game/missionscripts/pra3** into it.
